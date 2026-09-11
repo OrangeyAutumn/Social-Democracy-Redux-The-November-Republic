@@ -1,7 +1,7 @@
 title: Chancellor
 new-page: true
 is-card: true
-tags: cabinet_affairs
+tags: govt_affairs
 card-image: img/chancellor.jpg
 view-if: spd_in_government = 1 and chancellor_party = "SPD"
 subtitle: With the Chancellorship, we have a range of powers we can deploy to our advantage.
