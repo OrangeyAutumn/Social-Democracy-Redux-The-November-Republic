@@ -1,7 +1,9 @@
 title: sandbox
+view-if: sandbox == 1
 new-page: true
 tags: sandbox
 is-card: true
+is-pinned-card: true
 card-image: img/EbertSandcastle.jpg
 go-to: sandbox_menu
 
