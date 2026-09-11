@@ -1,5 +1,5 @@
 title: sandbox
-view-if: sandbox == 1
+view-if: sandbox_enabled == 1
 new-page: true
 tags: sandbox
 is-card: true
