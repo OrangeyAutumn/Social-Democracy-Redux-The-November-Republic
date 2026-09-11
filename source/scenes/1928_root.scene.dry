@@ -709,7 +709,7 @@ Q.in_saxony_spd = 0;
 Q.in_saxony_uspd = 0;
 Q.in_saxony_dnvp = 1;
 Q.in_saxony_nsdap = 0;
-Q.saxony_election_year = 1926;
+Q.saxony_election_year = 1929;
 Q.saxony_election_month = 10;
 // Thuringia
 Q.thuringia_minister_president = "Richard Leutheußer (DVP)"
