@@ -319,7 +319,7 @@ on-arrival: president = "Braun"; president_party = "SPD"; pro_republic += 8; soc
 Otto Braun has won the election! This has only been possible thanks to the backing of the **Volksblock**, the Center and Democratic parties. Regardless, the continuation of Social Democratic rule over Germany is a significant victory, and the party is jubilant.
 
 @gessler_wins
-on-arrival: president = "Gessler"; pro_republic += 2; president_party = "DDP"; socialism -= 5; left_dissent += 5; dvp_relation += 10; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0; (if chancellor == "Gessler", chancellor = "Marx" and chancellor_party = "Z")
+on-arrival: president = "Gessler"; pro_republic += 2; president_party = "DDP"; socialism -= 5; left_dissent += 5; dvp_relation += 10; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0;
 
 Otto Gessler has won the election as the candidate of the democratic parties, including the DVP. We have in this campaign pulled the DVP away from the DNVP and the right as a whole towards the center, but also created a whole on the left that the USPD is eager to fill. 
 
