@@ -104,11 +104,3 @@ card-image: img/presidential_affairs.jpg
 is-deck: true
 
 - #pres_affairs
-
-@sandbox
-title: Sandbox menu
-view-if: sandbox_enabled == 1
-card-image: img/EbertSandcastle.jpg
-is-deck: false
-
-- #sandbox
