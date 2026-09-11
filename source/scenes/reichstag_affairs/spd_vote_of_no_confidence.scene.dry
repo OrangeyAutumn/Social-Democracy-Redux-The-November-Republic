@@ -1,7 +1,7 @@
 title: Call a Vote of No Confidence?
 new-page: true
 is-card: true
-tags: cabinet_affairs
+tags: reichstag
 on-arrival: shuffle_cabinet_timer = 6
 view-if: spd_in_government == 1 and chancellor_party = !"SPD" and not in_spd_majority and not in_emergency_government and coalition_dissent >= 3
 card-image: img/reichstag_1.jpg
