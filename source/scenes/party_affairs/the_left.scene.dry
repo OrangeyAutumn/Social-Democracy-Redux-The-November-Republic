@@ -2,7 +2,7 @@ title: The Left
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: left_timer <= 0
+view-if: never
 on-arrival: month_activities += 1; left_timer += 6
 card-image: img/portraits/LeviPaul.jpg
 
