@@ -56,7 +56,7 @@ view-if: coalition_dissent >= 3
 on-arrival: leverage = spd_r; z_relation -= 5 if in_weimar_coalition or in_grand_coalition or in_popular_front; dvp_relation -= 5 if in_grand_coalition; uspd_relation -= 5 if in_popular_front or in_left_front; labor_minister_party = "I"; interior_minister_party = "I"; finance_minister_party = "I"; economic_minister_party = "I"; justice_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister_party = "I";
 go-to: election_1928.coalition_menu
 
-@push_shuffle_no
+@push_extra_shuffle_no
 view-if: coalition_dissent <= 2
 on-arrival: coalition_dissent += 1
 
