@@ -28,7 +28,7 @@ Reichswehr: [+ reichswehr_minister_party +]
 Agriculture: [+ agriculture_minister_party +]
 
 - @push_shuffle: Yes, do it.
-- @extra_shuffle: This coalition isn't working. We need to change our governing coalition entirely.
+- @push_extra_shuffle: This coalition isn't working. We need to change our governing coalition entirely.
 - @root: No, there is no need.
 - @easy_discard
 
