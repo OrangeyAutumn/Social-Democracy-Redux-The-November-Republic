@@ -1,10 +1,10 @@
-title: 1930 root
+title: 1931 root
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
-Q.time = 24;
-Q.year = 1930;
-Q.month = 1;
+Q.time = 47;
+Q.year = 1931;
+Q.month = 11;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -105,15 +105,15 @@ Q.NSDAP_relation = 0;
 
 // Party Leader Names
 // Liebknecht 1925-1929 - Can be Karl Liebknecht or Ernst Thalmann 1929 onwards
-Q.uspd_leader = "Thälmann";
-Q.uspd_party_leader = "Thälmann";
-Q.uspd_leader_fullname = "Ernst Thalmann";
+Q.uspd_leader = "Liebknecht";
+Q.uspd_party_leader = "Liebknecht";
+Q.uspd_leader_fullname = "Karl Liebknecht";
 Q.spd_coleader_1 = "Crispien";
 Q.spd_coleader_1_fullname = "Arthur Crispien";
 Q.spd_coleader_1_faction == "Left";
 // Hans Vogel after Muller's death
-Q.spd_coleader_2 = "Müller";
-Q.spd_coleader_2_fullname = "Hermann Müller";
+Q.spd_coleader_2 = "Vogel";
+Q.spd_coleader_2_fullname = "Hans Vogel";
 Q.spd_coleader_2_faction == "Center";
 Q.spd_coleader_3 = "Wels";
 Q.spd_coleader_3_fullname = "Otto Wels";
@@ -131,8 +131,8 @@ Q.z_party_leader_fullname = "Ludwig Kaas";
 Q.bvp_leader = "Schäffer"
 Q.bvp_leader_fullname = "Karl Schäffer"
 // Gustav Stresemann — 1924–October 1929; Ernst Scholz — 1929–1930; Eduard Dingeldey — 1930–July 1933
-Q.dvp_leader = "Scholz"
-Q.dvp_leader_fullname = "Ernst Scholz"
+Q.dvp_leader = "Dingeldey"
+Q.dvp_leader_fullname = "Eduard Dingeldey"
 // Johann Friedrich Winckler — 1924–1926; Kuno von Westarp — 1926–1928; Alfred Hugenberg — 1928–1933
 Q.dnvp_leader = "Hugenberg"
 Q.dnvp_leader_fullname = "Alfred Hugenberg"
@@ -144,7 +144,7 @@ Q.nsdap_leader_fullname = "Adolf Hitler"
 // Can be Revolutionary Socialism, Council Communism, or Stalinism
 Q.uspd_ideology = "Stalinism"
 // Can be Revolutionary Socialism, center Marxism, Labor Socialism, or Reformist Socialism
-Q.spd_ideology = "center Marxism"
+Q.spd_ideology = "Center Marxism"
 // Can be Left Liberalism, Progressive Liberalism, or National Liberalism
 Q.ddp_ideology = "Left Liberalism"
 // Can be Progressive Catholicism, Christian Democracy, or Conservative Catholicism
@@ -159,8 +159,8 @@ Q.dnvp_ideology = "Authoritarian Conservatism"
 Q.nsdap_ideology = "Nazism"
 
 // faction leaders
-Q.left_leader = "Levi";
-Q.left_leader_fullname = "Paul Levi";
+Q.left_leader = "Rosenfeld";
+Q.left_leader_fullname = "Kurt Rosenfeld";
 Q.center_leader = "Hilferding";
 Q.center_leader_fullname = "Rudolf Hilferding";
 Q.labor_leader = "Leipart";
@@ -379,11 +379,11 @@ Q.old_nsdap_r = 3;
 Q.old_other_r = 11;
 
 // for changing the DDP's name to the DStP
-Q.ddp_name = "DDP";
+Q.ddp_name = "DStP";
 Q.bvp_name = "BVP";
 Q.spd_name = "SPD";
-Q.uspd_name = "KPD";
-Q.uspd_name_short = "KPD";
+Q.uspd_name = "DSKI";
+Q.uspd_name_short = "DSKI";
 
 // nazis have not peaked..
 Q.nazi_peaked = 0;
@@ -400,12 +400,12 @@ Q.economic_records = [];
 Q.president = "Hindenburg";
 Q.president_party = "Independent";
 // starting chancellor: Wilhelm Marx
-Q.chancellor = "Müller";
-Q.chancellor_party = 'SPD';
-Q.spd_in_government = 1;
+Q.chancellor = "Brüning";
+Q.chancellor_party = 'Z';
+Q.spd_in_government = 0;
 Q.z_in_government = 1;
 Q.ddp_in_government = 1;
-Q.dvp_in_government = 1;
+Q.dvp_in_government = 0;
 Q.dnvp_in_government = 0;
 Q.uspd_in_government = 0;
 Q.nsdap_in_government = 0;
@@ -415,7 +415,7 @@ Q.in_right_coalition = 0;
 Q.in_weimar_coalition = 0;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition"of SPD + Z + BVP + DDP + DVP + Others
-Q.in_grand_coalition = 1;
+Q.in_grand_coalition = 0;
 // Popular front = SPD + USPD + Z + DDP
 Q.in_popular_front = 0;
 // left coalition = SPD + USPD + left-splinters
@@ -435,7 +435,7 @@ Q.coalition_dissent = 2;
 Q.uspd_coalition_dissent = 0;
 
 // does the SPD tolerate the government even if it is not a participant?
-Q.spd_toleration = 0;
+Q.spd_toleration = 1;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
@@ -443,22 +443,24 @@ Q.minority_government = 0;
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Curtius';
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister = 'Severing';
-Q.interior_minister_party = 'SPD';
-Q.justice_minister = 'Koch-Weser';
-Q.justice_minister_party = Q.ddp_name;
-Q.labor_minister = 'Wissel';
-Q.labor_minister_party = 'SPD';
+Q.vice_chancellor = 'Dietrich'
+Q.vice_chancellor_party = Q.ddp_name;
+Q.foreign_minister = Brüning';
+Q.foreign_minister_party = 'Z;
+Q.interior_minister = 'Groener';
+Q.interior_minister_party = 'I';
+Q.justice_minister = 'Joël‘;
+Q.justice_minister_party = 'I';
+Q.labor_minister = 'Stegerwald';
+Q.labor_minister_party = 'Z';
 Q.reichswehr_minister = 'Groener';
 Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Schmidt';
-Q.economic_minister_party = 'SPD';
-Q.finance_minister = 'Moldenhauer';
-Q.finance_minister_party = 'DVP';
-Q.agriculture_minister = 'Dietrich';
-Q.agriculture_minister_party = 'DDP';
+Q.economic_minister = 'Warmbold';
+Q.economic_minister_party = 'I';
+Q.finance_minister = 'Dietrich';
+Q.finance_minister_party = Q.ddp_name;
+Q.agriculture_minister = 'Schiele';
+Q.agriculture_minister_party = 'CNBL';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 1;
