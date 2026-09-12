@@ -385,3 +385,8 @@ Rural: [+ uspd_name_short +]: [+ rural_uspd_display +]%, [? if sapd_formed == 1 
 Unemployed: [+ uspd_name_short +]: [+ unemployed_uspd_display +]%, [? if sapd_formed == 1 : SAPD: [+ unemployed_sapd_display +]%, ?] [+ spd_name +]: [+ unemployed_spd_display +]%, DDP: [+ unemployed_ddp_display +]%, Z: [+ unemployed_z_display +]%, DVP: [+ unemployed_dvp_display +]%, DNVP: [+ unemployed_dnvp_display +]%, [? if dne_formed : DNE: [+ unemployed_dne_display +]%, ?] NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]%
 
 Catholics: [+ uspd_name_short +]: [+ catholics_uspd_display +]%, [? if sapd_formed == 1 : SAPD: [+ catholics_sapd_display +]%, ?] [+ spd_name +]: [+ catholics_spd_display +]%, DDP: [+ catholics_ddp_display +]%, Z: [+ catholics_z_display +]%, DVP: [+ catholics_dvp_display +]%, DNVP: [+ catholics_dnvp_display +]%, [? if dne_formed : DNE: [+ catholics_dne_display +]%, ?] NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]%
+
+@states
+
+Add stuff later :)
+
