@@ -5,7 +5,7 @@ view-if: iron_front_formed == 1 and iron_front_independent == 0 and iron_front_t
 on-arrival: iron_front_timer = 7; month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
 card-image: img/iron_front.png
 frequency: 200
-tags: party_affairs, antifascism
+tags: campaigning, antifascism
 
 = The Iron Front
 
