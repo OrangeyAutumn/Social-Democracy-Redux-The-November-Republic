@@ -96,6 +96,8 @@ if (Q.sa_strength) {
 }
 !}
 
+= [+ month : month +] [+ year +]
+
 = Government
 
 President: [+ president +] ([+ president_party +])
@@ -186,6 +188,8 @@ if (Q.sa_strength) {
     Q.sa_strength_2 = Q.sa_strength.toFixed(1);
 }
 !}
+
+= [+ month : month +] [+ year +]
 
 = Government
 
@@ -303,6 +307,8 @@ if (Q.sa_strength) {
 }
 !}
 
+= [+ month : month +] [+ year +]
+
 = Government
 
 President: [+ president +] ([+ president_party +])
@@ -391,6 +397,68 @@ Unemployed: [+ uspd_name_short +]: [+ unemployed_uspd_display +]%, [? if sapd_fo
 Catholics: [+ uspd_name_short +]: [+ catholics_uspd_display +]%, [? if sapd_formed == 1 : SAPD: [+ catholics_sapd_display +]%, ?] [+ spd_name +]: [+ catholics_spd_display +]%, DDP: [+ catholics_ddp_display +]%, Z: [+ catholics_z_display +]%, DVP: [+ catholics_dvp_display +]%, DNVP: [+ catholics_dnvp_display +]%, [? if dne_formed : DNE: [+ catholics_dne_display +]%, ?] NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]%
 
 @states
+on-arrival: {!
+Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_votes_minus_bvp = Q.z_votes - 3;
+Q.pro_republic_disp = Math.round(Q.pro_republic);
+Q.nationalism_disp = Math.round(Q.nationalism);
+Q.socialism_disp = Math.round(Q.socialism);
+if (Q.rb_strength) {
+    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+}
+if (Q.rfb_strength) {
+    Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+}
+if (Q.sh_strength) {
+    Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+}
+if (Q.sa_strength) {
+    Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+}
+!}
+
+= [+ month : month +] [+ year +]
+
+= Government
+
+President: [+ president +] ([+ president_party +])
+
+[? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?]
+
+[? if president == "Hindenburg" : Presidential Relations: [+ hindenburg_relation : relationships +] ?]
+
+Chancellor: [+ chancellor +] ([+ chancellor_party +])
+
+Next election: [+ next_election_month : month +] [+ next_election_year +]
+
+= The [+ spd_name +] ([+ spd_ideology +])
+
+Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +]) 
+
+Seats: [+ spd_r +] | Polling: [+ spd_votes +] 
+
+SPD status: [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: [+ spd_name +] majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | [+ uspd_name +] coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?]  
+
+Internal dissent: [+ dissent_percent : dissent +] [? if communist_influence_seen : | [+ uspd_name +] influence: [+ uspd_influence : uspd_influence +] ?] 
+
+Left ([+ left_leader_fullname +]) | [+ left_strength : strength +]; Dissent: [+ left_dissent : dissent +]
+
+Center ([+ center_leader_fullname +]) | [+ center_strength : strength +]; Dissent: [+ center_dissent : dissent +]
+
+Labor ([+ labor_leader_fullname +]) | [+ labor_strength : strength +]; Dissent: [+ labor_dissent : dissent +]
+
+Reformists ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength +]; Dissent: [+ reformist_dissent : dissent +]
+
+[? if neorevisionism > 0 : 
+Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]    
+
+Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
+
+Resources available: [+ resources +][? if spd_in_government == 1 : | Budget: [+ budget +] ?]
+
+= Economics
+
+Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | [? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
 
 Add stuff later :)
 
