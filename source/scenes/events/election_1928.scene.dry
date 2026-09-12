@@ -481,6 +481,7 @@ go-to: spd_chancellor_menu
 
 @1924
 title: Good luck, Chancellor Marx...
+view-if: year == 1924 and weimar_coalition <= 49
 subtitle: He will need it...
 go-to: ebert_forms_a_government
 
