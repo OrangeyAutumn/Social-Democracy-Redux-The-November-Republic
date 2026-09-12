@@ -123,7 +123,7 @@ Associated Paramilitary: [? if reichsbanner_ddp == 0 : Reichsbanner | Strength: 
 
 = Z
 
-Leader: [+ z_leader_fullname +] ([+ z_ideology +]) | Relations: [+ z_relation : relationships +] 
+Leader: [+ z_party_leader_fullname +] ([+ z_ideology +]) | Relations: [+ z_relation : relationships +] 
 
 Seats: [+ z_minus_bvp_r +]% | Polling: [+ z_votes_minus_bvp +]%
 
