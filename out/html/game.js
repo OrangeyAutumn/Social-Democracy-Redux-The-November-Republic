@@ -205,9 +205,12 @@ var modifyUI = function(dendryUI) {
   };
 
   // TODO: have some code for tabbed sidebar browsing.
- window.updateSidebar = function() {
+  window.updateSidebar = function() {
        $('#qualities').empty();
        var scene = dendryUI.game.scenes[window.statusTab];
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+      $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
        if (!scene) {
            console.warn('updateSidebar: scene "' + window.statusTab + '" not found, falling back to "status"');
            window.statusTab = "status";
