@@ -28,11 +28,11 @@ We have entered [+ spd_presidential_candidate +] into the race. Now it is time t
 - @the_other_candidates: Let us look at the candidates we face.
 
 @the_other_candidates
-on-arrival: (z_presidential_candidate = "Wirth" and z_presidential_candidate_fullname = "Joseph Wirth" if chancellor == "Marx"); (z_presidential_candidate = "Marx" and z_presidential_candidate_fullname = "Wilhelm Marx" if chancellor != "Marx"); (dvp_presidential_candidate = "Stresemann" and dvp_presidential_candidate_fullname = "Gustav Stresemann" if chancellor == "Jarres" and grand_coalition == 1); (dvp_presidential_candidate = "Jarres" and dvp_presidential_candidate_fullname = "Karl Jarres" if chancellor != "Jarres");
+on-arrival: (z_presidential_candidate = "Wirth" and z_presidential_candidate_fullname = "Joseph Wirth" if chancellor == "Marx"); (z_presidential_candidate = "Marx" and z_presidential_candidate_fullname = "Wilhelm Marx" if chancellor != "Marx"); (dvp_presidential_candidate = "Stresemann" and dvp_presidential_candidate_fullname = "Gustav Stresemann" if chancellor == "Jarres" and grand_coalition == 1); (dvp_presidential_candidate = "Jarres" and dvp_presidential_candidate_fullname = "Karl Jarres" if chancellor != "Jarres" or chancellor == "Jarres" and grand_coalition == 0);
 
 The [+ uspd_name +] has entered into the race their leader Karl Liebknecht, while the DVP and DNVP run [+ dvp_presidential_candidate_fullname +] as the "Reichsblock" candidate. The Center Party has run [+ z_presidential_candidate_fullname +], while the BVP, unwilling to commit to any of the main candidates, has run Heinrich Held. The DDP is running Willy Hellpach and meanwhile, the recently reformed National Socialists are backing Ludendorff.
 
-- @spd_presidential_campaign1: Now, we must campaign.
+- @campaign_spd: Now, we must campaign.
 
 @campaign_spd
 on-arrival: spd_percent = 0.7
@@ -84,8 +84,9 @@ Q.ludendorff_votes = 0;
 Q.gessler_votes = 0;
 Q.hergt_votes = 0;
 Q.hindenburg_votes = 0;
+Q.majority_25 = 0;
 
-Q.presidents_25 = ['liebknecht', '[+ spd_presidential_candidate +]', 'hellpach', '[+ z_presidential_candidate +]', 'held', '[+ dvp_presidential_candidate +]', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
+Q.presidents_25 = ['liebknecht', 'Q.spd_presidential_candidate', 'hellpach', 'Q.z_presidential_candidate', 'held', 'Q.dvp_presidential_candidate', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
 
 // initial phase:
 if (Q.spd_campaign) {
@@ -273,7 +274,7 @@ on-arrival: former_president = "Hindenburg"; president = "Hindenburg"; president
 Disaster strikes! Despite our best effort, Paul von Hindenburg has won the election with the backing of all the reactionary right organized under the **Reichsblock** behind him. Many in our party anticipate an immediate restructuring of Germany along authoritarian and aristocratic lines and though he seems, for now, to be following the constitution, we must be wary. Regardless, this signals a dark turn for German democracy. Who knows what Hindenburg may do in power?
 
 @z_wins
-on-arrival: (if z_presidential_candidate == "Marx", former_president = "Marx"; president = "Marx"); (if z_presidential_candidate == "Wirth", former_president = "Wirth"; president = "Wirth"); president_party = "Z"; z_relation += 10; pro_republic += 5; nationalism -= 5; z_relation += 5; ddp_relation += 5; reformist_strength += 5; dvp_campaign = 0; z_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; spd_campaign = 0; z_support_spd = 0; ddp_support_spd = 0; bvp_support_hindenburg = 0
+on-arrival: (if z_presidential_candidate == "Marx", former_president = "Marx"; president = "Marx"); (if z_presidential_candidate == "Wirth", former_president = "Wirth"; president = "Wirth"); president_party = "Z"; z_relation += 10; pro_republic += 5; nationalism -= 5; ddp_relation += 5; reformist_strength += 5; dvp_campaign = 0; z_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; spd_campaign = 0; z_support_spd = 0; ddp_support_spd = 0; bvp_support_hindenburg = 0
 
 [+ z_presidential_candidate_fullname +] has won the election with the backing of all the republican left organized under the **Volksblock** behind him. This is a victory for German democracy and the continued normalization of the republic.
 
