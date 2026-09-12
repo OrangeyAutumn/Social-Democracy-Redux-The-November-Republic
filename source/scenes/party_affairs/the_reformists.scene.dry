@@ -2,7 +2,7 @@ title: The Reformists
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: reformist_timer <= 0
+view-if: never
 on-arrival: month_activities += 1; reformist_timer += 6
 card-image: img/portraits/BraunOtto.jpg
 
