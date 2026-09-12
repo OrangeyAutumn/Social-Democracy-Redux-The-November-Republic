@@ -87,10 +87,10 @@ Q.nationalization_adopted = 0;
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
 // weimar plan
-Q.weimar_rejected = 0
-Q.weimar_plan_adopted = 0
-Q.weimar_support = 0
-Q.weimar_willingness = 0
+Q.weimar_rejected = 0;
+Q.weimar_plan_adopted = 0;
+Q.weimar_support = 0;
+Q.weimar_willingness = 0;
 
 // organizations
 
