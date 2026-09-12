@@ -110,14 +110,14 @@ Q.uspd_party_leader = "Liebknecht";
 Q.uspd_leader_fullname = "Karl Liebknecht";
 Q.spd_coleader_1 = "Crispien";
 Q.spd_coleader_1_fullname = "Arthur Crispien";
-Q.spd_coleader_1_faction == "Left";
+Q.spd_coleader_1_faction = "Left";
 // Hans Vogel after Muller's death
 Q.spd_coleader_2 = "Vogel";
 Q.spd_coleader_2_fullname = "Hans Vogel";
-Q.spd_coleader_2_faction == "Center";
+Q.spd_coleader_2_faction = "Center";
 Q.spd_coleader_3 = "Wels";
 Q.spd_coleader_3_fullname = "Otto Wels";
-Q.spd_coleader_3_faction == "Center";
+Q.spd_coleader_3_faction = "Center";
 // Erich Koch-Weser — 1924–1930
 Q.ddp_leader = "Koch-Weser"
 Q.ddp_leader_fullname = "Erich Koch-Weser"
@@ -445,8 +445,8 @@ Q.minority_government = 0;
 // is the agricultural ministry useful at all?
 Q.vice_chancellor = 'Dietrich'
 Q.vice_chancellor_party = Q.ddp_name;
-Q.foreign_minister = Brüning';
-Q.foreign_minister_party = 'Z;
+Q.foreign_minister = 'Brüning';
+Q.foreign_minister_party = 'Z';
 Q.interior_minister = 'Groener';
 Q.interior_minister_party = 'I';
 Q.justice_minister = 'Joël‘;
@@ -638,12 +638,12 @@ Q.seydewitz_advisor = 0; // Max Seydewitz
 
 // centrist advisors
 Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
+Q.muller_advisor = 0; // Hermann Müller
+Q.muller_dead = 1;
 Q.pfulf_advisor = 0; // Antonie Pfülf
 Q.breitscheid_advisor = 0; // Rudolf Breitscheid
-Q.vogel_advisor = 0; // Hans Vogel
-Q.hilferding_advisor = 0 // Rudolf Hilferding
+Q.vogel_advisor = 1; // Hans Vogel
+Q.hilferding_advisor = 0; // Rudolf Hilferding
 
 // Reformist advisors
 Q.severing_advisor = 0; // Carl Severing
@@ -809,7 +809,7 @@ Q.in_schaumburg_lippe_nsdap = 0;
 Q.schaumburg_lippe_election_year = 1931;
 Q.schaumburg_lippe_election_month = 5;
 // Waldeck
-Q.waldeck_exists = 0
+Q.waldeck_exists = 0;
 Q.waldeck_minister_president = "Wilhelm Schmiedling (DVP)"
 Q.in_waldeck_spd = 0;
 Q.in_waldeck_uspd = 0;
