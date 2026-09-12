@@ -2,6 +2,8 @@ title: Status
 new-page: true
 is-special: true
 on-arrival: {!
+Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_votes_minus_bvp = Q.z_votes - 3;
 if (Q.unemployed) {
     Q.unemployed_2 = Q.unemployed.toFixed(1);
 }
@@ -14,69 +16,24 @@ if (Q.economic_growth) {
 }
 !}
 
-@main
-on-arrival: {!
-Q.z_minus_bvp_r = Q.z_r - 3;
-Q.z_votes_minus_bvp = Q.z_votes - 3;
-!}
+= The [+ spd_name +] ([+ spd_ideology +])
 
-= Status
+Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +]) 
 
-Resources available: [+ resources +]
+Seats: [+ spd_r +] | Polling: [+ spd_votes +] 
 
-[+ spd_name +] position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: [+ spd_name +] majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+Left ([+ left_leader_fullname +]) | [+ left_strength : strength +]; Dissent: [+ left_dissent : dissent +]
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+Center ([+ center_leader_fullname +]) | [+ center_strength : strength +]; Dissent: [+ center_dissent : dissent +]
 
-[? if spd_in_government and (in_left_front or in_popular_front): [+ uspd_name +] coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?]
+Labor ([+ labor_leader_fullname +]) | [+ labor_strength : strength +]; Dissent: [+ labor_dissent : dissent +]
 
-Internal dissent: [+ dissent_percent : dissent +]
+Reformists ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength +]; Dissent: [+ reformist_dissent : dissent +]
 
-[? if communist_influence_seen : [+ uspd_name +] influence: [+ uspd_influence : uspd_influence +] ?]
+[? if neorevisionism > 0 : 
+Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]    
 
-= Government
-
-President: [+ president +]
-
-[? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?]
-
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
-
-Reichstag composition:
-
-# 1928: 30, 1930: 25, 1932: 22
-[+ spd_name +]: [+ spd_r +]%
-[? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?]
-# 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]%
-# 1928: 10, 1930: 13
-[+ uspd_name_short +]: [+ uspd_r +]%
-# 1928: 5, 1930: 4 (as DstP)
-DDP: [+ ddp_r +]%
-# 1928: 9, 1930: 5
-DVP: [+ dvp_r +]%
-# 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]%
-# 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]%
-# 1928: 9, 1930: 10
-Others: [+ other_r +]%
-
-[? if spd_in_government == 1 : Budget: [+ budget +] ?]
-
-Next election: [+ next_election_month : month +] [+ next_election_year +]
-
-= Economics
-
-Inflation: [+ inflation_2 +]%
-
-[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
-
-Economic growth: [+ economic_growth_2 +]%
-
-
-# = Public Opinion
+Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
 
 @government
 on-arrival: {!
@@ -98,9 +55,11 @@ if (Q.sa_strength) {
 
 = Reichstag composition:
 
-[+ uspd_name_short +]: [+ uspd_r +]% | [? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?] | Z: [+ z_minus_bvp_r +]% | BVP: 3% | [+ spd_name +]: [+ spd_r +]% | DDP: [+ ddp_r +]% | DVP: [+ dvp_r +]% | DNVP: [+ dnvp_r +]% | NSDAP: [+ nsdap_r +]% | Others: [+ other_r +]%
+[+ uspd_name_short +]: [+ uspd_r +]% | [? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?] | [+ spd_name +]: [+ spd_r +]% | DDP: [+ ddp_r +]% | Z: [+ z_minus_bvp_r +]% | BVP: 3% | DVP: [+ dvp_r +]% | DNVP: [+ dnvp_r +]% | NSDAP: [+ nsdap_r +]% | Others: [+ other_r +]%
 
-= Cabinet
+= Cabinet ([+ chancellor +] [+ cabinet_number +])
+
+Chancellor: [+ chancellor +] ([+ chancellor_party +]
 
 Vice-Chancellor: [+ vice_chancellor +] ([+ vice_chancellor_party +])
 
@@ -120,7 +79,7 @@ Finance Minister: [+ finance_minister +] ([+ finance_minister_party +])
 
 Agriculture Minister: [+ agriculture_minister +] ([+ agriculture_minister_party +])
 
-= Official military/paramilitaries
+= Military Forces
 
 Reichswehr: [+ reichswehr_strength +] thousand troops ([+ army_force +]%) | Loyalty: [+ reichswehr_loyalty : loyalty +]
 
@@ -148,19 +107,15 @@ if (Q.sa_strength) {
 
 = [+ uspd_name +] 
 
-Leader: [+ uspd_leader_fullname +] ([+ uspd_ideology +])
+Leader: [+ uspd_leader_fullname +] ([+ uspd_ideology +]) | Relations: [+ uspd_relation : relationships +] 
 
 Seats: [+ uspd_r +]% | Polling: [+ uspd_votes +]%
-
-Relations: [+ uspd_relation : relationships +] 
 
 Associated Paramilitary: RFB | Strength: [+ rfb_strength_2 +] thousand ([+ rfb_force +]%) | Militarization: [+ rfb_militancy : militancy +]
 
 = [+ ddp_name +] 
 
-Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +])
-
-Seats: [+ ddp_r +]% | Polling: [+ ddp_votes +]%
+Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +]) | Seats: [+ ddp_r +]% | Polling: [+ ddp_votes +]%
 
 Relations: [+ ddp_relation : relationships +] 
 
@@ -168,49 +123,39 @@ Associated Paramilitary: [? if reichsbanner_ddp == 0 : Reichsbanner | Strength: 
 
 = Z
 
-Leader: [+ z_leader_fullname +] ([+ z_ideology +])
+Leader: [+ z_leader_fullname +] ([+ z_ideology +]) | Relations: [+ z_relation : relationships +] 
 
 Seats: [+ z_minus_bvp_r +]% | Polling: [+ z_votes_minus_bvp +]%
-
-Relations: [+ z_relation : relationships +] 
 
 Associated Paramilitary: [? if reichsbanner_z == 0 : Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?][? if reichsbanner_z == 1 : None ?]
 
 = [+ bvp_name +] 
 
-Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +])
+Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +]) | Relations: [+ bvp_relation : relationships +] 
 
 Seats: 3% | Polling: 3%
-
-Relations: [+ bvp_relation : relationships +] 
 
 Associated Paramilitary: Bayenwacht
 
 = DVP 
 
-Leader: [+ dvp_leader_fullname +] ([+ dvp_ideology +])
+Leader: [+ dvp_leader_fullname +] ([+ dvp_ideology +]) | Relations: [+ dvp_relation : relationships +]
 
 Seats: [+ dvp_r +]% | Polling: [+ dvp_votes +]%
 
-Relations: [+ dvp_relation : relationships +]; 
-
 = DNVP 
 
-Leader: [+ dnvp_leader_fullname +] ([+ dnvp_ideology +])
+Leader: [+ dnvp_leader_fullname +] ([+ dnvp_ideology +]) | Relations: [+ dnvp_relation : relationships +] 
 
 Seats: [+ dnvp_r +]% | Polling: [+ dnvp_votes +]%
-
-Relations: [+ dnvp_relation : relationships +]; 
 
 Associated Paramilitary: Stahlhelm | Strength: [+ sh_strength_2 +] thousand ([+ sh_force +]%) | Militarization: [+ sh_militancy : militancy +]
 
 = NSDAP 
 
-Leader: [+ nsdap_leader_fullname +] ([+ nsdap_ideology +])
+Leader: [+ nsdap_leader_fullname +] ([+ nsdap_ideology +]) | Relations: Hostile
 
 Seats: [+ nsdap_r +]% | Polling: [+ nsdap_votes +]%
-
-Relations: Hostile
 
 Associated Paramilitary: SA | Strength: [+ sa_strength_2 +] thousand ([+ sa_force +]%) | Militarization: [+ sa_militancy : militancy +]
 
@@ -235,7 +180,8 @@ if (Q.sa_strength) {
 }
 !}
 
-**Detailed results for each demographic**
+
+= **Detailed results for each demographic**
 
 Support for the Republic: [+ pro_republic_disp +]%
 
