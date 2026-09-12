@@ -72,14 +72,65 @@ The SA have won this show of strength.
 Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
 
 - @class_struggle: The class struggle of the proletariat against the bourgeoisie.
+- @class_struggle_uspd: Rally with the USPD, on the class struggle of the proletariat against the bourgeoisie.
 - @welfare: Sozialpolitik - the maintenance and expansion of social welfare programs.
+- @welfare_ddp: Rally with the [+ ddp_name +], on the maintenance and expansion of social welfare programs.
 - @democracy: Expanding our nascent democracy and defending it against dictatorship and fascism.
+- @democracy_weimar: Rally with the [+ ddp_name +] and Z, on expanding our nascent democracy and defending it against dictatorship and fascism.
 - @pacifism: Opposing war, nationalism, and militarism at all costs.
+- @pacifism_uspd: Rally with the USPD, on opposing war, nationalism, and militarism at all costs.
 - @wtb: Support the WTB plan!
+- @wtb_uspd: Rally with the USPD, to support the WTB plan!
 - @weimar_1: A joint rally by the Weimar parties on behalf of our economic plan, tauting it as a republican compromise.
 - @weimar_2: A joint rally by the Weimar parties on behalf of our economic plan, tauting it as a republican compromise.
 - @local: A mixture of various local and national concerns that resonate most with the audience.
 - @easy_discard
+
+@class_struggle_uspd
+choose-if: uspd_relation >= 45
+unavailable-subtitle: Our relations with the USPD are not good enough.
+on-arrival: workers_spd += 3*(1-dissent); unemployed_spd += 2*(1-dissent); workers_uspd += 1*(1-dissent); unemployed_uspd += 2*(1-dissent); left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2 if not new_middle_conscious; socialism += 2*(1-dissent); uspd_relations += 5
+
+Rallying alongside the USPD, our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+
+@welfare_ddp
+choose-if: ddp_relation >= 45
+unavailable-subtitle: Our relations with the [+ ddp_name +] are not good enough.
+on-arrival: workers_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent); workers_ddp += 1*(1-dissent); unemployed_ddp += 2*(1-dissent); reformist_dissent -= 3; labor_dissent -= 3; ddp_relation += 5
+
+Rallying alongside the [+ ddp_name +], the reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
+
+@democracy_weimar
+choose-if: ddp_relation >= 45 and z_relation >= 45
+unavailable-subtitle: [? if ddp_relation <= 44 : Our relations with the [+ ddp_name +] are not good enough. ?][? if z_relation <= 44 : Our relations with the Zentrum are not good enough. ?]
+go-to: democracy_high if democratization >= 3; democracy_low if democratization < 3
+
+@democracy_weimar_low
+on-arrival: workers_spd += 2*(1 - dissent); workers_z += 1*(1 - dissent); workers_ddp += 2*(1 - dissent); new_middle_spd += 1*(1 - dissent); new_middle_ddp += 2*(1 - dissent); new_middle_z += 1*(1 - dissent); catholics_spd += 1*(1 - dissent); catholics_ddp += 1*(1 - dissent); catholics_z += 2*(1 - dissent); relation_ddp += 3; relation_z += 3
+
+Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat.
+
+@democracy_weimar_high
+on-arrival: workers_spd += 3*(1 - dissent); workers_z += 2*(1 - dissent); workers_ddp += 2*(1 - dissent); new_middle_spd += 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent); new_middle_z += 2*(1 - dissent); catholics_spd += 2*(1 - dissent); catholics_ddp += 2*(1 - dissent); catholics_z += 3*(1 - dissent); relation_ddp += 3; relation_z += 3
+
+Rallying alongside the [+ ddp_name +] and Zentrum, our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
+
+[? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]
+
+@pacifism_uspd
+view-if: uspd_relation >= 55
+on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_spd += 4*(1 - dissent) if pacifism >= 3; unemployed_spd += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_spd += 4*(1-dissent) if pacifism >= 3
+
+Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
+
+[? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military. ?]
+[? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
+
+@wtb_uspd
+view-if: uspd_relation >= 45 and wtb_adopted = 1 and return_to_normalcy = 0
+on-arrival: wtb_support += 1; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); rural_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent);
+
+The WTB plan has become a popular rallying cry for our party. The workers are eager to go back to work, and that is exactly what the plan promises.
 
 @class_struggle
 on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2 if not new_middle_conscious; socialism += 2*(1-dissent)
