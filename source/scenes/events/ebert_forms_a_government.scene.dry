@@ -130,7 +130,7 @@ go-to: election_1928.ministries
 
 The DVP agree and a new Grand Coalition is formed under Jarres.
 
-@jarres_grand
+@jarres_transitional
 on-arrival: chancellor = "Jarres"; chancellor_party = "DVP";
 
 We appoint Karl Jarres as a transitional Chancellor, though there is no telling how long he will be in post for…
