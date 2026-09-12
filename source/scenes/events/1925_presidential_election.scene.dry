@@ -684,8 +684,6 @@ We try to convince the DVP to at least abstain, but our efforts are a failure an
 -	@presidential_candidate_leber
 -	@presidential_candidate_noske
 
-// Left Candidate
-
 @presidential_candidate_left_incumbent
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
