@@ -4,7 +4,7 @@ is-card: true
 view-if: weimar_plan_timer <= 0 and moderate_plan_adopted == 1 and weimar_rejected != 1 and weimar_plan_adopted != 1 and weimar_willingness == 1
 on-arrival: weimar_plan_timer = 3; month_actions += 1
 card-image: img/iron_front.png
-tags: inter_party_affairs; antifascism
+tags: reichstag; antifascism
 
 = The Weimar Plan
 
