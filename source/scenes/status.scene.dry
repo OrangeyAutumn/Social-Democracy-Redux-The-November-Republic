@@ -252,7 +252,7 @@ Associated Paramilitary: [? if reichsbanner_ddp == 0 : Reichsbanner | Strength: 
 
 = [+ z_name +] ([+ z_leader_fullname +] | Ideology: [+ z_ideology +])
 
-Seats: [+ Q.z_minus_bvp_r +] | Polling: [+ Q.z_votes_minus_bvp +]
+Seats: [+ z_minus_bvp_r +] | Polling: [+ z_votes_minus_bvp +]
 
 Relations: [+ z_relation : relationships +] 
 
