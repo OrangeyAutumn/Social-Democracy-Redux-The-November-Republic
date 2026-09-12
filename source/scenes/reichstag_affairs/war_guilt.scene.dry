@@ -1,7 +1,7 @@
 title: War Guilt Inquiry
 new-page: true
 is-card: true
-tags: govt_affairs
+tags: reichstaf
 on-arrival: war_guilt_timer = 6; month_actions += 1
 view-if: spd_in_government = 1 and war_guilt_timer = 0 and not war_guilt
 card-image: img/reichstag_1.jpg
