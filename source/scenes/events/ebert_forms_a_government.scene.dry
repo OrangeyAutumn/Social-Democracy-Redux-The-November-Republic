@@ -5,93 +5,135 @@ tags: event
 view-if: year = 1925 and month >= 1 and weimar_coalition = 0
 max-visits: 1
 
-= President Ebert must appoint a new government!
+= President Ebert must appoint a new Chancellor!
 
-The December 1924 elections produced a divided Reichstag and the current Chancellor, Wilhelm Marx, has thus far proved unable to find a majority. We must decide which course to take to restore a stable government.
+The December 1924 elections produced a divided Reichstag and the current Chancellor, Wilhelm Marx, has thus far proved unable to find a majority. While whatever government forms must be acceptable to a majority in the Reichstag, the President’s role in appointing the Chancellor gives us sway should we choose to use it.
 
 - @appointment_menu: Let us begin.
 
 @appointment_menu
 
-- @luther: Hans Luther (I), in a five-party coalition (This is the historical option.)
-- @marx: Refuse to dismiss Marx (Z), the current Chancellor
-- @alternative: Let us attempt to find an alternative Chancellor.
+Chancellor Marx has offered his resignation as Chancellor following his failure to bring together a governing coalition.
 
-@luther
+Will we accept his resignation?
+
+- @resignation_yes: Yes, we will accept his resignation – This is the Historical Option.
+- @resignation_no: No, he must stay on.
+
+@resignation_no
+
+We have refused Marx’s resignation, however this brings us no closer to an actual governing coalition.
+
+What form of government should we recommend he pursue?
+
+- @Marx_Right: A Right Coalition including the DNVP?
+- @Marx_Grand: A Grand Coalition including the SPD?
+- @Marx_Minority: A Minority Bourgeois Coalition, with SPD toleration?
+
+@Marx_Right
+choose-if: never
+unavailable-subtitle: The DNVP prefers other candidates for Chancellor.
+
+@Marx_Grand
+choose-if: never
+unavailable-subtitle: The DVP is unwilling.
+
+@Marx_Minority
+choose-if: grand_coalition >= 50
+unavailable-subtitle: Somehow, even this arrangement does not have enough votes.
+subtitle: A minority government is undesirable, but perhaps necessary.
+
+Marx has agreed to pursue this course of action, but many within our own party fail to see the benefit of any such arrangement. 
+
+- @koch_weser: Appoint Koch Weser (DDP) instead as a more acceptable candidate 
+- @article_48
+- @marx_still: Stick with Marx and offer concessions 
+
+@koch_weser
+on-arrival: spd_toleration = 1; chancellor = "Koch-Weser"; chancellor_party = "DDP"
+
+@marx_still
+on-arrival: spd_toleration = 1; welfare += 1;
+
+In return for concessions on Welfare, the SPD finally agrees and a minority coalition is formed under Wilhelm Marx.
+
+@resignation_yes
+The Bourgeois parties have reached an agreement with the right-wing DNVP to form a coalition under the independent Hans Luther. For any such agreement to go through, we must agree to appoint Luther, however. Will we?
+
+- @luther_yes: Yes, we will. - This is the historical option 
+- @luther_no: No, we will not permit a government containing reactionaries and anti-republicans!
+
+@luther_no 
+on-arrival: dvp_relation -= 10; dnvp_relation -= 10 ; z_relation -= 5
+
+We have refused to appoint Luther, to the anger of the right-wing parties. Our refusal brings us no closer to forming a government, however.
+
+Will we take matters into our own hands and appoint a Chancellor ourselves?
+
+- @appoint_yes: Yes, we must take matters into our own hands.
+- @deadlock: No, we will only appoint a transitional Chancellor
+
+@appoint_yes 
+
+The DVP are reluctant about any grand coalition, but perhaps they will change their tune if offered the Chancellorship.
+
+- @jarres_grand: Appoint Karl Jarres, the Vice-Chancellor (DVP)?
+- @stresemann_grand: Appoint former Chancellor Gustav Stresemann (DVP)?
+- @minority_government Could a minority government work?
+
+@minority_government
+
+- @reappoint_marx: Re-appoint Marx (Z)
+- @koch_weser: Appoint Erich Koch-Weser (DDP)
+- @coo: Let us consider our options
+
+@coo
+-> luther_yes: Appoint Luther (I) after all.
+- @reappoint_marx: Reappoint Marx (Z)
+- @jarres_grand: Appoint Jarres (DVP)
+- @stresemann_grand: Appoint Stresemann (DVP)
+- @koch_weser: Appoint Koch-Weser (DDP)
+- @deadlock: Let us appoint a transitional chancellor
+
+@reappoint_marx
+
+We have reappointed Marx, however this brings us no closer to an actual governing coalition.
+
+What form of government should we recommend he pursue?
+
+- @Marx_Right: A Right Coalition including the DNVP?
+- @Marx_Grand: A Grand Coalition including the SPD?
+- @Marx_Minority: A Minority Bourgeois Coalition, with SPD toleration?
+
+@deadlock
+
+- @transitional_jarres: Jarres, the Vice-Chancellor, is a logical option for transitional Chancellor.
+- @transitional_gessler: Gessler, the Reichswehr Minister, is respected – though controversial within our own party.
+- @coo: Let us reconsider our options
+
+@luther_yes
 on-arrival: chancellor = "Luther"; chancellor_party = "I"; right_coalition = 1; dnvp_in_government = 1; foreign_minister = "Stresemann"; foreign_minister_party = "DVP"; interior_minister = "Schiele"; interior_minister_party = "DNVP"; justice_minister = "Frenken"; justice_minister_party = "Z"; labor_minister = "Brauns"; labor_minister_party = "Z"; reichswehr_minister = "Gessler"; reichswehr_minister_party = "DDP"; economic_minister = "Neuhaus"; economic_minister_party = "DNVP"; finance_minister = "Schlieben"; finance_minister_party = "DNVP"; agriculture_minister = "von Kanitz"; agriculture_minister_party = "I";
 
-We agree to appoint Hans Luther as Chancellor, even though it means the reactionary DNVP entering government. Our Left Wing are outraged by this action.
+We agree to appoint Hans Luther as Chancellor, even though it means the reactionary DNVP entering government. Our Left Wing are angered by this action.
 
-@marx
-
-Our refusal is all well and good but Marx has been unable to form a viable coalition for the past month. We must find a viable pathway forward.
-
-- @grand_coalition: Pressure Marx to form a Grand Coalition including the SPD.
-- @toleration: Provide SPD votes to prop up a minority Bourgeois coalition.
-- @article_48: Invoke Article 48 and rule by decree
-- @appointment_menu: Let Marx’s government fall and consider an alternative chancellor.
-- @let_it_fall_new_elections: Let Marx’s government fall and fresh elections be held.
-
-@grand_coalition
-
-Despite our pressure, the DVP is reluctant to enter a grand coalition. How will we overcome their objections?
-
-- @stresemann: DVP leader Gustav Stresemann led a Grand Coalition as Chancellor before – perhaps he will again?
-- @bluff: Threaten to call snap elections if the current Reichstag cannot form a stable government.
-- @bluff2: Threaten to invoke Article 48 and rule by decree.
-- @appointment_menu: This isn’t working. Let Marx’s government fall and consider an alternative Chancellor.
-
-@toleration
-
-Despite our pressure, the SPD is reluctant to enter into such an arrangement. How will we overcome their objections?
-
-- @bluff3: Threaten to call snap elections if the current Reichstag cannot form a stable government.
-- @bluff4: Threaten to invoke Article 48 and rule by decree.
-- @concessions2: Offer concessions to the SPD.
-- @gessler: Suggest Otto Gessler of the DDP as a more acceptable choice for Chancellor
-- @grand_coalition: Offer a Grand Coalition instead.
-- @appointment_menu: This isn’t working. Let Marx’s government fall and consider an alternative Chancellor.
-
-@article_48
-choose-if: never
-unavailable-subtitle: President Ebert is unwilling to take such action until all other paths fail.
-
-@let_it_fall_new_elections
-choose-if: never
-unavailable-subtitle: President Ebert is unwilling to call fresh elections so soon after the last ones.
-
-@stresemann
+@stresemann_grand
 on-arrival: chancellor = "Stresemann"; chancellor_party = "DVP"; spd_in_government = 1; in_grand_coalition = 1; leverage = spd_r
 go-to: election_1928.ministries
 
 The DVP agree and a new Grand Coalition is formed under Stresemann.
 
-@bluff
-choose-if: never
-unavailable-subtitle: The DVP know that President Ebert is unwilling to call fresh elections so soon after the last ones. The DVP are not interested in a coalition with the SPD.
+@jarres_grand
+on-arrival: chancellor = "Jarres"; chancellor_party = "DVP"; spd_in_government = 1; in_grand_coalition = 1; leverage = spd_r
+go-to: election_1928.ministries
 
-@bluff2
-choose-if: never
-unavailable-subtitle: The DVP are not interested in a coalition with the SPD.
+The DVP agree and a new Grand Coalition is formed under Jarres.
 
-@bluff3
-choose-if: never
-unavailable-subtitle: The SPD have little to lose from fresh elections.
+@jarres_grand
+on-arrival: chancellor = "Jarres"; chancellor_party = "DVP";
 
-@bluff4
-choose-if: never
-unavailable-subtitle: The SPD finds this no worse than toleration.
+We appoint Karl Jarres as a transitional Chancellor, though there is no telling how long he will be in post for…
 
-@alternative
-go-to: election_1928.coalition_menu
+@transitional_gessler
+on-arrival: chancellor = "Gessler"; chancellor_party = "DDP"; foreign_minister = "Stresemann"; foreign_minister_party = "DVP"; interior_minister = "Külz"; interior_minister_party = "DDP"; justice_minister = "Marx"; justice_minister_party = "Z"; labor_minister = "Brauns"; labor_minister_party = "Z"; reichswehr_minister = "Gessler"; reichswehr_minister_party = "DDP"; economic_minister = "Curtius"; economic_minister_party = "DVP"; finance_minister = "Luther"; finance_minister_party = "I"; agriculture_minister = "Haslinde"; agriculture_minister_party = "Z"
 
-@concessions2
-on-arrival: spd_toleration = 1 
-
-The SPD finally agrees and a minority coalition is formed under Wilhelm Marx.
-
-@gessler
-on-arrival: chancellor = "Gessler"; chancellor_party = "DDP"; spd_toleration = 1; foreign_minister = "Stresemann"; foreign_minister_party = "DVP"; interior_minister = "Külz"; interior_minister_party = "DDP"; justice_minister = "Marx"; justice_minister_party = "Z"; labor_minister = "Brauns"; labor_minister_party = "Z"; reichswehr_minister = "Gessler"; reichswehr_minister_party = "DDP"; economic_minister = "Curtius"; economic_minister_party = "DVP"; finance_minister = "Luther"; finance_minister_party = "I"; agriculture_minister = "Haslinde"; agriculture_minister_party = "Z"
-
-The SPD finally agrees and a minority coalition is formed under Otto Gessler.
-
+We appoint Otto Gessler as a transitional Chancellor, though there is no telling how long he will be in post for…
