@@ -10,7 +10,7 @@ audio: music/opening_score.mp3
 set-bg: img/reichstag_2.jpg
 go-to: start_menu_2
 
-= Social Democracy Redux: Red November (An Alternate History)
+= Social Democracy Redux: The November Republic (An Alternate History)
 
 <img src="img/reichstag_2.jpg" alt="The Reichstag building">
 
@@ -26,7 +26,7 @@ go-to: start_menu_2
 @start
 new-page: true
 
-= Social Democracy Redux: Red November (An Alternate History)
+= Social Democracy Redux: The November Republic (An Alternate History)
 
 > *"It is difficult for those who have not experienced the 'Age of Catastrophe' of the twentieth century in central Europe to see what it meant to live in a world that was simply not expected to last, in something that could not really even be described as a world, but merely as a provisional way-station between a dead past and a future not yet born, unless perhaps in the depth of revolutionary Russia. Nowhere was this more palpable than in the dying days of the Weimar Republic."*
 
@@ -41,8 +41,8 @@ For more information on the politics and government of the German Republic, see 
 Please select your desired start date.
 
 - @1924_start: November 1924: The Death of Ebert - Recommended
-- @1928_start: 1928: The Age of Catastrophe
-- @1931_start: 1931: In This Historic Hour
+- @1928_start: January 1928: The Age of Catastrophe
+- @1931_start: November 1931: In This Historic Hour
 - @settings: Settings.
 
 @1924_start
@@ -109,12 +109,10 @@ Please select your desired difficulty to begin.
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
 - @1928_historical: Begin (historical mode)
-- @1928_althist: Select Alternate 1928 Scenarios
 - @1931_easy: Begin (easy difficulty)
 - @1931_main: Begin (normal difficulty)
 - @1931_hard: Begin (hard difficulty)
 - @1931_historical: Begin (historical mode)
-- @1931_althist: Select Alternate 1931 Scenarios
 - @settings: Modify game.
 - @start: Go Back.
 
@@ -222,6 +220,9 @@ For other, non-difficulty related tweaks.
 - @disable_end: Disable end in 1934.
 - @enable_sandbox: Enable sandbox
 - @disable_sandbox: Disable sandbox
+- @1924_althist: Select Alternate 1924 Scenarios
+- @1928_althist: Select Alternate 1928 Scenarios
+- @1931_althist: Select Alternate 1931 Scenarios
 - @start_menu_2: Back.
 - @menu: Proceed to Game.
 
