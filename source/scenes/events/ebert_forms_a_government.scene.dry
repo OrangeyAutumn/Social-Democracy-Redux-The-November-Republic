@@ -58,6 +58,7 @@ on-arrival: spd_toleration = 1; welfare += 1;
 In return for concessions on Welfare, the SPD finally agrees and a minority coalition is formed under Wilhelm Marx.
 
 @resignation_yes
+
 The Bourgeois parties have reached an agreement with the right-wing DNVP to form a coalition under the independent Hans Luther. For any such agreement to go through, we must agree to appoint Luther, however. Will we?
 
 - @luther_yes: Yes, we will. - This is the historical option 
