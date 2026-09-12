@@ -48,7 +48,7 @@ Please select your desired start date.
 @1924_start
 set-bg: img/hindenburg_election.jpg
 new-page: true
-go-to: 1925_root
+go-to: 1924_root
 
 = November 1924: The Death of Ebert
 
