@@ -1,7 +1,7 @@
 title: Relations with Hindenburg
 new-page: true
 is-card: true
-tags: inter_party_affairs
+tags: reichstag
 view-if: hindenburg_timer >= 0 and president == "Hindenburg"
 on-arrival: month_actions += 1; hindenburg_timer = 4;
 card-image: img/portraits/Hindenburg.jpg
