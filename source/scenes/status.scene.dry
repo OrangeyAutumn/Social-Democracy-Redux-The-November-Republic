@@ -127,9 +127,9 @@ Reformists ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength 
 [? if neorevisionism > 0 : 
 Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]    
 
-Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy
+Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
 
-Resources available: [+ resources +][? if spd_in_government = 1 : | Budget: [+ budget +] ?]
+Resources available: [+ resources +][? if spd_in_government == 1 : | Budget: [+ budget +] ?]
 
 = Economics
 
@@ -137,11 +137,11 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | [? i
 
 = Reichstag composition:
 
-[+ uspd_name_short +]: [+ uspd_r +]% | [? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?] | Z: [+ z_r – 3 +]% | BVP: 3% | [+ spd_name +]: [+ spd_r +]% | DDP: [+ ddp_r +]% | DVP: [+ dvp_r +]% | DNVP: [+ dnvp_r +]% | NSDAP: [+ nsdap_r +]% | Others: [+ other_r +]%
+[+ uspd_name_short +]: [+ uspd_r +]% | [? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?] | Z: [+ z_r - 3 +]% | BVP: 3% | [+ spd_name +]: [+ spd_r +]% | DDP: [+ ddp_r +]% | DVP: [+ dvp_r +]% | DNVP: [+ dnvp_r +]% | NSDAP: [+ nsdap_r +]% | Others: [+ other_r +]%
 
 = Cabinet
 
-Vice-Chancellor: [+ vice_chancellor_ +] ([+ vice_chancellor__party +])
+Vice-Chancellor: [+ vice_chancellor +] ([+ vice_chancellor_party +])
 
 Foreign Minister: [+ foreign_minister +] ([+ foreign_minister_party +]) 
 
@@ -218,9 +218,9 @@ Reformists ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength 
 [? if neorevisionism > 0 : 
 Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]    
 
-Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy
+Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
 
-Resources available: [+ resources +][? if spd_in_government = 1 : | Budget: [+ budget +] ?]
+Resources available: [+ resources +][? if spd_in_government == 1 : | Budget: [+ budget +] ?]
 
 = Economics
 
@@ -324,7 +324,7 @@ Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_stren
 
 Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy
 
-Resources available: [+ resources +][? if spd_in_government = 1 : | Budget: [+ budget +] ?]
+Resources available: [+ resources +][? if spd_in_government == 1 : | Budget: [+ budget +] ?]
 
 = Economics
 
@@ -360,7 +360,7 @@ DNVP: Workers: [+ workers_dnvp_display +]% | New Middle Class: [+ new_middle_dnv
 
 NSDAP: Workers: [+ workers_nsdap_display +]% | New Middle Class: [+ new_middle_nsdap_display +]% | Old Middle Class: [+ old_middle_nsdap_display +]% | Rural: [+ rural_nsdap_display +]% | Unemployed: [+ unemployed_nsdap_display +]% | Catholics: [+ catholics_nsdap_display +]% | Overall: [+ nsdap_votes +]%
 
-Others: Workers: [+ workers_others_display +]% | New Middle Class: [+ new_middle_others_display +]% | Old Middle Class: [+ old_middle_others_display +]% | Rural: [+ rural_others_display +]% | Unemployed: [+ unemployed_others_display +]% | Catholics: [+ catholics_others_display +]% | Overall: [+ others_votes +]%
+Others: Workers: [+ workers_other_display +]% | New Middle Class: [+ new_middle_other_display +]% | Old Middle Class: [+ old_middle_other_display +]% | Rural: [+ rural_other_display +]% | Unemployed: [+ unemployed_other_display +]% | Catholics: [+ catholics_other_display +]% | Overall: [+ others_votes +]%
 
 = Polling by Demographic
 
