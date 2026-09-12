@@ -206,40 +206,31 @@ var modifyUI = function(dendryUI) {
 
   // TODO: have some code for tabbed sidebar browsing.
  window.updateSidebar = function() {
-    $('#qualities').empty();
-    
-    var scene = dendryUI.game.scenes[window.statusTab];
-    
-    if (!scene) {
-        console.warn('updateSidebar: scene "' + window.statusTab + '" not found, falling back to "status"');
-        window.statusTab = "status";
-        scene = dendryUI.game.scenes[window.statusTab] || Object.values(dendryUI.game.scenes)[0];
-    }
-    
-    if (!scene) {
-        console.error('updateSidebar: no fallback scene found');
-        return;
-    }
-    
-    if (scene.onArrival) {
-        try {
-            dendryUI.dendryEngine._runActions(scene.onArrival);
-        } catch (e) {
-            console.error('Error running onArrival actions for sidebar scene:', e);
-        }
-    }
-    
-    var displayContent = [];
-    if (scene.content) {
-        try {
-            displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-        } catch (e) {
-            console.error('Error making display content for sidebar scene:', e);
-        }
-    }
-    
-    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-};
+       $('#qualities').empty();
+       var scene = dendryUI.game.scenes[window.statusTab];
+       if (!scene) {
+           console.warn('updateSidebar: scene "' + window.statusTab + '" not found, falling back to "status"');
+           window.statusTab = "status";
+           scene = dendryUI.game.scenes[window.statusTab] || Object.values(dendryUI.game.scenes)[0];
+       }
+       if (scene && scene.onArrival) {
+           try {
+               dendryUI.dendryEngine._runActions(scene.onArrival);
+           } catch (e) {
+               console.error('Error running onArrival actions for sidebar scene:', e);
+           }
+       }
+       var displayContent = [];
+       if (scene && scene.content) {
+           try {
+               displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+           } catch (e) {
+               console.error('Error making display content for sidebar scene:', e);
+           }
+       }
+       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+   };
+
 
 window.changeTab = function(newTab, tabId) {
        if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
