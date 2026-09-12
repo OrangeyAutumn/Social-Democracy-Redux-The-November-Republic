@@ -92,7 +92,7 @@ if (Q.sa_strength) {
 }
 !}
 
-= [+ month : month +] [+ year +]
+[+ month : month +] [+ year +]
 
 = Government
 
@@ -183,7 +183,7 @@ if (Q.sa_strength) {
 }
 !}
 
-= [+ month : month +] [+ year +]
+[+ month : month +] [+ year +]
 
 = Government
 
@@ -287,7 +287,7 @@ Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
 !}
 
-= [+ month : month +] [+ year +]
+[+ month : month +] [+ year +]
 
 = Government
 
