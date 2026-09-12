@@ -2,7 +2,7 @@ title: The Center
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: center_timer <= 0
+view-if: never
 on-arrival: month_activities += 1; center_timer += 6
 card-image: img/HilferdingRudolf.jpg
 
