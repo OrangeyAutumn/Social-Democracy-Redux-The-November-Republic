@@ -16,8 +16,8 @@ if (Q.economic_growth) {
 
 @main
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_minus_bvp_r;
-Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
+Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_votes_minus_bvp = Q.z_votes - 3;
 !}
 
 = Status
@@ -65,7 +65,7 @@ NSDAP: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-[? if spd_in_government = 1 : Budget: [+ budget +] ?]
+[? if spd_in_government == 1 : Budget: [+ budget +] ?]
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
@@ -82,9 +82,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 @government
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_minus_bvp_r;
-Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
-}
+Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_votes_minus_bvp = Q.z_votes - 3;
 if (Q.rb_strength) {
     Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
@@ -176,9 +175,8 @@ Prussian police: [+ prussian_police_strength +] thousand members ([+ prussia_for
 
 @politics
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_minus_bvp_r;
-Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
-}
+Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_votes_minus_bvp = Q.z_votes - 3;
 if (Q.rb_strength) {
     Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
@@ -292,8 +290,8 @@ Associated Paramilitary: SA | Strength: [+ sa_strength_2 +] thousand ([+ sa_forc
 
 @polls
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_minus_bvp_r;
-Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
+Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_votes_minus_bvp = Q.z_votes - 3;
 }
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
@@ -335,7 +333,7 @@ Reformists ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength 
 [? if neorevisionism > 0 : 
 Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]    
 
-Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy
+Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
 
 Resources available: [+ resources +][? if spd_in_government == 1 : | Budget: [+ budget +] ?]
 
@@ -373,7 +371,7 @@ DNVP: Workers: [+ workers_dnvp_display +]% | New Middle Class: [+ new_middle_dnv
 
 NSDAP: Workers: [+ workers_nsdap_display +]% | New Middle Class: [+ new_middle_nsdap_display +]% | Old Middle Class: [+ old_middle_nsdap_display +]% | Rural: [+ rural_nsdap_display +]% | Unemployed: [+ unemployed_nsdap_display +]% | Catholics: [+ catholics_nsdap_display +]% | Overall: [+ nsdap_votes +]%
 
-Others: Workers: [+ workers_other_display +]% | New Middle Class: [+ new_middle_other_display +]% | Old Middle Class: [+ old_middle_other_display +]% | Rural: [+ rural_other_display +]% | Unemployed: [+ unemployed_other_display +]% | Catholics: [+ catholics_other_display +]% | Overall: [+ others_votes +]%
+Others: Workers: [+ workers_other_display +]% | New Middle Class: [+ new_middle_other_display +]% | Old Middle Class: [+ old_middle_other_display +]% | Rural: [+ rural_other_display +]% | Unemployed: [+ unemployed_other_display +]% | Catholics: [+ catholics_other_display +]% | Overall: [+ other_votes +]%
 
 = Polling by Demographic
 
