@@ -4,7 +4,7 @@ is-card: true
 card-image: img/petition_referendum.jpg
 view-if: referendum_timer = 0 and (spd_in_government == 0 or spd_toleration == 1)
 on-arrival: referendum_timer += 6; month_actions += 1;
-tags: govt_affairs
+tags: reichstag
 
 = Direct Democracy
 
