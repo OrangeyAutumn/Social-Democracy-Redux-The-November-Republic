@@ -22,8 +22,6 @@ Q.z_votes_minus_bvp = Q.z_votes - 3;
 
 = Status
 
-[+ month : month +] [+ year +]
-
 Resources available: [+ resources +]
 
 [+ spd_name +] position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
@@ -97,8 +95,6 @@ if (Q.sa_strength) {
     Q.sa_strength_2 = Q.sa_strength.toFixed(1);
 }
 !}
-
-[+ month : month +] [+ year +]
 
 = Government
 
@@ -190,8 +186,6 @@ if (Q.sa_strength) {
     Q.sa_strength_2 = Q.sa_strength.toFixed(1);
 }
 !}
-
-[+ month : month +] [+ year +]
 
 = Government
 
@@ -296,8 +290,6 @@ Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
 !}
-
-[+ month : month +] [+ year +]
 
 = Government
 
