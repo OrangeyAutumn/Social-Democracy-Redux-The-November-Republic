@@ -37,12 +37,12 @@ Agriculture: [+ agriculture_minister_party +]
 - @push_shuffle_yes: The Chancellor agrees to our demands for a resuhffle!
 - @push_shuffle_no:: The Chancellor refuses our demands for a reshuffle!
 
-- @push_shuffle_yes
+@push_shuffle_yes
 view-if: coalition_dissent <= 2
 on-arrival: coalition_dissent += 1; month_actions += 1
 go-to: election_1928.ministries
 
-- @push_shuffle_no
+@push_shuffle_no
 view-if: coalition_dissent >=3
 on-arrival: coalition_dissent += 1
 
