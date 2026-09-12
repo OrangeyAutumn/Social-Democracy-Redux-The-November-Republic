@@ -1,7 +1,7 @@
 title: Class Consciousness of the New Middle Class
 new-page: true
 is-card: true
-tags: party_affairs
+tags: campaigning
 view-if: socialism >= 57 and radio >= 1 and new_middle_spd_normalized >= 15
 on-arrival: month_actions += 1
 card-image: img/new-middle-conscious.jpg
