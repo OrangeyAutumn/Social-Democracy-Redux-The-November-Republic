@@ -2,7 +2,7 @@ title: The Labor Wing
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: labor_timer <= 0
+view-if: never
 on-arrival: month_activities += 1; labor_timer += 6
 card-image: img/portraits/LeipartTheodor.jpg
 
