@@ -15,6 +15,10 @@ if (Q.economic_growth) {
 !}
 
 @main
+on-arrival: {!
+Q.z_minus_bvp_r = Q.z_minus_bvp_r;
+Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
+!}
 
 = Status
 
@@ -78,6 +82,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 @government
 on-arrival: {!
+Q.z_minus_bvp_r = Q.z_minus_bvp_r;
+Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
+}
 if (Q.rb_strength) {
     Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
@@ -137,7 +144,7 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | [? i
 
 = Reichstag composition:
 
-[+ uspd_name_short +]: [+ uspd_r +]% | [? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?] | Z: [+ z_r - 3 +]% | BVP: 3% | [+ spd_name +]: [+ spd_r +]% | DDP: [+ ddp_r +]% | DVP: [+ dvp_r +]% | DNVP: [+ dnvp_r +]% | NSDAP: [+ nsdap_r +]% | Others: [+ other_r +]%
+[+ uspd_name_short +]: [+ uspd_r +]% | [? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?] | Z: [+ z_minus_bvp_r +]% | BVP: 3% | [+ spd_name +]: [+ spd_r +]% | DDP: [+ ddp_r +]% | DVP: [+ dvp_r +]% | DNVP: [+ dnvp_r +]% | NSDAP: [+ nsdap_r +]% | Others: [+ other_r +]%
 
 = Cabinet
 
@@ -169,6 +176,9 @@ Prussian police: [+ prussian_police_strength +] thousand members ([+ prussia_for
 
 @politics
 on-arrival: {!
+Q.z_minus_bvp_r = Q.z_minus_bvp_r;
+Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
+}
 if (Q.rb_strength) {
     Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
@@ -244,7 +254,7 @@ Associated Paramilitary: [? if reichsbanner_ddp == 0 : Reichsbanner | Strength: 
 
 = [+ z_name +] ([+ z_leader_fullname +] | Ideology: [+ z_ideology +])
 
-Seats: [+ Q.z_r - 3 +] | Polling: [+ Q.z_votes - 3 +]
+Seats: [+ Q.z_minus_bvp_r +] | Polling: [+ Q.z_votes_minus_bvp +]
 
 Relations: [+ z_relation : relationships +] 
 
@@ -282,6 +292,9 @@ Associated Paramilitary: SA | Strength: [+ sa_strength_2 +] thousand ([+ sa_forc
 
 @polls
 on-arrival: {!
+Q.z_minus_bvp_r = Q.z_minus_bvp_r;
+Q.z_votes_minus_bvp = Q.z_votes_minus_bvp;
+}
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
@@ -348,7 +361,7 @@ Support for Nationalism: [+ nationalism_disp +]%
 
 [+ ddp_name +]: Workers: [+ workers_ddp_display +]% | New Middle Class: [+ new_middle_ddp_display +]% | Old Middle Class: [+ old_middle_ddp_display +]% | Rural: [+ rural_ddp_display +]% | Unemployed: [+ unemployed_ddp_display +]% | Catholics: [+ catholics_ddp_display +]% | Overall: [+ ddp_votes +]%
 
-Z: Workers: [+ workers_z_display +]% | New Middle Class: [+ new_middle_z_display +]% | Old Middle Class: [+ old_middle_z_display +]% | Rural: [+ rural_z_display +]% | Unemployed: [+ unemployed_z_display +]% | Catholics: [+ catholics_z_display +]% | Overall: [+ z_votes +]%
+Z: Workers: [+ workers_z_display +]% | New Middle Class: [+ new_middle_z_display +]% | Old Middle Class: [+ old_middle_z_display +]% | Rural: [+ rural_z_display +]% | Unemployed: [+ unemployed_z_display +]% | Catholics: [+ catholics_z_display +]% | Overall: [+ z_votes_minus_bvp +]%
 
 BVP: Bavaria: 3% | Overall: 3%
 
