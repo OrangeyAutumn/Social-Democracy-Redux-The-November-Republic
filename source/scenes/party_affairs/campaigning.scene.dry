@@ -13,10 +13,14 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 
 - @workers: The urban working class, our traditional support base.
 - @new_middle: The "new middle class" of government employees and white-collar workers.
+- @new_middle_ddp: Campaign with the DDP, with their base in the "new middle class" of government employees and white-collar workers.
 - @old_middle: The "old middle class" of small independent businessmen and artisans.
+- @old_middle_dvp: Campaign with the DVP, with their base in the "old middle class" of small independent businessmen and artisans.
 - @rural: Rural workers and small farmers, who have felt neglected by us in the past.
 - @unemployed: The unemployed.
+- @unemployed_uspd: Campaign with the USPD, with their base in the unemployed.
 - @catholics: Catholics, who typically support the Center Party.
+- @catholics_z: Campaign with the Center Party, with their powerful Catholic base.
 - @root: We either don't want to or cannot campaign right now.
 - @easy_discard
 
@@ -68,3 +72,31 @@ view-if: peoples_party == 1
 on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
 
 We have increased our campaigning among Catholics.
+
+@new_middle_ddp
+choose-if: ddp_relation >= 45
+unavailable-subtitle: We do not have enough relations with the DDP.
+on-arrival: new_middle_spd += 5*(1-dissent); workers_dvp += 2; peoples_party_support += 1;
+
+Campaigning alongside the DDP, we have increased our campaigning among the new middle class. Our campaign partners lend us credibility.
+
+@old_middle_dvp
+choose-if: dvp_relation >= 55
+unavailable-subtitle: We do not have enough relations with the DVP.
+on-arrival: old_middle_spd += 5*(1-dissent); workers_dvp += 2; peoples_party_support += 1
+
+Campaigning alongside the DVP, we have increased our campaigning among the old middle class. Our campaign partners lend us credibility.
+
+@unemployed_uspd
+choose-if: USPD_relation >= 45
+unavailable-subtitle: We either do not have enough relations with the USPD.
+on-arrival: unemployed_spd += 5*(1-dissent); workers_uspd += 2;
+
+Campaigning alongside the USPD, we have increased our campaigning among the unemployed. Our campaign partners lend us credibility.
+
+@catholics_z
+choose-if: z_relation >= 45
+unavailable-subtitle: We do not have enough relations with the Zentrum.
+on-arrival: catholics_spd += 5*(1-dissent); workers_z += 2;
+
+Campaigning alongside the Zentrum, we have increased our campaigning among Catholics. Our campaign partners lend us credibility.
