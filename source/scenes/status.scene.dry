@@ -16,8 +16,6 @@ if (Q.economic_growth) {
 }
 !}
 
-= [+ month : month +] [+ year +]
-
 = The [+ spd_name +] ([+ spd_ideology +])
 
 Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +]) 
