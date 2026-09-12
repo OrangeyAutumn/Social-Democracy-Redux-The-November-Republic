@@ -103,7 +103,7 @@ Rallying alongside the [+ ddp_name +], the reformist message appeals to the orga
 @democracy_weimar
 choose-if: ddp_relation >= 45 and z_relation >= 45
 unavailable-subtitle: [? if ddp_relation <= 44 : Our relations with the [+ ddp_name +] are not good enough. ?][? if z_relation <= 44 : Our relations with the Zentrum are not good enough. ?]
-go-to: democracy_high if democratization >= 3; democracy_low if democratization < 3
+go-to: democracy_weimar_high if democratization >= 3; democracy_weimar_low if democratization < 3
 
 @democracy_weimar_low
 on-arrival: workers_spd += 2*(1 - dissent); workers_z += 1*(1 - dissent); workers_ddp += 2*(1 - dissent); new_middle_spd += 1*(1 - dissent); new_middle_ddp += 2*(1 - dissent); new_middle_z += 1*(1 - dissent); catholics_spd += 1*(1 - dissent); catholics_ddp += 1*(1 - dissent); catholics_z += 2*(1 - dissent); relation_ddp += 3; relation_z += 3
