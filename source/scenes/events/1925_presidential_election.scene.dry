@@ -85,7 +85,7 @@ Q.gessler_votes = 0;
 Q.hergt_votes = 0;
 Q.hindenburg_votes = 0;
 
-Q.presidents_25 = ['liebknecht', '[+ spd_presidential_candidate +]', 'hellpach', [+ z_presidential_candidate +]', 'held', [+ dvp_presidential_candidate +]', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
+Q.presidents_25 = ['liebknecht', '[+ spd_presidential_candidate +]', 'hellpach', '[+ z_presidential_candidate +]', 'held', '[+ dvp_presidential_candidate +]', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
 
 // initial phase:
 if (Q.spd_campaign) {
@@ -179,6 +179,7 @@ if (Q.gessler_campaign) {
     if (Q.round25 > 1) {
         spd_turnout += 0.1;
     }
+    var left_dissent_percent = (Q.left_strength*(1+(Q.left_dissent/100)))/100;
     Q.gessler_votes += ((Q.spd_normalized*(1-left_dissent_percent))*(1-Q.dissent))*spd_turnout;
     Q.gessler_votes += Q.z_normalized-0.03;
     if (Q.bvp_support_gessler) {
@@ -384,7 +385,7 @@ We have dropped out and endorsed [+ z_presidential_candidate_fullname +], who is
 
 @back_both
 view-if: z_campaign and liebknecht_campaign and not spd_support_z and not spd_support_liebknecht
-on_arrival: spd_prussia = 1; spd_support_both = 1; backed_both = 1; spd_campaign = 0;
+on-arrival: spd_prussia = 1; spd_support_both = 1; backed_both = 1; spd_campaign = 0;
 go-to: both_campaign
 
 We have dropped out and endorsed both [+ z_presidential_candidate_fullname +]and Karl Liebknecht. This has pleased nobody, but hopefully it will be enough to defeat any right-wing candidate.
@@ -692,7 +693,7 @@ on-arrival: left_campaign = 1 and (spd_presidential_candidate = "Crispien" if pr
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignf year == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 @presidential_candidate_left_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
@@ -781,7 +782,7 @@ on-arrival: center_campaign = 1 and (spd_presidential_candidate = "Müller" if p
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignf year == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 @presidential_candidate_center_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
@@ -857,7 +858,7 @@ on-arrival: labor_campaign = 1 and (spd_presidential_candidate = "Leipart" if pr
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignf year == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 @presidential_candidate_labor_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
@@ -1004,7 +1005,7 @@ on-arrival: nonfactional_campaign = 1 and (spd_presidential_candidate = "Baade" 
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignf year == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 @presidential_candidate_nonfactional_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
@@ -1074,7 +1075,7 @@ on-arrival: neorevisionist_campaign = 1 and (spd_presidential_candidate = "Miere
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignf year == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 @presidential_candidate_neorevisionist_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
