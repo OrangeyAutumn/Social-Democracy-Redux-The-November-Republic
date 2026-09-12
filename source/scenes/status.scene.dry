@@ -292,7 +292,6 @@ Associated Paramilitary: SA | Strength: [+ sa_strength_2 +] thousand ([+ sa_forc
 on-arrival: {!
 Q.z_minus_bvp_r = Q.z_r - 3;
 Q.z_votes_minus_bvp = Q.z_votes - 3;
-}
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
