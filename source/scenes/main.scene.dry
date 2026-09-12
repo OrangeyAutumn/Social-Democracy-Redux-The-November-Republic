@@ -84,7 +84,6 @@ is-deck: true
 
 @reichstag
 title: Reichstag Affairs
-view-if: time >= 6 or spd_in_government
 card-image: img/reichstag_2.jpg
 is-deck: true
 
