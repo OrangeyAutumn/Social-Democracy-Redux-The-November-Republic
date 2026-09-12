@@ -1,4 +1,10 @@
 title: Campaigning (People's Party)
+new-page: true
+is-card: true
+tags: campaigning
+view-if: campaign_timer <= 0
+on-arrival: month_actions += 1; campaign_timer = 6
+card-image: img/protest.jpg
 
 # basically, we can campaign as part of the people's party...
 
