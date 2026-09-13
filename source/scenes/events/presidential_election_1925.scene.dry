@@ -588,7 +588,7 @@ view-if: z_campaign and not spd_support_z
 on-arrival: spd_prussia = 1; ddp_support_spd = 0; ddp_support_z = 1; spd_support_z = 1; left_dissent += 5; workers_spd -= 1; spd_campaign = 0; backed_z = 1; uspd_relation -= 15; z_relation += 15
 go-to: z_campaign
 
-We have dropped out and endorsed [+ z_presidential_candidate_fullname +], who is now the candidate of the **Volksblock**. [+ if spd_presidential_candidate = "Braun" : In return, the Center Party has voted Otto Braun as M-P of Prussia. +]
+We have dropped out and endorsed [+ z_presidential_candidate_fullname +], who is now the candidate of the **Volksblock**.
 
 @back_both
 view-if: z_campaign and liebknecht_campaign and not spd_support_z and not spd_support_liebknecht
