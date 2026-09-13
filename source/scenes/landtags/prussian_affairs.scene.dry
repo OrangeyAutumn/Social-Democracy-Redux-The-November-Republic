@@ -13,10 +13,30 @@ Prussia, by far the largest and most important state in Germany, is governed by 
 
 We can enact policies in Prussia.
 
+- @build_ties: We can use push our state party to strengthen ties with the other local parties.
+- @pursue_policy: We can push our state party to pursue policy goals on the local level.
+- @police: We can pursue policies regarding the local police.
+- @paramilitary: We can pursue policies regarding the local paramilitaries.
+- @root: No new policies are needed.
+- @easy_discard
+
+@build_ties
+
+- @build_ties_uspd: Push our state party to strenghten ties with the state USPD.
+
+@police
+
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
-- @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
+
+@pursue_policy
+
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
+- @negotiate_concordat: Negotiate a concordat with the Vatican.
+- @sign_concordat: Sign a concordat with the Vatican.
+
+@paramilitary
+
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @ban_sa: Ban the SA, the Nazi paramilitary group.
 - @unban_sa: Reverse the SA ban.
@@ -26,11 +46,7 @@ We can enact policies in Prussia.
 - @persecute_sh: Use our state offices to target and prosecute the state Stalhelm.
 - @ban_sh: Ban the Stahlhelm, the Nationalist paramilitary.
 - @unban_sh: Reverse the Stahlhelm ban.
-- @negotiate_concordat: Negotiate a concordat with the Vatican.
-- @sign_concordat: Sign a concordat with the Vatican.
-- @root: No new policies are needed.
-- @easy_discard
-- @cancel_advisor_action
+- @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
 
 @police_loyalty
 view-if: prussian_police_loyalty < 1
