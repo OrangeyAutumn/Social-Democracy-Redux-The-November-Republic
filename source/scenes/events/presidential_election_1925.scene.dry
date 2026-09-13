@@ -896,7 +896,22 @@ We try to convince the DVP to at least abstain, but our efforts are a failure an
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
 view-if: president == "Crispien" or president == "Levi" or president == "Sender" or president == "Rosenfeld" or president == "Seydewitz" or president == "Siemsen"
-on-arrival: left_campaign = 1; (spd_presidential_candidate = "Crispien" if president == "Crispien") or (spd_presidential_candidate = "Levi" if president == "Levi") or (spd_presidential_candidate = "Sender" if president == "Sender") or (spd_presidential_candidate = "Rosenfeld" if president == "Rosenfeld") or (spd_presidential_candidate = "Seydewitz" if president == "Seydewitz") or (spd_presidential_candidate = "Siemsen" if president == "Siemsen")
+on-arrival: {!
+left_campaign = 1;
+if (president == "Crispien") {
+    spd_presidential_candidate = "Crispien";
+} else if (president == "Levi") {
+    spd_presidential_candidate = "Levi";
+} else if (president == "Sender") {
+    spd_presidential_candidate = "Sender";
+} else if (president == "Rosenfeld") {
+    spd_presidential_candidate = "Rosenfeld";
+} else if (president == "Seydewitz") {
+    spd_presidential_candidate = "Seydewitz";
+} else if (president == "Siemsen") {
+    spd_presidential_candidate = "Siemsen";
+}
+!}
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -913,7 +928,22 @@ go-to: spd_presidential_campaign
 Title: Run our Chancellor [+ chancellor +] 
 subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: chancellor == "Crispien" or chancellor == "Levi" or chancellor == "Sender" or chancellor == "Rosenfeld" or chancellor == "Seydewitz" or chancellor == "Siemsen"
-on-arrival: left_campaign = 1 and (spd_presidential_candidate = "Crispien" if chancellor == "Crispien") or (spd_presidential_candidate = "Levi" if chancellor == "Levi") or (spd_presidential_candidate = "Sender" if chancellor == "Sender") or (spd_presidential_candidate = "Rosenfeld" if chancellor == "Rosenfeld") or (spd_presidential_candidate = "Seydewitz" if chancellor == "Seydewitz") or (spd_presidential_candidate = "Siemsen" if chancellor == "Siemsen")
+on-arrival: {!
+    left_campaign = 1;
+    if (chancellor == "Crispien") {
+        spd_presidential_candidate = "Crispien";
+    } else if (chancellor == "Levi") {
+        spd_presidential_candidate = "Levi";
+    } else if (chancellor == "Sender") {
+        spd_presidential_candidate = "Sender";
+    } else if (chancellor == "Rosenfeld") {
+        spd_presidential_candidate = "Rosenfeld";
+    } else if (chancellor == "Seydewitz") {
+        spd_presidential_candidate = "Seydewitz";
+    } else if (chancellor == "Siemsen") {
+        spd_presidential_candidate = "Siemsen";
+    }
+!}
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
 
@@ -991,7 +1021,21 @@ go-to: spd_presidential_campaign
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
 view-if: president == "Müller" or president == "Wels" or president == "Vogel" or president == "Hilferding" or president == "Breitscheid"
-on-arrival: center_campaign = 1; (spd_presidential_candidate = "Müller" if president == "Müller") or (spd_presidential_candidate = "Wels" if president == "Wels") or (spd_presidential_candidate = "Vogel" if president == "Vogel") or (spd_presidential_candidate = "Hilferding" if president == "Hilferding") or (spd_presidential_candidate = "Breitscheid" if president == "Breitscheid")
+on-arrival: {!
+    center_campaign = 1;
+
+    if (president == "Müller") {
+        spd_presidential_candidate = "Müller";
+    } else if (president == "Wels") {
+        spd_presidential_candidate = "Wels";
+    } else if (president == "Vogel") {
+        spd_presidential_candidate = "Vogel";
+    } else if (president == "Hilferding") {
+        spd_presidential_candidate = "Hilferding";
+    } else if (president == "Breitscheid") {
+        spd_presidential_candidate = "Breitscheid";
+    }
+!}
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1009,7 +1053,20 @@ go-to: spd_presidential_campaign
 Title: Run our Chancellor [+ chancellor +] 
 subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: chancellor == "Müller" or chancellor == "Wels" or chancellor == "Vogel" or chancellor == "Hilferding" or chancellor == "Breitscheid"
-on-arrival: center_campaign = 1 and (spd_presidential_candidate = "Müller" if chancellor == "Müller") or (spd_presidential_candidate = "Wels" if chancellor == "Wels") or (spd_presidential_candidate = "Vogel" if chancellor == "Vogel") or (spd_presidential_candidate = "Hilferding" if chancellor == "Hilferding") or (spd_presidential_candidate = "Breitscheid" if chancellor == "Breitscheid")
+on-arrival: {!
+    center_campaign = 1;
+    if (chancellor == "Müller") {
+        spd_presidential_candidate = "Müller";
+    } else if (chancellor == "Wels") {
+        spd_presidential_candidate = "Wels";
+    } else if (chancellor == "Vogel") {
+        spd_presidential_candidate = "Vogel";
+    } else if (chancellor == "Hilferding") {
+        spd_presidential_candidate = "Hilferding";
+    } else if (chancellor == "Breitscheid") {
+        spd_presidential_candidate = "Breitscheid";
+    }
+!}
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1073,7 +1130,20 @@ go-to: spd_presidential_campaign
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
 view-if: president == "Leipart" or president == "Aufhäuser" or president == "Wissell" or president == "Woytinsky" or president == "Tarnow"
-on-arrival: labor_campaign = 1;(spd_presidential_candidate = "Leipart" if president == "Leipart") or (spd_presidential_candidate = "Aufhäuser" if president == "Aufhäuser") or (spd_presidential_candidate = "Wissell" if president == "Wissell") or (spd_presidential_candidate = "Woytinsky" if president == "Woytinsky") or (spd_presidential_candidate = "Tarnow" if president == "Tarnow")
+on-arrival: {!
+    labor_campaign = 1;
+    if (president == "Leipart") {
+        spd_presidential_candidate = "Leipart";
+    } else if (president == "Aufhäuser") {
+        spd_presidential_candidate = "Aufhäuser";
+    } else if (president == "Wissell") {
+        spd_presidential_candidate = "Wissell";
+    } else if (president == "Woytinsky") {
+        spd_presidential_candidate = "Woytinsky";
+    } else if (president == "Tarnow") {
+        spd_presidential_candidate = "Tarnow";
+    }
+!}
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1091,7 +1161,20 @@ go-to: spd_presidential_campaign
 Title: Run our Chancellor [+ chancellor +] 
 subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: chancellor == "Leipart" or chancellor == "Aufhäuser" or chancellor == "Wissell" or chancellor == "Woytinsky" or chancellor == "Tarnow"
-on-arrival: labor_campaign = 1 and (spd_presidential_candidate = "Leipart" if chancellor == "Leipart") or (spd_presidential_candidate = "Aufhäuser" if chancellor == "Aufhäuser") or (spd_presidential_candidate = "Wissell" if chancellor == "Wissell") or (spd_presidential_candidate = "Woytinsky" if chancellor == "Woytinsky") or (spd_presidential_candidate = "Tarnow" if chancellor == "Tarnow")
+on-arrival: {!
+    labor_campaign = 1;
+    if (chancellor == "Leipart") {
+        spd_presidential_candidate = "Leipart";
+    } else if (chancellor == "Aufhäuser") {
+        spd_presidential_candidate = "Aufhäuser";
+    } else if (chancellor == "Wissell") {
+        spd_presidential_candidate = "Wissell";
+    } else if (chancellor == "Woytinsky") {
+        spd_presidential_candidate = "Woytinsky";
+    } else if (chancellor == "Tarnow") {
+        spd_presidential_candidate = "Tarnow";
+    }
+!}
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1158,7 +1241,22 @@ go-to: spd_presidential_campaign
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
 view-if: president == "Braun" or president == "Severing" or president == "Juchacz" or president == "Pfülf" or president == "Scheidemann" or president == "Ebert"
-on-arrival: reformist_campaign = 1; (spd_presidential_candidate = "Braun" if president == "Braun") or (spd_presidential_candidate = "Severing" if president == "Severing") or (spd_presidential_candidate = "Juchacz" if president == "Juchacz") or (spd_presidential_candidate = "Pfülf" if president == "Pfülf") or (spd_presidential_candidate = "Scheidemann" if president == "Scheidemann") or (spd_presidential_candidate = "Ebert" if president == "Ebert")
+on-arrival: {!
+    reformist_campaign = 1;
+    if (president == "Braun") {
+        spd_presidential_candidate = "Braun";
+    } else if (president == "Severing") {
+        spd_presidential_candidate = "Severing";
+    } else if (president == "Juchacz") {
+        spd_presidential_candidate = "Juchacz";
+    } else if (president == "Pfülf") {
+        spd_presidential_candidate = "Pfülf";
+    } else if (president == "Scheidemann") {
+        spd_presidential_candidate = "Scheidemann";
+    } else if (president == "Ebert") {
+        spd_presidential_candidate = "Ebert";
+    }
+!}
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1176,7 +1274,20 @@ go-to: spd_presidential_campaign
 Title: Run our Chancellor [+ chancellor +] 
 subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: chancellor == "Braun" or chancellor == "Severing" or chancellor == "Juchacz" or chancellor == "Pfülf" or chancellor == "Scheidemann"
-on-arrival: reformist_campaign = 1 and (spd_presidential_candidate = "Braun" if chancellor == "Braun") or (spd_presidential_candidate = "Severing" if chancellor == "Severing") or (spd_presidential_candidate = "Juchacz" if chancellor == "Juchacz") or (spd_presidential_candidate = "Pfülf" if chancellor == "Pfülf") or (spd_presidential_candidate = "Scheidemann" if chancellor == "Scheidemann")
+on-arrival: {!
+    reformist_campaign = 1;
+    if (chancellor == "Braun") {
+        spd_presidential_candidate = "Braun";
+    } else if (chancellor == "Severing") {
+        spd_presidential_candidate = "Severing";
+    } else if (chancellor == "Juchacz") {
+        spd_presidential_candidate = "Juchacz";
+    } else if (chancellor == "Pfülf") {
+        spd_presidential_candidate = "Pfülf";
+    } else if (chancellor == "Scheidemann") {
+        spd_presidential_candidate = "Scheidemann";
+    }
+!}
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1243,7 +1354,18 @@ go-to: spd_presidential_campaign
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
 view-if: president == "Baade" or president == "Hirschfeld" or president == "Radbruch" or president == "Stampfer"
-on-arrival: nonfactional_campaign = 1; (spd_presidential_candidate = "Baade" if president == "Baade") or (spd_presidential_candidate = "Hirschfeld" if president == "Hirschfeld") or (spd_presidential_candidate = "Radbruch" if president == "Radbruch") or (spd_presidential_candidate = "Stampfer" if president == "Stampfer")
+on-arrival: {!
+    nonfactional_campaign = 1;
+    if (president == "Baade") {
+        spd_presidential_candidate = "Baade";
+    } else if (president == "Hirschfeld") {
+        spd_presidential_candidate = "Hirschfeld";
+    } else if (president == "Radbruch") {
+        spd_presidential_candidate = "Radbruch";
+    } else if (president == "Stampfer") {
+        spd_presidential_candidate = "Stampfer";
+    }
+!}
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1261,8 +1383,18 @@ go-to: spd_presidential_campaign
 Title: Run our Chancellor [+ chancellor +] 
 subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: chancellor == "Baade" or chancellor == "Hirschfeld" or chancellor == "Radbruch" or chancellor == "Stampfer" or chancellor == "Seydewitz"
-on-arrival: nonfactional_campaign = 1 and (spd_presidential_candidate = "Baade" if chancellor == "Baade") or (spd_presidential_candidate = "Hirschfeld" if chancellor == "Hirschfeld") or (spd_presidential_candidate = "Radbruch" if chancellor == "Radbruch") or (spd_presidential_candidate = "Stampfer" if chancellor == "Stampfer")
-
+on-arrival: {!
+    nonfactional_campaign = 1;
+    if (chancellor == "Baade") {
+        spd_presidential_candidate = "Baade";
+    } else if (chancellor == "Hirschfeld") {
+        spd_presidential_candidate = "Hirschfeld";
+    } else if (chancellor == "Radbruch") {
+        spd_presidential_candidate = "Radbruch";
+    } else if (chancellor == "Stampfer") {
+        spd_presidential_candidate = "Stampfer";
+    }
+!}
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
 go-to: spd_presidential_campaign
@@ -1325,7 +1457,18 @@ unavailable-subtitle: Löbe insists his place is in the Reichstag.
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
 view-if: president == "Mierendorff" or president == "Schumacher" or president == "Leber" or president == "Noske"
-on-arrival: neorevisionist_campaign = 1; (spd_presidential_candidate = "Mierendorff" if president == "Mierendorff") or (spd_presidential_candidate = "Schumacher" if president == "Schumacher") or (spd_presidential_candidate = "Leber" if president == "Leber") or (spd_presidential_candidate = "Noske" if president == "Noske")
+on-arrival: {!
+    neorevisionist_campaign = 1;
+    if (president == "Mierendorff") {
+        spd_presidential_candidate = "Mierendorff";
+    } else if (president == "Schumacher") {
+        spd_presidential_candidate = "Schumacher";
+    } else if (president == "Leber") {
+        spd_presidential_candidate = "Leber";
+    } else if (president == "Noske") {
+        spd_presidential_candidate = "Noske";
+    }
+!}
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1343,7 +1486,18 @@ go-to: spd_presidential_campaign
 Title: Run our Chancellor [+ chancellor +] 
 subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: chancellor == "Mierendorff" or chancellor == "Schumacher" or chancellor == "Leber" or chancellor == "Noske" or chancellor == "Seydewitz"
-on-arrival: neorevisionist_campaign = 1 and (spd_presidential_candidate = "Mierendorff" if chancellor == "Mierendorff") or (spd_presidential_candidate = "Schumacher" if chancellor == "Schumacher") or (spd_presidential_candidate = "Leber" if chancellor == "Leber") or (spd_presidential_candidate = "Noske" if chancellor == "Noske")
+on-arrival: {!
+    neorevisionist_campaign = 1;
+    if (chancellor == "Mierendorff") {
+        spd_presidential_candidate = "Mierendorff";
+    } else if (chancellor == "Schumacher") {
+        spd_presidential_candidate = "Schumacher";
+    } else if (chancellor == "Leber") {
+        spd_presidential_candidate = "Leber";
+    } else if (chancellor == "Noske") {
+        spd_presidential_candidate = "Noske";
+    }
+!}
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
