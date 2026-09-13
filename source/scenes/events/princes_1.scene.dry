@@ -18,8 +18,7 @@ At the same time, if we joined the initiative for referendum we would risk alien
 - @historical_one: Back the DDP's proposal for the time being. - This is the historical option.
 
 @early_initiative
-choose-if: left_strength > reformist_strength
-unavailable-subtitle: The majority of the party is skeptical.
+subtitle: This would prevent us joining a potential Grand Coalition!
 on-arrival: princes_time = time+2; princes_initiated = 1; reformist_dissent += 5; uspd_relation += 5; dvp_relation -= 5; new_middle_spd -= 3; old_middle_spd -= 3; catholics_spd -= 1; marx_relation -= 5
 
 We surprise the bourgeois and party right by effectively withdrawing from coalition talks to focus on opposition politics through the backing of a referendum for the expropriation without compensation of the princes. Though there is no way we could directly back the communist suggestion, the ADGB has mediated a bill that both parties are able to agree on, and preparations for referendum are underway.
