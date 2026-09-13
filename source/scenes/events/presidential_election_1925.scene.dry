@@ -495,7 +495,7 @@ on-arrival: president = "Gessler"; pro_republic += 2; president_party = "DDP"; s
 Otto Gessler has won the election as the candidate of the democratic parties, including the DVP. We have in this campaign pulled the DVP away from the DNVP and the right as a whole towards the center, but also created a hole on the left that the [+ uspd_name +] is eager to fill. 
 
 @no_majority_round1
-go-to: spd_consolidation if spd_campaign; gessler_consolidation if gessler_campaign
+go-to: spd_consolidation if spd_campaign
 
 As expected, there is no majority in the first round of voting.
 
