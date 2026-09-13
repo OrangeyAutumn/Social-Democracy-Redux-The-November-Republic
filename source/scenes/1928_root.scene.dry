@@ -396,10 +396,15 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Hindenburg";
-Q.president_party = "Independent";
-// starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
+if (President_Marx == 0) {
+    Q.president = "Hindenburg";
+    Q.president_party = "Independent";
+    Q.chancellor = "Marx";
+} else if (President_Marx == 1) {
+    Q.president = "Marx";
+    Q.president_party = "Z";
+    Q.chancellor = "Adenauer";
+}
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
