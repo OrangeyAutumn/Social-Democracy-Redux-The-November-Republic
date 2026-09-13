@@ -13,7 +13,22 @@ As the incumbent Presidential party, many within the SPD and without expect us t
 Which path should we take?
 
 - @presidential_candidate_braun
-- @presidential_candidate_lobe
+- @presidential_candidate_lobe_25
+- @presidential_candidate_left_incumbent
+- @presidential_candidate_left_previous
+- @presidential_candidate_left_chancellor
+- @presidential_candidate_center_incumbent
+- @presidential_candidate_center_previous
+- @presidential_candidate_center_chancellor
+- @presidential_candidate_labor_incumbent
+- @presidential_candidate_labor_previous
+- @presidential_candidate_labor_chancellor
+- @presidential_candidate_reformist_incumbent
+- @presidential_candidate_reformist_previous
+- @presidential_candidate_reformist_chancellor
+- @presidential_candidate_neorevisionist_incumbent
+- @presidential_candidate_neorevisionist_previous
+- @presidential_candidate_neorevisionist_chancellor
 - @back_gessler_no: Back Otto Gessler of the DDP as a joint Republican candidate.
 - @back_liebknecht_no: Back Karl Liebknecht of the [+ uspd_name +]
 - @spd_presidential_menu: Perhaps we should consider a different candidate?
@@ -952,7 +967,7 @@ go-to: spd_presidential_campaign
 // Crispien
 
 @presidential_candidate_crispien
-title: Run Crispien, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if left_leader : Left faction leader ?]
+title: Run Crispien, our [? if spd_coleader_1 == "Crispien" : Co-leader ?][? if spd_coleader_2 == "Crispien" : Co-leader ?][? if spd_coleader_3 == "Crispien" : Co-leader ?][? if left_leader == "Crispien" : Left faction leader ?]
 view-if: (chancellor != "Crispien" and president != "Crispien" and spd_presidential_candidate != "Crispien") and (spd_coleader_1 == "Crispien" or spd_coleader_2 == "Crispien" or spd_coleader_3 == "Crispien" or left_leader == "Crispien")
 on-arrival: spd_presidential_candidate = "Crispien"; left_campaign = 1
 
@@ -1046,7 +1061,6 @@ title: Run [+ spd_presidential_candidate +], our candidate at the last election.
 subtitle: Their high profile from the previous campaign may give us an advantage.
 view-if: (chancellor != "Müller" and president != "Müller" and spd_presidential_candidate  == "Müller") or (chancellor != "Wels" and president != "Wels" and spd_presidential_candidate  == "Wels") or (chancellor != "Vogel" and president != "Vogel" and spd_presidential_candidate  == "Vogel") or (chancellor != "Hilferding" and president != "Hilferding" and spd_presidential_candidate  == "Hilferding") or (chancellor != "Breitscheid" and president != "Breitscheid" and spd_presidential_candidate  == "Breitscheid")
 on-arrival: center_campaign = 1
-
 go-to: spd_presidential_campaign
     
 @presidential_candidate_center_chancellor
@@ -1447,8 +1461,17 @@ go-to: spd_presidential_campaign
 // Lobe
 
 @presidential_candidate_lobe
-title: Run Löbe, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
-view-if: (chancellor != "Löbe" and president != "Löbe" and spd_presidential_candidate != "Löbe") and (spd_coleader_1 == "Löbe" or spd_coleader_2 == "Löbe" or spd_coleader_3 == "Löbe" or left_leader == "Löbe" or center_leader == "Löbe" or labor_leader == "Löbe" or reformist_leader == "Löbe" or neorevisionist_leader == "Löbe")
+title: Run Paul Löbe, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+view-if: year != 1925 and (chancellor != "Löbe" and president != "Löbe" and spd_presidential_candidate != "Stampfer") and (spd_coleader_1 == "Löbe" or spd_coleader_2 == "Löbe" or spd_coleader_3 == "Löbe" or left_leader == "Löbe" or center_leader == "Löbe" or labor_leader == "Löbe" or reformist_leader == "Löbe" or neorevisionist_leader == "Löbe")
+on-arrival: spd_presidential_candidate = "Stampfer"; nonfactional_campaign = 1
+
+We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+
+go-to: spd_presidential_campaign
+
+@presidential_candidate_lobe_25
+title: Run Paul Löbe, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+view-if: year == 1925
 choose-if: never
 unavailable-subtitle: Löbe insists his place is in the Reichstag.
 
