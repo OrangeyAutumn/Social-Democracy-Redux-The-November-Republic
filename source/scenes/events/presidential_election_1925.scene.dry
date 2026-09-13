@@ -1395,6 +1395,7 @@ on-arrival: {!
         spd_presidential_candidate = "Stampfer";
     }
 !}
+
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
 go-to: spd_presidential_campaign
