@@ -1,0 +1,25 @@
+title: The Death of Ebert
+subtitle: The President has died...
+new-page: true
+view-if: year = 1929 and month >= 7 and not ebert_dead and ebert_lives == 1
+on-arrival: ebert_dead = 1; 
+tags: event
+
+= The Death of Ebert
+
+Friedrich Ebert, first President of the Republic, has passed away at age 58. [? if left_strength > reformist_strength : Though he may have sold out to the Reichswehr and turned against the workers which elected him in the first place, he had managed to keep the republic intact. His death means uncertainty in the republic's future. ?][? if reformist_strength > left_strength : Though he had his flaws, Ebert guided Germany from the brink of destruction and protected a newborn democracy from demise through hard and tireless work. His death means uncertainty in the republic's future. ?]
+
+- @succession: With Ebert’s death, Otto Braun succeeds as leader of the Reformist wing.
+- @succession2: With Ebert’s death, Chancellor [+ chancellor +] has been appointed President, although they are expected to stand aside shortly for a different candidate.
+
+@succession
+view-if: reformist_leader == "Ebert" and president != "Ebert"
+on-arrival: reformist_leader = "Braun"; reformist_leader_fullname = "Otto Braun"
+
+@succession2
+view-if: president == "Ebert"
+on-arrival: president = "Simons (acting)"
+
+With Ebert's death, fresh elections have been called to elect his successor.
+
+- @succession: With Ebert’s death, Otto Braun succeeds as leader of the Reformist wing.
