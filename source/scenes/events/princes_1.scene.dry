@@ -15,7 +15,7 @@ The DDP, meanwhile, has also submitted a bill on the matter, which would empower
 At the same time, if we joined the initiative for referendum we would risk alienating our bourgeois parties, and certainly eliminate the chance of a Grand Coalition succeeding the Luther cabinet.
 
 - @early_initiative: Withdraw from coalition talks, and join the communist initiative.
-- @historical_one: Back the DDP's proposal for the time being.
+- @historical_one: Back the DDP's proposal for the time being. - This is the historical option.
 
 @early_initiative
 choose-if: left_strength > reformist_strength
