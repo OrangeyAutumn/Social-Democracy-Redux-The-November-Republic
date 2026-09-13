@@ -285,7 +285,7 @@ on-arrival: former_president = "Hindenburg"; president = "Hindenburg"; president
 Disaster strikes! Despite our best effort, Paul von Hindenburg has won the election with the backing of all the reactionary right organized under the **Reichsblock** behind him. Many in our party anticipate an immediate restructuring of Germany along authoritarian and aristocratic lines and though he seems, for now, to be following the constitution, we must be wary. Regardless, this signals a dark turn for German democracy. Who knows what Hindenburg may do in power?
 
 @z_wins
-onArrival: {!
+onArrival: {
     if (z_presidential_candidate == "Marx") {
         former_president = "Marx";
         president = "Marx";
@@ -310,7 +310,7 @@ onArrival: {!
     z_support_spd = 0;
     ddp_support_spd = 0;
     bvp_support_hindenburg = 0;
-!}
+}
 
 [+ z_presidential_candidate_fullname +] has won the election with the backing of all the republican left organized under the **Volksblock** behind him. This is a victory for German democracy and the continued normalization of the republic.
 
