@@ -5,6 +5,8 @@ view-if: year = 1926 and month >= 2 and ebert_lives == 1
 tags: event
 on-arrival: left_campaign = 0; center_campaign = 0; labor_campaign = 0; reformist_campaign = 0; neorevisionist_campaign = 0; nonfactional_campaign = 0; dvp_campaign = 1; z_campaign = 1; held_campaign = 1; liebknecht_campaign = 1; ludendorff_campaign = 1; hellpach_campaign = 1; 
 
+= The 1926 Presidential Election
+
 It is expected that a wide variety of candidates will enter the race, though there has also been much discussion about joint candidates. Some in our Reformist wing argue that we should run a joint Weimar candidate. One suggestion which has been floated is Otto Gessler, to be backed by the SPD, DDP, Center Party, and DVP, but, with our party's left-wing is decisively opposed and the DVP reluctant, this has gone nowhere.
 There are also those on our party's left who argue we should run a joint Socialist candidate with the [+ uspd_name +], though many others dismiss the idea as a pipedream.
 As the incumbent Presidential party, many within the SPD and without expect us to run a candidate. The incumbent, [+ president +], is one option – though both he and many within our party are reluctant on account of his health. Alternatively, Paul Löbe, the newly elected President of the Reichstag, is a popular option, as is Otto Braun, Minister-President of Prussia.
