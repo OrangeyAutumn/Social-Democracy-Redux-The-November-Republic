@@ -13,18 +13,29 @@ Bavaria has historically been the most difficult state for our party, with a pow
 
 We can enact policies in Bavaria.
 
-- @land_reform
-- @agricultural_finance
-- @pro_consumer
+- @build_ties: We can use push our state party to strengthen ties with the other local parties.
+- @pursue_policy: We can push our state party to pursue policy goals on the local level.
+- @paramilitary: We can pursue policies regarding the local paramilitaries.
+- @root: No new policies are needed.
+- @easy_discard
+
+@build_ties
+
+- @build_ties_uspd: Push our state party to strenghten ties with the state USPD.
+
+@pursue_policy
+
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
+- @land_reform: We can conduct land reform on a local level.
+- @agricultural_finance: We can provide agricultural financing on the state level.
+- @pro_consumer: We can negotiate for lower prices with local farmers.
+
+@paramilitary
+
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
 - @persecute_sh: Use our state offices to target and prosecute the state Stalhelm.
 - @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
-- @root: No new policies are needed.
-- @easy_discard
-- @cancel_advisor_action
-
 
 @bureaucracy
 on-arrival: bavarian_nsdap -= 0.02 if bavarian_nsdap >= 0.6; bavarian_nsdap -= 0.02 if year < 1930 and bavarian_nsdap >= 0.6; bavarian_dnvp += 0.02 if year < 1930 and bavarian_dnvp < 1.2; bavarian_dnvp -= 0.03 if year >= 1930 and bavarian_dnvp >= 0.8; bavarian_other += 0.02 if year >= 1930 and bavarian_other < 1.2; bavarian_dvp += 0.01 if year >= 1930; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
