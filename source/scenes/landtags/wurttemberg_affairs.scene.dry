@@ -13,17 +13,29 @@ Württemberg has historically been a more difficult state for our party, with a 
 
 We can enact policies in Württemberg.
 
+- @build_ties: We can use push our state party to strengthen ties with the other local parties.
+- @pursue_policy: We can push our state party to pursue policy goals on the local level.
+- @paramilitary: We can pursue policies regarding the local paramilitaries.
+- @root: No new policies are needed.
+- @easy_discard
+
+@build_ties
+
+- @build_ties_uspd: Push our state party to strenghten ties with the state USPD.
+
+@pursue_policy
+
+- @bureaucracy: Purge the bureaucracy of reactionary elements.
 - @land_reform: We can conduct land reform on a local level.
 - @agricultural_finance: We can provide agricultural financing on the state level.
 - @pro_consumer: We can negotiate for lower prices with local farmers.
-- @bureaucracy: Purge the bureaucracy of reactionary elements.
+
+@paramilitary
+
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
 - @persecute_sh: Use our state offices to target and prosecute the state Stalhelm.
 - @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
-- @root: No new policies are needed.
-- @easy_discard
-- @cancel_advisor_action
 
 @land_reform
 unavailable-subtitle: [? if judicial_reform < 2 : The judiciary would never allow this. ?]
