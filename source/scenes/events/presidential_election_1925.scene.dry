@@ -877,6 +877,21 @@ We try to convince the DVP to at least abstain, but our efforts are a failure an
 
 @spd_presidential_menu
 
+- @presidential_candidate_left_incumbent
+- @presidential_candidate_left_previous
+- @presidential_candidate_left_chancellor
+- @presidential_candidate_center_incumbent
+- @presidential_candidate_center_previous
+- @presidential_candidate_center_chancellor
+- @presidential_candidate_labor_incumbent
+- @presidential_candidate_labor_previous
+- @presidential_candidate_labor_chancellor
+- @presidential_candidate_reformist_incumbent
+- @presidential_candidate_reformist_previous
+- @presidential_candidate_reformist_chancellor
+- @presidential_candidate_neorevisionist_incumbent
+- @presidential_candidate_neorevisionist_previous
+- @presidential_candidate_neorevisionist_chancellor
 -	@presidential_candidate_crispien
 -	@presidential_candidate_levi
 -	@presidential_candidate_sender
@@ -930,14 +945,14 @@ if (president == "Crispien") {
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_left_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
 subtitle: Their high profile from the previous campaign may give us an advantage.
 view-if: (chancellor != "Crispien" and president != "Crispien" and spd_presidential_candidate  == "Crispien") or (chancellor != "Levi" and president != "Levi" and spd_presidential_candidate  == "Levi") or (chancellor != "Sender" and president != "Sender" and spd_presidential_candidate  == "Sender") or (chancellor != "Rosenfeld" and president != "Rosenfeld" and spd_presidential_candidate  == "Rosenfeld") or (chancellor != "Seydewitz" and president != "Seydewitz" and spd_presidential_candidate  == "Seydewitz") or (chancellor != "Siemsen" and president != "Siemsen" and spd_presidential_candidate  == "Siemsen") 
 on-arrival: left_campaign = 1
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_left_chancellor
 Title: Run our Chancellor [+ chancellor +] 
@@ -962,73 +977,73 @@ on-arrival: {!
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Crispien
 
 @presidential_candidate_crispien
-title: Run Crispien, our [? if spd_coleader_1 == "Crispien" : Co-leader ?][? if spd_coleader_2 == "Crispien" : Co-leader ?][? if spd_coleader_3 == "Crispien" : Co-leader ?][? if left_leader == "Crispien" : Left faction leader ?]
+title: Run Arthur Crispien, our [? if spd_coleader_1 == "Crispien" : Co-leader ?][? if spd_coleader_2 == "Crispien" : Co-leader ?][? if spd_coleader_3 == "Crispien" : Co-leader ?][? if left_leader == "Crispien" : Left faction leader ?]
 view-if: (chancellor != "Crispien" and president != "Crispien" and spd_presidential_candidate != "Crispien") and (spd_coleader_1 == "Crispien" or spd_coleader_2 == "Crispien" or spd_coleader_3 == "Crispien" or left_leader == "Crispien")
 on-arrival: spd_presidential_candidate = "Crispien"; left_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Levi
 
 @presidential_candidate_levi
-title: Run Levi, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if left_leader : Left faction leader ?]
+title: Run Paul Levi, our [? if spd_coleader_1 == "Levi" : Co-leader ?][? if spd_coleader_2 == "Levi" : Co-leader ?][? if spd_coleader_3 == "Levi" : Co-leader ?][? if left_leader == "Levi" : Left faction leader ?]
 view-if: (levi_dead == 0 and chancellor != "Levi" and president != "Levi" and spd_presidential_candidate != "Levi") and (spd_coleader_1 == "Levi" or spd_coleader_2 == "Levi" or spd_coleader_3 == "Levi" or left_leader == "Levi")
 on-arrival: spd_presidential_candidate = "Levi"; left_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Sender
 
 @presidential_candidate_sender
-title: Run Sender, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if left_leader : Left faction leader ?]
+title: Run Toni Sender, our [? if spd_coleader_1 == "Sender" : Co-leader ?][? if spd_coleader_2 == "Sender" : Co-leader ?][? if spd_coleader_3 == "Sender" : Co-leader ?][? if left_leader == "Sender" : Left faction leader ?]
 view-if: (chancellor != "Sender" and president != "Sender" and spd_presidential_candidate != "Sender") and (spd_coleader_1 == "Sender" or spd_coleader_2 == "Sender" or spd_coleader_3 == "Sender" or left_leader == "Sender")
 on-arrival: spd_presidential_candidate = "Sender"; left_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Rosenfeld
 
 @presidential_candidate_rosenfeld
-title: Run Rosenfeld, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if left_leader : Left faction leader ?]
+title: Run Kurt Rosenfeld, our [? if spd_coleader_1 == "Rosenfeld" : Co-leader ?][? if spd_coleader_2 == "Rosenfeld" : Co-leader ?][? if spd_coleader_3 == "Rosenfeld" : Co-leader ?][? if left_leader == "Rosenfeld" : Left faction leader ?]
 view-if: (chancellor != "Rosenfeld" and president != "Rosenfeld" and spd_presidential_candidate != "Rosenfeld") and (spd_coleader_1 == "Rosenfeld" or spd_coleader_2 == "Rosenfeld" or spd_coleader_3 == "Rosenfeld" or left_leader == "Rosenfeld")
 on-arrival: spd_presidential_candidate = "Rosenfeld"; left_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Seydewitz
 
 @presidential_candidate_seydewitz
-title: Run Seydewitz, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if left_leader : Left faction leader ?]
+title: Run Max Seydewitz, our [? if spd_coleader_1 == "Seydewitz" : Co-leader ?][? if spd_coleader_2 == "Seydewitz" : Co-leader ?][? if spd_coleader_3 == "Seydewitz" : Co-leader ?][? if left_leader == "Seydewitz" : Left faction leader ?]
 view-if: (chancellor != "Seydewitz" and president != "Seydewitz" and spd_presidential_candidate != "Seydewitz") and (spd_coleader_1 == "Seydewitz" or spd_coleader_2 == "Seydewitz" or spd_coleader_3 == "Seydewitz" or left_leader == "Seydewitz")
 on-arrival: spd_presidential_candidate = "Seydewitz"; left_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Siemsen
 
 @presidential_candidate_siemsen
-title: Run Siemsen, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if left_leader : Left faction leader ?]
+title: Run Anna Siemsen, our [? if spd_coleader_1 == "Siemsen" : Co-leader ?][? if spd_coleader_2 == "Siemsen" : Co-leader ?][? if spd_coleader_3 == "Siemsen" : Co-leader ?][? if left_leader == "Siemsen" : Left faction leader ?]
 view-if: (chancellor != "Siemsen" and president != "Siemsen" and spd_presidential_candidate != "Siemsen") and (spd_coleader_1 == "Siemsen" or spd_coleader_2 == "Siemsen" or spd_coleader_3 == "Siemsen" or left_leader == "Siemsen")
 on-arrival: spd_presidential_candidate = "Siemsen"; left_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Center Candidate
 
@@ -1054,14 +1069,14 @@ on-arrival: {!
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_center_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
 subtitle: Their high profile from the previous campaign may give us an advantage.
 view-if: (chancellor != "Müller" and president != "Müller" and spd_presidential_candidate  == "Müller") or (chancellor != "Wels" and president != "Wels" and spd_presidential_candidate  == "Wels") or (chancellor != "Vogel" and president != "Vogel" and spd_presidential_candidate  == "Vogel") or (chancellor != "Hilferding" and president != "Hilferding" and spd_presidential_candidate  == "Hilferding") or (chancellor != "Breitscheid" and president != "Breitscheid" and spd_presidential_candidate  == "Breitscheid")
 on-arrival: center_campaign = 1
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_center_chancellor
 Title: Run our Chancellor [+ chancellor +] 
@@ -1084,59 +1099,59 @@ on-arrival: {!
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Müller
 
 @presidential_candidate_muller
-title: Run Müller, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if center_leader : Center faction leader ?]
+title: Run Hermann Müller, our [? if spd_coleader_1 == "Müller" : Co-leader ?][? if spd_coleader_2 == "Müller" : Co-leader ?][? if spd_coleader_3 == "Müller" : Co-leader ?][? if center_leader == "Müller" : Center faction leader ?]
 view-if: (muller_dead == 0 and chancellor != "Müller" and president != "Müller" and spd_presidential_candidate != "Müller") and (spd_coleader_1 == "Müller" or spd_coleader_2 == "Müller" or spd_coleader_3 == "Müller" or center_leader == "Müller")
 on-arrival: spd_presidential_candidate = "Müller"; center_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if center_leader : our Center faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Wels
 @presidential_candidate_wels
-title: Run Wels, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if center_leader : Center faction leader ?]
+title: Run Otto Wels, our [? if spd_coleader_1 == "Wels" : Co-leader ?][? if spd_coleader_2 == "Wels" : Co-leader ?][? if spd_coleader_3 == "Wels" : Co-leader ?][? if center_leader == "Wels" : Center faction leader ?]
 view-if: (chancellor != "Wels" and president != "Wels" and spd_presidential_candidate != "Wels") and (spd_coleader_1 == "Wels" or spd_coleader_2 == "Wels" or spd_coleader_3 == "Wels" or center_leader == "Wels")
 on-arrival: spd_presidential_candidate = "Wels"; center_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if center_leader : our Center faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Hilferding
 
 @presidential_candidate_hilferding
-title: Run Hilferding, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if center_leader : Center faction leader ?]
+title: Run Rudolf Hilferding, our [? if spd_coleader_1 == "Hilferding" : Co-leader ?][? if spd_coleader_2 == "Hilferding" : Co-leader ?][? if spd_coleader_3 == "Hilferding" : Co-leader ?][? if center_leader == "Hilferding" : Center faction leader ?]
 view-if: (chancellor != "Hilferding" and president != "Hilferding" and spd_presidential_candidate != "Hilferding") and (spd_coleader_1 == "Hilferding" or spd_coleader_2 == "Hilferding" or spd_coleader_3 == "Hilferding" or center_leader == "Hilferding")
 on-arrival: spd_presidential_candidate = "Hilferding"; center_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if center_leader : our Center faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Vogel
 @presidential_candidate_vogel
-title: Run Vogel, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if center_leader : Center faction leader ?]
+title: Run Hans Vogel, our [? if spd_coleader_1 == "Vogel" : Co-leader ?][? if spd_coleader_2 == "Vogel" : Co-leader ?][? if spd_coleader_3 == "Vogel" : Co-leader ?][? if center_leader == "Vogel" : Center faction leader ?]
 view-if: (chancellor != "Vogel" and president != "Vogel" and spd_presidential_candidate != "Vogel") and (spd_coleader_1 == "Vogel" or spd_coleader_2 == "Vogel" or spd_coleader_3 == "Vogel" or center_leader == "Vogel")
 on-arrival: spd_presidential_candidate = "Vogel"; center_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if center_leader : our Center faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 // Breitscheid
 
 @presidential_candidate_breitscheid
-title: Run Breitscheid, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if center_leader : Center faction leader ?]
+title: Run Rudolf Breitscheid, our [? if spd_coleader_1 == "Breitscheid" : Co-leader ?][? if spd_coleader_2 == "Breitscheid" : Co-leader ?][? if spd_coleader_3 == "Breitscheid" : Co-leader ?][? if center_leader == "Breitscheid" : Center faction leader ?]
 view-if: (chancellor != "Breitscheid" and president != "Breitscheid" and spd_presidential_candidate != "Breitscheid") and (spd_coleader_1 == "Breitscheid" or spd_coleader_2 == "Breitscheid" or spd_coleader_3 == "Breitscheid" or center_leader == "Breitscheid")
 on-arrival: spd_presidential_candidate = "Breitscheid"; center_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if center_leader : our Center faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Labor Candidate
 
@@ -1161,7 +1176,7 @@ on-arrival: {!
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_labor_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
@@ -1169,7 +1184,7 @@ subtitle: Their high profile from the previous campaign may give us an advantage
 view-if: (chancellor != "Leipart" and president != "Leipart" and spd_presidential_candidate  == "Leipart") or (chancellor != "Aufhäuser" and president != "Aufhäuser" and spd_presidential_candidate  == "Aufhäuser") or (chancellor != "Wissell" and president != "Wissell" and spd_presidential_candidate  == "Wissell") or (chancellor != "Woytinsky" and president != "Woytinsky" and spd_presidential_candidate  == "Woytinsky") or (chancellor != "Tarnow" and president != "Tarnow" and spd_presidential_candidate  == "Tarnow")
 on-arrival: labor_campaign = 1
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_labor_chancellor
 Title: Run our Chancellor [+ chancellor +] 
@@ -1192,62 +1207,62 @@ on-arrival: {!
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Leipart
 
 @presidential_candidate_leipart
-title: Run Leipart, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if labor_leader : Labor faction leader ?]
+title: Run Theodor Leipart, our [? if spd_coleader_1 == "Leipart" : Co-leader ?][? if spd_coleader_2 == "Leipart" : Co-leader ?][? if spd_coleader_3 == "Leipart" : Co-leader ?][? if labor_leader == "Leipart" : Labor faction leader ?]
 view-if: (chancellor != "Leipart" and president != "Leipart" and spd_presidential_candidate != "Leipart") and (spd_coleader_1 == "Leipart" or spd_coleader_2 == "Leipart" or spd_coleader_3 == "Leipart" or labor_leader == "Leipart")
 on-arrival: spd_presidential_candidate = "Leipart"; labor_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Aufhauser
 
 @presidential_candidate_aufhauser
-title: Run Aufhäuser, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if labor_leader : Labor faction leader ?]
+title: Run Siegfried Aufhäuser, our [? if spd_coleader_1 == "Aufhäuser" : Co-leader ?][? if spd_coleader_2 == "Aufhäuser" : Co-leader ?][? if spd_coleader_3 == "Aufhäuser" : Co-leader ?][? if labor_leader == "Aufhäuser" : Labor faction leader ?]
 view-if: (chancellor != "Aufhäuser" and president != "Aufhäuser") and (spd_coleader_1 == "Aufhäuser" or spd_coleader_2 == "Aufhäuser" or spd_coleader_3 == "Aufhäuser" or labor_leader == "Aufhäuser")
 on-arrival: spd_presidential_candidate = "Aufhäuser"; labor_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Wissell
 
 @presidential_candidate_wissell
-title: Run Wissell, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if labor_leader : Labor faction leader ?]
+title: Run Rudolf Wissell, our [? if spd_coleader_1 == "Wissell" : Co-leader ?][? if spd_coleader_2 == "Wissell" : Co-leader ?][? if spd_coleader_3 == "Wissell" : Co-leader ?][? if labor_leader == "Wissell" : Labor faction leader ?]
 view-if: (chancellor != "Wissell" and president != "Wissell" and spd_presidential_candidate != "Wissell") and (spd_coleader_1 == "Wissell" or spd_coleader_2 == "Wissell" or spd_coleader_3 == "Wissell" or labor_leader == "Wissell")
 on-arrival: spd_presidential_candidate = "Wissell"; labor_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Woytinsky
 
 @presidential_candidate_woytinsky
-title: Run Woytinsky, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if labor_leader : Labor faction leader ?]
+title: Run Wladimir Woytinsky, our [? if spd_coleader_1 == "Woytinsky" : Co-leader ?][? if spd_coleader_2 == "Woytinsky" : Co-leader ?][? if spd_coleader_3 == "Woytinsky" : Co-leader ?][? if labor_leader == "Woytinsky" : Labor faction leader ?]
 view-if: (chancellor != "Woytinsky" and president != "Woytinsky" and spd_presidential_candidate != "Woytinsky") and (spd_coleader_1 == "Woytinsky" or spd_coleader_2 == "Woytinsky" or spd_coleader_3 == "Woytinsky" or labor_leader == "Woytinsky")
 on-arrival: spd_presidential_candidate = "Woytinsky"; labor_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Tarnow
 
 @presidential_candidate_tarnow
-title: Run Tarnow, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if labor_leader : Labor faction leader ?]
+title: Run Fritz Tarnow, our [? if spd_coleader_1 == "Tarnow" : Co-leader ?][? if spd_coleader_2 == "Tarnow" : Co-leader ?][? if spd_coleader_3 == "Tarnow" : Co-leader ?][? if labor_leader == "Tarnow" : Labor faction leader ?]
 view-if: (chancellor != "Tarnow" and president != "Tarnow" and spd_presidential_candidate != "Tarnow") and (spd_coleader_1 == "Tarnow" or spd_coleader_2 == "Tarnow" or spd_coleader_3 == "Tarnow" or labor_leader == "Tarnow")
 on-arrival: spd_presidential_candidate = "Tarnow"; labor_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Reformist Candidate
 
@@ -1274,7 +1289,7 @@ on-arrival: {!
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_reformist_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election. (This is the Historical option)
@@ -1282,7 +1297,7 @@ subtitle: Their high profile from the previous campaign may give us an advantage
 view-if: (chancellor != "Braun" and president != "Braun" and spd_presidential_candidate  == "Braun") or (chancellor != "Severing" and president != "Severing" and spd_presidential_candidate  == "Severing") or (chancellor != "Juchacz" and president != "Juchacz" and spd_presidential_candidate  == "Juchacz") or (chancellor != "Pfülf" and president != "Pfülf" and spd_presidential_candidate  == "Pfülf") or (chancellor != "Scheidemann" and president != "Scheidemann" and spd_presidential_candidate  == "Scheidemann") or (chancellor != "Ebert" and president != "Ebert" and spd_presidential_candidate  == "Ebert")
 on-arrival: reformist_campaign = 1
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_reformist_chancellor
 Title: Run our Chancellor [+ chancellor +] 
@@ -1305,62 +1320,62 @@ on-arrival: {!
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Braun
 
 @presidential_candidate_braun
-title: Run Braun, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if reformist_leader : Reformist faction leader ?]: This is the Historical option.
+title: Run Otto Braun, our [? if spd_coleader_1 == "Braun" : Co-leader ?][? if spd_coleader_2 == "Braun" : Co-leader ?][? if spd_coleader_3 == "Braun" : Co-leader ?][? if reformist_leader == "Braun" : Reformist faction leader ?]: This is the Historical option.
 view-if: (chancellor != "Braun" and president != "Braun" and spd_presidential_candidate != "Braun") and (spd_coleader_1 == "Braun" or spd_coleader_2 == "Braun" or spd_coleader_3 == "Braun" or reformist_leader == "Braun")
 on-arrival: spd_presidential_candidate = "Braun"; reformist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if reformist_leader : our Reformist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Severing
 
 @presidential_candidate_severing
-title: Run Severing, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if reformist_leader : Reformist faction leader ?]
+title: Run Carl Severing, our [? if spd_coleader_1 == "Severing" : Co-leader ?][? if spd_coleader_2 == "Severing" : Co-leader ?][? if spd_coleader_3 == "Severing" : Co-leader ?][? if reformist_leader == "Severing" : Reformist faction leader ?]
 view-if: (chancellor != "Severing" and president != "Severing" and spd_presidential_candidate != "Severing") and (spd_coleader_1 == "Severing" or spd_coleader_2 == "Severing" or spd_coleader_3 == "Severing" or reformist_leader == "Severing")
 on-arrival: spd_presidential_candidate = "Severing"; reformist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if reformist_leader : our Reformist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Juchacz
 
 @presidential_candidate_juchacz
-title: Run Juchacz, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if reformist_leader : Reformist faction leader ?]
+title: Run Marie Juchacz, our [? if spd_coleader_1 == "Juchacz" : Co-leader ?][? if spd_coleader_2 == "Juchacz" : Co-leader ?][? if spd_coleader_3 == "Juchacz" : Co-leader ?][? if reformist_leader == "Juchacz" : Reformist faction leader ?]
 view-if: (chancellor != "Juchacz" and president != "Juchacz" and spd_presidential_candidate != "Juchacz") and (spd_coleader_1 == "Juchacz" or spd_coleader_2 == "Juchacz" or spd_coleader_3 == "Juchacz" or reformist_leader == "Juchacz")
 on-arrival: spd_presidential_candidate = "Juchacz"; reformist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if reformist_leader : our Reformist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Pfulf
 
 @presidential_candidate_pfulf
-title: Run Pfülf, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if reformist_leader : Reformist faction leader ?]
+title: Run Antonie Pfülf, our [? if spd_coleader_1 == "Pfülf" : Co-leader ?][? if spd_coleader_2 == "Pfülf" : Co-leader ?][? if spd_coleader_3 == "Pfülf" : Co-leader ?][? if reformist_leader == "Pfülf" : Reformist faction leader ?]
 view-if: (chancellor != "Pfülf" and president != "Pfülf" and spd_presidential_candidate != "Pfülf") and (spd_coleader_1 == "Pfülf" or spd_coleader_2 == "Pfülf" or spd_coleader_3 == "Pfülf" or reformist_leader == "Pfülf")
 on-arrival: spd_presidential_candidate = "Pfülf"; reformist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if reformist_leader : our Reformist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Scheidemann
 
 @presidential_candidate_scheidemann
-title: Run Scheidemann, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if reformist_leader : Reformist faction leader ?]
+title: Run Phillip Scheidemann, our [? if spd_coleader_1 == "Scheidemann" : Co-leader ?][? if spd_coleader_2 == "Scheidemann" : Co-leader ?][? if spd_coleader_3 == "Scheidemann" : Co-leader ?][? if reformist_leader == "Scheidemann" : Reformist faction leader ?]
 view-if: (chancellor != "Scheidemann" and president != "Scheidemann" and spd_presidential_candidate != "Scheidemann") and (spd_coleader_1 == "Scheidemann" or spd_coleader_2 == "Scheidemann" or spd_coleader_3 == "Scheidemann" or reformist_leader == "Scheidemann")
 on-arrival: spd_presidential_candidate = "Scheidemann"; reformist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if reformist_leader : our Reformist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 //Nonfactional Candidate
 
@@ -1383,7 +1398,7 @@ on-arrival: {!
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_nonfactional_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
@@ -1391,7 +1406,7 @@ subtitle: Their high profile from the previous campaign may give us an advantage
 view-if: (chancellor != "Baade" and president != "Baade" and spd_presidential_candidate  == "Baade") or (chancellor != "Hirschfeld" and president != "Hirschfeld" and spd_presidential_candidate  == "Hirschfeld") or (chancellor != "Radbruch" and president != "Radbruch" and spd_presidential_candidate  == "Radbruch") or (chancellor != "Stampfer" and president != "Stampfer" and spd_presidential_candidate  == "Stampfer")
 on-arrival: nonfactional_campaign = 1
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_nonfactional_chancellor
 Title: Run our Chancellor [+ chancellor +] 
@@ -1412,65 +1427,65 @@ on-arrival: {!
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Baade
 
 @presidential_candidate_baade
-title: Run Baade, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Fritz Baade, our [? if spd_coleader_1 == "Baade" : Co-leader ?][? if spd_coleader_2 == "Baade" : Co-leader ?][? if spd_coleader_3 == "Baade" : Co-leader ?][? if left_leader == "Baade" : Left faction leader ?][? if center_leader == "Baade" : Center faction leader ?][? if labor_leader == "Baade" : Labor faction leader ?][? if reformist_leader == "Baade" : Reformist faction leader ?][? if neorevisionist_leader == "Baade" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Baade" and president != "Baade" and spd_presidential_candidate != "Baade") and (spd_coleader_1 == "Baade" or spd_coleader_2 == "Baade" or spd_coleader_3 == "Baade" or left_leader == "Baade" or center_leader == "Baade" or labor_leader == "Baade" or reformist_leader == "Baade" or neorevisionist_leader == "Baade")
 on-arrival: spd_presidential_candidate = "Baade"; nonfactional_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Hirschfeld
 
 @presidential_candidate_hirschfeld
-title: Run Hirschfeld, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Magnus Hirschfeld, our [? if spd_coleader_1 == "Hirschfeld" : Co-leader ?][? if spd_coleader_2 == "Hirschfeld" : Co-leader ?][? if spd_coleader_3 == "Hirschfeld" : Co-leader ?][? if left_leader == "Hirschfeld" : Left faction leader ?][? if center_leader == "Hirschfeld" : Center faction leader ?][? if labor_leader == "Hirschfeld" : Labor faction leader ?][? if reformist_leader == "Hirschfeld" : Reformist faction leader ?][? if neorevisionist_leader == "Hirschfeld" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Hirschfeld" and president != "Hirschfeld" and spd_presidential_candidate != "Hirschfeld") and (spd_coleader_1 == "Hirschfeld" or spd_coleader_2 == "Hirschfeld" or spd_coleader_3 == "Hirschfeld" or left_leader == "Hirschfeld" or center_leader == "Hirschfeld" or labor_leader == "Hirschfeld" or reformist_leader == "Hirschfeld" or neorevisionist_leader == "Hirschfeld")
 on-arrival: spd_presidential_candidate = "Hirschfeld"; nonfactional_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Radbruch
 
 @presidential_candidate_radbruch
-title: Run Radbruch, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Gustav Radbruch, our [? if spd_coleader_1 == "Radbruch" : Co-leader ?][? if spd_coleader_2 == "Radbruch" : Co-leader ?][? if spd_coleader_3 == "Radbruch" : Co-leader ?][? if left_leader == "Radbruch" : Left faction leader ?][? if center_leader == "Radbruch" : Center faction leader ?][? if labor_leader == "Radbruch" : Labor faction leader ?][? if reformist_leader == "Radbruch" : Reformist faction leader ?][? if neorevisionist_leader == "Radbruch" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Radbruch" and president != "Radbruch" and spd_presidential_candidate != "Radbruch") and (spd_coleader_1 == "Radbruch" or spd_coleader_2 == "Radbruch" or spd_coleader_3 == "Radbruch" or left_leader == "Radbruch" or center_leader == "Radbruch" or labor_leader == "Radbruch" or reformist_leader == "Radbruch" or neorevisionist_leader == "Radbruch")
 on-arrival: spd_presidential_candidate = "Radbruch"; nonfactional_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Stampfer
 
 @presidential_candidate_stampfer
-title: Run Stampfer, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Friedrich Stampfer, our [? if spd_coleader_1 == "Stampfer" : Co-leader ?][? if spd_coleader_2 == "Stampfer" : Co-leader ?][? if spd_coleader_3 == "Stampfer" : Co-leader ?][? if left_leader == "Stampfer" : Left faction leader ?][? if center_leader == "Stampfer" : Center faction leader ?][? if labor_leader == "Stampfer" : Labor faction leader ?][? if reformist_leader == "Stampfer" : Reformist faction leader ?][? if neorevisionist_leader == "Stampfer" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Stampfer" and president != "Stampfer" and spd_presidential_candidate != "Stampfer") and (spd_coleader_1 == "Stampfer" or spd_coleader_2 == "Stampfer" or spd_coleader_3 == "Stampfer" or left_leader == "Stampfer" or center_leader == "Stampfer" or labor_leader == "Stampfer" or reformist_leader == "Stampfer" or neorevisionist_leader == "Stampfer")
 on-arrival: spd_presidential_candidate = "Stampfer"; nonfactional_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Lobe
 
 @presidential_candidate_lobe
-title: Run Paul Löbe, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Paul Löbe, our [? if spd_coleader_1 == "Löbe" : Co-leader ?][? if spd_coleader_2 == "Löbe" : Co-leader ?][? if spd_coleader_3 == "Löbe" : Co-leader ?][? if left_leader == "Löbe" : Left faction leader ?][? if center_leader == "Löbe" : Center faction leader ?][? if labor_leader == "Löbe" : Labor faction leader ?][? if reformist_leader == "Löbe" : Reformist faction leader ?][? if neorevisionist_leader == "Löbe" : Neorevisionist faction leader ?]
 view-if: year != 1925 and (chancellor != "Löbe" and president != "Löbe" and spd_presidential_candidate != "Stampfer") and (spd_coleader_1 == "Löbe" or spd_coleader_2 == "Löbe" or spd_coleader_3 == "Löbe" or left_leader == "Löbe" or center_leader == "Löbe" or labor_leader == "Löbe" or reformist_leader == "Löbe" or neorevisionist_leader == "Löbe")
 on-arrival: spd_presidential_candidate = "Stampfer"; nonfactional_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_lobe_25
-title: Run Paul Löbe, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Paul Löbe, the President of the Reichstag [? if spd_coleader_1 == "Löbe" : and our Co-leader ?][? if spd_coleader_2 == "Löbe" : and our Co-leader ?][? if spd_coleader_3 == "Löbe" : and our Co-leader ?][? if left_leader == "Löbe" : and our Left faction leader ?][? if center_leader == "Löbe" : and our Center faction leader ?][? if labor_leader == "Löbe" : and our Labor faction leader ?][? if reformist_leader == "Löbe" : and our Reformist faction leader ?][? if neorevisionist_leader == "Löbe" : and our Neorevisionist faction leader ?]
 view-if: year == 1925
 choose-if: never
 unavailable-subtitle: Löbe insists his place is in the Reichstag.
@@ -1496,7 +1511,7 @@ on-arrival: {!
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_neorevisionist_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
@@ -1504,7 +1519,7 @@ subtitle: Their high profile from the previous campaign may give us an advantage
 view-if: (chancellor != "Mierendorff" and president != "Mierendorff" and spd_presidential_candidate  == "Mierendorff") or (chancellor != "Schumacher" and president != "Schumacher" and spd_presidential_candidate  == "Schumacher") or (chancellor != "Leber" and president != "Leber" and spd_presidential_candidate  == "Leber") or (chancellor != "Noske" and president != "Noske" and spd_presidential_candidate  == "Noske")
 on-arrival: neorevisionist_campaign = 1
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_neorevisionist_chancellor
 Title: Run our Chancellor [+ chancellor +] 
@@ -1525,48 +1540,48 @@ on-arrival: {!
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Mierendorff
 
 @presidential_candidate_mierendorff
-title: Run Mierendorff, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Carlo Mierendorff, our [? if spd_coleader_1 == "Mierendorff" : Co-leader ?][? if spd_coleader_2 == "Mierendorff" : Co-leader ?][? if spd_coleader_3 == "Mierendorff" : Co-leader ?][? if labor_leader == "Mierendorff" : Labor faction leader ?][? if reformist_leader == "Mierendorff" : Reformist faction leader ?][? if neorevisionist_leader == "Mierendorff" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Mierendorff" and president != "Mierendorff" and spd_presidential_candidate != "Mierendorff") and (spd_coleader_1 == "Mierendorff" or spd_coleader_2 == "Mierendorff" or spd_coleader_3 == "Mierendorff" or labor_leader == "Mierendorff" or reformist_leader == "Mierendorff" or neorevisionist_leader == "Mierendorff")
 on-arrival: spd_presidential_candidate = "Mierendorff"; neorevisionist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Schumacher
 
 @presidential_candidate_schumacher
-title: Run Schumacher, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Kurt Schumacher, our [? if spd_coleader_1 == "Schumacher" : Co-leader ?][? if spd_coleader_2 == "Schumacher" : Co-leader ?][? if spd_coleader_3 == "Schumacher" : Co-leader ?][? if labor_leader == "Schumacher" : Labor faction leader ?][? if reformist_leader == "Schumacher" : Reformist faction leader ?][? if neorevisionist_leader == "Schumacher" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Schumacher" and president != "Schumacher" and spd_presidential_candidate != "Schumacher") and (spd_coleader_1 == "Schumacher" or spd_coleader_2 == "Schumacher" or spd_coleader_3 == "Schumacher" or labor_leader == "Schumacher" or reformist_leader == "Schumacher" or neorevisionist_leader == "Schumacher")
 on-arrival: spd_presidential_candidate = "Schumacher"; neorevisionist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Leber
 
 @presidential_candidate_leber
-title: Run Leber, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Julius Leber, our [? if spd_coleader_1 == "Leber" : Co-leader ?][? if spd_coleader_2 == "Leber" : Co-leader ?][? if spd_coleader_3 == "Leber" : Co-leader ?][? if labor_leader == "Leber" : Labor faction leader ?][? if reformist_leader == "Leber" : Reformist faction leader ?][? if neorevisionist_leader == "Leber" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Leber" and president != "Leber" and spd_presidential_candidate != "Leber") and (spd_coleader_1 == "Leber" or spd_coleader_2 == "Leber" or spd_coleader_3 == "Leber" or labor_leader == "Leber" or reformist_leader == "Leber" or neorevisionist_leader == "Leber")
 on-arrival: spd_presidential_candidate = "Leber"; neorevisionist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
 
 // Noske
 
 @presidential_candidate_noske
-title: Run Noske, our [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if left_leader : our Left faction leader ?][? if center_leader : our Center faction leader ?][? if labor_leader : our Labor faction leader ?][? if reformist_leader : our Reformist faction leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] 
+title: Run Gustav Noske, our [? if spd_coleader_1 == "Noske" : Co-leader ?][? if spd_coleader_2 == "Noske" : Co-leader ?][? if spd_coleader_3 == "Noske" : Co-leader ?][? if neorevisionist_leader == "Noske" : Neorevisionist faction leader ?]
 view-if: (chancellor != "Noske" and president != "Noske" and spd_presidential_candidate != "Noske") and (spd_coleader_1 == "Noske" or spd_coleader_2 == "Noske" or spd_coleader_3 == "Noske" or neorevisionist_leader == "Noske")
 on-arrival: spd_presidential_candidate = "Noske"; neorevisionist_campaign = 1
 
-We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if neorevisionist_leader : our Neorevisionist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaign
+- @spd_presidential_campaign: Now onto the campaign
