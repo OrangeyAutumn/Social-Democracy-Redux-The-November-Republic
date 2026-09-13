@@ -1,12 +1,12 @@
 title: The 1925 Presidential Election
-subtitle: Germany’s first direct Presidential Election, and hopefully not its last..
+subtitle: Germany's first direct Presidential Election, and hopefully not its last..
 new-page: true
 view-if: year = 1925 and month >= 4 and ebert_dead == 1
 tags: event
 on-arrival: left_campaign = 0; center_campaign = 0; labor_campaign = 0; reformist_campaign = 0; neorevisionist_campaign = 0; nonfactional_campaign = 0; dvp_campaign = 1; z_campaign = 1; held_campaign = 1; liebknecht_campaign = 1; ludendorff_campaign = 1; hellpach_campaign = 1; 
 
 It is expected that a wide variety of candidates will enter the race, though there has also been much discussion about joint candidates. Some in our Reformist wing argue that we should run a joint Weimar candidate. One suggestion which has been floated is Otto Gessler, to be backed by the SPD, DDP, Center Party, and DVP, but, with our party's left-wing is decisively opposed and the DVP reluctant, this has gone nowhere.
-There are also those on our party’s left who argue we should run a joint Socialist candidate with the [+ uspd_name +], though many others dismiss the idea as a pipedream.
+There are also those on our party's left who argue we should run a joint Socialist candidate with the [+ uspd_name +], though many others dismiss the idea as a pipedream.
 
 As the incumbent Presidential party, many within the SPD and without expect us to run a candidate. Paul Löbe, the newly elected President of the Reichstag, is a popular option, as is Otto Braun, Minister-President of Prussia.
 
@@ -97,7 +97,7 @@ Q.hergt_votes = 0;
 Q.hindenburg_votes = 0;
 Q.majority_25 = 0;
 
-Q.presidents_25 = ['liebknecht', ‘spd’, 'hellpach', ‘z’, 'held', ‘dvp’, 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
+Q.presidents_25 = ['liebknecht', 'spd', 'hellpach', 'z', 'held', 'dvp', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
 
 // initial phase:
 if (Q.spd_campaign) {
@@ -824,7 +824,7 @@ We have increased our campaigning among the unemployed. [? if welfare < 0: The w
 go-to: hindenburg_wins if hindenburg_plurality; spd_wins if spd_plurality; z_wins if z_plurality; gessler_wins if gessler_plurality 
 
 @back_gessler
-subtitle: Gessler poses a clear threat to the DVP’s chances, but our own party's left-wing will likely revolt.
+subtitle: Gessler poses a clear threat to the DVP's chances, but our own party's left-wing will likely revolt.
 choose-if: left_strength < reformist_strength
 on-arrival: gessler_campaign = 1; spd_campaign = 0; z_campaign = 0; hellpach_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_uspd += 6; unemployed_spd -= 6; unemployed_uspd += 6; old_middle_dvp -= 5; rural_dvp -= 5
 
