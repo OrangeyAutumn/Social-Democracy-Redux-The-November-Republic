@@ -13,16 +13,11 @@ Prussia, by far the largest and most important state in Germany, is governed by 
 
 We can enact policies in Prussia.
 
-- @build_ties: We can use push our state party to strengthen ties with the other local parties.
 - @pursue_policy: We can push our state party to pursue policy goals on the local level.
 - @police: We can pursue policies regarding the local police.
 - @paramilitary: We can pursue policies regarding the local paramilitaries.
 - @root: No new policies are needed.
 - @easy_discard
-
-@build_ties
-
-- @build_ties_uspd: Push our state party to strenghten ties with the state USPD.
 
 @police
 
