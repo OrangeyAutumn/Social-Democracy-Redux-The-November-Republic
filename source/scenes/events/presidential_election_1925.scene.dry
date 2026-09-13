@@ -1195,7 +1195,7 @@ go-to: spd_presidential_campaign
 
 @presidential_candidate_aufhauser
 title: Run Aufhäuser, our [? if spd_coleader_1 : Co-leader ?][? if spd_coleader_2 : Co-leader ?][? if spd_coleader_3 : Co-leader ?][? if labor_leader : Labor faction leader ?]
-view-if: chancellor != "Aufhäuser" and president != "Aufhäuser" and spd_coleader_1 == "Aufhäuser" or spd_coleader_2 == "Aufhäuser" or spd_coleader_3 == "Aufhäuser" or labor_leader == "Aufhäuser")
+view-if: (chancellor != "Aufhäuser" and president != "Aufhäuser") and (spd_coleader_1 == "Aufhäuser" or spd_coleader_2 == "Aufhäuser" or spd_coleader_3 == "Aufhäuser" or labor_leader == "Aufhäuser")
 on-arrival: spd_presidential_candidate = "Aufhäuser"; labor_campaign = 1
 
 We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if labor_leader : our Labor faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
