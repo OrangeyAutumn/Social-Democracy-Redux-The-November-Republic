@@ -255,6 +255,7 @@ for (var k of Q.presidents_25) {
     }
 }
 !}
+
 go-to: hindenburg_wins if hindenburg_majority == 1; z_wins if z_majority == 1; spd_wins if spd_majority == 1; gessler_wins if gessler_majority == 1; no_majority_round1 if majority_25 == 0 and round25 == 1; round2_results if round25 >= 2
 
 Results:
