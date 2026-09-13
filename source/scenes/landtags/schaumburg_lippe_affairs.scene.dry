@@ -13,16 +13,27 @@ Schaumburg-Lippe is a stronghold of the left in Germany, and we intend to keep i
 
 We can enact policies in Schaumburg-Lippe.
 
+- @build_ties: We can use push our state party to strengthen ties with the other local parties.
+- @pursue_policy: We can push our state party to pursue policy goals on the local level.
+- @paramilitary: We can pursue policies regarding the local paramilitaries.
+- @root: No new policies are needed.
+- @easy_discard
+
+@build_ties
+
 - @build_ties_ddp: Push our state party to strengthen ties with the state DDP.
 - @build_ties_dnvp: Push our state party to strengthen ties with the state... DNVP?
+
+@pursue_policy
+
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
+
+@paramilitary
+
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
 - @persecute_sh: Use our state offices to target and prosecute the state Stalhelm.
 - @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
-- @root: No new policies are needed.
-- @easy_discard
-- @cancel_advisor_action
 
 @build_ties_ddp
 on-arrival: ddp_relation += 5
