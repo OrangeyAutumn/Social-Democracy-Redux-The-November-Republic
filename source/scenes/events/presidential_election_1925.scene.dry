@@ -858,7 +858,7 @@ We have managed to engineer a Gessler coalition. The left is understandably outr
 
 @but
 subtitle: There's always a but.
-on-arrival: held_campaign = 0; hergt25_campaign = 0; ludendorff_campaign = 0; hindenburg_campaign = 1; jarres_campaign = 0; bvp_support_hindenburg = 1 if z_relation < 55; bvp_support_gessler = 1 if z_relation > 65; nationalism += 5
+on-arrival: held_campaign = 0; hergt25_campaign = 0; ludendorff_campaign = 0; hindenburg_campaign = 1; dvp_campaign = 0; bvp_support_hindenburg = 1 if z_relation < 55; bvp_support_gessler = 1 if z_relation > 65; nationalism += 5
 
 Paul von Hindenburg has unexpectedly entered the race in the second round as the candidate of the **Reichsblock**. Considered by the right-wing a war hero, Paul von Hindenburg was a Field Marshal in the German Empire and managed to win the Battle of Tannenberg against Russia. To us, however, he is a reactionary junker and one of the primary peddlers of the stab-in-the-back myth, the same which recently cost Friedrich Ebert his life. 
 
