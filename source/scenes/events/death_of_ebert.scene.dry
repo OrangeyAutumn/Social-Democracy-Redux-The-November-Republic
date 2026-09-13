@@ -9,6 +9,8 @@ tags: event
 
 President Friedrich Ebert has passed away at age 54 after delaying treatment for illness in order to defend himself from defamation. [? if left_strength > reformist_strength : Though he may have sold out to the Reichswehr and turned against the workers which elected him in the first place, he had managed to keep the republic intact. His death means uncertainty in the republic's future. ?][? if reformist_strength > left_strength : Though he had his flaws, Ebert guided Germany from the brink of destruction and protected a newborn democracy from demise through hard and tireless work. His death means uncertainty in the republic's future. ?]
 
+Chancellor [+ chancellor +] has been appointed acting President, although they are expected to stand aside shortly for a different candidate.
+
 With his sudden death, new presidential elections have been scheduled for April – the first direct Presidential elections in the history of the Republic, and of Germany itself. We must prepare, though we do not have much time.
 
 - @succession: With Ebert's death, Otto Braun assumes the leadership of the Reformist faction.
