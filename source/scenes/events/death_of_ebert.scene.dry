@@ -1,7 +1,7 @@
 title: The Death of Ebert
 subtitle: The President has died...
 new-page: true
-view-if: year = 1925 and month >= 3 and not ebert_dead
+view-if: year = 1925 and month >= 3 and not ebert_dead and ebert_lives == 0
 on-arrival: round25 = 0; ebert_dead = 1; president = "Simons (acting)"; reformist_leader = "Braun"; reformist_leader_fullname = "Otto Braun"
 tags: event
 
