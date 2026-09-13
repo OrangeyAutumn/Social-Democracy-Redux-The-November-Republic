@@ -397,10 +397,10 @@ Q.economic_records = [];
 
 
 // State of the government
-if (President_Marx == 0) {
+if (president_marx == 0) {
     Q.president = "Hindenburg";
     Q.president_party = "Independent";
-} else if (President_Marx == 1) {
+} else if (president_marx == 1) {
     Q.president = "Marx";
     Q.president_party = "Z";
 }
