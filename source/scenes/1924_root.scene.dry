@@ -818,6 +818,76 @@ Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
 
+Q.prussia_spd = 0.95;
+Q.prussia_sapd = 1;
+Q.prussia_uspd = 1.05;
+Q.prussia_ddp = 1;
+Q.prussia_dvp = 0.95;
+Q.prussia_dnvp = 1.15;
+Q.prussia_z = 1.05;
+Q.prussia_other = 0.6;
+Q.prussia_nsdap = 0.65;
+
+Q.bavaria_spd = 0.75;
+Q.bavaria_sapd = 0.5;
+Q.bavaria_uspd = 0.3;
+Q.bavaria_ddp = 0.5;
+Q.bavaria_dvp = 0.3;
+Q.bavaria_dnvp = 0.35;
+Q.bavaria_z = 1.2;
+Q.bavaria_other = 1.1;
+Q.bavaria_nsdap = 1.85;
+
+Q.thuringia_spd = 1.15;
+Q.thuringia_sapd = 1;
+Q.thuringia_uspd = 0.7;
+Q.thuringia_ddp = 1;
+Q.thuringia_dvp = 1.4;
+Q.thuringia_dnvp = 0.5;
+Q.thuringia_z = 0.2;
+Q.thuringia_other = 2.65;
+Q.thuringia_nsdap = 0.85;
+
+Q.saxony_spd = 0.8;
+Q.saxony_sapd = 0.7;
+Q.saxony_uspd = 0.65;
+Q.saxony_ddp = 0.85;
+Q.saxony_dvp = 1.25;
+Q.saxony_dnvp = 0.45;
+Q.saxony_z = 0.2;
+Q.saxony_other = 1.55;
+Q.saxony_nsdap = 0.8;
+
+Q.schaumburg_lippe_spd = 1.3;
+Q.schaumburg_lippe_sapd = 0.5;
+Q.schaumburg_lippe_uspd = 0.25;
+Q.schaumburg_lippe_ddp = 1.45;
+Q.schaumburg_lippe_dvp = 0.8;
+Q.schaumburg_lippe_dnvp = 1.1;
+Q.schaumburg_lippe_z = 0;
+Q.schaumburg_lippe_other = 1.25;
+Q.schaumburg_lippe_nsdap = 0;
+
+Q.hamburg_spd = 1.05;
+Q.hamburg_sapd = 1.05;
+Q.hamburg_uspd = 1.2;
+Q.hamburg_ddp = 1.7;
+Q.hamburg_dvp = 1.05;
+Q.hamburg_dnvp = 0.9;
+Q.hamburg_z = 0.2;
+Q.hamburg_other = 0.25;
+Q.hamburg_nsdap = 0.6;
+
+Q.wurttemberg_spd = 0.9;
+Q.wurttemberg_sapd = 0.85;
+Q.wurttemberg_uspd = 0.8;
+Q.wurttemberg_ddp = 2.3;
+Q.wurttemberg_dvp = 0.55;
+Q.wurttemberg_dnvp = 0.45;
+Q.wurttemberg_z = 1;
+Q.wurttemberg_other = 2.3;
+Q.wurttemberg_nsdap = 0.1;
+
 Q.spd_pl = 25;
 Q.dnvp_pl = 24;
 Q.z_pl = 18;
