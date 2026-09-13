@@ -1,6 +1,7 @@
 title: The 1925 Presidential Election
 subtitle: Germany's first direct Presidential Election, and hopefully not its last..
 new-page: true
+max-visits: 1
 view-if: year = 1925 and month >= 4 and ebert_dead == 1
 tags: event
 on-arrival: left_campaign = 0; center_campaign = 0; labor_campaign = 0; reformist_campaign = 0; neorevisionist_campaign = 0; nonfactional_campaign = 0; dvp_campaign = 1; z_campaign = 1; held_campaign = 1; liebknecht_campaign = 1; ludendorff_campaign = 1; hellpach_campaign = 1; 
