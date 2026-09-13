@@ -28,11 +28,11 @@ Q.neorevisionist_votes = 0;
 
 Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
 
-Q.left_votes = (Q.left_strength / Q.total_strength) * 100;
-Q.center_votes = (Q.center_strength / Q.total_strength) * 100;
-Q.labor_votes = (Q.labor_strength / Q.total_strength) * 100;
-Q.reformist_votes = (Q.reformist_strength / Q.total_strength) * 100;
-Q.neorevisionist_votes = (Q.neorevisionist_strength / Q.total_strength) * 100;
+Q.left_votes = Math.round((Q.left_strength / Q.total_strength) * 100);
+Q.center_votes = Math.round((Q.center_strength / Q.total_strength) * 100);
+Q.labor_votes = Math.round((Q.labor_strength / Q.total_strength) * 100);
+Q.reformist_votes = Math.round((Q.reformist_strength / Q.total_strength) * 100);
+Q.neorevisionist_votes = Math.round((Q.neorevisionist_strength / Q.total_strength) * 100);
 !}
 go-to: post_congress
 
@@ -182,6 +182,7 @@ Alternatively, the Görlitz program could be maintained, with revisions to match
 Max Seydewitz of the left meanwhile has proposed before the conference what would amount to a rejection of coalitions with the bourgeois parties in order to represent the interests of the proletariat in all future struggles without regard to their opinions.
 The three programmes are effectively mutually exclusive, and whatever motion triumphs will inevitably be taken as a sign of the direction of our party in the aftermath of Hindenburg’s victory.
 How does the Conference vote?
+
 - @heidelberg: Adopt a new party program as written by the Centrists.
 - @gorlitz: Retain the Görlitz program, but moderately revised.
 - @seydewitz: Seydewitz’s motion is passed by the conference!
