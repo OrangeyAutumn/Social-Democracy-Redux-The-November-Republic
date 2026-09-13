@@ -110,33 +110,33 @@ Q.uspd_party_leader = "Liebknecht";
 Q.uspd_leader_fullname = "Karl Liebknecht";
 Q.spd_coleader_1 = "Crispien";
 Q.spd_coleader_1_fullname = "Arthur Crispien";
-Q.spd_coleader_1_faction == "Left";
+Q.spd_coleader_1_faction = "Left";
 // Hans Vogel after Muller's death
 Q.spd_coleader_2 = "Müller";
 Q.spd_coleader_2_fullname = "Hermann Müller";
-Q.spd_coleader_2_faction == "Center";
+Q.spd_coleader_2_faction = "Center";
 Q.spd_coleader_3 = "Wels";
 Q.spd_coleader_3_fullname = "Otto Wels";
-Q.spd_coleader_3_faction == "Center";
+Q.spd_coleader_3_faction = "Center";
 // Erich Koch-Weser — 1924–1930
-Q.ddp_leader = "Koch-Weser"
-Q.ddp_leader_fullname = "Erich Koch-Weser"
+Q.ddp_leader = "Koch-Weser";
+Q.ddp_leader_fullname = "Erich Koch-Weser";
 Q.z_leader = "Bruning";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 // Wilhelm Marx — 1924–1928; Ludwig Kaas — 1928–May 1933; Heinrich Brüning — May–July 1933
 Q.z_party_leader = "Marx";
 Q.z_party_leader_fullname = "Wilhelm Marx";
-Q.bvp_leader = "Speck"
-Q.bvp_leader_fullname = "Karl Speck"
+Q.bvp_leader = "Speck";
+Q.bvp_leader_fullname = "Karl Speck";
 // Gustav Stresemann — 1924–October 1929; Ernst Scholz — 1929–1930; Eduard Dingeldey — 1930–July 1933
-Q.dvp_leader = "Stresemann"
-Q.dvp_leader_fullname = "Gustav Stresemann"
+Q.dvp_leader = "Stresemann";
+Q.dvp_leader_fullname = "Gustav Stresemann";
 // Johann Friedrich Winckler — 1924–1926; Kuno von Westarp — 1926–1928; Alfred Hugenberg — 1928–1933
-Q.dnvp_leader = "Westarp"
-Q.dnvp_leader_fullname = "Kuno von Westarp"
+Q.dnvp_leader = "Westarp";
+Q.dnvp_leader_fullname = "Kuno von Westarp";
 // Hitler all the way through, unless deported or ousted
 Q.nsdap_leader = "Hitler";
-Q.nsdap_leader_fullname = "Adolf Hitler"
+Q.nsdap_leader_fullname = "Adolf Hitler";
 
 // Party Ideologies
 // Can be Revolutionary Socialism, Council Communism, or Stalinism
@@ -396,11 +396,11 @@ Q.economic_records = [];
 
 
 // State of the government
-if (President_Marx == 0) {
+if (president_marx == 0) {
     Q.president = "Hindenburg";
     Q.president_party = "Independent";
     Q.chancellor = "Marx";
-} else if (President_Marx == 1) {
+} else if (president_marx == 1) {
     Q.president = "Marx";
     Q.president_party = "Z";
     Q.chancellor = "Adenauer";
@@ -431,7 +431,7 @@ Q.grand_coalition_failed = 0;
 Q.right_coalition_failed = 0;
 // if the SPD is ruling as part of a minority government
 Q.in_minority_government = 0;
-// national unity governmet
+// national unity government
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
@@ -656,7 +656,7 @@ Q.muller_dead = 0;
 Q.pfulf_advisor = 0; // Antonie Pfülf
 Q.breitscheid_advisor = 0; // Rudolf Breitscheid
 Q.vogel_advisor = 0; // Hans Vogel
-Q.hilferding_advisor = 0 // Rudolf Hilferding
+Q.hilferding_advisor = 0; // Rudolf Hilferding
 
 // Reformist advisors
 Q.severing_advisor = 0; // Carl Severing
