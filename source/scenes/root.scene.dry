@@ -212,7 +212,7 @@ this.state.disableSaves = true;
 go-to: 1931_main
 
 @settings
-subtitle: Enable or disable various features.
+subtitle: Enable or disable various features, including altHistory options.
 
 For other, non-difficulty related tweaks.
 
@@ -222,10 +222,8 @@ For other, non-difficulty related tweaks.
 - @disable_sandbox: Disable sandbox
 - @ebert_lives: Ebert lives... for a little longer.
 - @ebert_lives_undo: Ebert does not live a little longer.
-- @president_marx_1928: Marx is President.
-- @president_marx_1928_undo: Marx is not President.
-- @president_marx_1931: Marx is President.
-- @president_marx_1931_undo: Marx is not President.
+- @president_marx: Marx is President.
+- @president_marx_undo: Marx is not President.
 - @1924_start: Proceed to 1924 start menu
 - @1928_start: Proceed to 1928 start menu
 - @1931_start: Proceed to 1931 start menu
@@ -303,39 +301,31 @@ It is a grim time for German democracy. Following the largest crash in the stock
 It will be our responsibility to ensure that this crisis of capitalism will not end so badly for the working class.
 
 @ebert_lives
-view-if: year == 1924
+subtitle: This will only affect the 1924 start date.
+view-if: ebert_lives == 0
 on-arrival: ebert_lives = 1
 go-to: settings
 
 Ebert lives... for now?
 
 @ebert_lives_undo
-view-if: year == 1924 and ebert_lives == 1
+subtitle: This will only affect the 1924 start date.
+view-if: ebert_lives == 1
 on-arrival: ebert_lives = 0
 go-to: settings
 
 Bad luck, Friedrich...
 
-@president_marx_1928
-view-if: year == 1928
+@president_marx
+subtitle: This will only affect the 1928 and 1931 start dates.
+view-if: president_marx == 0
 on-arrival: president_marx = 1 
 
-@president_marx_1928_undo
-view-if: year == 1928 and president_marx == 1
-on-arrival: president_marx = 0
-
-Bad luck, Wilhelm...
-
 Congratulations, President Marx!
 
-@president_marx_1931
-view-if: year == 1931
-on-arrival: president_marx = 1
-
-Congratulations, President Marx!
-
-@president_marx_1931_undo
-view-if: year == 1931 and president_marx == 1
+@president_marx_undo
+subtitle: This will only affect the 1928 and 1931 start dates.
+view-if: president_marx == 1
 on-arrival: president_marx = 0
 
 Bad luck, Wilhelm...
