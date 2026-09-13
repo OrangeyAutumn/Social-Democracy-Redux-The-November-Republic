@@ -854,6 +854,8 @@ on-arrival: gessler_campaign = 1; spd_campaign = 0; z_campaign = 0; hellpach_cam
 
 We have managed to engineer a Gessler coalition. The left is understandably outraged, and the Spartacist campaign is bolstered. Nonetheless, we are now well positioned to win from the center.
 
+- @but: Events, dear boy, events...
+
 @but
 subtitle: There's always a but.
 on-arrival: held_campaign = 0; hergt25_campaign = 0; ludendorff_campaign = 0; hindenburg_campaign = 1; jarres_campaign = 0; bvp_support_hindenburg = 1 if z_relation < 55; bvp_support_gessler = 1 if z_relation > 65; nationalism += 5
