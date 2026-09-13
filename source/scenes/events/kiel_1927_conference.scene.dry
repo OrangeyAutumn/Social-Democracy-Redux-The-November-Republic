@@ -26,11 +26,11 @@ Q.neorevisionist_votes = 0;
 
 Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
 
-Q.left_votes = Math.round((Q.left_strength / Q.total_strength) * 100);
-Q.center_votes = Math.round((Q.center_strength / Q.total_strength) * 100);
-Q.labor_votes = Math.round((Q.labor_strength / Q.total_strength) * 100);
-Q.reformist_votes = Math.round((Q.reformist_strength / Q.total_strength) * 100);
-Q.neorevisionist_votes = Math.round((Q.neorevisionist_strength / Q.total_strength) * 100);
+Q.left_c = Math.round((Q.left_strength / Q.total_strength) * 100);
+Q.center_c = Math.round((Q.center_strength / Q.total_strength) * 100);
+Q.labor_c = Math.round((Q.labor_strength / Q.total_strength) * 100);
+Q.reformist_c = Math.round((Q.reformist_strength / Q.total_strength) * 100);
+Q.neorevisionist_c = Math.round((Q.neorevisionist_strength / Q.total_strength) * 100);
 !}
 go-to: post_congress
 
