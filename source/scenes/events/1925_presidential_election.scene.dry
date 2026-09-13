@@ -255,7 +255,7 @@ for (var k of Q.presidents_25) {
     }
 }
 !}
-go-to: hindenburg_wins if hindenburg_majority == 1; z_wins if z_majority == 1; spd_wins if spd_majority == 1; gessler_wins if gessler_majority == 1; no_majority_round1 if majority_25 == 0 and round25 == 1; round2_results if round25 >= 2
+go-to: hindenburg_wins if hindenburg_majority == 1;  if z_majority == 1; spd_wins if spd_majority == 1; gessler_wins if gessler_majority == 1; no_majority_round1 if majority_25 == 0 and round25 == 1; round2_results if round25 >= 2
 
 Results:
 
@@ -285,34 +285,20 @@ on-arrival: former_president = "Hindenburg"; president = "Hindenburg"; president
 Disaster strikes! Despite our best effort, Paul von Hindenburg has won the election with the backing of all the reactionary right organized under the **Reichsblock** behind him. Many in our party anticipate an immediate restructuring of Germany along authoritarian and aristocratic lines and though he seems, for now, to be following the constitution, we must be wary. Regardless, this signals a dark turn for German democracy. Who knows what Hindenburg may do in power?
 
 @z_wins
-on-arrival: {!
-    if (z_presidential_candidate == "Marx") {
-        former_president = "Marx";
-        president = "Marx";
-    } else if (z_presidential_candidate == "Wirth") {
-        former_president = "Wirth";
-        president = "Wirth";
-    }
-    president_party = "Z";
-    z_relation += 10;
-    pro_republic += 5;
-    nationalism -= 5;
-    ddp_relation += 5;
-    reformist_strength += 5;
-    dvp_campaign = 0;
-    z_campaign = 0;
-    held_campaign = 0;
-    liebknecht_campaign = 0;
-    ludendorff_campaign = 0;
-    hellpach_campaign = 0;
-    gessler_campaign = 0;
-    spd_campaign = 0;
-    z_support_spd = 0;
-    ddp_support_spd = 0;
-    bvp_support_hindenburg = 0;
-!}
+on-arrival: president_party = "Z"; z_relation += 10; pro_republic += 5; nationalism -= 5; ddp_relation += 5; reformist_strength += 5; dvp_campaign = 0; z_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; spd_campaign = 0; z_support_spd = 0; ddp_support_spd = 0; bvp_support_hindenburg = 0;
 
 [+ z_presidential_candidate_fullname +] has won the election with the backing of all the republican left organized under the **Volksblock** behind him. This is a victory for German democracy and the continued normalization of the republic.
+
+- @marx_wins: Congratulations, Mr Marx!
+- @wirth_wins: Congratulations, Mr Wirth
+
+@marx_wins
+view-if: z_presidential_candidate == "Marx"
+on-arrival: president = "Marx"
+
+@wirth_wins
+view-if: z_presidential_candidate == "Wirth"
+on-arrival: president = "Wirth"
 
 @spd_wins
 on-arrival: (if spd_presidential_candidate == "Hilferding", president = "Hilferding" and president_party = "SPD"); (if spd_presidential_candidate == "Wels", president = "Wels" and president_party = "SPD"); (if spd_presidential_candidate == "Vogel", president = "Vogel" and president_party = "SPD"); (if spd_presidential_candidate == "Müller", president = "Müller" and president_party = "SPD"); (if spd_presidential_candidate == "Breitscheid", president = "Breitscheid" and president_party = "SPD"); (if spd_presidential_candidate == "Crispien", president = "Crispien" and president_party = "SPD"); (if spd_presidential_candidate == "Levi", president = "Levi" and president_party = "SPD"); (if spd_presidential_candidate == "Sender", president = "Sender" and president_party = "SPD"); (if spd_presidential_candidate == "Rosenfeld", president = "Rosenfeld" and president_party = "SPD"); (if spd_presidential_candidate == "Seydewitz", president = "Seydewitz" and president_party = "SPD"); (if spd_presidential_candidate == "Siemsen", president = "Siemsen" and president_party = "SPD"); (if spd_presidential_candidate == "Ebert", president = "Ebert" and president_party = "SPD"); (if spd_presidential_candidate == "Severing", president = "Severing" and president_party = "SPD"); (if spd_presidential_candidate == "Scheidemann", president = "Scheidemann" and president_party = "SPD"); (if spd_presidential_candidate == "Braun", president = "Braun" and president_party = "SPD"); (if spd_presidential_candidate == "Juchacz", president = "Juchacz" and president_party = "SPD"); (if spd_presidential_candidate == "Pfülf", president = "Pfülf" and president_party = "SPD"); (if spd_presidential_candidate == "Leipart", president = "Leipart" and president_party = "SPD"); (if spd_presidential_candidate == "Aufhäuser", president = "Aufhäuser" and president_party = "SPD"); (if spd_presidential_candidate == "Wissell", president = "Wissell" and president_party = "SPD"); (if spd_presidential_candidate == "Woytinsky", president = "Woytinsky" and president_party = "SPD"); (if spd_presidential_candidate == "Tarnow", president = "Tarnow" and president_party = "SPD"); (if spd_presidential_candidate == "Baade", president = "Baade" and president_party = "SPD"); (if spd_presidential_candidate == "Hirschfeld", president = "Hirschfeld" and president_party = "SPD"); (if spd_presidential_candidate == "Radbruch", president = "Radbruch" and president_party = "SPD"); (if spd_presidential_candidate == "Stampfer", president = "Stampfer" and president_party = "SPD"); (if spd_presidential_candidate == "Löbe", president = "Löbe" and president_party = "SPD"); (if spd_presidential_candidate == "Mierendorff", president = "Mierendorff" and president_party = "SPD"); (if spd_presidential_candidate == "Schumacher", president = "Schumacher" and president_party = "SPD"); (if spd_presidential_candidate == "Leber", president = "Leber" and president_party = "SPD"); (if spd_presidential_candidate == "Noske", president = "Noske" and president_party = "SPD"); pro_republic += 8; socialism += 4; nationalism -= 2; dvp_relation -= 5; left_dissent -= 5; center_dissent -= 5; reformist_dissent -= 5; labor_dissent -= 5; workers_spd += 5*(1-dissent); new_middle_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); rural_spd += 2*(1-dissent); dvp_campaign = 0; z_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; spd_campaign = 0; z_support_spd = 0; ddp_support_spd = 0; bvp_support_hindenburg = 0
