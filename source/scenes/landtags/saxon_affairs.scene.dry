@@ -1,4 +1,4 @@
-title: Saxon Affairs
+title: Red Saxony
 new-page: true
 is-card: true
 view-if: in_saxony_spd == 1 and saxony_affairs_timer <= 0
@@ -7,21 +7,32 @@ tags: landtag_affairs
 card-image: img/braun.jpg
 #subtitle: The state government of Saxony is famously unstable...
 
-= Saxon Affairs
+= Red Saxony
 
 Saxony is one of the least stable state governments in Germany. In the interests of democracy, and our party, we must seek to change that.
 
 We can enact policies in Saxony.
 
+- @build_ties: We can use push our state party to strengthen ties with the other local parties.
+- @pursue_policy: We can push our state party to pursue policy goals on the local level.
+- @paramilitary: We can pursue policies regarding the local paramilitaries.
+- @root: No new policies are needed.
+- @easy_discard
+
+@build_ties
+
 - @build_ties_uspd: Push our state party to strenghten ties with the state USPD.
+
+@pursue_policy
+
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
+
+@paramilitary
+
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
 - @persecute_sh: Use our state offices to target and prosecute the state Stalhelm.
 - @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
-- @root: No new policies are needed.
-- @easy_discard
-- @cancel_advisor_action
 
 @build_ties_uspd
 on-arrival: uspd_relation += 5
