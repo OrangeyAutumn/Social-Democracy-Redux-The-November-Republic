@@ -216,8 +216,6 @@ subtitle: Enable or disable various features, including altHistory options.
 
 For other, non-difficulty related tweaks.
 
-- @enable_end: Enable end in 1934.
-- @disable_end: Disable end in 1934.
 - @enable_sandbox: Enable sandbox
 - @disable_sandbox: Disable sandbox
 - @ebert_lives: Ebert lives... for a little longer.
@@ -228,21 +226,8 @@ For other, non-difficulty related tweaks.
 - @1928_start: Proceed to 1928 start menu
 - @1931_start: Proceed to 1931 start menu
 
-@disable_end
-view-if: end_disabled != 1
-on-arrival: end_disabled = 1
-go-to: settings
-
-The end date has been disabled.
-
-@enable_end
-view-if: end_disabled = 1
-on-arrival: end_disabled = 0
-go-to: settings
-
-The end date has been enabled.
-
 @enable_sandbox
+subtitle: Enables the Sandbox Pinned Card - allowing you to alter various ganeplay elements
 view-if: sandbox_enabled = 0
 on_arrival: sandbox_enabled = 1
 go-to: settings
@@ -250,6 +235,7 @@ go-to: settings
 The Sandbox card has been enabled. Enjoy!
 
 @disable_sandbox
+subtitle: Disenables the Sandbox Pinned Card - disallowing you to alter various ganeplay elements
 view-if: sandbox_enabled = 1
 on_arrival: sandbox_enabled = 0
 go-to: settings
@@ -320,6 +306,7 @@ Bad luck, Friedrich...
 subtitle: This will only affect the 1928 and 1931 start dates.
 view-if: president_marx == 0
 on-arrival: president_marx = 1 
+go-to: settings
 
 Congratulations, President Marx!
 
@@ -327,5 +314,6 @@ Congratulations, President Marx!
 subtitle: This will only affect the 1928 and 1931 start dates.
 view-if: president_marx == 1
 on-arrival: president_marx = 0
+go-to: settings
 
 Bad luck, Wilhelm...
