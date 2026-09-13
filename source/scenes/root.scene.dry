@@ -220,11 +220,15 @@ For other, non-difficulty related tweaks.
 - @disable_end: Disable end in 1934.
 - @enable_sandbox: Enable sandbox
 - @disable_sandbox: Disable sandbox
-- @1924_althist: Select Alternate 1924 Scenarios
-- @1928_althist: Select Alternate 1928 Scenarios
-- @1931_althist: Select Alternate 1931 Scenarios
-- @start_menu_2: Back.
-- @menu: Proceed to Game.
+- @ebert_lives: Ebert lives... for a little longer.
+- @ebert_lives_undo: Ebert does not live a little longer.
+- @president_marx_1928: Marx is President.
+- @president_marx_1928_undo: Marx is not President.
+- @president_marx_1931: Marx is President.
+- @president_marx_1931_undo: Marx is not President.
+- @1924_start: Proceed to 1924 start menu
+- @1928_start: Proceed to 1928 start menu
+- @1931_start: Proceed to 1931 start menu
 
 @disable_end
 view-if: end_disabled != 1
@@ -298,18 +302,40 @@ It is a grim time for German democracy. Following the largest crash in the stock
 
 It will be our responsibility to ensure that this crisis of capitalism will not end so badly for the working class.
 
-@1924_althist
+@ebert_lives
 view-if: year == 1924
+on-arrival: ebert_lives = 1
+go-to: settings
 
-- @menu: Ebert Lives! (Longer) - Not implemented yet
+Ebert lives... for now?
 
-@1928_althist
+@ebert_lives_undo
+view-if: year == 1924 and ebert_lives == 1
+on-arrival: ebert_lives = 0
+go-to: settings
+
+Bad luck, Friedrich...
+
+@president_marx_1928
 view-if: year == 1928
+on-arrival: president_marx = 1 
 
-- @menu: Marx Elected - Not implemented yet
+@president_marx_1928_undo
+view-if: year == 1928 and president_marx == 1
+on-arrival: president_marx = 0
 
-@1931_althist
+Bad luck, Wilhelm...
+
+Congratulations, President Marx!
+
+@president_marx_1931
 view-if: year == 1931
+on-arrival: president_marx = 1
 
-- @menu: VSPD/RDP formed - Not implemented yet
+Congratulations, President Marx!
 
+@president_marx_1931_undo
+view-if: year == 1931 and president_marx == 1
+on-arrival: president_marx = 0
+
+Bad luck, Wilhelm...
