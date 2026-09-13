@@ -86,7 +86,7 @@ Q.hergt_votes = 0;
 Q.hindenburg_votes = 0;
 Q.majority_25 = 0;
 
-Q.presidents_25 = ['liebknecht', 'Q.spd_presidential_candidate', 'hellpach', 'Q.z_presidential_candidate', 'held', 'Q.dvp_presidential_candidate', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
+Q.presidents_25 = ['liebknecht', Q.spd_presidential_candidate, 'hellpach', Q.z_presidential_candidate, 'held', Q.dvp_presidential_candidate, 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
 
 // initial phase:
 if (Q.spd_campaign) {
@@ -95,7 +95,7 @@ if (Q.spd_campaign) {
         Q.spd_votes += Q.z_normalized*z_percent;
         if (Q.spd_percent < 1) {
             Q.spd_percent += 0.1;
-            Q.spd_percent = Math.max(Q.spd_percent, 1);
+            Q.spd_percent = Math.min(Q.spd_percent, 1);
         }
     }
     if (Q.ddp_support_spd) {
@@ -103,7 +103,7 @@ if (Q.spd_campaign) {
         Q.spd_votes += Q.ddp_normalized*ddp_percent;
         if (Q.spd_percent < 1) {
             Q.spd_percent += 0.05;
-            Q.spd_percent = Math.max(Q.spd_percent, 1);
+            Q.spd_percent = Math.min(Q.spd_percent, 1);
         }
     }
     if (Q.uspd_support_spd) {
@@ -111,7 +111,7 @@ if (Q.spd_campaign) {
         Q.spd_votes += Q.uspd_normalized*uspd_percent;
         if (Q.spd_percent < 1) {
             Q.spd_percent += 0.05;
-            Q.spd_percent = Math.max(Q.spd_percent, 1);
+            Q.spd_percent = Math.min(Q.spd_percent, 1);
         }
     }
     Q.spd_votes += Q.spd_normalized*Q.spd_percent;
@@ -712,7 +712,7 @@ on-arrival: left_campaign = 1 and (spd_presidential_candidate = "Crispien" if ch
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
 
-go-to: spd_presidential_campaignear == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 // Crispien
 
@@ -808,7 +808,7 @@ on-arrival: center_campaign = 1 and (spd_presidential_candidate = "Müller" if c
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignear == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 // Müller
 
@@ -890,7 +890,7 @@ on-arrival: labor_campaign = 1 and (spd_presidential_candidate = "Leipart" if ch
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignear == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 // Leipart
 
@@ -957,7 +957,7 @@ on-arrival: reformist_campaign = 1 and (spd_presidential_candidate = "Braun" if 
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: presidential_election_1932.spd_presidential_campaign_re_election if year == 1932 and president == "Hindenburg"; presidential_election_marx.spd_presidential_campaign_re_election if year == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 @presidential_candidate_reformist_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election. (This is the Historical option)
@@ -975,7 +975,7 @@ on-arrival: reformist_campaign = 1 and (spd_presidential_candidate = "Braun" if 
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignear == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 // Braun
 
@@ -986,7 +986,7 @@ on-arrival: spd_presidential_candidate = "Braun"; reformist_campaign = 1
 
 We have made [? if spd_coleader_1 : our Co-leader ?][? if spd_coleader_2 : our Co-leader ?][? if spd_coleader_3 : our Co-leader ?][? if reformist_leader : our Reformist faction leader ?] [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: death_of_ebert.back_braun if year == 1925; presidential_election_1932.spd_presidential_campaign if year == 1932 and president == "Hindenburg"; presidential_election_marx.spd_presidential_campaign if year == 1932 and president != "Hindenburg"
+go-to: spd_presidential_campaign
 
 // Severing
 
@@ -1060,7 +1060,7 @@ on-arrival: nonfactional_campaign = 1 and (spd_presidential_candidate = "Baade" 
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignear == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 // Baade
 
@@ -1142,7 +1142,7 @@ on-arrival: neorevisionist_campaign = 1 and (spd_presidential_candidate = "Miere
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
-go-to: spd_presidential_campaignear == 1932 and president != “Hindenburg”
+go-to: spd_presidential_campaign
 
 // Mierendorff
 
