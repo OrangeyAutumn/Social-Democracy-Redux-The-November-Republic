@@ -28,21 +28,7 @@ We have entered [+ spd_presidential_candidate +] into the race. Now it is time t
 - @the_other_candidates: Let us look at the candidates we face.
 
 @the_other_candidates
-on-arrival: 
-if (chancellor == "Marx") { 
-    z_presidential_candidate = "Wirth"; 
-    z_presidential_candidate_fullname = "Joseph Wirth"; 
-} else if (chancellor != "Marx") {
-    z_presidential_candidate = "Marx"; 
-    z_presidential_candidate_fullname = "Wilhelm Marx"; 
-}
-if (chancellor == "Jarres") {
-    dvp_presidential_candidate = "Stresemann"; 
-    dvp_presidential_candidate_fullname = "Gustav Stresemann";
-} else if (chancellor != "Jarres") { 
-    dvp_presidential_candidate = "Jarres"; 
-    dvp_presidential_candidate_fullname = "Karl Jarres";
-}
+on-arrival: if (chancellor == "Marx") { z_presidential_candidate = "Wirth"; z_presidential_candidate_fullname = "Joseph Wirth"; } else if (chancellor != "Marx") { z_presidential_candidate = "Marx"; z_presidential_candidate_fullname = "Wilhelm Marx"; }
 
 The [+ uspd_name +] has entered into the race their leader Karl Liebknecht, while the DVP and DNVP run [+ dvp_presidential_candidate_fullname +] as the "Reichsblock" candidate. The Center Party has run [+ z_presidential_candidate_fullname +], while the BVP, unwilling to commit to any of the main candidates, has run Heinrich Held. The DDP is running Willy Hellpach and meanwhile, the recently reformed National Socialists are backing Ludendorff.
 
