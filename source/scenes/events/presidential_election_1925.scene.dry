@@ -952,6 +952,7 @@ title: Run [+ spd_presidential_candidate +], our candidate at the last election.
 subtitle: Their high profile from the previous campaign may give us an advantage.
 view-if: (chancellor != "Crispien" and president != "Crispien" and spd_presidential_candidate  == "Crispien") or (chancellor != "Levi" and president != "Levi" and spd_presidential_candidate  == "Levi") or (chancellor != "Sender" and president != "Sender" and spd_presidential_candidate  == "Sender") or (chancellor != "Rosenfeld" and president != "Rosenfeld" and spd_presidential_candidate  == "Rosenfeld") or (chancellor != "Seydewitz" and president != "Seydewitz" and spd_presidential_candidate  == "Seydewitz") or (chancellor != "Siemsen" and president != "Siemsen" and spd_presidential_candidate  == "Siemsen") 
 on-arrival: left_campaign = 1
+
 - @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_left_chancellor
@@ -1076,6 +1077,7 @@ title: Run [+ spd_presidential_candidate +], our candidate at the last election.
 subtitle: Their high profile from the previous campaign may give us an advantage.
 view-if: (chancellor != "Müller" and president != "Müller" and spd_presidential_candidate  == "Müller") or (chancellor != "Wels" and president != "Wels" and spd_presidential_candidate  == "Wels") or (chancellor != "Vogel" and president != "Vogel" and spd_presidential_candidate  == "Vogel") or (chancellor != "Hilferding" and president != "Hilferding" and spd_presidential_candidate  == "Hilferding") or (chancellor != "Breitscheid" and president != "Breitscheid" and spd_presidential_candidate  == "Breitscheid")
 on-arrival: center_campaign = 1
+
 - @spd_presidential_campaign: Now onto the campaign
     
 @presidential_candidate_center_chancellor
@@ -1142,6 +1144,7 @@ on-arrival: spd_presidential_candidate = "Vogel"; center_campaign = 1
 We have made [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
 - @spd_presidential_campaign: Now onto the campaign
+
 // Breitscheid
 
 @presidential_candidate_breitscheid
