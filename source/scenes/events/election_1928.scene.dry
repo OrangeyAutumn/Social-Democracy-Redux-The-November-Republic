@@ -2847,8 +2847,6 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Paul Levi, a key figure of our party’s left wing, has been appointed Chancellor.
 
-
-
 @majority_chancellor_levi
 view-if: levi_advisor = 1 and levi_dead = 0 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
 choose-if: president != "Hindenburg"
@@ -2860,10 +2858,6 @@ on-arrival: chancellor = "Levi "
 Paul Levi, a key figure of our party’s left wing, has been appointed Chancellor.
 
 - @succession Let us continue with the succession.
-
-@succession
-view-if: succession_levi == 1 or succession_muller == 1
-go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 @chancellor_crispien
 view-if: crispien_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -2888,10 +2882,6 @@ Arthur Crispien, a key figure of our party’s left wing, has been appointed Cha
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_rosenfeld
 view-if: rosenfeld_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 choose-if: president != "Hindenburg"
@@ -2902,8 +2892,6 @@ on-arrival: spd_in_government = 1; chancellor = "Rosenfeld"; chancellor_party = 
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Kurt Rosenfeld, a key figure of our party’s left wing, has been appointed Chancellor.
-
-
 
 @majority_chancellor_rosenfeld
 view-if: rosenfeld_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
@@ -2928,8 +2916,6 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Max Seydewitz, a key figure of our party’s left wing, has been appointed Chancellor.
 
-
-
 @majority_chancellor_seydewitz
 view-if: seydewitz_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
 choose-if: president != "Hindenburg"
@@ -2942,10 +2928,6 @@ Max Seydewitz, a key figure of our party’s left wing, has been appointed Chanc
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_sender
 view-if: sender_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 choose-if: president != "Hindenburg"
@@ -2956,8 +2938,6 @@ on-arrival: spd_in_government = 1; chancellor = "Sender"; chancellor_party = "SP
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Toni Sender, a key figure of our party’s left wing, has been appointed Chancellor. Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
-
-
 
 @majority_chancellor_sender
 view-if: sender_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
@@ -2971,10 +2951,6 @@ Toni Sender, a key figure of our party’s left wing, has been appointed Chancel
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_siemsen
 view-if: siemsen_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 choose-if: president != "Hindenburg"
@@ -2985,7 +2961,6 @@ on-arrival: spd_in_government = 1; chancellor = "Siemsen"; chancellor_party = "S
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Anna Siemsen, a key figure of our party’s left wing, has been appointed Chancellor. Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
-
 
 
 @majority_chancellor_siemsen
@@ -2999,10 +2974,6 @@ on-arrival: chancellor = "Siemsen "
 Anna Siemsen, a key figure of our party’s left wing, has been appointed Chancellor. Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_muller
 title: Hermann Müller for Chancellor
@@ -3022,10 +2993,6 @@ Hermann Müller, a key figure of our party’s center faction, has become chance
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_wels
 title: Otto Wels for Chancellor
 view-if: wels_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3043,10 +3010,6 @@ on-arrival: chancellor = "Wels"
 Otto Wels, a key figure of our party’s center faction, has become chancellor of the SPD majority.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_breitscheid
 title: Rudolf Breitscheid for Chancellor
@@ -3069,10 +3032,6 @@ Rudolf Breitscheid, a key figure of our party’s center faction, has become cha
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_hilferding
 title: Rudolf Hilferding for Chancellor
 view-if: hilferding_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3091,10 +3050,6 @@ on-arrival: chancellor = "Hilferding"
 Rudolf Hilferding, a key figure of our party’s center faction, has become chancellor of the SPD majority.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_vogel
 title: Hans Vogel for Chancellor
@@ -3115,10 +3070,6 @@ Hans Vogel, a key figure of our party’s center faction, has become chancellor 
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_leipart
 title: Theodor Leipart for Chancellor
 view-if: leipart_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3137,10 +3088,6 @@ on-arrival: chancellor = "Leipart"
 Theodor Leipart, a key figure of our party’s labor wing, has become chancellor of the SPD majority.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_aufhauser
 title: Siegfried Aufhäuser for Chancellor
@@ -3161,10 +3108,6 @@ Siegfried Aufhäuser, a key figure of our party’s labor wing, has become chanc
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_wissell
 title: Rudolf Wissell for Chancellor
 view-if: wissell_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3183,14 +3126,6 @@ on-arrival: chancellor = "Wissell"
 Rudolf Wissell, a key figure of our party’s labor wing, has become chancellor of the SPD majority.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
-
-
-   
-  
 
 @chancellor_woytinsky
 title: Wladmir Woytinsky for Chancellor
@@ -3211,10 +3146,6 @@ Wladmir Woytinsky, a key figure of our party’s labor wing, has become chancell
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_baade
 title: Fritz Baade for Chancellor
 view-if: baade_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3233,10 +3164,6 @@ on-arrival: chancellor = "Baade"
 Fritz Baade, one of our few agricultural policy experts, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_hirschfeld
 title: Magnus Hirschfeld for Chancellor
@@ -3257,10 +3184,6 @@ Magnus Hirschfeld has become chancellor of the SPD majority. His non-factional n
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_radbruch
 title: Gustav Radbruch for Chancellor
 view-if: radbruch_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3279,10 +3202,6 @@ on-arrival: chancellor = "Radbruch"
 Gustav Radbruch, one of our key legal experts, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_stampfer
 title: Friedrich Stampfer for Chancellor
@@ -3303,10 +3222,6 @@ Friedrich Stampfer, long-time editor of our party newspaper, has become chancell
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_lobe
 title: Paul Löbe for Chancellor
 view-if: lobe_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3326,10 +3241,6 @@ Paul Löbe, the President of the Reichstag. His non-factional nature means many 
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_severing
 view-if: severing_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 title: Carl Severing for Chancellor
@@ -3338,8 +3249,6 @@ on-arrival: spd_in_government = 1; chancellor = "Severing"; chancellor_party = "
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 [? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Carl Severing, a key figure of our party’s right wing, has been appointed Chancellor.
-
-
 
 @majority_chancellor_severing
 view-if: severing_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
@@ -3350,10 +3259,6 @@ on-arrival: chancellor = "Severing "
 Carl Severing, a key figure of our party’s right wing, has been appointed Chancellor.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_braun
 choose-if: (president != "Hindenburg" or not spd_sackings)
@@ -3395,10 +3300,6 @@ Otto Braun is the Minister-President of Prussia, and one of the most recognizabl
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_juchacz
 view-if: juchacz_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 title: Marie Juchacz for Chancellor
@@ -3421,10 +3322,6 @@ Marie Juchacz, a key figure of our party’s right wing, has been appointed Chan
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_pfulf
 view-if: pfulf_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 title: Antonie Pfülf for Chancellor
@@ -3433,8 +3330,6 @@ on-arrival: spd_in_government = 1; chancellor = "Pfülf"; chancellor_party = "SP
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 [? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Antonie Pfülf, a key figure of our party’s right wing, has been appointed Chancellor.
-
-
 
 @majority_chancellor_pfulf
 view-if: pfulf_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
@@ -3447,10 +3342,6 @@ Antonie Pfülf, a key figure of our party’s right wing, has been appointed Cha
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_ebert
 view-if: ebert_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50 and ebert_dead == 0
 title: Friedrich Ebert for Chancellor
@@ -3459,8 +3350,6 @@ on-arrival: spd_in_government = 1; chancellor = "Ebert"; chancellor_party = "SPD
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 [? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Friedrich Ebert, a key figure of our party’s right wing, has been appointed Chancellor.
-
-
 
 @majority_chancellor_ebert
 view-if: ebert_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50 and ebert_dead == 0
@@ -3471,10 +3360,6 @@ on-arrival: chancellor = "Ebert "
 Friedrich Ebert, a key figure of our party’s right wing, has been appointed Chancellor.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_scheidemann
 view-if: scheidemann_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3495,10 +3380,6 @@ Phillip Scheidemann, a key figure of our party’s right wing, has been appointe
 
 - @succession Let us continue with the succession.
 
-
-   
-  
-
 @chancellor_tarnow
 view-if: tarnow_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 title: Fritz Tarnow for Chancellor
@@ -3507,8 +3388,6 @@ on-arrival: spd_in_government = 1; chancellor = "Tarnow"; chancellor_party = "SP
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Fritz Tarnow, a key figure of our party’s labor wing, has been appointed Chancellor.
-
-
 
 @majority_chancellor_tarnow
 view-if: tarnow_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
@@ -3519,10 +3398,6 @@ on-arrival: chancellor = "Tarnow "
 Fritz Tarnow, a key figure of our party’s right wing, has been appointed Chancellor.
 
 - @succession Let us continue with the succession.
-
-
-   
-  
 
 @chancellor_noske
 view-if: noske_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3547,6 +3422,6 @@ Gustav Noske, a key figure of our party’s right wing, has been appointed Chanc
 
 - @succession Let us continue with the succession.
 
-
-   
-  
+@succession
+view-if: succession_levi == 1 or succession_muller == 1
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
