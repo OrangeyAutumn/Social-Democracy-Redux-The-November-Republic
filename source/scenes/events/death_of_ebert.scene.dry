@@ -2,7 +2,7 @@ title: The Death of Ebert
 subtitle: The President has died...
 new-page: true
 view-if: year = 1925 and month >= 3 and not ebert_dead and ebert_lives == 0
-on-arrival: round25 = 0; ebert_dead = 1; president = "Simons (acting)"; reformist_leader = "Braun"; reformist_leader_fullname = "Otto Braun"
+on-arrival: round25 = 0; ebert_dead = 1; president = "Simons (acting)";
 tags: event
 
 = The Death of Ebert
@@ -10,3 +10,9 @@ tags: event
 President Friedrich Ebert has passed away at age 54 after delaying treatment for illness in order to defend himself from defamation. [? if left_strength > reformist_strength : Though he may have sold out to the Reichswehr and turned against the workers which elected him in the first place, he had managed to keep the republic intact. His death means uncertainty in the republic's future. ?][? if reformist_strength > left_strength : Though he had his flaws, Ebert guided Germany from the brink of destruction and protected a newborn democracy from demise through hard and tireless work. His death means uncertainty in the republic's future. ?]
 
 With his sudden death, new presidential elections have been scheduled for April – the first direct Presidential elections in the history of the Republic, and of Germany itself. We must prepare, though we do not have much time.
+
+- @succession: With Ebert's death, Otto Braun assumes the leadership of the Reformist faction.
+
+@succession
+view-if: reformist_leader = "Ebert"
+on-arrival: reformist_leader = "Braun"; reformist_leader_fullname = "Otto Braun"
