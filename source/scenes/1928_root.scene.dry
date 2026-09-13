@@ -396,15 +396,9 @@ Q.economic_records = [];
 
 
 // State of the government
-if (president_marx == 0) {
-    Q.president = "Hindenburg";
-    Q.president_party = "Independent";
-    Q.chancellor = "Marx";
-} else if (president_marx == 1) {
-    Q.president = "Marx";
-    Q.president_party = "Z";
-    Q.chancellor = "Adenauer";
-}
+Q.president = "Hindenburg";
+Q.president_party = "Independent";
+Q.chancellor = "Marx";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
