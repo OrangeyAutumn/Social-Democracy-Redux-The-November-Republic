@@ -2575,7 +2575,7 @@ We can pick from any number of ministries. Controlling a ministry allows us to d
 
 @vice_chancellor
 title: The question of the Vice-Chancellorship
-subtitle: [+ if chancellor_party = "SPD" : Although we have secured the Chancellorship for ourselves, our coalition partners may still push for the Vice-Chancellorship. +][+ if chancellor_party != "SPD" : Although we have not secured the Chancellorship, the Vice-Chancellorship may still be in our reach. +]
+subtitle: [? if chancellor_party = "SPD" : Although we have secured the Chancellorship for ourselves, our coalition partners may still push for the Vice-Chancellorship. ?][? if chancellor_party != "SPD" : Although we have not secured the Chancellorship, the Vice-Chancellorship may still be in our reach. ?]
 tags: mins_1928
 go-to: vice_chancellor_menu
 
