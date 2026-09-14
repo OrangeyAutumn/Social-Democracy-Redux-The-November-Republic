@@ -1560,6 +1560,7 @@ on-arrival: pro_republic -= 5; nationalism += 5; coup_progress += 3; reichswehr_
 Bracht has somehow won a majority in the Reichstag. Democratic reforms that we undertook in the past are undone. Let us hope President Marx's confidence in Bracht wears thin.
 
 @no_majority_bracht
+
 With there still being no majority for Bracht, Wilhelm Marx dismisses him and looks to alternative candidates. 
 
 - @marx_hitler: Adolf Hitler?
