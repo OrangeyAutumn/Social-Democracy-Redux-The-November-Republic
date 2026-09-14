@@ -2,7 +2,7 @@ title: Campaigning (People's Party)
 new-page: true
 is-card: true
 tags: campaigning
-view-if: campaign_timer <= 0
+view-if: campaign_timer <= 0 and peoples_party == 1
 on-arrival: month_actions += 1; campaign_timer = 6
 card-image: img/protest.jpg
 
