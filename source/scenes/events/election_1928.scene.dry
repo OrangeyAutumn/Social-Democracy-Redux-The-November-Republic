@@ -64,7 +64,7 @@ for (var party of Q.parties) {
     }
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
     var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];#.toFixed(1);
+    Q['str_change_' + party] = sign + Q['change_' + party + '_r']; // .toFixed(1);
 }
 # calculate new party sum if electoral reform
 if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
@@ -83,7 +83,7 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
         }
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];#.toFixed(1);
+        Q['str_change_' + party] = sign + Q['change_' + party + '_r']; // .toFixed(1);
     }
 }
 
@@ -102,7 +102,7 @@ if (Q.uspd_r >= Q.spd_r && Q.uspd_r >= Q.nsdap_r && Q.uspd_r >= Q.z_r && Q.uspd_
 if (Q.dvp_r >= Q.spd_r && Q.dvp_r >= Q.uspd_r && Q.dvp_r >= Q.z_r && Q.dvp_r >= Q.nsdap_r && Q.dvp_r >= Q.dnvp_r) {
     Q.largest_party = 'DVP';
 }
-if (Q.z_r >= Q.spd_r && Q.z_r >= Q.uspd_r && Q.z_r >= Q.z_r && Q.nsdap_r >= Q.dvp_r && Q.z_r >= Q.dnvp_r) {
+if (Q.z_r >= Q.spd_r && Q.z_r >= Q.uspd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.dvp_r && Q.z_r >= Q.dnvp_r) {
     Q.largest_party = 'Z';
 }
 if (Q.dnvp_r >= Q.spd_r && Q.dnvp_r >= Q.uspd_r && Q.dnvp_r >= Q.z_r && Q.dnvp_r >= Q.dvp_r && Q.dnvp_r >= Q.nsdap_r) {
