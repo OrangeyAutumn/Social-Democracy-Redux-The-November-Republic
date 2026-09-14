@@ -9,26 +9,28 @@ go-to: rm_main
 
 Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength and reduce their dissent.
+Removing Co-leaders will increase dissent from their faction of the party, while selecting Co-leaders will increase a faction's strength and reduce their dissent.
 
-- @rm_main: Remove advisors
-- @add_advisors: Add advisors
-- @remove_none: Don't change advisors.
+- @rm_main: Remove Co-leaders
+- @add_advisors: Add Co-leaders
+- @remove_none: Don't change Co-leaders.
 - @easy_discard
 
 
 ###################### removing leaders
 
 @rm_main
-title: Remove advisors.
+title: Remove Co-leaders.
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
-- @add_advisors: Add advisors
+- @add_advisors: Add Co-leaders
 
 @remove_none
-title: Stop changing advisors.
+title: Stop changing Co-leaders.
+choose-if: n_advisors < 3
+unavailable-subtitle: We must fill the vacant co-leadership position.
 go-to: root
 tags: remove_advisor
 
@@ -40,7 +42,7 @@ on-arrival: hilferding_advisor = 0; center_dissent += 5; center_strength -= 2; n
 tags: remove_advisor
 go-to: rm_main
 
-Hilferding has been removed as an advisor. The Centrist faction disapproves.
+Hilferding has been removed as Co-leader. The Centrist faction disapproves.
 
 @remove_wels
 title: Remove Wels
@@ -49,7 +51,7 @@ tags: remove_advisor
 on-arrival: wels_advisor = 0; center_dissent += 5; center_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Wels has been removed as an advisor. The Centrist faction disapproves.
+Wels has been removed as Co-leader. The Centrist faction disapproves.
 
 @remove_muller
 title: Remove Müller
@@ -58,7 +60,7 @@ tags: remove_advisor
 on-arrival: muller_advisor = 0; center_dissent += 5; center_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Müller has been removed as an advisor. The Centrist faction disapproves.
+Müller has been removed as Co-leader. The Centrist faction disapproves.
 
 
 @remove_breitscheid
@@ -68,7 +70,7 @@ tags: remove_advisor
 on-arrival: breitscheid_advisor = 0; center_dissent += 5; center_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Breitscheid has been removed as an advisor. The Centrist faction disapproves.
+Breitscheid has been removed as Co-leader. The Centrist faction disapproves.
 
 @remove_vogel
 title: Remove Vogel
@@ -77,7 +79,7 @@ tags: remove_advisor
 on-arrival: vogel_advisor = 0; center_dissent += 5; center_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Vogel has been removed as an advisor. The Centrist faction disapproves.
+Vogel has been removed as Co-leader. The Centrist faction disapproves.
 
 # reformists
 
@@ -89,7 +91,7 @@ tags: remove_advisor
 on-arrival: severing_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Severing has been removed as an advisor. The Reformist faction disapproves.
+Severing has been removed as Co-leader. The Reformist faction disapproves.
 
 @remove_ebert
 title: Remove Ebert
@@ -98,7 +100,7 @@ tags: remove_advisor
 on-arrival: ebert_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Ebert has been removed as an advisor. The Reformist faction disapproves.
+Ebert has been removed as Co-leader. The Reformist faction disapproves.
 
 @remove_scheidemann
 title: Remove Scheidemann
@@ -107,7 +109,7 @@ tags: remove_advisor
 on-arrival: scheidemann_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Scheidemann has been removed as an advisor. The Reformist faction disapproves.
+Scheidemann has been removed as Co-leader. The Reformist faction disapproves.
 
 @remove_braun
 title: Remove Braun
@@ -116,7 +118,7 @@ tags: remove_advisor
 on-arrival: braun_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Braun has been removed as an advisor. The Reformist faction disapproves.
+Braun has been removed as Co-leader. The Reformist faction disapproves.
 
 @remove_juchacz
 title: Remove Juchacz
@@ -125,7 +127,7 @@ tags: remove_advisor
 on-arrival: juchacz_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+Juchacz has been removed as Co-leader. The Reformist faction disapproves.
 
 @remove_pfulf
 title: Remove Pfülf
@@ -134,7 +136,7 @@ tags: remove_advisor
 on-arrival: pfulf_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Pfülf has been removed as an advisor. The Reformist faction disapproves.
+Pfülf has been removed as Co-leader. The Reformist faction disapproves.
 
 
 # labor
@@ -146,7 +148,7 @@ tags: remove_advisor
 on-arrival: leipart_advisor = 0; labor_dissent += 5; labor_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Leipart has been removed as an advisor. The Labor faction disapproves.
+Leipart has been removed as Co-leader. The Labor faction disapproves.
 
 @remove_aufhauser
 title: Remove Aufhäuser
@@ -155,7 +157,7 @@ tags: remove_advisor
 on-arrival: aufhauser_advisor = 0; labor_dissent += 5; labor_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Labor faction disapproves.
+Aufhäuser has been removed as Co-leader. The Labor faction disapproves.
 
 @remove_wissell
 title: Remove Wissell
@@ -164,7 +166,7 @@ tags: remove_advisor
 on-arrival: wissell_advisor = 0; labor_dissent += 3; labor_strength -= 1; n_advisors -= 1
 go-to: rm_main
 
-Wissell has been removed as an advisor. The Labor faction disapproves.
+Wissell has been removed as Co-leader. The Labor faction disapproves.
 
 @remove_woytinsky
 title: Remove Woytinsky
@@ -173,7 +175,7 @@ tags: remove_advisor
 on-arrival: woytinsky_advisor = 0; labor_dissent += 3; labor_strength -= 1; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+Woytinsky has been removed as Co-leader. The Labor faction disapproves.
 
 @remove_tarnow
 title: Remove Tarnow
@@ -182,7 +184,7 @@ tags: remove_advisor
 on-arrival: tarnow_advisor = 0; labor_dissent += 3; labor_strength -= 1; n_advisors -= 1
 go-to: rm_main
 
-Tarnow has been removed as an advisor. The Labor faction disapproves.
+Tarnow has been removed as Co-leader. The Labor faction disapproves.
 
 # left
 
@@ -193,7 +195,7 @@ tags: remove_advisor
 on-arrival: crispien_advisor = 0; left_dissent += 5; left_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Crispien has been removed as an advisor. The Leftist faction disapproves.
+Crispien has been removed as Co-leader. The Leftist faction disapproves.
 
 @remove_levi
 title: Remove Levi
@@ -202,7 +204,7 @@ tags: remove_advisor
 on-arrival: levi_advisor = 0; left_dissent += 5; left_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+Levi has been removed as Co-leader. The Leftist faction disapproves.
 
 @remove_sender
 title: Remove Sender
@@ -211,7 +213,7 @@ tags: remove_advisor
 on-arrival: sender_advisor = 0; left_dissent += 3; left_strength -= 1; n_advisors -= 1
 go-to: rm_main
 
-Sender has been removed as an advisor. The Leftist faction disapproves.
+Sender has been removed as Co-leader. The Leftist faction disapproves.
 
 @remove_rosenfeld
 title: Remove Rosenfeld
@@ -220,7 +222,7 @@ tags: remove_advisor
 on-arrival: rosenfeld_advisor = 0; left_dissent += 3; left_strength -= 1; n_advisors -= 1
 go-to: rm_main
 
-Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
+Rosenfeld has been removed as Co-leader. The Leftist faction disapproves.
 
 @remove_seydewitz
 title: Remove Seydewitz
@@ -229,7 +231,7 @@ tags: remove_advisor
 on-arrival: seydewitz_advisor = 0; left_dissent += 3; left_strength -= 1; n_advisors -= 1
 go-to: rm_main
 
-Seydewitz has been removed as an advisor. The Leftist faction disapproves.
+Seydewitz has been removed as Co-leader. The Leftist faction disapproves.
 
 @remove_siemsen
 title: Remove Siemsen
@@ -238,7 +240,7 @@ tags: remove_advisor
 on-arrival: siemsen_advisor = 0; left_dissent += 3; left_strength -= 1; n_advisors -= 1
 go-to: rm_main
 
-Siemsen has been removed as an advisor. The Leftist faction disapproves.
+Siemsen has been removed as Co-leader. The Leftist faction disapproves.
 
 
 
@@ -251,7 +253,7 @@ tags: remove_advisor
 on-arrival: mierendorff_advisor = 0; neorevisionist_dissent += 5; neorevisionist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
+Mierendorff has been removed as Co-leader. The Neorevisionist faction disapproves.
 
 @remove_leber
 title: Remove Leber
@@ -260,7 +262,7 @@ tags: remove_advisor
 on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; neorevisionist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Leber has been removed as an advisor. The Neorevisionist faction disapproves.
+Leber has been removed as Co-leader. The Neorevisionist faction disapproves.
 
 @remove_noske
 title: Remove Noske
@@ -269,7 +271,7 @@ tags: remove_advisor
 on-arrival: noske_advisor = 0; neorevisionist_dissent += 3; neorevisionist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Noske has been removed as an advisor. The Neorevisionist faction disapproves.
+Noske has been removed as Co-leader. The Neorevisionist faction disapproves.
 
 @remove_schumacher
 title: Remove Schumacher
@@ -278,7 +280,7 @@ tags: remove_advisor
 on-arrival: schumacher_advisor = 0; neorevisionist_dissent += 3; neorevisionist_strength -= 2; n_advisors -= 1
 go-to: rm_main
 
-Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
+Schumacher has been removed as Co-leader. The Neorevisionist faction disapproves.
 
 
 ## nonfactional
@@ -292,7 +294,7 @@ tags: remove_advisor
 on-arrival: baade_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Baade has been removed as an advisor.
+Baade has been removed as Co-leader.
 
 #The Reformist faction disapproves.
 
@@ -304,7 +306,7 @@ tags: remove_advisor
 on-arrival: hirschfeld_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Hirschfeld has been removed as an advisor. 
+Hirschfeld has been removed as Co-leader. 
 
 @remove_stampfer
 title: Remove Stampfer
@@ -313,7 +315,7 @@ tags: remove_advisor
 on-arrival: stampfer_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Stampfer has been removed as an advisor. 
+Stampfer has been removed as Co-leader. 
 
 @remove_radbruch
 title: Remove Radbruch
@@ -322,7 +324,7 @@ tags: remove_advisor
 on-arrival: radbruch_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Radbruch has been removed as an advisor. 
+Radbruch has been removed as Co-leader. 
 
 @remove_lobe
 title: Remove Löbe
@@ -331,14 +333,14 @@ tags: remove_advisor
 on-arrival: lobe_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Löbe has been removed as an advisor. 
+Löbe has been removed as Co-leader. 
 
 
 
 ####################### adding advisors
 
 @add_advisors
-title: Add advisors
+title: Add Co-leaders
 choose-if: n_advisors < 3
 unavailable-subtitle: Maximum of 3 advisors.
 go-to: advisor_menu
@@ -348,45 +350,39 @@ title: Add other advisors.
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
-
-- @centrist: Add Centrists
-- @left: Add Leftists
-- @reformist: Add Reformists
-- @labor: Add Labor
-- @neorev: Add Neorevisionists
-- @nonfactional: Add non-factional advisors
-- @rm_main: Remove advisors instead.
-- @remove_none: Stop changing advisors.
-
-@centrist
-view-if: n_advisors < 3
-
-- #center_advisor
-
-@reformist
-view-if: n_advisors < 3
-
-- #reformist_advisor
-
-@left
-view-if: n_advisors < 3
-
-- #left_advisor
-
-@labor
-view-if: n_advisors < 3
-
-- #labor_advisor
-
-@neorev
-view-if: neorevisionism > 0 and n_advisors < 3
-
-- #neorev_advisor
-
-@nonfactional
-view-if: n_advisors < 3
-
-- #nonfactional_advisor
+-	@add_crispien
+-	@add_levi
+-	@add_sender
+-	@add_rosenfeld
+-	@add_seydewitz
+-	@add_siemsen
+-	@add_muller
+-	@add_wels
+-	@add_vogel
+-	@add_hilferding
+-	@add_breitscheid
+-	@add_leipart
+-	@add_aufhauser
+-	@add_wissell
+-	@add_woytinsky
+-	@add_tarnow
+-	@add_braun
+-	@add_severing
+-	@add_juchacz
+-	@add_pfulf
+-	@add_scheidemann
+-	@add_ebert
+-	@add_baade
+-	@add_hirschfeld
+-	@add_radbruch
+-	@add_stampfer
+-	@add_lobe
+-	@add_mierendorff
+-	@add_schumacher
+-	@add_leber
+-	@add_noske
+- @rm_main: Remove Co-leaders instead.
+- @remove_none: Stop changing Co-leaders.
 
 @add_hilferding
 title: Rudolf Hilferding
@@ -395,10 +391,10 @@ is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
 view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: hilferding_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
+on-arrival: hilferding_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Rudolf Hilferding is now an advisor.
+Rudolf Hilferding is our new Co-leader.
 
 @add_wels
 title: Otto Wels
@@ -407,10 +403,10 @@ is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
 view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
+on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Otto Wels is now an advisor.
+Otto Wels is our new Co-leader.
 
 @add_vogel
 title: Hans Vogel
@@ -419,10 +415,10 @@ is-card: true
 card-image: img/portraits/VogelHans.jpg
 tags: center_advisor
 view-if: vogel_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: vogel_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
+on-arrival: vogel_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Hans Vogel is now an advisor.
+Hans Vogel is our new Co-leader.
 
 @add_muller
 title: Hermann Müller
@@ -431,10 +427,10 @@ is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
 view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: muller_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
+on-arrival: muller_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Hermann Müller is now an advisor.
+Hermann Müller is our new Co-leader.
 
 @add_breitscheid
 title: Rudolf Breitscheid
@@ -442,11 +438,11 @@ subtitle: Rudolf Breitscheid comes from a well-educated background and is one of
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
 view-if: breitscheid_advisor = 0 and n_advisors < 3
-on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
+on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: center_advisor
 
-Rudolf Breitscheid is now an advisor.
+Rudolf Breitscheid is our new Co-leader.
 
 # reformist
 
@@ -458,10 +454,10 @@ is-card: true
 card-image: img/portraits/SeveringCarl.jpg
 tags: reformist_advisor
 view-if: severing_advisor = 0 and n_advisors < 3
-on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
+on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Carl Severing is now an advisor.
+Carl Severing is our new Co-leader.
 
 @add_ebert
 title: Friedrich Ebert
@@ -470,10 +466,10 @@ is-card: true
 card-image: img/portraits/EbertFriedrich.jpg
 tags: reformist_advisor
 view-if: ebert_advisor = 0 and n_advisors < 3
-on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
+on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Friedrich Ebert is now an advisor.
+Friedrich Ebert is our new Co-leader.
 
 @add_scheidemann
 title: Phillip Scheidemann
@@ -482,10 +478,10 @@ is-card: true
 card-image: img/portraits/ScheidemannPhillip.jpg
 tags: reformist_advisor
 view-if: severing_advisor = 0 and n_advisors < 3
-on-arrival: scheidemann_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
+on-arrival: scheidemann_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Phillip Scheidemann is now an advisor.
+Phillip Scheidemann is our new Co-leader.
 
 @add_braun
 title: Otto Braun
@@ -494,10 +490,10 @@ is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
 view-if: braun_advisor = 0 and n_advisors < 3
-on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
+on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Otto Braun is now an advisor.
+Otto Braun is our new Co-leader.
 
 @add_juchacz
 title: Marie Juchacz
@@ -505,11 +501,11 @@ subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organiz
 is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
 view-if: juchacz_advisor = 0 and n_advisors < 3
-on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
+on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: reformist_advisor
 
-Marie Juchacz is now an advisor.
+Marie Juchacz is our new Co-leader.
 
 @add_pfulf
 title: Antonie Pfülf
@@ -517,11 +513,11 @@ subtitle: Antonie Pfülf is a leader in social policy and women's rights.
 is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
 view-if: pfulf_advisor = 0 and n_advisors < 3
-on-arrival: pfulf_advisor = 1; n_advisors += 1
+on-arrival: pfulf_advisor = 1; n_advisors += 1; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: reformist_advisor
 
-Antonie Pfülf is now an advisor.
+Antonie Pfülf is our new Co-leader.
 
 
 
@@ -533,11 +529,11 @@ subtitle: Arthur Crispien is a former USPD member who was purged for opposing th
 is-card: true
 card-image: img/portraits/CrispienArthur.jpg
 view-if: crispien_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: crispien_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
+on-arrival: crispien_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
-Arthur Crispien is now an advisor.
+Arthur Crispien is our new Co-leader.
 
 @add_levi
 title: Paul Levi
@@ -545,11 +541,11 @@ subtitle: Paul Levi is a former [+ uspd_name +] leader who was purged for critic
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
-on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
+on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
-Paul Levi is now an advisor.
+Paul Levi is our new Co-leader.
 
 @add_sender
 title: Toni Sender
@@ -557,11 +553,11 @@ subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag 
 is-card: true
 card-image: img/portraits/SenderToni.jpg
 view-if: sender_advisor = 0 and n_advisors < 3
-on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
+on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
-Toni Sender is now an advisor.
+Toni Sender is our new Co-leader.
 
 @add_rosenfeld
 title: Kurt Rosenfeld
@@ -569,11 +565,11 @@ subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag me
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
 view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
+on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
-Kurt Rosenfeld is now an advisor.
+Kurt Rosenfeld is our new Co-leader.
 
 @add_seydewitz
 title: Max Seydewitz
@@ -581,11 +577,11 @@ subtitle: Max Seydewitz is a former leader of the youth wing, current supporter 
 is-card: true
 card-image: img/portraits/SeydewitzMax.jpg
 view-if: seydewitz_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
+on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
-Max Seydewitz is now an advisor.
+Max Seydewitz is our new Co-leader.
 
 @add_siemsen
 title: Anna Siemsen
@@ -593,11 +589,11 @@ subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who w
 is-card: true
 card-image: img/portraits/SiemsenAnna.jpg
 view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
+on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
-Anna Siemsen is now an advisor.
+Anna Siemsen is our new Co-leader.
 
 
 # labor
@@ -609,10 +605,10 @@ is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; center_dissent += 2
+on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; center_dissent += 2; labor_leader = "vacant"; labor_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Theodor Leipart is now an advisor.
+Theodor Leipart is our new Co-leader.
 
 @add_aufhauser
 title: Siegfried Aufhäuser
@@ -621,10 +617,10 @@ is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
 view-if: aufhauser_advisor = 0 and n_advisors < 3
-on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; reformist_dissent += 2
+on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; reformist_dissent += 2; labor_leader = "vacant"; labor_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Siegfried Aufhäuser is now an advisor.
+Siegfried Aufhäuser is our new Co-leader.
 
 @add_wissell
 title: Rudolf Wissell
@@ -633,10 +629,10 @@ is-card: true
 card-image: img/portraits/WissellRudolf.jpg
 tags: labor_advisor
 view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1
+on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Rudolf Wissell is now an advisor.
+Rudolf Wissell is our new Co-leader.
 
 @add_woytinsky
 title: Wladimir Woytinsky
@@ -645,10 +641,10 @@ is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
 tags: labor_advisor
 view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; center_dissent += 1
+on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"; center_dissent += 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Wladimir Woytinsky is now an advisor.
+Wladimir Woytinsky is our new Co-leader.
 
 @add_tarnow
 title: Fritz Tarnow
@@ -657,7 +653,7 @@ is-card: true
 card-image: img/portraits/TarnowFritz.jpg
 tags: labor_advisor
 view-if: tarnow_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: tarnow_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; center_dissent += 1
+on-arrival: tarnow_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"; center_dissent += 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Fritz Tarnow
@@ -670,11 +666,32 @@ subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and
 is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
 view-if: mierendorff_advisor = 0 and n_advisors < 3
-on-arrival: mierendorff_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 2; center_dissent += 2
+on-arrival {!
+mierendorff_advisor = 1; 
+n_advisors += 1;
+neorevisionist_strength += 5; 
+neorevisionist_dissent -= 2; 
+center_dissent += 2
+if (labor_leader == "Mierendorff") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Mierendorff") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Mierendorff") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Mierendorff") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: neorev_advisor
 
-Carlo Mierendorff is now an advisor.
+Carlo Mierendorff is our new Co-leader.
 
 @add_noske
 title: Gustav Noske
@@ -686,7 +703,7 @@ on-arrival: noske_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; ne
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: neorev_advisor
 
-Gustav Noske is now an advisor.
+Gustav Noske is our new Co-leader.
 
 @add_schumacher
 title: Kurt Schumacher
@@ -695,10 +712,31 @@ is-card: true
 card-image: img/portraits/SchumacherKurt.jpg
 tags: neorev_advisor
 view-if: schumacher_advisor = 0 and n_advisors < 3
-on-arrival: schumacher_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 2; center_dissent += 2
+on-arrival {!
+schumacher_advisor = 1; 
+n_advisors += 1;
+neorevisionist_strength += 5; 
+neorevisionist_dissent -= 2; 
+center_dissent += 2
+if (labor_leader == "Schumacher") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Schumacher") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Schumacher") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Schumacher") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Kurt Schumacher is now an advisor.
+Kurt Schumacher is our new Co-leader.
 
 @add_leber
 title: Julius Leber
@@ -706,11 +744,32 @@ subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition
 is-card: true
 card-image: img/portraits/LeberJulius.jpg
 view-if: leber_advisor = 0 and n_advisors < 3
-on-arrival: leber_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 2; center_dissent += 2
+on-arrival {!
+leber_advisor = 1; 
+n_advisors += 1;
+neorevisionist_strength += 5; 
+neorevisionist_dissent -= 2; 
+center_dissent += 2
+if (labor_leader == "Leber") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Leber") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Leber") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Leber") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: neorev_advisor
 
-Julius Leber is now an advisor.
+Julius Leber is our new Co-leader.
 
 # Nonfactional advisors
 
@@ -720,11 +779,37 @@ subtitle: Fritz Baade is one of the few agricultural policy experts in the SPD.
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
 view-if: baade_advisor = 0 and n_advisors < 3
-on-arrival: baade_advisor = 1; n_advisors += 1
+on-arrival {!
+baade_advisor = 1; 
+n_advisors += 1;
+if (left_leader == "Baade") {
+    left_leader = "Vacant";
+    left_leader_fullname = "Vacant";
+}
+else if (center_leader == "Baade") {
+    center_leader = "Vacant";
+    center_leader_fullname = "Vacant";
+}
+if (labor_leader == "Baade") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Baade") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Baade") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Baade") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
-Fritz Baade is now an advisor.
+Fritz Baade is our new Co-leader.
 
 
 @add_hirschfeld
@@ -733,11 +818,37 @@ subtitle: Magnus Hirschfeld is the founder of the Institut für Sexualwissenscha
 is-card: true
 card-image: img/portraits/HirschfeldMagnus.jpg
 view-if: hirschfeld_advisor = 0 and n_advisors < 3
-on-arrival: hirschfeld_advisor = 1; n_advisors += 1
+on-arrival {!	
+hirschfeld_advisor = 1; 
+n_advisors += 1;
+if (left_leader == "Hirschfeld") {
+    left_leader = "Vacant";
+    left_leader_fullname = "Vacant";
+}
+else if (center_leader == "Hirschfeld") {
+    center_leader = "Vacant";
+    center_leader_fullname = "Vacant";
+}
+else if (labor_leader == "Hirschfeld") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Hirschfeld") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Hirschfeld") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Hirschfeld") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
-Magnus Hirschfeld is now an advisor.
+Magnus Hirschfeld is our new Co-leader.
 
 # TODO: add radbruch, stampfer
 
@@ -747,11 +858,37 @@ subtitle: Gustav Radbruch is a renowned legal scholar and long-time SPD justice 
 is-card: true
 card-image: img/portraits/RadbruchGustav.jpg
 view-if: radbruch_advisor = 0 and n_advisors < 3
-on-arrival: radbruch_advisor = 1; n_advisors += 1
+on-arrival {!	
+radbruch_advisor = 1; 
+n_advisors += 1;
+if (left_leader == "Radbruch") {
+    left_leader = "Vacant";
+    left_leader_fullname = "Vacant";
+}
+else if (center_leader == "Radbruch") {
+    center_leader = "Vacant";
+    center_leader_fullname = "Vacant";
+}
+else if (labor_leader == "Radbruch") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Radbruch") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Radbruch") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Radbruch") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
-Gustav Radbruch is now an advisor.
+Gustav Radbruch is our new Co-leader.
 
 
 @add_stampfer
@@ -760,11 +897,37 @@ subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our 
 is-card: true
 card-image: img/portraits/StampferFriedrich.jpg
 view-if: stampfer_advisor = 0 and n_advisors < 3
-on-arrival: stampfer_advisor = 1; n_advisors += 1
+on-arrival {!	
+stampfer_advisor = 1; 
+n_advisors += 1;
+if (left_leader == "Stampfer") {
+    left_leader = "Vacant";
+    left_leader_fullname = "Vacant";
+}
+else if (center_leader == "Stampfer") {
+    center_leader = "Vacant";
+    center_leader_fullname = "Vacant";
+}
+else if (labor_leader == "Stampfer") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Stampfer") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Stampfer") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Stampfer") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
-Friedrich Stampfer is now an advisor.
+Friedrich Stampfer is our new Co-leader.
 
 @add_lobe
 title: Paul Löbe
@@ -772,8 +935,34 @@ subtitle: Löbe is the President of the Reichstag.
 is-card: true
 card-image: img/portraits/LöbePaul.jpg
 view-if: lobe_advisor = 0 and n_advisors < 3
-on-arrival: lobe_advisor = 1; n_advisors += 1
+on-arrival {!	
+löbe_advisor = 1; 
+n_advisors += 1;
+if (left_leader == "Löbe") {
+    left_leader = "Vacant";
+    left_leader_fullname = "Vacant";
+}
+else if (center_leader == "Löbe") {
+    center_leader = "Vacant";
+    center_leader_fullname = "Vacant";
+}
+else if (labor_leader == "Löbe") {
+    labor_leader = "Vacant";
+    labor_leader_fullname = "Vacant";
+}
+else if (reformist_leader == "Löbe") {
+    reformist_leader = "Vacant";
+    reformist_leader_fullname = "Vacant";
+}
+else if (nonfactional_leader == "Löbe") {
+    nonfactional_leader = "Vacant";
+    nonfactional_leader_fullname = "Vacant";
+}
+else if (revisionist_leader == "Löbe") {
+    revisionist_leader = "Vacant";
+    revisionist_leader_fullname = "Vacant";
+!}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
-Paul Löbe is now an advisor.
+Paul Löbe is our new Co-leader.
