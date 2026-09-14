@@ -89,15 +89,24 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
 
 # get change arrows and signs
 
-
-# The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.uspd_r) {
+if (Q.spd_r >= Q.nsdap_r && Q.spd_r >= Q.uspd_r && Q.spd_r >= Q.z_r && Q.spd_r >= Q.dvp_r && Q.spd_r >= Q.dnvp_r) {
+    Q.largest_party = 'SPD';
+}
+if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.uspd_r && Q.nsdap_r >= Q.z_r && Q.nsdap_r >= Q.dvp_r && Q.nsdap_r >= Q.dnvp_r) {
     Q.largest_party = 'NSDAP';
 }
-
-if (Q.uspd_r >= Q.spd_r && Q.uspd_r >= Q.nsdap_r) {
+if (Q.uspd_r >= Q.spd_r && Q.uspd_r >= Q.nsdap_r && Q.uspd_r >= Q.z_r && Q.uspd_r >= Q.dvp_r && Q.uspd_r >= Q.dnvp_r) {
     Q.largest_party = 'USPD';
+}
+if (Q.dvp_r >= Q.spd_r && Q.dvp_r >= Q.uspd_r && Q.dvp_r >= Q.z_r && Q.dvp_r >= Q.nsdap_r && Q.dvp_r >= Q.dnvp_r) {
+    Q.largest_party = 'DVP';
+}
+if (Q.z_r >= Q.spd_r && Q.z_r >= Q.uspd_r && Q.z_r >= Q.z_r && Q.nsdap_r >= Q.dvp_r && Q.z_r >= Q.dnvp_r) {
+    Q.largest_party = 'Z';
+}
+if (Q.dnvp_r >= Q.spd_r && Q.dnvp_r >= Q.uspd_r && Q.dnvp_r >= Q.z_r && Q.dnvp_r >= Q.dvp_r && Q.dnvp_r >= Q.nsdap_r) {
+    Q.largest_party = 'DNVP';
 }
 Q.z_minus_bvp_r = Q.z_r - 3;
 # coalitions
