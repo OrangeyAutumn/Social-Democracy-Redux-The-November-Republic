@@ -265,7 +265,7 @@ view-if: year == 1928
 audio: stop-audio; shuffle music/1928_1931/FruhlingsliedMendelssohn.mp3 music/1928_1931/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1931/MarekWeber.mp3 music/1928_1931/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1931_1933/Internationale-de_normalized.ogg
 new-page: true
 set-bg: img/bankrun.jpg
-go-to: main if difficulty >= 0; main.main_easy if difficulty < 0; president_marx if president_marx_1928 == 1;
+go-to: main if difficulty >= 0; main.main_easy if difficulty < 0; president_marx_1928 if president_marx == 1;
 
 = 1928
 
@@ -286,7 +286,7 @@ view-if: year == 1931
 audio: stop-audio; shuffle music/1928_1931/FruhlingsliedMendelssohn.mp3 music/1928_1931/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1931/MarekWeber.mp3 music/1928_1931/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1931_1933/Internationale-de_normalized.ogg
 new-page: true
 set-bg: img/reichstag_3.jpg
-go-to: main if difficulty >= 0; main.main_easy if difficulty < 0; president_marx if president_marx_1931 == 1;
+go-to: main if difficulty >= 0; main.main_easy if difficulty < 0; president_marx_1931 if president_marx == 1;
 
 = 1931
 
