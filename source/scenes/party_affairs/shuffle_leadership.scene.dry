@@ -391,7 +391,7 @@ is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
 view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: hilferding_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
+on-arrival: hilferding_advisor = 1; n_advisors += 1; center_strength += 5; left_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; neorevisionist_dissent += 1; center_dissent -= 1; center_leader = "Vacant"; center_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Rudolf Hilferding is our new Co-leader.
@@ -403,7 +403,7 @@ is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
 view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
+on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 5; left_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; neorevisionist_dissent += 1; center_dissent -= 1; center_leader = "Vacant"; center_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Otto Wels is our new Co-leader.
@@ -415,7 +415,7 @@ is-card: true
 card-image: img/portraits/VogelHans.jpg
 tags: center_advisor
 view-if: vogel_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: vogel_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
+on-arrival: vogel_advisor = 1; n_advisors += 1; center_strength += 5; left_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; neorevisionist_dissent += 1; center_dissent -= 1; center_leader = "Vacant"; center_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Hans Vogel is our new Co-leader.
@@ -427,7 +427,7 @@ is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
 view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: muller_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant"
+on-arrival: muller_advisor = 1; n_advisors += 1; center_strength += 5; left_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; neorevisionist_dissent += 1; center_dissent -= 1; center_leader = "Vacant"; center_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Hermann Müller is our new Co-leader.
@@ -438,7 +438,7 @@ subtitle: Rudolf Breitscheid comes from a well-educated background and is one of
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
 view-if: breitscheid_advisor = 0 and n_advisors < 3
-on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1; center_leader = "vacant"; center_leader_fullname = "vacant" 
+on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_strength += 5; left_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; neorevisionist_dissent += 1; center_dissent -= 1; center_leader = "Vacant"; center_leader_fullname = "Vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: center_advisor
 
@@ -454,7 +454,7 @@ is-card: true
 card-image: img/portraits/SeveringCarl.jpg
 tags: reformist_advisor
 view-if: severing_advisor = 0 and n_advisors < 3
-on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
+on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "Vacant"; reformist_leader_fullname = "Vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Carl Severing is our new Co-leader.
@@ -466,7 +466,7 @@ is-card: true
 card-image: img/portraits/EbertFriedrich.jpg
 tags: reformist_advisor
 view-if: ebert_advisor = 0 and n_advisors < 3
-on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant"
+on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "Vacant"; reformist_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Friedrich Ebert is our new Co-leader.
@@ -477,8 +477,8 @@ subtitle: Phillip Scheidemann is the former Reich Minister President and the man
 is-card: true
 card-image: img/portraits/ScheidemannPhillip.jpg
 tags: reformist_advisor
-view-if: severing_advisor = 0 and n_advisors < 3
-on-arrival: scheidemann_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
+view-if: scheidemann_advisor = 0 and n_advisors < 3
+on-arrival: scheidemann_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "Vacant"; reformist_leader_fullname = "Vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Phillip Scheidemann is our new Co-leader.
@@ -490,7 +490,7 @@ is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
 view-if: braun_advisor = 0 and n_advisors < 3
-on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
+on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "Vacant"; reformist_leader_fullname = "Vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Otto Braun is our new Co-leader.
@@ -501,7 +501,7 @@ subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organiz
 is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
 view-if: juchacz_advisor = 0 and n_advisors < 3
-on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "vacant"; reformist_leader_fullname = "vacant"
+on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2; reformist_leader = "Vacant"; reformist_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: reformist_advisor
 
@@ -513,7 +513,7 @@ subtitle: Antonie Pfülf is a leader in social policy and women's rights.
 is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
 view-if: pfulf_advisor = 0 and n_advisors < 3
-on-arrival: pfulf_advisor = 1; n_advisors += 1; reformist_leader = "vacant"; reformist_leader_fullname = "vacant" 
+on-arrival: pfulf_advisor = 1; n_advisors += 1; reformist_leader = "Vacant"; reformist_leader_fullname = "Vacant" 
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: reformist_advisor
 
@@ -529,7 +529,7 @@ subtitle: Arthur Crispien is a former USPD member who was purged for opposing th
 is-card: true
 card-image: img/portraits/CrispienArthur.jpg
 view-if: crispien_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: crispien_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
+on-arrival: crispien_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "Vacant"; left_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
@@ -541,7 +541,7 @@ subtitle: Paul Levi is a former [+ uspd_name +] leader who was purged for critic
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
-on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
+on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "Vacant"; left_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
@@ -553,7 +553,7 @@ subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag 
 is-card: true
 card-image: img/portraits/SenderToni.jpg
 view-if: sender_advisor = 0 and n_advisors < 3
-on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
+on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "Vacant"; left_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
@@ -565,7 +565,7 @@ subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag me
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
 view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
+on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "Vacant"; left_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
@@ -577,7 +577,7 @@ subtitle: Max Seydewitz is a former leader of the youth wing, current supporter 
 is-card: true
 card-image: img/portraits/SeydewitzMax.jpg
 view-if: seydewitz_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
+on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "Vacant"; left_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
@@ -589,7 +589,7 @@ subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who w
 is-card: true
 card-image: img/portraits/SiemsenAnna.jpg
 view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "vacant"; left_leader_fullname = "vacant"
+on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2; left_leader = "Vacant"; left_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
@@ -605,7 +605,7 @@ is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; center_dissent += 2; labor_leader = "vacant"; labor_leader_fullname = "vacant"
+on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; center_dissent += 2; labor_leader = "Vacant"; labor_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Theodor Leipart is our new Co-leader.
@@ -617,7 +617,7 @@ is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
 view-if: aufhauser_advisor = 0 and n_advisors < 3
-on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; reformist_dissent += 2; labor_leader = "vacant"; labor_leader_fullname = "vacant"
+on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; reformist_dissent += 2; labor_leader = "Vacant"; labor_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Siegfried Aufhäuser is our new Co-leader.
@@ -629,7 +629,7 @@ is-card: true
 card-image: img/portraits/WissellRudolf.jpg
 tags: labor_advisor
 view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"
+on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; labor_leader = "Vacant"; labor_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Rudolf Wissell is our new Co-leader.
@@ -641,7 +641,7 @@ is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
 tags: labor_advisor
 view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"; center_dissent += 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"
+on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; center_dissent += 1; labor_leader = "Vacant"; labor_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Wladimir Woytinsky is our new Co-leader.
@@ -653,7 +653,7 @@ is-card: true
 card-image: img/portraits/TarnowFritz.jpg
 tags: labor_advisor
 view-if: tarnow_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: tarnow_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"; center_dissent += 1; labor_leader = "vacant"; labor_leader_fullname = "vacant"
+on-arrival: tarnow_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; center_dissent += 1; labor_leader = "Vacant"; labor_leader_fullname = "Vacant"
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Fritz Tarnow
@@ -666,7 +666,7 @@ subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and
 is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
 view-if: mierendorff_advisor = 0 and n_advisors < 3
-on-arrival {!
+on-arrival: {!
 mierendorff_advisor = 1; 
 n_advisors += 1;
 neorevisionist_strength += 5; 
@@ -679,10 +679,6 @@ if (labor_leader == "Mierendorff") {
 else if (reformist_leader == "Mierendorff") {
     reformist_leader = "Vacant";
     reformist_leader_fullname = "Vacant";
-}
-else if (nonfactional_leader == "Mierendorff") {
-    nonfactional_leader = "Vacant";
-    nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Mierendorff") {
     neorevisionist_leader = "Vacant";
@@ -713,7 +709,7 @@ is-card: true
 card-image: img/portraits/SchumacherKurt.jpg
 tags: neorev_advisor
 view-if: schumacher_advisor = 0 and n_advisors < 3
-on-arrival {!
+on-arrival: {!
 schumacher_advisor = 1; 
 n_advisors += 1;
 neorevisionist_strength += 5; 
@@ -726,10 +722,6 @@ if (labor_leader == "Schumacher") {
 else if (reformist_leader == "Schumacher") {
     reformist_leader = "Vacant";
     reformist_leader_fullname = "Vacant";
-}
-else if (nonfactional_leader == "Schumacher") {
-    nonfactional_leader = "Vacant";
-    nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Schumacher") {
     neorevisionist_leader = "Vacant";
@@ -746,7 +738,7 @@ subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition
 is-card: true
 card-image: img/portraits/LeberJulius.jpg
 view-if: leber_advisor = 0 and n_advisors < 3
-on-arrival {!
+on-arrival: {!
 leber_advisor = 1; 
 n_advisors += 1;
 neorevisionist_strength += 5; 
@@ -759,10 +751,6 @@ if (labor_leader == "Leber") {
 else if (reformist_leader == "Leber") {
     reformist_leader = "Vacant";
     reformist_leader_fullname = "Vacant";
-}
-else if (nonfactional_leader == "Leber") {
-    nonfactional_leader = "Vacant";
-    nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Leber") {
     neorevisionist_leader = "Vacant";
@@ -782,7 +770,7 @@ subtitle: Fritz Baade is one of the few agricultural policy experts in the SPD.
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
 view-if: baade_advisor = 0 and n_advisors < 3
-on-arrival {!
+on-arrival: {!
 baade_advisor = 1; 
 n_advisors += 1;
 if (left_leader == "Baade") {
@@ -793,7 +781,7 @@ else if (center_leader == "Baade") {
     center_leader = "Vacant";
     center_leader_fullname = "Vacant";
 }
-if (labor_leader == "Baade") {
+else if (labor_leader == "Baade") {
     labor_leader = "Vacant";
     labor_leader_fullname = "Vacant";
 }
@@ -822,7 +810,7 @@ subtitle: Magnus Hirschfeld is the founder of the Institut für Sexualwissenscha
 is-card: true
 card-image: img/portraits/HirschfeldMagnus.jpg
 view-if: hirschfeld_advisor = 0 and n_advisors < 3
-on-arrival {!	
+on-arrival: {!	
 hirschfeld_advisor = 1; 
 n_advisors += 1;
 if (left_leader == "Hirschfeld") {
@@ -863,7 +851,7 @@ subtitle: Gustav Radbruch is a renowned legal scholar and long-time SPD justice 
 is-card: true
 card-image: img/portraits/RadbruchGustav.jpg
 view-if: radbruch_advisor = 0 and n_advisors < 3
-on-arrival {!	
+on-arrival: {!	
 radbruch_advisor = 1; 
 n_advisors += 1;
 if (left_leader == "Radbruch") {
@@ -903,7 +891,7 @@ subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our 
 is-card: true
 card-image: img/portraits/StampferFriedrich.jpg
 view-if: stampfer_advisor = 0 and n_advisors < 3
-on-arrival {!	
+on-arrival: {!	
 stampfer_advisor = 1; 
 n_advisors += 1;
 if (left_leader == "Stampfer") {
@@ -942,7 +930,7 @@ subtitle: Löbe is the President of the Reichstag.
 is-card: true
 card-image: img/portraits/LöbePaul.jpg
 view-if: lobe_advisor = 0 and n_advisors < 3
-on-arrival {!	
+on-arrival: {!	
 löbe_advisor = 1; 
 n_advisors += 1;
 if (left_leader == "Löbe") {
