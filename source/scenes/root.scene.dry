@@ -265,6 +265,32 @@ view-if: year == 1928
 audio: stop-audio; shuffle music/1928_1931/FruhlingsliedMendelssohn.mp3 music/1928_1931/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1931/MarekWeber.mp3 music/1928_1931/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1931_1933/Internationale-de_normalized.ogg
 new-page: true
 set-bg: img/bankrun.jpg
+on-arrival: {!
+    if (president_marx == 1) {
+        president = "Marx";
+        president_party = "Z";
+        chancellor = "Adenauer";
+        spd_in_government = 1;
+        dnvp_in_government = 0;
+        in_grand_coalition = 1;
+        foreign_minister = "Stresemann";
+        foreign_minister_party = "DVP";
+        interior_minister = "Severing";
+        interior_minister_party = "SPD";
+        justice_minister = "Koch Weser";
+        justice_minister_party = "DDP";
+        labor_minister = "Wissell";
+        labor_minister_party = "SPD";
+        reichswehr_minister = "Groener";
+        reichswehr_minister_party = "I";
+        economic_minister = "Curtius";
+        economic_minister_party = "DVP";
+        finance_minister = "Köhler";
+        finance_minister_party = "Z";
+        agriculture_minister = "Dietrich";
+        agriculture_minister_party = "DDP";
+    }
+!}
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1928
@@ -278,6 +304,12 @@ view-if: year == 1931
 audio: stop-audio; shuffle music/1928_1931/FruhlingsliedMendelssohn.mp3 music/1928_1931/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1931/MarekWeber.mp3 music/1928_1931/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1931_1933/Internationale-de_normalized.ogg
 new-page: true
 set-bg: img/reichstag_3.jpg
+on-arrival: {!
+    if (president_marx == 1) {
+        president = "Marx";
+        president_party = "Z";
+    }
+!}
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1931
