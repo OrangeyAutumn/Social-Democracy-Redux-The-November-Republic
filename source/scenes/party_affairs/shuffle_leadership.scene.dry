@@ -7,6 +7,8 @@ on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
 card-image: img/vorwarts_2.jpg
 go-to: rm_main
 
+= A Change in Leadership?
+
 Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
 
 Removing Co-leaders will increase dissent from their faction of the party, while selecting Co-leaders will increase a faction's strength and reduce their dissent.
@@ -26,14 +28,6 @@ frequency: 1
 
 - #remove_advisor
 - @add_advisors: Add Co-leaders
-
-@remove_none
-title: Stop changing Co-leaders.
-choose-if: n_advisors >= 3
-unavailable-subtitle: We must fill the vacant co-leadership position.
-go-to: root
-tags: remove_advisor
-
 
 @remove_hilferding
 title: Remove Hilferding
@@ -335,7 +329,12 @@ go-to: rm_main
 
 Löbe has been removed as Co-leader. 
 
-
+@remove_none
+title: Stop changing Co-leaders.
+choose-if: n_advisors >= 3
+unavailable-subtitle: We must fill the vacant co-leadership position.
+go-to: root
+tags: remove_advisor
 
 ####################### adding advisors
 
