@@ -227,7 +227,7 @@ For other, non-difficulty related tweaks.
 - @1931_start: Proceed to 1931 start menu
 
 @enable_sandbox
-subtitle: Enables the Sandbox Pinned Card - allowing you to alter various ganeplay elements
+subtitle: Enables the Sandbox Pinned Card - allowing you to alter various gameplay elements
 view-if: sandbox_enabled = 0
 on_arrival: sandbox_enabled = 1
 go-to: settings
@@ -235,7 +235,7 @@ go-to: settings
 The Sandbox card has been enabled. Enjoy!
 
 @disable_sandbox
-subtitle: Disenables the Sandbox Pinned Card - disallowing you to alter various ganeplay elements
+subtitle: disables the Sandbox Pinned Card - disallowing you to alter various gameplay elements
 view-if: sandbox_enabled = 1
 on_arrival: sandbox_enabled = 0
 go-to: settings
@@ -274,7 +274,7 @@ It is a bright time for German democracy. After a period of struggle, inflation 
 Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority.
 
 @president_marx_1928
-on-arrival: president = "Marx"; president_party = "Z"; chancellor = "Adenauer"; spd_in_government = 1; dnvp_in_government = 0; in_grand_coalition = 1; foreign_minister = 'Streseman'; foreign_minister_party = 'DVP'; interior_minister = 'Severing’; interior_minister_party = 'SPD’; justice_minister = ‘Koch Weser’; justice_minister_party = 'DDP'; labor_minister = 'Wissell'; labor_minister_party = 'SPD'; reichswehr_minister = 'Groener'; reichswehr_minister_party = 'I'; economic_minister = 'Curtius'; economic_minister_party = 'DVP'; finance_minister = 'Köhler'; finance_minister_party = 'Z'; agriculture_minister = ‘Dietrich'; agriculture_minister_party = 'DDP';
+on-arrival: president = "Marx"; president_party = "Z"; chancellor = "Adenauer"; spd_in_government = 1; dnvp_in_government = 0; in_grand_coalition = 1; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Severing'; interior_minister_party = 'SPD'; justice_minister = 'Koch Weser'; justice_minister_party = 'DDP'; labor_minister = 'Wissell'; labor_minister_party = 'SPD'; reichswehr_minister = 'Groener'; reichswehr_minister_party = 'I'; economic_minister = 'Curtius'; economic_minister_party = 'DVP'; finance_minister = 'Köhler'; finance_minister_party = 'Z'; agriculture_minister = 'Dietrich'; agriculture_minister_party = 'DDP';
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0;
 
 @president_marx_1931
