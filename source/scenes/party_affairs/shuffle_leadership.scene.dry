@@ -29,7 +29,7 @@ frequency: 1
 
 @remove_none
 title: Stop changing Co-leaders.
-choose-if: n_advisors < 3
+choose-if: n_advisors >= 3
 unavailable-subtitle: We must fill the vacant co-leadership position.
 go-to: root
 tags: remove_advisor
