@@ -5,40 +5,47 @@ max-visits: 1
 on-arrival: levi_dead = 1; workers_sapd *= 0.75 if sapd_formed == 1 and sapd_consolidated != 1; workers_sapd *= 0.9 if sapd_consolidated == 1; succession_levi = 1 if levi_advisor == 1 or chancellor == "Levi" or spd_coleader_1 == "Levi" or spd_coleader_2 == "Levi" or spd_coleader_3 == "Levi"  
 tags: event
 
+= The Death of Paul Levi
+
 Paul Levi, a leader of the left wing of our party, has died in an unfortunate accident. He will be missed.
 
-- @levi_advisor_succession: We must decide his successor as advisor.
 - @levi_chancellor_succession: We must decide his successor as Chancellor.
+- @levi_vice_chancellor_succession: We must decide his successor as Vice-Chancellor.
 - @levi_coleader_1_succession: We must decide his successor as Co-leader.
 - @levi_coleader_2_succession: We must decide his successor as Co-leader.
 - @levi_coleader_3_succession: We must decide his successor as Co-leader.
 - @succession_concluded: We have dealt with all matters of succession.
 
-@levi_advisor_succession
-view-if: levi_advisor == 1
-on-arrival: levi_advisor = 0; n_advisors -= 1
-go-to: shuffle_leadership.add_advisors
-
-Who should succeed Levi as an advisor?
-
 @levi_chancellor_succession
 view-if: chancellor == "Levi"
-go-to: election_1928.spd_chancellor_menu
+go-to: election_1928.chancellor_menu
 
 Who should succeed Levi as Chancellor?
 
+@levi_chancellor_succession
+view-if: vice_chancellor == "Levi"
+go-to: election_1928.vice_chancellor_menu
+
+Who should succeed Levi as Vice-Chancellor?
+
 @levi_coleader_1_succession
 view-if: spd_coleader_1 == "Levi"
+on-arrival: levi_advisor = 0; n_advisors -= 1
+go-to: shuffle_leadership.add_advisors
 
 Who should succeed Levi as Co-leader?
 
 @levi_coleader_2_succession
 view-if: spd_coleader_2 == "Levi" 
+on-arrival: levi_advisor = 0; n_advisors -= 1
+go-to: shuffle_leadership.add_advisors
 
 Who should succeed Levi as Co-leader?
 
 @levi_coleader_3_succession
 view-if: spd_coleader_3 == "Levi" 
+on-arrival: levi_advisor = 0; n_advisors -= 1
+go-to: shuffle_leadership.add_advisors
 
 Who should succeed Levi as Co-leader?
 
