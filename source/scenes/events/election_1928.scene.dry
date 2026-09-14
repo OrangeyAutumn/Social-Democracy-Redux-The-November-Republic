@@ -625,7 +625,7 @@ If we do not at least "tolerate" the government, there will be new elections in 
 
 @grand_coalition_spd_lead
 on-arrival: leverage -= 15 if dvp_relation < 20
-go-to: budget_dispute if not budget_resolved and historical_mode; chancellor_menu if budget_resolved or not historical mode
+go-to: budget_dispute if not budget_resolved and historical_mode; chancellor_menu if budget_resolved or not historical_mode
 
 [? if n_elections <= 1 : As expected, the SPD is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the chancellor. President [+ president +] has asked us to form a majority coalition with the Center (Z), Bavarian People's ([+ bvp_name +]), Democratic ([+ ddp_name +]), and People's (DVP) parties. ?]
 
