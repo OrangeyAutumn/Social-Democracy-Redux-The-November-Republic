@@ -635,8 +635,6 @@ Unfortunately, the DVP and [+ bvp_name +] are unwilling to enter into another co
 - @unity_government
 - @coalition_menu: What are the other governing arrangements?
 
-// Negotiations with DVP
-
 @plead_grand
 subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
 unavailable-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%) - The DVP is unwilling to enter such a government[? if z_relation < 30 :, as is the Center party?].
