@@ -685,8 +685,8 @@ else if (nonfactional_leader == "Mierendorff") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Mierendorff") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -732,8 +732,8 @@ else if (nonfactional_leader == "Schumacher") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Schumacher") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -765,8 +765,8 @@ else if (nonfactional_leader == "Leber") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Leber") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -806,8 +806,8 @@ else if (nonfactional_leader == "Baade") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Baade") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -846,8 +846,8 @@ else if (nonfactional_leader == "Hirschfeld") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Hirschfeld") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -887,8 +887,8 @@ else if (nonfactional_leader == "Radbruch") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Radbruch") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -927,8 +927,8 @@ else if (nonfactional_leader == "Stampfer") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Stampfer") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -966,8 +966,8 @@ else if (nonfactional_leader == "Löbe") {
     nonfactional_leader_fullname = "Vacant";
 }
 else if (revisionist_leader == "Löbe") {
-    revisionist_leader = "Vacant";
-    revisionist_leader_fullname = "Vacant";
+    neorevisionist_leader = "Vacant";
+    neorevisionist_leader_fullname = "Vacant";
 }
 !}
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
