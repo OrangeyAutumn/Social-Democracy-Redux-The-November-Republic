@@ -77,31 +77,31 @@ else {
         {   "id": "left",
             "legend": "Left",
             "name": "Left",
-            "seats": Math.round(Q.left_votes*3.98),
+            "seats": left_votes,
         },
         {
             "id": "center",
             "legend": "Center",
             "name": "Center",
-            "seats": Math.round(Q.center_votes*3.98),
+            "seats": center_votes,
         },
         {
             "id": "labor",
             "legend": "Labor",
             "name": "Labor",
-            "seats": Math.round(Q.labor_votes*3.98),
+            "seats": labor_votes,
         },
         {
             "id": "reformist",
             "legend": "Reformists",
             "name": "Reformists",
-            "seats": Math.round(Q.reformist_votes*3.98),
+            "seats": reformist_votes,
         },
         {
             "id": "neorevisionist",
             "legend": "Neorevisionists",
             "name": "Neorevisionists",
-            "seats": Math.round(Q.neorevisionist_votes*3.98),
+            "seats": neorevisionist_votes,
         },
 ];
 }
@@ -140,9 +140,13 @@ go-to: coalition_menu
 @coalition_menu
 
 The first matter in the conference is what is to be done regarding the party program. The Center has drafted a new program, a significant shift to the left, though the Left gathered around Levi remains skeptical.
+
 Alternatively, the Görlitz program could be maintained, with revisions to match the changing times. With Heidelberg not even entirely satisfying the party left, this would certainly provoke quite the rebellion.
+
 Max Seydewitz of the left meanwhile has proposed before the conference what would amount to a rejection of coalitions with the bourgeois parties in order to represent the interests of the proletariat in all future struggles without regard to their opinions.
+
 The three programmes are effectively mutually exclusive, and whatever motion triumphs will inevitably be taken as a sign of the direction of our party in the aftermath of Hindenburg’s victory.
+
 How does the Conference vote?
 
 - @heidelberg: Adopt a new party program as written by the Centrists.
@@ -150,7 +154,7 @@ How does the Conference vote?
 - @seydewitz: Seydewitz’s motion is passed by the conference!
 
 @heidelberg
-subtitle: The Center ([+ center_percentage +]%) [? if center_percentage < 50 : - though the Centrists lack a majority, it can still pass as a compromise resolution. ?]
+subtitle: The Center ([+ center_votes +]%) [? if center_votes < 50 : - though the Centrists lack a majority, it can still pass as a compromise resolution. ?]
 choose-if: reformist_votes < 50
 on-arrival: heidelberg_program = 1; center_strength += 5; reformist_strength -= 5; left_dissent -= 5; center_dissent -= 10; reformist_dissent += 5; dvp_relation -= 5; uspd_relation += 5
 go-to: saxon_struggle
@@ -158,12 +162,12 @@ go-to: saxon_struggle
 The party has adopted the Heidelberg program, written by Karl Kautsky of the party center and representing a return towards the party's Marxist roots. 
 
 @gorlitz
-subtitle: The Right ([+ right_percentage +]%) [? if right_percentage < 50 : - though the Reformists lack a majority, the trade unions may be convinced. ?]
+subtitle: The Right ([+ right_votes +]%) [? if right_votes < 50 : - though the Reformists lack a majority, the trade unions may be convinced. ?]
 choose-if: (reformist_votes+labor_votes) >= 50
 on-arrival: gorlitz_program = 1; center_strength -= 5; marx_relation += 5; left_strength -= 5; reformist_strength += 10; left_dissent += 20; center_dissent += 15; reformist_dissent -= 5; peoples_party_support += 1; dvp_relation += 5; uspd_relation -= 5; labor_strength += 10 if reformist_votes < 50; center_dissent += 5 if reformist_votes < 50
 go-to: saxon_struggle
 
-The party has, surprisingly, chosen to retain the bulk of the Görlitz program. The left and center wings of the party are incensed by this decision. [? if right_percentage < 50 : The trade unions have been given significant concessions to be convinced of this, further angering the centrists. ?]
+The party has, surprisingly, chosen to retain the bulk of the Görlitz program. The left and center wings of the party are incensed by this decision. [? if right_votes < 50 : The trade unions have been given significant concessions to be convinced of this, further angering the centrists. ?]
 @seydewitz
 choose-if: left_votes >= 50 or ((left_votes+labor_votes >= 50 and not gorlitz_program) or (reformist_votes < 50 and seydewitz_advisor and not gorlitz_program and left_votes+labor_votes >= center_votes and president != "Marx" and dvp_relation < 40 and z_relation < 50))
 subtitle: The Left ([+ left_votes +]%) [? if left_votes < 50 : - though the Leftists lack a majority, the trade unions and dissident centrists may be convinced. ?]
@@ -183,7 +187,7 @@ The next issue for the conference is what should be done about Saxony, where the
 
 @get_him_lads
 view-if: reformist_votes < 50
-on-arrival: left_strength += 5; left_dissent -= 5; reformist_strength -= 10; reformist_dissent += 10; center_dissent += 5; labor_dissent += 5; in_saxony_spd = 0
+on-arrival: left_strength += 10; left_dissent -= 5; reformist_strength -= 10; reformist_dissent += 10; center_dissent += 5; labor_dissent += 5; in_saxony_spd = 0
 
 A motion to expel Heldt from the party passes. Unfortunately, expelling Heldt from the party does not expel him from the Saxon government and he, alongside a small group styling themselves as the ‘ASPD’, continue in their coalition with the DVP, while our loyalists return to opposition.
 
@@ -191,7 +195,7 @@ A motion to expel Heldt from the party passes. Unfortunately, expelling Heldt fr
 
 @a_strongly_worded_note
 view-if: reformists_votes < 50 and left_votes < 50
-on_arrival: left_dissent += 3; reformist_dissent += 3; center_strength += 5; center_dissent -= 3
+on_arrival: left_dissent += 3; reformist_dissent += 3; center_strength += 10; center_dissent -= 5
 
 We pass a resolution condemning Heldt, but stopping short of actually expelling him. The resolution does not make matters any worse, but nor does it make things any better.
 
@@ -199,7 +203,7 @@ We pass a resolution condemning Heldt, but stopping short of actually expelling 
 
 @leave_heldt_be
 view-if: left_votes < 50
-on_arrival: reformist_strength += 5; reformist_dissent -= 5; left_strength -= 10; left_dissent += 10; center_dissent += 5; labor_dissent += 5
+on_arrival: reformist_strength += 10; reformist_dissent -= 5; left_strength -= 10; left_dissent += 10; center_dissent += 5; labor_dissent += 5
 
 The Conference declines to pass any resolution whatsoever.
 
@@ -207,7 +211,7 @@ The Conference declines to pass any resolution whatsoever.
 
 @who_cares
 view-if: left_votes < 50 and center_votes < 50 and reformist_votes < 50
-on_arrival: labor_strength += 10
+on_arrival: labor_strength += 10; labor_dissent -= 5; left_dissent += 3; reformist_dissent += 3; center_dissent += 3
 
 The Conference turns its attention to other issues.
 
