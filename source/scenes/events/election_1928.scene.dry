@@ -4272,50 +4272,23 @@ go-to: ministries
 @uspd_vice_chancellor_thalmann
 choose-if: (president_party == "SPD” or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as vice-chancellor. ?]
-on-arrival: vice_chancellor = "Thälmann"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05
-go-to: thalmann_war if not victory_republic; thalmann_no_war if victory_republic
+on-arrival: vice_chancellor = "Thälmann"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
 
 With great reluctance, President [+ president +] appoints [+ vice-chancellor +] as vice-chancellor.
 
-Immediately, [+ vice-chancellor +] goes to work building a "Soviet Germany": consolidating as much power as possible in the USPD, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
-
-@thalmann_war
-on-arrival: nazi_rebel = 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; uspd_relation = 80
-
-In response to [+ vice-chancellor +] being appointed vice-chancellor, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the USPD from taking power. We are forced to be on the same side as the USPD, whether we want to or not.
-
-- @civil_war
-
-@thalmann_no_war
-on-arrival: coup_progress += 3; leverage = ((spd_r/(spd_r+uspd_r))*uspd_relation); reformist_dissent += 3; neorevisionist_dissent += 3; z_relation -= 5; rfb_strength += 50; rb_strength -= 30; uspd_relation -= 5; uspd_influence += 1; foreign_minister_party = "USPD"; interior_minister_party = "USPD"; justice_minister_party = "USPD"; labor_minister_party = "USPD"; reichswehr_minister_party = "USPD"; economic_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD";
-go-to: postwar_left
-
-Despite our appointing of [+ vice-chancellor +] as vice-chancellor, there is no appetite for a civil war so soon after the last. [+ vice-chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
+The Bourgeois Parties and the reactionary forces of the right prepare for the worst. 
 
 # Liebknecht
 
 @uspd_vice_chancellor_liebknecht
 choose-if: (president_party == "SPD” or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as vice-chancellor. ?]
-on-arrival: vice_chancellor = "Liebknecht"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05
+on-arrival: vice_chancellor = "Liebknecht"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
 go-to: liebknecht_war if not victory_republic; liebknecht_no_war if victory_republic
 
 With great reluctance, President [+ president +] appoints [+ vice-chancellor +] as vice-chancellor.
 
-Immediately, [+ vice-chancellor +] goes to work building a "Soviet Germany": consolidating as much power as possible in the USPD, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
-
-@liebknecht_war
-on-arrival: nazi_rebel = 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; uspd_relation = 80
-
-In response to [+ vice-chancellor +] being appointed vice-chancellor, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the USPD from taking power. We are forced to be on the same side as the USPD, whether we want to or not.
-
-- @civil_war
-
-@liebknecht_no_war
-on-arrival: coup_progress += 3; leverage = ((spd_r/(spd_r+uspd_r))*uspd_relation); reformist_dissent += 3; neorevisionist_dissent += 3; z_relation -= 5; rfb_strength += 50; rb_strength -= 30; uspd_relation -= 5; uspd_influence += 1; foreign_minister_party = "USPD"; interior_minister_party = "USPD"; justice_minister_party = "USPD"; labor_minister_party = "USPD"; reichswehr_minister_party = "USPD"; economic_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD";
-go-to: postwar_left
-
-Despite our appointing of [+ vice-chancellor +] as vice-chancellor, there is no appetite for a civil war so soon after the last. [+ vice-chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
+The Bourgeois Parties and the reactionary forces of the right prepare for the worst.
 
 # DDP
 
