@@ -441,7 +441,7 @@ on-arrival: in_vonc_coalition = 1; spd_in_government = 1; in_spd_majority = 1;
 
 As expected, the 
 
-go-to: spd_chancellor_menu
+go-to: chancellor_menu
 
 @coalition_menu
 
@@ -497,7 +497,7 @@ With the toleration of the [+ uspd_name +], the SPD can govern alone! The [+ usp
 
 Who should be chancellor?
 
-go-to: spd_chancellor_menu
+go-to: chancellor_menu
 
 
 @uspd_tolerated_social_liberal_coalition
@@ -1994,7 +1994,7 @@ Finally, the SPD can govern alone! Our long campaign of electioneering has paid 
 
 Who should be chancellor?
 
-go-to: spd_chancellor_menu
+go-to: chancellor_menu
 
 @brauns_dilemma
 title: There is no clear governing majority.
@@ -2194,7 +2194,7 @@ We have enough votes [? if weimar_coalition < 50 : with the SAPD's toleration ac
 
 Who should be the chancellor?
 
-- @spd_chancellor_menu: We will demand an SPD Chancellor!
+- @chancellor_menu: We will demand an SPD Chancellor!
 - @z_chancellor
 - @z_chancellor_wirth
 
@@ -2475,7 +2475,7 @@ go-to: budget_dispute if not budget_resolved and historical_mode
 
 Who should be the chancellor?
 
-- @spd_chancellor_menu: We will demand an SPD Chancellor!
+- @chancellor_menu: We will demand an SPD Chancellor!
 - @z_chancellor
 - @z_chancellor_wirth
 - @no_govt
@@ -2518,7 +2518,7 @@ on-arrival: reformist_dissent += 5; center_dissent += 5; labor_dissent += 5; neo
 
 Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by President [+ president +].
 
-- @spd_chancellor_menu: We desire an SPD Chancellor
+- @chancellor_menu: We desire an SPD Chancellor
 - @z_chancellor
 - @no_govt_goals: Yes, we're sure.
 
@@ -2572,6 +2572,12 @@ We can pick from any number of ministries. Controlling a ministry allows us to d
 
 - #mins_1928
 - #drop_mins_1928
+
+@vice_chancellor
+title: The question of the Vice-Chancellorship
+subtitle: [+ if chancellor_party = "SPD" : Although we have secured the Chancellorship for ourselves, our coalition partners may still push for the Vice-Chancellorship. +][+ if chancellor_party != "SPD" : Although we have not secured the Chancellorship, the Vice-Chancellorship may still be in our reach. +]
+tags: mins_1928
+go-to: vice_chancellor_menu
 
 @labor
 title: Labor Ministry
@@ -2779,7 +2785,7 @@ go-to: ministries
 
 // SPD Chancellor Menu
 
-@spd_chancellor_menu
+@chancellor_menu
 
 - @chancellor_levi
 - @majority_chancellor_levi
@@ -2837,7 +2843,7 @@ go-to: ministries
 - @majority_chancellor_noske
 
 @chancellor_levi
-view-if: levi_advisor = 1 and levi_dead = 0 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: levi_advisor = 1 and levi_dead = 0 and in_spd_majority == 0
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Paul Levi for Chancellor
@@ -2848,7 +2854,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Paul Levi, a key figure of our party’s left wing, has been appointed Chancellor.
 
 @majority_chancellor_levi
-view-if: levi_advisor = 1 and levi_dead = 0 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: levi_advisor = 1 and levi_dead = 0 and in_spd_majority == 1
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Paul Levi for Chancellor
@@ -2860,7 +2866,7 @@ Paul Levi, a key figure of our party’s left wing, has been appointed Chancello
 - @succession: Let us continue with the succession.
 
 @chancellor_crispien
-view-if: crispien_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: crispien_advisor = 1 and in_spd_majority == 0
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Arthur Crispien for Chancellor
@@ -2871,7 +2877,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Arthur Crispien, a key figure of our party’s left wing, has been appointed Chancellor.
 
 @majority_chancellor_crispien 
-view-if: crispien_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: crispien_advisor = 1 and in_spd_majority == 1
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Arthur Crispien for Chancellor
@@ -2883,7 +2889,7 @@ Arthur Crispien, a key figure of our party’s left wing, has been appointed Cha
 - @succession: Let us continue with the succession.
 
 @chancellor_rosenfeld
-view-if: rosenfeld_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: rosenfeld_advisor = 1 and in_spd_majority == 0
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Kurt Rosenfeld for Chancellor
@@ -2894,7 +2900,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Kurt Rosenfeld, a key figure of our party’s left wing, has been appointed Chancellor.
 
 @majority_chancellor_rosenfeld
-view-if: rosenfeld_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: rosenfeld_advisor = 1 and in_spd_majority == 1
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Kurt Rosenfeld for Chancellor
@@ -2906,7 +2912,7 @@ Kurt Rosenfeld, a key figure of our party’s left wing, has been appointed Chan
 go-to: if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 @chancellor_seydewitz
-view-if: seydewitz_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: seydewitz_advisor = 1 and in_spd_majority == 0
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Max Seydewitz for Chancellor
@@ -2917,7 +2923,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Max Seydewitz, a key figure of our party’s left wing, has been appointed Chancellor.
 
 @majority_chancellor_seydewitz
-view-if: seydewitz_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: seydewitz_advisor = 1 and in_spd_majority == 1
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Max Seydewitz for Chancellor
@@ -2929,7 +2935,7 @@ Max Seydewitz, a key figure of our party’s left wing, has been appointed Chanc
 - @succession: Let us continue with the succession.
 
 @chancellor_sender
-view-if: sender_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: sender_advisor = 1 and in_spd_majority == 0
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Toni Sender for Chancellor
@@ -2940,7 +2946,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Toni Sender, a key figure of our party’s left wing, has been appointed Chancellor. Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
 
 @majority_chancellor_sender
-view-if: sender_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: sender_advisor = 1 and in_spd_majority == 1
 choose-if: president != "Hindenburg" 
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Toni Sender for Chancellor
@@ -2952,7 +2958,7 @@ Toni Sender, a key figure of our party’s left wing, has been appointed Chancel
 - @succession: Let us continue with the succession.
 
 @chancellor_siemsen
-view-if: siemsen_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: siemsen_advisor = 1 and in_spd_majority == 0
 choose-if: president != "Hindenburg"
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Anna Siemsen for Chancellor
@@ -2964,8 +2970,8 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 
 
 @majority_chancellor_siemsen
-view-if: siemsen_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
-choose-if: president != "Hindenburg" and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: siemsen_advisor = 1 and in_spd_majority == 1
+choose-if: president != "Hindenburg" and in_spd_majority == 1
 unavailable-subtitle: President Hindenburg would never allow this!
 title: Anna Siemsen for Chancellor
 subtitle: Siemsen’s appointment would send a message about the kind of government we intend to lead.
@@ -2986,7 +2992,7 @@ Müller's appointment as chancellor is approved by all our potential allies.
 
 @majority_chancellor_muller
 title: Hermann Müller for Chancellor
-view-if: muller_advisor = 1 and muller_dead = 0 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: muller_advisor = 1 and muller_dead = 0 and in_spd_majority == 1
 on-arrival: chancellor = "Müller"
 
 Hermann Müller, a key figure of our party’s center faction, has become chancellor of the SPD majority.
@@ -2995,7 +3001,7 @@ Hermann Müller, a key figure of our party’s center faction, has become chance
 
 @chancellor_wels
 title: Otto Wels for Chancellor
-view-if: wels_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: wels_advisor = 1 and in_spd_majority == 0
 subtitle: Otto Wels is a party leader, but can he also be chancellor?
 on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3004,7 +3010,7 @@ Otto Wels's appointment as chancellor is approved by our potential allies.
 
 @majority_chancellor_wels
 title: Otto Wels for Chancellor
-view-if: wels_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: wels_advisor = 1 and in_spd_majority == 1
 on-arrival: chancellor = "Wels"
 
 Otto Wels, a key figure of our party’s center faction, has become chancellor of the SPD majority.
@@ -3015,7 +3021,7 @@ Otto Wels, a key figure of our party’s center faction, has become chancellor o
 title: Rudolf Breitscheid for Chancellor
 choose-if: (president != "Hindenburg" or not spd_sackings)
 subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
-view-if: breitscheid_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: breitscheid_advisor = 1 and in_spd_majority == 0
 on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD";
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
@@ -3024,7 +3030,7 @@ Rudolf Breitscheid, a key figure of our party’s center faction, has been appoi
 @majority_chancellor_breitscheid
 title: Rudolf Breitscheid for Chancellor
 choose-if: (president != "Hindenburg" or not spd_sackings)
-view-if: breitscheid_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: breitscheid_advisor = 1 and in_spd_majority == 1
 subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
 on-arrival: chancellor = "Breitscheid"
 
@@ -3034,7 +3040,7 @@ Rudolf Breitscheid, a key figure of our party’s center faction, has become cha
 
 @chancellor_hilferding
 title: Rudolf Hilferding for Chancellor
-view-if: hilferding_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: hilferding_advisor = 1 and in_spd_majority == 0
 subtitle: Rudolf Hilferding is a great theorist, but can he also be a great chancellor?
 on-arrival: spd_in_government = 1; chancellor = "Hilferding"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3043,7 +3049,7 @@ Rudolf Hilferding's appointment as chancellor is approved by our potential allie
 
 @majority_chancellor_hilferding
 title: Rudolf Hilferding for Chancellor
-view-if: hilferding_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: hilferding_advisor = 1 and in_spd_majority == 1
 subtitle: Rudolf Hilferding is a great theorist, but can he also be a great chancellor?
 on-arrival: chancellor = "Hilferding"
 
@@ -3053,7 +3059,7 @@ Rudolf Hilferding, a key figure of our party’s center faction, has become chan
 
 @chancellor_vogel
 title: Hans Vogel for Chancellor
-view-if: vogel_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: vogel_advisor = 1 and in_spd_majority == 0
 subtitle: Hans Vogel is a party leader, but can he also be chancellor?
 on-arrival: spd_in_government = 1; chancellor = "Vogel"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3062,7 +3068,7 @@ Hans Vogel's appointment as chancellor is approved by our potential allies.
 
 @majority_chancellor_vogel
 title: Hans Vogel for Chancellor
-view-if: vogel_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: vogel_advisor = 1 and in_spd_majority == 1
 subtitle: Hans Vogel is a party leader, but can he also be chancellor?
 on-arrival: chancellor = "Vogel"
 
@@ -3072,7 +3078,7 @@ Hans Vogel, a key figure of our party’s center faction, has become chancellor 
 
 @chancellor_leipart
 title: Theodor Leipart for Chancellor
-view-if: leipart_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: leipart_advisor = 1 and in_spd_majority == 0
 subtitle: Leipart leads the ADGB, can he also lead the country?
 on-arrival: spd_in_government = 1; chancellor = "Leipart"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3081,7 +3087,7 @@ Theodor Leipart, a key figure of our party’s labor wing, has been appointed Ch
 
 @majority_chancellor_leipart
 title: Theodor Leipart for Chancellor
-view-if: leipart_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: leipart_advisor = 1 and in_spd_majority == 1
 subtitle: Leipart leads the ADGB, can he also lead the country?
 on-arrival: chancellor = "Leipart"
 
@@ -3091,7 +3097,7 @@ Theodor Leipart, a key figure of our party’s labor wing, has become chancellor
 
 @chancellor_aufhauser
 title: Siegfried Aufhäuser for Chancellor
-view-if: aufhauser_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: aufhauser_advisor = 1 and in_spd_majority == 0
 subtitle: Aufhäuser leads the AfA-Bund, can he also lead the country?
 on-arrival: spd_in_government = 1; chancellor = "Aufhäuser"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3100,7 +3106,7 @@ Siegfried Aufhäuser, a key figure of our party’s labor wing, has been appoint
 
 @majority_chancellor_aufhauser
 title: Siegfried Aufhäuser for Chancellor
-view-if: aufhauser_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: aufhauser_advisor = 1 and in_spd_majority == 1
 subtitle: Aufhäuser leads the AfA-Bund, can he also lead the country?
 on-arrival: chancellor = "Aufhäuser"
 
@@ -3110,7 +3116,7 @@ Siegfried Aufhäuser, a key figure of our party’s labor wing, has become chanc
 
 @chancellor_wissell
 title: Rudolf Wissell for Chancellor
-view-if: wissell_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: wissell_advisor = 1 and in_spd_majority == 0
 subtitle: Wissell is a former Labor minister and advocate for workers’ rights.
 on-arrival: spd_in_government = 1; chancellor = "Wissell"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3119,7 +3125,7 @@ Rudolf Wissell, a key figure of our party’s labor wing, has been appointed Cha
 
 @majority_chancellor_wissell
 title: Rudolf Wissell for Chancellor
-view-if: wissell_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: wissell_advisor = 1 and in_spd_majority == 1
 subtitle: Wissell is a former Labor minister and advocate for workers’ rights.
 on-arrival: chancellor = "Wissell"
 
@@ -3129,7 +3135,7 @@ Rudolf Wissell, a key figure of our party’s labor wing, has become chancellor 
 
 @chancellor_woytinsky
 title: Wladmir Woytinsky for Chancellor
-view-if: woytinsky_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: woytinsky_advisor = 1 and in_spd_majority == 0
 subtitle: Can the former Russian Menshevik lead Germany?
 on-arrival: spd_in_government = 1; chancellor = "Woytinsky"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3138,7 +3144,7 @@ Wladmir Woytinsky, a key figure of our party’s labor wing, has been appointed 
 
 @majority_chancellor_woytinsky
 title: Wladmir Woytinsky for Chancellor
-view-if: woytinsky_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: woytinsky_advisor = 1 and in_spd_majority == 1
 subtitle: Can the former Russian Menshevik lead Germany?
 on-arrival: chancellor = "Woytinsky"
 
@@ -3148,7 +3154,7 @@ Wladmir Woytinsky, a key figure of our party’s labor wing, has become chancell
 
 @chancellor_baade
 title: Fritz Baade for Chancellor
-view-if: baade_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: baade_advisor = 1 and in_spd_majority == 0
 subtitle: A Chancellor for Agriculture?
 on-arrival: spd_in_government = 1; chancellor = "Baade"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3157,7 +3163,7 @@ Fritz Baade, one of our few agricultural policy experts, has become chancellor o
 
 @majority_chancellor_baade
 title: Fritz Baade for Chancellor
-view-if: baade_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: baade_advisor = 1 and in_spd_majority == 1
 subtitle: A Chancellor for Agriculture?
 on-arrival: chancellor = "Baade"
 
@@ -3167,7 +3173,7 @@ Fritz Baade, one of our few agricultural policy experts, has become chancellor o
 
 @chancellor_hirschfeld
 title: Magnus Hirschfeld for Chancellor
-view-if: hirschfeld_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: hirschfeld_advisor = 1 and in_spd_majority == 0
 subtitle: A Chancellor for Sexual Minorities?
 on-arrival: spd_in_government = 1; chancellor = "Hirschfeld"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3176,7 +3182,7 @@ Magnus Hirschfeld has become chancellor of the SPD majority. His non-factional n
 
 @majority_chancellor_hirschfeld
 title: Magnus Hirschfeld for Chancellor
-view-if: hirschfeld_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: hirschfeld_advisor = 1 and in_spd_majority == 1
 subtitle: A Chancellor for Sexual Minorities?
 on-arrival: chancellor = "Hirschfeld"
 
@@ -3186,7 +3192,7 @@ Magnus Hirschfeld has become chancellor of the SPD majority. His non-factional n
 
 @chancellor_radbruch
 title: Gustav Radbruch for Chancellor
-view-if: radbruch_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: radbruch_advisor = 1 and in_spd_majority == 0
 subtitle: A Chancellor of the Law?
 on-arrival: spd_in_government = 1; chancellor = "Radbruch"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3195,7 +3201,7 @@ Gustav Radbruch, one of our key legal experts, has become chancellor of the SPD 
 
 @majority_chancellor_radbruch
 title: Gustav Radbruch for Chancellor
-view-if: radbruch_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: radbruch_advisor = 1 and in_spd_majority == 1
 subtitle: A Chancellor of the Law?
 on-arrival: chancellor = "Radbruch"
 
@@ -3205,7 +3211,7 @@ Gustav Radbruch, one of our key legal experts, has become chancellor of the SPD 
 
 @chancellor_stampfer
 title: Friedrich Stampfer for Chancellor
-view-if: stampfer_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: stampfer_advisor = 1 and in_spd_majority == 0
 subtitle: A New(s) Chancellor?
 on-arrival: spd_in_government = 1; chancellor = "Stampfer"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3214,7 +3220,7 @@ Friedrich Stampfer, long-time editor of our party newspaper, has become chancell
 
 @majority_chancellor_stampfer
 title: Friedrich Stampfer for Chancellor
-view-if: stampfer_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: stampfer_advisor = 1 and in_spd_majority == 1
 subtitle: A New(s) Chancellor
 on-arrival: chancellor = "Stampfer"
 
@@ -3224,7 +3230,7 @@ Friedrich Stampfer, long-time editor of our party newspaper, has become chancell
 
 @chancellor_lobe
 title: Paul Löbe for Chancellor
-view-if: lobe_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: lobe_advisor = 1 and in_spd_majority == 0
 subtitle: The President of the Reichstag for Chancellor?
 on-arrival: spd_in_government = 1; chancellor = "Löbe"; chancellor_party = "SPD"
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
@@ -3233,7 +3239,7 @@ Paul Löbe, the President of the Reichstag. His non-factional nature means many 
 
 @majority_chancellor_lobe
 title: Paul Löbe for Chancellor
-view-if: lobe_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: lobe_advisor = 1 and in_spd_majority == 1
 subtitle: The President of the Reichstag for Chancellor?
 on-arrival: chancellor = "Löbe"
 
@@ -3242,7 +3248,7 @@ Paul Löbe, the President of the Reichstag. His non-factional nature means many 
 - @succession: Let us continue with the succession.
 
 @chancellor_severing
-view-if: severing_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: severing_advisor = 1 and in_spd_majority == 0
 title: Carl Severing for Chancellor
 subtitle: Severing’s appointment would send a reassuring message about the kind of government we intend to lead.
 on-arrival: spd_in_government = 1; chancellor = "Severing"; chancellor_party = "SPD";
@@ -3251,7 +3257,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Carl Severing, a key figure of our party’s right wing, has been appointed Chancellor.
 
 @majority_chancellor_severing
-view-if: severing_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: severing_advisor = 1 and in_spd_majority == 1
 title: Carl Severing for Chancellor
 subtitle: Severing’s appointment would send a reassuring message of about the kind of government we intend to lead.
 on-arrival: chancellor = "Severing "
@@ -3263,12 +3269,12 @@ Carl Severing, a key figure of our party’s right wing, has been appointed Chan
 @chancellor_braun
 choose-if: (president != "Hindenburg" or not spd_sackings)
 title: Otto Braun for Chancellor
-view-if: braun_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50 
+view-if: braun_advisor = 1 and in_spd_majority == 0 
 subtitle: Braun is currently the Minister-President of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
 The Center party has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role.
 
-- @spd_chancellor_menu: We will select a different candidate.
+- @chancellor_menu: We will select a different candidate.
 - @chancellor_braun_2: Let the Center have their cabinet positions.
 - @chancellor_braun_resigned: Let the Center have Prussia.
 
@@ -3290,7 +3296,7 @@ Otto Braun has resigned as Minister-President of Prussia to pursue his aspiratio
 
 @majority_chancellor_braun
 title: Otto Braun for Chancellor!
-view-if: braun_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: braun_advisor = 1 and in_spd_majority == 1
 on-arrival: chancellor = "Braun"
 
 [? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor must be a member of the Reichstag). Thus, we have Chancellor-President Otto Braun. ?]
@@ -3301,7 +3307,7 @@ Otto Braun is the Minister-President of Prussia, and one of the most recognizabl
 - @succession: Let us continue with the succession.
 
 @chancellor_juchacz
-view-if: juchacz_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: juchacz_advisor = 1 and in_spd_majority == 0
 title: Marie Juchacz for Chancellor
 subtitle: Juchacz’s appointment would send a reassuring message about the kind of government we intend to lead.
 on-arrival: spd_in_government = 1; chancellor = "Juchacz"; chancellor_party = "SPD";
@@ -3312,7 +3318,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 
 
 @majority_chancellor_juchacz
-view-if: juchacz_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: juchacz_advisor = 1 and in_spd_majority == 1
 title: Marie Juchacz for Chancellor
 subtitle: Juchacz’s appointment would send a reassuring message of about the kind of government we intend to lead.
 on-arrival: chancellor = "Juchacz "
@@ -3323,7 +3329,7 @@ Marie Juchacz, a key figure of our party’s right wing, has been appointed Chan
 - @succession: Let us continue with the succession.
 
 @chancellor_pfulf
-view-if: pfulf_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: pfulf_advisor = 1 and in_spd_majority == 0
 title: Antonie Pfülf for Chancellor
 subtitle: Pfülf’s appointment would send a reassuring message about the kind of government we intend to lead.
 on-arrival: spd_in_government = 1; chancellor = "Pfülf"; chancellor_party = "SPD";
@@ -3332,7 +3338,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Antonie Pfülf, a key figure of our party’s right wing, has been appointed Chancellor.
 
 @majority_chancellor_pfulf
-view-if: pfulf_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: pfulf_advisor = 1 and in_spd_majority == 1
 title: Antonie Pfülf for Chancellor
 subtitle: Pfülf’s appointment would send a reassuring message of about the kind of government we intend to lead.
 on-arrival: chancellor = "Pfülf "
@@ -3343,7 +3349,7 @@ Antonie Pfülf, a key figure of our party’s right wing, has been appointed Cha
 - @succession: Let us continue with the succession.
 
 @chancellor_ebert
-view-if: ebert_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50 and ebert_dead == 0
+view-if: ebert_advisor = 1 and in_spd_majority == 0 and ebert_dead == 0
 title: Friedrich Ebert for Chancellor
 subtitle: Ebert’s appointment would send a reassuring message about the kind of government we intend to lead.
 on-arrival: spd_in_government = 1; chancellor = "Ebert"; chancellor_party = "SPD";
@@ -3352,7 +3358,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Friedrich Ebert, a key figure of our party’s right wing, has been appointed Chancellor.
 
 @majority_chancellor_ebert
-view-if: ebert_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50 and ebert_dead == 0
+view-if: ebert_advisor = 1 and in_spd_majority == 1 and ebert_dead == 0
 title: Friedrich Ebert for Chancellor
 subtitle: Ebert’s appointment would send a reassuring message of about the kind of government we intend to lead.
 on-arrival: chancellor = "Ebert "
@@ -3362,7 +3368,7 @@ Friedrich Ebert, a key figure of our party’s right wing, has been appointed Ch
 - @succession: Let us continue with the succession.
 
 @chancellor_scheidemann
-view-if: scheidemann_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: scheidemann_advisor = 1 and in_spd_majority == 0
 title: Phillip Scheidemann for Chancellor
 subtitle: Scheidemann’s appointment would send a reassuring message about the kind of government we intend to lead.
 on-arrival: spd_in_government = 1; chancellor = "Scheidemann"; chancellor_party = "SPD";
@@ -3371,7 +3377,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 [? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Phillip Scheidemann, a key figure of our party’s right wing, has been appointed Chancellor.
 
 @majority_chancellor_scheidemann
-view-if: scheidemann_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: scheidemann_advisor = 1 and in_spd_majority == 1
 title: Phillip Scheidemann for Chancellor
 subtitle: Scheidemann’s appointment would send a reassuring message of about the kind of government we intend to lead.
 on-arrival: chancellor = "Scheidemann "
@@ -3381,7 +3387,7 @@ Phillip Scheidemann, a key figure of our party’s right wing, has been appointe
 - @succession: Let us continue with the succession.
 
 @chancellor_tarnow
-view-if: tarnow_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: tarnow_advisor = 1 and in_spd_majority == 0
 title: Fritz Tarnow for Chancellor
 subtitle: Tarnow is a key figure in the ADGB and a proponent of economic democracy.
 on-arrival: spd_in_government = 1; chancellor = "Tarnow"; chancellor_party = "SPD";
@@ -3390,7 +3396,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 Fritz Tarnow, a key figure of our party’s labor wing, has been appointed Chancellor.
 
 @majority_chancellor_tarnow
-view-if: tarnow_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: tarnow_advisor = 1 and in_spd_majority == 1
 title: Fritz Tarnow for Chancellor
 subtitle: Tarnow is a key figure in the ADGB and a proponent of economic democracy.
 on-arrival: chancellor = "Tarnow "
@@ -3400,7 +3406,7 @@ Fritz Tarnow, a key figure of our party’s right wing, has been appointed Chanc
 - @succession: Let us continue with the succession.
 
 @chancellor_noske
-view-if: noske_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+view-if: noske_advisor = 1 and in_spd_majority == 0
 choose-if: spd_name == "RDP"
 unavailable-subtitle: The present [+ spd_name +] caucus would never accept Noske as Chancellor.
 title: Gustav Noske for Chancellor
@@ -3411,7 +3417,7 @@ go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_l
 Gustav Noske, a key figure of our party’s labor wing, has been appointed Chancellor.
 
 @majority_chancellor_noske
-view-if: noske_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+view-if: noske_advisor = 1 and in_spd_majority == 1
 choose-if: spd_name == "RDP"
 unavailable-subtitle: The present [+ spd_name +] caucus would never accept Noske as Chancellor.
 title: Gustav Noske for Chancellor
@@ -3425,3 +3431,654 @@ Gustav Noske, a key figure of our party’s right wing, has been appointed Chanc
 @succession
 view-if: succession_levi == 1 or succession_muller == 1
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@vice_chancellor_menu
+
+- @vice_chancellor_levi
+- @majority_vice_chancellor_levi
+- @vice_chancellor_crispien
+- @majority_vice_chancellor_crispien
+- @vice_chancellor_sender
+- @majority_vice_chancellor_sender
+- @vice_chancellor_rosenfeld
+- @majority_vice_chancellor_rosenfeld
+- @vice_chancellor_seydewitz
+- @majority_vice_chancellor_seydewitz
+- @vice_chancellor_siemsen
+- @majority_vice_chancellor_siemsen
+- @vice_chancellor_muller
+- @majority_vice_chancellor_muller
+- @vice_chancellor_wels
+- @majority_vice_chancellor_wels
+- @vice_chancellor_breitscheid
+- @majority_vice_chancellor_breitscheid
+- @vice_chancellor_hilferding
+- @majority_vice_chancellor_hilferding
+- @vice_chancellor_leipart
+- @majority_vice_chancellor_leipart
+- @vice_chancellor_aufhauser
+- @majority_vice_chancellor_aufhauser
+- @vice_chancellor_wissell
+- @majority_vice_chancellor_wissell
+- @vice_chancellor_woytinsky
+- @majority_vice_chancellor_woytinsky
+- @vice_chancellor_baade
+- @majority_vice_chancellor_baade
+- @vice_chancellor_hirschfeld
+- @majority_vice_chancellor_hirschfeld
+- @vice_chancellor_radbruch
+- @majority_vice_chancellor_radbruch
+- @vice_chancellor_stampfer
+- @majority_vice_chancellor_stampfer
+- @vice_chancellor_lobe
+- @majority_vice_chancellor_lobe
+- @vice_chancellor_severing
+- @majority_vice_chancellor_severing
+- @vice_chancellor_braun
+- @majority_vice_chancellor_braun
+- @vice_chancellor_juchacz
+- @majority_vice_chancellor_juchacz
+- @vice_chancellor_pfulf
+- @majority_vice_chancellor_pfulf
+- @vice_chancellor_ebert
+- @majority_vice_chancellor_ebert
+- @vice_chancellor_scheidemann
+- @majority_vice_chancellor_scheidemann
+- @vice_chancellor_tarnow
+- @majority_vice_chancellor_tarnow
+- @vice_chancellor_noske
+- @majority_vice_chancellor_noske
+- @vacant
+
+@vice_chancellor_levi
+view-if: levi_advisor = 1 and levi_dead = 0 and in_spd_majority = 0 and chancellor_party != "SPD"
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Paul Levi for Vice-Chancellor
+subtitle: Levi’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Levi"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Paul Levi, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_levi
+view-if: levi_advisor = 1 and levi_dead = 0 and in_spd_majority == 1
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Paul Levi for Vice-Chancellor
+subtitle: Levi’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Levi "
+
+Paul Levi, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_crispien
+view-if: crispien_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Arthur Crispien for Vice-Chancellor
+subtitle: Crispien’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Crispien"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Arthur Crispien, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_crispien 
+view-if: crispien_advisor = 1 and in_spd_majority == 1
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Arthur Crispien for Vice-Chancellor
+subtitle: Crispien’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Crispien "
+
+Arthur Crispien, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_rosenfeld
+view-if: rosenfeld_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Kurt Rosenfeld for Vice-Chancellor
+subtitle: Rosenfeld’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Rosenfeld"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Kurt Rosenfeld, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_rosenfeld
+view-if: rosenfeld_advisor = 1 and in_spd_majority == 1
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Kurt Rosenfeld for Vice-Chancellor
+subtitle: Rosenfeld’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Rosenfeld "
+
+Kurt Rosenfeld, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+go-to: if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@vice_chancellor_seydewitz
+view-if: seydewitz_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Max Seydewitz for Vice-Chancellor
+subtitle: Seydewitz’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Seydewitz"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Max Seydewitz, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_seydewitz
+view-if: seydewitz_advisor = 1 and in_spd_majority == 1
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Max Seydewitz for Vice-Chancellor
+subtitle: Seydewitz’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Seydewitz "
+
+Max Seydewitz, a key figure of our party’s left wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_sender
+view-if: sender_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Toni Sender for Vice-Chancellor
+subtitle: Sender’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Sender"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Toni Sender, a key figure of our party’s left wing, has been appointed Vice-Chancellor Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Vice-Chancellor
+
+@majority_vice_chancellor_sender
+view-if: sender_advisor = 1 and in_spd_majority == 1
+choose-if: president != "Hindenburg" 
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Toni Sender for Vice-Chancellor
+subtitle: Sender’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Sender "
+
+Toni Sender, a key figure of our party’s left wing, has been appointed Vice-Chancellor Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_siemsen
+view-if: siemsen_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+choose-if: president != "Hindenburg"
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Anna Siemsen for Vice-Chancellor
+subtitle: Siemsen’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Siemsen"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the delight of our coalition partners, ?] [? if not in_left_front : To the concern of our coalition partners, ?]  Anna Siemsen, a key figure of our party’s left wing, has been appointed Vice-Chancellor Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Vice-Chancellor
+
+
+@majority_vice_chancellor_siemsen
+view-if: siemsen_advisor = 1 and in_spd_majority == 1
+choose-if: president != "Hindenburg" and in_spd_majority == 1
+unavailable-subtitle: President Hindenburg would never allow this!
+title: Anna Siemsen for Vice-Chancellor
+subtitle: Siemsen’s appointment would send a message about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Siemsen "
+
+Anna Siemsen, a key figure of our party’s left wing, has been appointed Vice-Chancellor Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_muller
+title: Hermann Müller for Vice-Chancellor
+view-if: muller_advisor = 1 and muller_dead = 0
+subtitle: Müller is popular within the party, and is the preferred candidate of the Center and other parties.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Müller"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Müller's appointment as Vice-Chancellor is approved by all our potential allies.
+
+@majority_vice_chancellor_muller
+title: Hermann Müller for Vice-Chancellor
+view-if: muller_advisor = 1 and muller_dead = 0 and in_spd_majority == 1
+on-arrival: Vice-Chancellor = "Müller"
+
+Hermann Müller, a key figure of our party’s center faction, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_wels
+title: Otto Wels for Vice-Chancellor
+view-if: wels_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: Otto Wels is a party leader, but can he also be chancellor?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Wels"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Otto Wels's appointment as Vice-Chancellor is approved by our potential allies.
+
+@majority_vice_chancellor_wels
+title: Otto Wels for Vice-Chancellor
+view-if: wels_advisor = 1 and in_spd_majority == 1
+on-arrival: Vice-Chancellor = "Wels"
+
+Otto Wels, a key figure of our party’s center faction, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_breitscheid
+title: Rudolf Breitscheid for Vice-Chancellor
+choose-if: (president != "Hindenburg" or not spd_sackings)
+subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
+view-if: breitscheid_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+on-arrival: Vice-Chancellor = "Breitscheid"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Rudolf Breitscheid, a key figure of our party’s center faction, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_breitscheid
+title: Rudolf Breitscheid for Vice-Chancellor
+choose-if: (president != "Hindenburg" or not spd_sackings)
+view-if: breitscheid_advisor = 1 and in_spd_majority == 1
+subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
+on-arrival: Vice-Chancellor = "Breitscheid"
+
+Rudolf Breitscheid, a key figure of our party’s center faction, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_hilferding
+title: Rudolf Hilferding for Vice-Chancellor
+view-if: hilferding_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: Rudolf Hilferding is a great theorist, but can he also be a great chancellor?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Hilferding"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Rudolf Hilferding's appointment as Vice-Chancellor is approved by our potential allies.
+
+@majority_vice_chancellor_hilferding
+title: Rudolf Hilferding for Vice-Chancellor
+view-if: hilferding_advisor = 1 and in_spd_majority == 1
+subtitle: Rudolf Hilferding is a great theorist, but can he also be a great chancellor?
+on-arrival: Vice-Chancellor = "Hilferding"
+
+Rudolf Hilferding, a key figure of our party’s center faction, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_vogel
+title: Hans Vogel for Vice-Chancellor
+view-if: vogel_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: Hans Vogel is a party leader, but can he also be chancellor?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Vogel"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Hans Vogel's appointment as Vice-Chancellor is approved by our potential allies.
+
+@majority_vice_chancellor_vogel
+title: Hans Vogel for Vice-Chancellor
+view-if: vogel_advisor = 1 and in_spd_majority == 1
+subtitle: Hans Vogel is a party leader, but can he also be chancellor?
+on-arrival: Vice-Chancellor = "Vogel"
+
+Hans Vogel, a key figure of our party’s center faction, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_leipart
+title: Theodor Leipart for Vice-Chancellor
+view-if: leipart_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: Leipart leads the ADGB, can he also lead the country?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Leipart"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Theodor Leipart, a key figure of our party’s labor wing, has been appointed Chancellor
+
+@majority_vice_chancellor_leipart
+title: Theodor Leipart for Vice-Chancellor
+view-if: leipart_advisor = 1 and in_spd_majority == 1
+subtitle: Leipart leads the ADGB, can he also lead the country?
+on-arrival: Vice-Chancellor = "Leipart"
+
+Theodor Leipart, a key figure of our party’s labor wing, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_aufhauser
+title: Siegfried Aufhäuser for Vice-Chancellor
+view-if: aufhauser_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: Aufhäuser leads the AfA-Bund, can he also lead the country?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Aufhäuser"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Siegfried Aufhäuser, a key figure of our party’s labor wing, has been appointed Chancellor
+
+@majority_vice_chancellor_aufhauser
+title: Siegfried Aufhäuser for Vice-Chancellor
+view-if: aufhauser_advisor = 1 and in_spd_majority == 1
+subtitle: Aufhäuser leads the AfA-Bund, can he also lead the country?
+on-arrival: Vice-Chancellor = "Aufhäuser"
+
+Siegfried Aufhäuser, a key figure of our party’s labor wing, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_wissell
+title: Rudolf Wissell for Vice-Chancellor
+view-if: wissell_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: Wissell is a former Labor minister and advocate for workers’ rights.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Wissell"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Rudolf Wissell, a key figure of our party’s labor wing, has been appointed Chancellor
+
+@majority_vice_chancellor_wissell
+title: Rudolf Wissell for Vice-Chancellor
+view-if: wissell_advisor = 1 and in_spd_majority == 1
+subtitle: Wissell is a former Labor minister and advocate for workers’ rights.
+on-arrival: Vice-Chancellor = "Wissell"
+
+Rudolf Wissell, a key figure of our party’s labor wing, has become Vice-Chancellor of the SPD majority.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_woytinsky
+title: Wladmir Woytinsky for Vice-Chancellor
+view-if: woytinsky_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: Can the former Russian Menshevik lead Germany?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Woytinsky"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Wladmir Woytinsky, a key figure of our party’s labor wing, has been appointed Vice-Chancellor The Nationalist right is already up in arms over the appointment of a non-German Vice-Chancellor
+
+@majority_vice_chancellor_woytinsky
+title: Wladmir Woytinsky for Vice-Chancellor
+view-if: woytinsky_advisor = 1 and in_spd_majority == 1
+subtitle: Can the former Russian Menshevik lead Germany?
+on-arrival: Vice-Chancellor = "Woytinsky"
+
+Wladmir Woytinsky, a key figure of our party’s labor wing, has become Vice-Chancellor of the SPD majority. The Nationalist right is already up in arms over the appointment of a non-German Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_baade
+title: Fritz Baade for Vice-Chancellor
+view-if: baade_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: A Vice-Chancellor for Agriculture?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Baade"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Fritz Baade, one of our few agricultural policy experts, has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+@majority_vice_chancellor_baade
+title: Fritz Baade for Vice-Chancellor
+view-if: baade_advisor = 1 and in_spd_majority == 1
+subtitle: A Vice-Chancellor for Agriculture?
+on-arrival: Vice-Chancellor = "Baade"
+
+Fritz Baade, one of our few agricultural policy experts, has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_hirschfeld
+title: Magnus Hirschfeld for Vice-Chancellor
+view-if: hirschfeld_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: A Vice-Chancellor for Sexual Minorities?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Hirschfeld"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Magnus Hirschfeld has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment, but Nationalists and Conservatives are already up in arms about his history as an advocate for the rights of sexual minorities.
+
+@majority_vice_chancellor_hirschfeld
+title: Magnus Hirschfeld for Vice-Chancellor
+view-if: hirschfeld_advisor = 1 and in_spd_majority == 1
+subtitle: A Vice-Chancellor for Sexual Minorities?
+on-arrival: Vice-Chancellor = "Hirschfeld"
+
+Magnus Hirschfeld has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment, but Nationalists and Conservatives are already up in arms about his history as an advocate for the rights of sexual minorities.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_radbruch
+title: Gustav Radbruch for Vice-Chancellor
+view-if: radbruch_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: A Vice-Chancellor of the Law?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Radbruch"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Gustav Radbruch, one of our key legal experts, has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+@majority_vice_chancellor_radbruch
+title: Gustav Radbruch for Vice-Chancellor
+view-if: radbruch_advisor = 1 and in_spd_majority == 1
+subtitle: A Vice-Chancellor of the Law?
+on-arrival: Vice-Chancellor = "Radbruch"
+
+Gustav Radbruch, one of our key legal experts, has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_stampfer
+title: Friedrich Stampfer for Vice-Chancellor
+view-if: stampfer_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: A New(s) Chancellor?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Stampfer"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Friedrich Stampfer, long-time editor of our party newspaper, has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+@majority_vice_chancellor_stampfer
+title: Friedrich Stampfer for Vice-Chancellor
+view-if: stampfer_advisor = 1 and in_spd_majority == 1
+subtitle: A New(s) Chancellor
+on-arrival: Vice-Chancellor = "Stampfer"
+
+Friedrich Stampfer, long-time editor of our party newspaper, has become Vice-Chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_lobe
+title: Paul Löbe for Vice-Chancellor
+view-if: lobe_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+subtitle: The President of the Reichstag for Vice-Chancellor?
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Löbe"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Paul Löbe, the President of the Reichstag. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+@majority_vice_chancellor_lobe
+title: Paul Löbe for Vice-Chancellor
+view-if: lobe_advisor = 1 and in_spd_majority == 1
+subtitle: The President of the Reichstag for Vice-Chancellor?
+on-arrival: Vice-Chancellor = "Löbe"
+
+Paul Löbe, the President of the Reichstag. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_severing
+view-if: severing_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+title: Carl Severing for Vice-Chancellor
+subtitle: Severing’s appointment would send a reassuring message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Severing"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Carl Severing, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_severing
+view-if: severing_advisor = 1 and in_spd_majority == 1
+title: Carl Severing for Vice-Chancellor
+subtitle: Severing’s appointment would send a reassuring message of about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Severing "
+
+Carl Severing, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_braun
+choose-if: (president != "Hindenburg" or not spd_sackings)
+title: Otto Braun for Vice-Chancellor
+view-if: braun_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD" 
+subtitle: Braun is currently the Minister-President of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
+
+The Center party has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role.
+
+- @vice_chancellor_menu: We will select a different candidate.
+- @vice_chancellor_braun_2: Let the Center have their cabinet positions.
+- @vice_chancellor_braun_resigned: Let the Center have Prussia.
+
+@vice_chancellor_braun_2
+subtitle: Otto Braun will be Vice-Chancellor
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Braun"; vice_chancellor_party = "SPD"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+We have promised to let the Center have more influence in the government in response to the appointment of Braun as Vice-Chancellor
+
+@vice_chancellor_braun_resigned
+subtitle: Adam Stegerwald will be Minister-President.
+choose-if: spd_prussia
+unavailable-subtitle: Wait, what? Damn, this shit's bugged. Ping me on discord or on reddit, I'll fix it.
+on-arrival: spd_prussia = 0; z_prussia = 1; spd_in_government = 1; Vice-Chancellor = "Braun"; vice_chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Otto Braun has resigned as Minister-President of Prussia to pursue his aspirations on the national level.
+
+@majority_vice_chancellor_braun
+title: Otto Braun for Vice-Chancellor!
+view-if: braun_advisor = 1 and in_spd_majority == 1
+on-arrival: Vice-Chancellor = "Braun"
+
+[? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Vice-Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Vice-Chancellor must be a member of the Reichstag). Thus, we have Chancellor-President Otto Braun. ?]
+[? if president != "Braun": Otto Braun has become Vice-Chancellor of the SPD majority. ?]
+
+Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders.
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_juchacz
+view-if: juchacz_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+title: Marie Juchacz for Vice-Chancellor
+subtitle: Juchacz’s appointment would send a reassuring message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Juchacz"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Marie Juchacz, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+
+
+@majority_vice_chancellor_juchacz
+view-if: juchacz_advisor = 1 and in_spd_majority == 1
+title: Marie Juchacz for Vice-Chancellor
+subtitle: Juchacz’s appointment would send a reassuring message of about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Juchacz "
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Marie Juchacz, a key figure of our party’s right wing, has been appointed Vice-Chancellor Despite her reformist leanings, social conservatives across parties, including our own, are already up in arms over the appointment of a woman Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_pfulf
+view-if: pfulf_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+title: Antonie Pfülf for Vice-Chancellor
+subtitle: Pfülf’s appointment would send a reassuring message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Pfülf"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Antonie Pfülf, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_pfulf
+view-if: pfulf_advisor = 1 and in_spd_majority == 1
+title: Antonie Pfülf for Vice-Chancellor
+subtitle: Pfülf’s appointment would send a reassuring message of about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Pfülf "
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Antonie Pfülf, a key figure of our party’s right wing, has been appointed Vice-Chancellor Despite her reformist leanings, social conservatives across parties, including our own, are already up in arms over the appointment of a woman Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_ebert
+view-if: ebert_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD" and ebert_dead == 0
+title: Friedrich Ebert for Vice-Chancellor
+subtitle: Ebert’s appointment would send a reassuring message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Ebert"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Friedrich Ebert, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_ebert
+view-if: ebert_advisor = 1 and in_spd_majority == 1 and ebert_dead == 0
+title: Friedrich Ebert for Vice-Chancellor
+subtitle: Ebert’s appointment would send a reassuring message of about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Ebert "
+
+Friedrich Ebert, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_scheidemann
+view-if: scheidemann_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+title: Phillip Scheidemann for Vice-Chancellor
+subtitle: Scheidemann’s appointment would send a reassuring message about the kind of government we intend to pursue.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Scheidemann"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+[? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Phillip Scheidemann, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_scheidemann
+view-if: scheidemann_advisor = 1 and in_spd_majority == 1
+title: Phillip Scheidemann for Vice-Chancellor
+subtitle: Scheidemann’s appointment would send a reassuring message of about the kind of government we intend to pursue.
+on-arrival: Vice-Chancellor = "Scheidemann "
+
+Phillip Scheidemann, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_tarnow
+view-if: tarnow_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+title: Fritz Tarnow for Vice-Chancellor
+subtitle: Tarnow is a key figure in the ADGB and a proponent of economic democracy.
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Tarnow"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Fritz Tarnow, a key figure of our party’s labor wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_tarnow
+view-if: tarnow_advisor = 1 and in_spd_majority == 1
+title: Fritz Tarnow for Vice-Chancellor
+subtitle: Tarnow is a key figure in the ADGB and a proponent of economic democracy.
+on-arrival: Vice-Chancellor = "Tarnow "
+
+Fritz Tarnow, a key figure of our party’s labor wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vice_chancellor_noske
+view-if: noske_advisor = 1 and in_spd_majority = 0 and chancellor_party != "SPD"
+choose-if: spd_name == "DU"
+unavailable-subtitle: The present [+ spd_name +] caucus would never accept Noske as Vice-Chancellor
+title: Gustav Noske for Vice-Chancellor
+subtitle: Noske is a highly controversial figure within the party 
+on-arrival: spd_in_government = 1; Vice-Chancellor = "Noske"; vice_chancellor_party = "SPD";
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Gustav Noske, a key figure of our party’s labor wing, has been appointed Vice-Chancellor
+
+@majority_vice_chancellor_noske
+view-if: noske_advisor = 1 and in_spd_majority == 1
+choose-if: spd_name == "DU"
+unavailable-subtitle: The present [+ spd_name +] caucus would never accept Noske as Vice-Chancellor
+title: Gustav Noske for Vice-Chancellor
+subtitle: Noske is a highly controversial figure within the party.
+on-arrival: Vice-Chancellor = "Noske"
+
+Gustav Noske, a key figure of our party’s right wing, has been appointed Vice-Chancellor
+
+- @succession: Let us continue with the succession.
+
+@vacant
+title: Leave the Vice-Chancellorship vacant
+subtitle: This may give us more leverage elsewhere.
+view-if: in_spd_majority == 0
+on-arrival: vice_chancellor = "Vacant"; vice_chancellor_party = "Vacant"; leverage += 5;
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
