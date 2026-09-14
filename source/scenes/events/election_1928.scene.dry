@@ -515,12 +515,11 @@ achievement: social_christian_coalition
 go-to: social_christian_normal if z_relation >= 40 and bourgeois_coalition < 50; social_christian_z if z_relation < 40 or bourgeois_coalition >= 50
 
 @social_liberal_coalition
-view-if: year >= 1925 and social_liberal_coalition >= 50
+view-if: year >= 1925 and social_liberal_coalition >= 50 or (social_liberal_coalition + sapd_r >= 50 and uspd_relations >= 30)
 title: We can form a Social-Liberal Coalition.
 subtitle: SPD + [+ ddp_name +] ([+ social_liberal_coalition +]%)
 choose-if: president != "Hitler"
 unavailable-subtitle: SPD + [+ ddp_name +] ([+ social_liberal_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?]
-view-if: social_liberal_coalition >= 50 or (social_liberal_coalition + sapd_r >= 50 and uspd_relations >= 30)
 on-arrival: leverage += 5; in_social_liberal_coalition = 1; in_weimar_coalition = 0; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = ddp_name; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = ddp_name; reichswehr_minister_party = ddp_name; economic_minister_party = ddp_name; finance_minister_party = ddp_name; agriculture_minister_party = ddp_name; foreign_minister = "Wirth"; interior_minister = "Külz"; justice_minister = "Koch-Weser"; labor_minister = "Stolper"; reichswehr_minister = "Gessler"; economic_minister = " Trendelenburg"; finance_minister = "Reinhold"; agriculture_minister = "Dietrich";
 go-to: weimar_normal
 
@@ -546,7 +545,6 @@ We have enough votes to form a [? if in_weimar_coalition == 1 : "Weimar Coalitio
 on-arrival: z_relation -= 5; reformist_dissent += 2
 go-to: weimar_normal if bourgeois_coalition < 50; let_it_form if coalition_menu >= 50
 
-// Incomplete
 @uspd_tolerated_spd_minority
 title: An SPD minority government, tolerated by the [+ uspd_name +]
 subtitle: SPD: [+ spd_r +]% with [+ uspd_name +] toleration [+ uspd_r +]% (Combined: [+ uspd_tolerated_spd_minority +]%)
@@ -581,7 +579,6 @@ unavailable-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP ([+ grand_
 subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
 go-to: grand_coalition_spd_lead if ((n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) and spd_sackings <= 0) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and (spd_sackings > 0 or (n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
-
 
 @grand_coalition_z_lead
 
