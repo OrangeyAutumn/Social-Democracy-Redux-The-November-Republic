@@ -53,19 +53,19 @@ if (!Q.neorevisionism) {
             "seats": Math.round(Q.left_votes*3.98),
         },
         {
-            "id": "center",
+            "id": "Center",
             "legend": "Center",
             "name": "Center",
             "seats": Math.round(Q.center_votes*3.98),
         },
         {
-            "id": "labor",
+            "id": "Labor",
             "legend": "Labor",
             "name": "Labor",
             "seats": Math.round(Q.labor_votes*3.98),
         },
         {
-            "id": "reformist",
+            "id": "Reformist",
             "legend": "Reformists",
             "name": "Reformists",
             "seats": Math.round(Q.reformist_votes*3.98),
@@ -80,25 +80,25 @@ else {
             "seats": left_votes,
         },
         {
-            "id": "center",
+            "id": "Center",
             "legend": "Center",
             "name": "Center",
             "seats": center_votes,
         },
         {
-            "id": "labor",
+            "id": "Labor",
             "legend": "Labor",
             "name": "Labor",
             "seats": labor_votes,
         },
         {
-            "id": "reformist",
+            "id": "Reformist",
             "legend": "Reformists",
             "name": "Reformists",
             "seats": reformist_votes,
         },
         {
-            "id": "neorevisionist",
+            "id": "Neorevisionist",
             "legend": "Neorevisionists",
             "name": "Neorevisionists",
             "seats": neorevisionist_votes,
@@ -162,12 +162,12 @@ go-to: saxon_struggle
 The party has adopted the Heidelberg program, written by Karl Kautsky of the party center and representing a return towards the party's Marxist roots. 
 
 @gorlitz
-subtitle: The Right ([+ right_votes +]%) [? if right_votes < 50 : - though the Reformists lack a majority, the trade unions may be convinced. ?]
+subtitle: The Right ([+ reformist_votes +]%) [? if reformist_votes < 50 : - though the Reformists lack a majority, the trade unions may be convinced. ?]
 choose-if: (reformist_votes+labor_votes) >= 50
 on-arrival: gorlitz_program = 1; center_strength -= 5; marx_relation += 5; left_strength -= 5; reformist_strength += 10; left_dissent += 20; center_dissent += 15; reformist_dissent -= 5; peoples_party_support += 1; dvp_relation += 5; uspd_relation -= 5; labor_strength += 10 if reformist_votes < 50; center_dissent += 5 if reformist_votes < 50
 go-to: saxon_struggle
 
-The party has, surprisingly, chosen to retain the bulk of the Görlitz program. The left and center wings of the party are incensed by this decision. [? if right_votes < 50 : The trade unions have been given significant concessions to be convinced of this, further angering the centrists. ?]
+The party has, surprisingly, chosen to retain the bulk of the Görlitz program. The left and center wings of the party are incensed by this decision. [? if reformist_votes < 50 : The trade unions have been given significant concessions to be convinced of this, further angering the centrists. ?]
 @seydewitz
 choose-if: left_votes >= 50 or ((left_votes+labor_votes >= 50 and not gorlitz_program) or (reformist_votes < 50 and seydewitz_advisor and not gorlitz_program and left_votes+labor_votes >= center_votes and president != "Marx" and dvp_relation < 40 and z_relation < 50))
 subtitle: The Left ([+ left_votes +]%) [? if left_votes < 50 : - though the Leftists lack a majority, the trade unions and dissident centrists may be convinced. ?]
@@ -194,7 +194,7 @@ A motion to expel Heldt from the party passes. Unfortunately, expelling Heldt fr
 - @the_matter_of_the_leadership: Now for the matter of the leadership.
 
 @a_strongly_worded_note
-view-if: reformists_votes < 50 and left_votes < 50
+view-if: reformist_votes < 50 and left_votes < 50
 on_arrival: left_dissent += 3; reformist_dissent += 3; center_strength += 10; center_dissent -= 5
 
 We pass a resolution condemning Heldt, but stopping short of actually expelling him. The resolution does not make matters any worse, but nor does it make things any better.
@@ -231,7 +231,7 @@ How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_1_faction +] fact
 - @co_leader_1_no_challenge: [+ spd_coleader_1_fullname +] faces no challenge.
 
 @co_leader_1_challenge
-view-if: (center_votes < 50 and spd_coleader_1_faction == "center") or (left_votes < 50 and spd_coleader_1_faction == "left") or (reformist_votes < 50 and spd_coleader_1_faction == "reformist") or (labor_votes < 50 and spd_coleader_1_faction == "labor") or (neorevisionist_votes < 50 and spd_coleader_1_faction == "neorevisionist") or (spd_coleader_1_faction == "non-factional")
+view-if: (center_votes < 50 and spd_coleader_1_faction == "Center") or (left_votes < 50 and spd_coleader_1_faction == "left") or (reformist_votes < 50 and spd_coleader_1_faction == "Reformist") or (labor_votes < 50 and spd_coleader_1_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_1_faction == "Neorevisionist") or (spd_coleader_1_faction == "non-factional")
 
 [+ spd_coleader_1_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
 
@@ -243,8 +243,8 @@ view-if: (center_votes < 50 and spd_coleader_1_faction == "center") or (left_vot
 - @neorevisionist_1: [+ neorevisionist_leader_fullname +] wins in a victory for the Neorevisionist faction!
 
 @incumbent_1
-view-if: spd_coleader_1 != "vacant"
-choose-if: (left_votes >= 50 and spd_coleader_1_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_1_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_1_faction == "labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_1_faction == "labor") or (reformist_votes >= 50 and spd_coleader_1_faction == "reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "non-factional")
+view-if: spd_coleader_1 != "Vacant"
+choose-if: (left_votes >= 50 and spd_coleader_1_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_1_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_1_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_1_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_1_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "non-factional")
 
 The incumbent, [+ spd_coleader_1_fullname +], wins in a victory for the [+ spd_coleader_1_faction +] faction!
 
@@ -254,6 +254,7 @@ The incumbent, [+ spd_coleader_1_fullname +], wins in a victory for the [+ spd_c
 view-if: spd_coleader_1_faction != "left"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
+spd_coleader_1_faction = "left";
 if (Q.left_leader == "Crispien") {
     Q.spd_coleader_1 = "Crispien";
     Q.spd_coleader_1_fullname = "Arthur Crispien";
@@ -285,8 +286,8 @@ if (Q.left_leader == "Crispien") {
     Q.spd_coleader_1 = "Baade";
     Q.spd_coleader_1_fullname = "Fritz Baade";
 }
-Q.left_leader = "vacant";
-Q.left_leader_fullname = "vacant";
+Q.left_leader = "Vacant";
+Q.left_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Left faction!
@@ -294,325 +295,191 @@ Q.left_leader_fullname = "vacant";
 - @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @center_1
-view-if: spd_coleader_1_faction != "center"
+view-if: spd_coleader_1_faction != "Center"
 choose-if: (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_1_faction = "Center";
 if (Q.center_leader == "Hilferding") {
-
     Q.spd_coleader_1 = "Hilferding";
-
     Q.spd_coleader_1_fullname = "Rudolf Hilferding";
-
 } else if (Q.center_leader == "Wels") {
-
     Q.spd_coleader_1 = "Wels";
-
     Q.spd_coleader_1_fullname = "Otto Wels";
-
 } else if (Q.center_leader == "Vogel") {
-
     Q.spd_coleader_1 = "Vogel";
-
     Q.spd_coleader_1_fullname = "Hans Vogel";
-
 } else if (Q.center_leader == "Müller") {
-
     Q.spd_coleader_1 = "Müller";
-
     Q.spd_coleader_1_fullname = "Hermann Müller";
-
 } else if (Q.center_leader == "Breitscheid") {
-
     Q.spd_coleader_1 = "Breitscheid";
-
     Q.spd_coleader_1_fullname = "Rudolf Breitscheid";
-
 } else if (Q.center_leader == "Stampfer") {
-
     Q.spd_coleader_1 = "Stampfer";
-
     Q.spd_coleader_1_fullname = "Friedrich Stampfer";
-
 } else if (Q.center_leader == "Radbruch") {
-
     Q.spd_coleader_1 = "Radbruch";
-
     Q.spd_coleader_1_fullname = "Gustav Radbruch";
-
 } else if (Q.center_leader == "Hirschfeld") {
-
     Q.spd_coleader_1 = "Hirschfeld";
-
     Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
-
 } else if (Q.center_leader == "Baade") {
-
     Q.spd_coleader_1 = "Baade";
-
     Q.spd_coleader_1_fullname = "Fritz Baade";
-
 }
-
-Q.center_leader = "vacant";
-
-Q.center_leader_fullname = "vacant";
-
+Q.center_leader = "Vacant";
+Q.center_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Center faction!
 
-- @co_leader_1: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
+- @co_leader_1: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_1_faction +] faction, fare?
 
 @labor_1
-view-if: spd_coleader_1_faction != "labor"
+view-if: spd_coleader_1_faction != "Labor"
 choose-if: (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50) or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_1_faction == "Labor";
 if (Q.labor_leader == "Leipart") {
-
     Q.spd_coleader_1 = "Leipart";
-
     Q.spd_coleader_1_fullname = "Theodor Leipart";
-
 } else if (Q.labor_leader == "Aufhäuser") {
-
     Q.spd_coleader_1 = "Aufhäuser";
-
     Q.spd_coleader_1_fullname = "Siegfried Aufhäuser";
-
 } else if (Q.labor_leader == "Wissell") {
-
     Q.spd_coleader_1 = "Wissell";
-
     Q.spd_coleader_1_fullname = "Rudolf Wissell";
-
 } else if (Q.labor_leader == "Woytinsky") {
-
     Q.spd_coleader_1 = "Woytinsky";
-
     Q.spd_coleader_1_fullname = "Wladimir Woytinsky";
-
 } else if (Q.labor_leader == "Mierendorff") {
-
     Q.spd_coleader_1 = "Mierendorff";
-
     Q.spd_coleader_1_fullname = "Carlo Mierendorff";
-
 } else if (Q.labor_leader == "Schumacher") {
-
     Q.spd_coleader_1 = "Schumacher";
-
     Q.spd_coleader_1_fullname = "Kurt Schumacher";
-
 } else if (Q.labor_leader == "Leber") {
-
     Q.spd_coleader_1 = "Leber";
-
     Q.spd_coleader_1_fullname = "Julius Leber";
-
 } else if (Q.labor_leader == "Stampfer") {
-
     Q.spd_coleader_1 = "Stampfer";
-
     Q.spd_coleader_1_fullname = "Friedrich Stampfer";
-
 } else if (Q.labor_leader == "Radbruch") {
-
     Q.spd_coleader_1 = "Radbruch";
-
     Q.spd_coleader_1_fullname = "Gustav Radbruch";
-
 } else if (Q.labor_leader == "Hirschfeld") {
-
     Q.spd_coleader_1 = "Hirschfeld";
-
     Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
-
 } else if (Q.labor_leader == "Baade") {
-
     Q.spd_coleader_1 = "Baade";
-
     Q.spd_coleader_1_fullname = "Fritz Baade";
-
 }
-
-Q.labor_leader = "vacant";
-
-Q.labor_leader_fullname = "vacant";
-
+Q.labor_leader = "Vacant";
+Q.labor_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Labor faction!
 
-- @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
+- @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @reformist_1
-view-if: spd_coleader_1_faction != "reformist"
+view-if: spd_coleader_1_faction != "Reformist"
 choose-if: (reformist_votes >= 50) or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_1_faction = "Reformist"
 if (Q.reformist_leader == "Severing") {
-
     Q.spd_coleader_1 = "Severing";
-
     Q.spd_coleader_1_fullname = "Carl Severing";
-
 } else if (Q.reformist_leader == "Braun") {
-
     Q.spd_coleader_1 = "Braun";
-
     Q.spd_coleader_1_fullname = "Otto Braun";
-
 } else if (Q.reformist_leader == "Juchacz") {
-
     Q.spd_coleader_1 = "Juchacz";
-
     Q.spd_coleader_1_fullname = "Marie Juchacz";
-
 } else if (Q.reformist_leader == "Pfülf") {
-
     Q.spd_coleader_1 = "Pfülf";
-
     Q.spd_coleader_1_fullname = "Antonie Pfülf";
-
 } else if (Q.reformist_leader == "Ebert") {
-
     Q.spd_coleader_1 = "Ebert";
-
     Q.spd_coleader_1_fullname = "Friedrich Ebert";
-
 } else if (Q.reformist_leader == "Scheidemann") {
-
     Q.spd_coleader_1 = "Scheidemann";
-
     Q.spd_coleader_1_fullname = "Phillip Scheidemann";
-
 } else if (Q.reformist_leader == "Mierendorff") {
-
     Q.spd_coleader_1 = "Mierendorff";
-
     Q.spd_coleader_1_fullname = "Carlo Mierendorff";
-
 } else if (Q.reformist_leader == "Schumacher") {
-
     Q.spd_coleader_1 = "Schumacher";
-
     Q.spd_coleader_1_fullname = "Kurt Schumacher";
-
 } else if (Q.reformist_leader == "Leber") {
-
     Q.spd_coleader_1 = "Leber";
-
     Q.spd_coleader_1_fullname = "Julius Leber";
-
 } else if (Q.reformist_leader == "Stampfer") {
-
     Q.spd_coleader_1 = "Stampfer";
-
     Q.spd_coleader_1_fullname = "Friedrich Stampfer";
-
 } else if (Q.reformist_leader == "Radbruch") {
-
     Q.spd_coleader_1 = "Radbruch";
-
     Q.spd_coleader_1_fullname = "Gustav Radbruch";
-
 } else if (Q.reformist_leader == "Hirschfeld") {
-
     Q.spd_coleader_1 = "Hirschfeld";
-
     Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
-
 } else if (Q.reformist_leader == "Baade") {
-
     Q.spd_coleader_1 = "Baade";
-
     Q.spd_coleader_1_fullname = "Fritz Baade";
-
 }
-
-Q.reformist_leader = "vacant";
-
-Q.reformist_leader_fullname = "vacant";
-
+Q.reformist_leader = "Vacant";
+Q.reformist_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Reformist faction!
 
-- @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
+- @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @neorevisionist_1
-view-if: spd_coleader_1_faction != "neorevisionist" and neorevisionism == 1
+view-if: spd_coleader_1_faction != "Neorevisionist" and neorevisionism == 1
 choose-if: (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_1_faction = "Neorevisionist";
 if (Q.neorevisionist_leader == "Mierendorff") {
-
     Q.spd_coleader_1 = "Mierendorff";
-
     Q.spd_coleader_1_fullname = "Carlo Mierendorff";
-
 } else if (Q.neorevisionist_leader == "Schumacher") {
-
     Q.spd_coleader_1 = "Schumacher";
-
     Q.spd_coleader_1_fullname = "Kurt Schumacher";
-
 } else if (Q.neorevisionist_leader == "Leber") {
-
     Q.spd_coleader_1 = "Leber";
-
     Q.spd_coleader_1_fullname = "Julius Leber";
-
-} else if (Q.neorevisionist_leader == "Gustav Noske") {
-
+} else if (Q.neorevisionist_leader == "Noske") {
     Q.spd_coleader_1 = "Noske";
-
     Q.spd_coleader_1_fullname = "Gustav Noske";
-
 } else if (Q.neorevisionist_leader == "Stampfer") {
-
     Q.spd_coleader_1 = "Stampfer";
-
     Q.spd_coleader_1_fullname = "Friedrich Stampfer";
-
 } else if (Q.neorevisionist_leader == "Radbruch") {
-
     Q.spd_coleader_1 = "Radbruch";
-
     Q.spd_coleader_1_fullname = "Gustav Radbruch";
-
 } else if (Q.neorevisionist_leader == "Hirschfeld") {
-
     Q.spd_coleader_1 = "Hirschfeld";
-
     Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
-
 } else if (Q.neorevisionist_leader == "Baade") {
-
     Q.spd_coleader_1 = "Baade";
-
     Q.spd_coleader_1_fullname = "Fritz Baade";
-
 }
-
-Q.neorevisionist_leader = "vacant";
-
-Q.neorevisionist_leader_fullname = "vacant";
-
+Q.neorevisionist_leader = "Vacant";
+Q.neorevisionist_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Neorevisionist faction!
 
-- @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
+- @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @co_leader_1_no_challenge
-view-if: (spd_coleader_1 != "vacant") and ((center_votes >= 50 and spd_coleader_2_faction == "center") or (left_votes >= 50 and spd_coleader_2_faction == "left") or (labor_votes >= 50 and spd_coleader_2_faction == "labor") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "neorevisionist"))
+view-if: (spd_coleader_1 != "Vacant") and ((center_votes >= 50 and spd_coleader_1_faction == "Center") or (left_votes >= 50 and spd_coleader_1_faction == "left") or (labor_votes >= 50 and spd_coleader_1_faction == "Labor") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Reformist") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Neorevisionist"))
 
 [+ spd_coleader_1_fullname +] does not face a challenge.
 
-- @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
+- @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
+
 @co_leader_2
 
 How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
@@ -621,7 +488,7 @@ How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] fact
 - @co_leader_2_no_challenge: [+ spd_coleader_2_fullname +] faces no challenge.
 
 @co_leader_2_challenge
-view-if: (center_votes < 50 and spd_coleader_2_faction == "center") or (left_votes < 50 and spd_coleader_2_faction == "left") or (reformist_votes < 50 and spd_coleader_2_faction == "reformist") or (labor_votes < 50 and spd_coleader_2_faction == "labor") or (neorevisionist_votes < 50 and spd_coleader_2_faction == "neorevisionist") or (spd_coleader_2_faction == "non-factional")
+view-if: (center_votes < 50 and spd_coleader_2_faction == "Center") or (left_votes < 50 and spd_coleader_2_faction == "left") or (reformist_votes < 50 and spd_coleader_2_faction == "Reformist") or (labor_votes < 50 and spd_coleader_2_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_2_faction == "Neorevisionist") or (spd_coleader_2_faction == "non-factional")
 
 [+ spd_coleader_2_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
 
@@ -633,8 +500,8 @@ view-if: (center_votes < 50 and spd_coleader_2_faction == "center") or (left_vot
 - @neorevisionist_2: [+ neorevisionist_leader_fullname +] wins in a victory for the Neorevisionist faction!
 
 @incumbent_2
-view-if: spd_coleader_2 != "vacant"
-choose-if: (left_votes >= 50 and spd_coleader_2_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_2_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_2_faction == "labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_2_faction == "labor") or (reformist_votes >= 50 and spd_coleader_2_faction == "reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "non-factional")
+view-if: spd_coleader_2 != "Vacant"
+choose-if: (left_votes >= 50 and spd_coleader_2_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_2_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_2_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_2_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_2_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "non-factional")
 
 The incumbent, [+ spd_coleader_2_fullname +], wins in a victory for the [+ spd_coleader_2_faction +] faction!
 
@@ -644,6 +511,7 @@ The incumbent, [+ spd_coleader_2_fullname +], wins in a victory for the [+ spd_c
 view-if: spd_coleader_2_faction != "left"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
+spd_coleader_2_faction = "left";
 if (Q.left_leader == "Crispien") {
     Q.spd_coleader_2 = "Crispien";
     Q.spd_coleader_2_fullname = "Arthur Crispien";
@@ -675,8 +543,8 @@ if (Q.left_leader == "Crispien") {
     Q.spd_coleader_2 = "Baade";
     Q.spd_coleader_2_fullname = "Fritz Baade";
 }
-Q.left_leader = "vacant";
-Q.left_leader_fullname = "vacant";
+Q.left_leader = "Vacant";
+Q.left_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Left faction!
@@ -684,70 +552,40 @@ Q.left_leader_fullname = "vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @center_2
-view-if: spd_coleader_2_faction != "center"
+view-if: spd_coleader_2_faction != "Center"
 choose-if: (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_2_faction = "Center";
 if (Q.center_leader == "Hilferding") {
-
     Q.spd_coleader_2 = "Hilferding";
-
     Q.spd_coleader_2_fullname = "Rudolf Hilferding";
-
 } else if (Q.center_leader == "Wels") {
-
     Q.spd_coleader_2 = "Wels";
-
     Q.spd_coleader_2_fullname = "Otto Wels";
-
 } else if (Q.center_leader == "Vogel") {
-
     Q.spd_coleader_2 = "Vogel";
-
     Q.spd_coleader_2_fullname = "Hans Vogel";
-
 } else if (Q.center_leader == "Müller") {
-
     Q.spd_coleader_2 = "Müller";
-
     Q.spd_coleader_2_fullname = "Hermann Müller";
-
 } else if (Q.center_leader == "Breitscheid") {
-
     Q.spd_coleader_2 = "Breitscheid";
-
     Q.spd_coleader_2_fullname = "Rudolf Breitscheid";
-
 } else if (Q.center_leader == "Stampfer") {
-
     Q.spd_coleader_2 = "Stampfer";
-
     Q.spd_coleader_2_fullname = "Friedrich Stampfer";
-
 } else if (Q.center_leader == "Radbruch") {
-
     Q.spd_coleader_2 = "Radbruch";
-
     Q.spd_coleader_2_fullname = "Gustav Radbruch";
-
 } else if (Q.center_leader == "Hirschfeld") {
-
     Q.spd_coleader_2 = "Hirschfeld";
-
     Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
-
 } else if (Q.center_leader == "Baade") {
-
     Q.spd_coleader_2 = "Baade";
-
     Q.spd_coleader_2_fullname = "Fritz Baade";
-
 }
-
-Q.center_leader = "vacant";
-
-Q.center_leader_fullname = "vacant";
-
+Q.center_leader = "Vacant";
+Q.center_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Center faction!
@@ -755,82 +593,46 @@ Q.center_leader_fullname = "vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @labor_2
-view-if: spd_coleader_2_faction != "labor"
+view-if: spd_coleader_2_faction != "Labor"
 choose-if: (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50) or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_2_faction == "Labor";
 if (Q.labor_leader == "Leipart") {
-
     Q.spd_coleader_2 = "Leipart";
-
     Q.spd_coleader_2_fullname = "Theodor Leipart";
-
 } else if (Q.labor_leader == "Aufhäuser") {
-
     Q.spd_coleader_2 = "Aufhäuser";
-
     Q.spd_coleader_2_fullname = "Siegfried Aufhäuser";
-
 } else if (Q.labor_leader == "Wissell") {
-
     Q.spd_coleader_2 = "Wissell";
-
     Q.spd_coleader_2_fullname = "Rudolf Wissell";
-
 } else if (Q.labor_leader == "Woytinsky") {
-
     Q.spd_coleader_2 = "Woytinsky";
-
     Q.spd_coleader_2_fullname = "Wladimir Woytinsky";
-
 } else if (Q.labor_leader == "Mierendorff") {
-
     Q.spd_coleader_2 = "Mierendorff";
-
     Q.spd_coleader_2_fullname = "Carlo Mierendorff";
-
 } else if (Q.labor_leader == "Schumacher") {
-
     Q.spd_coleader_2 = "Schumacher";
-
     Q.spd_coleader_2_fullname = "Kurt Schumacher";
-
 } else if (Q.labor_leader == "Leber") {
-
     Q.spd_coleader_2 = "Leber";
-
     Q.spd_coleader_2_fullname = "Julius Leber";
-
 } else if (Q.labor_leader == "Stampfer") {
-
     Q.spd_coleader_2 = "Stampfer";
-
     Q.spd_coleader_2_fullname = "Friedrich Stampfer";
-
 } else if (Q.labor_leader == "Radbruch") {
-
     Q.spd_coleader_2 = "Radbruch";
-
     Q.spd_coleader_2_fullname = "Gustav Radbruch";
-
 } else if (Q.labor_leader == "Hirschfeld") {
-
     Q.spd_coleader_2 = "Hirschfeld";
-
     Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
-
 } else if (Q.labor_leader == "Baade") {
-
     Q.spd_coleader_2 = "Baade";
-
     Q.spd_coleader_2_fullname = "Fritz Baade";
-
 }
-
-Q.labor_leader = "vacant";
-
-Q.labor_leader_fullname = "vacant";
-
+Q.labor_leader = "Vacant";
+Q.labor_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Labor faction!
@@ -838,94 +640,52 @@ Q.labor_leader_fullname = "vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @reformist_2
-view-if: spd_coleader_2_faction != "reformist"
+view-if: spd_coleader_2_faction != "Reformist"
 choose-if: (reformist_votes >= 50) or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_2_faction = "Reformist"
 if (Q.reformist_leader == "Severing") {
-
     Q.spd_coleader_2 = "Severing";
-
     Q.spd_coleader_2_fullname = "Carl Severing";
-
 } else if (Q.reformist_leader == "Braun") {
-
     Q.spd_coleader_2 = "Braun";
-
     Q.spd_coleader_2_fullname = "Otto Braun";
-
 } else if (Q.reformist_leader == "Juchacz") {
-
     Q.spd_coleader_2 = "Juchacz";
-
     Q.spd_coleader_2_fullname = "Marie Juchacz";
-
 } else if (Q.reformist_leader == "Pfülf") {
-
     Q.spd_coleader_2 = "Pfülf";
-
     Q.spd_coleader_2_fullname = "Antonie Pfülf";
-
 } else if (Q.reformist_leader == "Ebert") {
-
     Q.spd_coleader_2 = "Ebert";
-
     Q.spd_coleader_2_fullname = "Friedrich Ebert";
-
 } else if (Q.reformist_leader == "Scheidemann") {
-
     Q.spd_coleader_2 = "Scheidemann";
-
     Q.spd_coleader_2_fullname = "Phillip Scheidemann";
-
 } else if (Q.reformist_leader == "Mierendorff") {
-
     Q.spd_coleader_2 = "Mierendorff";
-
     Q.spd_coleader_2_fullname = "Carlo Mierendorff";
-
 } else if (Q.reformist_leader == "Schumacher") {
-
     Q.spd_coleader_2 = "Schumacher";
-
     Q.spd_coleader_2_fullname = "Kurt Schumacher";
-
 } else if (Q.reformist_leader == "Leber") {
-
     Q.spd_coleader_2 = "Leber";
-
     Q.spd_coleader_2_fullname = "Julius Leber";
-
 } else if (Q.reformist_leader == "Stampfer") {
-
     Q.spd_coleader_2 = "Stampfer";
-
     Q.spd_coleader_2_fullname = "Friedrich Stampfer";
-
 } else if (Q.reformist_leader == "Radbruch") {
-
     Q.spd_coleader_2 = "Radbruch";
-
     Q.spd_coleader_2_fullname = "Gustav Radbruch";
-
 } else if (Q.reformist_leader == "Hirschfeld") {
-
     Q.spd_coleader_2 = "Hirschfeld";
-
     Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
-
 } else if (Q.reformist_leader == "Baade") {
-
     Q.spd_coleader_2 = "Baade";
-
     Q.spd_coleader_2_fullname = "Fritz Baade";
-
 }
-
-Q.reformist_leader = "vacant";
-
-Q.reformist_leader_fullname = "vacant";
-
+Q.reformist_leader = "Vacant";
+Q.reformist_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Reformist faction!
@@ -933,64 +693,37 @@ Q.reformist_leader_fullname = "vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @neorevisionist_2
-view-if: spd_coleader_2_faction != "neorevisionist" and neorevisionism == 2
+view-if: spd_coleader_2_faction != "Neorevisionist" and neorevisionism == 1
 choose-if: (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_2_faction = "Neorevisionist";
 if (Q.neorevisionist_leader == "Mierendorff") {
-
     Q.spd_coleader_2 = "Mierendorff";
-
     Q.spd_coleader_2_fullname = "Carlo Mierendorff";
-
 } else if (Q.neorevisionist_leader == "Schumacher") {
-
     Q.spd_coleader_2 = "Schumacher";
-
     Q.spd_coleader_2_fullname = "Kurt Schumacher";
-
 } else if (Q.neorevisionist_leader == "Leber") {
-
     Q.spd_coleader_2 = "Leber";
-
     Q.spd_coleader_2_fullname = "Julius Leber";
-
-} else if (Q.neorevisionist_leader == "Gustav Noske") {
-
+} else if (Q.neorevisionist_leader == "Noske") {
     Q.spd_coleader_2 = "Noske";
-
     Q.spd_coleader_2_fullname = "Gustav Noske";
-
 } else if (Q.neorevisionist_leader == "Stampfer") {
-
     Q.spd_coleader_2 = "Stampfer";
-
     Q.spd_coleader_2_fullname = "Friedrich Stampfer";
-
 } else if (Q.neorevisionist_leader == "Radbruch") {
-
     Q.spd_coleader_2 = "Radbruch";
-
     Q.spd_coleader_2_fullname = "Gustav Radbruch";
-
 } else if (Q.neorevisionist_leader == "Hirschfeld") {
-
     Q.spd_coleader_2 = "Hirschfeld";
-
     Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
-
 } else if (Q.neorevisionist_leader == "Baade") {
-
     Q.spd_coleader_2 = "Baade";
-
     Q.spd_coleader_2_fullname = "Fritz Baade";
-
 }
-
-Q.neorevisionist_leader = "vacant";
-
-Q.neorevisionist_leader_fullname = "vacant";
-
+Q.neorevisionist_leader = "Vacant";
+Q.neorevisionist_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Neorevisionist faction!
@@ -998,7 +731,7 @@ Q.neorevisionist_leader_fullname = "vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @co_leader_2_no_challenge
-view-if: (spd_coleader_2 != "vacant") and ((center_votes >= 50 and spd_coleader_2_faction == "center") or (left_votes >= 50 and spd_coleader_2_faction == "left") or (labor_votes >= 50 and spd_coleader_2_faction == "labor") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "neorevisionist"))
+view-if: (spd_coleader_2 != "Vacant") and ((center_votes >= 50 and spd_coleader_2_faction == "Center") or (left_votes >= 50 and spd_coleader_2_faction == "left") or (labor_votes >= 50 and spd_coleader_2_faction == "Labor") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Reformist") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Neorevisionist"))
 
 [+ spd_coleader_2_fullname +] does not face a challenge.
 
@@ -1012,7 +745,7 @@ How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] fact
 - @co_leader_3_no_challenge: [+ spd_coleader_3_fullname +] faces no challenge.
 
 @co_leader_3_challenge
-view-if: (center_votes < 50 and spd_coleader_3_faction == "center") or (left_votes < 50 and spd_coleader_3_faction == "left") or (reformist_votes < 50 and spd_coleader_3_faction == "reformist") or (labor_votes < 50 and spd_coleader_3_faction == "labor") or (neorevisionist_votes < 50 and spd_coleader_3_faction == "neorevisionist") or (spd_coleader_3_faction == "non-factional")
+view-if: (center_votes < 50 and spd_coleader_3_faction == "Center") or (left_votes < 50 and spd_coleader_3_faction == "left") or (reformist_votes < 50 and spd_coleader_3_faction == "Reformist") or (labor_votes < 50 and spd_coleader_3_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_3_faction == "Neorevisionist") or (spd_coleader_3_faction == "non-factional")
 
 [+ spd_coleader_3_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
 
@@ -1024,8 +757,8 @@ view-if: (center_votes < 50 and spd_coleader_3_faction == "center") or (left_vot
 - @neorevisionist_3: [+ neorevisionist_leader_fullname +] wins in a victory for the Neorevisionist faction!
 
 @incumbent_3
-view-if: spd_coleader_3 != "vacant"
-choose-if: (left_votes >= 50 and spd_coleader_3_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_3_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_3_faction == "labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_3_faction == "labor") or (reformist_votes >= 50 and spd_coleader_3_faction == "reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "non-factional")
+view-if: spd_coleader_3 != "Vacant"
+choose-if: (left_votes >= 50 and spd_coleader_3_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_3_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_3_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_3_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_3_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "non-factional")
 
 The incumbent, [+ spd_coleader_3_fullname +], wins in a victory for the [+ spd_coleader_3_faction +] faction!
 
@@ -1035,6 +768,7 @@ The incumbent, [+ spd_coleader_3_fullname +], wins in a victory for the [+ spd_c
 view-if: spd_coleader_3_faction != "left"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
+spd_coleader_3_faction = "left";
 if (Q.left_leader == "Crispien") {
     Q.spd_coleader_3 = "Crispien";
     Q.spd_coleader_3_fullname = "Arthur Crispien";
@@ -1066,8 +800,8 @@ if (Q.left_leader == "Crispien") {
     Q.spd_coleader_3 = "Baade";
     Q.spd_coleader_3_fullname = "Fritz Baade";
 }
-Q.left_leader = "vacant";
-Q.left_leader_fullname = "vacant";
+Q.left_leader = "Vacant";
+Q.left_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Left faction!
@@ -1075,70 +809,40 @@ Q.left_leader_fullname = "vacant";
 - @root: The conference is concluded.
 
 @center_3
-view-if: spd_coleader_3_faction != "center"
+view-if: spd_coleader_3_faction != "Center"
 choose-if: (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_3_faction = "Center";
 if (Q.center_leader == "Hilferding") {
-
     Q.spd_coleader_3 = "Hilferding";
-
     Q.spd_coleader_3_fullname = "Rudolf Hilferding";
-
 } else if (Q.center_leader == "Wels") {
-
     Q.spd_coleader_3 = "Wels";
-
     Q.spd_coleader_3_fullname = "Otto Wels";
-
 } else if (Q.center_leader == "Vogel") {
-
     Q.spd_coleader_3 = "Vogel";
-
     Q.spd_coleader_3_fullname = "Hans Vogel";
-
 } else if (Q.center_leader == "Müller") {
-
     Q.spd_coleader_3 = "Müller";
-
     Q.spd_coleader_3_fullname = "Hermann Müller";
-
 } else if (Q.center_leader == "Breitscheid") {
-
     Q.spd_coleader_3 = "Breitscheid";
-
     Q.spd_coleader_3_fullname = "Rudolf Breitscheid";
-
 } else if (Q.center_leader == "Stampfer") {
-
     Q.spd_coleader_3 = "Stampfer";
-
     Q.spd_coleader_3_fullname = "Friedrich Stampfer";
-
 } else if (Q.center_leader == "Radbruch") {
-
     Q.spd_coleader_3 = "Radbruch";
-
     Q.spd_coleader_3_fullname = "Gustav Radbruch";
-
 } else if (Q.center_leader == "Hirschfeld") {
-
     Q.spd_coleader_3 = "Hirschfeld";
-
     Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
-
 } else if (Q.center_leader == "Baade") {
-
     Q.spd_coleader_3 = "Baade";
-
     Q.spd_coleader_3_fullname = "Fritz Baade";
-
 }
-
-Q.center_leader = "vacant";
-
-Q.center_leader_fullname = "vacant";
-
+Q.center_leader = "Vacant";
+Q.center_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Center faction!
@@ -1146,82 +850,46 @@ Q.center_leader_fullname = "vacant";
 - @root: The conference is concluded.
 
 @labor_3
-view-if: spd_coleader_3_faction != "labor"
+view-if: spd_coleader_3_faction != "Labor"
 choose-if: (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50) or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_3_faction == "Labor";
 if (Q.labor_leader == "Leipart") {
-
     Q.spd_coleader_3 = "Leipart";
-
     Q.spd_coleader_3_fullname = "Theodor Leipart";
-
 } else if (Q.labor_leader == "Aufhäuser") {
-
     Q.spd_coleader_3 = "Aufhäuser";
-
     Q.spd_coleader_3_fullname = "Siegfried Aufhäuser";
-
 } else if (Q.labor_leader == "Wissell") {
-
     Q.spd_coleader_3 = "Wissell";
-
     Q.spd_coleader_3_fullname = "Rudolf Wissell";
-
 } else if (Q.labor_leader == "Woytinsky") {
-
     Q.spd_coleader_3 = "Woytinsky";
-
     Q.spd_coleader_3_fullname = "Wladimir Woytinsky";
-
 } else if (Q.labor_leader == "Mierendorff") {
-
     Q.spd_coleader_3 = "Mierendorff";
-
     Q.spd_coleader_3_fullname = "Carlo Mierendorff";
-
 } else if (Q.labor_leader == "Schumacher") {
-
     Q.spd_coleader_3 = "Schumacher";
-
     Q.spd_coleader_3_fullname = "Kurt Schumacher";
-
 } else if (Q.labor_leader == "Leber") {
-
     Q.spd_coleader_3 = "Leber";
-
     Q.spd_coleader_3_fullname = "Julius Leber";
-
 } else if (Q.labor_leader == "Stampfer") {
-
     Q.spd_coleader_3 = "Stampfer";
-
     Q.spd_coleader_3_fullname = "Friedrich Stampfer";
-
 } else if (Q.labor_leader == "Radbruch") {
-
     Q.spd_coleader_3 = "Radbruch";
-
     Q.spd_coleader_3_fullname = "Gustav Radbruch";
-
 } else if (Q.labor_leader == "Hirschfeld") {
-
     Q.spd_coleader_3 = "Hirschfeld";
-
     Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
-
 } else if (Q.labor_leader == "Baade") {
-
     Q.spd_coleader_3 = "Baade";
-
     Q.spd_coleader_3_fullname = "Fritz Baade";
-
 }
-
-Q.labor_leader = "vacant";
-
-Q.labor_leader_fullname = "vacant";
-
+Q.labor_leader = "Vacant";
+Q.labor_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Labor faction!
@@ -1229,94 +897,52 @@ Q.labor_leader_fullname = "vacant";
 - @root: The conference is concluded.
 
 @reformist_3
-view-if: spd_coleader_3_faction != "reformist"
+view-if: spd_coleader_3_faction != "Reformist"
 choose-if: (reformist_votes >= 50) or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_3_faction = "Reformist"
 if (Q.reformist_leader == "Severing") {
-
     Q.spd_coleader_3 = "Severing";
-
     Q.spd_coleader_3_fullname = "Carl Severing";
-
 } else if (Q.reformist_leader == "Braun") {
-
     Q.spd_coleader_3 = "Braun";
-
     Q.spd_coleader_3_fullname = "Otto Braun";
-
 } else if (Q.reformist_leader == "Juchacz") {
-
     Q.spd_coleader_3 = "Juchacz";
-
     Q.spd_coleader_3_fullname = "Marie Juchacz";
-
 } else if (Q.reformist_leader == "Pfülf") {
-
     Q.spd_coleader_3 = "Pfülf";
-
     Q.spd_coleader_3_fullname = "Antonie Pfülf";
-
 } else if (Q.reformist_leader == "Ebert") {
-
     Q.spd_coleader_3 = "Ebert";
-
     Q.spd_coleader_3_fullname = "Friedrich Ebert";
-
 } else if (Q.reformist_leader == "Scheidemann") {
-
     Q.spd_coleader_3 = "Scheidemann";
-
     Q.spd_coleader_3_fullname = "Phillip Scheidemann";
-
 } else if (Q.reformist_leader == "Mierendorff") {
-
     Q.spd_coleader_3 = "Mierendorff";
-
     Q.spd_coleader_3_fullname = "Carlo Mierendorff";
-
 } else if (Q.reformist_leader == "Schumacher") {
-
     Q.spd_coleader_3 = "Schumacher";
-
     Q.spd_coleader_3_fullname = "Kurt Schumacher";
-
 } else if (Q.reformist_leader == "Leber") {
-
     Q.spd_coleader_3 = "Leber";
-
     Q.spd_coleader_3_fullname = "Julius Leber";
-
 } else if (Q.reformist_leader == "Stampfer") {
-
     Q.spd_coleader_3 = "Stampfer";
-
     Q.spd_coleader_3_fullname = "Friedrich Stampfer";
-
 } else if (Q.reformist_leader == "Radbruch") {
-
     Q.spd_coleader_3 = "Radbruch";
-
     Q.spd_coleader_3_fullname = "Gustav Radbruch";
-
 } else if (Q.reformist_leader == "Hirschfeld") {
-
     Q.spd_coleader_3 = "Hirschfeld";
-
     Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
-
 } else if (Q.reformist_leader == "Baade") {
-
     Q.spd_coleader_3 = "Baade";
-
     Q.spd_coleader_3_fullname = "Fritz Baade";
-
 }
-
-Q.reformist_leader = "vacant";
-
-Q.reformist_leader_fullname = "vacant";
-
+Q.reformist_leader = "Vacant";
+Q.reformist_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Reformist faction!
@@ -1324,64 +950,37 @@ Q.reformist_leader_fullname = "vacant";
 - @root: The conference is concluded.
 
 @neorevisionist_3
-view-if: spd_coleader_3_faction != "neorevisionist" and neorevisionism == 3
+view-if: spd_coleader_3_faction != "Neorevisionist" and neorevisionism == 1
 choose-if: (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
 on-arrival: {!
-
+spd_coleader_3_faction = "Neorevisionist";
 if (Q.neorevisionist_leader == "Mierendorff") {
-
     Q.spd_coleader_3 = "Mierendorff";
-
     Q.spd_coleader_3_fullname = "Carlo Mierendorff";
-
 } else if (Q.neorevisionist_leader == "Schumacher") {
-
     Q.spd_coleader_3 = "Schumacher";
-
     Q.spd_coleader_3_fullname = "Kurt Schumacher";
-
 } else if (Q.neorevisionist_leader == "Leber") {
-
     Q.spd_coleader_3 = "Leber";
-
     Q.spd_coleader_3_fullname = "Julius Leber";
-
-} else if (Q.neorevisionist_leader == "Gustav Noske") {
-
+} else if (Q.neorevisionist_leader == "Noske") {
     Q.spd_coleader_3 = "Noske";
-
     Q.spd_coleader_3_fullname = "Gustav Noske";
-
 } else if (Q.neorevisionist_leader == "Stampfer") {
-
     Q.spd_coleader_3 = "Stampfer";
-
     Q.spd_coleader_3_fullname = "Friedrich Stampfer";
-
 } else if (Q.neorevisionist_leader == "Radbruch") {
-
     Q.spd_coleader_3 = "Radbruch";
-
     Q.spd_coleader_3_fullname = "Gustav Radbruch";
-
 } else if (Q.neorevisionist_leader == "Hirschfeld") {
-
     Q.spd_coleader_3 = "Hirschfeld";
-
     Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
-
 } else if (Q.neorevisionist_leader == "Baade") {
-
     Q.spd_coleader_3 = "Baade";
-
     Q.spd_coleader_3_fullname = "Fritz Baade";
-
 }
-
-Q.neorevisionist_leader = "vacant";
-
-Q.neorevisionist_leader_fullname = "vacant";
-
+Q.neorevisionist_leader = "Vacant";
+Q.neorevisionist_leader_fullname = "Vacant";
 !}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Neorevisionist faction!
@@ -1389,7 +988,7 @@ Q.neorevisionist_leader_fullname = "vacant";
 - @root: The conference is concluded.
 
 @co_leader_3_no_challenge
-view-if: (spd_coleader_3 != "vacant") and ((center_votes >= 50 and spd_coleader_2_faction == "center") or (left_votes >= 50 and spd_coleader_2_faction == "left") or (labor_votes >= 50 and spd_coleader_2_faction == "labor") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "neorevisionist"))
+view-if: (spd_coleader_3 != "Vacant") and ((center_votes >= 50 and spd_coleader_3_faction == "Center") or (left_votes >= 50 and spd_coleader_3_faction == "left") or (labor_votes >= 50 and spd_coleader_3_faction == "Labor") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Reformist") or ((reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Neorevisionist"))
 
 [+ spd_coleader_3_fullname +] does not face a challenge.
 
