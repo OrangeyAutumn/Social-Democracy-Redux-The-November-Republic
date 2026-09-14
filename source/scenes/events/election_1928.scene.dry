@@ -40,9 +40,9 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!
-// set old results
-// election threshold constitutional reform
-// banning parties
+# set old results
+# election threshold constitutional reform
+# banning parties
 var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
@@ -56,7 +56,7 @@ for (var party of Q.parties) {
     } else {
         Q[party + '_r'] = Q[party + '_votes'];
     }
-        // if we use decimals, then we might want to truncate the numbers
+        # if we use decimals, then we might want to truncate the numbers
     if (Q.use_decimals) {
         Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
     }  else {
@@ -64,9 +64,9 @@ for (var party of Q.parties) {
     }
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
     var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];#.toFixed(1);
 }
-// calculate new party sum if electoral reform
+# calculate new party sum if electoral reform
 if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
     for (var party of Q.parties) {
         if (Q[party + '_r'] > 0) {
@@ -83,14 +83,14 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
         }
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];#.toFixed(1);
     }
 }
 
-// get change arrows and signs
+# get change arrows and signs
 
 
-// The largest party can only be the NSDAP or the SPD.
+# The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
 if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.uspd_r) {
     Q.largest_party = 'NSDAP';
@@ -100,7 +100,7 @@ if (Q.uspd_r >= Q.spd_r && Q.uspd_r >= Q.nsdap_r) {
     Q.largest_party = 'USPD';
 }
 Q.z_minus_bvp_r = Q.z_r - 3;
-// coalitions
+# coalitions
 Q.uspd_tolerated_spd_minority = Q.spd_r + Q.uspd_r;
 Q.uspd_tolerated_social_liberal_coalition = Q.spd_r + Q.uspd_r + Q.ddp_r;
 Q.social_liberal_coalition = Q.spd_r + Q.ddp_r;
@@ -113,17 +113,17 @@ Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
 Q.right_coalition = Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
 Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
 Q.left_coalition = Q.spd_r + Q.uspd_r;
-// this is an absurd concept lol
+# this is an absurd concept lol
 Q.popular_front_coalition = Q.spd_r + Q.uspd_r + Q.z_r + Q.ddp_r - 3;
 Q.anti_democratic_coalition = Q.uspd_r + Q.nsdap_r + Q.dnvp_r;
-// aka everyone except nazi, uspd, dnvp
+# aka everyone except nazi, uspd, dnvp
 Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-// Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
+# Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
 Q.other_nazi = Math.round(Q.other_r*(1-(Q.pro_republic/100)));
 Q.hitler_right_coalition = Q.z_r + Q.dnvp_r + Q.nsdap_r + Q.dvp_r + Q.other_nazi;
-// Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
+# Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
 Q.progressive_coalition = Q.spd_r + Q.sapd_r + Q.uspd_r + Q.ddp_r;
-// nationaal front
+# nationaal front
 Q.national_front_r = Q.nsdap_r + Q.dnvp_r + Q.dvp_r + Q.other_r + 3;
 if (Q.z_national) {
     Q.national_front_r += Q.z_minus_bvp_r;
@@ -132,7 +132,7 @@ if (Q.z_national) {
 Q.leverage = Q.spd_r;
 
 Q.grand_coalition_failed = 0;
-// Reset government and ministers... Based on Brüning's 1930 govt
+# Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
 Q.uspd_coalition_dissent = 0;
 Q.spd_in_government = 0;
@@ -154,7 +154,7 @@ Q.economic_minister_party = 'DVP';
 Q.finance_minister_party = 'DVP';
 Q.agriculture_minister_party = 'Z';
 
-// reset USPD goals
+# reset USPD goals
 Q.uspd_goals_seen = 0;
 Q.uspd_ultimatum_seen = 0;
 Q.welfare_goal = 0;
@@ -177,7 +177,7 @@ Q.reichswehr_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 
-// understanding the enemy
+# understanding the enemy
 if (Q.nsdap_r >= 15) {
     Q.understanding_enemy_timer = 2;
 }
@@ -476,7 +476,7 @@ view-if: year == 1924 and weimar_coalition <= 49
 subtitle: He will need it...
 go-to: ebert_forms_a_government
 
-// SPD-playable coalitions
+# SPD-playable coalitions
 
 @spd_majority
 title: SPD majority alone
@@ -492,7 +492,7 @@ Finally, the SPD can govern alone! Our long campaign of electioneering has paid 
 
 Who should be chancellor?
 
-// Weimar Coalition
+# Weimar Coalition
 
 @weimar_coalition
 title: We can form a Weimar Coalition.
@@ -558,7 +558,7 @@ With the toleration of the [+ uspd_name +], the SPD can govern alone! The [+ usp
 
 Who should be chancellor?
 
-// @uspd_tolerated_weimar_coalition
+# @uspd_tolerated_weimar_coalition
 
 @uspd_tolerated_weimar_coalition
 title: We can form a Weimar Coalition, with USPD toleration.
@@ -570,7 +570,7 @@ on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_
 achievement: weimar_coalition
 go-to: weimar_normal
 
-// Grand Coalition
+# Grand Coalition
 @grand_coalition
 title: We can form a Grand Coalition.
 view-if: year >= 1925 and grand_coalition >= 50 and grand_coalition_failed == 0
@@ -644,7 +644,7 @@ go-to: grand_coalition
 
 We have managed to convince Zentrum to instead support another Grand Coalition!
 
-// Budget Dispute
+# Budget Dispute
 
 @budget_dispute
 
@@ -683,7 +683,7 @@ go-to: chancellor_menu
 
 Braun has resigned as Minister-President of Prussia, replaced by Adam Stegerwald. The bourgeois parties accept this concession for now, and the budget issue is left unresolved.
 
-// DVP is a pain
+# DVP is a pain
 
 @beg_dvp
 view-if: dvp_relation >= 15
@@ -721,7 +721,7 @@ go-to: no_majority
 
 As expected, the DVP is too set in their anti-democratic ways.
 
-// Popular Front
+# Popular Front
 @progressive_front_coalition
 title: A new "Progressive Front" coalition?
 subtitle: SPD + USPD + [+ ddp_name +] ([+ progressive_front_coalition +]%)
@@ -879,8 +879,6 @@ In response to the USPD's entrance into the government, the right-wing immediate
 The Center manages to diffuse some of the hostility from the Reichswehr and the Stahlhelm, but fail to prevent the outbreak of fighting. We are forced to fight on the same side as the USPD, whether we want to or not.
 
 - @civil_war: A civil war, then.
-
-// Left Coalition
 
 @left_coalition
 title: Is a United Left coalition possible?
@@ -1129,7 +1127,7 @@ on-arrival: reichswehr_minister_party = "USPD"; leverage += 5;
 tags: drop_mins_left
 go-to: postwar_left
 
-//
+#
 
 @new_grand_coalition
 title: A "New Grand Coalition" of all the constitutional parties?
@@ -1215,8 +1213,7 @@ Our rejection of the unity government has hurt our relations with the bourgeois 
 - @toleration_wirth: We will tolerate a minority government led by Joseph Wirth.
 - @new_elections: There will be new elections.
 
-// SPD Emergency Government
-
+# SPD Emergency Government
 @brauns_dilemma
 title: There is no clear governing majority.
 subtitle: President [+ president +] faces a dilemma.
@@ -1398,7 +1395,7 @@ achievement: minderheitsregierung
 
 We have won the vote of no confidence, and are currently ruling under an SPD minority government. Now our task is to fix the country.
 
-// No Majority Centre
+# No Majority Centre
 
 @no_majority
 title: There is no clear governing majority.
@@ -1406,7 +1403,7 @@ view-if: (weimar_coalition < 50 or z_willing != 1) and (grand_coalition < 50 or 
 on-arrival: no_majority_elections += 1
 go-to: no_majority_scholz if chancellor = "Scholz" and (president == “Hindenburg” or (president == “Marx” or president == “Wirth”)); no_majority_bruning if (chancellor = "Brüning" or chancellor = "Wirth") and (president == “Hindenburg” or (president == “Marx” or president == “Wirth”)); no_majority_papen if chancellor = "Papen" and no_majority_papen_elections == 0 and president == “Hindenburg”; no_majority_papen_2 if chancellor == "Papen" and no_majority_papen_elections > 0 and not resisted_hitler and president == “Hindenburg”; no_majority_schleicher if chancellor = "Schleicher" and president == “Hindenburg”; no_majority_spd if (chancellor_party = "SPD" or chancellor == "Marx") and (president != "Seeckt" and president != “Seldte” and president != “Hitler” and president != “Göring”); no_majority_seldte if chancellor == "Seldte" and ((harzburg_r >= 25 and seldte_times < 1) or (army_force+sh_force >= 50 and dnvp+sh_force < 50 and reichswehr_loyalty < 0.3 and strife >= 4 and not presidential_powers and (president == "Hindenburg" or (president == "Gessler" and reichswehr_loyalty < 0.15)))); no_majority_nsdap if ((hitler_seen and chancellor_party == "NSDAP") and president == “Hindenburg”) or (president == “Seldte” or president == "Hitler" or president == "Göring") or (chancellor == "Hitler"); no_majority_bruning_back if (chancellor == "Papen" and resisted_hitler) and president == “Hindenburg”; bruning_lead if (no_majority_elections < 3 and (chancellor != "Seldte" or ((harzburg_r < 25 or seldte_times >= 1) and not (army_force+sh_force >= 50 and dnvp+sh_force < 50 and reichswehr_loyalty < 0.3 and strife >= 4 and not presidential_powers and (president == "Hindenburg" or (president == "Gessler" and reichswehr_loyalty < 0.15)))))) or (no_majority_elections < 1 and president == “Eckner”) or (no_majority_elections < 2 and president = “Adenauer”); luther_lead if (no_majority_elections >= 3 and (dvp_relation < 55 or bourgeois_coalition+far_right_coalition >= 50 or ddp_votes < 3) and (chancellor != "Seldte" or ((harzburg_r < 25 or seldte_times >= 1) and not (army_force+sh_force >= 50 and dnvp+sh_force < 50 and reichswehr_loyalty < 0.3 and strife >= 4 and not presidential_powers and (president == "Gessler" and reichswehr_loyalty < 0.15)))))) and (president == "Gessler") or (((investigate_far_right >= 1 or spd_r >= bourgeois_coalition + dnvp_r or schacht_election == 1) and no_majority_elections >= 1) and president == “Eckner”); kulz_lead if (president == "Eckner") (dvp_relation >= 45 and bourgeois_coalition+far_right_coalition < 50 and ddp_votes >= 3 and (chancellor != "Seldte" or ((harzburg_r < 25 or seldte_times >= 1) and not (army_force+sh_force >= 50 and dnvp+sh_force < 50 and reichswehr_loyalty < 0.3 and strife >= 4 and not presidential_powers)))); martial_law if (army_force+sh_force >= 50 and dnvp+sh_force < 50 and reichswehr_loyalty < 0.3 and strife >= 4 and not presidential_powers and chancellor = "Seldte") and (president == “Seeckt”); switch_to_seldte if (army_force+sh_force >= 50 and dnvp+sh_force < 50 and reichswehr_loyalty < 0.3 and strife >= 4 and not presidential_powers and chancellor = "Papen") and (president == “Seeckt”); schacht_lead if (investigate_far_right < 1 and spd_r < bourgeois_coalition + dnvp_r and no_majority_elections >= 1 and schacht_election != 1) and (president == “Eckner”); stegerwald_lead if ((((z_relation + spd_r < z_r + dvp_r + other_r) or (z_relation + spd_r < national_front and z_national == 1)) and bourgeois_coalition+far_right_coalition >= 50) and no_majority_elections >= 2) and president == “Adenauer”; wirth_lead if ((((z_relation + spd_r >= z_r + dvp_r + other_r and z_national != 1) or (z_relation + spd_r >= national_front)) or bourgeois_coalition+far_right_coalition < 50) and no_majority_elections >= 2) and president == “Adenauer”; no_majority_bracht if chancellor = "Bracht" and (president == “Marx” or president == “Wirth”); no_majority_bruning if (chancellor = "Brüning" or chancellor = "Wirth") and (president == “Marx” or president == “Wirth”); no_majority_spd if (chancellor_party = "SPD" or n_elections <= 1) and (president == “Marx” or president == “Wirth”);
 
-// No majority
+# No majority
 
 @no_majority_spd
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
@@ -1444,8 +1441,7 @@ With the Reichstag still lacking a majority for Papen, and the failure of Hitler
 - @new_elections: We will have new elections.
 - @new_elections_2: We will have new elections.
 
-// Tolerables
-
+# Tolerables
 @bruning_lead
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
@@ -1544,7 +1540,7 @@ on-arrival: spd_in_government = 0; spd_toleration = 1; z_relation += 5; foreign_
 
 We have decided to tolerate Stegerwald's minority bourgeois government, a controversial decision in our party due to his right-leaning tendencies and conservatism.
 
-// Crisis Marx
+# Crisis Marx
 @marx_appoints_bracht
 on-arrival: old_middle_nsdap += 5; rural_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 5; marx_relation -= 5; bracht_r = 0; chancellor = "Bracht"; chancellor_party = "Z" if z_relation < 30; chancellor_party = "I" if z_relation >= 30; sa_banned = 0; pro_republic -= 6; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I"; nazi_chance = nsdap_r; nazi_chance += socialism; nazi_chance += nationalism; nazi_chance -= pro_republic; nazi_chance += left_coalition if communist_coalition >= 3 and uspd_relation >= 50; nazi_chance += rb_force+rfb_force; nazi_chance -= sa_force; nazi_chance += (radicalization+capital_strike_progress+coup_progress)*political_crisis_progress; bracht_r = dvp_r; bracht_r += dnvp_r if z_relation < 25; bracht_r += z_r if z_relation < 45; bracht_r += nsdap_r if nazi_chance >= 200
 go-to: bracht_falls if bracht_r < 50; bracht_wins if bracht_r >= 50
@@ -1595,9 +1591,8 @@ Wilhelm Marx has appointed Otto Braun as chancellor. [? if braun_removed : He fi
 
 - @emergency_no_confidence
 
-// Non-SPD playable coalitions
-
-// National Front
+# Non-SPD playable coalitions
+# National Front
 @national_front_coalition
 title: A "National Front" coalition
 view-if: national_front
@@ -1607,7 +1602,7 @@ unavailable-subtitle: [? if z_national : Z + ?]BVP + DVP + Others + DNVP + NSDAP
 on-arrival: started = 0
 go-to: root
 
-// Bourgeois
+# Bourgeois
 @bourgeois_coalition
 title: A "Bourgeois" Coalition
 subtitle: Z + BVP + [+ ddp_name +] + DVP + Others ([+ bourgeois_coalition +]%)
@@ -1624,7 +1619,7 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; in_bourgeois_coalition = 
 
 The Bourgeois Coalition is formed, with Brüning as its chancellor. We will have to contend with opposition politics for the time being.
 
-// USPD majority
+# USPD majority
 
 @uspd_majority
 title: The USPD may govern alone.
@@ -1654,8 +1649,7 @@ The Communists quickly rebuild Germany in the Soviet image, bringing it into the
 
 # todo: playable thalmann chancellorship
 
-// Right coalition
-
+# Right coalition
 @right_coalition
 title: A right-wing coalition may be formed.
 subtitle: Z + [+ bvp_name +] + DVP + DNVP + Others ([+ right_coalition +]%)
@@ -1687,7 +1681,7 @@ Even though the DNVP is very reluctant to participate in such a coalition, they 
 
 With the DNVP's new more amicable position towards participation in parliamentary politics, the right-wing coalition is successfully formed.
 
-// No govt – be a nuisance
+# No govt – be a nuisance
 
 @no_govt
 view-if: year >= 1925
@@ -1783,12 +1777,12 @@ Q.old_middle_nsdap += 5;
 Q.new_middle_nsdap += 5;
 Q.rural_nsdap += 5;
 Q.unemployed_nsdap += 3;
-// Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
+# Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
 if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
     Q.workers_spd -= 2;
 }
 if (Q.pro_republic < 36 && Q.left_strength < 50) {
-    // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Hitler and the Center.
+    # TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Hitler and the Center.
     Q.z_relation -= 5;
     Q.dvp_relation -= 5;
     Q.ddp_relation -= 3;
@@ -1860,8 +1854,8 @@ on-arrival: spd_in_government = 0; spd_toleration = 1; minority_government = 1; 
 We have decided to tolerate Brüning's government. This means that we will vote against no-confidence votes to make sure they fail, but also that we will not be directly participating as ministers in the government. Thus, we can prevent a new election and stop the far right from entering government.
 
 
-// Far Right Options
-// Far Right
+# Far Right Options
+# Far Right
 
 @far_right_coalition
 title: Far-right coalition
@@ -1909,7 +1903,7 @@ Through their violent electioneering, the Nazis have, together with the DNVP, wo
 
 The key link now is the Center Party. They have been a valuable partner in upholding the Weimar Constitution - will they stand by us to stop Hitler from destroying it? [? if dvp_relation >= 60 : The DVP too has been surprisingly friendly towards us. Can we convince them to stop Hitler? ?]
 
-// Enabling Act
+# Enabling Act
 
 @enabling_menu
 
@@ -2065,8 +2059,7 @@ on-arrival: spd_rebel = 1; sa_militancy -= 0.2; sa_strength *= 0.8; reichswehr_l
 
 - @civil_war: To victory!
 
-// Schleicher
-
+# Schleicher
 @no_majority_schleicher
 subtitle: Who will Hindenburg appoint in his place?
 on-arrival: schleicher_times += 1
@@ -2250,8 +2243,7 @@ Having successfully cobbled together an odd mismatch across the political spectr
 
 - @game_over: Game over.
 
-// Papen
-
+# Papen
 @hindenburg_appoints_papen
 on-arrival: chancellor = "Papen"; chancellor_party = "I"; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; sa_banned = 0; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I"; papen_two_term = 1;
 
@@ -2286,9 +2278,9 @@ Schleicher's government is deeply unpopular among all parties of the Reichstag. 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 
-//
+#
 
-// Hitler
+# Hitler
 
 @hitler_chancellor
 on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"
@@ -2299,7 +2291,7 @@ There is no path to a majority government for now. The scheming around President
 
 # if NSDAP is largest party and Hindenburg is president, then Hindenburg appoints Hitler chancellor.
 
-// Hitler althist
+# Hitler althist
 
 @no_majority_hitler
 title: Hitler appoints himself chancellor.
@@ -2394,14 +2386,14 @@ call: set_next_election_time
 
 The motion of no confidence in Hitler succeeds, and he is replaced by vice-chancellor Papen, who calls snap elections. The Nazis, still controlling most state governments after the Reichstag Fire Decree, continue to consolidate, hoping to gain in the next elections, while Papen looks to the Reichswehr in the hopes of declaring martial law.
 
-// Harzburg Front
+# Harzburg Front
 
 @switch_to_papen
 on-arrival: chancellor = "Papen"; chancellor_party = "I"; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; sa_banned = 0; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I";
 
 Following the elections, there is no clear majority. Rather than appoint a continuation of the Harzburg Cabinet however, disappointed with their performance, Hindenburg appoints the independent Franz von Papen, who calls snap elections in a gambit to gain majority Reichstag support through a coalition with the Nazis. Papen is an independent formerly from the Center Party, and is significantly to the right of the majority of the Center Party.
 
-// Harzburg AltHist - Seldte
+# Harzburg AltHist - Seldte
 
 @switch_to_seldte
 on-arrival: chancellor = "Seldte"; chancellor_party = "DNVP"; time_to_election = 3
@@ -2456,7 +2448,7 @@ Party offices are raided by army and police forces. Our leaders are rounded up a
 
 - @game_over: Game over.
 
-// Black Brown
+# Black Brown
 
 @black_brown
 title: Brüning turns to his right for coalition support.
@@ -2502,7 +2494,7 @@ Somehow, the NSDAP has agreed to join Brüning's government, giving it [+ hitler
 
 Immediately, democratic reforms are undone as the cabinet sets to work sending Germany back into the dark ages. For now, democracy is being preserved, but the Nazis are sure to take their first opportunity to fully destroy it.
 
-// Government Centre
+# Government Centre
 
 @ministries
 
@@ -2796,7 +2788,7 @@ go-to: ministries
 - @dvp_chancellor_scholz
 - @dvp_chancellor_luther
 
-// SPD
+# SPD
 
 @chancellor_levi
 view-if: levi_advisor = 1 and levi_dead = 0 and in_spd_majority == 0
@@ -3388,7 +3380,7 @@ Gustav Noske, a key figure of our party’s right wing, has been appointed Chanc
 view-if: succession_levi == 1 or succession_muller == 1
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-// Z
+# Z
 
 @z_chancellor_bruning
 title: Let the Center Party have their chancellor.
@@ -3435,9 +3427,9 @@ go-to: ministries
 
 [? if spd_r > z_r and chancellor != "Adenauer”: This is highly unexpected, and many in the left and center of our party are criticizing this decision. ?] [? if chancellor = "Adenauer”: The incumbent ?] Konrad Adenauer of the Center Party has been appointed chancellor.
 
-// USPD
+# USPD
 
-// Thalmann
+# Thalmann
 @uspd_chancellor_thalmann
 choose-if: (president_party == "SPD” or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
@@ -3461,7 +3453,7 @@ go-to: postwar_left
 
 Despite our appointing of [+ chancellor +] as chancellor, there is no appetite for a civil war so soon after the last. [+ chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
 
-// Liebknecht
+# Liebknecht
 
 @uspd_chancellor_liebknecht
 choose-if: (president_party == "SPD” or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
@@ -3486,7 +3478,7 @@ go-to: postwar_left
 
 Despite our appointing of [+ chancellor +] as chancellor, there is no appetite for a civil war so soon after the last. [+ chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
 
-// DDP
+# DDP
 
 @ddp_chancellor_lemmer
 title: Let Ernst Lemmer of the DDP be chancellor.
@@ -4226,7 +4218,7 @@ view-if: in_spd_majority == 0
 on-arrival: vice_chancellor = "Vacant"; vice_chancellor_party = "Vacant"; leverage += 5;
 go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-// Z
+# Z
 
 @z_vice_chancellor_bruning
 title: Let the Center Party have their vice-chancellor.
@@ -4273,9 +4265,9 @@ go-to: ministries
 
 [? if spd_r > z_r and vice_chancellor != "Adenauer”: This is unexpected, and many in the left and center of our party are unsure about this decision. ?] [? if vice_chancellor = "Adenauer”: The incumbent ?] Konrad Adenauer of the Center Party has been appointed vice-chancellor.
 
-// USPD
+# USPD
 
-// Thalmann
+# Thalmann
 @uspd_vice_chancellor_thalmann
 choose-if: (president_party == "SPD” or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as vice-chancellor. ?]
@@ -4299,7 +4291,7 @@ go-to: postwar_left
 
 Despite our appointing of [+ vice-chancellor +] as vice-chancellor, there is no appetite for a civil war so soon after the last. [+ vice-chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
 
-// Liebknecht
+# Liebknecht
 
 @uspd_vice_chancellor_liebknecht
 choose-if: (president_party == "SPD” or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
@@ -4324,7 +4316,7 @@ go-to: postwar_left
 
 Despite our appointing of [+ vice-chancellor +] as vice-chancellor, there is no appetite for a civil war so soon after the last. [+ vice-chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
 
-// DDP
+# DDP
 
 @ddp_vice_chancellor_lemmer
 title: Let Ernst Lemmer of the DDP be vice-chancellor.
