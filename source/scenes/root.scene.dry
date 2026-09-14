@@ -227,7 +227,7 @@ For other, non-difficulty related tweaks.
 - @1931_start: Proceed to 1931 start menu
 
 @enable_sandbox
-subtitle: Enables the Sandbox Pinned Card - allowing you to alter various ganeplay elements
+subtitle: Enables the Sandbox Pinned Card - allowing you to alter various gameplay elements
 view-if: sandbox_enabled = 0
 on_arrival: sandbox_enabled = 1
 go-to: settings
@@ -235,7 +235,7 @@ go-to: settings
 The Sandbox card has been enabled. Enjoy!
 
 @disable_sandbox
-subtitle: Disenables the Sandbox Pinned Card - disallowing you to alter various ganeplay elements
+subtitle: disables the Sandbox Pinned Card - disallowing you to alter various gameplay elements
 view-if: sandbox_enabled = 1
 on_arrival: sandbox_enabled = 0
 go-to: settings
