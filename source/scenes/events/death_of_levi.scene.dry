@@ -22,7 +22,7 @@ go-to: election_1928.chancellor_menu
 
 Who should succeed Levi as Chancellor?
 
-@levi_chancellor_succession
+@levi_vice_chancellor_succession
 view-if: vice_chancellor == "Levi"
 go-to: election_1928.vice_chancellor_menu
 
