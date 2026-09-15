@@ -1787,18 +1787,18 @@ Q.old_middle_nsdap += 5;
 Q.new_middle_nsdap += 5;
 Q.rural_nsdap += 5;
 Q.unemployed_nsdap += 3;
-# Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
+// Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
 if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
     Q.workers_spd -= 2;
 }
 if (Q.pro_republic < 36 && Q.left_strength < 50) {
-    # TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Hitler and the Center.
+    // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Hitler and the Center.
     Q.z_relation -= 5;
     Q.dvp_relation -= 5;
     Q.ddp_relation -= 3;
     Q.workers_spd -= 3;
     Q.unemployed_spd -= 3;
-    Q.new_middle_spd -= 5
+    Q.new_middle_spd -= 5;
     Q.old_middle_spd -= 6;
     Q.rural_spd -= 6;
     Q.catholics_spd -= 3;
@@ -1839,7 +1839,7 @@ if (Q.far_right_coalition >= 50) {
     Q.coup_progress += 3;
 }
 if (Q.no_majority_elections >= 2) {
-    Q.political_crisis_progress += 1
+    Q.political_crisis_progress += 1;
 }
 !}
 
