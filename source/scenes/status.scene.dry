@@ -131,8 +131,8 @@ Prussian police: [+ prussian_police_strength +] thousand members ([+ prussia_for
 
 @politics
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_r - 3;
-Q.z_votes_minus_bvp = Q.z_votes - 3;
+Q.z_minus_bvp_votes = z_votes*0.8;
+Q.bvp_votes = z_votes*0.2;
 if (Q.rb_strength) {
     Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
@@ -185,7 +185,7 @@ Associated Paramilitary: [? if reichsbanner_ddp == 0 : Reichsbanner | Strength: 
 
 Leader: [+ z_party_leader_fullname +] ([+ z_ideology +]) | Relations: [+ z_relation : relationships +] 
 
-Seats: [+ z_minus_bvp_r +]% | Polling: [+ z_votes_minus_bvp +]%
+Seats: [+ z_minus_bvp_r +]% | Polling: [+ z_minus_bvp_votes +]%
 
 Associated Paramilitary: [? if reichsbanner_z == 0 : Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?][? if reichsbanner_z == 1 : None ?]
 
@@ -193,7 +193,7 @@ Associated Paramilitary: [? if reichsbanner_z == 0 : Reichsbanner | Strength: [+
 
 Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +]) | Relations: [+ bvp_relation : relationships +] 
 
-Seats: 3% | Polling: 3%
+Seats: [+ bvp_r +]% | Polling: [+ bvp_votes +]%
 
 Associated Paramilitary: Bayenwacht
 
@@ -221,8 +221,8 @@ Associated Paramilitary: SA | Strength: [+ sa_strength_2 +] thousand ([+ sa_forc
 
 @polls
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_r - 3;
-Q.z_votes_minus_bvp = Q.z_votes - 3;
+Q.z_minus_bvp_votes = z_votes*0.8;
+Q.bvp_votes = z_votes*0.2;
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
@@ -274,9 +274,9 @@ Support for Nationalism: [+ nationalism_disp +]%
 
 [+ ddp_name +]: Workers: [+ workers_ddp_display +]% | New Middle Class: [+ new_middle_ddp_display +]% | Old Middle Class: [+ old_middle_ddp_display +]% | Rural: [+ rural_ddp_display +]% | Unemployed: [+ unemployed_ddp_display +]% | Catholics: [+ catholics_ddp_display +]% | Overall: [+ ddp_votes +]%
 
-Z: Workers: [+ workers_z_display +]% | New Middle Class: [+ new_middle_z_display +]% | Old Middle Class: [+ old_middle_z_display +]% | Rural: [+ rural_z_display +]% | Unemployed: [+ unemployed_z_display +]% | Catholics: [+ catholics_z_display +]% | Overall: [+ z_votes_minus_bvp +]%
+Z: Workers: [+ workers_z_display +]% | New Middle Class: [+ new_middle_z_display +]% | Old Middle Class: [+ old_middle_z_display +]% | Rural: [+ rural_z_display +]% | Unemployed: [+ unemployed_z_display +]% | Catholics: [+ catholics_z_display +]% | Overall: [+ z_minus_bvp_votes +]%
 
-BVP: Bavaria: 3% | Overall: 3%
+BVP: Overall: [+ bvp_votes +]%
 
 DVP: Workers: [+ workers_dvp_display +]% | New Middle Class: [+ new_middle_dvp_display +]% | Old Middle Class: [+ old_middle_dvp_display +]% | Rural: [+ rural_dvp_display +]% | Unemployed: [+ unemployed_dvp_display +]% | Catholics: [+ catholics_dvp_display +]% | Overall: [+ dvp_votes +]%
 
