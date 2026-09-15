@@ -422,13 +422,11 @@ A Left Front ([+ spd_name +] + [+ uspd_name +]): [+ left_coalition +]%
 
 USPD-tolerated SPD Minority (SPD alone): [+ uspd_tolerated_spd_minority +]%;
 
-USPD-tolerated Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ uspd_tolerated_social_liberal_coalition +]% 
+[? if social_liberal_coalition > 50 : Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ social_liberal_coalition +]% ?]
 
-Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ social_liberal_coalition +]%
+[? if social_christian_coalition > 50 : Social-Christian Coalition (SPD + Z): [+ social_christian_coalition +]% ?]
 
-Social-Christian Coalition (SPD + Z): [+ social_christian_coalition +]%
-
-USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ uspd_tolerated_weimar_coalition +]%
+[? if weimar_coalition < 50 : USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ uspd_tolerated_weimar_coalition +]% ?]
 
 Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ weimar_coalition +]%
 
