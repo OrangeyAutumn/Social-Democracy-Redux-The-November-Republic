@@ -2,8 +2,8 @@ title: Status
 new-page: true
 is-special: true
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_r - 3;
-Q.z_votes_minus_bvp = Q.z_votes - 3;
+Q.z_minus_bvp_votes = z_votes*0.8;
+Q.bvp_votes = z_votes*0.2;
 if (Q.unemployed) {
     Q.unemployed_2 = Q.unemployed.toFixed(1);
 }
@@ -55,8 +55,8 @@ Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand (
 
 @government
 on-arrival: {!
-Q.z_minus_bvp_r = Q.z_r - 3;
-Q.z_votes_minus_bvp = Q.z_votes - 3;
+Q.z_minus_bvp_votes = z_votes*0.8;
+Q.bvp_votes = z_votes*0.2;
 if (Q.rb_strength) {
     Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
