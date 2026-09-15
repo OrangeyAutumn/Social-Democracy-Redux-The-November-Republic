@@ -110,8 +110,8 @@ if (Q.z_r >= Q.spd_r && Q.z_r >= Q.uspd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.dv
 if (Q.dnvp_r >= Q.spd_r && Q.dnvp_r >= Q.uspd_r && Q.dnvp_r >= Q.z_r && Q.dnvp_r >= Q.dvp_r && Q.dnvp_r >= Q.nsdap_r) {
     Q.largest_party = 'DNVP';
 }
-Q.z_minus_bvp_r = Q.z_r*0.8;
-Q.bvp_r = Q.z_r*0.2
+Q.z_minus_bvp_r = Q.z_r*0.8.toFixed(1);
+Q.bvp_r = Q.z_r*0.2.toFixed(1);
 // coalitions
 Q.uspd_tolerated_spd_minority = Q.spd_r + Q.uspd_r;
 Q.uspd_tolerated_social_liberal_coalition = Q.spd_r + Q.uspd_r + Q.ddp_r;
