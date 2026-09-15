@@ -1,0 +1,23 @@
+Title: [+ president +]'s Inauguration
+subtitle: We must be prepared for the worst.
+view-if: (year = 1925 and month = 5 and ebert_dead = 1) or (year = 1926 and month = 3)
+max-visits: 1
+tags: event
+new-page: true
+
+= [+ president +]'s Inauguration
+
+[? if president == "Hindenburg" : Paul von Hindenburg has now been inaugurated as the second President of the Republic, placing many crucial levers of government in the hands of an ardent reactionary. We must wait and see what his first actions shall be. ?][? if president_party == "Z" : [+ z_presidential_candidate_fullname +] has now been inaugurated as the second President of the Republic. Though we differ on many areas, we can be assured that [+ President +] will work to uphold our young Republic. ?][? if president == "Gessler" : Otto Gessler has now been inaugurated as the second President of the Republic. Though he is controversial within our own party, some on our reformist wing hope his military connections and appeal to the DVP will bind the Right and the Military to our young Republic. ?][? if president_party" == "SPD" and president != "Ebert" : [+ president +] has now been inaugurated as the second President of the Republic. With our control over the Presidency cemented for another seven years, the future looks bright for the Republic and for Social Democracy. ?][? if president == "Ebert" : Friedrich Ebert has now been inaugurated for a second time as President of the Republic. With our control over the Presidency cemented for another seven years, the future looks bright for the Republic and for Social Democracy. ?]
+
+- @hindenburg: All we can do now is wait...
+- @z: Congratulations, President [+ president +]!
+- @spd: Seven more years!
+
+@hindenburg
+view-if: president == "Hindenburg"
+
+@z
+view-if: president_party == "Z" or president == "Gessler"
+
+@spd
+view-if: president_party == "SPD"
