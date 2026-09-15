@@ -110,8 +110,8 @@ if (Q.z_r >= Q.spd_r && Q.z_r >= Q.uspd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.dv
 if (Q.dnvp_r >= Q.spd_r && Q.dnvp_r >= Q.uspd_r && Q.dnvp_r >= Q.z_r && Q.dnvp_r >= Q.dvp_r && Q.dnvp_r >= Q.nsdap_r) {
     Q.largest_party = 'DNVP';
 }
-Q.z_minus_bvp_r = z_r*0.8;
-Q.bvp_r = z_r*0.2
+Q.z_minus_bvp_r = Q.z_r*0.8;
+Q.bvp_r = Q.z_r*0.2
 // coalitions
 Q.uspd_tolerated_spd_minority = Q.spd_r + Q.uspd_r;
 Q.uspd_tolerated_social_liberal_coalition = Q.spd_r + Q.uspd_r + Q.ddp_r;
@@ -204,9 +204,9 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
 if (Q.sapd_formed == 1) {
     data = [
-        {    "id": uspd_name,
-            "legend": uspd_name,
-            "name": uspd_name,
+        {    "id": Q.uspd_name,
+            "legend": Q.uspd_name,
+            "name": Q.uspd_name,
             "seats": Q.uspd_r*5,
         },
         {
@@ -242,13 +242,13 @@ if (Q.sapd_formed == 1) {
             "id": "z",
             "legend": "Center",
             "name": "Center",
-            "seats": z_minus_bvp_r*5,
+            "seats": Q.z_minus_bvp_r*5,
         },
         {
             "id": "bvp",
             "legend": "BVP",
             "name": "BVP",
-            "seats": bvp_r*5,
+            "seats": Q.bvp_r*5,
         },
         {
             "id": "dvp",
@@ -289,7 +289,7 @@ if (Q.sapd_formed == 1) {
 }
 else {
     data = [
-        {   "id": uspd_name,
+        {   "id": Q.uspd_name,
             "legend": Q.uspd_name,
             "name": Q.uspd_name,
             "seats": Q.uspd_r*5,
@@ -321,13 +321,13 @@ else {
             "id": "z",
             "legend": "Center",
             "name": "Center",
-            "seats": (z_minus_bvp_r)*5,
+            "seats": Q.z_minus_bvp_r*5,
         },
         {
             "id": "bvp",
             "legend": "BVP",
             "name": "BVP",
-            "seats": bvp_r*5,
+            "seats": Q.bvp_r*5,
         },
         {
             "id": "dvp",
