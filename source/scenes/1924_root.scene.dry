@@ -499,35 +499,49 @@ Q.rural_prole = 0.2;
 Q.middle_prole = 0.5;
 Q.lumpenprole = 0;
 
+// Starting Polling
+Q.uspd_votes = 8.9;
+Q.sapd_votes = 0;
+Q.spd_votes = 26.0;
+Q.z_votes = 17.3;
+Q.z_minus_bvp_votes = 13.6;
+Q.bvp_votes = 3.7;
+Q.ddp_votes = 6.3;
+Q.dvp_votes = 10.1;
+Q.dnvp_votes = 20.5;
+Q.nsdap_votes = 3.0;
+Q.other_votes = 7.9;
+
 // Current Reichstag composition
-// % of Reichstag in Jan 1928
+// % of Reichstag in Nov 1924
 // source: wikipedia
-// note: the Z figures also include the BVP (Bavarian people's party)
-// since they were ideologically similar, but they were separate parties.
-// They did not have a CDU/CSU-style relationship.
-Q.spd_r = 26;
+Q.uspd_r = 12.6;
 Q.sapd_r = 0;
-Q.uspd_r = 9;
-Q.z_r = 17;
-Q.ddp_r = 6;
-Q.dvp_r = 10;
-Q.dnvp_r = 20;
-Q.nsdap_r = 3;
-Q.other_r = 9;
+Q.spd_r = 20.5;
+Q.z_r = 16.6;
+Q.z_minus_bvp_r = 13.4;
+Q.bvp_r = 3.2;
+Q.ddp_r = 5.65;
+Q.dvp_r = 9.2;
+Q.dnvp_r = 19.5;
+Q.nsdap_r = 6.5;
+Q.other_r = 9.4;
 
 Q.bourgeois_coalition = 41;
 Q.far_right_coalition = 23;
 
 // diff from prev
-Q.old_spd_r = 20;
+Q.old_spd_r = 21.9;
 Q.old_sapd_r = 0;
-Q.old_uspd_r = 12;
-Q.old_z_r = 17;
-Q.old_ddp_r = 6;
-Q.old_dvp_r = 10;
-Q.old_dnvp_r = 19;
-Q.old_nsdap_r = 3;
-Q.old_other_r = 9;
+Q.old_uspd_r = 19.7;
+Q.old_z_r = 17.7;
+Q.old_z_minus_bvp_r = 13.6;
+Q.old_bvp_r = 4.2;
+Q.old_ddp_r = 8.3;
+Q.old_dvp_r = 13.9;
+Q.old_dnvp_r = 15.1;
+Q.old_nsdap_r = 0;
+Q.old_other_r = 3.4;
 
 // for changing the DDP's name to the DStP
 Q.ddp_name = "DDP";
