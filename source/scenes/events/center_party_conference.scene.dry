@@ -43,8 +43,8 @@ on-arrival: resources -= 1; z_party_leader = "Joos"; catholics_spd += 5; workers
 With our grassroots connections as well as a professional campaign, we have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the Center Party to the working class.
 
 @stegerwald
-view-if: z_relation < 45 or pro_republic < 50 or in_right_coalition or not spd_prussia
-choose-if: ((z_relation < 35 and pro_republic < 55) or (in_right_coalition and not spd_prussia)) and (in_right_coalition or not spd_prussia)
+view-if: z_relation < 45 or pro_republic < 50 or in_right_coalition or not spd_prussia or chancellor == "Stegerwald"
+choose-if: not spd_prussia or chancellor == "Stegerwald"
 unavailable-subtitle: Stegerwald lacks the clout necessary to win.
 on-arrival: z_party_leader = "Stegerwald"; z_relation -= 10; nationalism += 4; socialism -= 3; left_strength += 5; catholics_z -= 10; catholics -= 5; stegerwald_timer = 1
 
