@@ -18,7 +18,7 @@ if (Q.economic_growth) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [+ president_relation : relationships +]
+President: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -73,7 +73,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [+ president_relation : relationships +]
+President: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -145,7 +145,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [+ president_relation : relationships +]
+President: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -238,7 +238,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [+ president_relation : relationships +]
+President: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -321,7 +321,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [+ president_relation : relationships +]
+President: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
