@@ -477,7 +477,7 @@ go-to: chancellor_menu
 - @black_brown
 - @schleicher_coalition
 - @national_front_coalition
-- @no_majority
+- @no_majority: Thus, there is no clear majority.
 - @brauns_dilemma
 - @no_majority_hitler
 - @no_govt_3
