@@ -1,14 +1,14 @@
-title: Fall of the [? if chancellor == "Marx" : Marx IV ?][? if chancellor == "Brüning" : Brüning II ?] government
+title: Fall of the [+ chancellor +] government
 subtitle: The cabinet has collapsed on the issue of schooling
-view-if: year == 1928 and month >= 2 and marx_iv_seen
+view-if: year == 1928 and month >= 2 and in_right_coalition == 1
 new-page: true
 max-visits: 1
 tags: event
 on-arrival: time_to_election = 3; dnvp_in_government = 0; in_right_coalition = 0
 call: set_next_election_time
 
-= Fall of the [? if chancellor == "Marx" : Marx IV ?][? if chancellor == "Brüning" : Brüning II ?] Government
+= Fall of the [+ chancellor +] Government
 
-The cabinet of [? if chancellor == "Marx" : Wilhelm Marx ?][? if chancellor == "Brüning" : Heinrich Brüning ?] has finally collapsed in a dispute over school law, with the coalition unable to agree on one due to the concerns of the DVP's more secular wing.
+The cabinet of Chancellor [+ chancellor +] has finally collapsed in a dispute over school law, with the coalition unable to agree on one due to the concerns of the DVP's more secular wing.
 
 As a result, the Reichstag has been dissolved for new elections for [+ next_election_month : month +] [+ next_election_year +].
