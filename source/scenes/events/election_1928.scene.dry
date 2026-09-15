@@ -3494,7 +3494,7 @@ Despite our appointing of [+ chancellor +] as chancellor, there is no appetite f
 title: Let Ernst Lemmer of the DDP be chancellor.
 view-if: social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1
 subtitle: Ernst Lemmer is on the left wing of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Lemmer"; chancellor_party = Q.ddp_name; leverage += 5
+on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Lemmer"; chancellor_party = ddp_name; leverage += 5
 go-to: ministries
 
 [? if spd_r > ddp_r and chancellor != "Lemmer": This is highly unexpected, and many in the left and center of our party are criticizing this decision. ?] [? if chancellor = "Lemmer": The incumbent ?] Ernst Lemmer of the DDP has been appointed chancellor.
@@ -3503,7 +3503,7 @@ go-to: ministries
 title: Let Ernst Koch Weser of the DDP be chancellor.
 view-if: (social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1) and ddp_leader == "Koch Weser"
 subtitle: Ernst Koch Weser is the leader of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Koch weser"; chancellor_party = Q.ddp_name; leverage += 5
+on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Koch weser"; chancellor_party = ddp_name; leverage += 5
 go-to: ministries
 
 [? if spd_r > ddp_r and chancellor != "Koch Weser": This is highly unexpected, and many in the left and center of our party are criticizing this decision. ?] [? if chancellor = "Koch weser": The incumbent ?] Ernst Koch Weser of the DDP has been appointed chancellor.
@@ -3512,7 +3512,7 @@ go-to: ministries
 title: Let Hermann Dietrich of the DDP be chancellor.
 view-if: social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1
 subtitle: Hermann Dietrich is on the right wing of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Dietrich"; chancellor_party = Q.ddp_name; leverage += 5
+on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Dietrich"; chancellor_party = ddp_name; leverage += 5
 go-to: ministries
 
 [? if spd_r > ddp_r and chancellor != "Dietrich": This is highly unexpected, and many in the right and center of our party are criticizing this decision. ?] [? if chancellor = "Dietrich": The incumbent ?] Hermann Dietrich of the DDP has been appointed chancellor.
@@ -3521,7 +3521,7 @@ go-to: ministries
 title: Let Wilhelm Külz of the DDP be chancellor.
 view-if: social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1
 subtitle: Wilhelm Külz is a prominent member of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Külz"; chancellor_party = Q.ddp_name; leverage += 5
+on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 3; chancellor = "Külz"; chancellor_party = ddp_name; leverage += 5
 go-to: ministries
 
 [? if spd_r > ddp_r and chancellor != "Külz": This is highly unexpected, and many in the right and center of our party are criticizing this decision. ?] [? if chancellor = "Külz": The incumbent ?] Wilhelm Külz of the DDP has been appointed chancellor.
@@ -4305,7 +4305,7 @@ The Bourgeois Parties and the reactionary forces of the right prepare for the wo
 title: Let Ernst Lemmer of the DDP be vice-chancellor.
 view-if: social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1
 subtitle: Ernst Lemmer is on the left wing of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Lemmer"; vice_chancellor_party = Q.ddp_name; leverage += 3
+on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Lemmer"; vice_chancellor_party = ddp_name; leverage += 3
 go-to: ministries
 
 [? if spd_r > ddp_r and vice_chancellor != "Lemmer": This is unexpected, and many in the left and center of our party are unsure about this decision. ?] [? if vice_chancellor = "Lemmer": The incumbent ?] Ernst Lemmer of the DDP has been appointed vice-chancellor.
@@ -4314,7 +4314,7 @@ go-to: ministries
 title: Let Ernst Koch Weser of the DDP be vice-chancellor.
 view-if: (social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1) and ddp_leader == "Koch Weser"
 subtitle: Ernst Koch Weser is the leader of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Koch weser"; vice_chancellor_party = Q.ddp_name; leverage += 3
+on-arrival: left_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Koch weser"; vice_chancellor_party = ddp_name; leverage += 3
 go-to: ministries
 
 [? if spd_r > ddp_r and vice_chancellor != "Koch Weser": This is unexpected, and many in the left and center of our party are unsure about this decision. ?] [? if vice_chancellor = "Koch weser": The incumbent ?] Ernst Koch Weser of the DDP has been appointed vice-chancellor.
@@ -4323,7 +4323,7 @@ go-to: ministries
 title: Let Hermann Dietrich of the DDP be vice-chancellor.
 view-if: social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1
 subtitle: Hermann Dietrich is on the right wing of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Dietrich"; vice_chancellor_party = Q.ddp_name; leverage += 3
+on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Dietrich"; vice_chancellor_party = ddp_name; leverage += 3
 go-to: ministries
 
 [? if spd_r > ddp_r and vice_chancellor != "Dietrich": This is unexpected, and many in the right and center of our party are unsure about this decision. ?] [? if vice_chancellor = "Dietrich": The incumbent ?] Hermann Dietrich of the DDP has been appointed vice-chancellor.
@@ -4332,7 +4332,7 @@ go-to: ministries
 title: Let Wilhelm Külz of the DDP be vice-chancellor.
 view-if: social_liberal_coalition == 1 or weimar_coalition == 1 or grand_coalition == 1 or popular_front_coalition == 1 or neo_weimar_coalition == 1 or progressive_coalition == 1
 subtitle: Wilhelm Külz is a prominent member of the [+ ddp_name +]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Külz"; vice_chancellor_party = Q.ddp_name; leverage += 3
+on-arrival: right_dissent += 2; ddp_relation += 6; z_relation += 1; vice_chancellor = "Külz"; vice_chancellor_party = ddp_name; leverage += 3
 go-to: ministries
 
 [? if spd_r > ddp_r and vice_chancellor != "Külz": This is unexpected, and many in the right and center of our party are unsure about this decision. ?] [? if vice_chancellor = "Külz": The incumbent ?] Wilhelm Külz of the DDP has been appointed vice-chancellor.
