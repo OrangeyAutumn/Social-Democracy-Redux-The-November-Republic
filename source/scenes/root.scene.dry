@@ -1,5 +1,6 @@
 title: Root Scene
 new-page: true
+on-arrival: use_decimals = 1; sandbox_enabled = 0; ebert_lives = 0; president_marx = 0; new_shuffle = 0;
 go-to: post_event if started = 1; start_menu if started = 0
 
 # TODO: do that thing that we did before...
@@ -15,7 +16,6 @@ go-to: start_menu_2
 <img src="img/reichstag_2.jpg" alt="The Reichstag building">
 
 @start_menu_2
-on-arrival: use_decimals = 1; sandbox_enabled = 0; ebert_lives = 0; president_marx = 0; new_shuffle = 0;
 
 - @start: Start game
 - @context: Context and Mechanics
