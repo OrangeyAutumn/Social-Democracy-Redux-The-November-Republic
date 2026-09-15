@@ -204,9 +204,9 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
 if (Q.sapd_formed == 1) {
     data = [
-        {    "id": "uspd",
-            "legend": "USPD",
-            "name": "USPD",
+        {    "id": uspd_name,
+            "legend": uspd_name,
+            "name": uspd_name,
             "seats": Q.uspd_r*5,
         },
         {
@@ -289,9 +289,9 @@ if (Q.sapd_formed == 1) {
 }
 else {
     data = [
-        {   "id": "uspd",
-            "legend": "USPD",
-            "name": "USPD",
+        {   "id": uspd_name,
+            "legend": Q.uspd_name,
+            "name": Q.uspd_name,
             "seats": Q.uspd_r*5,
         },
         {
@@ -966,7 +966,7 @@ In response to the USPD's entrance into the government, the right-wing immediate
 - @civil_war: A civil war, then.
 
 @post_war_left_coalition
-on-arrival: uspd_goals_seen = 0; leverage = ((spd_r/(spd_r+uspd_r))*(uspd_relation/1.5)); leverage *= 0.8 if uspd_r > spd_r; leverage *= 0.6 if uspd_r >= 50; foreign_minister_party = "USPD"; interior_minister_party = "USPD"; justice_minister_party = "USPD"; labor_minister_party = "USPD"; reichswehr_minister_party = "USPD"; economic_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD";
+on-arrival: uspd_goals_seen = 0; leverage = ((spd_r/(spd_r+uspd_r))*(uspd_relation/1.5)); leverage *= 0.8 if uspd_r > spd_r; leverage *= 0.6 if uspd_r >= 50; foreign_minister_party = uspd_name; interior_minister_party = uspd_name; justice_minister_party = uspd_name; labor_minister_party = uspd_name; reichswehr_minister_party = uspd_name; economic_minister_party = uspd_name; finance_minister_party = uspd_name; agriculture_minister_party = uspd_name;
 go-to: postwar_left
 
 In response to the USPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
@@ -1086,56 +1086,56 @@ This coalition arrangement is tolerable to all.
 @drop_labor_left
 title: Drop the Labor Ministry.
 view-if: labor_minister_party = "SPD"
-on-arrival: labor_minister_party = "USPD"; leverage += 5;
+on-arrival: labor_minister_party = uspd_name; leverage += 5;
 tags: drop_mins_left
 go-to: postwar_left
 
 @drop_interior_left
 title: Drop the Interior Ministry.
 view-if: interior_minister_party = "SPD"
-on-arrival: interior_minister_party = "USPD"; leverage += 10;
+on-arrival: interior_minister_party = uspd_name; leverage += 10;
 tags: drop_mins_left
 go-to: postwar_left
 
 @drop_finance_left
 title: Drop the Finance Ministry.
 view-if: finance_minister_party = "SPD"
-on-arrival: leverage += 10; finance_minister_party = "USPD"
+on-arrival: leverage += 10; finance_minister_party = uspd_name
 tags: drop_mins_left
 go-to: postwar_left
 
 @drop_economic_left
 title: Drop the Economic Ministry.
 view-if: economic_minister_party = "SPD"
-on-arrival: leverage += 15; economic_minister_party = "USPD"
+on-arrival: leverage += 15; economic_minister_party = uspd_name
 tags: drop_mins_left
 go-to: postwar_left
 
 @drop_justice_left
 title: Drop the Justice Ministry.
 view-if: justice_minister_party = "SPD"
-on-arrival: justice_minister_party = "USPD"; leverage += 10;
+on-arrival: justice_minister_party = uspd_name; leverage += 10;
 tags: drop_mins_left
 go-to: postwar_left
 
 @drop_foreign_left
 title: Drop the Foreign Ministry.
 view-if: foreign_minister_party = "SPD"
-on-arrival: leverage += 10; foreign_minister_party = "USPD"
+on-arrival: leverage += 10; foreign_minister_party = uspd_name
 tags: drop_mins_left
 go-to: postwar_left
 
 @drop_agriculture_left
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = "SPD"
-on-arrival: agriculture_minister_party = "USPD"; leverage += 5
+on-arrival: agriculture_minister_party = uspd_name; leverage += 5
 tags: drop_mins_left
 go-to: postwar_left
 
 @drop_reichswehr_left
 title: Drop the Reichswehr Ministry.
 view-if: reichswehr_minister_party = "SPD"
-on-arrival: reichswehr_minister_party = "USPD"; leverage += 5;
+on-arrival: reichswehr_minister_party = uspd_name; leverage += 5;
 tags: drop_mins_left
 go-to: postwar_left
 
@@ -1652,7 +1652,7 @@ The Communists have, somehow, won a majority on their own. However, to actually 
 - @left_coalition: Perhaps they can include us?
 
 @communist_victory
-on-arrival: chancellor_party = "USPD"; chancellor = "Thälmann"
+on-arrival: chancellor_party = uspd_name; chancellor = "Thälmann"
 
 The Communists quickly rebuild Germany in the Soviet image, bringing it into their sphere and rooting out reactionaries and liberals alike. The fascists have been successfully kept away from power, but are the communists really so much better? This is a question that has been debated within our party for a while, and only the next few years can tell.
 
@@ -2515,7 +2515,7 @@ Immediately, democratic reforms are undone as the cabinet sets to work sending G
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the USPD. ?] [? if in_left_front and reichswehr_minister_party == "USPD" : If the USPD controls the Reichswehr Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the USPD. ?] [? if in_left_front and reichswehr_minister_party == uspd_name : If the USPD controls the Reichswehr Ministry, the army will most likely revolt. ?]
 
 [? if historical_mode : Labor expects us to take the Labor Ministry in order to represent their interests in government and will be upset if we do not. ?]
 
@@ -3449,9 +3449,9 @@ go-to: ministries
 # Thalmann
 @uspd_chancellor_thalmann
 title: We must let the USPD have their chancellor.
-choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
+choose-if: (president_party == "SPD" or president_party == uspd_name) and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
-on-arrival: chancellor = "Thälmann"; chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 100; rfb_militancy += 0.02; workers_uspd += 5; unemployed_uspd += 10; reichswehr_loyalty -= 0.05
+on-arrival: chancellor = "Thälmann"; chancellor_party = uspd_name; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 100; rfb_militancy += 0.02; workers_uspd += 5; unemployed_uspd += 10; reichswehr_loyalty -= 0.05
 go-to: thalmann_war if not victory_republic; thalmann_no_war if victory_republic
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
@@ -3466,7 +3466,7 @@ In response to [+ chancellor +] being appointed Chancellor, the right-wing force
 - @civil_war
 
 @thalmann_no_war
-on-arrival: coup_progress += 5; leverage = ((spd_r/(spd_r+uspd_r))*uspd_relation); reformist_dissent += 5; neorevisionist_dissent += 5; z_relation -= 10; rfb_strength += 100; rb_strength -= 50; uspd_relation -= 10; uspd_influence += 3; foreign_minister_party = "USPD"; interior_minister_party = "USPD"; justice_minister_party = "USPD"; labor_minister_party = "USPD"; reichswehr_minister_party = "USPD"; economic_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD";
+on-arrival: coup_progress += 5; leverage = ((spd_r/(spd_r+uspd_r))*uspd_relation); reformist_dissent += 5; neorevisionist_dissent += 5; z_relation -= 10; rfb_strength += 100; rb_strength -= 50; uspd_relation -= 10; uspd_influence += 3; foreign_minister_party = uspd_name; interior_minister_party = uspd_name; justice_minister_party = uspd_name; labor_minister_party = uspd_name; reichswehr_minister_party = uspd_name; economic_minister_party = uspd_name; finance_minister_party = uspd_name; agriculture_minister_party = uspd_name;
 go-to: postwar_left
 
 Despite our appointing of [+ chancellor +] as chancellor, there is no appetite for a civil war so soon after the last. [+ chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
@@ -3475,9 +3475,9 @@ Despite our appointing of [+ chancellor +] as chancellor, there is no appetite f
 
 @uspd_chancellor_liebknecht
 title: We must let the USPD have their chancellor.
-choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
+choose-if: (president_party == "SPD" or president_party == uspd_name) and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
-on-arrival: chancellor = "Liebknecht"; chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 100; rfb_militancy += 0.02; workers_uspd += 5; unemployed_uspd += 10; reichswehr_loyalty -= 0.05
+on-arrival: chancellor = "Liebknecht"; chancellor_party = uspd_name; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 100; rfb_militancy += 0.02; workers_uspd += 5; unemployed_uspd += 10; reichswehr_loyalty -= 0.05
 go-to: liebknecht_war if not victory_republic; liebknecht_no_war if victory_republic
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
@@ -3492,7 +3492,7 @@ In response to [+ chancellor +] being appointed Chancellor, the right-wing force
 - @civil_war
 
 @liebknecht_no_war
-on-arrival: coup_progress += 5; leverage = ((spd_r/(spd_r+uspd_r))*uspd_relation); reformist_dissent += 5; neorevisionist_dissent += 5; z_relation -= 10; rfb_strength += 100; rb_strength -= 50; uspd_relation -= 10; uspd_influence += 3; foreign_minister_party = "USPD"; interior_minister_party = "USPD"; justice_minister_party = "USPD"; labor_minister_party = "USPD"; reichswehr_minister_party = "USPD"; economic_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD";
+on-arrival: coup_progress += 5; leverage = ((spd_r/(spd_r+uspd_r))*uspd_relation); reformist_dissent += 5; neorevisionist_dissent += 5; z_relation -= 10; rfb_strength += 100; rb_strength -= 50; uspd_relation -= 10; uspd_influence += 3; foreign_minister_party = uspd_name; interior_minister_party = uspd_name; justice_minister_party = uspd_name; labor_minister_party = uspd_name; reichswehr_minister_party = uspd_name; economic_minister_party = uspd_name; finance_minister_party = uspd_name; agriculture_minister_party = uspd_name;
 go-to: postwar_left
 
 Despite our appointing of [+ chancellor +] as chancellor, there is no appetite for a civil war so soon after the last. [+ chancellor +] is unopposed as he attempts to consolidate power. There is still, however, the matter of cabinet talks.
@@ -4289,9 +4289,9 @@ go-to: ministries
 # Thalmann
 @uspd_vice_chancellor_thalmann
 title: We must let the USPD have their vice-chancellor.
-choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
+choose-if: (president_party == "SPD" or president_party == uspd_name) and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as vice-chancellor. ?]
-on-arrival: vice_chancellor = "Thälmann"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
+on-arrival: vice_chancellor = "Thälmann"; vice_chancellor_party = uspd_name; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
 
 With great reluctance, President [+ president +] appoints [+ vice-chancellor +] as vice-chancellor.
 
@@ -4301,9 +4301,9 @@ The Bourgeois Parties and the reactionary forces of the right prepare for the wo
 
 @uspd_vice_chancellor_liebknecht
 title: We must let the USPD have their vice-chancellor.
-choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
+choose-if: (president_party == "SPD" or president_party == uspd_name) and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as vice-chancellor. ?]
-on-arrival: vice_chancellor = "Liebknecht"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
+on-arrival: vice_chancellor = "Liebknecht"; vice_chancellor_party = uspd_name; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
 go-to: liebknecht_war if not victory_republic; liebknecht_no_war if victory_republic
 
 With great reluctance, President [+ president +] appoints [+ vice-chancellor +] as vice-chancellor.
