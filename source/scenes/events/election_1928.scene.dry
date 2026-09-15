@@ -3448,6 +3448,7 @@ go-to: ministries
 
 # Thalmann
 @uspd_chancellor_thalmann
+title: We must let the USPD have their chancellor.
 choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
 on-arrival: chancellor = "Thälmann"; chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 100; rfb_militancy += 0.02; workers_uspd += 5; unemployed_uspd += 10; reichswehr_loyalty -= 0.05
@@ -3473,6 +3474,7 @@ Despite our appointing of [+ chancellor +] as chancellor, there is no appetite f
 # Liebknecht
 
 @uspd_chancellor_liebknecht
+title: We must let the USPD have their chancellor.
 choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
 on-arrival: chancellor = "Liebknecht"; chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 100; rfb_militancy += 0.02; workers_uspd += 5; unemployed_uspd += 10; reichswehr_loyalty -= 0.05
@@ -4286,6 +4288,7 @@ go-to: ministries
 
 # Thalmann
 @uspd_vice_chancellor_thalmann
+title: We must let the USPD have their vice-chancellor.
 choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as vice-chancellor. ?]
 on-arrival: vice_chancellor = "Thälmann"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
@@ -4297,6 +4300,7 @@ The Bourgeois Parties and the reactionary forces of the right prepare for the wo
 # Liebknecht
 
 @uspd_vice_chancellor_liebknecht
+title: We must let the USPD have their vice-chancellor.
 choose-if: (president_party == "SPD" or president_party == "USPD") and reformist_strength + neorevisionist_strength < left_strength and popular_front_coalition == 1 or left_coalition == 1 or progressive_coalition == 1
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as vice-chancellor. ?]
 on-arrival: vice_chancellor = "Liebknecht"; vice_chancellor_party = "USPD"; in_left_front = 1; spd_in_government = 1; uspd_goals_seen = 0; rfb_strength += 50; rfb_militancy += 0.02; workers_uspd += 3; unemployed_uspd += 5; reichswehr_loyalty -= 0.05; coup_progress += 2
