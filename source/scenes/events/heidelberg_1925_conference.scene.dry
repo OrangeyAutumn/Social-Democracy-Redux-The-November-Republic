@@ -476,7 +476,7 @@ Q.neorevisionist_leader_fullname = "Vacant";
 
 @co_leader_1_no_challenge
 view-if: spd_coleader_1 != "Vacant"
-choose-if: (spd_coleader_1 != "Vacant") and ((left_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_1_faction == "Center") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_1_faction == "Left") or ((center_votes < 50 or left_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_1_faction == "Labor") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and (spd_coleader_1_faction == "Reformist" or spd_coleader_1_faction == "Neorevisionist")
+choose-if: ((left_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_1_faction == "Center") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_1_faction == "Left") or ((center_votes < 50 or left_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_1_faction == "Labor") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and (spd_coleader_1_faction == "Reformist" or spd_coleader_1_faction == "Neorevisionist"))
 unavailable-subtitle: One of the other factions has a majority at the Conference, allowing them to force through a challenge.
 
 [+ spd_coleader_1_fullname +] does not face a challenge.
@@ -736,7 +736,7 @@ Q.neorevisionist_leader_fullname = "Vacant";
 
 @co_leader_2_no_challenge
 view-if: spd_coleader_2 != "Vacant"
-choose-if: (spd_coleader_2 != "Vacant") and ((left_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_2_faction == "Center") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_2_faction == "Left") or ((center_votes < 50 or left_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_2_faction == "Labor") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and (spd_coleader_2_faction == "Reformist" or spd_coleader_2_faction == "Neorevisionist")
+choose-if: ((left_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_2_faction == "Center") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_2_faction == "Left") or ((center_votes < 50 or left_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_2_faction == "Labor") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and (spd_coleader_2_faction == "Reformist" or spd_coleader_2_faction == "Neorevisionist"))
 unavailable-subtitle: One of the other factions has a majority at the Conference, allowing them to force through a challenge.
 
 [+ spd_coleader_2_fullname +] does not face a challenge.
@@ -996,7 +996,7 @@ Q.neorevisionist_leader_fullname = "Vacant";
 
 @co_leader_3_no_challenge
 view-if: spd_coleader_3 != "Vacant"
-choose-if: (spd_coleader_3 != "Vacant") and ((left_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_3_faction == "Center") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_3_faction == "Left") or ((center_votes < 50 or left_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_3_faction == "Labor") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and (spd_coleader_3_faction == "Reformist" or spd_coleader_3_faction == "Neorevisionist")
+choose-if: ((left_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_3_faction == "Center") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_3_faction == "Left") or ((center_votes < 50 or left_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and spd_coleader_3_faction == "Labor") or ((center_votes < 50 or labor_votes <50 or (reformist_votes+neorevisionist_votes) < 50) and (spd_coleader_3_faction == "Reformist" or spd_coleader_3_faction == "Neorevisionist"))
 unavailable-subtitle: One of the other factions has a majority at the Conference, allowing them to force through a challenge.
 
 [+ spd_coleader_3_fullname +] does not face a challenge.
