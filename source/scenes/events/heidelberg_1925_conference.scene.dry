@@ -47,7 +47,7 @@ Q.pragmatic_unity = Q.center_votes+Q.reformist_votes;
 on-display: {!
 if (!Q.neorevisionism) {
     data = [
-        {   "id": "left",
+        {   "id": "Left",
             "legend": "Left",
             "name": "Left",
             "seats": Math.round(Q.left_votes*3.98),
@@ -74,7 +74,7 @@ if (!Q.neorevisionism) {
 }
 else {
     data = [
-        {   "id": "left",
+        {   "id": "Left",
             "legend": "Left",
             "name": "Left",
             "seats": left_votes,
@@ -231,7 +231,7 @@ How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_1_faction +] fact
 - @co_leader_1_no_challenge: [+ spd_coleader_1_fullname +] faces no challenge.
 
 @co_leader_1_challenge
-choose-if: (center_votes < 50 and spd_coleader_1_faction == "Center") or (left_votes < 50 and spd_coleader_1_faction == "left") or (reformist_votes < 50 and spd_coleader_1_faction == "Reformist") or (labor_votes < 50 and spd_coleader_1_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_1_faction == "Neorevisionist") or (spd_coleader_1_faction == "non-factional")
+choose-if: (center_votes < 50 and spd_coleader_1_faction == "Center") or (left_votes < 50 and spd_coleader_1_faction == "Left") or (reformist_votes < 50 and spd_coleader_1_faction == "Reformist") or (labor_votes < 50 and spd_coleader_1_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_1_faction == "Neorevisionist") or (spd_coleader_1_faction == "non-factional")
 unavailable-subtitle: [? if center_votes > 50 and spd_coleader_1_faction == "Center" : The Center Faction has enough votes to block any challenge. ?][? if left_votes > 50 and spd_coleader_1_faction == "Left" : The Left Faction has enough votes to block any challenge. ?][? if labor_votes > 50 and spd_coleader_1_faction == "Labor" : The Labor Faction has enough votes to block any challenge. ?][? if reformist_votes > 50 and spd_coleader_1_faction == "Reformist" : The Reformist Faction has enough votes to block any challenge. ?][? if neorevisionist_votes > 50 and spd_coleader_1_faction == "Neorevisionist" : The Neorevisionist Faction has enough votes to block any challenge. ?]
 
 [+ spd_coleader_1_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
@@ -245,17 +245,17 @@ unavailable-subtitle: [? if center_votes > 50 and spd_coleader_1_faction == "Cen
 
 @incumbent_1
 view-if: spd_coleader_1 != "Vacant"
-choose-if: (left_votes >= 50 and spd_coleader_1_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_1_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_1_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_1_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_1_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "non-factional")
+choose-if: (left_votes >= 50 and spd_coleader_1_faction == "Left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_1_faction == "Left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_1_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_1_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_1_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_1_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_1_faction == "non-factional")
 
 The incumbent, [+ spd_coleader_1_fullname +], wins in a victory for the [+ spd_coleader_1_faction +] faction!
 
 - @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @left_1
-view-if: spd_coleader_1_faction != "left"
+view-if: spd_coleader_1_faction != "Left"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
-spd_coleader_1_faction = "left";
+spd_coleader_1_faction = "Left";
 if (Q.left_leader == "Crispien") {
     Q.spd_coleader_1 = "Crispien";
     Q.spd_coleader_1_fullname = "Arthur Crispien";
@@ -491,7 +491,7 @@ How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] fact
 - @co_leader_2_no_challenge: [+ spd_coleader_2_fullname +] faces no challenge.
 
 @co_leader_2_challenge
-choose-if: (center_votes < 50 and spd_coleader_2_faction == "Center") or (left_votes < 50 and spd_coleader_2_faction == "left") or (reformist_votes < 50 and spd_coleader_2_faction == "Reformist") or (labor_votes < 50 and spd_coleader_2_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_2_faction == "Neorevisionist") or (spd_coleader_2_faction == "non-factional")
+choose-if: (center_votes < 50 and spd_coleader_2_faction == "Center") or (left_votes < 50 and spd_coleader_2_faction == "Left") or (reformist_votes < 50 and spd_coleader_2_faction == "Reformist") or (labor_votes < 50 and spd_coleader_2_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_2_faction == "Neorevisionist") or (spd_coleader_2_faction == "non-factional")
 unavailable-subtitle: [? if center_votes > 50 and spd_coleader_2_faction == "Center" : The Center Faction has enough votes to block any challenge. ?][? if left_votes > 50 and spd_coleader_2_faction == "Left" : The Left Faction has enough votes to block any challenge. ?][? if labor_votes > 50 and spd_coleader_2_faction == "Labor" : The Labor Faction has enough votes to block any challenge. ?][? if reformist_votes > 50 and spd_coleader_2_faction == "Reformist" : The Reformist Faction has enough votes to block any challenge. ?][? if neorevisionist_votes > 50 and spd_coleader_2_faction == "Neorevisionist" : The Neorevisionist Faction has enough votes to block any challenge. ?]
 
 [+ spd_coleader_2_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
@@ -505,17 +505,17 @@ unavailable-subtitle: [? if center_votes > 50 and spd_coleader_2_faction == "Cen
 
 @incumbent_2
 view-if: spd_coleader_2 != "Vacant"
-choose-if: (left_votes >= 50 and spd_coleader_2_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_2_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_2_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_2_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_2_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "non-factional")
+choose-if: (left_votes >= 50 and spd_coleader_2_faction == "Left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_2_faction == "Left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_2_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_2_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_2_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_2_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_2_faction == "non-factional")
 
 The incumbent, [+ spd_coleader_2_fullname +], wins in a victory for the [+ spd_coleader_2_faction +] faction!
 
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @left_2
-view-if: spd_coleader_2_faction != "left"
+view-if: spd_coleader_2_faction != "Left"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
-spd_coleader_2_faction = "left";
+spd_coleader_2_faction = "Left";
 if (Q.left_leader == "Crispien") {
     Q.spd_coleader_2 = "Crispien";
     Q.spd_coleader_2_fullname = "Arthur Crispien";
@@ -751,7 +751,7 @@ How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] fact
 - @co_leader_3_no_challenge: [+ spd_coleader_3_fullname +] faces no challenge.
 
 @co_leader_3_challenge
-choose-if: (center_votes < 50 and spd_coleader_3_faction == "Center") or (left_votes < 50 and spd_coleader_3_faction == "left") or (reformist_votes < 50 and spd_coleader_3_faction == "Reformist") or (labor_votes < 50 and spd_coleader_3_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_3_faction == "Neorevisionist") or (spd_coleader_3_faction == "non-factional")
+choose-if: (center_votes < 50 and spd_coleader_3_faction == "Center") or (left_votes < 50 and spd_coleader_3_faction == "Left") or (reformist_votes < 50 and spd_coleader_3_faction == "Reformist") or (labor_votes < 50 and spd_coleader_3_faction == "Labor") or (neorevisionist_votes < 50 and spd_coleader_3_faction == "Neorevisionist") or (spd_coleader_3_faction == "non-factional")
 unavailable-subtitle: [? if center_votes > 50 and spd_coleader_3_faction == "Center" : The Center Faction has enough votes to block any challenge. ?][? if left_votes > 50 and spd_coleader_3_faction == "Left" : The Left Faction has enough votes to block any challenge. ?][? if labor_votes > 50 and spd_coleader_3_faction == "Labor" : The Labor Faction has enough votes to block any challenge. ?][? if reformist_votes > 50 and spd_coleader_3_faction == "Reformist" : The Reformist Faction has enough votes to block any challenge. ?][? if neorevisionist_votes > 50 and spd_coleader_3_faction == "Neorevisionist" : The Neorevisionist Faction has enough votes to block any challenge. ?]
 
 [+ spd_coleader_3_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
@@ -765,17 +765,17 @@ unavailable-subtitle: [? if center_votes > 50 and spd_coleader_3_faction == "Cen
 
 @incumbent_3
 view-if: spd_coleader_3 != "Vacant"
-choose-if: (left_votes >= 50 and spd_coleader_3_faction == "left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_3_faction == "left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_3_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_3_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_3_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "non-factional")
+choose-if: (left_votes >= 50 and spd_coleader_3_faction == "Left") or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50 and spd_coleader_3_faction == "Left") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "Center") or (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50 and spd_coleader_3_faction == "Labor") or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Labor") or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50 and spd_coleader_3_faction == "Labor") or (reformist_votes >= 50 and spd_coleader_3_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Reformist") or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Reformist") or (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Neorevisionist") or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50 and spd_coleader_3_faction == "Neorevisionist") or (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50 and spd_coleader_3_faction == "non-factional")
 
 The incumbent, [+ spd_coleader_3_fullname +], wins in a victory for the [+ spd_coleader_3_faction +] faction!
 
 - @root: The conference is concluded.
 
 @left_3
-view-if: spd_coleader_3_faction != "left"
+view-if: spd_coleader_3_faction != "Left"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
-spd_coleader_3_faction = "left";
+spd_coleader_3_faction = "Left";
 if (Q.left_leader == "Crispien") {
     Q.spd_coleader_3 = "Crispien";
     Q.spd_coleader_3_fullname = "Arthur Crispien";
