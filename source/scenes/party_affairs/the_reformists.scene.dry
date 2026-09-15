@@ -6,6 +6,8 @@ view-if: never
 on-arrival: month_activities += 1; reformist_timer += 6
 card-image: img/portraits/BraunOtto.jpg
 
+= The Reformists
+
 The Reformist faction holds many of our most notable members. How shall we make use of their talents?
 
 -	@use_ebert: We will use the talents of the Reformist leader, Friedrich Ebert
@@ -99,12 +101,12 @@ We have openly promoted the Reformist faction, to the anger of the other faction
 
 @hindenburg
 view-if: president == "Hindenburg"
-on-arrival: hindenburg_relation += 3*(1-dissent)
+on-arrival: presidential_relation += 3*(1-dissent)
 
 We have used our Reformist’s connections, particularly through Otto Braun, to meet with President Hindenburg. Our meetings with are frosty to say the least, but they are meetings nonetheless.
 
 @grand_coalition_relations
-on-arrival: z_relation += 3; ddp_relation += 3 ; dvp_relation += 3 ; hindenburg_relation += 3
+on-arrival: z_relation += 3; ddp_relation += 3 ; dvp_relation += 3 ; presidential_relation += 3
 
 We have used the Reformists’ connections to try to come to an understanding with the Bourgeois parties.
 
