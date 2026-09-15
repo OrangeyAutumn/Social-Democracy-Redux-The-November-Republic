@@ -366,28 +366,28 @@ go-to: settings
 
 Bad luck, Wilhelm...
 
-@enable_decimals: Polls and Seats will now be calculated to one decimal place.
+@enable_decimals
 subtitle: This may make the game more difficult.
 view-if: use_decimals == 0
 on-arrival: use_decimals = 1
 
 Decimals have been enabled.
 
-@disable_decimals: Polls and Seats will now be calculated to the nearest whole number.
+@disable_decimals
 subtitle: This may distort election results.
 view-if: use_decimals == 1
 on-arrival: use_decimals = 0
 
 Decimals have been disabled.
 
-@new_shuffle: Enables the new leadership shuffle system only
+@new_shuffle
 subtitle: The Shuffle Leadership card will no longer be available on any difficulty.
 view-if: new_shuffle == 0
 on-arrival: new_shuffle = 1
 
 The new leadership system is the only enabled system.
 
-@old_shuffle: Enables the old leadership shuffle system
+@old_shuffle
 subtitle: The Shuffle Leadership card will now be available.
 view-if: new_shuffle == 1
 on-arrival: new_shuffle = 0
