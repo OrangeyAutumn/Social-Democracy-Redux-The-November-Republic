@@ -1,6 +1,5 @@
 title: Root Scene
 new-page: true
-on-arrival: use_decimals = 1
 go-to: post_event if started = 1; start_menu if started = 0
 
 # TODO: do that thing that we did before...
@@ -16,6 +15,7 @@ go-to: start_menu_2
 <img src="img/reichstag_2.jpg" alt="The Reichstag building">
 
 @start_menu_2
+on-arrival: use_decimals = 1; sandbox_enabled = 0; ebert_lives = 0; president_marx = 0; new_shuffle = 0;
 
 - @start: Start game
 - @context: Context and Mechanics
@@ -43,7 +43,9 @@ Please select your desired start date.
 
 - @1924_start: November 1924: The Death of Ebert - Recommended
 - @1928_start: January 1928: The Age of Catastrophe
+- @1928_start_marx: January 1928: The Age of Catastrophe
 - @1931_start: November 1931: In This Historic Hour
+- @1931_start_marx: November 1931: In This Historic Hour
 - @settings: Settings.
 
 @1924_start
@@ -54,7 +56,7 @@ go-to: 1924_root
 
 = November 1924: The Death of Ebert
 
-*"You will understand and know the German Republic better when it elects Hindenburg president."*
+*"You will understand and know the German Republic better when it elects **Hindenburg** president."*
 - Jacques Bainville, November 1918
 
 <img src="img/hindenburg_election.jpg" alt="A Hindenburg Election Poster">
@@ -73,8 +75,8 @@ go-to: 1928_root
 
 = 1928: The Age of Catastrophe
 
-*"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
-- Otto Wels, Speech Against the Passage of the Enabling Act, 1933
+*"The choice of methods and weapons to be used by the champions of democracy will not depend upon our wishes but will be determined by political and social conditions. and especially by the methods and weapons of the enemy."*
+- Karl Kautsky, Hitlerism and Social Democracy, 1934
 
 <img src="img/bankrun.jpg" alt="A Bankrun">
 
@@ -85,17 +87,17 @@ Now, the task of Social Democracy is to prepare for the next election. The bourg
 Please select your desired difficulty to begin.
 
 @1928_start_marx
-set-bg: img/bankrun.jpg
+set-bg: img/PresidentMarx.jpg
 new-page: true
 view-if: ebert_lives == 0 and president_marx == 1
 go-to: 1928_root_marx
 
 = 1928: The Age of Catastrophe
 
-*"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
-- Otto Wels, Speech Against the Passage of the Enabling Act, 1933
+*"The choice of methods and weapons to be used by the champions of democracy will not depend upon our wishes but will be determined by political and social conditions. and especially by the methods and weapons of the enemy."*
+- Karl Kautsky, Hitlerism and Social Democracy, 1934
 
-<img src="img/bankrun.jpg" alt="A Bankrun">
+<img src="img/PresidentMarx.jpg" alt="President Marx">
 
 It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality.
 
@@ -111,7 +113,7 @@ go-to: 1931_root
 
 = 1931: In This Historic Hour
 
-*"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
+*"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."*
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
 
 <img src="img/reichstag_3.jpg" alt="The Reichstag Interior">
@@ -130,7 +132,7 @@ go-to: 1931_root_marx
 
 = 1931: In This Historic Hour
 
-*"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
+*"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."*
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
 
 <img src="img/reichstag_3.jpg" alt="The Reichstag Interior">
@@ -264,10 +266,10 @@ For other, non-difficulty related tweaks.
 - @president_marx_undo: Marx is not President.
 - @enable_sandbox: Enable sandbox
 - @disable_sandbox: Disable sandbox
-- @enable_decimals: Polls and Seats will now be calculated to one decimal place. 
-- @disable_decimals: Polls and Seats will now be calculated to the nearest whole number.
-- @new_shuffle: Enables the new leadership shuffle system only
-- @old_shuffle: Enables the old leadership shuffle system
+- @enable_decimals: Enable Decimals: Polls and Seats will now be calculated to one decimal place. 
+- @disable_decimals: Disable Decimals: Polls and Seats will now be calculated to the nearest whole number.
+- @new_shuffle: Enable the new leadership shuffle system only
+- @old_shuffle: Enable the old leadership shuffle system
 - @1924_start: Proceed to 1924 start menu
 - @1928_start: Proceed to 1928 start menu
 - @1928_start_marx: Proceed to 1928 start menu
