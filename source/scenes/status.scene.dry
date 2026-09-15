@@ -18,7 +18,7 @@ if (Q.economic_growth) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : Presidential Relations: [+ hindenburg_relation : relationships +] ?]
+President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : [+ hindenburg_relation : relationships +] ?]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -73,7 +73,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : Presidential Relations: [+ hindenburg_relation : relationships +] ?]
+President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : [+ hindenburg_relation : relationships +] ?]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -149,7 +149,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : Presidential Relations: [+ hindenburg_relation : relationships +] ?]
+President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : [+ hindenburg_relation : relationships +] ?]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -242,7 +242,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : Presidential Relations: [+ hindenburg_relation : relationships +] ?]
+President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : [+ hindenburg_relation : relationships +] ?]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -325,7 +325,7 @@ if (Q.sa_strength) {
 
 = Status
 
-President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : Presidential Relations: [+ hindenburg_relation : relationships +] ?]
+President: [+ president +] ([+ president_party +]) | [? if president == "Marx" : [+ marx_relation : relationships +] ?] | [? if president == "Hindenburg" : [+ hindenburg_relation : relationships +] ?]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
