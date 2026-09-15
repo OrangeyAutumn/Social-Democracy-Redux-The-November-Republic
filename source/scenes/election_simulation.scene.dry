@@ -269,6 +269,8 @@ on-arrival: {!
 Q.spd_r = Q.spd_votes;
 Q.sapd_r = Q.sapd_votes;
 Q.z_r = Q.z_votes;
+Q.z_minus_bvp_r = Q.z_minus_bvp_votes;
+Q.bvp_r = Q.bvp_votes
 Q.uspd_r = Q.uspd_votes;
 Q.ddp_r = Q.ddp_votes;
 Q.dvp_r = Q.dvp_votes;
@@ -288,9 +290,9 @@ if (Q.uspd_r >= Q.spd_r && Q.uspd_r >= Q.nsdap_r) {
 // coalitions
 Q.uspd_tolerated_spd_minority = Q.spd_r + Q.uspd_r + Q.sapd_r;
 Q.social_liberal_coalition = Q.spd_r + Q.ddp_r
-Q.social_christian_coalition = Q.spd_r + Q.z_r + - 3
-Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r - 3;
-Q.uspd_tolerated_weimar_coalition = Q.spd_r + Q.uspd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r;
+Q.social_christian_coalition = Q.spd_r + Q.z_minus_bvp_r
+Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_minus_bvp_r;
+Q.uspd_tolerated_weimar_coalition = Q.spd_r + Q.uspd_r + Q.z_minus_bvp_r + Q.ddp_r + Q.sapd_r;
 Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
 Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
@@ -298,7 +300,7 @@ Q.right_coalition = Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
 Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
 Q.left_coalition = Q.spd_r + Q.uspd_r + Q.sapd_r;
 // this is an absurd concept lol
-Q.popular_front_coalition = Q.spd_r + Q.uspd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r;
+Q.popular_front_coalition = Q.spd_r + Q.uspd_r + Q.z_minus_bvp_r + Q.ddp_r + Q.sapd_r;
 Q.anti_democratic_coalition = Q.uspd_r + Q.nsdap_r + Q.dnvp_r;
 // aka everyone except nazi, uspd, dnvp
 Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
@@ -339,15 +341,15 @@ Other: [+ other_r +]
 
 **Potential coalitions:**
 
-USPD-tolerated SPD Minority (SPD): [+ uspd_tolerated_spd_minority +]%;
+[? if spd_r < 50 : USPD-tolerated SPD Minority (SPD): [+ uspd_tolerated_spd_minority +]% ?]
 
-Social-Liberal Coalition (SPD +  [+ ddp_name +]): [+ social_liberal_coalition +]%
+[? if social_liberal_coalition >= 50 : Social-Liberal Coalition (SPD +  [+ ddp_name +]): [+ social_liberal_coalition +]% ?]
 
-Social-Christian Coalition (SPD + Z): [+ social_christian_coalition +]%
+[? if social_christian_coalition >= 50 : Social-Christian Coalition (SPD + Z): [+ social_christian_coalition +]% ?]
 
 Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ weimar_coalition +]%
 
-USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ uspd_tolerated_weimar_coalition +]%
+[? if weimar_coalition < 50 : USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ uspd_tolerated_weimar_coalition +]% ?]
 
 Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ grand_coalition +]%
 
