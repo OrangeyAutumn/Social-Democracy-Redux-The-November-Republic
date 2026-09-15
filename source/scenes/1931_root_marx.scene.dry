@@ -168,10 +168,6 @@ Q.labor_leader_fullname = "Theodor Leipart";
 Q.reformist_leader = "Braun";
 Q.reformist_leader_fullname = "Otto Braun";
 
-// hmm... maybe we can play nice with Hindenburg???
-Q.hindenburg_relation = 10;
-
-
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
@@ -399,6 +395,7 @@ Q.economic_records = [];
 // State of the government
 Q.president = "Marx";
 Q.president_party = "Z";
+Q.presidential_relation = 35;
 Q.chancellor = "Wirth";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
