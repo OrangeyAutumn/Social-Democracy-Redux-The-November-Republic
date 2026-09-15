@@ -242,13 +242,13 @@ if (Q.sapd_formed == 1) {
             "id": "z",
             "legend": "Center",
             "name": "Center",
-            "seats": (z_minus_bvp_r)*5,
+            "seats": z_minus_bvp_r*5,
         },
         {
             "id": "bvp",
             "legend": "BVP",
             "name": "BVP",
-            "seats": 3*5,
+            "seats": bvp_r*5,
         },
         {
             "id": "dvp",
@@ -327,7 +327,7 @@ else {
             "id": "bvp",
             "legend": "BVP",
             "name": "BVP",
-            "seats": 3*5,
+            "seats": bvp_r*5,
         },
         {
             "id": "dvp",
