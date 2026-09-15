@@ -89,11 +89,7 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% |  Une
 
 = **Government**
 
-President: [+ president +] ([+ president_party +])
-
-[? if president == "Marx" : Presidential Relations: [+ marx_relation : relationships +] ?]
-
-[? if president == "Hindenburg" : Presidential Relations: [+ hindenburg_relation : relationships +] ?]
+President: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
 
 = Cabinet ([+ chancellor +] [+ cabinet_number +])
 
