@@ -724,13 +724,13 @@ Q.nsdap_campaign = 0;
 Q.dvp_support_hindenburg = 1; 
 Q.hindenburg_campaign = 1; 
 Q.nationalism += 5;
-if (z_relation < 55 and spd_support_z) {
+if (z_relation < 55 && spd_support_z) {
 Q.bvp_support_hindenburg = 1
 }
-else if (z_relation > 65 or not spd_support_z) {
+else if (z_relation > 65 || not spd_support_z) {
 Q.bvp_support_z = 1;
 }
-if (Q.uspd_support_spd == 1 or Q.spd_support_uspd == 1) {
+if (Q.uspd_support_spd == 1 ZZ Q.spd_support_uspd == 1) {
 Q.hindenburg_multiplier = 1.15;
 Q.wirth_multiplier = 0.9;
 Q.marx_multiplier = 0.8;
