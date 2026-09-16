@@ -160,7 +160,7 @@ set-jump: post_election
 @post_election
 on-arrival: {!
 
-Q.presidents_25 = ['uspd', 'spd', 'ddp', 'z', 'held', 'dvp', 'nsdap', 'gessler', 'dnvp', 'hindenburg'];
+Q.presidents_25 = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg'];
 
 // initial phase:
 Q.uspd_presidential_votes = Q.uspd_votes;
@@ -465,6 +465,49 @@ else if (Q.hindenburg_presidential_results >= 50) {
 else if (Q.round25 <= 1) {
 Q.no_majority_1 = 1;
 }
+else if (Q.round25 >= 2) {
+Q.plurality_winner = "";
+Q.plurality_winner_votes = 0;
+if (Q.uspd_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.uspd_presidential_candidate;
+    Q.plurality_winner_votes = Q.uspd_presidential_votes;
+}
+if (Q.spd_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.spd_presidential_candidate;
+    Q.plurality_winner_votes = Q.spd_presidential_votes;
+}
+if (Q.ddp_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.ddp_presidential_candidate;
+    Q.plurality_winner_votes = Q.ddp_presidential_votes;
+}
+if (Q.z_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.z_presidential_candidate;
+    Q.plurality_winner_votes = Q.z_presidential_votes;
+}
+if (Q.bvp_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = "Held";
+    Q.plurality_winner_votes = Q.bvp_presidential_votes;
+}
+if (Q.dvp_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.dvp_presidential_candidate;
+    Q.plurality_winner_votes = Q.dvp_presidential_votes;
+}
+if (Q.other_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.other_presidential_candidate;
+    Q.plurality_winner_votes = Q.other_presidential_votes;
+}
+if (Q.dnvp_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.dnvp_presidential_candidate;
+    Q.plurality_winner_votes = Q.dnvp_presidential_votes;
+}
+if (Q.nsdap_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q.nsdap_presidential_candidate;
+    Q.plurality_winner_votes = Q.nsdap_presidential_votes;
+}
+if (Q.hindenburg_presidential_votes > Q.plurality_winner_votes) {
+    Q.plurality_winner = "Hindenburg";
+    Q.plurality_winner_votes = Q.hindenburg_presidential_votes;
+}
 !}
 go-to: hindenburg_wins if hindenburg_majority == 1; z_wins if z_majority == 1; spd_wins if spd_majority == 1; ddp_wins if ddp_majority == 1; no_majority_round1 if no_majority_1; round2_results if round25 >= 2; uspd_wins if uspd_majority == 1; bvp_wins if bvp_majority == 1; dvp_wins if dvp_majority == 1; dnvp_wins if dnvp_majority; nsdap_wins if nsdap_majority
 
@@ -715,6 +758,7 @@ if (Q.spd_support_ddp) {
 hellpach_multiplier = 0.875;
 gessler_multiplier = 0.8;
 }
+!}
 
 Just as we conclude our own decisions with regard to the presidential campaign, we receive news of the entry of Paul von Hindenburg into the race. Considered by the right-wing a war hero, Paul von Hindenburg was a Field Marshal in the German Empire and managed to win the Battle of Tannenberg against Russia. To us, however, he is a reactionary junker and one of the primary peddlers of the stab-in-the-back myth, the same which recently cost Friedrich Ebert his life. 
 
@@ -1036,7 +1080,7 @@ We have increased our campaigning among the unemployed. [? if welfare < 0: The w
 
 @round2_results
 on-arrival: previous_spd_presidential_candidate = spd_presidential_candidate; previous_spd_presidential_candidate_fullname = spd_presidential_candidate_fullname; previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; previous_uspd_presidential_candidate = uspd_presidential_candidate; previous_uspd_presidential_candidate_fullname = uspd_presidential_candidate_fullname; previous_ddp_presidential_candidate = ddp_presidential_candidate; previous_ddp_presidential_candidate_fullname = ddp_presidential_candidate_fullname; previous_z_presidential_candidate = z_presidential_candidate; previous_z_presidential_candidate_fullname = z_presidential_candidate_fullname; previous_bvp_presidential_candidate = bvp_presidential_candidate; previous_bvp_presidential_candidate_fullname = bvp_presidential_candidate_fullname; previous_dvp_presidential_candidate = dvp_presidential_candidate; previous_dvp_presidential_candidate_fullname = dvp_presidential_candidate_fullname; previous_other_presidential_candidate = other_presidential_candidate; previous_other_presidential_candidate_fullname = other_presidential_candidate_fullname; previous_dnvp_presidential_candidate = dnvp_presidential_candidate; previous_dnvp_presidential_candidate_fullname = dnvp_presidential_candidate_fullname; previous_nsdap_presidential_candidate = nsdap_presidential_candidate; previous_nsdap_presidential_candidate_fullname = nsdap_presidential_candidate_fullname;
-go-to: hindenburg_wins if hindenburg_plurality; spd_wins if spd_plurality; z_wins if z_plurality; gessler_wins if gessler_plurality 
+go-to: hindenburg_wins if hindenburg_plurality; spd_wins if spd_plurality; z_wins if z_plurality; ddp_wins if ddp_plurality; uspd_wins if uspd_plurality; dvp_wins if dvp_plurality; bvp_wins if bvp_plurality; dnvp_wins if dnvp_plurality; nsdap_wins if nsdap_plurality
 
 @spd_presidential_menu
 
