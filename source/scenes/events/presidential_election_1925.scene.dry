@@ -374,16 +374,16 @@ if (Q.dvp_support_hindenburg) {
 if (Q.other_support_hindenburg) {
         Q.hindenburg_presidential_votes += Q.other_votes;
            }
-if (Q.president == “Hindenburg”) {
+if (Q.president == "Hindenburg") {
 Q.hindenburg_presidential_votes *= 1.05
 }
-else if (Q.previous_hindenburg_presidential_candidate == “Hindenburg”) {
+else if (Q.previous_hindenburg_presidential_candidate == "Hindenburg") {
 Q.hindenburg_presidential_votes *= 1.025
 }
-if (Q.chancellor == “Hindenburg”) {
+if (Q.chancellor == "Hindenburg") {
 Q.hindenburg_presidential_votes *= 1.0375
 }
-else if (Q.vice_chancellor == “Hindenburg”) {
+else if (Q.vice_chancellor == "Hindenburg") {
 Q.hindenburg_presidential_votes *= 1.025
 }
 Q.hindenburg_presidential_votes *= Q.hindenburg_multiplier;
@@ -1099,6 +1099,7 @@ We have made [+ spd_presidential_candidate_fullname +] our candidate for the upc
 title: Run [+ spd_coleader_2_fullname +], our Co-leader.
 view-if: (Q.chancellor != Q.spd_coleader_2 and Q.president != Q.spd_coleader_2 and Q.spd_presidential_candidate != Q.spd_coleader_2)
 on-arrival: Q.spd_presidential_candidate = Q.spd_coleader_2; Q.spd_presidential_candidate_fullname = Q.spd_coleader_2_fullname;  Q.spd_presidential_candidate_faction = Q.spd_coleader_2_faction
+
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
 
 - @spd_presidential_campaign: Now onto the campaign
@@ -1118,10 +1119,14 @@ on-arrival: {!
 Q.spd_presidential_candidate = Q.left_leader; 
 Q.spd_presidential_candidate_fullname = Q.left_leader_fullname; 
 if (Q.left_leader == "Baade" or Q.left_leader == "Hirschfeld" or Q.left_leader == "Radbruch" or Q.left_leader == "Stampfer" or Q.left_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = “Nonfactional”
+Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else Q.spd_presidential_candidate_faction = “Left”
+else Q.spd_presidential_candidate_faction = "Left"
 !}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_center_leader
 title: Run [+ center_leader_fullname +], the leader of our Center wing.
@@ -1129,12 +1134,14 @@ on-arrival: {!
 Q.spd_presidential_candidate = Q.center_leader; 
 Q.spd_presidential_candidate_fullname = Q.center_leader_fullname; 
 if (Q.center_leader == "Baade" or Q.center_leader == "Hirschfeld" or Q.center_leader == "Radbruch" or Q.center_leader == "Stampfer" or Q.center_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = “Nonfactional”
+Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else Q.spd_presidential_candidate_faction = “Center”
+else Q.spd_presidential_candidate_faction = "Center"
 !}
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_labor_leader
 title: Run [+ labor_leader_fullname +], the leader of our Labor wing.
@@ -1142,13 +1149,17 @@ on-arrival: {!
 Q.spd_presidential_candidate = Q.labor_leader; 
 Q.spd_presidential_candidate_fullname = Q.labor_leader_fullname; 
 if (Q.labor_leader == "Baade" or Q.labor_leader == "Hirschfeld" or Q.labor_leader == "Radbruch" or Q.labor_leader == "Stampfer" or Q.labor_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = “Nonfactional”
+Q.spd_presidential_candidate_faction = "Nonfactional"
 }
 else if (Q.labor_leader == "Mierendorff" or Q.labor_leader == "Schumacher" or Q.labor_leader == "Leber" or Q.labor_leader == "Noske") {
-Q.spd_presidential_candidate_faction = “Neorevisionist”
+Q.spd_presidential_candidate_faction = "Neorevisionist"
 }
-else Q.spd_presidential_candidate_faction = “Labor”
+else Q.spd_presidential_candidate_faction = "Labor"
 !}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_reformist_leader
 title: Run [+ reformist_leader_fullname +], the leader of our Reformist wing.
@@ -1156,12 +1167,12 @@ on-arrival: {!
 Q.spd_presidential_candidate = Q.reformist_leader; 
 Q.spd_presidential_candidate_fullname = Q.reformist_leader_fullname; 
 if (Q.reformist_leader == "Baade" or Q.reformist_leader == "Hirschfeld" or Q.reformist_leader == "Radbruch" or Q.reformist_leader == "Stampfer" or Q.reformist_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = “Nonfactional”
+Q.spd_presidential_candidate_faction = "Nonfactional"
 }
 else if (Q.reformist_leader == "Mierendorff" or Q.reformist_leader == "Schumacher" or Q.reformist_leader == "Leber" or Q.reformist_leader == "Noske") {
-Q.spd_presidential_candidate_faction = “Neorevisionist”
+Q.spd_presidential_candidate_faction = "Neorevisionist"
 }
-else Q.spd_presidential_candidate_faction = “Reformist”
+else Q.spd_presidential_candidate_faction = "Reformist"
 !}
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
@@ -1175,10 +1186,14 @@ on-arrival: {!
 Q.spd_presidential_candidate = Q.neorevisionist_leader; 
 Q.spd_presidential_candidate_fullname = Q.neorevisionist_leader_fullname; 
 if (Q.neorevisionist_leader == "Baade" or Q.neorevisionist_leader == "Hirschfeld" or Q.neorevisionist_leader == "Radbruch" or Q.neorevisionist_leader == "Stampfer" or Q.neorevisionist_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = “Nonfactional”
+Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else Q.spd_presidential_candidate_faction = “Neorevisionist”
+else Q.spd_presidential_candidate_faction = "Neorevisionist"
 !}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
 
 @presidential_candidate_braun
 title: Run Otto Braun [? if spd_coleader_1 == "Braun" or spd_coleader_2 == "Braun" or spd_coleader_3 == "Braun" :, our Co-leader ?][? if reformist_leader == "Braun" :, our Co-leader Reformist faction leader ?]: This is the Historical option.
