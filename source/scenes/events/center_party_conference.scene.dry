@@ -15,6 +15,7 @@ The consensus candidate on the right is Ludwig Kaas, a Catholic priest who repre
 
 - @kaas: The Center Party elects Ludwig Kaas as the party chair.
 - @stegerwald: The Center Party elects Adam Stegerwald as the party chair.
+- @adenauer: The Center Party elects Konrad Adenauer as the party chair.
 - @joos: Influence the Center Party to select Joseph Joos as the party chair.
 - @joos_campaign: We must hold a campaign in support of Joseph Joos as party chair.
 
@@ -51,3 +52,9 @@ on-arrival: z_party_leader = "Stegerwald"; z_relation -= 10; nationalism += 4; s
 Adam Stegerwald has been elected as chairman of the Center Party. He represents a significant rightward turn from Marx, and will preside over a Center Party inclined to work with the right-wing over us. 
 
 Importantly, he also supports "leaving the tower", that is, transforming the Center into a party for all Christians, beyond just Catholics. This has caused an upset amongst the party's Catholic base, and significantly hurt the party.
+
+@adenauer
+view-if: z_relation > 45 and adenauer_chancellor = 1
+on-arrival: z_party_leader = "Adenauer"; z_relation += 5
+
+In a surprise turn, Konrad Adenauer, [? if chancellor == "Adenauer" : the current Chancellor ?][? if chancellor != "Adenauer" : the former Chancellor ?] has been selected as the chairman of the Center Party. He is by no means of the left of the party, but he is a clear republican and will preside over a Center Party inclined to continue cooperation with us.
