@@ -69,7 +69,7 @@ if (Q.chancellor == "Marx") {
 Q.z_presidential_candidate = "Wirth";
 Q.z_presidential_candidate_fullname = "Joseph Wirth";
 }
-else (Q.chancellor != "Marx") {
+else {
 Q.z_presidential_candidate = "Marx";
 Q.z_presidential_candidate_fullname = "Wilhelm Marx";
 }
@@ -81,7 +81,7 @@ if (Q.chancellor == "Jarres") {
 Q.dvp_presidential_candidate = "Stresemann";
 Q.dvp_presidential_candidate_fullname = "Gustav Stresemann";
 }
-else (Q.chancellor != "Jarres") {
+else {
 Q.dvp_presidential_candidate = "Jarres";
 Q.dvp_presidential_candidate_fullname = "Karl Jarres";
 }
