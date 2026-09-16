@@ -462,7 +462,7 @@ else if (Q.nsdap_presidential_results >= 50) {
 else if (Q.hindenburg_presidential_results >= 50) {
         Q.hindenburg_majority = 1;
            }
-else (Q.round25 <= 1) {
+else {
 Q.no_majority_1 = 1;
 }
 if (Q.round25 >= 2) {
