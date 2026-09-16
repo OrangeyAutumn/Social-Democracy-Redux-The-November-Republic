@@ -79,7 +79,7 @@ Q.dvp_campaign = 1;
 if (Q.chancellor == "Jarres") {
 Q.dvp_presidential_candidate = "Stresemann";
 Q.dvp_presidential_candidate_fullname = "Gustav Stresemann";
-else {
+else if (Q.chancellor != "Jarres") {
 Q.dvp_presidential_candidate = "Jarres";
 Q.dvp_presidential_candidate_fullname = "Karl Jarres";
 }
