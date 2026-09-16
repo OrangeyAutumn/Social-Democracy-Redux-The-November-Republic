@@ -68,7 +68,7 @@ Q.z_campaign = 1;
 if (Q.chancellor == "Marx") {
 Q.z_presidential_candidate = "Wirth";
 Q.z_presidential_candidate_fullname = "Joseph Wirth";
-else {
+else if (Q.chancellor != "Marx") {
 Q.z_presidential_candidate = "Marx";
 Q.z_presidential_candidate_fullname = "Wilhelm Marx";
 }
