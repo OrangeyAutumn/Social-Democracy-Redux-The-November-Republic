@@ -1189,7 +1189,7 @@ title: Run [+ center_leader_fullname +], the leader of our Center wing.
 on-arrival: {!
 Q.spd_presidential_candidate = Q.center_leader; 
 Q.spd_presidential_candidate_fullname = Q.center_leader_fullname; 
-if (Q.center_leader == "Baade" or Q.center_leader == "Hirschfeld" or Q.center_leader == "Radbruch" or Q.center_leader == "Stampfer" or Q.center_leader == "Löbe") {
+if (Q.center_leader == "Baade" || Q.center_leader == "Hirschfeld" || Q.center_leader == "Radbruch" || Q.center_leader == "Stampfer" || Q.center_leader == "Löbe") {
 Q.spd_presidential_candidate_faction = "Nonfactional"
 }
 else {
@@ -1206,10 +1206,10 @@ title: Run [+ labor_leader_fullname +], the leader of our Labor wing.
 on-arrival: {!
 Q.spd_presidential_candidate = Q.labor_leader; 
 Q.spd_presidential_candidate_fullname = Q.labor_leader_fullname; 
-if (Q.labor_leader == "Baade" or Q.labor_leader == "Hirschfeld" or Q.labor_leader == "Radbruch" or Q.labor_leader == "Stampfer" or Q.labor_leader == "Löbe") {
+if (Q.labor_leader == "Baade" || Q.labor_leader == "Hirschfeld" || Q.labor_leader == "Radbruch" || Q.labor_leader == "Stampfer" || Q.labor_leader == "Löbe") {
 Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else if (Q.labor_leader == "Mierendorff" or Q.labor_leader == "Schumacher" or Q.labor_leader == "Leber" or Q.labor_leader == "Noske") {
+else if (Q.labor_leader == "Mierendorff" || Q.labor_leader == "Schumacher" || Q.labor_leader == "Leber" || Q.labor_leader == "Noske") {
 Q.spd_presidential_candidate_faction = "Neorevisionist"
 }
 else {
@@ -1226,10 +1226,10 @@ title: Run [+ reformist_leader_fullname +], the leader of our Reformist wing.
 on-arrival: {!
 Q.spd_presidential_candidate = Q.reformist_leader; 
 Q.spd_presidential_candidate_fullname = Q.reformist_leader_fullname; 
-if (Q.reformist_leader == "Baade" or Q.reformist_leader == "Hirschfeld" or Q.reformist_leader == "Radbruch" or Q.reformist_leader == "Stampfer" or Q.reformist_leader == "Löbe") {
+if (Q.reformist_leader == "Baade" || Q.reformist_leader == "Hirschfeld" || Q.reformist_leader == "Radbruch" || Q.reformist_leader == "Stampfer" || Q.reformist_leader == "Löbe") {
 Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else if (Q.reformist_leader == "Mierendorff" or Q.reformist_leader == "Schumacher" or Q.reformist_leader == "Leber" or Q.reformist_leader == "Noske") {
+else if (Q.reformist_leader == "Mierendorff" || Q.reformist_leader == "Schumacher" || Q.reformist_leader == "Leber" || Q.reformist_leader == "Noske") {
 Q.spd_presidential_candidate_faction = "Neorevisionist"
 }
 else {
@@ -1247,7 +1247,7 @@ view-if: neorevisionism > 0
 on-arrival: {!
 Q.spd_presidential_candidate = Q.neorevisionist_leader; 
 Q.spd_presidential_candidate_fullname = Q.neorevisionist_leader_fullname; 
-if (Q.neorevisionist_leader == "Baade" or Q.neorevisionist_leader == "Hirschfeld" or Q.neorevisionist_leader == "Radbruch" or Q.neorevisionist_leader == "Stampfer" or Q.neorevisionist_leader == "Löbe") {
+if (Q.neorevisionist_leader == "Baade" || Q.neorevisionist_leader == "Hirschfeld" || Q.neorevisionist_leader == "Radbruch" || Q.neorevisionist_leader == "Stampfer" || Q.neorevisionist_leader == "Löbe") {
 Q.spd_presidential_candidate_faction = "Nonfactional"
 }
 else {
