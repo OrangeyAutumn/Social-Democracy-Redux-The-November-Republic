@@ -934,25 +934,26 @@ max-visits: 1
 We contribute to the campaign by helping the Centrists recover their right flank with resources. Let's hope that it's enough.
 
 @rally_2
-on-arrival: {!if (Q.uspd_support_spd and Q.spd_presidential_candidate_faction != "Neorevisionist" and Q.spd_presidential_candidate_faction != "Nonfactional") {
+on-arrival: {!
+if (Q.uspd_support_spd && Q.spd_presidential_candidate_faction != "Neorevisionist" && Q.spd_presidential_candidate_faction != "Nonfactional") {
 Q.spd_multiplier += 0.05
 }
-else if (Q.uspd_support_spd and Q.spd_presidential_candidate_faction == "Nonfactional") {
+else if (Q.uspd_support_spd && Q.spd_presidential_candidate_faction == "Nonfactional") {
 Q.spd_multiplier += 0.025
 }
-else if (Q.uspd_support_spd and Q.spd_presidential_candidate_faction == "Neorevisionist") {
+else if (Q.uspd_support_spd && Q.spd_presidential_candidate_faction == "Neorevisionist") {
 Q.spd_multiplier += 0.05
 }
 if (Q.spd_support_uspd) {
 Q.liebknecht_multiplier += 0.05
 }
-if ((Q.ddp_support_spd == 1 or Q.z_support_spd == 1) and Q.spd_presidential_candidate_faction != "Neorevisionist" and Q.spd_presidential_candidate_faction != "Nonfactional") {
+if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction != "Neorevisionist" && Q.spd_presidential_candidate_faction != "Nonfactional") {
 Q.spd_multiplier += 0.05
 }
-else if ((Q.ddp_support_spd == 1 or Q.z_support_spd == 1) and Q.spd_presidential_candidate_faction == "Nonfactional") {
+else if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction == "Nonfactional") {
 Q.spd_multiplier += 0.025
 }
-else if ((Q.ddp_support_spd == 1 or Q.z_support_spd == 1) and Q.spd_presidential_candidate_faction == "Neorevisionist") {
+else if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction == "Neorevisionist") {
 Q.spd_multiplier += 0.05
 }
 if (Q.spd_support_z) {
