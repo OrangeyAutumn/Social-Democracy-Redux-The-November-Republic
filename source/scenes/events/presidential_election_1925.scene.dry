@@ -14,6 +14,7 @@ Q.stresemann_multiplier = 1.05;
 Q.ludendorff_multiplier = 0.35
 Q.dnvp_multiplier = 1;
 Q.nsdap_multiplier = 1;
+Q.held_multiplier = 1;
 if (Q.spd_presidential_candidate_faction == "Left" || Q.spd_presidential_candidate_faction == "Reformist" || Q.spd_presidential_candidate_faction == "Labor") {
 Q.spd_multiplier = 0.9;
 }
@@ -85,6 +86,8 @@ else {
 Q.dvp_presidential_candidate = "Jarres";
 Q.dvp_presidential_candidate_fullname = "Karl Jarres";
 }
+Q.dnvp_support_dvp = 1;
+Q.other_support_dvp = 1;
 Q.dnvp_campaign = 0;
 Q.nsdap_campaign = 1;
 Q.nsdap_presidential_candidate = "Ludendorff";
@@ -711,7 +714,7 @@ After long negotiations, both we and the Zentrum have dropped out and endorsed [
 view-if: not spd_support_ddp and not spd_support_z and chancellor != "Gessler"
 subtitle: Gessler poses a clear threat to the DVP's chances, but our own party's left-wing will likely revolt.
 choose-if: left_strength < reformist_strength
-on-arrival: ddp_presidential_candidate = "Gessler"; ddp_campaign = 1; spd_campaign = 0; z_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_uspd += 6; unemployed_spd -= 6; unemployed_uspd += 6; old_middle_dvp -= 5; rural_dvp -= 5; spd_support_ddp = 1; z_support_ddp = 1;
+on-arrival: ddp_presidential_candidate = "Gessler"; ddp_presidential_candidate_fullname = "Gessler"; ddp_campaign = 1; spd_campaign = 0; z_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_uspd += 6; unemployed_spd -= 6; unemployed_uspd += 6; old_middle_dvp -= 5; rural_dvp -= 5; spd_support_ddp = 1; z_support_ddp = 1;
 go-to: campaign_round_two
 
 We have managed to engineer a Gessler coalition. The left is understandably outraged, and the Spartacist campaign is bolstered. Nonetheless, we are now well positioned to win from the center.
@@ -723,6 +726,10 @@ Q.dvp_campaign = 0;
 Q.nsdap_campaign = 0; 
 Q.dvp_support_hindenburg = 1; 
 Q.hindenburg_campaign = 1; 
+Q.dvp_support_hindenburg = 1;
+Q.dnvp_support_hindenburg = 1;
+Q.other_support_hindenburg = 1;
+Q.nsdap_support_hindenburg = 1;
 Q.nationalism += 5;
 if (Q.z_relation < 55 && Q.spd_support_z) {
 Q.bvp_support_hindenburg = 1
