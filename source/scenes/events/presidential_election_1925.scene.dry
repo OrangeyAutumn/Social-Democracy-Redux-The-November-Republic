@@ -667,7 +667,7 @@ After long negotiations, both we and the Zentrum have dropped out and endorsed [
 view-if: not spd_support_ddp and not spd_support_z and chancellor != "Gessler"
 subtitle: Gessler poses a clear threat to the DVP's chances, but our own party's left-wing will likely revolt.
 choose-if: left_strength < reformist_strength
-on-arrival: Q.ddp_presidential_candidate = "Gessler"; ddp_campaign = 1; spd_campaign = 0; z_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_uspd += 6; unemployed_spd -= 6; unemployed_uspd += 6; old_middle_dvp -= 5; rural_dvp -= 5; spd_support_ddp = 1; z_support_ddp = 1;
+on-arrival: ddp_presidential_candidate = "Gessler"; ddp_campaign = 1; spd_campaign = 0; z_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_uspd += 6; unemployed_spd -= 6; unemployed_uspd += 6; old_middle_dvp -= 5; rural_dvp -= 5; spd_support_ddp = 1; z_support_ddp = 1;
 go-to: campaign_round_two
 
 We have managed to engineer a Gessler coalition. The left is understandably outraged, and the Spartacist campaign is bolstered. Nonetheless, we are now well positioned to win from the center.
@@ -1033,7 +1033,7 @@ go-to: campaign_round_two
 We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted == 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
 
 @round2_results
-on-arrival: Q.previous_spd_presidential_candidate = Q.spd_presidential_candidate; Q.previous_spd_presidential_candidate_fullname = Q.spd_presidential_candidate_fullname; Q.previous_spd_presidential_candidate_faction = Q.spd_presidential_candidate_faction; Q.previous_uspd_presidential_candidate = Q.uspd_presidential_candidate; Q.previous_uspd_presidential_candidate_fullname = Q.uspd_presidential_candidate_fullname; Q.previous_ddp_presidential_candidate = Q.ddp_presidential_candidate; Q.previous_ddp_presidential_candidate_fullname = Q.ddp_presidential_candidate_fullname; Q.previous_z_presidential_candidate = Q.z_presidential_candidate; Q.previous_z_presidential_candidate_fullname = Q.z_presidential_candidate_fullname; Q.previous_bvp_presidential_candidate = Q.bvp_presidential_candidate; Q.previous_bvp_presidential_candidate_fullname = Q.bvp_presidential_candidate_fullname; Q.previous_dvp_presidential_candidate = Q.dvp_presidential_candidate; Q.previous_dvp_presidential_candidate_fullname = Q.dvp_presidential_candidate_fullname; Q.previous_other_presidential_candidate = Q.other_presidential_candidate; Q.previous_other_presidential_candidate_fullname = Q.other_presidential_candidate_fullname; Q.previous_dnvp_presidential_candidate = Q.dnvp_presidential_candidate; Q.previous_dnvp_presidential_candidate_fullname = Q.dnvp_presidential_candidate_fullname; Q.previous_nsdap_presidential_candidate = Q.nsdap_presidential_candidate; Q.previous_nsdap_presidential_candidate_fullname = Q.nsdap_presidential_candidate_fullname;
+on-arrival: previous_spd_presidential_candidate = spd_presidential_candidate; previous_spd_presidential_candidate_fullname = spd_presidential_candidate_fullname; previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; previous_uspd_presidential_candidate = uspd_presidential_candidate; previous_uspd_presidential_candidate_fullname = uspd_presidential_candidate_fullname; previous_ddp_presidential_candidate = ddp_presidential_candidate; previous_ddp_presidential_candidate_fullname = ddp_presidential_candidate_fullname; previous_z_presidential_candidate = z_presidential_candidate; previous_z_presidential_candidate_fullname = z_presidential_candidate_fullname; previous_bvp_presidential_candidate = bvp_presidential_candidate; previous_bvp_presidential_candidate_fullname = bvp_presidential_candidate_fullname; previous_dvp_presidential_candidate = dvp_presidential_candidate; previous_dvp_presidential_candidate_fullname = dvp_presidential_candidate_fullname; previous_other_presidential_candidate = other_presidential_candidate; previous_other_presidential_candidate_fullname = other_presidential_candidate_fullname; previous_dnvp_presidential_candidate = dnvp_presidential_candidate; previous_dnvp_presidential_candidate_fullname = dnvp_presidential_candidate_fullname; previous_nsdap_presidential_candidate = nsdap_presidential_candidate; previous_nsdap_presidential_candidate_fullname = nsdap_presidential_candidate_fullname;
 go-to: hindenburg_wins if hindenburg_plurality; spd_wins if spd_plurality; z_wins if z_plurality; gessler_wins if gessler_plurality 
 
 @spd_presidential_menu
@@ -1055,7 +1055,7 @@ go-to: hindenburg_wins if hindenburg_plurality; spd_wins if spd_plurality; z_win
 title: Run President [+ president +], the incumbent.
 subtitle: The incumbency may give us an advantage over fielding a new candidate.
 view-if: president_party == "SPD"
-on-arrival: Q.spd_presidential_candidate = Q.president; Q.spd_presidential_candidate_fullname = Q.president_fullname; Q.spd_presidential_candidate_faction = Q.spd_president_faction
+on-arrival: spd_presidential_candidate = president; spd_presidential_candidate_fullname = president_fullname; spd_presidential_candidate_faction = spd_president_faction
 
 We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
 
@@ -1064,8 +1064,8 @@ We have made the incumbent President [+ spd_presidential_candidate +] our candid
 @presidential_candidate_previous
 title: Run [+ spd_presidential_candidate +], our candidate at the last election.
 subtitle: Their high profile from the previous campaign may give us an advantage.
-view-if: (Q.previous_spd_presidential_candidate != Q.president) and (Q.previous_spd_presidential_candidate != Q.chancellor) and (Q.previous_spd_presidential_candidate != "Vacant")
-on-arrival: Q.spd_presidential_candidate = Q.previous_spd_presidential_candidate; Q.spd_presidential_candidate_fullname = Q.previous_spd_presidential_candidate_fullname; Q.spd_presidential_candidate_faction = Q.previous_spd_presidential_candidate_faction
+view-if: (previous_spd_presidential_candidate != president) and (previous_spd_presidential_candidate != chancellor) and (previous_spd_presidential_candidate != "Vacant")
+on-arrival: spd_presidential_candidate = previous_spd_presidential_candidate; spd_presidential_candidate_fullname = previous_spd_presidential_candidate_fullname; spd_presidential_candidate_faction = previous_spd_presidential_candidate_faction
 
 - @spd_presidential_campaign: Now onto the campaign
     
@@ -1073,7 +1073,7 @@ on-arrival: Q.spd_presidential_candidate = Q.previous_spd_presidential_candidate
 Title: Run our Chancellor, [+ chancellor_fullname +] 
 subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: chancellor_party == "SPD"
-on-arrival: Q.spd_presidential_candidate = Q.chancellor; Q.spd_presidential_candidate_faction = Q.spd_chancellor_faction; Q.spd_presidential_candidate_fullname = Q.chancellor_fullname
+on-arrival: spd_presidential_candidate = chancellor; spd_presidential_candidate_faction = spd_chancellor_faction; spd_presidential_candidate_fullname = chancellor_fullname
 
 We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
 
@@ -1083,7 +1083,7 @@ We have made Chancellor [+ spd_presidential_candidate +] our candidate for the u
 Title: Run our Vice-Chancellor, [+ vice_chancellor_fullname +] 
 subtitle: Their high profile from Vice-Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
 view-if: vice_chancellor_party == "SPD"
-on-arrival: Q.spd_presidential_candidate = Q.vice_chancellor; Q.spd_presidential_candidate_faction = Q.spd_vice_chancellor_faction; Q.spd_presidential_candidate_fullname = Q.vice_chancellor_fullname
+on-arrival: spd_presidential_candidate = vice_chancellor; spd_presidential_candidate_faction = spd_vice_chancellor_faction; spd_presidential_candidate_fullname = vice_chancellor_fullname
 
 We have made Vice-Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
 
@@ -1091,8 +1091,8 @@ We have made Vice-Chancellor [+ spd_presidential_candidate +] our candidate for 
 
 @presidential_candidate_coleader_1
 title: Run [+ spd_coleader_1_fullname +], our Co-leader.
-view-if: (Q.chancellor != Q.spd_coleader_1 and Q.president != Q.spd_coleader_1 and Q.spd_presidential_candidate != Q.spd_coleader_1)
-on-arrival: Q.spd_presidential_candidate = Q.spd_coleader_1; Q.spd_presidential_candidate_fullname = Q.spd_coleader_1_fullname; Q.spd_presidential_candidate_faction = Q.spd_coleader_1_faction
+view-if: (chancellor != spd_coleader_1 and president != spd_coleader_1 and spd_presidential_candidate != spd_coleader_1)
+on-arrival: spd_presidential_candidate = spd_coleader_1; spd_presidential_candidate_fullname = spd_coleader_1_fullname; spd_presidential_candidate_faction = spd_coleader_1_faction
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
 
@@ -1100,8 +1100,8 @@ We have made [+ spd_presidential_candidate_fullname +] our candidate for the upc
 
 @presidential_candidate_coleader_2
 title: Run [+ spd_coleader_2_fullname +], our Co-leader.
-view-if: (Q.chancellor != Q.spd_coleader_2 and Q.president != Q.spd_coleader_2 and Q.spd_presidential_candidate != Q.spd_coleader_2)
-on-arrival: Q.spd_presidential_candidate = Q.spd_coleader_2; Q.spd_presidential_candidate_fullname = Q.spd_coleader_2_fullname;  Q.spd_presidential_candidate_faction = Q.spd_coleader_2_faction
+view-if: (chancellor != spd_coleader_2 and president != spd_coleader_2 and spd_presidential_candidate != spd_coleader_2)
+on-arrival: spd_presidential_candidate = spd_coleader_2; spd_presidential_candidate_fullname = spd_coleader_2_fullname;  spd_presidential_candidate_faction = spd_coleader_2_faction
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
 
@@ -1109,8 +1109,8 @@ We have made [+ spd_presidential_candidate_fullname +] our candidate for the upc
 
 @presidential_candidate_coleader_3
 title: Run [+ spd_coleader_3_fullname +], our Co-leader.
-view-if: (Q.chancellor != Q.spd_coleader_3 and Q.president != Q.spd_coleader_3 and Q.spd_presidential_candidate != Q.spd_coleader_3)
-on-arrival: Q.spd_presidential_candidate = Q.spd_coleader_3; Q.spd_presidential_candidate_fullname = Q.spd_coleader_3_fullname;  Q.spd_presidential_candidate_faction = Q.spd_coleader_3_faction
+view-if: (chancellor != spd_coleader_3 and president != spd_coleader_3 and spd_presidential_candidate != spd_coleader_3)
+on-arrival: spd_presidential_candidate = spd_coleader_3; spd_presidential_candidate_fullname = spd_coleader_3_fullname;  spd_presidential_candidate_faction = spd_coleader_3_faction
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
 
