@@ -1172,10 +1172,12 @@ title: Run [+ left_leader_fullname +], the leader of our Left wing.
 on-arrival: {!
 Q.spd_presidential_candidate = Q.left_leader; 
 Q.spd_presidential_candidate_fullname = Q.left_leader_fullname; 
-if (Q.left_leader == "Baade" or Q.left_leader == "Hirschfeld" or Q.left_leader == "Radbruch" or Q.left_leader == "Stampfer" or Q.left_leader == "Löbe") {
+if (Q.left_leader == "Baade" || Q.left_leader == "Hirschfeld" || Q.left_leader == "Radbruch" || Q.left_leader == "Stampfer" || Q.left_leader == "Löbe") {
 Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else Q.spd_presidential_candidate_faction = "Left"
+else {
+Q.spd_presidential_candidate_faction = "Left"
+}
 !}
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
