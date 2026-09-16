@@ -508,6 +508,7 @@ if (Q.hindenburg_presidential_votes > Q.plurality_winner_votes) {
     Q.plurality_winner = "Hindenburg";
     Q.plurality_winner_votes = Q.hindenburg_presidential_votes;
 }
+}
 !}
 go-to: hindenburg_wins if hindenburg_majority == 1; z_wins if z_majority == 1; spd_wins if spd_majority == 1; ddp_wins if ddp_majority == 1; no_majority_round1 if no_majority_1; round2_results if round25 >= 2; uspd_wins if uspd_majority == 1; bvp_wins if bvp_majority == 1; dvp_wins if dvp_majority == 1; dnvp_wins if dnvp_majority; nsdap_wins if nsdap_majority
 
