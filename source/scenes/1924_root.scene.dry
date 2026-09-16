@@ -14,8 +14,6 @@ Q.historical_mode = 0;
 // old demographics
 Q.old_demographics = 0;
 // use decimals for reichstag seats
-// TODO: not yet implemented
-Q.use_decimals = 0;
 
 // party resources
 Q.resources = 2;
