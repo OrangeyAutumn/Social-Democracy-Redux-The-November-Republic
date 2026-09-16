@@ -109,7 +109,7 @@ subtitle: -2 resources
 choose-if: resources >= 2
 on-arrival: {!
 resources -= 2; 
-if (Q.spd_presidential_candidate_faction == "Left" or Q.spd_presidential_candidate_faction == "Center" or Q.spd_presidential_candidate_faction == "Reformist" or Q.spd_presidential_candidate_faction == "Labor") {
+if (Q.spd_presidential_candidate_faction == "Left" || Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Reformist" || Q.spd_presidential_candidate_faction == "Labor") {
 Q.spd_multiplier += 0.1;
 }
 else if (Q.spd_presidential_candidate_faction == "Nonfactional") {
