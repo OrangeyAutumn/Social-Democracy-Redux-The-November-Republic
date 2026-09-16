@@ -130,7 +130,7 @@ choose-if: resources >= 1
 go-to: campaign_spd
 on-arrival: {!
 resources -= 1; 
-if (Q.spd_presidential_candidate_faction == "Left" or Q.spd_presidential_candidate_faction == "Center" or Q.spd_presidential_candidate_faction == "Reformist" or Q.spd_presidential_candidate_faction == "Labor") {
+if (Q.spd_presidential_candidate_faction == "Left" || Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Reformist" or Q.spd_presidential_candidate_faction == "Labor") {
 Q.spd_multiplier += 0.05;
 }
 else if (Q.spd_presidential_candidate_faction == "Nonfactional") {
