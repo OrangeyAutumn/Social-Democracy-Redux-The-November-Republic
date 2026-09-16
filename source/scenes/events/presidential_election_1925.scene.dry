@@ -718,51 +718,51 @@ We have managed to engineer a Gessler coalition. The left is understandably outr
 
 @campaign_round_two
 on-arrival: {!
-bvp_campaign = 0; 
-dvp_campaign = 0; 
-nsdap_campaign = 0; 
-dvp_support_hindenburg = 1; 
-hindenburg_campaign = 1; 
-nationalism += 5;
+Q.bvp_campaign = 0; 
+Q.dvp_campaign = 0; 
+Q.nsdap_campaign = 0; 
+Q.dvp_support_hindenburg = 1; 
+Q.hindenburg_campaign = 1; 
+Q.nationalism += 5;
 if (z_relation < 55 and spd_support_z) {
-bvp_support_hindenburg = 1
+Q.bvp_support_hindenburg = 1
 }
 else if (z_relation > 65 or not spd_support_z) {
-bvp_support_z = 1;
+Q.bvp_support_z = 1;
 }
 if (Q.uspd_support_spd == 1 or Q.spd_support_uspd == 1) {
 Q.hindenburg_multiplier = 1.15;
 Q.wirth_multiplier = 0.9;
 Q.marx_multiplier = 0.8;
 }
-if (Q.uspd_support_spd == 1 and Q.spd_campaign == 1 and (Q.spd_presidential_candidate_faction == "Left" || Q.spd_presidential_candidate_faction == "Nonfactional")) {
+if (Q.uspd_support_spd == 1 && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Left" || Q.spd_presidential_candidate_faction == "Nonfactional")) {
 Q.spd_multiplier = 0.9;
 }
-else if (Q.uspd_support_spd == 1 and Q.spd_campaign == 1 and (Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Labor")) {
+else if (Q.uspd_support_spd == 1 && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Labor")) {
 Q.spd_multiplier = 0.85;
 }
-else if (Q.uspd_support_spd == 1 and Q.spd_campaign == 1 and Q.spd_presidential_candidate_faction == "Neorevisionist") {
+else if (Q.uspd_support_spd == 1 && Q.spd_campaign == 1 && Q.spd_presidential_candidate_faction == "Neorevisionist") {
 Q.spd_multiplier = 0.65;
 }
-if ((Q.ddp_support_spd == 1 or z_support_spd == 1)  and Q.spd_campaign == 1 and (Q.spd_presidential_candidate_faction == "Reformist" || Q.spd_presidential_candidate_faction == "Nonfactional")) {
+if ((Q.ddp_support_spd == 1 or z_support_spd == 1) && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Reformist" || Q.spd_presidential_candidate_faction == "Nonfactional")) {
 Q.spd_multiplier = 0.9;
 }
-if ((Q.ddp_support_spd == 1 or z_support_spd == 1)  and Q.spd_campaign == 1 and (Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Labor")) {
+if ((Q.ddp_support_spd == 1 or z_support_spd == 1) && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Labor")) {
 Q.spd_multiplier = 0.85;
 }
-if ((Q.ddp_support_spd == 1 or z_support_spd == 1)  and Q.spd_campaign == 1 and Q.spd_presidential_candidate_faction == "Neorevisionist") {
+if ((Q.ddp_support_spd == 1 or z_support_spd == 1) && Q.spd_campaign == 1 && Q.spd_presidential_candidate_faction == "Neorevisionist") {
 Q.spd_multiplier = 0.65;
 }
 if (Q.spd_support_uspd == 1) {
-liebknecht_multiplier = 0.75;
+Q.liebknecht_multiplier = 0.75;
 }
 if (Q.spd_support_z) {
-marx_multiplier = 0.95;	
-wirth_multiplier = 0.975;
+Q.marx_multiplier = 0.95;	
+Q.wirth_multiplier = 0.975;
 }
 if (Q.spd_support_ddp) {
-hellpach_multiplier = 0.875;
-gessler_multiplier = 0.8;
+Q.hellpach_multiplier = 0.875;
+Q.gessler_multiplier = 0.8;
 }
 !}
 
