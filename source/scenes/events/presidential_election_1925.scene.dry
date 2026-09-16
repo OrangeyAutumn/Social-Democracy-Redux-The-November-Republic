@@ -746,23 +746,25 @@ go-to: campaign_round_two
 choose-if: resources >= 1
 max-visits: 1
 on-arrival: {!
-resources -= 1; z_relation -= 5; ddp_relation -= 5; 
+resources -= 1; 
+z_relation -= 5; 
+ddp_relation -= 5; 
 workers_uspd += 2; 
 unemployed_uspd += 2; 
 left_dissent -= 5; 
 left_strength -= 5; 
 nationalism += 2; 
 pro_republic -= 2;
-if (uspd_support_spd and spd_presidential_candidate_faction != "Neorevisionist" and spd_presidential_candidate_faction != "Nonfactional") {
+if (uspd_support_spd || spd_presidential_candidate_faction != "Neorevisionist" || spd_presidential_candidate_faction != "Nonfactional") {
 spd_multiplier += 0.05
 }
-else if (uspd_support_spd and spd_presidential_candidate_faction == "Nonfactional") {
+else if (uspd_support_spd || spd_presidential_candidate_faction == "Nonfactional") {
 spd_multiplier += 0.025
 }
-else if (uspd_support_spd and spd_presidential_candidate_faction == "Neorevisionist") {
+else if (uspd_support_spd || spd_presidential_candidate_faction == "Neorevisionist") {
 spd_multiplier += 0.05
 }
-if (spd_support_uspd) {
+else if (spd_support_uspd) {
 liebknecht_multiplier += 0.05
 }
 !}
