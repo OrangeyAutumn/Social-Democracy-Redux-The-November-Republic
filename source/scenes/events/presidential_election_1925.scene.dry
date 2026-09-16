@@ -725,11 +725,12 @@ dvp_support_hindenburg = 1;
 hindenburg_campaign = 1; 
 bvp_support_hindenburg = 1 if z_relation < 55 and spd_support_z; 
 bvp_support_z = 1 if z_relation > 65 or not spd_support_z; 
-nationalism += 5
+nationalism += 5;
 if (Q.uspd_support_spd == 1 or Q.spd_support_uspd == 1) {
 Q.hindenburg_multiplier = 1.15;
 Q.wirth_multiplier = 0.9;
 Q.marx_multiplier = 0.8;
+}
 if (Q.uspd_support_spd == 1 and Q.spd_campaign == 1 and (Q.spd_presidential_candidate_faction == "Left" || Q.spd_presidential_candidate_faction == "Nonfactional")) {
 Q.spd_multiplier = 0.9;
 }
