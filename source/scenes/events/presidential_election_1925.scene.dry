@@ -462,10 +462,10 @@ else if (Q.nsdap_presidential_results >= 50) {
 else if (Q.hindenburg_presidential_results >= 50) {
         Q.hindenburg_majority = 1;
            }
-else if (Q.round25 <= 1) {
+else (Q.round25 <= 1) {
 Q.no_majority_1 = 1;
 }
-else if (Q.round25 >= 2) {
+if (Q.round25 >= 2) {
 Q.plurality_winner = "";
 Q.plurality_winner_votes = 0;
 if (Q.uspd_presidential_votes > Q.plurality_winner_votes) {
