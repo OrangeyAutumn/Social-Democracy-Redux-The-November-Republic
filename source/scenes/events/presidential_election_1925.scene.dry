@@ -438,7 +438,7 @@ if (Q.uspd_presidential_results >= 50) {
 else if (Q.spd_presidential_results >= 50) {
         Q.spd_majority = 1;
            }
-else if (Q.ddp_presidential_results >= 50) and (Q.ddp_campaign == 1) {
+else if (Q.ddp_presidential_results >= 50) {
         Q.ddp_majority = 1;
            }
 else if (Q.z_presidential_results >= 50) {
