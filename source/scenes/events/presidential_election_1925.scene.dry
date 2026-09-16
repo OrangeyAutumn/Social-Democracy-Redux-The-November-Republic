@@ -864,7 +864,7 @@ Q.gessler_multiplier += 0.05
 go-to: campaign_round_two
 max-visits: 1
 
-[? if spd_support_uspd ? : We rally for democracy and against Paul von Hindenburg and the monarchists backing him, while carefully omitting [+ uspd_presidential_candidate +]'s own stances. ?][? if spd_support_z : We rally behind [+ z_presidential_candidate_fullname +] as a defender of democracy and the republic against Paul von Hindenburg and the monarchists backing him. ?][? if spd_support_ddp : We rally behind [+ ddp_presidential_candidate_fullname +] as a defender of democracy and the republic against Paul von Hindenburg and the monarchists backing him. ?]
+[? if spd_support_uspd : We rally for democracy and against Paul von Hindenburg and the monarchists backing him, while carefully omitting [+ uspd_presidential_candidate +]'s own stances. ?][? if spd_support_z : We rally behind [+ z_presidential_candidate_fullname +] as a defender of democracy and the republic against Paul von Hindenburg and the monarchists backing him. ?][? if spd_support_ddp : We rally behind [+ ddp_presidential_candidate_fullname +] as a defender of democracy and the republic against Paul von Hindenburg and the monarchists backing him. ?]
 
 @donate_uspd
 view-if: spd_support_uspd
