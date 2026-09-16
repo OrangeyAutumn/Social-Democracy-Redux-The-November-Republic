@@ -825,40 +825,40 @@ We attack [+ z_presidential_candidate +] for every fault we can find, and make c
 subtitle: -1 resource
 choose-if: resources >= 1
 on-arrival: {!
-resources -= 1; 
-pro_republic += 6; 
-nationalism -= 3; 
-workers_dnvp -= 2; 
-new_middle_dnvp -= 2; 
-left_dissent -= 2;
-if (uspd_support_spd and spd_presidential_candidate_faction != "Neorevisionist" and spd_presidential_candidate_faction != "Nonfactional") {
-spd_multiplier += 0.05
+Q.resources -= 1; 
+Q.pro_republic += 6; 
+Q.nationalism -= 3; 
+Q.workers_dnvp -= 2; 
+Q.new_middle_dnvp -= 2; 
+Q.left_dissent -= 2;
+if (Q.uspd_support_spd == 1 && Q.spd_presidential_candidate_faction != "Neorevisionist" && Q.spd_presidential_candidate_faction != "Nonfactional") {
+Q.spd_multiplier += 0.05
 }
-else if (uspd_support_spd and spd_presidential_candidate_faction == "Nonfactional") {
-spd_multiplier += 0.025
+else if (Q.uspd_support_spd == 1 && Q.spd_presidential_candidate_faction == "Nonfactional") {
+Q.spd_multiplier += 0.025
 }
-else if (uspd_support_spd and spd_presidential_candidate_faction == "Neorevisionist") {
-spd_multiplier += 0.05
+else if (Q.uspd_support_spd == 1 && Q.spd_presidential_candidate_faction == "Neorevisionist") {
+Q.spd_multiplier += 0.05
 }
-if (spd_support_uspd) {
-liebknecht_multiplier += 0.05
+if (Q.spd_support_uspd) {
+Q.liebknecht_multiplier += 0.05
 }
-if ((Q.ddp_support_spd == 1 or z_support_spd == 1) and spd_presidential_candidate_faction != "Neorevisionist" and spd_presidential_candidate_faction != "Nonfactional") {
-spd_multiplier += 0.05
+if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction != "Neorevisionist" && Q.spd_presidential_candidate_faction != "Nonfactional") {
+Q.spd_multiplier += 0.05
 }
-else if ((Q.ddp_support_spd == 1 or z_support_spd == 1) and spd_presidential_candidate_faction == "Nonfactional") {
-spd_multiplier += 0.025
+else if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction == "Nonfactional") {
+Q.spd_multiplier += 0.025
 }
-else if ((Q.ddp_support_spd == 1 or z_support_spd == 1) and spd_presidential_candidate_faction == "Neorevisionist") {
-spd_multiplier += 0.05
+else if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction == "Neorevisionist") {
+Q.spd_multiplier += 0.05
 }
-if (spd_support_z) {
-marx_multiplier += 0.05
-wirth_multiplier += 0.05
+if (Q.spd_support_z) {
+Q.marx_multiplier += 0.05
+Q.wirth_multiplier += 0.05
 }
-if (spd_support_z) {
-hellpach_multiplier += 0.05
-gessler_multiplier += 0.05
+if (Q.spd_support_z) {
+Q.hellpach_multiplier += 0.05
+Q.gessler_multiplier += 0.05
 }
 !}
 go-to: campaign_round_two
