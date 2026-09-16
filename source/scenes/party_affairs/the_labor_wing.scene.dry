@@ -6,6 +6,8 @@ view-if: never
 on-arrival: month_activities += 1; labor_timer += 6
 card-image: img/portraits/LeipartTheodor.jpg
 
+= The Labor Wing
+
 The Labor wing are our strongest connection to our grassroots. How shall we make use of their talents?
 
 -	@use_leipart: We will use the talents of the Labor leader, Theodor Leipart
