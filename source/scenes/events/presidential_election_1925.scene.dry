@@ -1192,7 +1192,9 @@ Q.spd_presidential_candidate_fullname = Q.center_leader_fullname;
 if (Q.center_leader == "Baade" or Q.center_leader == "Hirschfeld" or Q.center_leader == "Radbruch" or Q.center_leader == "Stampfer" or Q.center_leader == "Löbe") {
 Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else Q.spd_presidential_candidate_faction = "Center"
+else {
+Q.spd_presidential_candidate_faction = "Center"
+}
 !}
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
@@ -1210,7 +1212,9 @@ Q.spd_presidential_candidate_faction = "Nonfactional"
 else if (Q.labor_leader == "Mierendorff" or Q.labor_leader == "Schumacher" or Q.labor_leader == "Leber" or Q.labor_leader == "Noske") {
 Q.spd_presidential_candidate_faction = "Neorevisionist"
 }
-else Q.spd_presidential_candidate_faction = "Labor"
+else {
+Q.spd_presidential_candidate_faction = "Labor"
+}
 !}
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
@@ -1228,7 +1232,9 @@ Q.spd_presidential_candidate_faction = "Nonfactional"
 else if (Q.reformist_leader == "Mierendorff" or Q.reformist_leader == "Schumacher" or Q.reformist_leader == "Leber" or Q.reformist_leader == "Noske") {
 Q.spd_presidential_candidate_faction = "Neorevisionist"
 }
-else Q.spd_presidential_candidate_faction = "Reformist"
+else {
+Q.spd_presidential_candidate_faction = "Reformist"
+}
 !}
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
@@ -1244,7 +1250,9 @@ Q.spd_presidential_candidate_fullname = Q.neorevisionist_leader_fullname;
 if (Q.neorevisionist_leader == "Baade" or Q.neorevisionist_leader == "Hirschfeld" or Q.neorevisionist_leader == "Radbruch" or Q.neorevisionist_leader == "Stampfer" or Q.neorevisionist_leader == "Löbe") {
 Q.spd_presidential_candidate_faction = "Nonfactional"
 }
-else Q.spd_presidential_candidate_faction = "Neorevisionist"
+else {
+Q.spd_presidential_candidate_faction = "Neorevisionist"
+}
 !}
 
 We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
