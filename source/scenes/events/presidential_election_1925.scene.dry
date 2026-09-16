@@ -276,6 +276,9 @@ else if (Q.z_presidential_candidate == "Wirth") {
         Q.z_presidential_votes *= Q.wirth_multiplier;
            }
     }
+if (Q.bvp_campaign) {
+Q.bvp_presidential_votes *= Q.held_multiplier
+}
 if (Q.dvp_campaign) {
     if (Q.z_support_dvp) {
         Q.dvp_presidential_votes += Q.z_presidential_votes;
