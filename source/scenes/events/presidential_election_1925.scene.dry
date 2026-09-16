@@ -14,7 +14,7 @@ Q.stresemann_multiplier = 1.05;
 Q.ludendorff_multiplier = 0.35
 Q.dnvp_multiplier = 1;
 Q.nsdap_multiplier = 1;
-if (Q.spd_presidential_candidate_faction == "Left" or Q.spd_presidential_candidate_faction == "Reformist" or Q.spd_presidential_candidate_faction == "Labor") {
+if (Q.spd_presidential_candidate_faction == "Left" || Q.spd_presidential_candidate_faction == "Reformist" || Q.spd_presidential_candidate_faction == "Labor") {
 Q.spd_multiplier = 0.9;
 }
 if (Q.spd_presidential_candidate_faction == "Center") {
