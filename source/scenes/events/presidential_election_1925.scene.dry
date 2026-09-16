@@ -1015,34 +1015,34 @@ subtitle: -1 resource
 choose-if: resources >= 1
 on-arrival: {!
 resources -= 1;
-if (uspd_support_spd and spd_presidential_candidate_faction != "Neorevisionist" and spd_presidential_candidate_faction != "Nonfactional") {
-spd_multiplier += 0.05
+if (Q.uspd_support_spd && Q.spd_presidential_candidate_faction != "Neorevisionist" && Q.spd_presidential_candidate_faction != "Nonfactional") {
+Q.spd_multiplier += 0.05
 }
-else if (uspd_support_spd and spd_presidential_candidate_faction == "Nonfactional") {
-spd_multiplier += 0.025
+else if (Q.uspd_support_spd && Q.spd_presidential_candidate_faction == "Nonfactional") {
+Q.spd_multiplier += 0.025
 }
-else if (uspd_support_spd and spd_presidential_candidate_faction == "Neorevisionist") {
-spd_multiplier += 0.05
+else if (Q.uspd_support_spd && Q.spd_presidential_candidate_faction == "Neorevisionist") {
+Q.spd_multiplier += 0.05
 }
-if (spd_support_uspd) {
-liebknecht_multiplier += 0.05
+if (Q.spd_support_uspd) {
+Q.liebknecht_multiplier += 0.05
 }
-if ((Q.ddp_support_spd == 1 or z_support_spd == 1) and spd_presidential_candidate_faction != "Neorevisionist" and spd_presidential_candidate_faction != "Nonfactional") {
-spd_multiplier += 0.05
+if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction != "Neorevisionist" && Q.spd_presidential_candidate_faction != "Nonfactional") {
+Q.spd_multiplier += 0.05
 }
-else if ((Q.ddp_support_spd == 1 or z_support_spd == 1) and spd_presidential_candidate_faction == "Nonfactional") {
-spd_multiplier += 0.025
+else if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction == "Nonfactional") {
+Q.spd_multiplier += 0.025
 }
-else if ((Q.ddp_support_spd == 1 or z_support_spd == 1) and spd_presidential_candidate_faction == "Neorevisionist") {
-spd_multiplier += 0.05
+else if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_presidential_candidate_faction == "Neorevisionist") {
+Q.spd_multiplier += 0.05
 }
-if (spd_support_z) {
-marx_multiplier += 0.05
-wirth_multiplier += 0.05
+if (Q.spd_support_z) {
+Q.marx_multiplier += 0.05
+Q.wirth_multiplier += 0.05
 }
-if (spd_support_z) {
-hellpach_multiplier += 0.05
-gessler_multiplier += 0.05
+if (Q.spd_support_z) {
+Q.hellpach_multiplier += 0.05
+Q.gessler_multiplier += 0.05
 }
 !}
 max-visits: 1
