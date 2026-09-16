@@ -744,13 +744,13 @@ Q.spd_multiplier = 0.85;
 else if (Q.uspd_support_spd == 1 && Q.spd_campaign == 1 && Q.spd_presidential_candidate_faction == "Neorevisionist") {
 Q.spd_multiplier = 0.65;
 }
-if ((Q.ddp_support_spd == 1 or Q.z_support_spd == 1) && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Reformist" || Q.spd_presidential_candidate_faction == "Nonfactional")) {
+if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Reformist" || Q.spd_presidential_candidate_faction == "Nonfactional")) {
 Q.spd_multiplier = 0.9;
 }
-if ((Q.ddp_support_spd == 1 or Q.z_support_spd == 1) && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Labor")) {
+if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_campaign == 1 && (Q.spd_presidential_candidate_faction == "Center" || Q.spd_presidential_candidate_faction == "Labor")) {
 Q.spd_multiplier = 0.85;
 }
-if ((Q.ddp_support_spd == 1 or Q.z_support_spd == 1) && Q.spd_campaign == 1 && Q.spd_presidential_candidate_faction == "Neorevisionist") {
+if ((Q.ddp_support_spd == 1 || Q.z_support_spd == 1) && Q.spd_campaign == 1 && Q.spd_presidential_candidate_faction == "Neorevisionist") {
 Q.spd_multiplier = 0.65;
 }
 if (Q.spd_support_uspd == 1) {
