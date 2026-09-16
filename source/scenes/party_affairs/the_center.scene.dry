@@ -6,8 +6,9 @@ view-if: never
 on-arrival: month_activities += 1; center_timer += 6
 card-image: img/HilferdingRudolf.jpg
 
-The Center faction is the glue that holds our party together. How shall we make use of their talents?
+= The Center
 
+The Center faction is the glue that holds our party together. How shall we make use of their talents?
 
 -	@use_hilferding: We will use the talents of the Center leader, Rudolf Hilferding
 -	@use_wels: We will use the talents of the Center leader, Otto Wels
