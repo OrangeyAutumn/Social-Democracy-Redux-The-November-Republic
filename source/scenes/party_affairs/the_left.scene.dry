@@ -6,6 +6,8 @@ view-if: never
 on-arrival: month_activities += 1; left_timer += 6
 card-image: img/portraits/LeviPaul.jpg
 
+= The Left
+
 The Left faction is the fire that drives our party forwards. How shall we make use of their talents?
 
 -	@use_crispien: We will use the talents of the Left leader, Arthur Crispien
