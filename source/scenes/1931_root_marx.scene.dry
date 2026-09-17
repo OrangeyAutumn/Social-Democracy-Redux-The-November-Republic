@@ -920,5 +920,24 @@ Q.other_hl = 3;
 Q.landtags_enabled = 1;
 Q.legislature_enabled = 1;
 
+// Previous Presidential Candidate
+Q.spd_previous_presidential_candidate = "Braun";
+Q.spd_previous_presidential_candidate_fullname = "Otto Braun";
+Q.spd_previous_presidential_candidate_faction = "Reformist";
+Q.uspd_previous_presidential_candidate = "Liebknecht";
+Q.uspd_previous_presidential_candidate_fullname = "Karl Liebknecht";
+Q.ddp_previous_presidential_candidate = "Hellpach";
+Q.ddp_previous_presidential_candidate_fullname = "Willy Hellpach";
+Q.z_previous_presidential_candidate = "Marx";
+Q.z_previous_presidential_candidate_fullname = "Wilhelm Marx";
+Q.bvp_previous_presidential_candidate = "Held";
+Q.bvp_previous_presidential_candidate_fullname = "Heinrich Held";
+Q.dvp_previous_presidential_candidate = "Jarres";
+Q.dvp_previous_presidential_candidate_fullname = "Karl Jarres";
+Q.dnvp_previous_presidential_candidate = "Vacant";
+Q.dnvp_previous_presidential_candidate_fullname = "Vacant";
+Q.nsdap_previous_presidential_candidate = "Vacant";
+Q.nsdap_previous_presidential_candidate_fullname = "Vacant";
+
 !}
 go-to: root.menu
