@@ -58,7 +58,7 @@ max-cards: 6
 - @the_labor_wing_pinned
 - @the_reformists_pinned
 - @shuffle_leadership_pinned
-- @sandbox_pinned
+- @sandbox
 
 @party
 title: Party Affairs
