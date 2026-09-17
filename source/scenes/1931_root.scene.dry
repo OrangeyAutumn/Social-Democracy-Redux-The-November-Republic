@@ -460,7 +460,7 @@ Q.agriculture_minister_party = 'CNBL';
 Q.panzerkreuzer_seen = 1;
 Q.panzerkreuzer_funded = 1;
 Q.panzerkreuzer_failed = 0;
-Q.unemployment_insurance_seen = 0;
+Q.unemployment_insurance_seen = 1;
 Q.black_thursday_seen = 1;
 Q.stresemann_dead = 1;
 // unemployment insurance event is seen if the unemployment level is at least 4 more than the threshold...
