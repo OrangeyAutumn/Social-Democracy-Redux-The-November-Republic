@@ -32,7 +32,7 @@ Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ reso
 
 Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unemployment: [+ unemployed_2 +]% | [? if spd_in_government == 1 : | Budget: [+ budget +] ?]
 
-= **The <span style="color: #c00000;">**[+ spd_name +]**</span> ([+ spd_ideology +])**
+= **The <span style="color: #c00000;">[+ spd_name +]</span> ([+ spd_ideology +])**
 
 Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +]) 
 
