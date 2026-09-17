@@ -306,7 +306,7 @@ z-index: -99;
  *
  */
 
-ul.decks, ul.hand, ul.pinned-cards {
+ul.pinned-cards, ul.decks, ul.hand, ul.pinned-cards-2 {
   list-style: none;
   padding-left: 0;
 }
@@ -514,7 +514,7 @@ top: 50%;
     border: 8px solid var(--card-border-color);
     margin-bottom: 0.5em;
   }
-  .card-in-hand, .pinned-card, .deck {
+  .pinned-card, .card-in-hand, .pinned-card-2, .deck {
     max-width: 120px;
     margin-right: 1em;
     vertical-align: top;
