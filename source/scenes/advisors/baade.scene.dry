@@ -1,7 +1,6 @@
 title: Fritz Baade
 is-pinned-card: true
-pinnedCardType: "advisor"
-tags: advisor, reformist
+tags: advisor, nonfactional
 card-image: img/portraits/BaadeFritz.jpg
 view-if: baade_advisor = 1
 new-page: true 
