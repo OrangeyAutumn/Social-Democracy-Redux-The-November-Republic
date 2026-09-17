@@ -176,7 +176,7 @@ Q.dnvp_presidential_votes = Q.dnvp_votes;
 Q.nsdap_presidential_votes = Q.nsdap_votes;
 Q.other_presidential_votes = Q.other_votes;
 Q.hindenburg_presidential_votes = 0;
-if (Q.uspd_campaign) {
+if (Q.uspd_campaign == 1) {
         if (Q.spd_support_uspd) {
         Q.uspd_presidential_votes += Q.spd_presidential_votes;
            }
@@ -194,15 +194,15 @@ Q.uspd_presidential_votes *= 1.025
 }
 Q.uspd_presidential_votes *= Q.liebknecht_multiplier;
     }
-if (Q.spd_campaign) {
-    if (Q.z_support_spd) {
+if (Q.spd_campaign == 1) {
+    if (Q.z_support_spd == 1) {
         Q.spd_presidential_votes += Q.z_presidential_votes;
           }
-    if (Q.ddp_support_spd) {
-        Q.spd_presidential_votes += Q.ddp_votes;
+    if (Q.ddp_support_spd == 1) {
+        Q.spd_presidential_votes += Q.ddp_presidential_votes;
            }
-    if (Q.uspd_support_spd) {
-              Q.spd_presidential_votes += Q.uspd_votes;
+    if (Q.uspd_support_spd == 1) {
+              Q.spd_presidential_votes += Q.uspd_presidential_votes;
             }
 if (Q.president == Q.spd_presidential_candidate) {
 Q.spd_presidential_votes *= 1.05
@@ -218,15 +218,15 @@ Q.spd_presidential_votes *= 1.025
 }
 Q.spd_presidential_votes *= Q.spd_multiplier;
 }
-if (Q.ddp_campaign) {
-    if (Q.z_support_ddp) {
+if (Q.ddp_campaign == 1) {
+    if (Q.z_support_ddp == 1) {
         Q.ddp_presidential_votes += Q.z_presidential_votes;
           }
-    if (Q.spd_support_ddp) {
-        Q.ddp_presidential_votes += Q.spd_votes;
+    if (Q.spd_support_ddp == 1) {
+        Q.ddp_presidential_votes += Q.spd_presidential_votes;
            }
-     if (Q.dvp_support_ddp) {
-         Q.ddp_presidential_votes += Q.dvp_votes;
+     if (Q.dvp_support_ddp == 1) {
+         Q.ddp_presidential_votes += Q.dvp_presidential_votes;
 }
 if (Q.president == Q.ddp_presidential_candidate) {
 Q.ddp_presidential_votes *= 1.05
@@ -247,15 +247,15 @@ else if (Q.ddp_presidential_candidate == "Gessler") {
 Q.ddp_presidential_votes *= Q.gessler_multiplier;
     }
 }
-if (Q.z_campaign) {
-    if (Q.ddp_support_z) {
-        Q.z_presidential_votes += Q.ddp_votes;
+if (Q.z_campaign == 1) {
+    if (Q.ddp_support_z == 1) {
+        Q.z_presidential_votes += Q.ddp_presidential_votes;
           }
-    if (Q.spd_support_z) {
-        Q.z_presidential_votes += Q.spd_votes;
+    if (Q.spd_support_z == 1) {
+        Q.z_presidential_votes += Q.spd_presidential_votes;
            }
-  if (Q.bvp_support_z) {
-        Q.z_presidential_votes += Q.bvp_votes;
+  if (Q.bvp_support_z == 1) {
+        Q.z_presidential_votes += Q.bvp_presidential_votes;
            }
 if (Q.president == Q.z_presidential_candidate) {
 Q.z_presidential_votes *= 1.05
@@ -276,21 +276,21 @@ else if (Q.z_presidential_candidate == "Wirth") {
         Q.z_presidential_votes *= Q.wirth_multiplier;
            }
     }
-if (Q.bvp_campaign) {
+if (Q.bvp_campaign == 1) {
 Q.bvp_presidential_votes *= Q.held_multiplier
 }
-if (Q.dvp_campaign) {
-    if (Q.z_support_dvp) {
+if (Q.dvp_campaign == 1) {
+    if (Q.z_support_dvp == 1) {
         Q.dvp_presidential_votes += Q.z_presidential_votes;
           }
-    if (Q.ddp_support_dvp) {
-        Q.dvp_presidential_votes += Q.ddp_votes;
+    if (Q.ddp_support_dvp == 1) {
+        Q.dvp_presidential_votes += Q.ddp_presidential_votes;
            }
-if (Q.dnvp_support_dvp) {
-        Q.dvp_presidential_votes += Q.dnvp_votes;
+if (Q.dnvp_support_dvp == 1) {
+        Q.dvp_presidential_votes += Q.dnvp_presidential_votes;
            }
-if (Q.other_support_dvp) {
-        Q.dvp_presidential_votes += Q.other_votes;
+if (Q.other_support_dvp == 1) {
+        Q.dvp_presidential_votes += Q.other_presidential_votes;
            }
 if (Q.president == Q.dvp_presidential_candidate) {
 Q.dvp_presidential_votes *= 1.05
@@ -311,18 +311,18 @@ else if (Q.dvp_presidential_candidate == "Stresemann") {
 Q.dvp_presidential_votes *= Q.stresemann_multiplier;
     }
 }
-if (Q.dnvp_campaign) {
-    if (Q.z_support_dnvp) {
+if (Q.dnvp_campaign == 1) {
+    if (Q.z_support_dnvp == 1) {
         Q.dnvp_presidential_votes += Q.z_presidential_votes;
           }
-    if (Q.nsdap_support_dnvp) {
-        Q.dnvp_presidential_votes += Q.nsdap_votes;
+    if (Q.nsdap_support_dnvp == 1) {
+        Q.dnvp_presidential_votes += Q.nsdap_presidential_votes;
            }
-if (Q.dvp_support_dnvp) {
-        Q.dnvp_presidential_votes += Q.dvp_votes;
+if (Q.dvp_support_dnvp == 1) {
+        Q.dnvp_presidential_votes += Q.dvp_presidential_votes;
            }
-if (Q.other_support_dnvp) {
-        Q.dnvp_presidential_votes += Q.other_votes;
+if (Q.other_support_dnvp == 1) {
+        Q.dnvp_presidential_votes += Q.other_presidential_votes;
            }
 if (Q.president == Q.dnvp_presidential_candidate) {
 Q.dnvp_presidential_votes *= 1.05
@@ -338,15 +338,15 @@ Q.dnvp_presidential_votes *= 1.025
 }
 Q.dnvp_presidential_votes *= Q.dnvp_multiplier;
 }
-if (Q.nsdap_campaign) {
+if (Q.nsdap_campaign == 1) {
     if (Q.dnvp_support_nsdap) {
-        Q.nsdap_presidential_votes += Q.dnvp_votes;
+        Q.nsdap_presidential_votes += Q.dnvp_presidential_votes;
            }
-if (Q.dvp_support_nsdap) {
-        Q.nsdap_presidential_votes += Q.dvp_votes;
+if (Q.dvp_support_nsdap == 1) {
+        Q.nsdap_presidential_votes += Q.dvp_presidential_votes;
            }
-if (Q.other_support_nsdap) {
-        Q.nsdap_presidential_votes += Q.other_votes;
+if (Q.other_support_nsdap == 1) {
+        Q.nsdap_presidential_votes += Q.other_presidential_votes;
            }
 if (Q.president == Q.nsdap_presidential_candidate) {
 Q.nsdap_presidential_votes *= 1.05
@@ -367,21 +367,21 @@ else if (Q.nsdap_presidential_candidate != "Ludendorff") {
 Q.nsdap_presidential_votes *= Q.nsdap_multiplier;
 	}
 }
-if (Q.hindenburg_campaign) {
+if (Q.hindenburg_campaign == 1) {
     if (Q.z_support_hindenburg) {
         Q.hindenburg_presidential_votes += Q.z_presidential_votes;
           }
-if (Q.dnvp_support_hindenburg) {
-        Q.hindenburg_presidential_votes += Q.dnvp_votes;
+if (Q.dnvp_support_hindenburg == 1) {
+        Q.hindenburg_presidential_votes += Q.dnvp_presidential_votes;
           }
-    if (Q.nsdap_support_hindenburg) {
-        Q.hindenburg_presidential_votes += Q.nsdap_votes;
+    if (Q.nsdap_support_hindenburg == 1) {
+        Q.hindenburg_presidential_votes += Q.nsdap_presidential_votes;
            }
-if (Q.dvp_support_hindenburg) {
-        Q.hindenburg_presidential_votes += Q.dvp_votes;
+if (Q.dvp_support_hindenburg == 1) {
+        Q.hindenburg_presidential_votes += Q.dvp_presidential_votes;
            }
-if (Q.other_support_hindenburg) {
-        Q.hindenburg_presidential_votes += Q.other_votes;
+if (Q.other_support_hindenburg == 1) {
+        Q.hindenburg_presidential_votes += Q.other_presidential_votes;
            }
 if (Q.president == "Hindenburg") {
 Q.hindenburg_presidential_votes *= 1.05
