@@ -1,13 +1,13 @@
-title: Chancellor [+ chancellor +] calls new elections!
-subtitle: Chancellor [+ chancellor +] has called early elections.
-view-if: year == 1928 and month >= 2 and in_grand_coalition == 1
+title: Chancellor [+ chancellor +] calls early elections!
+subtitle: Chancellor [+ chancellor +] has called fresh elections.
+view-if: year == 1928 and month >= 2 and in_grand_coalition == 1 and month < 4
 new-page: true
 max-visits: 1
 tags: event
 on-arrival: time_to_election = 3;
 call: set_next_election_time
 
-= Chancellor [+ chancellor +] calls new elections!
+= Chancellor [+ chancellor +] calls early elections!
 
 With the unexpected longevity of the Grand Coalition and elections already due later this year, Chancellor [+ chancellor +] has decided to call elections early rather than wait and risk any crises collapsing the government. Some within the coalition hope that, whatever the results, the present government will continue, while others privately hope for a return to either a Bourgeois or Weimar coalition.
 
