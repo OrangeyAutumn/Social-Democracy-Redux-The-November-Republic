@@ -412,7 +412,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'sapd', 'uspd', 'z', 'bvp', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties = ['spd', 'sapd', 'uspd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 Q.states = ['prussia', 'bavaria', 'thuringia', 'saxony', 'schaumburg_', 'hamburg', 'wurttemberg'];
 
 // Proportion of different social groups
@@ -491,19 +491,6 @@ Q.catholics_other = 15.4;
 Q.rural_prole = 0.2;
 Q.middle_prole = 0.5;
 Q.lumpenprole = 0;
-
-// Starting Polling
-Q.uspd_votes = 8.9;
-Q.sapd_votes = 0;
-Q.spd_votes = 26.0;
-Q.z_votes = 17.3;
-Q.z_minus_bvp_votes = 13.6;
-Q.bvp_votes = 3.7;
-Q.ddp_votes = 6.3;
-Q.dvp_votes = 10.1;
-Q.dnvp_votes = 20.5;
-Q.nsdap_votes = 3.0;
-Q.other_votes = 7.9;
 
 // Current Reichstag composition
 // % of Reichstag in Nov 1924
