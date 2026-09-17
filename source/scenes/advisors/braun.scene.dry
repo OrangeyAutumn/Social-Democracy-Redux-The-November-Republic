@@ -1,6 +1,5 @@
 title: Otto Braun
 is-pinned-card: true
-pinnedCardType: "advisor"
 tags: advisor, reformist
 card-image: img/portraits/BraunOtto.jpg
 view-if: braun_advisor = 1
