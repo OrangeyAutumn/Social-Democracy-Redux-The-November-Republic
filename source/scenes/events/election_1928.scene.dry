@@ -46,7 +46,7 @@ on-arrival: {!
 var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
-    if (Q.constitutional_reform > 0) {
+    if (Q.constitutional_reform > 0 || Q.party_bans) {
         if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || (Q[party + '_banned'] == 1)) {
             Q[party + '_r'] = 0;
         } else {
@@ -110,15 +110,15 @@ if (Q.z_r >= Q.spd_r && Q.z_r >= Q.uspd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.dv
 if (Q.dnvp_r >= Q.spd_r && Q.dnvp_r >= Q.uspd_r && Q.dnvp_r >= Q.z_r && Q.dnvp_r >= Q.dvp_r && Q.dnvp_r >= Q.nsdap_r) {
     Q.largest_party = 'DNVP';
 }
-Q.z_minus_bvp_r = Q.z_r*0.8.toFixed(1);
-Q.bvp_r = Q.z_r*0.2.toFixed(1);
+Q.z_minus_bvp_r = Math.round(Q.z_r * 0.8 * 10) / 10;
+Q.bvp_r = Math.round(Q.z_r * 0.2 * 10) / 10;
 // coalitions
 Q.uspd_tolerated_spd_minority = Q.spd_r + Q.uspd_r;
 Q.uspd_tolerated_social_liberal_coalition = Q.spd_r + Q.uspd_r + Q.ddp_r;
 Q.social_liberal_coalition = Q.spd_r + Q.ddp_r;
-Q.social_christian_coalition = Q.spd_r + z_minus_bvp_r;
-Q.uspd_tolerated_weimar_coalition = Q.uspd_r + Q.spd_r + Q.ddp_r + z_minus_bvp_r;
-Q.weimar_coalition = Q.spd_r + Q.ddp_r + z_minus_bvp_r;
+Q.social_christian_coalition = Q.spd_r + Q.z_minus_bvp_r;
+Q.uspd_tolerated_weimar_coalition = Q.uspd_r + Q.spd_r + Q.ddp_r + Q.z_minus_bvp_r;
+Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_minus_bvp_r;
 Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
 Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
