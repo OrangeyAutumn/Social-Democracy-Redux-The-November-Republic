@@ -37,8 +37,6 @@ Q.reformist_strength = 25;
 Q.reformist_dissent = 5;
 Q.neorevisionist_strength = 10;
 Q.neorevisionist_dissent = 10;
-Q.spartacist_strength = 5;
-Q.spartacist_dissent = 15;
 
 // secret events...
 Q.unions_independent = 0;
