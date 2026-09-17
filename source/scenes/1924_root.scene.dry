@@ -976,5 +976,24 @@ Q.other_wl = 24;
 Q.landtags_enabled = 1;
 Q.legislature_enabled = 1;
 
+// Previous Presidential Candidate
+Q.spd_previous_presidential_candidate = "Vacant";
+Q.spd_previous_presidential_candidate_fullname = "Vacant";
+Q.spd_previous_presidential_candidate_faction = "Vacant";
+Q.uspd_previous_presidential_candidate = "Vacant";
+Q.uspd_previous_presidential_candidate_fullname = "Vacant";
+Q.ddp_previous_presidential_candidate = "Vacant";
+Q.ddp_previous_presidential_candidate_fullname = "Vacant";
+Q.z_previous_presidential_candidate = "Vacant";
+Q.z_previous_presidential_candidate_fullname = "Vacant";
+Q.bvp_previous_presidential_candidate = "Vacant";
+Q.bvp_previous_presidential_candidate_fullname = "Vacant";
+Q.bvp_previous_presidential_candidate = "Vacant";
+Q.bvp_previous_presidential_candidate_fullname = "Vacant";
+Q.dnvp_previous_presidential_candidate = "Vacant";
+Q.dnvp_previous_presidential_candidate_fullname = "Vacant";
+Q.nsdap_previous_presidential_candidate = "Vacant";
+Q.nsdap_previous_presidential_candidate_fullname = "Vacant";
+
 !}
 go-to: root.menu
