@@ -1,7 +1,7 @@
 title: The Death of Ebert
 subtitle: The President has died...
 new-page: true
-view-if: year = 1929 and month >= 7 and not ebert_dead and ebert_lives == 1; president_fullname = "Walter Simons (acting)"; president_party = "Unaffiliated"
+view-if: year = 1929 and month >= 7 and not ebert_dead and ebert_lives == 1;
 on-arrival: ebert_dead = 1; 
 tags: event
 
@@ -18,7 +18,7 @@ on-arrival: reformist_leader = "Braun"; reformist_leader_fullname = "Otto Braun"
 
 @succession2
 view-if: president == "Ebert"
-on-arrival: president = "Simons (acting)"
+on-arrival: president = "Simons (acting)"; president_fullname = "Walter Simons (acting)"; president_party = "Unaffiliated"
 
 With Ebert's death, fresh elections have been called to elect his successor.
 
