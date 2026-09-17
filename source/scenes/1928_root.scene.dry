@@ -400,8 +400,10 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Hindenburg";
+Q.president_fullname = "Paul von Hindenburg"
 Q.president_party = "Independent";
 Q.chancellor = "Marx";
+Q.chancellor_fullname = "Wilhelm Marx"
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
