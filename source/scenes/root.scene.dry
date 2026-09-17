@@ -1,5 +1,10 @@
 title: Root Scene
 new-page: true
+go-to: post_event if started = 1; start_menu if started = 0
+
+@start_menu
+new-page: true
+set-bg: img/reichstag_2.jpg
 on-arrival: {!
 Q.difficulty = 0;
 Q.historical_mode = 0;
@@ -728,11 +733,6 @@ Q.president_marx = 0;
 Q.new_shuffle = 0;
 
 !}
-go-to: post_event if started = 1; start_menu if started = 0
-
-@start_menu
-new-page: true
-set-bg: img/reichstag_2.jpg
 go-to: start_menu_2
 
 = Social Democracy Redux: The November Republic (An Alternate History)
