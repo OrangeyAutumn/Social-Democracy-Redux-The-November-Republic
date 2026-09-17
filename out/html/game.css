@@ -194,8 +194,8 @@ margin: 0 auto;
 .tools.left {
   float: left;
   left: 0.4em;
-  width: 20rem;
-  margin-left: -6rem;
+  width: 18rem;
+  margin-left: -4rem;
 }
 .tools.right {
   float: right;
