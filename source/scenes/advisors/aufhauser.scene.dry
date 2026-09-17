@@ -1,6 +1,5 @@
 title: Siegfried Aufhäuser
 is-pinned-card: true
-pinnedCardType: "advisor"
 tags: advisor, reformist
 card-image: img/portraits/AufhäuserSiegfried.jpg
 view-if: aufhauser_advisor = 1
