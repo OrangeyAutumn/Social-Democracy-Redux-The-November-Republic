@@ -7,7 +7,6 @@ go-to: post_event if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
-audio: music/opening_score.mp3
 set-bg: img/reichstag_2.jpg
 go-to: start_menu_2
 
@@ -26,6 +25,7 @@ go-to: start_menu_2
 
 @start
 new-page: true
+audio: music/opening_score.mp3
 
 = Social Democracy Redux: The November Republic (An Alternate History)
 
