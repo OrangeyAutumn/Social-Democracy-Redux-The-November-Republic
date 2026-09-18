@@ -26,8 +26,8 @@ A constitutional reform requires either a two-thirds supermajority in the Reichs
 - @constructive_vonc: Ban non-constructive votes of no confidence.
 - @presidential_powers: Reduce presidential powers.
 - @constitutional_bans: Allow the banning of anti-constitutional parties.
-- @constitutional_convention: Hold a constitutional convention to draft a wholly new constitution for the country.
 - @supreme_soviet: Empower work councils to make them the new basis of governance.
+- @constitutional_convention: Hold a constitutional convention to draft a wholly new constitution for the country.
 - @as_is: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
@@ -175,6 +175,8 @@ Q.constitutional_protection = 1;
 We have successfully passed a constitutional amendment to allow banning unconstitutional parties.
 
 @constitutional_convention
+choose-if: never
+unavailable-subtitle: I'll get around to it
 
 # Disabled
 
