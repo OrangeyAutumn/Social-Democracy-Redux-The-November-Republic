@@ -312,6 +312,7 @@ Q.labor_leader = "Leipart";
 Q.labor_leader_fullname = "Theodor Leipart";
 Q.reformist_leader = "Ebert";
 Q.reformist_leader_fullname = "Friedrich Ebert";
+Q.ebert_dead == 0;
 
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
