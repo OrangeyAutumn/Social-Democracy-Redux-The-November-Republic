@@ -530,7 +530,7 @@ title: We can form a Social-Liberal Coalition.
 subtitle: SPD + [+ ddp_name +] ([+ social_liberal_coalition +]%)
 choose-if: president != "Hitler"
 unavailable-subtitle: SPD + [+ ddp_name +] ([+ social_liberal_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?]
-on-arrival: leverage += 5; in_social_liberal_coalition = 1; ddp_in_government; spd_in_government = 1; foreign_minister_party = ddp_name; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = ddp_name; reichswehr_minister_party = ddp_name; economic_minister_party = ddp_name; finance_minister_party = ddp_name; agriculture_minister_party = ddp_name; foreign_minister = "Wirth"; interior_minister = "Külz"; justice_minister = "Koch-Weser"; labor_minister = "Stolper"; reichswehr_minister = "Gessler"; economic_minister = " Trendelenburg"; finance_minister = "Reinhold"; agriculture_minister = "Dietrich";
+on-arrival: leverage += 5; in_social_liberal_coalition = 1; ddp_in_government = 1; spd_in_government = 1; foreign_minister_party = ddp_name; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = ddp_name; reichswehr_minister_party = ddp_name; economic_minister_party = ddp_name; finance_minister_party = ddp_name; agriculture_minister_party = ddp_name; foreign_minister = "Wirth"; interior_minister = "Külz"; justice_minister = "Koch-Weser"; labor_minister = "Stolper"; reichswehr_minister = "Gessler"; economic_minister = " Trendelenburg"; finance_minister = "Reinhold"; agriculture_minister = "Dietrich";
 go-to: weimar_normal
 
 @weimar_normal
