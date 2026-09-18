@@ -126,7 +126,25 @@ d3.parliament = function() {
             var seatX = function(d) { return d.cartesian.x; };
             var seatY = function(d) { return d.cartesian.y; };
             var seatColor = function(d) { return d.party.color; };
-            var seatOutline = function(d) { return d.party.outline; };
+            var seatOutline = function(d) {
+
+    var party = d.party.id;
+    var state = Q.party_click_state[party] || 0;
+
+    if (state == 1) {
+        return "#2e8b57";
+    }
+    if (state == 2) {
+        return "#e6a23c";
+    }
+    if (state == 3) {
+        return "#b8b8b8";
+    }
+    if (party == "spd") {
+        return "#000000";
+    }
+    return "none";
+};
             var seatRadius = function(d) {
                 var r = 0.4 * rowWidth;
                 if (d.data && typeof d.data.size === 'number') {
@@ -257,8 +275,19 @@ d3.parliament = function() {
     };
 
     parliament.on = function(type, callback) {
-        parliamentDispatch.on(type, callback);
-    }
+    parliamentDispatch.on(type, callback);
+}
+
+parliament.updateOutlines = function() {
+    d3.select("#reichstag")
+        .selectAll(".seat")
+        .attr("stroke", seatOutline);
+
+    return parliament;
+}
+
+return parliament;
+    
 
     return parliament;
 
