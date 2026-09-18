@@ -14,6 +14,8 @@ The office of presidency is by precedent and nature closely intertwined with the
 
 Relations with the Military: [+ army_relation : relationships +]
 
+- @meet_camarilla: Meet privately with various high level generals.
+- @visit_the_troops: Make a public visit to inspect our troops.
 #- @camarilla: Interfere in the internal politics of the army.
 - @allow_rearmament: Allow secret reamament.
 - @surrender_reichswehr: Sack Leber from the Reichswehr Ministry.
@@ -23,6 +25,18 @@ Relations with the Military: [+ army_relation : relationships +]
 - @reichsexekute_uspd: Reichsexekute left-wing state governments.
 - @root: No, we should not do any of these things.
 - @easy_discard
+
+@meet_camarilla
+subtitle: 
+on-arrival: army_relation += 3
+
+We privately meet with various high level generals. The meetings are frosty but we make some progress nonetheless.
+
+@visit_the_troops
+subtitle: 
+on-arrival: reichswehr_loyalty += 0.03; nationalism += 1; pacifism -= 1
+
+We make a public visit to inspect our troops and give them our full support.
 
 @allow_rearmament
 choose-if: reichswehr_minister_party != "SPD"
