@@ -91,58 +91,68 @@ if (!Q.neorevisionism) {
         {   "id": "left",
             "legend": "Left",
             "name": "Left",
-            "seats": Math.round(Q.left_votes*3.98),
+            "color": "#9c0000" 
+            "seats": Math.round(Q.left_votes*5),
         },
         {
             "id": "center",
             "legend": "Center",
             "name": "Center",
-            "seats": Math.round(Q.center_votes*3.98),
+            "color": "#e30000"
+            "seats": Math.round(Q.center_votes*5),
         },
         {
             "id": "labor",
             "legend": "Labor",
             "name": "Labor",
-            "seats": Math.round(Q.labor_votes*3.98),
+            "color": "#ff681d"
+            "seats": Math.round(Q.labor_votes*5),
         },
         {
             "id": "reformist",
             "legend": "Reformists",
             "name": "Reformists",
-            "seats": Math.round(Q.reformist_votes*3.98),
+            "color": "#ff6ba9"
+            "seats": Math.round(Q.reformist_votes*5),
         },
 ];
 }
 else {
     data = [
+
         {   "id": "left",
             "legend": "Left",
             "name": "Left",
-            "seats": left_votes,
+            "color": "#9c0000" 
+            "seats": Math.round(Q.left_votes*5),
         },
         {
             "id": "center",
             "legend": "Center",
             "name": "Center",
-            "seats": center_votes,
+            "color": "#e30000"
+            "seats": Math.round(Q.center_votes*5),
         },
         {
             "id": "labor",
             "legend": "Labor",
             "name": "Labor",
-            "seats": labor_votes,
+            "color": "#ff681d"
+            "seats": Math.round(Q.labor_votes*5),
         },
         {
             "id": "reformist",
             "legend": "Reformists",
             "name": "Reformists",
-            "seats": reformist_votes,
+            "color": "#ff6ba9"
+            "seats": Math.round(Q.reformist_votes*5),
         },
         {
             "id": "neorevisionist",
             "legend": "Neorevisionists",
             "name": "Neorevisionists",
-            "seats": neorevisionist_votes,
+            "color": "#e42bca"
+            "seats": Math.round(Q.neorevisionist_votes*5),
         },
 ];
 }
@@ -294,7 +304,7 @@ The incumbent, [+ spd_coleader_1_fullname +], wins in a victory for the [+ spd_c
 - @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @left_1
-view-if: spd_coleader_1_faction != "Left"
+view-if: spd_coleader_1_faction != "Left" and left_leader != "Vacant"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer") or (left_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_1 = Q.left_leader;
@@ -314,7 +324,7 @@ Q.left_leader_fullname = "Vacant";
 - @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @center_1
-view-if: spd_coleader_1_faction != "Center"
+view-if: spd_coleader_1_faction != "Center" and center_leader != "Vacant"
 choose-if: (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer") or (center_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_1 = Q.center_leader;
@@ -334,7 +344,7 @@ Q.center_leader_fullname = "Vacant";
 - @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @labor_1
-view-if: spd_coleader_1_faction != "Labor"
+view-if: spd_coleader_1_faction != "Labor" and labor_leader != "Vacant"
 choose-if: (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50) or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer") or (labor_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_1 = Q.labor_leader;
@@ -357,7 +367,7 @@ Q.labor_leader_fullname = "Vacant";
 - @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @reformist_1
-view-if: spd_coleader_1_faction != "Reformist"
+view-if: spd_coleader_1_faction != "Reformist" and reformist_leader != "Vacant"
 choose-if: (reformist_votes >= 50) or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer") or (reformist_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_1 = Q.reformist_leader;
@@ -380,7 +390,7 @@ Q.reformist_leader_fullname = "Vacant";
 - @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @neorevisionist_1
-view-if: spd_coleader_1_faction != "Neorevisionist"
+view-if: spd_coleader_1_faction != "Neorevisionist" and neorevisionist_leader != "Vacant"
 choose-if: (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer") or (neorevisionist_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_1 = Q.neorevisionist_leader;
@@ -438,7 +448,7 @@ The incumbent, [+ spd_coleader_2_fullname +], wins in a victory for the [+ spd_c
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @left_2
-view-if: spd_coleader_2_faction != "Left"
+view-if: spd_coleader_2_faction != "Left" and left_leader != "Vacant"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer") or (left_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_2 = Q.left_leader;
@@ -458,7 +468,7 @@ Q.left_leader_fullname = "Vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @center_2
-view-if: spd_coleader_2_faction != "Center"
+view-if: spd_coleader_2_faction != "Center" and center_leader != "Vacant"
 choose-if: (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer") or (center_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_2 = Q.center_leader;
@@ -478,7 +488,7 @@ Q.center_leader_fullname = "Vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @labor_2
-view-if: spd_coleader_2_faction != "Labor"
+view-if: spd_coleader_2_faction != "Labor" and labor_leader != "Vacant"
 choose-if: (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50) or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer") or (labor_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_2 = Q.labor_leader;
@@ -501,7 +511,7 @@ Q.labor_leader_fullname = "Vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @reformist_2
-view-if: spd_coleader_2_faction != "Reformist"
+view-if: spd_coleader_2_faction != "Reformist" and reformist_leader != "Vacant"
 choose-if: (reformist_votes >= 50) or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer") or (reformist_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_2 = Q.reformist_leader;
@@ -524,7 +534,7 @@ Q.reformist_leader_fullname = "Vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @neorevisionist_2
-view-if: spd_coleader_2_faction != "Neorevisionist"
+view-if: spd_coleader_2_faction != "Neorevisionist" and neorevisionist_leader != "Vacant"
 choose-if: (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer") or (neorevisionist_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_2 = Q.neorevisionist_leader;
@@ -579,10 +589,10 @@ unavailable-subtitle: The incumbent does not have enough votes.
 
 The incumbent, [+ spd_coleader_3_fullname +], wins in a victory for the [+ spd_coleader_3_faction +] faction!
 
-- @root: The Conference is now concluded.
+- @end: The Conference is now concluded.
 
 @left_3
-view-if: spd_coleader_3_faction != "Left"
+view-if: spd_coleader_3_faction != "Left" and left_leader != "Vacant"
 choose-if: (left_votes >= 50) or (left_votes >= labor_votes and (left_votes+labor_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer") or (left_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_3 = Q.left_leader;
@@ -599,10 +609,10 @@ Q.left_leader_fullname = "Vacant";
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Left faction!
 
-- @root: The Conference is now concluded.
+- @end: The Conference is now concluded.
 
 @center_3
-view-if: spd_coleader_3_faction != "Center"
+view-if: spd_coleader_3_faction != "Center" and center_leader != "Vacant"
 choose-if: (left_votes < 50 and labor_votes < 50 and (reformist_votes+neorevisionist_votes) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer") or (center_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_3 = Q.center_leader;
@@ -619,10 +629,10 @@ Q.center_leader_fullname = "Vacant";
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Center faction!
 
-- @root: The Conference is now concluded.
+- @end: The Conference is now concluded.
 
 @labor_3
-view-if: spd_coleader_3_faction != "Labor"
+view-if: spd_coleader_3_faction != "Labor" and labor_leader != "Vacant"
 choose-if: (labor_votes >= 50) or (labor_votes >= left_votes and (labor_votes+left_votes) >= 50) or (labor_votes >= reformist_votes and labor_votes >= neorevisionist_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (labor_votes >= center_votes and (labor_votes+center_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer") or (labor_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_3 = Q.labor_leader;
@@ -642,10 +652,10 @@ Q.labor_leader_fullname = "Vacant";
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Labor faction!
 
-- @root: The Conference is now concluded.
+- @end: The Conference is now concluded.
 
 @reformist_3
-view-if: spd_coleader_3_faction != "Reformist"
+view-if: spd_coleader_3_faction != "Reformist" and reformist_leader != "Vacant"
 choose-if: (reformist_votes >= 50) or (reformist_votes >= neorevisionist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (reformist_votes >= neorevisionist_votes and reformist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer") or (reformist_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_3 = Q.reformist_leader;
@@ -665,10 +675,10 @@ Q.reformist_leader_fullname = "Vacant";
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Reformist faction!
 
-- @root: The Conference is now concluded.
+- @end: The Conference is now concluded.
 
 @neorevisionist_3
-view-if: spd_coleader_3_faction != "Neorevisionist"
+view-if: spd_coleader_3_faction != "Neorevisionist" and neorevisionist_leader != "Vacant"
 choose-if: (neorevisionist_votes >= 50) or (neorevisionist_votes >= reformist_votes and (reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_votes >= reformist_votes and neorevisionist_votes >= labor_votes and (labor_votes+reformist_votes+neorevisionist_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer") or (neorevisionist_leader == "Löbe")
 on-arrival: {!
 Q.spd_coleader_3 = Q.neorevisionist_leader;
@@ -685,7 +695,7 @@ Q.neorevisionist_leader_fullname = "Vacant";
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Neorevisionist faction!
 
-- @root: The Conference is now concluded.
+- @end: The Conference is now concluded.
 
 @co_leader_3_no_challenge
 view-if: spd_coleader_3 != "Vacant"
@@ -694,4 +704,127 @@ unavailable-subtitle: One of the other factions has the votes to force through a
 
 [+ spd_coleader_3_fullname +] does not face a challenge.
 
-- @root: The Conference is now concluded.
+- @end: The Conference is now concluded.
+
+@end
+on-arrival: {!
+    Q.crispien_advisor = 0;
+    Q.sender_advisor = 0;
+    Q.levi_advisor = 0;
+    Q.rosenfeld_advisor = 0;
+    Q.seydewitz_advisor = 0;
+    Q.wels_advisor = 0;
+    Q.muller_advisor = 0;
+    Q.pfulf_advisor = 0;
+    Q.breitscheid_advisor = 0;
+    Q.vogel_advisor = 0;
+    Q.hilferding_advisor = 0;
+    Q.severing_advisor = 0;
+    Q.braun_advisor = 0;
+    Q.juchacz_advisor = 0;
+    Q.ebert_advisor = 0;
+    Q.scheidemann_advisor = 0;
+    Q.leipart_advisor = 0;
+    Q.aufhauser_advisor = 0;
+    Q.woytinsky_advisor = 0;
+    Q.wissell_advisor = 0;
+    Q.mierendorff_advisor = 0;
+    Q.leber_advisor = 0;
+    Q.schumacher_advisor = 0;
+    Q.noske_advisor = 0;
+    Q.baade_advisor = 0;
+    Q.hirschfeld_advisor = 0;
+    Q.radbruch_advisor = 0;
+    Q.stampfer_advisor = 0;
+    Q.lobe_advisor = 0;
+    if (Q.spd_coleader_1 == "Crispien" || Q.spd_coleader_2 == "Crispien" || Q.spd_coleader_3 == "Crispien") {
+        Q.crispien_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Sender" || Q.spd_coleader_2 == "Sender" || Q.spd_coleader_3 == "Sender") {
+        Q.sender_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Levi" || Q.spd_coleader_2 == "Levi" || Q.spd_coleader_3 == "Levi") {
+        Q.levi_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Rosenfeld" || Q.spd_coleader_2 == "Rosenfeld" || Q.spd_coleader_3 == "Rosenfeld") {
+        Q.rosenfeld_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Seydewitz" || Q.spd_coleader_2 == "Seydewitz" || Q.spd_coleader_3 == "Seydewitz") {
+        Q.seydewitz_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Wels" || Q.spd_coleader_2 == "Wels" || Q.spd_coleader_3 == "Wels") {
+        Q.wels_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Müller" || Q.spd_coleader_2 == "Müller" || Q.spd_coleader_3 == "Müller") {
+        Q.muller_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Pfülf" || Q.spd_coleader_2 == "Pfülf" || Q.spd_coleader_3 == "Pfülf") {
+        Q.pfulf_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Breitscheid" || Q.spd_coleader_2 == "Breitscheid" || Q.spd_coleader_3 == "Breitscheid") {
+        Q.breitscheid_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Vogel" || Q.spd_coleader_2 == "Vogel" || Q.spd_coleader_3 == "Vogel") {
+        Q.vogel_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Hilferding" || Q.spd_coleader_2 == "Hilferding" || Q.spd_coleader_3 == "Hilferding") {
+        Q.hilferding_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Severing" || Q.spd_coleader_2 == "Severing" || Q.spd_coleader_3 == "Severing") {
+        Q.severing_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Braun" || Q.spd_coleader_2 == "Braun" || Q.spd_coleader_3 == "Braun") {
+        Q.braun_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Juchacz" || Q.spd_coleader_2 == "Juchacz" || Q.spd_coleader_3 == "Juchacz") {
+        Q.juchacz_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Ebert" || Q.spd_coleader_2 == "Ebert" || Q.spd_coleader_3 == "Ebert") {
+        Q.ebert_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Scheidemann" || Q.spd_coleader_2 == "Scheidemann" || Q.spd_coleader_3 == "Scheidemann") {
+        Q.scheidemann_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Leipart" || Q.spd_coleader_2 == "Leipart" || Q.spd_coleader_3 == "Leipart") {
+        Q.leipart_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Aufhäuser" || Q.spd_coleader_2 == "Aufhäuser" || Q.spd_coleader_3 == "Aufhäuser") {
+        Q.aufhauser_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Woytinsky" || Q.spd_coleader_2 == "Woytinsky" || Q.spd_coleader_3 == "Woytinsky") {
+        Q.woytinsky_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Wissell" || Q.spd_coleader_2 == "Wissell" || Q.spd_coleader_3 == "Wissell") {
+        Q.wissell_advisor = 1;
+    }
+ if (Q.spd_coleader_1 == "Tarnow" || Q.spd_coleader_2 == "Tarnow" || Q.spd_coleader_3 == "Tarnow") {
+        Q.tarnow_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Mierendorff" || Q.spd_coleader_2 == "Mierendorff" || Q.spd_coleader_3 == "Mierendorff") {
+        Q.mierendorff_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Leber" || Q.spd_coleader_2 == "Leber" || Q.spd_coleader_3 == "Leber") {
+        Q.leber_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Schumacher" || Q.spd_coleader_2 == "Schumacher" || Q.spd_coleader_3 == "Schumacher") {
+        Q.schumacher_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Noske" || Q.spd_coleader_2 == "Noske" || Q.spd_coleader_3 == "Noske") {
+        Q.noske_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Baade" || Q.spd_coleader_2 == "Baade" || Q.spd_coleader_3 == "Baade") {
+        Q.baade_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Hirschfeld" || Q.spd_coleader_2 == "Hirschfeld" || Q.spd_coleader_3 == "Hirschfeld") {
+        Q.hirschfeld_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Radbruch" || Q.spd_coleader_2 == "Radbruch" || Q.spd_coleader_3 == "Radbruch") {
+        Q.radbruch_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Stampfer" || Q.spd_coleader_2 == "Stampfer" || Q.spd_coleader_3 == "Stampfer") {
+        Q.stampfer_advisor = 1;
+    }
+    if (Q.spd_coleader_1 == "Löbe" || Q.spd_coleader_2 == "Löbe" || Q.spd_coleader_3 == "Löbe") {
+        Q.lobe_advisor = 1;
+    }
+!}
