@@ -156,7 +156,7 @@ unavailable-subtitle: Our Left will not tolerate this course of action. The DVP 
 
 @post_election
 on-arrival: {!
-round25 += 1;
+Q.round25 += 1;
 Q.presidents_25 = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg'];
 Q.uspd_presidential_votes = Q.uspd_votes;
 Q.spd_presidential_votes = Q.spd_votes;
