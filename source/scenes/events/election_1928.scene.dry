@@ -91,15 +91,15 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
 
 
 // The largest party can only be the NSDAP or the SPD.
-Q.largest_party = 'SPD';
+Q.largest_party = Q.spd_name;
 if (Q.spd_r >= Q.nsdap_r && Q.spd_r >= Q.uspd_r && Q.spd_r >= Q.z_r && Q.spd_r >= Q.dvp_r && Q.spd_r >= Q.dnvp_r) {
-    Q.largest_party = 'SPD';
+    Q.largest_party = Q.spd_name;
 }
 if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.uspd_r && Q.nsdap_r >= Q.z_r && Q.nsdap_r >= Q.dvp_r && Q.nsdap_r >= Q.dnvp_r) {
     Q.largest_party = 'NSDAP';
 }
 if (Q.uspd_r >= Q.spd_r && Q.uspd_r >= Q.nsdap_r && Q.uspd_r >= Q.z_r && Q.uspd_r >= Q.dvp_r && Q.uspd_r >= Q.dnvp_r) {
-    Q.largest_party = 'USPD';
+    Q.largest_party = Q.uspd_name;
 }
 if (Q.dvp_r >= Q.spd_r && Q.dvp_r >= Q.uspd_r && Q.dvp_r >= Q.z_r && Q.dvp_r >= Q.nsdap_r && Q.dvp_r >= Q.dnvp_r) {
     Q.largest_party = 'DVP';
@@ -157,6 +157,7 @@ Q.in_minority_government = 0;
 Q.in_unity_government = 0;
 Q.spd_toleration = 0;
 Q.spd_caretaker = 0;
+Q.party_click_state = {};
 Q.foreign_minister_party = 'DVP';
 Q.interior_minister_party = 'Z';
 Q.justice_minister_party = 'I';
@@ -367,23 +368,80 @@ else {
     ]);
 }
 if (window && d3) {
-    var width = 500; 
+
+    var width = 500;
     var height = 500;
     var screenWidth = document.getElementById('content').offsetWidth;
+
     if (screenWidth < width - 50) {
-        width = screenWidth - 50; 
+        width = screenWidth - 50;
         height = width;
         document.getElementById("reichstag").style.height = screenWidth/2 + "px";
-    } 
+    }
 
     var parliament = d3.parliament();
+
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+
+    d3.select("#reichstag")
+        .datum(data)
+        .call(parliament);
+
+    parliament.on("click", function(e) {
+
+        var seat = d3.select(this).datum();
+        var party = seat.party.id;
+
+        // VONC is not a party and cannot be assigned a government status.
+        if (party == "vonc") {
+            return;
+        }
+
+        // 0 = opposition
+        // 1 = government
+        // 2 = toleration
+        // 3 = abstention
+
+        var state = Q.party_click_state[party] || 0;
+
+        state = (state + 1) % 4;
+
+        Q.party_click_state[party] = state;
+
+        // Construct the relevant variables for this party.
+        var government = party + "_in_government";
+        var toleration = party + "_toleration";
+        var abstention = party + "_in_abstention";
+        var opposition = party + "_in_opposition";
+
+        // Disable all possible states first.
+        Q[government] = 0;
+        Q[toleration] = 0;
+        Q[abstention] = 0;
+        Q[opposition] = 0;
+
+        // Enable the newly selected state.
+        if (state == 1) {
+            Q[government] = 1;
+        }
+        else if (state == 2) {
+            Q[toleration] = 1;
+        }
+        else if (state == 3) {
+            Q[abstention] = 1;
+        }
+        else {
+            Q[opposition] = 1;
+        }
+
+        // Update the visual outline of the affected party.
+        parliament.updateOutlines();
+    });
 }
 !}
-go-to: coalition_menu if not vonc_formed; coalition_vonc if vonc_formed
+go-to: coalition_menu
 
 = Election results
 
@@ -442,18 +500,233 @@ Right-wing Coalition (Z + [+ bvp_name +] + DVP + Others + DNVP): [+ right_coalit
 
 There are some potential coalition arrangements.
 
-@coalition_vonc
-
-- @vonc_coalition: <span style="color: transparent;">VONC</span>
-
-@vonc_coalition
-on-arrival: in_vonc_coalition = 1; spd_in_government = 1; in_spd_majority = 1; 
-
-As expected, the 
-
-go-to: chancellor_menu
-
 @coalition_menu
+on-arrival: {!
+Q.in_uspd_majority = 0;
+Q.in_sapd_majority = 0;
+Q.in_spd_majority = 0;
+Q.in_ddp_majority = 0;
+Q.in_z_majority = 0;
+Q.in_bvp_majority = 0;
+Q.in_dvp_majority = 0;
+Q.in_dnvp_majority = 0;
+Q.in_nsdap_majority = 0;
+Q.in_uspd_plurality = 0;
+Q.in_sapd_plurality = 0;
+Q.in_spd_plurality = 0;
+Q.in_ddp_plurality = 0;
+Q.in_z_plurality = 0;
+Q.in_bvp_plurality = 0;
+Q.in_dvp_plurality = 0;
+Q.in_dnvp_plurality = 0;
+Q.in_nsdap_plurality = 0;
+Q.in_left_coalition = 0;
+Q.in_progressive_front_coalition = 0;
+Q.in_popular_front_coalition = 0;
+Q.in_social_liberal_coalition = 0;
+Q.in_social_christian_coalition = 0;
+Q.in_weimar_coalition = 0;
+Q.in_grand_coalition = 0;
+Q.in_bourgeois_coalition = 0;
+Q.in_left_bourgeois_coalition = 0;
+Q.in_right_bourgeois_coalition = 0;
+Q.in_liberal_coalition = 0;
+Q.in_catholic_coalition = 0;
+Q.in_right_coalition = 0;
+Q.in_far_right_coalition = 0;
+Q.in_black_brown_coalition = 0;
+Q.in_black_brown_blue_coalition = 0;
+Q.in_querfront_coalition = 0;
+Q.in_wholesome_coalition = 0;
+Q.just_no_coalition = 0;
+
+
+// Count the recognised parties in government.
+// Other is deliberately excluded.
+var government_parties =
+    Q.uspd_in_government +
+    Q.sapd_in_government +
+    Q.spd_in_government +
+    Q.ddp_in_government +
+    Q.z_in_government +
+    Q.bvp_in_government +
+    Q.dvp_in_government +
+    Q.dnvp_in_government +
+    Q.nsdap_in_government;
+
+if (government_parties >= 7)  {
+    Q.in_wholesome_coalition = 1;
+}
+else if (government_parties == 2 && Q.uspd_in_government && Q.sapd_in_government) {
+Q.in_left_coalition = 1;
+}
+else if (Q.spd_in_government == 1) {
+        if ((Q.uspd_in_government == 1 || Q.sapd_in_government == 1) && (Q.bvp_in_government + Q.dvp_in_government + Q.dnvp_in_government + Q.nsdap_in_government) == 0) {
+        if (Q.z_in_government == 1) {
+            Q.in_popular_front_coalition = 1;
+}
+else if (Q.z_in_government == 0 && Q.ddp_in_government == 1) {
+	Q.in_progressive_front_coalition = 1;
+}
+else {
+	Q.in_left_coalition = 1;
+}
+}
+    if ((Q.uspd_in_government + Q.sapd_in_government + Q.spd_in_government) >= 1 && (Q.dnvp_in_government + Q.nsdap_in_government) >= 1) {
+        Q.in_querfront_coalition = 1;
+    }
+else if ((Q.uspd_in_government + Q.sapd_in_government + Q.dnvp_in_government + Q.nsdap_in_government) == 0) {
+	if ((Q.bvp_in_government + Q.dvp_in_government) >= 1) {
+	   Q.in_grand_coalition = 1;
+}
+else if ((Q.ddp_in_government + Q.z_in_government) == 2) {
+	Q.in_weimar_coalition = 1;
+}
+else if (Q.ddp_in_government == 1) {
+	Q.in_social_liberal_coalition = 1;
+}
+else if (Q.z_in_government == 1) {
+	Q.in_social_christian_coalition = 1;
+}
+}
+}
+else if ((Q.uspd_in_government + Q.sapd_in_government + Q.spd_in_government) == 0) {
+if ((Q.ddp_in_government + Q.z_in_government + Q.bvp_in_government + Q.dvp_in_government) >= 2) {
+if ((Q.uspd_in_government + Q.sapd_in_government + Q.spd_in_government + Q.dnvp_in_government + Q.nsdap_in_government) == 0) {
+if ((Q.ddp_in_government + Q.dvp_in_government) == 0) {
+	Q.in_catholic_coalition = 1;
+}
+else if (Q.dvp_in_government == 0) {
+	Q.in_left_bourgeois_coalition = 1;
+}
+else if (Q.ddp_in_government == 0) {
+	Q.in_right_bourgeois_coalition = 1;
+}
+else if (Q.z_in_government == 0) {
+	Q.in_liberal_coalition = 1;
+}
+else {
+        Q.in_bourgeois_coalition = 1;
+    }
+}
+}
+else if (Q.dnvp_in_government == 1 && government_parties >= 2 && Q.nsdap_in_government == 0) {
+	Q.in_right_coalition = 1;
+}
+else if ((Q.z_in_government + Q.dnvp_in_government + Q.nsdap_in_government) == 3) {
+	Q.in_black_brown_blue_coalition = 1;
+}
+else if ((Q.z_in_government + Q.dnvp_in_government + Q.nsdap_in_government) == 2) {
+	if (Q.z_in_government == 1) {
+	Q.in_black_brown_coalition = 1;
+	}
+	else if (Q.dnvp_in_government == 1) {
+	Q.in_far_right_coalition = 1;
+	}
+}
+}
+}
+}
+}
+else if (government_parties >= 2) {
+Q.just_no_coalition = 1;
+}
+var sole_government_party = null;
+
+if (government_parties == 1) {
+    if (Q.uspd_in_government == 1) {
+        sole_government_party = "uspd";
+    }
+    else if (Q.sapd_in_government == 1) {
+        sole_government_party = "sapd";
+    }
+    else if (Q.spd_in_government == 1) {
+        sole_government_party = "spd";
+    }
+    else if (Q.ddp_in_government == 1) {
+        sole_government_party = "ddp";
+    }
+    else if (Q.z_in_government == 1) {
+        sole_government_party = "z";
+    }
+    else if (Q.bvp_in_government == 1) {
+        sole_government_party = "bvp";
+    }
+    else if (Q.dvp_in_government == 1) {
+        sole_government_party = "dvp";
+    }
+    else if (Q.dnvp_in_government == 1) {
+        sole_government_party = "dnvp";
+    }
+    else if (Q.nsdap_in_government == 1) {
+        sole_government_party = "nsdap";
+    }
+}
+if (sole_government_party != null) {
+    var party_votes = Q[sole_government_party + "_r"];
+
+    if (sole_government_party == "z") {
+        party_votes = Q.z_minus_bvp_r;
+    }
+
+    if (Q.other_in_government == 1 || party_votes < 50) {
+        Q["in_" + sole_government_party + "_plurality"] = 1;
+    }
+    else {
+        Q["in_" + sole_government_party + "_majority"] = 1;
+    }
+}
+Q.coalition_votes = 0;
+Q.government_votes = 0;
+Q.total_votes = 100;
+
+var government_vote_parties = [
+    "uspd",
+    "sapd",
+    "spd",
+    "ddp",
+    "z",
+    "bvp",
+    "dvp",
+    "dnvp",
+    "nsdap",
+    "other"
+];
+for (var party of government_vote_parties) {
+    var votes = Q[party + "_r"];
+    if (party == "z") {
+        votes = Q.z_minus_bvp_r;
+    }
+    if (Q[party + "_in_government"]) {
+        Q.coalition_votes += votes;
+        Q.government_votes += votes;
+    }
+    else if (Q[party + "_toleration"]) {
+        Q.government_votes += votes;
+    }
+    else if (Q[party + "_in_abstention"]) {
+        Q.total_votes -= votes;
+    }
+}
+Q.coalition_votes_practice = (Q.coalition_votes / Q.total_votes) * 100;
+Q.government_votes_practice = (Q.government_votes / Q.total_votes) * 100;
+!}
+
+**[? if coalition_votes < 50 : Minority ?] [? if Q.in_uspd_majority == 1 || Q.in_uspd_plurality == 1 : [+ uspd_name +] Administration ?][? if Q.in_sapd_majority == 1 || Q.in_sapd_plurality == 1 : [+ sapd_name +] Administration ?][? if Q.in_spd_majority == 1 || Q.in_spd_plurality == 1 : [+ spd_name +] Administration ?][? if Q.in_ddp_majority == 1 || Q.in_ddp_plurality == 1 : [+ ddp_name +] Administration ?][? if Q.in_z_majority == 1 || Q.in_z_plurality == 1 : Zentrum Administration ?][? if Q.in_bvp_majority == 1 || Q.in_bvp_plurality == 1 : [+ bvp_name +] Administration ?][? if Q.in_dvp_majority == 1 || Q.in_dvp_plurality == 1 : DVP Administration ?][? if Q.in_dnvp_majority == 1 || Q.in_dnvp_plurality == 1 : DNVP Administration ?][? if Q.in_nsdap_majority == 1 || Q.in_nsdap_plurality == 1 : NSDAP Administration ?][? if Q.in_left_coalition == 1 : Left Coalition ?][? if Q.in_progressive_front_coalition == 1 : Progressive Front Coalition ?][? if Q.in_popular_front_coalition == 1 : Popular Front Coalition ?][? if Q.in_social_liberal_coalition == 1 : Social-Liberal Coalition ?][? if Q.in_social_christian_coalition == 1 : Social-Christian Coalition ?][? if Q.in_weimar_coalition == 1 : Weimar Coalition ?][? if Q.in_grand_coalition == 1 : Grand Coalition ?][? if Q.in_bourgeois_coalition == 1 : Bourgeois Coalition ?][? if Q.in_left_bourgeois_coalition == 1 : Left-Bourgeois Coalition ?][? if Q.in_right_bourgeois_coalition == 1 : Right-Bourgeois Coalition ?][? if Q.in_liberal_coalition == 1 : Liberal Coalition ?][? if Q.in_catholic_coalition == 1 : Catholic Coalition ?][? if Q.in_right_coalition == 1 : Right Coalition ?][? if Q.in_far_right_coalition == 1 : Far-Right Coalition ?][? if Q.in_black_brown_coalition == 1 : Black-Brown Coalition ?][? if Q.in_black_brown_blue_coalition == 1 : Black-Brown-Blue Coalition ?][? if Q.in_querfront_coalition == 1 : Querfront Coalition ?][? if Q.in_wholesome_coalition == 1 : Wholesome Coalition ?][? if Q.just_no_coalition == 1 : No, just no. ?]**
+
+**Confidence Votes:** [+ government_votes +]%
+With Abstentions: [+ government_votes_practice +]%
+
+Coalition Votes: [+ coalition_votes +]% 
+With Abstentions: [+ coalition_votes_practice +]%
+
+- @proceed
+
+@proceed
+title: We will proceed with this coalition.
+choose-if: government_votes_practice >= 50 && in_querfront_coalition == 0 && in_wholesome_coalition == 0 && just_no_coalition == 0
+unavailable-subtitle: [? if government_votes_practice < 50 : We do not have enough votes to proceed with this coalition ?][? if government_votes_practice >= 50 : This coalition is implausible. ?]
+go-to: uspd_majority if in_uspd_majority == 1; uspd_plurality if in_uspd_plurality == 1; sapd_majority if in_sapd_majority == 1; sapd_plurality if in_sapd_plurality == 1; spd_majority if in_spd_majority == 1; spd_plurality if in_spd_plurality == 1; ddp_majority if in_ddp_majority == 1; ddp_plurality if in_ddp_plurality == 1; z_majority if in_z_majority == 1 or in_catholic_coalition == 1; z_plurality if in_z_plurality == 1; bvp_majority if in_bvp_majority == 1; bvp_plurality if in_bvp_plurality == 1; dvp_majority if in_dvp_majority == 1; dvp_plurality if in_dvp_plurality == 1; dnvp_majority if in_dnvp_majority == 1; dnvp_plurality if in_dnvp_plurality == 1; nsdap_majority if in_nsdap_majority == 1; nsdap_plurality if in_nsdap_plurality == 1; left_coalition if in_left_coalition == 1; progressive_front_coalition if in_progressive_front_coalition == 1; popular_front_coalition if in_popular_front_coalition == 1; social_liberal_coalition if in_social_liberal_coalition == 1; social_christian_coalition if in_social_christian_coalition == 1; weimar_coalition if in_weimar_coalition == 1; grand_coalition if in_grand_coalition == 1; bourgeois_coalition if in_bourgeois_coalition == 1 or in_left_bourgeois_coalition == 1 or in_right_bourgeois_coalition == 1 or in_liberal_coalition == 1; right_coalition if in_right_coalition == 1; far_right_coalition if in_far_right_coalition == 1; black_brown_coalition if in_black_brown_coalition == 1 or in_black_brown_blue_coalition == 1
 
 - @1924
 - @uspd_majority
