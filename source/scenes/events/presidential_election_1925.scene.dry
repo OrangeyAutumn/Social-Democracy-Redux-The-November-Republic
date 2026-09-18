@@ -39,7 +39,6 @@ As the incumbent Presidential party, many within the SPD and without expect us t
 Which path should we take?
 
 - @presidential_candidate_incumbent
-- @presidential_candidate_previous
 - @presidential_candidate_chancellor
 - @presidential_candidate_vice_chancellor
 - @presidential_candidate_braun
@@ -105,7 +104,7 @@ on-arrival: spd_percent = 0.7
 
 - @large_campaign: We will launch a large-scale campaign for [+ spd_presidential_candidate +].
 - @small_campaign: We will launch a small-scale campaign for [+ spd_presidential_candidate +].
-- @round1: Let the voting begin...
+- @post_election: Let the voting begin...
 
 @large_campaign
 subtitle: -2 resources
@@ -155,17 +154,10 @@ unavailable-subtitle: As the larger Socialist Party, we are unwilling to stand a
 choose-if: never
 unavailable-subtitle: Our Left will not tolerate this course of action. The DVP is uncomfortably noncommittal.
 
-@round1
-on-arrival: round25 += 1
-go-to: election_algorithm
-set-jump: post_election
-
 @post_election
 on-arrival: {!
-
+round25 += 1;
 Q.presidents_25 = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg'];
-
-// initial phase:
 Q.uspd_presidential_votes = Q.uspd_votes;
 Q.spd_presidential_votes = Q.spd_votes;
 Q.ddp_presidential_votes = Q.ddp_votes;
@@ -516,7 +508,7 @@ if (Q.hindenburg_presidential_votes > Q.plurality_winner_votes) {
 }
 }
 !}
-go-to: hindenburg_wins if hindenburg_majority == 1; z_wins if z_majority == 1; spd_wins if spd_majority == 1; ddp_wins if ddp_majority == 1; no_majority_round1 if no_majority_1; round2_results if round25 >= 2; uspd_wins if uspd_majority == 1; bvp_wins if bvp_majority == 1; dvp_wins if dvp_majority == 1; dnvp_wins if dnvp_majority; nsdap_wins if nsdap_majority
+go-to: round1_results if round25 == 1 and not no_majority_1; no_majority_round1 if round25 == 1 and no_majority_1; round2_results if round25 >= 2; 
 
 Results:
 
@@ -539,6 +531,10 @@ Results:
 [? if hindenburg_campaign : Hindenburg - [+ hindenburg_votes_disp +]% ?]
 
 [? if nsdap_campaign : Ludendorff - [+ nsdap_votes_disp +]% ?]
+
+@round1_results
+on-arrival: previous_spd_presidential_candidate = spd_presidential_candidate; previous_spd_presidential_candidate_fullname = spd_presidential_candidate_fullname; previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; previous_uspd_presidential_candidate = uspd_presidential_candidate; previous_uspd_presidential_candidate_fullname = uspd_presidential_candidate_fullname; previous_ddp_presidential_candidate = ddp_presidential_candidate; previous_ddp_presidential_candidate_fullname = ddp_presidential_candidate_fullname; previous_z_presidential_candidate = z_presidential_candidate; previous_z_presidential_candidate_fullname = z_presidential_candidate_fullname; previous_bvp_presidential_candidate = bvp_presidential_candidate; previous_bvp_presidential_candidate_fullname = bvp_presidential_candidate_fullname; previous_dvp_presidential_candidate = dvp_presidential_candidate; previous_dvp_presidential_candidate_fullname = dvp_presidential_candidate_fullname; previous_other_presidential_candidate = other_presidential_candidate; previous_other_presidential_candidate_fullname = other_presidential_candidate_fullname; previous_dnvp_presidential_candidate = dnvp_presidential_candidate; previous_dnvp_presidential_candidate_fullname = dnvp_presidential_candidate_fullname; previous_nsdap_presidential_candidate = nsdap_presidential_candidate; previous_nsdap_presidential_candidate_fullname = nsdap_presidential_candidate_fullname;
+go-to: hindenburg_wins if hindenburg_majority == 1; z_wins if z_majority == 1; spd_wins if spd_majority == 1; ddp_wins if ddp_majority == 1; uspd_wins if uspd_majority == 1; bvp_wins if bvp_majority == 1; dvp_wins if dvp_majority == 1; dnvp_wins if dnvp_majority; nsdap_wins if nsdap_majority
 
 @hindenburg_wins
 on-arrival: former_president = "Hindenburg"; president = "Hindenburg"; president_fullname = "Paul von Hindenburg"; president_party = "Independent"; pro_republic -= 5; nationalism += 5; workers_spd -= 6; unemployed_spd -= 6; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 5; dvp_campaign = 0; z_campaign = 0; bvp_campaign = 0; uspd_campaign = 0; nsdap_campaign = 0; ddp_campaign = 0; spd_campaign = 0; z_support_spd = 0; ddp_support_spd = 0; bvp_support_hindenburg = 0; presidential_relation = 10;
@@ -788,7 +784,7 @@ He has received the backing of the DVP, the DNVP[? if bvp_support_hindenburg :, 
 - @donate_z: Provide more campaign resources for the right to spend.
 - @attack_z_m: Attempt to win over sympathetic progressives by attacking [+ z_presidential_candidate +].
 - @attack_uspd_m: Attempt to win back our left-wing, and attack Liebknecht.
-- @round1: Let the voting begin...
+- @post_election: Let the voting begin...
 
 @convince_dvp_abstain_success
 view-if: ddp_presidential_candidate == "Gessler" and ddp_campaign
@@ -815,7 +811,7 @@ left_dissent -= 5;
 left_strength -= 5; 
 nationalism += 2; 
 pro_republic -= 2;
-if (uspd_support_spd || spd_presidential_candidate_faction != "Neorevisionist" || spd_presidential_candidate_faction != "Nonfactional") {
+if (uspd_support_spd || spd_presidential_candidate_faction != "Neorevisionist" && spd_presidential_candidate_faction != "Nonfactional") {
 spd_multiplier += 0.05
 }
 else if (uspd_support_spd || spd_presidential_candidate_faction == "Nonfactional") {
@@ -1095,12 +1091,11 @@ We have increased our campaigning among the unemployed. [? if welfare < 0: The w
 
 @round2_results
 on-arrival: previous_spd_presidential_candidate = spd_presidential_candidate; previous_spd_presidential_candidate_fullname = spd_presidential_candidate_fullname; previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; previous_uspd_presidential_candidate = uspd_presidential_candidate; previous_uspd_presidential_candidate_fullname = uspd_presidential_candidate_fullname; previous_ddp_presidential_candidate = ddp_presidential_candidate; previous_ddp_presidential_candidate_fullname = ddp_presidential_candidate_fullname; previous_z_presidential_candidate = z_presidential_candidate; previous_z_presidential_candidate_fullname = z_presidential_candidate_fullname; previous_bvp_presidential_candidate = bvp_presidential_candidate; previous_bvp_presidential_candidate_fullname = bvp_presidential_candidate_fullname; previous_dvp_presidential_candidate = dvp_presidential_candidate; previous_dvp_presidential_candidate_fullname = dvp_presidential_candidate_fullname; previous_other_presidential_candidate = other_presidential_candidate; previous_other_presidential_candidate_fullname = other_presidential_candidate_fullname; previous_dnvp_presidential_candidate = dnvp_presidential_candidate; previous_dnvp_presidential_candidate_fullname = dnvp_presidential_candidate_fullname; previous_nsdap_presidential_candidate = nsdap_presidential_candidate; previous_nsdap_presidential_candidate_fullname = nsdap_presidential_candidate_fullname;
-go-to: hindenburg_wins if hindenburg_plurality; spd_wins if spd_plurality; z_wins if z_plurality; ddp_wins if ddp_plurality; uspd_wins if uspd_plurality; dvp_wins if dvp_plurality; bvp_wins if bvp_plurality; dnvp_wins if dnvp_plurality; nsdap_wins if nsdap_plurality
+go-to: hindenburg_wins if hindenburg_majority or hindenburg_plurality; spd_wins if spd_majority or spd_plurality; z_wins if z_majority or z_plurality; ddp_wins if ddp_majority or ddp_plurality; uspd_wins if uspd_majority or uspd_plurality; dvp_wins if dvp_majority or dvp_plurality; bvp_wins if bvp_majority or bvp_plurality; dnvp_wins if dnvp_majority or dnvp_plurality; nsdap_wins if nsdap_majority or nsdap_plurality
 
 @spd_presidential_menu
 
 - @presidential_candidate_incumbent
-- @presidential_candidate_previous
 - @presidential_candidate_chancellor
 - @presidential_candidate_vice_chancellor
 - @presidential_candidate_coleader_1
