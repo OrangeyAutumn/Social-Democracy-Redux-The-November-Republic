@@ -1,39 +1,39 @@
-title: Relations with Hindenburg
+title: Relations with [+ president +]
 new-page: true
 is-card: true
 tags: reichstag
-view-if: hindenburg_timer >= 0 and president == "Hindenburg"
-on-arrival: month_actions += 1; hindenburg_timer += 4;
+view-if: presidential_relation_timer >= 0
+on-arrival: month_actions += 1; presidential_relation_timer += 6;
 card-image: img/portraits/Hindenburg.jpg
 
-= Relations with Hindenburg
+= Relations with [+ president +]
 
-Our relationship with President Hindenburg can be described as wary as best, due to our diametrically opposed ideals. However, if we are to make any solid reforms, or even hold any chance of sustained government, we will need to at least have dealings with Hindenburg.
+Our relationship with President [+ president +] can be described as wary as best, due to our diametrically opposed ideals. However, if we are to make any solid reforms, or even hold any chance of sustained government, we will need to at least have dealings with [+ president +].
 
-- @hindenburg_funds: Arrange some meetings with the President.
-- @hindenburg_z: Utilise our influence with the Zentrum to sway the President.
-- @hindenburg_dvp: Utilise our influence with the DVP to sway the President.
+- @president_funds: Arrange some meetings with the President.
+- @president_less: Utilise our influence [? if president_party != spd_name : with the [? if president_party == ddp_name : Z ?][? if president_party == "Z" : [+ ddp_name +] ?][? if president_party == bvp_name : Z ?][? if president_party == "DVP" : [+ ddp_name +] and Z ?][? if president == "Hindenburg" : Z ?] ?] to sway the President.
+- @president_more: Utilise our influence [? if president_party != spd_name : with the [? if president_party == uspd_name : [+ uspd_name +] ?][? if president_party == ddp_name : [+ ddp_name +] ?][? if president_party == "Z" : Z ?][? if president_party == bvp_name : [+ bvp_name +] ?][? if president_party == "DVP" or president == "Hindenburg" : DVP ?] ?] to sway the President. 
 - @return: Let's not do this for now.
 - @easy_discard
 
-@hindenburg_funds
+@president_funds
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; presidential_relation += 3*(1-dissent)
 
-Our meetings with President Hindenburg are frosty to say the least, but they are meetings nonetheless.
+Our meetings with President [+ president +] are frosty to say the least, but they are meetings nonetheless.
 
-@hindenburg_z
-choose-if: z_relation >= 60
-unavailable-subtitle: Our relationship with the Zentrum isn't high enough.
+@president_less
+choose-if: (president_party == ddp_name and z_relation >= 45) or (president_party == "Z" and ddp_relation >= 45) or (president_party == bvp_name and z_relation >= 45) or (president_party == "DVP" and (ddp_relation >= 45 or z_relation >= 45) or (president == "Hindenburg" and z_relation >= 45)
+unavailable-subtitle: Our relations are not high enough.
 on-arrival: presidential_relation += 3
 
-With some meetings and agreements, they agree to put a good word for us with Hindenburg.
+With some meetings and agreements, they agree to put a good word for us with [+ president +].
 
-@hindenburg_dvp
-choose-if: dvp_relation >= 50
-unavailable-subtitle: Our relationship with the DVP isn't high enough.
+@president_more
+choose-if: (president_party == ddp_name and ddp_relation >= 55) or (president_party == "Z" and z_relation >= 55) or (president_party == bvp_name and z_relation >= 55) or (president_party == "DVP" and dvp_relation >= 55) or (president == "Hindenburg" and dvp_relation >= 55)
+unavailable-subtitle: Our relations are not high enough.
 on-arrival: presidential_relation += 5
 
-With some meetings and agreements, they agree to put a good word for us with Hindenburg.
+With some meetings and agreements, they agree to put a good word for us with [+ president +].
