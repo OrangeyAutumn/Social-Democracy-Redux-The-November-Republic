@@ -87,71 +87,71 @@ Q.pragmatic_unity = Q.center_votes+Q.reformist_votes;
 !}
 on-display: {!
 if (!Q.neorevisionism) {
-    data = [
+    var data = [
         {   "id": "left",
             "legend": "Left",
             "name": "Left",
-            "color": "#9c0000" 
+            "color": "#9c0000",
             "seats": Math.round(Q.left_votes*5),
         },
         {
             "id": "center",
             "legend": "Center",
             "name": "Center",
-            "color": "#e30000"
+            "color": "#e30000",
             "seats": Math.round(Q.center_votes*5),
         },
         {
             "id": "labor",
             "legend": "Labor",
             "name": "Labor",
-            "color": "#ff681d"
+            "color": "#ff681d",
             "seats": Math.round(Q.labor_votes*5),
         },
         {
             "id": "reformist",
             "legend": "Reformists",
             "name": "Reformists",
-            "color": "#ff6ba9"
+            "color": "#ff6ba9",
             "seats": Math.round(Q.reformist_votes*5),
         },
 ];
 }
 else {
-    data = [
+    var data = [
 
         {   "id": "left",
             "legend": "Left",
             "name": "Left",
-            "color": "#9c0000" 
+            "color": "#9c0000",
             "seats": Math.round(Q.left_votes*5),
         },
         {
             "id": "center",
             "legend": "Center",
             "name": "Center",
-            "color": "#e30000"
+            "color": "#e30000",
             "seats": Math.round(Q.center_votes*5),
         },
         {
             "id": "labor",
             "legend": "Labor",
             "name": "Labor",
-            "color": "#ff681d"
+            "color": "#ff681d",
             "seats": Math.round(Q.labor_votes*5),
         },
         {
             "id": "reformist",
             "legend": "Reformists",
             "name": "Reformists",
-            "color": "#ff6ba9"
+            "color": "#ff6ba9",
             "seats": Math.round(Q.reformist_votes*5),
         },
         {
             "id": "neorevisionist",
             "legend": "Neorevisionists",
             "name": "Neorevisionists",
-            "color": "#e42bca"
+            "color": "#e42bca",
             "seats": Math.round(Q.neorevisionist_votes*5),
         },
 ];
@@ -180,13 +180,15 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#9c0000'> </div> !} Left: {!</td><td>!} [+ left_votes +]% {!</td></tr>!}
+{!</tr><td>!} <span style="color: #9c0000;">**Left:**</span> {!</td><td>!} [+ left_votes +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#e30000'> </div> !} Center: {!</td><td>!} [+ center_votes +]% {!</td></tr>!}
+{!</tr><td>!} <span style="color: #e30000;">**Center:**</span> {!</td><td>!} [+ center_votes +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#ff681d'> </div> !} Labor: {!</td><td>!} [+ labor_votes +]% {!</td></tr>!}
+{!</tr><td>!} <span style="color: #ff681d;">**Labor:**</span> {!</td><td>!} [+ labor_votes +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#ff6ba9'> </div> !} Reformists: {!</td><td>!} [+ reformist_votes +]% {!</td></tr>!}
+{!</tr><td>!} <span style="color: #ff6ba9;">**Reformist:**</span> {!</td><td>!} [+ reformist_votes +]% {!</td></tr>!}
+
+[? if neorevisionism == 1 : {!</tr><td>!} <span style="color: #e42bca;">**Neorevisionist:**</span> {!</td><td>!} [+ neorevisionist_votes +]% {!</td></tr>!} ?]
 
 @coalition_menu
 
