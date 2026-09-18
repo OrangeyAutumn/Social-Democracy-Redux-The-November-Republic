@@ -508,7 +508,7 @@ if (Q.hindenburg_presidential_votes > Q.plurality_winner_votes) {
 }
 }
 !}
-go-to: round1_results if round25 == 1 and not no_majority_1; no_majority_round1 if round25 == 1 and no_majority_1; round2_results if round25 >= 2; 
+go-to: round1_results if round25 == 1 and not no_majority_1; no_majority_round1 if round25 == 1 and no_majority_1; round2_results if round25 >= 2 
 
 Results:
 
