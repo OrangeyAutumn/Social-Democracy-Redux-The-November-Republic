@@ -800,7 +800,7 @@ Q.leipart_advisor = 0; // Theodor Leipart
 Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
 Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
 Q.wissell_advisor = 0; // Rudolf Wissell
-Q.lobe_advisor = 0; // Paul Lobe
+Q.tarnow_advisor = 0; // Mr Tarnow
 
 // Neorevisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
@@ -813,6 +813,7 @@ Q.baade_advisor = 0; // Fritz Baade
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
+Q.lobe_advisor = 0; // Paul Löbe
 
 Q.prussia_spd = 0.95;
 Q.prussia_sapd = 1;
