@@ -27,6 +27,7 @@ Q.spd_multiplier = 0.975;
 if (Q.spd_presidential_candidate_faction == "Neorevisionist") {
 Q.spd_multiplier = 0.85;
 }
+Q.round25 = 0
 !}
 
 = The 1925 Presidential Election
