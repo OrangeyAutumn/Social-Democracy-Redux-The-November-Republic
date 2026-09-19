@@ -51,7 +51,8 @@ Reformists ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength 
 [? if neorevisionism > 0 : 
 Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]  
 
-Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
+Associated Paramilitary: <span style="color: #000000;"><b>**Reic**</b></span><span style="color: #DD0000;"><b>**hsba**</b></span><span style="color: #FFCC00;"><b>**nner**</b></span> 
+Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
 
 @government
 on-arrival: {!
@@ -175,7 +176,8 @@ Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +]) | Seats: [+ ddp_r +]% | P
 
 Relations: [+ ddp_relation : relationships +] 
 
-Associated Paramilitary: [? if reichsbanner_ddp == 0 : Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?][? if reichsbanner_z == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_ddp == 0 : Associated Paramilitary: <span style="color: #000000;"><b>**Reic**</b></span><span style="color: #DD0000;"><b>**hsba**</b></span><span style="color: #FFCC00;"><b>**nner**</b></span> ?][? if reichsbanner_z == 1 : None ?]
+[? if reichsbanner_ddp == 0 : Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?]
 
 = <span style="color: #000000;">**Z**</span>
 
@@ -183,7 +185,8 @@ Leader: [+ z_party_leader_fullname +] ([+ z_ideology +]) | Relations: [+ z_relat
 
 Seats: [+ z_minus_bvp_r +]% | Polling: [+ z_minus_bvp_votes +]%
 
-Associated Paramilitary: [? if reichsbanner_z == 0 : Reichsbanner | Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?][? if reichsbanner_z == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_z == 0 : Associated Paramilitary: <span style="color: #000000;"><b>**Reic**</b></span><span style="color: #DD0000;"><b>**hsba**</b></span><span style="color: #FFCC00;"><b>**nner**</b></span> ?][? if reichsbanner_z == 1 : None ?]
+[? if reichsbanner_z == 0 : Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?]
 
 = <span style="color: #A2D8E0;">**[+ bvp_name +]**</span> 
 
@@ -191,7 +194,7 @@ Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +]) | Relations: [+ bvp_relat
 
 Seats: [+ bvp_r +]% | Polling: [+ bvp_votes +]%
 
-Associated Paramilitary: Bayenwacht
+Associated Paramilitary: <span style="color: #A2D8E0;">**Bayenwacht**</span>: 
 
 = <span style="color: #C0A054;">**DVP**</span> 
 
@@ -205,7 +208,8 @@ Leader: [+ dnvp_leader_fullname +] ([+ dnvp_ideology +]) | Relations: [+ dnvp_re
 
 Seats: [+ dnvp_r +]% | Polling: [+ dnvp_votes +]%
 
-Associated Paramilitary: Stahlhelm | Strength: [+ sh_strength_2 +] thousand ([+ sh_force +]%) | Militarization: [+ sh_militancy : militancy +]
+Associated Paramilitary: <span style="color: #3E88B3;">**Der Stahlhelm**</span>: 
+Strength: [+ sh_strength +] thousand ([+ sh_force +]%) | (Militarization: [+ sh_militancy : militancy +])
 
 = <span style="color: #7A3C00;">**NSDAP**</span> 
 
@@ -213,7 +217,8 @@ Leader: [+ nsdap_leader_fullname +] ([+ nsdap_ideology +]) | Relations: Hostile
 
 Seats: [+ nsdap_r +]% | Polling: [+ nsdap_votes +]%
 
-Associated Paramilitary: SA | Strength: [+ sa_strength_2 +] thousand ([+ sa_force +]%) | Militarization: [+ sa_militancy : militancy +]
+Associated Paramilitary: <span style="color: #7A3C00;">**Sturmabteilung (SA)** </span>: 
+Strength: [+ sa_strength_2 +] thousand ([+ sa_force +]%) | (Militarization: [+ sa_militancy : militancy +])
 
 @polls
 on-arrival: {!
