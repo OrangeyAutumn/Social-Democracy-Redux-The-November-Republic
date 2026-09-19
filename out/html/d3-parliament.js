@@ -7,7 +7,7 @@ d3.parliament = function() {
     /* params */
     var width,
         height,
-        innerRadiusCoef = 0.4;
+        innerRadiusCoef = 0.4,
         partyClickState = {};
 
     var seatOutline = function(d) {
@@ -145,7 +145,6 @@ d3.parliament = function() {
             var seatX = function(d) { return d.cartesian.x; };
             var seatY = function(d) { return d.cartesian.y; };
             var seatColor = function(d) { return d.party.color; };
-            var seatOutline = function(d) {
 
             var seatRadius = function(d) {
                 var r = 0.4 * rowWidth;
