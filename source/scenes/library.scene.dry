@@ -605,6 +605,8 @@ if (Q.spd_r) {
         "name": Q.spd_name,
         "seats": Math.round(Q.spd_r * 5),
     });
+}
+
 if (Q.ddp_r) {
     data.push({
         "id": "ddp",
