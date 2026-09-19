@@ -274,14 +274,14 @@ go-to: game_menu
 go-to: game_menu
 
 
-<span style="color: #c00000;">**[+ spd_name +]**</span> - *[+ spd_name_full +]* ([+ spd_name_english +])
+<span style="color: #c00000;">**[+ spd_name +]**</span> - <i>[+ spd_name_full +]</i> ([+ spd_name_english +])
 
 Party Leader: [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +])
 Party Ideology: [+ spd_ideology +]
 
 We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic.
 
-<span style="color: #700000;">**[+ uspd_name +]**</span> - *[+ uspd_name_full +] ([+ uspd_name_english +])
+<span style="color: #700000;">**[+ uspd_name +]**</span> - <i>[+ uspd_name_full +]</i> ([+ uspd_name_english +])
 
 Party Leader: [+ uspd_leader_fullname +]
 Party Ideology: [+ uspd_ideology +]
@@ -336,7 +336,7 @@ Current relations: [+ dnvp_relation : relationships +]
 
 A right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
 
-<span style="color: #7A3C00;">**[+ nsdap_name +]**</span> - *[+ nsdap_name_full +]* - ([+ nsdap_name_english +], or <span style="color: #7A3C00;">Nazis</span>) 
+<span style="color: #7A3C00;">**[+ nsdap_name +]**</span> - </i>[+ nsdap_name_full +]</i> - ([+ nsdap_name_english +], or <span style="color: #7A3C00;">Nazis</span>) 
 
 Party Leader: [+ nsdap_leader_fullname +]
 Party Ideology: [+ nsdap_ideology +]
