@@ -289,12 +289,13 @@ Current relations: [+ uspd_relation : relationships +]
 
 A broad left-wing offshoot of the <span style="color: #c00000;">**[+ spd_name +]**</span> that emerged from the SPD split amid the Great War, and in the aftermath of the German Revolution of 1918. Although containing a range of factions, from the hard-left Stalinists to moderate USPD, they follow the path of Moscow, opposing parliamentary democracy and agitating in favor of a <span style="color: #750e0e;">Soviet</span>-style revolution.
 
-[? if sapd_formed: <span style="color: #9B0000;">**[+ sapd_name +]**</span> - <i>[+ sapd_name_full +]</i> ([+ sapd_name_english +])
+[? if sapd_formed: <span style="color: #9B0000;">**[+ sapd_name +]**</span> - <i>[+ sapd_name_full +]</i> ([+ sapd_name_english +]) ?]
 
-Party Leader: [+ sapd_leader_fullname +]
-Party Ideology: [+ sapd_ideology +]
+[? if sapd_formed : Party Leader: [+ sapd_leader_fullname +] ?]
+[? if sapd_formed : Party Ideology: [+ sapd_ideology +] ?]
+[? if sapd_formed : Current relations: [+ sapd_relation : relationships +] ?]
 
-A party recently formed in a split from the <span style="color: #c00000;">**[+ spd_name +]**</span>, the <span style="color: #9B0000;">**[+ sapd_name +]**</span> [? if sapd_name == "SAPD" : declares itself the true heir to the SPD tradition as a Socialist Party ?][? if sapd_name == "APD" : declares itself the true heir to the SPD tradition as a Worker's Party ?][? if sapd_name == "SVPD" : declares itself the true heir to the SPD tradition as a Social-Democratic Party ?]. ?]
+[? if sapd_formed : A party recently formed in a split from the <span style="color: #c00000;">**[+ spd_name +]**</span>, the <span style="color: #9B0000;">**[+ sapd_name +]**</span> [? if sapd_name == "SAPD" : declares itself the true heir to the SPD tradition as a Socialist Party ?][? if sapd_name == "APD" : declares itself the true heir to the SPD tradition as a Worker's Party ?][? if sapd_name == "SVPD" : declares itself the true heir to the SPD tradition as a Social-Democratic Party ?]. ?]
 
 <span style="color: #D3C24D;">**[+ ddp_name +]**</span> <i>[+ ddp_name_full +]</i> ([+ ddp_name_english +]) 
 
@@ -315,6 +316,7 @@ A centrist to center-right Catholic party that supports the Republic, and has hi
 <span style="color: #A2D8E0;">**[+ bvp_name +]**</span> <i>[+ bvp_name_full +]</i> ([+ bvp_name_english +]) 
 Party Leader: [+ bvp_leader_fullname +]
 Party Ideology: [+ bvp_ideology +]
+Current relations: [+ bvp_relation : relationships +]
 
 A center-right, fiercely regionalist party which represents Catholics in Bavaria. Closely associated with the [+ z_name_full +], particularly its more conservative elements.
 
@@ -338,6 +340,7 @@ A right-wing nationalist-conservative party, with authoritarian, monarchist, and
 
 Party Leader: [+ nsdap_leader_fullname +]
 Party Ideology: [+ nsdap_ideology +]
+Current relations: [+ nsdap_relation : relationships +]
 
 A far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legalized.
 
