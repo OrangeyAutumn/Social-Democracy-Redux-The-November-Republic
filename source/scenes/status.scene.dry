@@ -2,8 +2,8 @@ title: Status
 new-page: true
 is-special: true
 on-arrival: {!
-Q.z_minus_bvp_votes = Q.z_votes*0.8.toFixed(1);
-Q.bvp_votes = Q.z_votes*0.2.toFixed(1);
+Q.z_minus_bvp_votes = Math.round(Q.z_r * 0.8 * 10) / 10;
+Q.bvp_votes = Math.round(Q.z_r * 0.2 * 10) / 10;
 if (Q.unemployed) {
   Q.unemployed_2 = Q.unemployed.toFixed(1);
 }
@@ -56,7 +56,7 @@ Associated Paramilitary: Reichsbanner | Strength: [+ rb_strength_2 +] thousand (
 @government
 on-arrival: {!
 Q.z_minus_bvp_votes = Q.z_votes*0.8;
-Q.bvp_votes = Q.z_votes*0.2.toFixed(1);
+Q.bvp_votes = Math.round(Q.z_r * 0.2 * 10) / 10;
 if (Q.rb_strength) {
   Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
@@ -128,7 +128,7 @@ Prussian police: [+ prussian_police_strength +] thousand members ([+ prussia_for
 @politics
 on-arrival: {!
 Q.z_minus_bvp_votes = Q.z_votes*0.8;
-Q.bvp_votes = Q.z_votes*0.2.toFixed(1);
+Q.bvp_votes = Math.round(Q.z_r * 0.2 * 10) / 10;
 if (Q.rb_strength) {
   Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 }
@@ -218,7 +218,7 @@ Associated Paramilitary: SA | Strength: [+ sa_strength_2 +] thousand ([+ sa_forc
 @polls
 on-arrival: {!
 Q.z_minus_bvp_votes = Q.z_votes*0.8;
-Q.bvp_votes = Q.z_votes*0.2.toFixed(1);
+Q.bvp_votes = Math.round(Q.z_r * 0.2 * 10) / 10;
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
