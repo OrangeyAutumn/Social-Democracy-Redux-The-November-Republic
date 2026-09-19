@@ -168,7 +168,8 @@ Leader: [+ uspd_leader_fullname +] ([+ uspd_ideology +]) | Relations: [+ uspd_re
 
 Seats: [+ uspd_r +]% | Polling: [+ uspd_votes +]%
 
-Associated Paramilitary: RFB | Strength: [+ rfb_strength_2 +] thousand ([+ rfb_force +]%) | Militarization: [+ rfb_militancy : militancy +]
+Associated Paramilitary: <span style="color: #700000;">**Rotfrontkämpferbund (RFB)**</span> 
+Strength: [+ rfb_strength_2 +] thousand ([+ rfb_force +]%) | Militarization: [+ rfb_militancy : militancy +]
 
 = <span style="color: #D3C24D;">**[+ ddp_name +]**</span> 
 
