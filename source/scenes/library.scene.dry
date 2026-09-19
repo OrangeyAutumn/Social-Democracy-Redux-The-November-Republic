@@ -1054,9 +1054,6 @@ If constitutional controversies arise within a state, for the decision of which 
 @1_section_2
 new-page: true
 
-- @menu: Go back.
-- @backSpecialScene: Exit library.
-
 Section II: The Reichstag
 Article 20.
 The Reichstag shall be composed of the representatives of the German people.
@@ -1118,11 +1115,11 @@ If they seek election to these bodies, leave necessary to carry on their campaig
 Article 40.
 The members of the Reichstag shall have the right of free transportation on all German railways as well as compensation provided by national law.
 
-@1_section_3
-new-page: true
-
 - @menu: Go back.
 - @backSpecialScene: Exit library.
+
+@1_section_3
+new-page: true
 
 = Section III: The President of the Reich and the National Ministry
 
@@ -1177,11 +1174,11 @@ The National Ministry shall reach its decisions by majority vote. In case of a t
 Article 59.
 The Reichstag shall have power to bring before the Supreme Judicial Court impeachment proceedings against the President of the Reich, the Chancellor, and the national ministers, for a wrongful violation of the constitution or a national law. The bill of impeachment must be signed by at least one hundred members of the Reichstag and requires the approval of the majority necessary for constitutional amendments. Detailed regulations for the Supreme Judicial Court shall be prescribed by a national law.
 
-@1_section_4
-new-page: true
-
 - @menu: Go back.
 - @backSpecialScene: Exit library.
+
+@1_section_4
+new-page: true
 
 = Section IV: The Reichsrat
 
@@ -1208,11 +1205,11 @@ Decisions shall be reached by simple majority vote.
 Article 67.
 The Reichsrat shall be kept informed by the national departments concerning the conduct of national business. In deliberations upon important matters the appropriate committees of the Reichsrat shall be consulted by the national departments.
 
-@1_section_5
-new-page: true
-
 - @menu: Go back.
 - @backSpecialScene: Exit library.
+
+@1_section_5
+new-page: true
 
 = Section V: National Legislation
 Article 68.
@@ -1245,11 +1242,11 @@ If the Reichstag adopts a constitutional amendment over the veto of the Reichsra
 Article 77.
 Except as otherwise provided by law, the National Ministry shall issue such general administrative regulations as are necessary for the execution of national laws. The National Ministry requires for this purpose the approval of the Reichsrat in cases in which the execution of national laws rests with the authorities of the states.
 
-@1_section_6
-new-page: true
-
 - @menu: Go back.
 - @backSpecialScene: Exit library.
+
+@1_section_6
+new-page: true
 
 = Section VI: National Administration
 
@@ -1341,9 +1338,6 @@ It shall be the duty of the Reich to acquire as its own property and to administ
 @1_section_7
 new-page: true
 
-- @menu: Go back.
-- @backSpecialScene: Exit library.
-
 Section VII: Administration of Justice
 Article 102.
 Judges are independent and responsible only to the law.
@@ -1363,6 +1357,9 @@ There shall be administrative courts in the Reich and in the states, as provided
 Article 108.
 A Supreme Judicial Court shall be established for the German Reich in accordance with a national law.
 
+- @menu: Go back.
+- @backSpecialScene: Exit library.
+
 @chapter_2
 new-page: true
 
@@ -1380,9 +1377,6 @@ new-page: true
 new-page: true
 
 = The Individual
-
-- @menu: Go back.
-- @backSpecialScene: Exit library.
 
 Section I: The Individual
 Article 109.
@@ -1416,13 +1410,13 @@ Article 118.
 Every German has the right within the limits of the general laws, to express his opinion orally, in writing, in print, pictorially, or in any other way. No circumstance arising out of his work or employment shall hinder him in the exercise of this right, and no one shall discriminate against him if he makes use of such right.
 No censorship shall be established, but exceptional provisions may be made by law for cinematographs. Moreover, legal measures are permissible for the suppression of indecent and obscene literature, as well as for the protection of youth at public plays and exhibitions.
 
+- @menu: Go back.
+- @backSpecialScene: Exit library.
+
 @2_section_2 
 new-page: true
 
 = Section II: Community Life
-
-- @menu: Go back.
-- @backSpecialScene: Exit library.
 
 Article 119.
 Marriage, as the foundation of family life and of the preservation and increase of the nation, stands under the special protection of the constitution. It shall rest upon the equality of rights of both sexes.
@@ -1472,13 +1466,13 @@ Military duty shall be regulated in accordance with the provisions of the laws o
 Article 134.
 All citizens without discrimination shall in proportion to their means contribute to all public burdens in accordance with the laws.
 
+- @menu: Go back.
+- @backSpecialScene: Exit library.
+
 @2_section_3
 new-page: true
 
 Section III: Religion and Religious Associations
-
-- @menu: Go back.
-- @backSpecialScene: Exit library.
 
 Article 135.
 All inhabitants of the Reich shall enjoy complete liberty of belief and conscience. The peaceful exercise of religious worship shall be guaranteed by the constitution and is under the protection of the state. General legislation shall not be affected by this provision.
@@ -1506,13 +1500,13 @@ Necessary free time shall be accorded to the members of the armed forces for the
 Article 141.
 So far as there is need for divine worship and spiritual ministration in the army, hospitals, penal establishments, or other public institutions, religious associations shall be admitted for the performance of religious offices without the exercise of any compulsion.
 
+- @menu: Go back.
+- @backSpecialScene: Exit library.
+
 @2_section_4
 new-page: true
 
 Section IV: Education and Schools
-
-- @menu: Go back.
-- @backSpecialScene: Exit library.
 
 Article 142.
 Art, science, and instruction in them are free. The state guarantees their protection and participates in their promotion.
@@ -1546,13 +1540,13 @@ Article 150.
 Artistic, historical, and natural monuments as well as landscapes enjoy the protection and care of the state.
 It shall be the duty of the Reich to prevent the removal of German artistic treasures to foreign countries.
 
+- @menu: Go back.
+- @backSpecialScene: Exit library.
+
 @2_section_5
 new-page: true
 
 Section V: Economic Life
-
-- @menu: Go back.
-- @backSpecialScene: Exit library.
 
 Article 151.
 The organization of economic life must conform to the principles of justice to the end that all may be guaranteed a decent standard of living. Within these limits the economic liberty of the individual shall be assured.
@@ -1660,3 +1654,6 @@ Bauer
 Erzberger Hermann Muller Dr. David
 Noske Schmidt Schlicke Giesberts
 Dr. Mayer Dr. Bell
+
+- @menu: Go back.
+- @backSpecialScene: Exit library.
