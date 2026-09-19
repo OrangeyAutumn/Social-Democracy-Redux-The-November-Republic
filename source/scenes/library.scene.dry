@@ -293,6 +293,7 @@ A broad left-wing offshoot of the <span style="color: #c00000;">**[+ spd_name +]
 
 Party Leader: [+ sapd_leader_fullname +]
 Party Ideology: [+ sapd_ideology +]
+Current relations: [+ sapd_relation : relationships +]
 
 A party recently formed in a split from the <span style="color: #c00000;">**[+ spd_name +]**</span>, the <span style="color: #9B0000;">**[+ sapd_name +]**</span> [? if sapd_name == "SAPD" : declares itself the true heir to the SPD tradition as a Socialist Party ?][? if sapd_name == "APD" : declares itself the true heir to the SPD tradition as a Worker's Party ?][? if sapd_name == "SVPD" : declares itself the true heir to the SPD tradition as a Social-Democratic Party ?]. ?]
 
@@ -315,6 +316,7 @@ A centrist to center-right Catholic party that supports the Republic, and has hi
 <span style="color: #A2D8E0;">**[+ bvp_name +]**</span> <i>[+ bvp_name_full +]</i> ([+ bvp_name_english +]) 
 Party Leader: [+ bvp_leader_fullname +]
 Party Ideology: [+ bvp_ideology +]
+Current relations: [+ bvp_relation : relationships +]
 
 A center-right, fiercely regionalist party which represents Catholics in Bavaria. Closely associated with the [+ z_name_full +], particularly its more conservative elements.
 
