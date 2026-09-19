@@ -22,9 +22,6 @@ d3.parliament = function() {
     if (state == 3) {
         return "#b8b8b8";
     }
-    if (party == "spd" && state == 0) {
-        return "#000000";
-    }
     return "none";
 };
 
