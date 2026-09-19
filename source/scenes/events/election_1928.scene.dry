@@ -717,14 +717,6 @@ With Abstentions: [+ government_votes_practice +]%
 Coalition Votes: [+ coalition_votes +]% 
 With Abstentions: [+ coalition_votes_practice +]%
 
-- @proceed
-
-@proceed
-title: We will proceed with this coalition.
-choose-if: government_votes_practice >= 50 and in_querfront_coalition == 0 and in_wholesome_coalition == 0 and just_no_coalition == 0
-unavailable-subtitle: [? if government_votes_practice < 50 : We do not have enough votes to proceed with this coalition ?][? if government_votes_practice >= 50 : This coalition is implausible. ?]
-go-to: uspd_majority if in_uspd_majority == 1; uspd_plurality if in_uspd_plurality == 1; sapd_majority if in_sapd_majority == 1; sapd_plurality if in_sapd_plurality == 1; spd_majority if in_spd_majority == 1; spd_plurality if in_spd_plurality == 1; ddp_majority if in_ddp_majority == 1; ddp_plurality if in_ddp_plurality == 1; z_majority if in_z_majority == 1 or in_catholic_coalition == 1; z_plurality if in_z_plurality == 1; bvp_majority if in_bvp_majority == 1; bvp_plurality if in_bvp_plurality == 1; dvp_majority if in_dvp_majority == 1; dvp_plurality if in_dvp_plurality == 1; dnvp_majority if in_dnvp_majority == 1; dnvp_plurality if in_dnvp_plurality == 1; nsdap_majority if in_nsdap_majority == 1; nsdap_plurality if in_nsdap_plurality == 1; left_coalition if in_left_coalition == 1; progressive_front_coalition if in_progressive_front_coalition == 1; popular_front_coalition if in_popular_front_coalition == 1; social_liberal_coalition if in_social_liberal_coalition == 1; social_christian_coalition if in_social_christian_coalition == 1; weimar_coalition if in_weimar_coalition == 1; grand_coalition if in_grand_coalition == 1; bourgeois_coalition if in_bourgeois_coalition == 1 or in_left_bourgeois_coalition == 1 or in_right_bourgeois_coalition == 1 or in_liberal_coalition == 1; right_coalition if in_right_coalition == 1; far_right_coalition if in_far_right_coalition == 1; black_brown_coalition if in_black_brown_coalition == 1 or in_black_brown_blue_coalition == 1
-
 - @1924
 - @uspd_majority
 - @left_coalition
