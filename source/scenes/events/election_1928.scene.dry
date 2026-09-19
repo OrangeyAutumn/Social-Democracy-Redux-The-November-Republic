@@ -43,6 +43,8 @@ on-arrival: {!
 // set old results
 // election threshold constitutional reform
 // banning parties
+Q.old_z_minus_bvp_r = Q.z_minus_bvp_r;
+Q.old_bvp_r = Q.bvp_r;
 var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
@@ -65,6 +67,10 @@ for (var party of Q.parties) {
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
     var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
     Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(1);
+Q.z_minus_bvp_r = Math.round(Q.z_r * 0.8 * 10) / 10;
+		Q.bvp_r = Math.round(Q.z_r * 0.2 * 10) / 10;
+Q.str_change_z_minus_bvp = Math.round((Q.z_minus_bvp_r - Q.old_z_minus_bvp_r)) * 10) / 10;
+Q.str_change_bvp = Math.round((Q.bvp_r - Q.old_bvp_r) * 10) / 10;
 }
 // calculate new party sum if electoral reform
 if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
@@ -84,6 +90,10 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
         Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(1);
+	Q.z_minus_bvp_r = Math.round(Q.z_r * 0.8 * 10) / 10;
+		Q.bvp_r = Math.round(Q.z_r * 0.2 * 10) / 10;
+Q.str_change_z_minus_bvp = Math.round((Q.z_minus_bvp_r - Q.old_z_minus_bvp_r)) * 10) / 10;
+Q.str_change_bvp = Math.round((Q.bvp_r - Q.old_bvp_r) * 10) / 10;
     }
 }
 
@@ -110,8 +120,6 @@ if (Q.z_r >= Q.spd_r && Q.z_r >= Q.uspd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.dv
 if (Q.dnvp_r >= Q.spd_r && Q.dnvp_r >= Q.uspd_r && Q.dnvp_r >= Q.z_r && Q.dnvp_r >= Q.dvp_r && Q.dnvp_r >= Q.nsdap_r) {
     Q.largest_party = 'DNVP';
 }
-Q.z_minus_bvp_r = Math.round(Q.z_r * 0.8 * 10) / 10;
-Q.bvp_r = Math.round(Q.z_r * 0.2 * 10) / 10;
 // coalitions
 Q.uspd_tolerated_spd_minority = Q.spd_r + Q.uspd_r;
 Q.uspd_tolerated_social_liberal_coalition = Q.spd_r + Q.uspd_r + Q.ddp_r;
