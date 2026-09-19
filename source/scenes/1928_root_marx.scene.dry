@@ -376,11 +376,30 @@ Q.old_nsdap_r = 3;
 Q.old_other_r = 9;
 
 // for changing the DDP's name to the DStP
-Q.ddp_name = "DDP";
-Q.bvp_name = "BVP";
+Q.uspd_name = "DSKI";
+Q.uspd_name_full = "Deutsche Sektion der Kommunistiche Internationale";
+Q.uspd_name_english = "German Section of the Communist International";
 Q.spd_name = "SPD";
-Q.uspd_name = "Spartakusbund";
-Q.uspd_name_short = "SB";
+Q.spd_name_full = "Sozialdemokratische Partei Deustchland";
+Q.spd_name_english = "Social Democratic Party of Germany"
+Q.ddp_name = "DDP";
+Q.ddp_name_full = "Deustche Demokratische Partei"
+Q.ddp_name_english = "German Democratic Party"
+Q.z_name = "Z"
+Q.z_name_full = "Zentrumspartei"
+Q.z_name_english = "Center Party"
+Q.bvp_name = "BVP";
+Q.bvp_name_full = "Bayerische Volkspartei";
+Q.bvp_name_english = "Bavarian People's Party"
+Q.dvp_name = "DVP";
+Q.dvp_name_full = "Deustche Volkspartei" 
+Q.dvp_name_english = "German People's Party"
+Q.dnvp_name = "DNVP";
+Q.dnvp_name_full = "Deustchnationale Volkspartei";
+Q.dnvp_name_english = "German National People's Party";
+Q.nsdap_name = "NSDAP";
+Q.nsdap_name_full = "Nationalsozialistische Deutsche Arbeiterpartei";
+Q.nsdap_name_english = "Nazi";
 
 // nazis have not peaked..
 Q.nazi_peaked = 0;
