@@ -14,7 +14,7 @@ d3.parliament = function() {
     var party = d.party.id;
     var state = partyClickState[party] || 0;
     if (state == 1) {
-        return "#2e8b57";
+        return "#15e81d"; 
     }
     if (state == 2) {
         return "#e6a23c";
