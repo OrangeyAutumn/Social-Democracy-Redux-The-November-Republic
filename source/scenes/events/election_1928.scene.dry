@@ -384,6 +384,7 @@ if (window && d3) {
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
+	parliament.partyClickState(Q.party_click_state);
 
     d3.select("#reichstag")
         .datum(data)
