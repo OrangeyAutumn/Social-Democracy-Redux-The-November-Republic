@@ -11,12 +11,84 @@ card-image: img/portraits/LeberJulius.jpg
 
 The Reichswehr is a deeply reactionary institution that has been generally hostile to any notion of socialism or democracy. However, we now control the military as part of the government. What should we do to reform it?
 
-- @increase_funding: Increase funding for the military to purchase its loyalty.
-- @decrease_funding: Reduce funding for the military so we have more for social spending.
-- @reform: Conduct a thorough reform of the ranks, reducing the influence of reactionaries and making it more hospitable to us.
+- @focus
+- @reform
+- @funding
 - @root: No change to military policy.
 - @easy_discard
 - @cancel_advisor_action
+
+@focus
+
+We must decide what our military's focus must be, and what role it serves in today's Germany.
+
+- @keeper_of_the_peace: Keeper of the Peace
+- @defense_force: Defence Force
+- @world_policeman: World Policeman
+
+@keeper_of_the_peace
+view-if: reichswehr_role != "Keeper of the Peace"
+subtitle: The Reichswehr's role is to uphold internal stability and defend against insurrection.
+on-arrival: reichswehr_role = "Keeper of the Peace"
+
+We have shifted Military doctrine to focus on internal security and away from the world stage.
+
+@defense_force
+view-if: reichswehr_role != "Defence Force"
+subtitle: The Reichswehr's role is to defend our borders against attack.
+on-arrival: reichswehr_role = "Defence Force"
+
+We have shifted Military doctrine to focus on national defence, and away from internal security.
+
+@defense_force
+view-if: reichswehr_role != "World Policeman"
+subtitle: The Reichswehr's role is to uphold International Law [? if league_of_nations == 1 : and the Leage of Nations?].
+on-arrival: reichswehr_role = "World Policeman"
+
+We have shifted Military doctrine to focus on the world stage, and away from internal security.
+
+@reform
+subtitle: We can take action to reform the Reichswehr.
+on-arrival: reichsbanner_recruitment = (reichsbanner_strength_2 * reichsbanner_militancy * reichswehr_loyalty); rfb_recruitment = (rfb_strength_2 * rfb_militancy * (reichswehr_loyalty / 2)); sh_recruitment = (sh_strength_2 * sh_militancy * (1 - reichswehr_loyalty)); sa_recruitment = (sa_strength_2 * sa_militancy * (1 - reichswehr_loyalty))
+
+- @army_reform: Conduct a thorough reform of the ranks, reducing the influence of reactionaries and making it more hospitable to us.
+- @paramilitary_integration_large: Promote initiatives to integrate paramilitary forces into the Reichswehr
+- @paramilitary_integration: Introduce initiatives to integrate paramilitary forces into the Reichswehr
+- @demilitarise: We will demilitarize the army.
+
+@army_reform
+subtitle: -1 budget
+choose-if: budget >= 1 and reichswehr_loyalty < 1
+unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if reichswehr_loyalty >= 1 : The Reichswehr is already fully loyal to the democratic government. ?]
+on-arrival: military_reform_vote = 1
+go-to: military_reform_done if not legislature_enabled; legislative_menu if legislature_enabled
+
+We propose a bill to perform substantial reforms in the army.
+
+@military_reform_done
+on-arrival: coalition_dissent += 1 if in_grand_coalition == 1; coalition_dissent += 1 if coup_progress >= 4; coalition_dissent += 1 if coup_progress >= 6; coalition_dissent += 1 if coup_progress >= 8; coup_progress += 0.5 if reichswehr_loyalty < 0.25; coup_progress += 1 if reichswehr_loyalty < 0.1; coup_progress += 1 if reichswehr_loyalty = 0; coup_progress -= 1 if reichswehr_loyalty >= 0.4 and coup_progress > 0; coup_progress -= 1 if reichswehr_loyalty >= 0.6 and coup_progress > 0; reichswehr_loyalty += 0.15; reichswehr_militancy -= 0.25 if reichswehr_loyalty < 0.3; reichswehr_militancy -= 0.1 if reichswehr_loyalty < 0.5 and reichswehr_loyalty >= 0.3; reichswehr_militancy -= (coup_progress/100); sh_militancy += 0.05 if reichswehr_loyalty < 0.3; sh_militancy += 0.05 if reichswehr_militancy < 0.5; sh_militancy += (coup_progress/200); budget -= 1; dvp_relation -= 5; pacifism += 1; democratization += 1;
+
+Our efforts are at least somewhat successful; we have changed the recruiting and training patterns so that more soldiers from non-reactionary backgrounds can join, hopefully changing the culture of the forces. We have also removed some of the officers who supported the previous Kapp putsch. [? if reichswehr_militancy >= 3 : A downside of removing reactionary officers and instituting new republican ones is that the republican replacements tend to be less experienced and require more training. This leaves the Reichswehr weakened by our reforms, for now, though perhaps that is a good thing. ?]
+
+[? if coup_progress > 6 and reichswehr_loyalty < 0.6 : The reactionaries, seeing our attempts to weaken their influence have only accelerated their existing coup plans, spurred into action by our moves against them. ?] The center-right parties are committed to the military and deeply suspicious of our efforts to reform it.
+
+@paramilitary_integration_large
+subtitle: Budget: -1 - These initiatives may provide an opportunity to disrupt the military establishment and take paramilitarists off the streets.
+choose-if: budget >= 1
+unavailable-subtitle: We do not have the budget.
+view-if: paramilitary_integration <= 5 
+on-arrival: paramilitary_integration += 2; reichswehr_strength += (reichsbanner_recruitment * 1.5); reichsbanner_strength_2 -= (reichsbanner_recruitment * 1.5); reichswehr_strength += (rfb_recruitment * 1.5); rfb_strength_2 -= (rfb_recruitment * 1.5); reichswehr_strength += (sh_recruitment * 1.5); sh_strength_2 -= (sh_recruitment * 1.5); reichswehr_strength += (sa_recruitment * 1.5); sa_strength_2 -= (sa_recruitment * 1.5); reichswehr_loyalty += (((rb_recruitment + rfb_recruitment) - (sa_recruitment + sh_recruitment)) * 1.5)
+
+@paramilitary_integration
+subtitle: These initiatives may provide an opportunity to disrupt the military establishment and take paramilitarists off the streets.
+view-if: paramilitary_integration <= 5
+on-arrival: paramilitary_integration += 1; reichswehr_strength += reichsbanner_recruitment; reichsbanner_strength_2 -= reichsbanner_recruitment; reichswehr_strength += rfb_recruitment; rfb_strength_2 -= rfb_recruitment; reichswehr_strength += sh_recruitment; sh_strength_2 -= sh_recruitment; reichswehr_strength += sa_recruitment; sa_strength_2 -= sa_recruitment; reichswehr_loyalty += ((rb_recruitment + rfb_recruitment) - (sa_recruitment + sh_recruitment))
+
+@funding
+subtitle: The matter of the Reichswehr budget is controverisal and consequential in equal measure.
+
+- @increase_funding: Increase funding for the military to purchase its loyalty.
+- @decrease_funding: Reduce funding for the military so we have more for social spending.
 
 @increase_funding
 subtitle: -1 budget
@@ -50,7 +122,6 @@ Demilitarization is preferred by our coalition partners and will be harder to ra
 
 - @demilitarize: We will demilitarize the army.
 - @downsize: We will downsize the army.
-#- @disband: We will disband the army.
 
 @demilitarize
 choose-if: reichswehr_militancy >= 1
@@ -68,26 +139,3 @@ on-arrival: reichswehr_strength -= 20; sh_strength += 15; sa_strength += 5; unem
 The army has fewer soldiers, as we decrease its size even further below the already small limit set out for us by Versailles. Many demobilized soldiers have joined the right-wing paramilitaries such as the Stahlhelm and SA, while the right rallies for the defense of Germany.
 
 Our coalition is upset, as is the army that we are directly attacking their powerful position. [? if coup_progress < 5 : There is no hint of a coup yet, but we do not know where the line will be drawn. ?][? if coup_progress >= 5 and coup_progress < 8 : Rumors of a coup have begun to spread around, though in terms of actual evidence, there is nothing yet. We must proceed with caution. ?][? if coup_progress >= 8 : Arms and ammunition seem to disappear mysteriously from military supplies, while reactionaries increasingly join the army. Officers meet through the nights, often with Harzburg Front officials as well, and the army's already huge degree of independence seems to somehow grow. Most damning of all is the Harzburg Front's recent condemnation of demilitarization, which seems almost a veiled threat aimed at the government. There can be no uncertainty: a coup plot is in motion, and we might not have much time to prevent it. ?]
-
-@disband
-view-if: reichswehr_strength < 20 and reichswehr_militancy < 1
-
-WIP
-
-@reform
-subtitle: -1 budget
-choose-if: budget >= 1 and reichswehr_loyalty < 1
-unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if reichswehr_loyalty >= 1 : The Reichswehr is already fully loyal to the democratic government. ?]
-on-arrival: military_reform_vote = 1
-go-to: military_reform_done if not legislature_enabled; legislative_menu if legislature_enabled
-
-We propose a bill to perform substantial reforms in the army.
-
-@military_reform_done
-on-arrival: coalition_dissent += 1 if in_grand_coalition == 1; coalition_dissent += 1 if coup_progress >= 4; coalition_dissent += 1 if coup_progress >= 6; coalition_dissent += 1 if coup_progress >= 8; coup_progress += 0.5 if reichswehr_loyalty < 0.25; coup_progress += 1 if reichswehr_loyalty < 0.1; coup_progress += 1 if reichswehr_loyalty = 0; coup_progress -= 1 if reichswehr_loyalty >= 0.4 and coup_progress > 0; coup_progress -= 1 if reichswehr_loyalty >= 0.6 and coup_progress > 0; reichswehr_loyalty += 0.15; reichswehr_militancy -= 0.25 if reichswehr_loyalty < 0.3; reichswehr_militancy -= 0.1 if reichswehr_loyalty < 0.5 and reichswehr_loyalty >= 0.3; reichswehr_militancy -= (coup_progress/100); sh_militancy += 0.05 if reichswehr_loyalty < 0.3; sh_militancy += 0.05 if reichswehr_militancy < 0.5; sh_militancy += (coup_progress/200); budget -= 1; dvp_relation -= 5; pacifism += 1; democratization += 1;
-
-Our efforts are at least somewhat successful; we have changed the recruiting and training patterns so that more soldiers from non-reactionary backgrounds can join, hopefully changing the culture of the forces. We have also removed some of the officers who supported the previous Kapp putsch. [? if reichswehr_militancy >= 3 : A downside of removing reactionary officers and instituting new republican ones is that the republican replacements tend to be less experienced and require more training. This leaves the Reichswehr weakened by our reforms, for now, though perhaps that is a good thing. ?]
-
-# todo: option to increase training (-1 budget) to make up the loss
-
-[? if coup_progress > 6 and reichswehr_loyalty < 0.6 : The reactionaries, seeing our attempts to weaken their influence have only accelerated their existing coup plans, spurred into action by our moves against them. ?] The center-right parties are committed to the military and deeply suspicious of our efforts to reform it.
