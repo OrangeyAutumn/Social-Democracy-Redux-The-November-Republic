@@ -1,10 +1,12 @@
 title: Direct The Cabinet
 new-page: true
 is-card: true
-view-if: chancellor_party == spd_name or vice_chancellor_party == spd_name and cabinet_direct_timer <= 0
+view-if: chancellor_party != spd_name and vice_chancellor_party == spd_name and cabinet_direct_timer <= 0
 card-image: img/portraits/muller_cabinet.jpg
 tags: govt_affairs
 on-arrival: cabinet_direct_timer += 6; month_actions += 1
+
+= Direct the Cabinet
 
 [? if chancellor_party == spd : With the Chancellorship, we can direct our SPD cabinet ministers to pursue our goals in government?] [? if vice_chancellor_party == spd : With the Chancellorship, we can direct our SPD cabinet ministers to pursue our goals in government?] 
 
