@@ -1,6 +1,6 @@
 title: Campaigning
 new-page: true
-view-if: campaign_timer <= 0
+view-if: campaign_timer <= 0 and peoples_party == 0
 on-arrival: month_actions += 1; campaign_timer = 6
 max-visits: 36
 is-card: true
