@@ -644,7 +644,7 @@ Q.nsdap_previous_presidential_candidate_fullname = "Vacant";
 set-bg: img/reichstag_2.jpg
 go-to: start_menu_2
 
-<img src="img/Illustration12.jpg" alt="Social Democracy: The November Republic">
+<img src="img/TNRLogo.jpg" alt="Social Democracy: The November Republic">
 
 <img src="img/reichstag_2.jpg" alt="The Reichstag building">
 
@@ -661,7 +661,7 @@ go-to: start_menu_2
 new-page: true
 audio: music/opening_score.mp3
 
-<img src="img/Illustration12.jpg" alt="Social Democracy: The November Republic">
+<img src="img/TNRLogo.jpg" alt="Social Democracy: The November Republic">
 
 > *"It is difficult for those who have not experienced the 'Age of Catastrophe' of the twentieth century in central Europe to see what it meant to live in a world that was simply not expected to last, in something that could not really even be described as a world, but merely as a provisional way-station between a dead past and a future not yet born, unless perhaps in the depth of revolutionary Russia. Nowhere was this more palpable than in the dying days of the Weimar Republic."*
 
