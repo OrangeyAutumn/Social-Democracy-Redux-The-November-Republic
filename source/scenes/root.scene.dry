@@ -678,8 +678,8 @@ Please select your desired start date.
 - @1924_start: November 1924: The Death of Ebert - Recommended
 - @1928_start: January 1928: The Age of Catastrophe
 - @1928_start_marx: January 1928: The Age of Catastrophe
-- @1930_start: November 1930: In This Historic Hour
-- @1930_start_marx: November 1930: In This Historic Hour
+- @1930_start: June 1930: In This Historic Hour
+- @1930_start_marx: June 1930: In This Historic Hour
 - @settings: Settings.
 
 @1924_start
