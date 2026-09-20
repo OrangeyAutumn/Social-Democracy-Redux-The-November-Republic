@@ -1,10 +1,12 @@
-title: Chancellor
+title: The Chancellorship
 new-page: true
 is-card: true
 tags: govt_affairs
 card-image: img/chancellor.jpg
-view-if: spd_in_government = 1 and chancellor_party = "SPD"
+view-if: spd_in_government = 1 and chancellor_party = spd_name
 subtitle: With the Chancellorship, we have a range of powers we can deploy to our advantage.
+
+= The Chancellorship
 
 - @coalition: We can improve relations with our coalition partners.
 - @shuffle_cabinet: We can reshuffle the cabinet.
@@ -13,9 +15,10 @@ subtitle: With the Chancellorship, we have a range of powers we can deploy to ou
 - @easy_discard
 
 @coalition
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 5; ddp_relation += 5; dvp_relation += 5
+view-if: not in_spd_majority
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 5 if z_in_government; ddp_relation += 5 if ddp_in_government; dvp_relation += 5 if dvp_in_government; uspd_relation += 5 if uspd_in_government; sapd_relation += 5 if sapd_in_government
 
-We have improved our relations with the Z, [+ ddp_name +], and DVP, and reduced tensions with the coalition.
+We have improved our relations with our coalition partners, and reduced tensions with the coalition.
 
 @snap_election
 title: Snap Election
