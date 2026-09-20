@@ -28,7 +28,7 @@ The Judiciary is one of the most reactionary components of the government, along
 view-if: elected_judges == 0
 on-arrival: coalition_dissent += 2 if in_grand_coalition == 1; coalition_dissent += 1 if in_weimar_coalition == 1; coalition_dissent += 1 if in_social_christian_coalition == 1; elected_judges = 1; judicial_reform = (((pro_republic + socialism) - nationalism)/20); democratization += ((pro_republic - nationalism)/10); coup_progress += 2
 
-We introduce popular election for judges, which will hopefully disrupt the reactionary establishment's hold on the judicial system. [? if nationalism > pro_republic && nationalism > socialism : The prevalence of Nationalism means this measure is likely to backfire, however. ?] 
+We introduce popular election for judges, which will hopefully disrupt the reactionary establishment's hold on the judicial system. [? if nationalism > pro_republic and nationalism > socialism : The prevalence of Nationalism means this measure is likely to backfire, however. ?] 
 
 @recruitment_campaign
 subtitle: -1 budget
