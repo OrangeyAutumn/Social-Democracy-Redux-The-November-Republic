@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs
 on-arrival: military_policy_timer += 6; month_actions += 1
-view-if: spd_in_government = 1 and reichswehr_minister_party = "SPD" and military_policy_timer <= 0
+view-if: spd_in_government = 1 and reichswehr_minister_party = spd_name and military_policy_timer <= 0
 card-image: img/portraits/LeberJulius.jpg
 #subtitle: Dealing with the Reichswehr.
 
@@ -11,9 +11,9 @@ card-image: img/portraits/LeberJulius.jpg
 
 The Reichswehr is a deeply reactionary institution that has been generally hostile to any notion of socialism or democracy. However, we now control the military as part of the government. What should we do to reform it?
 
-- @focus
-- @reform
-- @funding
+- @focus: Alter the role of the Reichswehr.
+- @reform: Institute reforms to improve the loyalty of the Reichswehr.
+- @funding: Make alterations to the Reichswehr budget.
 - @root: No change to military policy.
 - @easy_discard
 - @cancel_advisor_action
