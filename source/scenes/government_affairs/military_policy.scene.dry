@@ -54,7 +54,7 @@ on-arrival: reichsbanner_recruitment = (reichsbanner_strength_2 * reichsbanner_m
 - @army_reform: Conduct a thorough reform of the ranks, reducing the influence of reactionaries and making it more hospitable to us.
 - @paramilitary_integration_large: Promote initiatives to integrate paramilitary forces into the Reichswehr
 - @paramilitary_integration: Introduce initiatives to integrate paramilitary forces into the Reichswehr
-- @demilitarise: We will demilitarize the army.
+- @demilitarize: We will demilitarize the army.
 
 @army_reform
 subtitle: -1 budget
