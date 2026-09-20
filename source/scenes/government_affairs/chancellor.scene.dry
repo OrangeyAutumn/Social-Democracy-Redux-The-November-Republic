@@ -16,8 +16,8 @@ subtitle: With the Chancellorship, we have a range of powers we can deploy to ou
 - @easy_discard
 
 @direct_the_cabinet
-view-if: direct_the_cabinet_timer >= 0
-go-to: direct_the_cabinet
+view-if: cabinet_direct_timer >= 0
+go-to: direct_cabinet
 
 @coalition
 view-if: not in_spd_majority
