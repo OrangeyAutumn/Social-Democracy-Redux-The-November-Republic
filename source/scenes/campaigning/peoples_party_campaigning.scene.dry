@@ -1,4 +1,4 @@
-title: Campaigning (People's Party)
+title: Campaigning
 new-page: true
 is-card: true
 tags: campaigning
@@ -18,14 +18,14 @@ As a people's party, we can campaign across the country.
 @campaign_workers
 title: Campaign among the workers, to assuage their doubts about our changes.
 subtitle: The workers are still a key part of our constituency, and we must not alienate them in the transformation of our party.
-on-arrival: workers_spd += 5*(1-dissent);
+on-arrival: workers_spd += 3*(1-dissent);
 
 We campaign among the workers, our traditional base.
 
 @campaign_middle
 title: Campaign among the middle classes.
 subtitle: As a people's party, we represent the employees and small businesspeople of the middle class, and they are becoming receptive to our messages.
-on-arrival: old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent)
+on-arrival: old_middle_spd += 2*(1-dissent); new_middle_spd += 3*(1-dissent)
 
 We campaign among the middle classes.
 
@@ -34,28 +34,28 @@ title: Campaign in rural areas.
 subtitle: As a people's party, we represent farmers and rural workers as well, and they are becoming receptive to our messages.
 choose-if: rural_policy > 0
 unavailable-subtitle: We have not enacted any rural policies yet.
-on-arrival: rural_spd += 6*(1-dissent)
+on-arrival: rural_spd += 4*(1-dissent)
 
 We campaign among farmers and rural workers.
 
 @campaign_unemployed
 title: Campaign among the unemployed.
 subtitle: As a people's party, the urban poor are still a key part of our constituency.
-on-arrival: unemployed_spd += 5*(1-dissent);
+on-arrival: unemployed_spd += 4*(1-dissent);
 
 We campaign among the unemployed.
 
 @campaign_women
 title: Campaign among women of all classes.
 subtitle: As a people's party, we represent women of all classes.
-on-arrival: workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent);
+on-arrival: workers_spd += 2*(1-dissent); new_middle_spd += 2*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent);
 
 We campaign among women of all classes.
 
 @campaign_catholics
 title: Campaign among political Catholics.
 subtitle: Catholics have historically been tied to the Center Party, but there is no reason why our party cannot appeal to them. The Prussian Concordat in particular is a sign of our friendship with Catholicism.
-on-arrival: catholics_spd += 5*(1-dissent);
+on-arrival: catholics_spd += 4*(1-dissent);
 
 We campaign among political Catholics.
 
