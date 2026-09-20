@@ -459,25 +459,25 @@ go-to: coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td>!} <span style="color: #700000;">[+ uspd_name +]:</span> {!</td><td>!} [+ uspd_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #700000;">**[+ uspd_name +]:**</span> {!</td><td>!} [+ uspd_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #9B0000;">[+ sapd_name +]:</span> {!</td><td>!} [+ sapd_r +]% {!</td></tr>!}
+[? if sapd_formed : {!<tr><td>!} <span style="color: #9B0000;">**[+ sapd_name +]:**</span> {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
 {!<tr><td>!} <span style="color: #E3000F;">**[+ spd_name +]:**</span> {!</td><td>!} [+ spd_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #D3C24D;">[+ ddp_name +]:</span> {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #D3C24D;">**[+ ddp_name +]:**</span> {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #000;">[+ z_name +]:</span> {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #000;">**[+ z_name +]:**</span> {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #A2D8E0;">[+ bvp_name +]:</span> {!</td><td>!} [+ bvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #A2D8E0;">**[+ bvp_name +]:**</span> {!</td><td>!} [+ bvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #D5AC27;">[+ dvp_name +]:</span> {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #D5AC27;">**[+ dvp_name +]:**</span> {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #3E88B3;">[+ dnvp_name +]:</span> {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #3E88B3;">**[+ dnvp_name +]:**</span> {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #7A3C00;">[+ nsdap_name +]:</span> {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #7A3C00;">**[+ nsdap_name +]:**</span> {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #a0a0a0;">[+ other_name +]:</span> {!</td><td>!} [+ other_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #a0a0a0;">Others:</span> {!</td><td>!} [+ other_r +]% {!</td></tr>!}
 
 
 **Potential coalitions:**
