@@ -1588,7 +1588,7 @@ new-page: true
 - @2_section_3: Section III: Religion and Religious Associations (135-141)
 - @2_section_4: Section IV: Education and Schools (142-150)
 - @2_section_5: Section V: Economic Life (151-165)
-- @weimar_menu: Go back to Weimar Constitution Menu.
+- @weimar_constitution: Go back to Weimar Constitution Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
