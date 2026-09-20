@@ -37,11 +37,14 @@ new-page: true
 - @paramilitaries: Paramilitary groups
 - @factions: Internal factions
 - @figures: Figures and charts
-- @menu: Go back.
+- @game_menu: Go back to game menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @government
 new-page: true
+
+= **Government**
 
 The German Republic, called by some of our detractors as the "Weimar Republic", is a parliamentary republic with a somewhat weak president and a strong parliament, called the Reichstag. The Reichstag is responsible for governing, while the President has a largely ceremonial role but also has some important governing responsibilities.
 
@@ -51,13 +54,14 @@ The President is elected by a national direct vote, in two rounds. The second ro
 
 Germany is divided into a number of states, each of which have their own governments with some responsibilities. By far the largest and most important state is Prussia.
 
-- @menu: Go back.
+- @historical_menu: Go back to the historical menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @weimar_timeline
 new-page: true
 
-= Timeline of the SPD and the Republic (until 1928)
+= **Timeline of the SPD and the Republic (until 1928)**
 
 **1875**: The SPD is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the SPD grows to become the largest party in the German Empire.
 
@@ -83,7 +87,8 @@ new-page: true
 
 **1926**: A referendum on the expropriation of the princes, supported by the SPD and KPD, fails.
 
-- @menu: Go back.
+- @historical_menu: Go back to the historical menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @curr_gov
@@ -225,6 +230,7 @@ Agriculture:
 [? if agriculture_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "I": [+ agriculture_minister_party +] ?]
 
+- @game_menu: Go back to the Game Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
@@ -262,13 +268,14 @@ new-page: true
 
 [? if uspd_demands_prussia = 1 : They are willing to grant us [+ uspd_ultimatum_prussia_timer +] months and will likely call a vote of no confidence if we do not carry the following policies out. ?]
 
+- @game_menu: Go back to the Game Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
 @demographics
 new-page: true
 
-**Demographic Groups**
+= **Demographic Groups**
 
 **Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are <span style="color: #c00000;">socialists</span>, supporting either the <span style="color: #c00000;">**[+ spd_name +]**</span> or <span style="color: #700000;">**[+ uspd_name +]**</span>. They make up 40-50% of the population.
 
@@ -282,24 +289,25 @@ new-page: true
 
 **Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, [? if ddp_name == "DDP" or not ddp_name: mostly the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name == "DStP": although the mild antisemitism of the Young German Order and it's association with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has driven them away?], although substantial numbers support the <span style="color: #c00000;">**[+ spd_name +]**</span> or <span style="color: #700000;">**[+ uspd_name +]**</span>.
 
+- @game_menu: Go back to the Game Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
 @parties
 new-page: true
 
+= The Political Parties
 
 <span style="color: #c00000;">**[+ spd_name +]**</span> - <i>[+ spd_name_full +]</i> ([+ spd_name_english +])
 
-Party Leader: [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +])
-Party Ideology: [+ spd_ideology +]
+**Party Co-leaders:** [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +]) | Party Ideology: **[+ spd_ideology +]**
 
 We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic.
 
 <span style="color: #700000;">**[+ uspd_name +]**</span> - <i>[+ uspd_name_full +]</i> ([+ uspd_name_english +])
 
-Party Leader: [+ uspd_leader_fullname +]
-Party Ideology: [+ uspd_ideology +]
+Party Leader: [+ uspd_leader_fullname +] | Party Ideology: [+ uspd_ideology +]
+
 Current relations: [+ uspd_relation : relationships +]
 
 A broad left-wing offshoot of the <span style="color: #c00000;">**[+ spd_name +]**</span> that emerged from the SPD split amid the Great War, and in the aftermath of the German Revolution of 1918. Although containing a range of factions, from the hard-left Stalinists to moderate USPD, they follow the path of Moscow, opposing parliamentary democracy and agitating in favor of a <span style="color: #750e0e;">Soviet</span>-style revolution.
@@ -362,6 +370,7 @@ A far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempt
 
 **Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others.
 
+- @game_menu: Go back to Game Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
@@ -515,6 +524,7 @@ new-page: true
     </table>
 </div>
 
+- @game_menu: Go back to Game Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
@@ -527,7 +537,7 @@ Q.rfb_strength = Math.round(Q.rfb_strength);
 !}
 new-page: true
 
-**Paramilitary groups:**
+= **Paramilitary groups:**
 
 **Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: 
 Strength: [+ rb_strength +] thousand (Militarization: [+ rb_militancy : militancy +]):
@@ -564,12 +574,13 @@ This is Germany's military.
 
 The State Police of Prussia.
 
+- @game_menu: Go back to Game Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
 @factions
 
-**Internal factions of the** <span style="color: #c00000;">**[+ spd_name +]**</span>
+= **Internal factions of the** <span style="color: #c00000;">**[+ spd_name +]**</span>
 
 Overall dissent: [+ dissent_percent : dissent +]
 
@@ -593,6 +604,7 @@ Reformists are pragmatic participants in government, and seek to expand the welf
 
 [? if neorevisionism: Neorevisionists focus on defending the republic and expanding democracy, while also expanding the party's base beyond the working class to create a people's party. They support new propaganda methods and extra-parliamentary action in defense of the republic. ?]
 
+- @game_menu: Go back to Game Menu
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
@@ -610,8 +622,8 @@ const data = [];
 if (Q.uspd_r) {
     data.push({
         "id": "uspd",
-        "legend": uspd_name,
-        "name": uspd_name,
+        "legend": Q.uspd_name,
+        "name": Q.uspd_name,
         "seats": Math.round(Q.uspd_r * 5),
     });
 }
@@ -769,23 +781,23 @@ if (d3 && window) {
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>!} <span style="color: #700000;">[+ uspd_name +]:</span> {!</td><td>!} [+ uspd_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #700000;">**[+ uspd_name +]:**</span> {!</td><td>!} [+ uspd_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #9B0000;">[+ sapd_name +]:</span> {!</td><td>!} [+ sapd_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #9B0000;">**[+ sapd_name +]:**</span> {!</td><td>!} [+ sapd_r +]% {!</td></tr>!}
 
 {!<tr><td>!} <span style="color: #E3000F;">**[+ spd_name +]:**</span> {!</td><td>!} [+ spd_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #D3C24D;">[+ ddp_name +]:</span> {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #D3C24D;">**[+ ddp_name +]:**</span> {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #000;">[+ z_name +]:</span> {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #000;">**[+ z_name +]:**</span> {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #A2D8E0;">[+ bvp_name +]:</span> {!</td><td>!} [+ bvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #A2D8E0;">**[+ bvp_name +]:**</span> {!</td><td>!} [+ bvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #D5AC27;">[+ dvp_name +]:</span> {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #D5AC27;">**[+ dvp_name +]:**</span> {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #3E88B3;">[+ dnvp_name +]:</span> {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #3E88B3;">**[+ dnvp_name +]:**</span> {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
 
-{!<tr><td>!} <span style="color: #7A3C00;">[+ nsdap_name +]:</span> {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
+{!<tr><td>!} <span style="color: #7A3C00;">**[+ nsdap_name +]:**</span> {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
 
 = Election history
 
@@ -801,6 +813,7 @@ if (d3 && window) {
 
 {!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
 
+- @game_menu: Go back to Game Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
@@ -837,6 +850,7 @@ new-page: true
 - @1_section_5: Section V: National Legislation (Articles 68-77)
 - @1_section_6: Section VI: National Administration (Articles 78-101)
 - @1_section_7: Section VII: Administration of Justice (Articles 102-108)
+- @weimar_constitution: Go back to Weimar Constitution menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
@@ -984,6 +998,11 @@ If a dispute arises on the occasion of a union or a separation of territory in r
 
 If constitutional controversies arise within a state, for the decision of which there is no competent court, or should controversies of a public nature arise between different states or between the Reich and a single state, the Supreme Judicial Court of the German Reich shall decide the controversy on the appeal of either of the contesting parties, if no other court of the Reich is competent. The President of the Reich shall execute the decision of the Supreme Judicial Court.
 
+- @chapter_1: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
+- @backSpecialScene: Exit library.
+
 @1_section_2
 new-page: true
 
@@ -1105,7 +1124,9 @@ If they seek election to these bodies, leave necessary to carry on their campaig
 
 The members of the Reichstag shall have the right of free transportation on all German railways as well as compensation provided by national law.
 
-- @menu: Go back.
+- @chapter_1: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @1_section_3
@@ -1212,7 +1233,9 @@ The National Ministry shall reach its decisions by majority vote. In case of a t
 
 The Reichstag shall have power to bring before the Supreme Judicial Court impeachment proceedings against the President of the Reich, the Chancellor, and the national ministers, for a wrongful violation of the constitution or a national law. The bill of impeachment must be signed by at least one hundred members of the Reichstag and requires the approval of the majority necessary for constitutional amendments. Detailed regulations for the Supreme Judicial Court shall be prescribed by a national law.
 
-- @menu: Go back.
+- @chapter_1: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @1_section_4
@@ -1264,7 +1287,9 @@ Decisions shall be reached by simple majority vote.
 
 The Reichsrat shall be kept informed by the national departments concerning the conduct of national business. In deliberations upon important matters the appropriate committees of the Reichsrat shall be consulted by the national departments.
 
-- @menu: Go back.
+- @chapter_1: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @1_section_5
@@ -1330,7 +1355,9 @@ If the Reichstag adopts a constitutional amendment over the veto of the Reichsra
 
 Except as otherwise provided by law, the National Ministry shall issue such general administrative regulations as are necessary for the execution of national laws. The National Ministry requires for this purpose the approval of the Reichsrat in cases in which the execution of national laws rests with the authorities of the states.
 
-- @menu: Go back.
+- @chapter_1: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @1_section_6
@@ -1502,6 +1529,11 @@ In order to cover the costs of maintenance and construction of inland waterways,
 
 It shall be the duty of the Reich to acquire as its own property and to administer all aids to navigation, in particular lighthouses, lightships, buoys, floats, and beacons. After such acquisition, aids to navigation may be constructed or extended only by the Reich or with its consent.
 
+- @chapter_1: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
+- @backSpecialScene: Exit library.
+
 @1_section_7
 new-page: true
 
@@ -1541,7 +1573,9 @@ There shall be administrative courts in the Reich and in the states, as provided
 
 A Supreme Judicial Court shall be established for the German Reich in accordance with a national law.
 
-- @menu: Go back.
+- @chapter_1: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @chapter_2
@@ -1554,6 +1588,7 @@ new-page: true
 - @2_section_3: Section III: Religion and Religious Associations (135-141)
 - @2_section_4: Section IV: Education and Schools (142-150)
 - @2_section_5: Section V: Economic Life (151-165)
+- @weimar_menu: Go back to Weimar Constitution Menu.
 - @menu: Go back.
 - @backSpecialScene: Exit library.
 
@@ -1622,7 +1657,9 @@ Every German has the right within the limits of the general laws, to express his
 
 No censorship shall be established, but exceptional provisions may be made by law for cinematographs. Moreover, legal measures are permissible for the suppression of indecent and obscene literature, as well as for the protection of youth at public plays and exhibitions.
 
-- @menu: Go back.
+- @chapter_2: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @2_section_2 
@@ -1724,7 +1761,9 @@ Military duty shall be regulated in accordance with the provisions of the laws o
 
 All citizens without discrimination shall in proportion to their means contribute to all public burdens in accordance with the laws.
 
-- @menu: Go back.
+- @chapter_2: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @2_section_3
@@ -1782,7 +1821,9 @@ Necessary free time shall be accorded to the members of the armed forces for the
 
 So far as there is need for divine worship and spiritual ministration in the army, hospitals, penal establishments, or other public institutions, religious associations shall be admitted for the performance of religious offices without the exercise of any compulsion.
 
-- @menu: Go back.
+- @chapter_2: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @2_section_4
@@ -1852,7 +1893,9 @@ Artistic, historical, and natural monuments as well as landscapes enjoy the prot
 
 It shall be the duty of the Reich to prevent the removal of German artistic treasures to foreign countries.
 
-- @menu: Go back.
+- @chapter_2: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @2_section_5
@@ -1958,7 +2001,9 @@ Powers of control and administration may be conferred upon Workers and Economic 
 
 The regulation of the development and functions of Workers and Economic Councils, as well as their relations with other administratively autonomous social bodies shall be exclusively a matter for the Reich.
 
-- @menu: Go back.
+- @chapter_2: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
 
 @chapter_3
@@ -2063,5 +2108,7 @@ Erzberger Hermann Muller Dr. David
 Noske Schmidt Schlicke Giesberts
 Dr. Mayer Dr. Bell
 
-- @menu: Go back.
+- @chapter_2: Go back to Chapter menu
+- @weimar_constitution: Go back to Weimar Constitution menu.
+- @menu: Go back to main menu.
 - @backSpecialScene: Exit library.
