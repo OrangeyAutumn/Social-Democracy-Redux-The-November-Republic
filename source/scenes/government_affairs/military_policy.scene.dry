@@ -40,7 +40,7 @@ on-arrival: reichswehr_role = "Defence Force"
 
 We have shifted Military doctrine to focus on national defence, and away from internal security.
 
-@defense_force
+@world_policeman
 view-if: reichswehr_role != "World Policeman"
 subtitle: The Reichswehr's role is to uphold International Law [? if league_of_nations == 1 : and the Leage of Nations?].
 on-arrival: reichswehr_role = "World Policeman"
