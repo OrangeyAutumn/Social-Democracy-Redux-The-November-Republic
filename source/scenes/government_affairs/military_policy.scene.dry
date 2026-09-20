@@ -6,6 +6,9 @@ on-arrival: military_policy_timer += 6; month_actions += 1
 view-if: spd_in_government = 1 and reichswehr_minister_party = spd_name and military_policy_timer <= 0
 card-image: img/portraits/LeberJulius.jpg
 #subtitle: Dealing with the Reichswehr.
+go-to: military_menu
+
+@military_menu
 
 = Military Policy
 
@@ -25,6 +28,7 @@ We must decide what our military's focus must be, and what role it serves in tod
 - @keeper_of_the_peace: Keeper of the Peace
 - @defense_force: Defence Force
 - @world_policeman: World Policeman
+- @military_menu: Go back.
 
 @keeper_of_the_peace
 view-if: reichswehr_role != "Keeper of the Peace"
@@ -55,6 +59,7 @@ on-arrival: reichsbanner_recruitment = (reichsbanner_strength_2 * reichsbanner_m
 - @paramilitary_integration_large: Promote initiatives to integrate paramilitary forces into the Reichswehr
 - @paramilitary_integration: Introduce initiatives to integrate paramilitary forces into the Reichswehr
 - @demilitarize: We will demilitarize the army.
+- @military_menu: Go back.
 
 @army_reform
 subtitle: -1 budget
@@ -89,6 +94,7 @@ subtitle: The matter of the Reichswehr budget is controverisal and consequential
 
 - @increase_funding: Increase funding for the military to purchase its loyalty.
 - @decrease_funding: Reduce funding for the military so we have more for social spending.
+- @military_menu: Go back.
 
 @increase_funding
 subtitle: -1 budget
