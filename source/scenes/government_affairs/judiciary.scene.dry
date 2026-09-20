@@ -16,14 +16,33 @@ The Judiciary is one of the most reactionary components of the government, along
 [? if judicial_reform >= 5 : We have exhaustively reformed the judiciary. The courts have been stacked with sympathetic justices who will turn a blind eye to our own excesses while aggressively prosecuting crimes committed by the far-right. ?]
 
 - @reform: Carry out substantial judicial reforms,
-- @minor_reforms: Carry out minor judicial reforms.
+- @recruitment_campaign: Increase training funding to incentivise greater training of younger judges.
+- @retirement_age: Institute a mandatory judicial retirement age of 70
+- @retirement_age_2: Lower the mandatory retirement age to 65
+- @elected_judges: Introduce popular elections for judges
 - @as_is: Leave the judiciary as it is.
 - @easy_discard
 - @cancel_advisor_action
 
+@elected_judges
+view-if: elected_judges == 0
+on-arrival: coalition_dissent += 2 if in_grand_coalition == 1; coalition_dissent += 1 if in_weimar_coalition == 1; coalition_dissent += 1 if in_social_christian_coalition == 1; elected_judges = 1; judicial_reform = (((pro_republic + socialism) - nationalism)/20); democratization += ((pro_republic - nationalism)/10); coup_progress += 2
+
+We introduce popular election for judges, which will hopefully disrupt the reactionary establishment's hold on the judicial system. [? if nationalism > pro_republic && nationalism > socialism : The prevalence of Nationalism means this measure is likely to backfire, however. ?] 
+
+@recruitment_campaign
+subtitle: -1 budget
+unavailable-subtitle: Not enough budget.
+view-if: judicial_reform <= 3
+choose-if: budget >= 1
+on-arrival: budget -= 1; judicial_reform += 1; democratisation += 3; pro_republic += 2;
+
+We introduce greater funding for judicial training, helping more young judges enter the system. [? if in_grand_coalition : Our Coalition partners are not convinced by this, but are satisfied with the lack of action against existing judges. ?]
+
 @reform
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget.
+view-if: judicial_reform <= 3
 choose-if: budget >= 1
 on-arrival: judicial_vote = 1
 go-to: judiciary_done if not legislature_enabled; legislative_menu if legislature_enabled
@@ -35,10 +54,17 @@ on-arrival: budget -= 1; democratization += 2; coalition_dissent += 1 if in_gran
 
 We investigate jurists who have shown themselves to have biased or corrupt behavior, and try to remove them, replacing them with more democratically-oriented jurists. This obviously raises quite a great deal of ire in conservative circles, including within our coalition. 
 
-@minor_reforms
-on-arrival: democratization += 1; workers_spd += 3*(1-dissent) if democratization >= 3; judicial_reform += 1; pro_republic += 3*(1-dissent); judiciary_timer += 6
+@retirement_age
+view-if: retirement_age == 0
+on-arrival: retirement_age = 1; democratization += 1; workers_spd += 3*(1-dissent) if democratization >= 3; judicial_reform += 1; pro_republic += 3*(1-dissent); judiciary_timer += 6; coup_progress += 1
 
-We try to remove the most obviously biased and corrupt jurists, while leaving most of the system intact. It is slow work reforming the judiciary.
+We institute a mandatory retirement age, immediately filtering out some of the oldest and most reactionary judges, while leaving most of the system intact. It will be slow, but it is a step in our work reforming the judiciary.
+
+@retirement_age_2
+view-if: retirement_age == 1
+on-arrival: retirement_age = 2; democratization += 1; workers_spd += 3*(1-dissent) if democratization >= 3; judicial_reform += 1; pro_republic += 3*(1-dissent); judiciary_timer += 6; coup_progress += 1
+
+We lower the mandatory retirement age, immediately filtering out some of the oldest and most reactionary judges, while leaving most of the system intact. It will be slow, but it is a step in our work reforming the judiciary.
 
 @as_is
 go-to: root
