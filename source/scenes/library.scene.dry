@@ -761,8 +761,11 @@ if (d3 && window) {
             {'spd': '#E3000F', 'uspd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'bvp': '#A2D8E0', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
             {'spd': Q.spd_name, 'uspd': Q.uspd_name, 'ddp': Q.ddp_name, 'z': Q.z_name, 'bvp': Q.bvp_name, 'dvp': Q.dvp_name, 'dnvp': Q.dnvp_name, 'nsdap': Q.nsdap_name, 'other': 'Others', 'sapd': Q.nsdap_name});
         lines_2.width(width).height(400);
-        d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
-    }
+        if (Q.party_support_records.length > 0) {
+    d3.select("#party_support_history")
+        .datum(Q.party_support_records)
+        .call(lines_2);
+}
 
     // economic stats
     var minInflation = d3.min(Q.economic_records, d => d.inflation);
@@ -772,7 +775,8 @@ if (d3 && window) {
             {'inflation': 'Inflation', 'unemployment': 'Unemployment'},
             maxUnemployment + 5, minInflation - 5, 21);
     lines_3.width(width).height(300);
-    d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
+if (Q.economic_records.length > 0) {   
+d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
 }
 !}
 
