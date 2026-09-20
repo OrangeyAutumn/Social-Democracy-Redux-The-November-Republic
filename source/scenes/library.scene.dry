@@ -759,14 +759,14 @@ if (d3 && window) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties_graph,
             {'spd': '#E3000F', 'uspd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'bvp': '#A2D8E0', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
-            {'spd': Q.spd_name, 'uspd': Q.uspd_name, 'ddp': Q.ddp_name, 'z': Q.z_name, 'bvp': Q.bvp_name, 'dvp': Q.dvp_name, 'dnvp': Q.dnvp_name, 'nsdap': Q.nsdap_name, 'other': 'Others', 'sapd': Q.nsdap_name});
+            {'spd': Q.spd_name, 'uspd': Q.uspd_name, 'ddp': Q.ddp_name, 'z': Q.z_name, 'bvp': Q.bvp_name, 'dvp': Q.dvp_name, 'dnvp': Q.dnvp_name, 'nsdap': Q.nsdap_name, 'other': 'Others', 'sapd': Q.sapd_name});
         lines_2.width(width).height(400);
         if (Q.party_support_records.length > 0) {
     d3.select("#party_support_history")
         .datum(Q.party_support_records)
         .call(lines_2);
 }
-
+}
     // economic stats
     var minInflation = d3.min(Q.economic_records, d => d.inflation);
     var maxUnemployment = d3.max(Q.economic_records, d => d.unemployment);
@@ -2013,7 +2013,7 @@ The regulation of the development and functions of Workers and Economic Councils
 @chapter_3
 new-page: true
 
-= **Transitional and Concluding Provisions***
+= **Transitional and Concluding Provisions**
 
 = Article 166.
 
