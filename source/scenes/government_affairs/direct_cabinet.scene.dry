@@ -1,0 +1,78 @@
+title: Direct The Cabinet
+new-page: true
+is-card: true
+view-if: chancellor_party == spd_name or vice_chancellor_party == spd_name and cabinet_direct_timer <= 0
+card-image: img/portraits/muller_cabinet.jpg
+tags: govt_affairs
+on-arrival: cabinet_direct_timer += 6; month_actions += 1
+
+[? if chancellor_party == spd : With the Chancellorship, we can direct our SPD cabinet ministers to pursue our goals in government?] [? if vice_chancellor_party == spd : With the Chancellorship, we can direct our SPD cabinet ministers to pursue our goals in government?] 
+
+- @foreign: Direct [+ foreign_minister +] to pursue our goals on foreign policy.
+- @interior: Direct [+ interior_minister +] to pursue our goals in the interior ministry.
+- @justice: Direct [+ justice_minister +] to pursue our goals on judicial policy.
+- @labor: Direct [+ labor_minister +] to pursue our goals on labor policy.
+- @reichswehr: Direct [+ reichswehr_minister +] to pursue our goals regarding the Reichswehr.
+- @economic: Direct [+ economic_minister +] to pursue our goals on economic policy.
+- @finance: Direct [+ finance_minister +] to pursue our goals on fiscal policy.
+- @agriculture: Direct [+ agriculture_minister +] to pursue our goals on agricultural policy.
+- @education: Direct our ministers to pursue our goals on education policy.
+- @welfare: Direct our ministers to pursue our goals on welfare. 
+
+@foreign
+view-if: foreign_minister_party == spd_name
+go-to: foreign_policy
+
+We direct [+ foreign_minister +] to pursue our goals on foreign policy.
+
+@interior
+view-if: interior_minister_party == spd_name
+go-to: interior_ministry
+
+We direct [+ interior_minister +] to pursue our goals in the interior ministry.
+
+@justice
+view-if: justice_minister_party == spd_name
+go-to: judiciary
+
+We direct [+ justice_minister +] to pursue our goals on judicial policy.
+
+@labor
+view-if: labor_minister_party == spd_name
+go-to: labor_affairs
+
+We direct [+ labor_minister +] to pursue our goals on labor policy.
+
+@reichswehr
+view-if: reichswehr_minister_party == spd_name
+go-to: military_policy
+
+We direct [+ reichswehr_minister +] to pursue our goals regarding the Reichswehr.
+
+@economic
+view-if: economic_minister_party == spd_name
+go-to: economic_policy
+
+We direct [+ economic_minister +] to pursue our goals on economic policy.
+
+@finance
+view-if: finance_minister_party == spd_name
+go-to: fiscal_policy
+
+We direct [+ finance_minister +] to pursue our goals on fiscal policy.
+
+@agriculture
+view-if: agriculture_minister_party == spd_name
+go-to: agricultural_policy
+
+We direct [+ agriculture_minister +] to pursue our goals on agricultural policy.
+
+@education 
+go-to: education_science
+
+We direct our ministers to pursue our goals on education policy.
+  
+@welfare
+go-to: social_welfare
+
+We direct our ministers to pursue our goals on welfare. 
