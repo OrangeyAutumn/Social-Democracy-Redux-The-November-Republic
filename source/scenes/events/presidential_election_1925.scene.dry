@@ -2,7 +2,7 @@ title: The [+ year +] Presidential Election
 subtitle: Germany's first direct Presidential Election, and hopefully not its last..
 new-page: true
 max-visits: 1
-view-if: year = 1925 and month >= 4 and ebert_dead == 1
+view-if: year = next_presidential_election_year and month >= next_presidential_election_month and year <= 1926
 tags: event
 on-arrival: {!
 Q.liebknecht_multiplier = 0.8;
