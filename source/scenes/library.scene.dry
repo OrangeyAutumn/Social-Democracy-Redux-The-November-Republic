@@ -480,12 +480,15 @@ Strength: [+ rb_strength +] thousand (Militarization: [+ rb_militancy : militanc
 The [+ rb_name_full +] is an organization affiliated with all of the democratic parties - the **[+ spd_name_colour +]**, **[+ z_name_colour +]**, and [? if lvp_formed: the former ?]**[+ ddp_name_colour +]**, but primarily with the **[+ spd_name_colour +]**. Historically, this has been an unarmed organization.
 
 
-= The [+ bw_name_full_colour +] (**[+ bw_name_colour +]**): 
+= The [+ rfb_name_full_colour +] (**[+ rfb_name_colour +]**): 
 
 Strength: [+ rfb_strength +] thousand (Militarization: [+ rfb_militancy : militancy +])
 
 The "[+ rfb_name_full +]" is associated with the **[+ uspd_name_colour +]**.
 
+= The [+ bw_name_full_colour +] (**[+ bw_name_colour +]**): 
+
+The "[+ bw_name_full +]" is associated with the **[+ bvp_name_colour +]**.
 
 = [+ sh_name_full_colour +] **([+ sh_name_colour +])**:
 
