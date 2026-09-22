@@ -460,7 +460,7 @@ go-to: coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
 {!<tr><td>!} <span style="color: #700000;">**[+ uspd_name +]:**</span> {!</td><td>!} [+ uspd_r +]% {!</td><td>!} [+ str_change_uspd +] {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td>!} <span style="color: #9B0000;">**[+ sapd_name +]:**</span> {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!}
+[? if sapd_formed : {!<tr><td>!} <span style="color: #9B0000;">**[+ sapd_name +]:**</span> {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
 {!<tr><td>!} <span style="color: #E3000F;">**[+ spd_name +]:**</span> {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
 
