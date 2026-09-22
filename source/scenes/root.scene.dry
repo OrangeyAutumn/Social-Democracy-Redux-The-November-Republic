@@ -593,10 +593,11 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Ebert";
+Q.president_fullname = "Friedrich Ebert";
 Q.president_party = "SPD";
 Q.presidential_relation = 60;
-// starting chancellor: Wilhelm Marx;
 Q.chancellor = "Marx";
+Q.chancellor_fullname = "Wilhelm Marc";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
@@ -742,8 +743,6 @@ go-to: start_menu_2
 
 <img src="img/favico.jpg" alt="Social Democracy: The November Republic">
 
-<img src="img/reichstag_2.jpg" alt="The Reichstag building">
-
 @start_menu_2
 
 - @start: Start game
@@ -762,8 +761,6 @@ audio: music/opening_score.mp3
 > *"It is difficult for those who have not experienced the 'Age of Catastrophe' of the twentieth century in central Europe to see what it meant to live in a world that was simply not expected to last, in something that could not really even be described as a world, but merely as a provisional way-station between a dead past and a future not yet born, unless perhaps in the depth of revolutionary Russia. Nowhere was this more palpable than in the dying days of the Weimar Republic."*
 
  - Eric Hobsbawm, Interesting Times (2002)
-
-<img src="img/reichstag_2.jpg" alt="The Reichstag building">
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game* and an alternate history, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
