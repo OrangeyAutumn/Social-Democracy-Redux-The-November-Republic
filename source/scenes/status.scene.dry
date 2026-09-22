@@ -18,9 +18,9 @@ if (Q.economic_growth) {
 
 = Status
 
-**President**: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
+**President**: [+ president +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
 
-**Chancellor**: [+ chancellor +] ([+ chancellor_party +])
+**Chancellor**: [+ chancellor +] ([+ chancellor_party_colour +])
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
@@ -74,9 +74,9 @@ if (Q.sa_strength) {
 
 = Status
 
-**President**: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
+**President**: [+ president +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
 
-**Chancellor**: [+ chancellor +] ([+ chancellor_party +])
+**Chancellor**: [+ chancellor +] ([+ chancellor_party_colour +])
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
@@ -92,27 +92,27 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unem
 
 = Cabinet ([+ chancellor +] [+ cabinet_number +])
 
-**President**: [+ president_fullname +] ([+ president_party +]) | [+ presidential_relation : relationships +]
+**President**: [+ president_fullname +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
 
-**Chancellor**: [+ chancellor_fullname +] ([+ chancellor_party +])
+**Chancellor**: [+ chancellor_fullname +] ([+ chancellor_party_colour +])
 
-**Vice-Chancellor**: [+ vice_chancellor +] ([+ vice_chancellor_party +])
+**Vice-Chancellor**: [+ vice_chancellor +] ([+ vice_chancellor_party_colour +])
 
-**Foreign Minister:** [+ foreign_minister +] ([+ foreign_minister_party +]) 
+**Foreign Minister:** [+ foreign_minister +] ([+ foreign_minister_party_colour +]) 
 
-**Interior Minister:** [+ interior_minister +] ([+ interior_minister_party +])
+**Interior Minister:** [+ interior_minister +] ([+ interior_minister_party_colour +])
 
-**Justice Minister:** [+ justice_minister +] ([+ justice_minister_party +])
+**Justice Minister:** [+ justice_minister +] ([+ justice_minister_party_colour +])
 
-**Labor Minister:** [+ labor_minister +] ([+ labor_minister_party +])
+**Labor Minister:** [+ labor_minister +] ([+ labor_minister_party_colour +])
 
-**Reichswehr Minister:** [+ reichswehr_minister +] ([+ reichswehr_minister_party +])
+**Reichswehr Minister:** [+ reichswehr_minister +] ([+ reichswehr_minister_party_colour +])
 
-**Economic Minister:** [+ economic_minister +] ([+ economic_minister_party +])
+**Economic Minister:** [+ economic_minister +] ([+ economic_minister_party_colour +])
 
-**Finance Minister:** [+ finance_minister +] ([+ finance_minister_party +])
+**Finance Minister:** [+ finance_minister +] ([+ finance_minister_party_colour +])
 
-**Agriculture Minister:** [+ agriculture_minister +] ([+ agriculture_minister_party +])
+**Agriculture Minister:** [+ agriculture_minister +] ([+ agriculture_minister_party_colour +])
 
 = Reichstag composition:
 
@@ -146,9 +146,9 @@ if (Q.sa_strength) {
 
 = Status
 
-**President**: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
+**President**: [+ president +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
 
-**Chancellor**: [+ chancellor +] ([+ chancellor_party +])
+**Chancellor**: [+ chancellor +] ([+ chancellor_party_colour +])
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
@@ -244,9 +244,9 @@ if (Q.sa_strength) {
 
 = Status
 
-**President**: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
+**President**: [+ president +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
 
-**Chancellor**: [+ chancellor +] ([+ chancellor_party +])
+**Chancellor**: [+ chancellor +] ([+ chancellor_party_colour +])
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
@@ -325,9 +325,9 @@ if (Q.sa_strength) {
 
 = Status
 
-**President**: [+ president +] ([+ president_party +]) | [+ presidential_relation : relationships +]
+**President**: [+ president +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
 
-**Chancellor**: [+ chancellor +] ([+ chancellor_party +])
+**Chancellor**: [+ chancellor +] ([+ chancellor_party_colour +])
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
