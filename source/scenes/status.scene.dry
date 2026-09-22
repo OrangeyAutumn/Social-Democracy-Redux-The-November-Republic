@@ -24,7 +24,7 @@ if (Q.economic_growth) {
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-**[+ spd_name_colour +]:** [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ kpd_votes +]% coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
+**[+ spd_name_colour +]:** [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | **[+ uspd_name_colour +]:** [+ kpd_votes +]% coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
 
 Seats: [+ spd_r +]% | Polling: [+ spd_votes +]% 
 
@@ -32,7 +32,7 @@ Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ reso
 
 Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unemployment: [+ unemployed_2 +]% | [? if spd_in_government == 1 : | Budget: [+ budget +] ?]
 
-= **The [+ spd_name_colour +]** ([+ spd_ideology +])
+= The **[+ spd_name_colour +] ([+ spd_ideology +])**
 
 Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +]) 
 
@@ -40,18 +40,18 @@ Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ 
 
 Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ resources +]
 
-Left ([+ left_leader_fullname +]) | [+ left_strength : strength +]; Dissent: [+ left_dissent : dissent +]
+**[+ spd_left_colour +]:** ([+ left_leader_fullname +]) | [+ left_strength : strength +]; Dissent: [+ left_dissent : dissent +]
 
-Center ([+ center_leader_fullname +]) | [+ center_strength : strength +]; Dissent: [+ center_dissent : dissent +]
+**[+ spd_center_colour +]:** ([+ center_leader_fullname +]) | [+ center_strength : strength +]; Dissent: [+ center_dissent : dissent +]
 
-Labor ([+ labor_leader_fullname +]) | [+ labor_strength : strength +]; Dissent: [+ labor_dissent : dissent +]
+**[+ spd_labor_colour +]:** ([+ labor_leader_fullname +]) | [+ labor_strength : strength +]; Dissent: [+ labor_dissent : dissent +]
 
-Reformists ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength +]; Dissent: [+ reformist_dissent : dissent +]
+**[+ spd_reformist_colour +]:** ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength +]; Dissent: [+ reformist_dissent : dissent +]
 
 [? if neorevisionism > 0 : 
-Neorevisionists ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]  
+**[+ spd_neorevisionist_colour +]:** ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]  
 
-Associated Paramilitary: <span style="color: #000000;"><b>**Reic**</b></span><span style="color: #DD0000;"><b>**hsba**</b></span><span style="color: #FFCC00;"><b>**nner**</b></span> 
+Associated Paramilitary: [+ rb_full_colour +] **([+ rb_colour +])** |
 Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
 
 @government
@@ -80,7 +80,7 @@ if (Q.sa_strength) {
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-**[+ spd_name_colour +]:** [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | <span style="color: #700000;">**[+ uspd_name +]**</span>: coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
+**[+ spd_name_colour +]:** [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | **[+ uspd_name_colour +]:** coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
 
 Seats: [+ spd_r +]% | Polling: [+ spd_votes +]% 
 
@@ -116,7 +116,7 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unem
 
 = Reichstag composition:
 
-<span style="color: #700000;">**[+ uspd_name +]**</span>: [+ uspd_r +]% | [? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?] | **[+ spd_name_colour +]** [+ spd_r +]% | DDP: [+ ddp_r +]% | <span style="color: #000000;">**Z**</span>: [+ z_minus_bvp_r +]% | <span style="color: #A2D8E0;">**BVP**</span>: 3% | <span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]% | <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]% | <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_r +]% | Others: [+ other_r +]%
+**[+ uspd_name_colour +]:** [+ uspd_r +]% | [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ sapd_r +]% ?] | **[+ spd_name_colour +]:** [+ spd_r +]% | **[+ ddp_name_colour +]** [+ ddp_r +]% | **[+ z_name_colour +]:** [+ z_minus_bvp_r +]% | **[+ bvp_name_colour +]:** [+ bvp_r +]% | **[+ dvp_name_colour +]:** [+ dvp_r +]% | **[+ dnvp_name_colour +]:** [+ dnvp_r +]% | **[+ nsdap_name_colour +]:** [+ nsdap_r +]% | **Others:** [+ other_r +]%
 
 = Military Forces
 
@@ -152,7 +152,7 @@ if (Q.sa_strength) {
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-[+ spd_name_colour +]: [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | <span style="color: #700000;">**[+ uspd_name +]**</span> coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
+**[+ spd_name_colour +]:** [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | <span style="color: #700000;">**[+ uspd_name +]**</span> coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
 
 Seats: [+ spd_r +]% | Polling: [+ spd_votes +]% 
 
@@ -162,63 +162,63 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unem
 
 = **Parties**
 
-= <span style="color: #700000;">**[+ uspd_name +]**</span>
+= **[+ uspd_name_colour +]**
 
 Leader: [+ uspd_leader_fullname +] ([+ uspd_ideology +]) | Relations: [+ uspd_relation : relationships +] 
 
 Seats: [+ uspd_r +]% | Polling: [+ uspd_votes +]%
 
-Associated Paramilitary: <span style="color: #700000;">**Rotfrontkämpferbund (RFB)**</span> 
+Associated Paramilitary: [+ rfb_name_full_colour +] **([+ rfb_name_colour +])** |
 Strength: [+ rfb_strength_2 +] thousand ([+ rfb_force +]%) | Militarization: [+ rfb_militancy : militancy +]
 
-= <span style="color: #D3C24D;">**[+ ddp_name +]**</span> 
+= **[+ ddp_name_colour +]** 
 
 Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +]) | Seats: [+ ddp_r +]% | Polling: [+ ddp_votes +]%
 
 Relations: [+ ddp_relation : relationships +] 
 
-Associated Paramilitary: [? if reichsbanner_ddp == 0 : Associated Paramilitary: <span style="color: #000000;"><b>**Reic**</b></span><span style="color: #DD0000;"><b>**hsba**</b></span><span style="color: #FFCC00;"><b>**nner**</b></span> ?][? if reichsbanner_z == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_ddp == 0 : [+ rb_full_colour +] **([+ rb_colour +])** | ?][? if reichsbanner_z == 1 : None ?]
 [? if reichsbanner_ddp == 0 : Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?]
 
-= <span style="color: #000000;">**Z**</span>
+= **[+ z_name_colour +]**
 
 Leader: [+ z_party_leader_fullname +] ([+ z_ideology +]) | Relations: [+ z_relation : relationships +] 
 
 Seats: [+ z_minus_bvp_r +]% | Polling: [+ z_minus_bvp_votes +]%
 
-Associated Paramilitary: [? if reichsbanner_z == 0 : Associated Paramilitary: <span style="color: #000000;"><b>**Reic**</b></span><span style="color: #DD0000;"><b>**hsba**</b></span><span style="color: #FFCC00;"><b>**nner**</b></span> ?][? if reichsbanner_z == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_z == 0 : [+ rb_full_colour +] **([+ rb_colour +])** | ?][? if reichsbanner_z == 1 : None ?]
 [? if reichsbanner_z == 0 : Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?]
 
-= <span style="color: #A2D8E0;">**[+ bvp_name +]**</span> 
+= **[+ bvp_name_colour +]** 
 
 Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +]) | Relations: [+ bvp_relation : relationships +] 
 
 Seats: [+ bvp_r +]% | Polling: [+ bvp_votes +]%
 
-Associated Paramilitary: <span style="color: #A2D8E0;">**Bayenwacht**</span>: 
+Associated Paramilitary: [+ bw_name_full_colour +] **[+ bw_name_colour +]**  
 
-= <span style="color: #C0A054;">**DVP**</span> 
+= **[+ dvp_name_colour +]**
 
 Leader: [+ dvp_leader_fullname +] ([+ dvp_ideology +]) | Relations: [+ dvp_relation : relationships +]
 
 Seats: [+ dvp_r +]% | Polling: [+ dvp_votes +]%
 
-= <span style="color: #3E88B3;">**DNVP**</span> 
+= **[+ dnvp_name_colour +]**
 
 Leader: [+ dnvp_leader_fullname +] ([+ dnvp_ideology +]) | Relations: [+ dnvp_relation : relationships +] 
 
 Seats: [+ dnvp_r +]% | Polling: [+ dnvp_votes +]%
 
-Associated Paramilitary: <span style="color: #3E88B3;">**Der Stahlhelm**</span>: 
+Associated Paramilitary: [+ sh_name_full_colour +] **([+ sh_name_colour +])** | 
 Strength: [+ sh_strength +] thousand ([+ sh_force +]%) | (Militarization: [+ sh_militancy : militancy +])
 
-= <span style="color: #7A3C00;">**NSDAP**</span> 
+= **[+ nsdap_name_colour +]**
 
 Leader: [+ nsdap_leader_fullname +] ([+ nsdap_ideology +]) | Relations: Hostile
 
 Seats: [+ nsdap_r +]% | Polling: [+ nsdap_votes +]%
 
-Associated Paramilitary: <span style="color: #7A3C00;">**Sturmabteilung (SA)** </span>: 
+Associated Paramilitary: [+ sa_name_full_colour +] **([+ sa_name_colour +])** |
 Strength: [+ sa_strength_2 +] thousand ([+ sa_force +]%) | (Militarization: [+ sa_militancy : militancy +])
 
 @polls
@@ -250,7 +250,7 @@ if (Q.sa_strength) {
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-[+ spd_name_colour +]: [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | <span style="color: #700000;">**[+ uspd_name +]**</span> coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
+**[+ spd_name_colour +]:** [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | <span style="color: #700000;">**[+ uspd_name +]**</span> coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
 
 Seats: [+ spd_r +]% | Polling: [+ spd_votes +]% 
 
@@ -268,41 +268,39 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unem
 
 = Polling by Party:
 
-<span style="color: #700000;">**[+ uspd_name +]**</span>: Workers: [+ workers_uspd_display +]% | New Middle Class: [+ new_middle_uspd_display +]% | Old Middle Class: [+ old_middle_uspd_display +]% | Rural: [+ rural_uspd_display +]% | Unemployed: [+ unemployed_uspd_display +]% | Catholics: [+ catholics_uspd_display +]% | Overall: [+ uspd_votes +]%
+**[+ uspd_name_colour +]**: Workers: [+ workers_uspd_display +]% | New Middle Class: [+ new_middle_uspd_display +]% | Old Middle Class: [+ old_middle_uspd_display +]% | Rural: [+ rural_uspd_display +]% | Unemployed: [+ unemployed_uspd_display +]% | Catholics: [+ catholics_uspd_display +]% | Overall: [+ uspd_votes +]%
 
-[? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: Workers: [+ workers_sapd_display +]% | New Middle Class: [+ new_middle_sapd_display +]% | Old Middle Class: [+ old_middle_sapd_display +]% | Rural: [+ rural_sapd_display +]% | Unemployed: [+ unemployed_sapd_display +]% | Catholics: [+ catholics_sapd_display +]% | Overall: [+ sapd_votes +]% ?]
+[? if sapd_formed == 1 : **[+ sapd_name_colour +]:** Workers: [+ workers_sapd_display +]% | New Middle Class: [+ new_middle_sapd_display +]% | Old Middle Class: [+ old_middle_sapd_display +]% | Rural: [+ rural_sapd_display +]% | Unemployed: [+ unemployed_sapd_display +]% | Catholics: [+ catholics_sapd_display +]% | Overall: [+ sapd_votes +]% ?]
 
 **[+ spd_name_colour +]:** Workers: [+ workers_spd_display +]% | New Middle Class: [+ new_middle_spd_display +]% | Old Middle Class: [+ old_middle_spd_display +]% | Rural: [+ rural_spd_display +]% | Unemployed: [+ unemployed_spd_display +]% | Catholics: [+ catholics_spd_display +]% | Overall: [+ spd_votes +]%
 
-<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: Workers: [+ workers_ddp_display +]% | New Middle Class: [+ new_middle_ddp_display +]% | Old Middle Class: [+ old_middle_ddp_display +]% | Rural: [+ rural_ddp_display +]% | Unemployed: [+ unemployed_ddp_display +]% | Catholics: [+ catholics_ddp_display +]% | Overall: [+ ddp_votes +]%
+**[+ ddp_name_colour +]:** Workers: [+ workers_ddp_display +]% | New Middle Class: [+ new_middle_ddp_display +]% | Old Middle Class: [+ old_middle_ddp_display +]% | Rural: [+ rural_ddp_display +]% | Unemployed: [+ unemployed_ddp_display +]% | Catholics: [+ catholics_ddp_display +]% | Overall: [+ ddp_votes +]%
 
-<span style="color: #000000;">**Z**</span>: Workers: [+ workers_z_display +]% | New Middle Class: [+ new_middle_z_display +]% | Old Middle Class: [+ old_middle_z_display +]% | Rural: [+ rural_z_display +]% | Unemployed: [+ unemployed_z_display +]% | Catholics: [+ catholics_z_display +]% | Overall: [+ z_minus_bvp_votes +]%
+**[+ z_name_colour +]:** Workers: [+ workers_z_display +]% | New Middle Class: [+ new_middle_z_display +]% | Old Middle Class: [+ old_middle_z_display +]% | Rural: [+ rural_z_display +]% | Unemployed: [+ unemployed_z_display +]% | Catholics: [+ catholics_z_display +]% | Overall: [+ z_minus_bvp_votes +]%
 
-<span style="color: #A2D8E0;">**[+ bvp_name +]**</span>: Overall: [+ bvp_votes +]%
+**[+ bvp_name_colour +]:** Overall: [+ bvp_votes +]%
 
-<span style="color: #C0A054;">**DVP**</span>: Workers: [+ workers_dvp_display +]% | New Middle Class: [+ new_middle_dvp_display +]% | Old Middle Class: [+ old_middle_dvp_display +]% | Rural: [+ rural_dvp_display +]% | Unemployed: [+ unemployed_dvp_display +]% | Catholics: [+ catholics_dvp_display +]% | Overall: [+ dvp_votes +]%
+**[+ dvp_name_colour +]:** Workers: [+ workers_dvp_display +]% | New Middle Class: [+ new_middle_dvp_display +]% | Old Middle Class: [+ old_middle_dvp_display +]% | Rural: [+ rural_dvp_display +]% | Unemployed: [+ unemployed_dvp_display +]% | Catholics: [+ catholics_dvp_display +]% | Overall: [+ dvp_votes +]%
 
-<span style="color: #3E88B3;">**DNVP**</span>: Workers: [+ workers_dnvp_display +]% | New Middle Class: [+ new_middle_dnvp_display +]% | Old Middle Class: [+ old_middle_dnvp_display +]% | Rural: [+ rural_dnvp_display +]% | Unemployed: [+ unemployed_dnvp_display +]% | Catholics: [+ catholics_dnvp_display +]% | Overall: [+ dnvp_votes +]%
+**[+ dnvp_name_colour +]:** Workers: [+ workers_dnvp_display +]% | New Middle Class: [+ new_middle_dnvp_display +]% | Old Middle Class: [+ old_middle_dnvp_display +]% | Rural: [+ rural_dnvp_display +]% | Unemployed: [+ unemployed_dnvp_display +]% | Catholics: [+ catholics_dnvp_display +]% | Overall: [+ dnvp_votes +]%
 
-[? if dne_formed : DNE: Workers: [+ workers_dne_display +]% | New Middle Class: [+ new_middle_dne_display +]% | Old Middle Class: [+ old_middle_dne_display +]% | Rural: [+ rural_dne_display +]% | Unemployed: [+ unemployed_dne_display +]% | Catholics: [+ catholics_dne_display +]% | Overall: [+ dne_votes +]% ?]
+**[+ nsdap_name_colour +]:** Workers: [+ workers_nsdap_display +]% | New Middle Class: [+ new_middle_nsdap_display +]% | Old Middle Class: [+ old_middle_nsdap_display +]% | Rural: [+ rural_nsdap_display +]% | Unemployed: [+ unemployed_nsdap_display +]% | Catholics: [+ catholics_nsdap_display +]% | Overall: [+ nsdap_votes +]%
 
-<span style="color: #7A3C00;">**NSDAP**</span>: Workers: [+ workers_nsdap_display +]% | New Middle Class: [+ new_middle_nsdap_display +]% | Old Middle Class: [+ old_middle_nsdap_display +]% | Rural: [+ rural_nsdap_display +]% | Unemployed: [+ unemployed_nsdap_display +]% | Catholics: [+ catholics_nsdap_display +]% | Overall: [+ nsdap_votes +]%
-
-Others: Workers: [+ workers_other_display +]% | New Middle Class: [+ new_middle_other_display +]% | Old Middle Class: [+ old_middle_other_display +]% | Rural: [+ rural_other_display +]% | Unemployed: [+ unemployed_other_display +]% | Catholics: [+ catholics_other_display +]% | Overall: [+ other_votes +]%
+**Others:** Workers: [+ workers_other_display +]% | New Middle Class: [+ new_middle_other_display +]% | Old Middle Class: [+ old_middle_other_display +]% | Rural: [+ rural_other_display +]% | Unemployed: [+ unemployed_other_display +]% | Catholics: [+ catholics_other_display +]% | Overall: [+ other_votes +]%
 
 = Polling by Demographic
 
-Workers: <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ workers_uspd_display +]%, [? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: [+ workers_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ workers_spd_display +]%, DDP: [+ workers_ddp_display +]%, <span style="color: #000000;">**Z**</span>: [+ workers_z_display +]%, <span style="color: #C0A054;">**DVP**</span>: [+ workers_dvp_display +]%, <span style="color: #3E88B3;">**DNVP**</span>: [+ workers_dnvp_display +]%, [? if dne_formed : DNE: [+ workers_dne_display +]%, ?] <span style="color: #7A3C00;">**NSDAP**</span>: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]%
+Workers: **[+ uspd_name_colour +]:** [+ workers_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ workers_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ workers_spd_display +]%, **[+ ddp_name_colour +]:** [+ workers_ddp_display +]%, **[+ z_name_colour +]:** [+ workers_z_display +]%, **[+ dvp_name_colour +]:** [+ workers_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ workers_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ workers_nsdap_display +]%, **Others:** [+ workers_other_display +]%
 
-New Middle Class: <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ new_middle_uspd_display +]%, [? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: [+ new_middle_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ new_middle_spd_display +]%, DDP: [+ new_middle_ddp_display +]%, <span style="color: #000000;">**Z**</span>: [+ new_middle_z_display +]%, <span style="color: #C0A054;">**DVP**</span>: [+ new_middle_dvp_display +]%, <span style="color: #3E88B3;">**DNVP**</span>: [+ new_middle_dnvp_display +]%, [? if dne_formed : DNE: [+ new_middle_dne_display +]%, ?] <span style="color: #7A3C00;">**NSDAP**</span>: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]%
+New Middle Class: **[+ uspd_name_colour +]:** [+ new_middle_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ new_middle_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ new_middle_spd_display +]%, **[+ ddp_name_colour +]:** [+ new_middle_ddp_display +]%, **[+ z_name_colour +]:** [+ new_middle_z_display +]%, **[+ dvp_name_colour +]:** [+ new_middle_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ new_middle_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ new_middle_nsdap_display +]%, **Others:** [+ new_middle_other_display +]%
 
-Old Middle Class: <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ old_middle_uspd_display +]%, [? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: [+ old_middle_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ old_middle_spd_display +]%, DDP: [+ old_middle_ddp_display +]%, <span style="color: #000000;">**Z**</span>: [+ old_middle_z_display +]%, <span style="color: #C0A054;">**DVP**</span>: [+ old_middle_dvp_display +]%, <span style="color: #3E88B3;">**DNVP**</span>: [+ old_middle_dnvp_display +]%, [? if dne_formed : DNE: [+ old_middle_dne_display +]%, ?] <span style="color: #7A3C00;">**NSDAP**</span>: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]%
+Old Middle Class: **[+ uspd_name_colour +]:** [+ old_middle_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ old_middle_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ old_middle_spd_display +]%, **[+ ddp_name_colour +]:** [+ old_middle_ddp_display +]%, **[+ z_name_colour +]:** [+ old_middle_z_display +]%, **[+ dvp_name_colour +]:** [+ old_middle_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ old_middle_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ old_middle_nsdap_display +]%, **Others:** [+ old_middle_other_display +]%
 
-Rural: <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ rural_uspd_display +]%, [? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: [+ rural_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ rural_spd_display +]%, DDP: [+ rural_ddp_display +]%, <span style="color: #000000;">**Z**</span>: [+ rural_z_display +]%, <span style="color: #C0A054;">**DVP**</span>: [+ rural_dvp_display +]%, <span style="color: #3E88B3;">**DNVP**</span>: [+ rural_dnvp_display +]%, [? if dne_formed : DNE: [+ rural_dne_display +]%, ?] <span style="color: #7A3C00;">**NSDAP**</span>: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]%
+Rural: **[+ uspd_name_colour +]:** [+ rural_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ rural_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ rural_spd_display +]%, **[+ ddp_name_colour +]:** [+ rural_ddp_display +]%, **[+ z_name_colour +]:** [+ rural_z_display +]%, **[+ dvp_name_colour +]:** [+ rural_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ rural_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ rural_nsdap_display +]%, **Others:** [+ rural_other_display +]%
 
-Unemployed: <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ unemployed_uspd_display +]%, [? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: [+ unemployed_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ unemployed_spd_display +]%, DDP: [+ unemployed_ddp_display +]%, <span style="color: #000000;">**Z**</span>: [+ unemployed_z_display +]%, <span style="color: #C0A054;">**DVP**</span>: [+ unemployed_dvp_display +]%, <span style="color: #3E88B3;">**DNVP**</span>: [+ unemployed_dnvp_display +]%, [? if dne_formed : DNE: [+ unemployed_dne_display +]%, ?] <span style="color: #7A3C00;">**NSDAP**</span>: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]%
+Unemployed: **[+ uspd_name_colour +]:** [+ unemployed_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ unemployed_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ unemployed_spd_display +]%, **[+ ddp_name_colour +]:** [+ unemployed_ddp_display +]%, **[+ z_name_colour +]:** [+ unemployed_z_display +]%, **[+ dvp_name_colour +]:** [+ unemployed_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ unemployed_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ unemployed_nsdap_display +]%, **Others:** [+ unemployed_other_display +]%
 
-Catholics: <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ catholics_uspd_display +]%, [? if sapd_formed == 1 : <span style="color: #9B0000;">**SAPD**</span>: [+ catholics_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ catholics_spd_display +]%, DDP: [+ catholics_ddp_display +]%, <span style="color: #000000;">**Z**</span>: [+ catholics_z_display +]%, <span style="color: #C0A054;">**DVP**</span>: [+ catholics_dvp_display +]%, <span style="color: #3E88B3;">**DNVP**</span>: [+ catholics_dnvp_display +]%, [? if dne_formed : DNE: [+ catholics_dne_display +]%, ?] <span style="color: #7A3C00;">**NSDAP**</span>: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]%
+Catholics: **[+ uspd_name_colour +]:** [+ catholics_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ catholics_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ catholics_spd_display +]%, **[+ ddp_name_colour +]:** [+ catholics_ddp_display +]%, **[+ z_name_colour +]:** [+ catholics_z_display +]%, **[+ dvp_name_colour +]:** [+ catholics_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ catholics_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ catholics_nsdap_display +]%, **Others:** [+ catholics_other_display +]%
 
 @states
 on-arrival: {!
@@ -333,7 +331,7 @@ if (Q.sa_strength) {
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-<span style="color: #c00000;">**[+ spd_name +]:**</span> [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | <span style="color: #700000;">**[+ uspd_name +]**</span>: [+ kpd_votes +]% coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
+<span style="color: #c00000;">**[+ spd_name +]:**</span> [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**[+ spd_name +]**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not in_spd_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | **[+ uspd_name_colour +]:** [+ kpd_votes +]% coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
 
 Seats: [+ spd_r +]% | Polling: [+ spd_votes +]% 
 
