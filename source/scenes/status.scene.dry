@@ -51,7 +51,7 @@ Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ reso
 [? if neorevisionism > 0 : 
 **[+ spd_neorevisionist_colour +]:** ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]  
 
-Associated Paramilitary: [+ rb_full_colour +] **([+ rb_colour +])** |
+Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])** |
 Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
 
 @government
@@ -177,7 +177,7 @@ Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +]) | Seats: [+ ddp_r +]% | P
 
 Relations: [+ ddp_relation : relationships +] 
 
-Associated Paramilitary: [? if reichsbanner_ddp == 0 : [+ rb_full_colour +] **([+ rb_colour +])** | ?][? if reichsbanner_z == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_ddp == 0 : [+ rb_name_full_colour +] **([+ rb_name_colour +])** | ?][? if reichsbanner_z == 1 : None ?]
 [? if reichsbanner_ddp == 0 : Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?]
 
 = **[+ z_name_colour +]**
@@ -186,7 +186,7 @@ Leader: [+ z_party_leader_fullname +] ([+ z_ideology +]) | Relations: [+ z_relat
 
 Seats: [+ z_minus_bvp_r +]% | Polling: [+ z_minus_bvp_votes +]%
 
-Associated Paramilitary: [? if reichsbanner_z == 0 : [+ rb_full_colour +] **([+ rb_colour +])** | ?][? if reichsbanner_z == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_z == 0 : [+ rb_name_full_colour +] **([+ rb_name_colour +])** | ?][? if reichsbanner_z == 1 : None ?]
 [? if reichsbanner_z == 0 : Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +] ?]
 
 = **[+ bvp_name_colour +]** 
