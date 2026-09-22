@@ -260,11 +260,11 @@ Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unem
 
 = **Detailed results for each demographic**
 
-<span style="color: #dece23;">**Support for the Republic**</span>: [+ pro_republic_disp +]%
+**[+ pro_republic_full_colour +]:** [+ pro_republic_disp +]%
 
-<span style="color: #9B0000;">**Support for Socialism**</span>: [+ socialism_disp +]%
+**[+ socialism_full_colour +]:** [+ socialism_disp +]%
 
-<span style="color: #3E88B3;">**Support for Nationalism**</span>: [+ nationalism_disp +]%
+**[+ nationalism_full_colour +]:** [+ nationalism_disp +]%
 
 = Polling by Party:
 
