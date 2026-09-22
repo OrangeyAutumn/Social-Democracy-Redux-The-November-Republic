@@ -82,6 +82,19 @@ Q.nationalism_full_colour = '<span style="color: #3E88B3;">Support for Nationali
 Q.pro_republic_colour = '<span style="color: #dece23;">Republicanism</span>'
 Q.pro_republic_full_colour = '<span style="color: #dece23;">Support for the Republic</span>'
 
+// Political Position Colours
+Q.president_party_colour = Q.spd_name_colour
+Q.chancellor_party_colour = Q.z_name_colour
+Q.vice_chancellor_party_colour = Q.dvp_name_colour 
+Q.economic_minister_party_colour = Q.ddp_name_colour
+Q.finance_minister_party_colour = Q.independent_name_colour
+Q.justice_minister_party_colour = Q.independent_name_colour
+Q.interior_minister_party_colour = Q.dvp_name_colour
+Q.reichswehr_minister_party_colour = Q.ddp_name_colour
+Q.agriculture_minister_party_colour = Q.independent_name_colour
+Q.labor_minister_party_colour = Q.z_name_colour
+Q.foreign_minister_party_colour = Q.dvp_name_colour
+
 // Paramilitary Names
 // RB
 Q.rb_name = "RB";
@@ -564,32 +577,6 @@ Q.old_dnvp_r = 15.1;
 Q.old_nsdap_r = 0;
 Q.old_other_r = 3.4;
 
-// for changing the DDP's name to the DStP
-Q.uspd_name = "DSKI";
-Q.uspd_name_full = "Deutsche Sektion der Kommunistiche Internationale";
-Q.uspd_name_english = "German Section of the Communist International";
-Q.spd_name = "SPD";
-Q.spd_name_full = "Sozialdemokratische Partei Deustchland";
-Q.spd_name_english = "Social Democratic Party of Germany"
-Q.ddp_name = "DDP";
-Q.ddp_name_full = "Deustche Demokratische Partei"
-Q.ddp_name_english = "German Democratic Party"
-Q.z_name = "Z"
-Q.z_name_full = "Zentrumspartei"
-Q.z_name_english = "Center Party"
-Q.bvp_name = "BVP";
-Q.bvp_name_full = "Bayerische Volkspartei";
-Q.bvp_name_english = "Bavarian People's Party"
-Q.dvp_name = "DVP";
-Q.dvp_name_full = "Deustche Volkspartei" 
-Q.dvp_name_english = "German People's Party"
-Q.dnvp_name = "DNVP";
-Q.dnvp_name_full = "Deustchnationale Volkspartei";
-Q.dnvp_name_english = "German National People's Party";
-Q.nsdap_name = "NSDAP";
-Q.nsdap_name_full = "Nationalsozialistische Deutsche Arbeiterpartei";
-Q.nsdap_name_english = "Nazi";
-
 // nazis have not peaked..
 Q.nazi_peaked = 0;
 
@@ -650,9 +637,7 @@ Q.spd_toleration = 0;
 // is the current government a presidential minority government?
 Q.minority_government = 0;
 
-// ministries - which parties control the ministries?
-// starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
-// is the agricultural ministry useful at all?
+// Cabinet
 Q.vice_chancellor = 'Jarres';
 Q.vice_chancellor_party = 'DVP';
 Q.foreign_minister = 'Stresemann';
@@ -664,7 +649,7 @@ Q.justice_minister_party = 'Independent';
 Q.labor_minister = 'Brauns';
 Q.labor_minister_party = 'Z';
 Q.reichswehr_minister = 'Gessler';
-Q.reichswehr_minister_party = Q.ddp_name;
+Q.reichswehr_minister_party = 'DDP';
 Q.economic_minister = 'Hamm';
 Q.economic_minister_party = 'DDP';
 Q.finance_minister = 'Luther';
