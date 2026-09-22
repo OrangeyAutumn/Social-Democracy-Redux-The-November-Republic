@@ -596,7 +596,7 @@ Q.socialism_full_colour = '<span style="color: #9B0000;">Support for Socialism</
 Q.nationalism_colour = '<span style="color: #3E88B3;">Nationalism</span>'
 Q.nationalism_full_colour = '<span style="color: #3E88B3;">Support for Nationalism</span>'
 Q.pro_republic_colour = '<span style="color: #dece23;">Republicanism</span>'
-Q.pro_republic_full_colour = <span style="color: #dece23;">Support for the Republic</span>'
+Q.pro_republic_full_colour = '<span style="color: #dece23;">Support for the Republic</span>'
 
 // Paramilitary Names
 // RB
