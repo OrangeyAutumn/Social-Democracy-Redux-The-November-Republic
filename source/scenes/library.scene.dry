@@ -555,8 +555,6 @@ Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
 if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
 !}
 on-display: {!
-const data = [];
-
 if (Q.sapd_formed) {
 var parties = ["uspd", "sapd", "spd", "ddp", "z", "bvp", "dvp", "other", "dnvp", "nsdap"];
 }
