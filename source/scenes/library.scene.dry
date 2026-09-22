@@ -126,109 +126,42 @@ Reichstag composition:
 # 1928: 9, 1930: 10
 **Others**: [+ other_r +]%
 
-<span style="color: #c00000;">**[+ spd_name +]**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ?]
-[? if in_social_catholic_coalition: <span style="color: #DD0000;">Social</span>-<span style="color: #000000;">Catholic</span> Coalition ?]
-[? if in_social_liberal_coalition: <span style="color: #DD0000;">Social</span>-<span style="color: #FFCC00;">Liberal</span> Coalition ?]
-[? if in_grand_coalition: <span style="color: #DD0000;">G</span><span style="color: #FFCC00;">r</span><span style="color: #000000;">a</span><span style="color: #A2D8E0;">n</span><span style="color: #C0A054;">d</span> Coalition ?]
-[? if in_popular_front: <span style="color: #700000;">Po</span><span style="color: #DD0000;">pul</span><span style="color: #000000;">ar</span> Front ?]
-[? if in_progressive_front: <span style="color: #700000;">Prog</span><span style="color: #DD0000;">res</span><span style="color: #FFCC00;">sive</span> Front ?]
-[? if in_left_front and spd_in_government: <span style="color: #700000;">Le</span><span style="color: #DD0000;">ft</span> Front ?]
- [? if in_spd_majority and spd_in_government: <span style="color: #DD0000;">**[+ spd_name +]**</span> Administration ?]
+**[+ spd_name_colour +]** position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
+[? if in_weimar_coalition: [+ weimar_coalition_colour +] ?]
+[? if in_social_catholic_coalition: [+ social_catholic_coalition_colour +] ?]
+[? if in_social_liberal_coalition: [+ social_liberal_coalition_colour +] ?]
+[? if in_grand_coalition: [+ grand_coalition_colour +] ?]
+[? if in_popular_front: [+ popular_front_coalition_colour +] ?]
+[? if in_progressive_front: [+ progressive_front_coalition_colour +] ?]
+[? if in_left_front and spd_in_government: [+ left_front_coalition_colour +] ?]
+[? if in_spd_majority and spd_in_government: [+ spd_name_colour +] Administration ?]
 [? if in_emergency_government and spd_in_government: emergency government ?]
 
 [? if spd_in_government and not in_spd_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 
-Current cabinet:
+= Current cabinet: ([+ chancellor +] [+ cabinet_number +])
 
-Labor: 
-[? if labor_minister_party == spd_name: <span style="color: #c00000;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == uspd_name: <span style="color: #700000;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == ddp_name: <span style="color: #D3C24D;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == z_name: <span style="color: #000000;">Z</span> ?][? if labor_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == dvp_name: <span style="color: #C0A054;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == "Others": <span style="color: #c00000;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ labor_minister_party +]</span> ?][? if labor_minister_party == "I": [+ labor_minister_party +] ?]
+**Chancellor**: [+ chancellor_fullname +] ([+ chancellor_party_colour +])
 
-Interior: 
-[? if interior_minister_party == spd_name: <span style="color: #c00000;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == uspd_name: <span style="color: #700000;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == ddp_name: <span style="color: #D3C24D;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == z_name: <span style="color: #000000;">Z</span> ?]
-[? if interior_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == dvp_name: <span style="color: #C0A054;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == "Others": <span style="color: #c00000;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == "I": [+ interior_minister_party +] ?]
+**Vice-Chancellor**: [+ vice_chancellor +] ([+ vice_chancellor_party_colour +])
 
-Finance: 
-[? if finance_minister_party == spd_name: <span style="color: #c00000;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == uspd_name: <span style="color: #700000;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == ddp_name: <span style="color: #D3C24D;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == z_name: <span style="color: #000000;">Z</span> ?]
-[? if finance_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == dvp_name: <span style="color: #C0A054;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == "Others": <span style="color: #c00000;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == "I": [+ finance_minister_party +] ?]
+**Foreign Minister:** [+ foreign_minister +] ([+ foreign_minister_party_colour +]) 
 
-Economic: 
-[? if economic_minister_party == spd_name: <span style="color: #c00000;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == uspd_name: <span style="color: #700000;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == ddp_name: <span style="color: #D3C24D;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == z_name: <span style="color: #000000;">Z</span> ?]
-[? if economic_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == dvp_name: <span style="color: #C0A054;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == "Others": <span style="color: #c00000;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == "I": [+ economic_minister_party +] ?]
+**Interior Minister:** [+ interior_minister +] ([+ interior_minister_party_colour +])
 
-Justice: 
-[? if justice_minister_party == spd_name: <span style="color: #c00000;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == uspd_name: <span style="color: #700000;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == ddp_name: <span style="color: #D3C24D;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == z_name: <span style="color: #000000;">Z</span> ?]
-[? if justice_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == dvp_name: <span style="color: #C0A054;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == "Others": <span style="color: #c00000;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == "I": [+ justice_minister_party +] ?]
+**Justice Minister:** [+ justice_minister +] ([+ justice_minister_party_colour +])
 
-Foreign: 
-[? if foreign_minister_party == spd_name: <span style="color: #c00000;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == uspd_name: <span style="color: #700000;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == ddp_name: <span style="color: #D3C24D;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == z_name: <span style="color: #000000;">Z</span> ?]
-[? if foreign_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == dvp_name: <span style="color: #C0A054;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == "Others": <span style="color: #c00000;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == "I": [+ foreign_minister_party +] ?]
+**Labor Minister:** [+ labor_minister +] ([+ labor_minister_party_colour +])
 
-Reichswehr: 
-[? if reichswehr_minister_party == spd_name: <span style="color: #c00000;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == uspd_name: <span style="color: #700000;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == ddp_name: <span style="color: #D3C24D;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == z_name: <span style="color: #000000;">Z</span> ?]
-[? if reichswehr_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == dvp_name: <span style="color: #C0A054;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == "Others": <span style="color: #c00000;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == "I": [+ reichswehr_minister_party +] ?]
+**Reichswehr Minister:** [+ reichswehr_minister +] ([+ reichswehr_minister_party_colour +])
 
-Agriculture: 
-[? if agriculture_minister_party == spd_name: <span style="color: #c00000;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == uspd_name: <span style="color: #700000;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == ddp_name: <span style="color: #D3C24D;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == z_name: <span style="color: #000000;">Z</span> ?]
-[? if agriculture_minister_party == bvp_name: <span style="color: #A2D8E0;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == dvp_name: <span style="color: #C0A054;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == "Others": <span style="color: #c00000;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == dnvp_name: <span style="color: #3E88B3;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == nsdap_name: <span style="color: #7A3C00;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == "I": [+ agriculture_minister_party +] ?]
+**Economic Minister:** [+ economic_minister +] ([+ economic_minister_party_colour +])
+
+**Finance Minister:** [+ finance_minister +] ([+ finance_minister_party_colour +])
+
+**Agriculture Minister:** [+ agriculture_minister +] ([+ agriculture_minister_party_colour +]) 
 
 - @game_menu: Go back to the Game Menu.
 - @menu: Go back.
@@ -258,9 +191,9 @@ new-page: true
 
 [? if ((uspd_demands_prussia = 1) and (uspd_demands_federal = 1)) : Furthermore, ?][? if uspd_demands_prussia = 1: <span class="tooltip-text" title="[+ uspd_name_english +]" style="color: #700000;">**[+ uspd_name +]**</span> is currently tolerating our government in Prussia. They expect us to carry out the following policies: ?]
 
-[? if (interior_goal_seen_prussia = 1 and uspd_demands_prussia = 1) : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. - [? if interior_goal_prussia <= 0 : done ?][? if interior_goal_prussia >= 1: pending ?] ?]
+[? if (interior_goal_seen_prussia = 1 and uspd_demands_prussia = 1) : - Ban the [+ sa_name_colour +] and [+ sh_name_full_colour +]. - [? if interior_goal_prussia <= 0 : done ?][? if interior_goal_prussia >= 1: pending ?] ?]
 
-[? if (rfb_goal_seen_prussia = 1 and uspd_demands_prussia = 1) : - Unban the <span style="color: #700000;">**RFB**</span>. - [? if rfb_goal_prussia <= 0: done ?][? if rfb_goal_prussia >= 1: pending ?] ?]
+[? if (rfb_goal_seen_prussia = 1 and uspd_demands_prussia = 1) : - Unban the [+ rfb_name_colour +]. - [? if rfb_goal_prussia <= 0: done ?][? if rfb_goal_prussia >= 1: pending ?] ?]
 
 [? if (bureaucracy_goal_seen_prussia = 1 and uspd_demands_prussia = 1) : - Purge the bureaucracy. - [? if bureaucracy_goal_prussia <= 0: done ?][? if bureaucracy_goal_prussia >= 1: pending ?] ?]
 
@@ -277,17 +210,17 @@ new-page: true
 
 = **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are <span style="color: #c00000;">socialists</span>, supporting either the <span style="color: #c00000;">**[+ spd_name +]**</span> or <span style="color: #700000;">**[+ uspd_name +]**</span>. They make up 40-50% of the population.
+**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are <span style="color: #c00000;">socialists</span>, supporting either the **[+ spd_name_colour +]** or **[+ uspd_name_colour +]**. They make up 40-50% of the population.
 
 **Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. 10-15% of the population.
 
 **New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of <span style="color: #D3C24D;">liberalism</span>. 10-15% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. Protestant farmers usually support the <span style="color: #3E88B3;">**[+ dnvp_name +]**</span>.
+**Rural**: Small and large farmers and independent rural workers. Protestant farmers usually support the **[+ dnvp_name_colour +]**.
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the <span style="color: #000000;">[+ z_name_english +]</span>
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, [? if ddp_name == "DDP" or not ddp_name: mostly the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name == "DStP": although the mild antisemitism of the Young German Order and it's association with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has driven them away?], although substantial numbers support the <span style="color: #c00000;">**[+ spd_name +]**</span> or <span style="color: #700000;">**[+ uspd_name +]**</span>.
+**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, [? if ddp_name == "DDP" or not ddp_name: mostly the **[+ ddp_name_colour +]**?][? if ddp_name == "DStP": although the mild antisemitism of the Young German Order and it's association with the **[+ ddp_name_colour +]** has driven them away?], although substantial numbers support the **[+ spd_name_colour +]** or **[+ uspd_name_colour +]**.
 
 - @game_menu: Go back to the Game Menu.
 - @menu: Go back.
@@ -298,29 +231,29 @@ new-page: true
 
 = The Political Parties
 
-<span style="color: #c00000;">**[+ spd_name +]**</span> - <i>[+ spd_name_full +]</i> ([+ spd_name_english +])
+**[+ spd_name_colour +]** - <i>[+ spd_name_full_colour +]</i> ([+ spd_name_english +])
 
-**Party Co-leaders:** [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction +]) | Party Ideology: **[+ spd_ideology +]**
+**Party Co-leaders:** [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction_colour +]) | [+ spd_coleader_2_fullname +] ([+ spd_coleader_2_faction_colour +]) | [+ spd_coleader_3_fullname +] ([+ spd_coleader_3_faction_colour +]) | Party Ideology: **[+ spd_ideology +]**
 
 We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic.
 
-<span style="color: #700000;">**[+ uspd_name +]**</span> - <i>[+ uspd_name_full +]</i> ([+ uspd_name_english +])
+**[+ uspd_name_colour +]** - <i>[+ uspd_name_full_colour +]</i> ([+ uspd_name_english +])
 
 Party Leader: [+ uspd_leader_fullname +] | Party Ideology: [+ uspd_ideology +]
 
 Current relations: [+ uspd_relation : relationships +]
 
-A broad left-wing offshoot of the <span style="color: #c00000;">**[+ spd_name +]**</span> that emerged from the SPD split amid the Great War, and in the aftermath of the German Revolution of 1918. Although containing a range of factions, from the hard-left Stalinists to moderate USPD, they follow the path of Moscow, opposing parliamentary democracy and agitating in favor of a <span style="color: #750e0e;">Soviet</span>-style revolution.
+A broad left-wing offshoot of the **[+ spd_name_colour +]** that emerged from the SPD split amid the Great War, and in the aftermath of the German Revolution of 1918. Although containing a range of factions, from the hard-left Stalinists to moderate USPD, they follow the path of Moscow, opposing parliamentary democracy and agitating in favor of a <span style="color: #750e0e;">Soviet</span>-style revolution.
 
-[? if sapd_formed: <span style="color: #9B0000;">**[+ sapd_name +]**</span> - <i>[+ sapd_name_full +]</i> ([+ sapd_name_english +]) ?]
+[? if sapd_formed: **[+ sapd_name_colour +]** - <i>[+ sapd_name_full_colour +]</i> ([+ sapd_name_english +]) ?]
 
 [? if sapd_formed : Party Leader: [+ sapd_leader_fullname +] ?]
 [? if sapd_formed : Party Ideology: [+ sapd_ideology +] ?]
 [? if sapd_formed : Current relations: [+ sapd_relation : relationships +] ?]
 
-[? if sapd_formed : A party recently formed in a split from the <span style="color: #c00000;">**[+ spd_name +]**</span>, the <span style="color: #9B0000;">**[+ sapd_name +]**</span> [? if sapd_name == "SAPD" : declares itself the true heir to the SPD tradition as a Socialist Party ?][? if sapd_name == "APD" : declares itself the true heir to the SPD tradition as a Worker's Party ?][? if sapd_name == "SVPD" : declares itself the true heir to the SPD tradition as a Social-Democratic Party ?]. ?]
+[? if sapd_formed : A party recently formed in a split from the **[+ spd_name_colour +]**, the **[+ sapd_name_colour +]** [? if sapd_name == "SAPD" : declares itself the true heir to the SPD tradition as a Socialist Party ?][? if sapd_name == "APD" : declares itself the true heir to the SPD tradition as a Worker's Party ?][? if sapd_name == "SVPD" : declares itself the true heir to the SPD tradition as a Social-Democratic Party ?]. ?]
 
-<span style="color: #D3C24D;">**[+ ddp_name +]**</span> <i>[+ ddp_name_full +]</i> ([+ ddp_name_english +]) 
+**[+ ddp_name_colour +]** <i>[+ ddp_name_full_colour +]</i> ([+ ddp_name_english +]) 
 
 Party Leader: [+ ddp_leader_fullname +]
 Party Ideology: [+ ddp_ideology +]
@@ -328,22 +261,23 @@ Current relations: [+ ddp_relation : relationships +]
 
 [? if ddp_name == "DDP" : a left-liberal party, popular among the intelligentsia and educated middle class. Although, they have been shifting towards the right over the years, they have often been in coalitions with us. ?][? if ddp_name == "DStP": a liberal party, waning in popularity among the intelligentsia and middle class. ?] 
 
-<span style="color: #000000;">**[+ z_name +]**</span> - <i>[+ z_name_full +]</i> <span style="color: #000000;">([+ z_name_english +])</span>
+**[+ z_name_colour +]** - <i>[+ z_name_full_colour +]</i> <span style="color: #000000;">([+ z_name_english +])</span>
 
 Party Leader: [+ z_leader_fullname +]
 Party Ideology: [+ z_ideology +]
 Current relations: [+ z_relation : relationships +]
 
-A centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the <span style="color: #A2D8E0;">**[+ bvp_name +]**</span> (Bavarian People's Party), which represents Catholics in Bavaria. [? if (year >= 1930 or chancellor == "Brüning") and z_leader == "Kaas": They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?][? if (year >= 1930 or chancellor == "Brüning") and z_leader == "Stegerwald": They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Adam Stegerwald, who has taken a focus on interconfessionalizing the party. ?][? if (year >= 1930 or chancellor == "Brüning") and z_leader == "Joos": They have appeared to take a more conservative turn recently, with the rise of Brüning and support of austerity. ?]
+A centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the **[+ bvp_name_colour +]** (Bavarian People's Party), which represents Catholics in Bavaria. [? if (year >= 1930 or chancellor == "Brüning") and z_leader == "Kaas": They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?][? if (year >= 1930 or chancellor == "Brüning") and z_leader == "Stegerwald": They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Adam Stegerwald, who has taken a focus on interconfessionalizing the party. ?][? if (year >= 1930 or chancellor == "Brüning") and z_leader == "Joos": They have appeared to take a more conservative turn recently, with the rise of Brüning and support of austerity. ?]
 
-<span style="color: #A2D8E0;">**[+ bvp_name +]**</span> <i>[+ bvp_name_full +]</i> ([+ bvp_name_english +]) 
+**[+ bvp_name_colour +]** <i>[+ bvp_name_full_colour +]</i> ([+ bvp_name_english +]) 
+
 Party Leader: [+ bvp_leader_fullname +]
 Party Ideology: [+ bvp_ideology +]
 Current relations: [+ bvp_relation : relationships +]
 
 A center-right, fiercely regionalist party which represents Catholics in Bavaria. Closely associated with the [+ z_name_full +], particularly its more conservative elements.
 
-<span style="color: #C0A054;">**[+ dvp_name +]**</span> - <i>[+ dvp_name_full +]</i> ([+ dvp_name_english +])
+**[+ dvp_name_colour +]** - <i>[+ dvp_name_full_colour +]</i> ([+ dvp_name_english +])
 
 Party Leader: [+ dvp_leader_fullname +]
 Party Ideology: [+ dvp_ideology +]
@@ -351,7 +285,7 @@ Current relations: [+ dvp_relation : relationships +]
 
 A conservative-liberal party founded by Gustav Stresemann, supported by the middle classes, bourgeoisie and industrialists. The industrial and right wing of the party has been gaining noticeable influence in recent years with Stresemann's neglect of party affairs. We have occasionally been in coalitions.
 
-<span style="color: #3E88B3;">**[+ dnvp_name +]**</span> - <i>[+ dnvp_name_full +]</i> ([+ dnvp_name_english +]) 
+**[+ dnvp_name_colour +]** - <i>[+ dnvp_name_full_colour +]</i> ([+ dnvp_name_english +]) 
 
 Party Leader: [+ dnvp_leader_fullname +]
 Party Ideology: [+ dnvp_ideology +]
@@ -359,7 +293,7 @@ Current relations: [+ dnvp_relation : relationships +]
 
 A right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
 
-<span style="color: #7A3C00;">**[+ nsdap_name +]**</span> - </i>[+ nsdap_name_full +]</i> - ([+ nsdap_name_english +], or <span style="color: #7A3C00;">Nazis</span>) 
+**[+ nsdap_name_colour +]** - </i>[+ nsdap_name_full_colour +]</i> - ([+ nsdap_name_english +], or <span style="color: #7A3C00;">Nazis</span>) 
 
 Party Leader: [+ nsdap_leader_fullname +]
 Party Ideology: [+ nsdap_ideology +]
@@ -386,11 +320,11 @@ set-jump: election_projections
 
 **Public Opinion**
 
-<span style="color: #dece23;">**Support for the Republic**</span>: [+ pro_republic_disp +]%
+**[+ pro_republic_full_colour +]:** [+ pro_republic_disp +]%
 
-<span style="color: #9B0000;">**Support for Socialism**</span>: [+ socialism_disp +]%
+**[+ socialism_full_colour +]:** [+ socialism_disp +]%
 
-<span style="color: #3E88B3;">**Support for Nationalism**</span>: [+ nationalism_disp +]%
+**[+ nationalism_full_colour +]:** [+ nationalism_disp +]%
 
 @election_projections
 view-if: (not historical_mode) or game_over
@@ -401,28 +335,28 @@ new-page: true
 [? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_votes +]% ?]
 
 # 1928: 10, 1930: 13
-<span style="color: #700000;">**[+ uspd_name +]**</span>: [+ uspd_votes +]%
+**[+ uspd_name_colour +]**: [+ uspd_votes +]%
 
 # 1928: 30, 1930: 25, 1932: 22
-[? if sapd_formed: <span style="color: #9B0000;">**[+ sapd_name +]**</span>: [+ sapd_votes +]% ?]
+[? if sapd_formed: **[+ sapd_name_colour +]**: [+ sapd_votes +]% ?]
 
-<span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]%
+**[+ spd_name_colour +]**: [+ spd_votes +]%
 
 # 1928: 5, 1930: 4 (as DStP)
-<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
+**[+ ddp_name_colour +]**: [+ ddp_votes +]%
 
 # 1928: 15, 1930: 15, 1932: 
-<span style="color: #000000;">**[+ z_name +]**</span>: [+ z_minus_bvp_votes +]%
+**[+ z_name_colour +]**: [+ z_minus_bvp_votes +]%
 
-<span style="color: #A2D8E0;">**[+ bvp_name +]**</span>: [+ bvp_votes +]%
+**[+ bvp_name_colour +]**: [+ bvp_votes +]%
 
-<span style="color: #C0A054;">**[+ dvp_name +]**</span>: [+ dvp_votes +]%
+**[+ dvp_name_colour +]**: [+ dvp_votes +]%
 
 # 1928: 14, 1930: 7
-<span style="color: #3E88B3;">**[+ dnvp_name +]**</span>: [+ dnvp_votes +]%
+**[+ dnvp_name_colour +]**: [+ dnvp_votes +]%
 
 # 1928: 3, 1930: 18
-<span style="color: #7A3C00;">**[+ nsdap_name +]**</span>: [+ nsdap_votes +]%
+**[+ nsdap_name_colour +]**: [+ nsdap_votes +]%
 
 # 1928: 9, 1930: 10
 **Others**: [+ other_votes +]%
@@ -441,7 +375,7 @@ new-page: true
             <th>Catholics</th>
         </tr>
         <tr>
-            <td><span style="color: #700000;">**[+ uspd_name +]**</span></td>
+            <td>**[+ uspd_name_colour +]**</td>
             <td style="background-color: rgba(112, 0, 0, 0.2); padding: 10px;">[+ workers_uspd_display +]%</td>
             <td style="background-color: rgba(112, 0, 0, 0.2);">[+ new_middle_uspd_display +]%</td>
             <td style="background-color: rgba(112, 0, 0, 0.2);">[+ old_middle_uspd_display +]%</td>
@@ -450,7 +384,7 @@ new-page: true
             <td style="background-color: rgba(112, 0, 0, 0.2);">[+ catholics_uspd_display +]%</td>
         </tr>
     [? if sapd_formed: {!<tr>!}
-            <td><span style="color: #9B0000;">**[+ sapd_name +]**</span></td>
+            <td>**[+ sapd_name_colour +]**</td>
             <td style="background-color: rgba(155, 0, 0, 0.2); padding: 10px;">[+ workers_sapd_display +]%</td>
             <td style="background-color: rgba(155, 0, 0, 0.2);">[+ new_middle_sapd_display +]%</td>
             <td style="background-color: rgba(155, 0, 0, 0.2);">[+ old_middle_sapd_display +]%</td>
@@ -459,7 +393,7 @@ new-page: true
             <td style="background-color: rgba(155, 0, 0, 0.2);">[+ catholics_sapd_display +]%</td>
         {!</tr>!}?]
         <tr>
-            <td><span style="color: #c00000;">**[+ spd_name +]**</span></td>
+            <td>**[+ spd_name_colour +]**</td>
             <td style="background-color: rgba(192, 0, 0, 0.1); padding: 10px;">[+ workers_spd_display +]%</td>
             <td style="background-color: rgba(192, 0, 0, 0.1);">[+ new_middle_spd_display +]%</td>
             <td style="background-color: rgba(192, 0, 0, 0.1);">[+ old_middle_spd_display +]%</td>
@@ -468,7 +402,7 @@ new-page: true
             <td style="background-color: rgba(192, 0, 0, 0.1);">[+ catholics_spd_display +]%</td>
         </tr>
    <tr>
-            <td><span style="color: #D3C24D;">**[+ ddp_name +]**</span></td>
+            <td>**[+ ddp_name_colour +]**</td>
             <td style="background-color: rgba(211, 194, 77, 0.2); padding: 10px;">[+ workers_ddp_display +]%</td>
             <td style="background-color: rgba(211, 194, 77, 0.2);">[+ new_middle_ddp_display +]%</td>
             <td style="background-color: rgba(211, 194, 77, 0.2);">[+ old_middle_ddp_display +]%</td>
@@ -477,7 +411,7 @@ new-page: true
             <td style="background-color: rgba(211, 194, 77, 0.2);">[+ catholics_ddp_display +]%</td>
         </tr>
         <tr>
-            <td><span style="color: #000000;">**[+ z_name +]**</span> + <span style="color: #A2D8E0;">**[+ bvp_name +]**</span></td>
+            <td>**[+ z_name_colour +]** + **[+ bvp_name_colour +]**</td>
             <td style="background-color: rgba(0, 0, 0, 0.2); padding: 10px;">[+ workers_z_display +]%</td>
             <td style="background-color: rgba(0, 0, 0, 0.2);">[+ new_middle_z_display +]%</td>
             <td style="background-color: rgba(0, 0, 0, 0.2);">[+ old_middle_z_display +]%</td>
@@ -486,7 +420,7 @@ new-page: true
             <td style="background-color: rgba(0, 0, 0, 0.2);">[+ catholics_z_display +]%</td>
         </tr>
         <tr>
-            <td><span style="color: #C0A054;">**[+ dvp_name +]**</span></td>
+            <td>**[+ dvp_name_colour +]**</td>
             <td style="background-color: rgba(192, 160, 84, 0.2); padding: 10px;">[+ workers_dvp_display +]%</td>
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ new_middle_dvp_display +]%</td>
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ old_middle_dvp_display +]%</td>
@@ -495,7 +429,7 @@ new-page: true
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ catholics_dvp_display +]%</td>
         </tr> 
         <tr> 
-            <td><span style="color: #3E88B3;">**[+ dnvp_name +]**</span></td>
+            <td>**[+ dnvp_name_colour +]**</td>
             <td style="background-color: rgba(44, 81, 122, 0.2); padding: 10px;">[+ workers_dnvp_display +]%</td>
             <td style="background-color: rgba(44, 81, 122, 0.2);">[+ new_middle_dnvp_display +]%</td>
             <td style="background-color: rgba(44, 81, 122, 0.2);">[+ old_middle_dnvp_display +]%</td>
@@ -504,7 +438,7 @@ new-page: true
             <td style="background-color: rgba(44, 81, 122, 0.2);">[+ catholics_dnvp_display +]%</td>
         </tr> 
         <tr>
-    <td><span style="color: #7A3C00;">**[+ nsdap_name +]**</span></td>
+    <td>**[+ nsdap_name_colour +]**</td>
             <td style="background-color: rgba(122, 60, 0, 0.2); padding: 10px;">[+ workers_nsdap_display +]%</td>
             <td style="background-color: rgba(122, 60, 0, 0.2);">[+ new_middle_nsdap_display +]%</td>
             <td style="background-color: rgba(122, 60, 0, 0.2);">[+ old_middle_nsdap_display +]%</td>
@@ -539,25 +473,29 @@ new-page: true
 
 = **Paramilitary groups:**
 
-**Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: 
+= The [+ rb_name_full_colour +] **([+ rb_name_colour +])**
+
 Strength: [+ rb_strength +] thousand (Militarization: [+ rb_militancy : militancy +]):
 
-The Reichsbanner is an organization affiliated with all of the democratic parties - the <span style="color: #c00000;">**[+ spd_name +]**</span>, <span style="color: #000000;">**[+ z_name +]**</span>, and [? if lvp_formed: the former ?]<span style="color: #D3C24D;">**[+ ddp_name +]**</span>, but primarily with the <span style="color: #c00000;">**[+ spd_name +]**</span>. Historically, this has been an unarmed organization.
+The [+ rb_name_full +] is an organization affiliated with all of the democratic parties - the **[+ spd_name_colour +]**, **[+ z_name_colour +]**, and [? if lvp_formed: the former ?]**[+ ddp_name_colour +]**, but primarily with the **[+ spd_name_colour +]**. Historically, this has been an unarmed organization.
 
 
-The <span style="color: #700000;">**Rotfrontkämpferbund (RFB)**</span>: 
+= The [+ bw_name_full_colour +] (**[+ bw_name_colour +]**): 
+
 Strength: [+ rfb_strength +] thousand (Militarization: [+ rfb_militancy : militancy +])
 
-The "Red Front Fighter's League" is associated with the <span style="color: #700000;">**[+ uspd_name +]**</span>.
+The "[+ rfb_name_full +]" is associated with the **[+ uspd_name_colour +]**.
 
 
-<span style="color: #3E88B3;">**Der Stahlhelm**</span>: 
+= [+ sh_name_full_colour +] **([+ sh_name_colour +])**:
+
 Strength: [+ sh_strength +] thousand (Militarization: [+ sh_militancy : militancy +])
 
-A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the <span style="color: #3E88B3;">**[+ dnvp_name +]**</span>.
+A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the **[+ dnvp_name_colour +]**.
 
 
-<span style="color: #7A3C00;">**Sturmabteilung (SA)** </span>: 
+= [+ sa_name_full_colour +] **([+ sa_name_colour +])**: 
+
 Strength: [+ sa_strength +] thousand (Militarization: [+ sa_militancy : militancy +])
 
 This is the <span style="color: #7A3C00;">Nazi</span> paramilitary group.
@@ -580,27 +518,27 @@ The State Police of Prussia.
 
 @factions
 
-= **Internal factions of the** <span style="color: #c00000;">**[+ spd_name +]**</span>
+= **Internal factions of the** **[+ spd_name_colour +]**
 
 Overall dissent: [+ dissent_percent : dissent +]
 
-**Left** (Strength: [+ left_strength : strength +] | Dissent: [+ left_dissent : dissent +])
+**[+ spd_left_colour +]** (Strength: [+ left_strength : strength +] | Dissent: [+ left_dissent : dissent +])
 
-Many leftists are former members of the <span style="color: #D47B9B;">**old USPD**</span> (the left-wing, anti-war <span style="color: #D47B9B;">Independent Social Democratic Party</span>), who came afoul of the leadership, or are young radicals. Many are interested in closer cooperation with the <span style="color: #700000;">**[+ uspd_name +]**</span>, and some support extra-parliamentary action.
+Many leftists are former members of the <span style="color: #D47B9B;">**old USPD**</span> (the left-wing, anti-war <span style="color: #D47B9B;">Independent Social Democratic Party</span>), who came afoul of the leadership, or are young radicals. Many are interested in closer cooperation with the **[+ uspd_name_colour +]**, and some support extra-parliamentary action.
 
-**Centrists** (Strength: [+ center_strength : strength +] | Dissent: [+ center_dissent : dissent +])
+**[+ spd_center_colour +]** (Strength: [+ center_strength : strength +] | Dissent: [+ center_dissent : dissent +])
 
-Centrists in the <span style="color: #c00000;">**[+ spd_name +]**</span> are followers of the doctrine of orthodox <span style="color: #9B0000;">Marxism</span> as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
+Centrists in the **[+ spd_name_colour +]** are followers of the doctrine of orthodox <span style="color: #9B0000;">Marxism</span> as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
 
-**Labor** (Strength: [+ labor_strength : strength +] | Dissent: [+ labor_dissent : dissent +])
+**[+ spd_labor_colour +]** (Strength: [+ labor_strength : strength +] | Dissent: [+ labor_dissent : dissent +])
 
-Many <span style="color: #c00000;">**[+ spd_name +]**</span> members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
+Many **[+ spd_name_colour +]** members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
 
-**Reformists** (Strength: [+ reformist_strength : strength +] | Dissent: [+ reformist_dissent : dissent +])
+**[+ spd_reformist_colour +]** (Strength: [+ reformist_strength : strength +] | Dissent: [+ reformist_dissent : dissent +])
 
 Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> and <span style="color: #700000;">left</span>. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
 
-[? if neorevisionism: **Neorevisionists** (Strength: [+ neorevisionist_strength : strength +] | Dissent: [+ neorevisionist_dissent : dissent +] ?])
+[? if neorevisionism: **[+ spd_neorevisionist_colour +]** (Strength: [+ neorevisionist_strength : strength +] | Dissent: [+ neorevisionist_dissent : dissent +] ?])
 
 [? if neorevisionism: Neorevisionists focus on defending the republic and expanding democracy, while also expanding the party's base beyond the working class to create a people's party. They support new propaganda methods and extra-parliamentary action in defense of the republic. ?]
 
@@ -619,112 +557,30 @@ if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
 on-display: {!
 const data = [];
 
-if (Q.uspd_r) {
-    data.push({
-        "id": "uspd",
-        "legend": Q.uspd_name,
-        "name": Q.uspd_name,
-        "seats": Math.round(Q.uspd_r * 5),
-    });
+if (Q.sapd_formed) {
+var parties = ["uspd", "sapd", "spd", "ddp", "z", "bvp", "dvp", "other", "dnvp", "nsdap"];
 }
-
-if (Q.sapd_r && Q.sapd_formed) {
-    data.push({
-        "id": "sapd",
-        "legend": Q.sapd_name,
-        "name": Q.sapd_name,
-        "seats": Math.round(Q.sapd_r * 5),
-    });
+else {
+var parties = ["uspd", "spd", "ddp", "z", "bvp", "dvp", "other", "dnvp", "nsdap"];
 }
-
-if (Q.spd_r) {
-    data.push({
-        "id": "spd",
-        "legend": Q.spd_name,
-        "name": Q.spd_name,
-        "seats": Math.round(Q.spd_r * 5),
-    });
-}
-
-if (Q.ddp_r) {
-    data.push({
-        "id": "ddp",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
-        "seats": Math.round(Q.ddp_r * 5),
-    });
-}
-
-if (Q.z_minus_bvp_r) {
-    data.push({
-        "id": "Z",
-        "legend": Q.z_name,
-        "name": Q.z_name,
-        "seats": Math.round(Q.z_minus_bvp_r * 5),
-    });
-}
-
-if (Q.bvp_r) {
-    data.push({
-        "id": "bvp",
-        "legend": Q.bvp_name,
-        "name": Q.bvp_name,
-        "seats": Math.round(Q.bvp_r * 5),
-    });
-}
-
-if (Q.dvp_r) {
-    data.push({
-        "id": "dvp",
-        "legend": Q.dvp_name,
-        "name": Q.dvp_name,
-        "seats": Math.round(Q.dvp_r * 5),
-    });
-}
-
-if (Q.wp_r) {
-    data.push({
-        "id": "wp",
-        "legend": "WP",
-        "name": "WP",
-        "seats": Math.round(Q.wp_r * 5),
-    });
-}
-
-if (Q.cnblp_r) {
-    data.push({
-        "id": "cnblp",
-        "legend": "CNBLP",
-        "name": "CNBLP",
-        "seats": Math.round(Q.cnblp_r * 5),
-    });
-}
-
-if (Q.other_r) {
-    data.push({
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r * 5),
-    });
-}
-
-if (Q.dnvp_r) {
-    data.push({
-        "id": "dnvp",
-        "legend": Q.dnvp_name,
-        "name": Q.dnvp_name,
-        "seats": Math.round(Q.dnvp_r * 5),
-    });
-}
-
-if (Q.nsdap_r) {
-    data.push({
-        "id": "nsdap",
-        "legend": Q.nsdap_name,
-        "name": Q.nsdap_name,
-        "seats": Math.round(Q.nsdap_r * 5),
-    });
+var data = [];
+for (var party of parties) {
+    if (party == "z") {
+        data.push({
+            "id": "z",
+            "legend": Q.z_name,
+            "name": Q.z_name,
+            "seats": Q.z_minus_bvp_r * 5
+        });
+    }
+    else {
+        data.push({
+            "id": party,
+            "legend": Q[party + "_name"],
+            "name": Q[party + "_name"],
+            "seats": Q[party + "_r"] * 5
+        });
+    }
 }
 
 if (d3 && window) {
