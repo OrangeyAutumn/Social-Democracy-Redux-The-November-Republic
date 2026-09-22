@@ -529,9 +529,9 @@ Q.old_other_r = 3.4;
 Q.uspd_name = "DSKI";
 Q.uspd_name_full = "Deutsche Sektion der Kommunistiche Internationale";
 Q.uspd_name_english = "German Section of the Communist International";
-Q.uspd_name_colour = '<span style="color: #700000;">DSKI"</span>';
-Q.uspd_name_full_colour = '<span style="color: #700000;">Deutsche Sektion der Kommunistiche Internationale"</span>';
-Q.uspd_name_english_colour = '<span style="color: #700000;">German Section of the Communist International"</span>';
+Q.uspd_name_colour = '<span style="color: #700000;">DSKI</span>';
+Q.uspd_name_full_colour = '<span style="color: #700000;">Deutsche Sektion der Kommunistiche Internationale</span>';
+Q.uspd_name_english_colour = '<span style="color: #700000;">German Section of the Communist International</span>';
 // SPD
 Q.spd_name = "SPD";
 Q.spd_name_full = "Sozialdemokratische Partei Deustchland";
@@ -558,8 +558,8 @@ Q.bvp_name = "BVP";
 Q.bvp_name_full = "Bayerische Volkspartei";
 Q.bvp_name_english = "Bavarian People's Party"
 Q.bvp_name_colour = '<span style="color: #A2D8E0;">BVP</span>' 
-Q.bvp_name_colour = '<span style="color: #A2D8E0;">[+ bvp_name +]</span>'
-Q.bvp_name_colour = '<span style="color: #A2D8E0;">[+ bvp_name +]</span>'
+Q.bvp_name_full_colour = '<span style="color: #A2D8E0;">Bayerische Volkspartei</span>'
+Q.bvp_name_english_colour = '<span style="color: #A2D8E0;">Bavarian Peoples Party</span>'
 // DVP
 Q.dvp_name = "DVP";
 Q.dvp_name_full = "Deustche Volkspartei" 
@@ -584,27 +584,35 @@ Q.nsdap_name_english_colour = '<span style="color: #7A3C00;">National-Socialist 
 
 // Faction Names and Colours
 // SPD
-Q.spd_left_colour = '<span style="color: #9c0000;">**Left:**</span>'
-Q.spd_center_colour = '<span style="color: #9c0000;">**Center:**</span>'
-Q.spd_labor_colour = '<span style="color: #9c0000;">**Labor:**</span>'
-Q.spd_reformist_colour = '<span style="color: #9c0000;">**Reformist:**</span>'
-Q.spd_neorevisionist_colour = '<span style="color: #9c0000;">**Neorevisionist:**</span>'
+Q.spd_left_colour = '<span style="color: #9c0000;">Left</span>'
+Q.spd_center_colour = '<span style="color: #e30000;">Center</span>'
+Q.spd_labor_colour = '<span style="color: #ff681d;">Labor</span>'
+Q.spd_reformist_colour = '<span style="color: #ff6ba9;">Reformist</span>'
+Q.spd_neorevisionist_colour = '<span style="color: #e42bca;">Neorevisionist</span>'
+
+// Ideologies
+Q.socialism_colour = '<span style="color: #9B0000;">Socialism</span>'
+Q.socialism_full_colour = '<span style="color: #9B0000;">Support for Socialism</span>'
+Q.nationalism_colour = '<span style="color: #3E88B3;">Nationalism</span>'
+Q.nationalism_full_colour = '<span style="color: #3E88B3;">Support for Nationalism</span>'
+Q.pro_republic_colour = '<span style="color: #dece23;">Republicanism</span>'
+Q.pro_republic_full_colour = <span style="color: #dece23;">Support for the Republic</span>'
 
 // Paramilitary Names
 // RB
 Q.rb_name = "RB";
-Q.rb_name_full = "Reichsbanner"
-Q.rfb_name_english = "Reichsbanner"
-Q.rb_name_colour = '</span><span style="color: #DD0000;">R</span><span style="color: #FFCC00;">B</span>';
-Q.rb_name_full_colour = '<span style="color: #000000;">**Reic**</span><span style="color: #DD0000;">**hsba**</span><span style="color: #FFCC00;">**nner**</span>'
-Q.rfb_name_english_colour = '<span style="color: #000000;">**Reic**</span><span style="color: #DD0000;">**hsba**</span><span style="color: #FFCC00;">**nner**</span>'
+Q.rb_name_full = "Reichsbanner";
+Q.rb_name_english = "Reichsbanner";
+Q.rb_name_colour = '<span style="color: #DD0000;">R</span><span style="color: #FFCC00;">B</span>';
+Q.rb_name_full_colour = '<span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span>';
+Q.rb_name_english_colour = '<span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span>';
 // RFB
 Q.rfb_name = "RFB";
 Q.rfb_name_full = "Rotfrontkämpferbund";
 Q.rfb_name_english = "Red Front Fighters' League";
-Q.rfb_name_colour = '<span style="color: #700000;"RFB</span>';
-Q.rfb_name_full_colour = '<span style="color: #700000;"Rotfrontkämpferbund</span>';
-Q.rfb_name_english_colour = '<span style="color: #700000;"Red Front Fighters League</span>'; 
+Q.rfb_name_colour = '<span style="color: #700000;">RFB</span>';
+Q.rfb_name_full_colour = '<span style="color: #700000;">Rotfrontkämpferbund</span>';
+Q.rfb_name_english_colour = '<span style="color: #700000;">Red Front Fighters League</span>'; 
 // BW
 Q.bw_name_colour = '<span style="color: #A2D8E0;">BW</span>' 
 Q.bw_name_full_colour = '<span style="color: #A2D8E0;">Bayenwacht</span>'
