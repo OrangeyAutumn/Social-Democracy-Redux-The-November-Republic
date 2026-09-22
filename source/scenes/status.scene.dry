@@ -195,7 +195,7 @@ Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +]) | Relations: [+ bvp_relat
 
 Seats: [+ bvp_r +]% | Polling: [+ bvp_votes +]%
 
-Associated Paramilitary: [+ bw_name_full_colour +] **[+ bw_name_colour +]**  
+Associated Paramilitary: [+ bw_name_full_colour +] (**[+ bw_name_colour +]**) |  
 
 = **[+ dvp_name_colour +]**
 
