@@ -95,6 +95,27 @@ Q.agriculture_minister_party_colour = Q.independent_name_colour
 Q.labor_minister_party_colour = Q.z_name_colour
 Q.foreign_minister_party_colour = Q.dvp_name_colour
 
+// Coalition Colours
+Q.left_front_colour = '<span style="color: #700000;">Le</span><span style="color: #DD0000;">ft</span> Front'
+Q.progressive_front_colour = '<span style="color: #700000;">Prog</span><span style="color: #DD0000;">res</span><span style="color: #FFCC00;">sive</span> Front'
+Q.popular_front_colour = '<span style="color: #700000;">Po</span><span style="color: #DD0000;">pul</span><span style="color: #000000;">ar</span> Front'
+Q.social_liberal_coalition_colour = '<span style="color: #DD0000;">Social</span>-<span style="color: #FFCC00;">Liberal</span> Coalition'
+Q.weimar_coalition_colour = '<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition'
+Q.social_catholic_coalition_colour = '<span style="color: #DD0000;">Social</span>-<span style="color: #000000;">Catholic</span> Coalition'
+Q.grand_coalition_colour = '<span style="color: #DD0000;">G</span><span style="color: #FFCC00;">r</span><span style="color: #000000;">a</span><span style="color: #A2D8E0;">n</span><span style="color: #C0A054;">d</span> Coalition'
+Q.neo_weimar_coalition_colour = '<span style="color: #DD0000;">Ne</span><span style="color: #FFCC00;">o-</span><span style="color: #000000;">We</span><span style="color: #A2D8E0;">im</span><span style="color: #C0A054;">ar</span> Coalition'
+Q.bourgeois_coalition_colour = '<span style="color: #FFCC00;">Bou</span><span style="color: #000000;">rge</span><span style="color: #C0A054;">ois</span> Coalition'
+Q.left_bourgeois_coalition_colour = '<span style="color: #FFCC00;">Left</span><span style="color: #000000;">-Bourgeois</span> Coalition'
+Q.right_bourgeois_coalition_colour = '<span style="color: #000000;">Right-</span><span style="color: #C0A054;">Bourgeois</span> Coalition'
+Q.liberal_coalition_colour = '<span style="color: #FFCC00;">Libe</span><span style="color: #C0A054;">ral</span> Coalition'
+Q.catholic_coalition_colour = '<span style="color: #A2D8E0;">Cath</span><span style="color: #000000;">olic</span> Coalition' 
+Q.right_coalition_colour = '<span style="color: #000000;">R</span><span style="color: #A2D8E0;">i</span><span style="color: #C0A054;">g</span><span style="color: #3E88B3;">ht</span> Coalition'
+Q.far_right_coalition_colour = '<span style="color: #3E88B3;">Far-</span><span style="color: #7A3C00;">Right</span> Coalition' 
+Q.black_brown_coalition_colour = '<span style="color: #000000;">Black-</span><span style="color: #7A3C00;">Brown</span> Coalition' 
+Q.black_brown_blue_coalition_colour = '<span style="color: #000000;">Black-</span><span style="color: #7A3C00;">Brown-</span><span style="color: #3E88B3;">Blue</span> Coalition' 
+Q.popular_front_colour = '<span style="color: #700000;">Qu</span><span style="color: #DD0000;">er</span><span style="color: #7A3C00;">fro</span><span style="color: #3E88B3;">nt</span> Coalition'
+Q.left_front_colour = '<span style="color: #700000;">W</span><span style="color: #DD0000;">h</span><span style="color: #FFCC00;">o</span><span style="color: #000000;">l</span><span style="color: #A2D8E0;">e</span><span style="color: #C0A054;">s</span><span style="color: #3E88B3;">o</span><span style="color: #7A3C00;">m</span>e Coalition'
+
 // Paramilitary Names
 // RB
 Q.rb_name = "RB";
