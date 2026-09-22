@@ -529,8 +529,9 @@ Q.uspd_name = "DSKI";
 Q.uspd_name_full = "Deutsche Sektion der Kommunistiche Internationale";
 Q.uspd_name_english = "German Section of the Communist International";
 Q.spd_name = "SPD";
+Q.spd_name_colour = <span style="color: #E3000F;">**SPD**</span>
 Q.spd_name_full = "Sozialdemokratische Partei Deustchland";
-Q.spd_name_english = "Social Democratic Party of Germany"
+Q.spd_name_english = "Social-Democratic Party of Germany"
 Q.ddp_name = "DDP";
 Q.ddp_name_full = "Deustche Demokratische Partei"
 Q.ddp_name_english = "German Democratic Party"
@@ -548,7 +549,7 @@ Q.dnvp_name_full = "Deustchnationale Volkspartei";
 Q.dnvp_name_english = "German National People's Party";
 Q.nsdap_name = "NSDAP";
 Q.nsdap_name_full = "Nationalsozialistische Deutsche Arbeiterpartei";
-Q.nsdap_name_english = "Nazi";
+Q.nsdap_name_english = "National-Socialist German Worker's Party";
 
 // nazis have not peaked..
 Q.nazi_peaked = 0;
