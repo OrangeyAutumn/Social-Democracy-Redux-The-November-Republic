@@ -582,9 +582,9 @@ Q.nsdap_name_colour = '<span style="color: #7A3C00;">NSDAP</span>'
 Q.nsdap_name_full_colour = '<span style="color: #7A3C00;">Nationalsozialistiche Deustche Arbeiterspartei</span>'
 Q.nsdap_name_english_colour = '<span style="color: #7A3C00;">National-Socialist German Workers Party</span>'
 // Other
-Q.other_name_colour = '<span style="color: #a0a0a0;">**Others**</span>';
-Q.independent_name_colour = '<span style="color: #a0a0a0;">**I**</span>';
-Q.independent_name_full_colour = '<span style="color: #a0a0a0;">**Independent**</span>';
+Q.other_name_colour = '<span style="color: #a0a0a0;">Others</span>';
+Q.independent_name_colour = '<span style="color: #a0a0a0;">I</span>';
+Q.independent_name_full_colour = '<span style="color: #a0a0a0;">Independent</span>';
 
 // Faction Names and Colours
 // SPD
