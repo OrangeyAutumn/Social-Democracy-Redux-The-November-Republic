@@ -65,6 +65,10 @@ Q.nsdap_name_english = "National-Socialist German Worker's Party";
 Q.nsdap_name_colour = '<span style="color: #7A3C00;">NSDAP</span>'
 Q.nsdap_name_full_colour = '<span style="color: #7A3C00;">Nationalsozialistiche Deustche Arbeiterspartei</span>'
 Q.nsdap_name_english_colour = '<span style="color: #7A3C00;">National-Socialist German Workers Party</span>'
+// Others
+Q.other_name_colour = '<span style="color: #a0a0a0;">Others</span>';
+Q.independent_name_colour = '<span style="color: #a0a0a0;">I</span>';
+Q.independent_name_full_colour = '<span style="color: #a0a0a0;">Independent</span>';
 
 // Faction Names and Colours
 // SPD
@@ -618,7 +622,7 @@ Q.president_fullname = "Friedrich Ebert";
 Q.president_party = "SPD";
 Q.presidential_relation = 60;
 Q.chancellor = "Marx";
-Q.chancellor_fullname = "Wilhelm Marc";
+Q.chancellor_fullname = "Wilhelm Marx";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
