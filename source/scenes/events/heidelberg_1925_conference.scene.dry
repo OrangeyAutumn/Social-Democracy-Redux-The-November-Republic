@@ -17,10 +17,10 @@ Another issue is that of **Saxony,** where the regional party organization has s
 @faction_algorithm
 on-arrival: {!
 if (Q.neorevisionism == 1) {
-var factions ["left", "center", "labor", "reformist", "neorevisionist"]
+var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
 }
 else {
-var factions ["left", "center", "labor", "reformist"]
+var factions = ["left", "center", "labor", "reformist"]
 }
 Q[faction + '_conference_votes'] = 0 ;
 Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
