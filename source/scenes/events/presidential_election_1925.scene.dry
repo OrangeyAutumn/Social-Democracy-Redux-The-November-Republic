@@ -390,76 +390,18 @@ Q.hindenburg_presidential_votes *= 1.025
 }
 Q.hindenburg_presidential_votes *= Q.hindenburg_multiplier;
 }
-if (Q.uspd_campaign == 0) {
-Q.uspd_presidential_votes = 0;
-}
-if (Q.spd_campaign == 0) {
-Q.spd_presidential_votes = 0;
-}
-if (Q.ddp_campaign == 0) {
-Q.ddp_presidential_votes = 0;
-}
-if (Q.z_campaign == 0) {
-Q.z_presidential_votes = 0;
-}
-if (Q.bvp_campaign == 0) {
-Q.bvp_presidential_votes = 0;
-}
-if (Q.dvp_campaign == 0) {
-Q.dvp_presidential_votes = 0;
-}
-if (Q.other_campaign == 0) {
-Q.other_presidential_votes = 0;
-}
-if (Q.dnvp_campaign == 0) {
-Q.dnvp_presidential_votes = 0;
-}
-if (Q.nsdap_campaign == 0) {
-Q.nsdap_presidential_votes = 0;
-}
-if (Q.hindenburg_campaign == 0) {
-Q.hindenburg_presidential_votes = 0;
+var presidents ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
+for (president of presidents) {
+if (Q[president_ + '_campaign'] == 0) {
+Q[president + '_presidential_votes'] = 0;
 }
 Q.total_presidential_votes = Q.uspd_presidential_votes + Q.spd_presidential_votes + Q.ddp_presidential_votes + Q.z_presidential_votes + Q.bvp_presidential_votes + Q.dvp_presidential_votes + Q.other_presidential_votes + Q.dnvp_presidential_votes + Q.nsdap_presidential_votes + Q.hindenburg_presidential_votes;
-Q.uspd_presidential_results = ((Q.uspd_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.spd_presidential_results = ((Q.spd_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.ddp_presidential_results = ((Q.ddp_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.z_presidential_results = ((Q.z_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.bvp_presidential_results = ((Q.bvp_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.dvp_presidential_results = ((Q.dvp_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.other_presidential_results = ((Q.other_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.dnvp_presidential_results = ((Q.dnvp_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.nsdap_presidential_results = ((Q.nsdap_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-Q.hindenburg_presidential_results = ((Q.hindenburg_presidential_votes / Q.total_presidential_votes) * 100).toFixed(1);
-if (Q.uspd_presidential_results >= 50) {
-        Q.uspd_majority = 1;
-           }
-else if (Q.spd_presidential_results >= 50) {
-        Q.spd_majority = 1;
-           }
-else if (Q.ddp_presidential_results >= 50) {
-        Q.ddp_majority = 1;
-           }
-else if (Q.z_presidential_results >= 50) {
-        Q.z_majority = 1;
-           }
-else if (Q.bvp_presidential_results >= 50) {
-        Q.bvp_majority = 1;
-           }
-else if (Q.dvp_presidential_results >= 50) {
-        Q.dvp_majority = 1;
-           }
-else if (Q.other_presidential_results >= 50) {
-        Q.other_majority = 1;
-           }
-else if (Q.dnvp_presidential_results >= 50) {
-        Q.dnvp_majority = 1;
-           }
-else if (Q.nsdap_presidential_results >= 50) {
-        Q.nsdap_majority = 1;
-           }
-else if (Q.hindenburg_presidential_results >= 50) {
-        Q.hindenburg_majority = 1;
+var presidents ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
+for (president of presidents) {
+Q[president + '_presidential_results'] = ((Q[president + '_presidential_votes'] / Q.total_presidential_votes) * 1000).toFixed(1) / 10;
+}
+if (Q[president + '_presidential_results'] >= 50) {
+        Q[president + '_majority'] = 1;
            }
 else {
 Q.no_majority_1 = 1;
@@ -467,45 +409,11 @@ Q.no_majority_1 = 1;
 if (Q.round25 >= 2) {
 Q.plurality_winner = "";
 Q.plurality_winner_votes = 0;
-if (Q.uspd_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.uspd_presidential_candidate;
-    Q.plurality_winner_votes = Q.uspd_presidential_votes;
-}
-if (Q.spd_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.spd_presidential_candidate;
-    Q.plurality_winner_votes = Q.spd_presidential_votes;
-}
-if (Q.ddp_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.ddp_presidential_candidate;
-    Q.plurality_winner_votes = Q.ddp_presidential_votes;
-}
-if (Q.z_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.z_presidential_candidate;
-    Q.plurality_winner_votes = Q.z_presidential_votes;
-}
-if (Q.bvp_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = "Held";
-    Q.plurality_winner_votes = Q.bvp_presidential_votes;
-}
-if (Q.dvp_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.dvp_presidential_candidate;
-    Q.plurality_winner_votes = Q.dvp_presidential_votes;
-}
-if (Q.other_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.other_presidential_candidate;
-    Q.plurality_winner_votes = Q.other_presidential_votes;
-}
-if (Q.dnvp_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.dnvp_presidential_candidate;
-    Q.plurality_winner_votes = Q.dnvp_presidential_votes;
-}
-if (Q.nsdap_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = Q.nsdap_presidential_candidate;
-    Q.plurality_winner_votes = Q.nsdap_presidential_votes;
-}
-if (Q.hindenburg_presidential_votes > Q.plurality_winner_votes) {
-    Q.plurality_winner = "Hindenburg";
-    Q.plurality_winner_votes = Q.hindenburg_presidential_votes;
+var presidents ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
+for (president of presidents) {
+if (Q[president + '_presidential_results'] > Q.plurality_winner_votes) {
+    Q.plurality_winner = Q[president + '_presidential_candidate'];
+    Q.plurality_winner_votes = Q[president + '_presidential_results'];
 }
 }
 !}
@@ -513,25 +421,23 @@ go-to: round1_results if round25 == 1 and not no_majority_1; no_majority_round1 
 
 Results:
 
-[? if uspd_campaign : Liebknecht - [+ uspd_votes_disp +]% ?]
+[? if uspd_campaign : [+ uspd_presidential_candidate +] - [+ uspd_presidential_results +]% ?]
 
-[? if spd_campaign : [+ spd_presidential_candidate +] - [+ spd_votes_disp +]% ?]
+[? if spd_campaign : [+ spd_presidential_candidate +] - [+ spd_presidential_results +]% ?]
 
-[? if ddp_campaign : Hellpach - [+ ddp_votes_disp +]% ?]
+[? if ddp_campaign : [+ ddp_presidential_candidate +] - [+ ddp_presidential_results +]% ?]
 
-[? if z_campaign : [+ z_presidential_candidate +] - [+ z_votes_disp +]% ?]
+[? if z_campaign : [+ z_presidential_candidate +] - [+ z_presidential_results +]% ?]
 
-[? if gessler_campaign : Gessler - [+ gessler_votes_disp +]% ?]
+[? if bvp_campaign : [+ bvp_presidential_candidate +] - [+ bvp_presidential_results +]% ?]
 
-[? if bvp_campaign : Held - [+ bvp_votes_disp +]% ?]
+[? if dvp_campaign : [+ dvp_presidential_candidate +] - [+ dvp_presidential_results +]% ?]
 
-[? if dvp_campaign : [+ dvp_presidential_candidate +] - [+ dvp_votes_disp +]% ?]
+[? if dnvp_campaign : [+ dnvp_presidential_candidate +] - [+ dnvp_presidential_results +]% ?]
 
-[? if dnvp_campaign : Hergt - [+ dnvp_votes_disp +]% ?]
+[? if hindenburg_campaign : Hindenburg - [+ hindenburg_presidential_results +]% ?]
 
-[? if hindenburg_campaign : Hindenburg - [+ hindenburg_votes_disp +]% ?]
-
-[? if nsdap_campaign : Ludendorff - [+ nsdap_votes_disp +]% ?]
+[? if nsdap_campaign : [+ nsdap_presidential_candidate +] - [+ nsdap_presidential_results +]% ?]
 
 @round1_results
 on-arrival: previous_spd_presidential_candidate = spd_presidential_candidate; previous_spd_presidential_candidate_fullname = spd_presidential_candidate_fullname; previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; previous_uspd_presidential_candidate = uspd_presidential_candidate; previous_uspd_presidential_candidate_fullname = uspd_presidential_candidate_fullname; previous_ddp_presidential_candidate = ddp_presidential_candidate; previous_ddp_presidential_candidate_fullname = ddp_presidential_candidate_fullname; previous_z_presidential_candidate = z_presidential_candidate; previous_z_presidential_candidate_fullname = z_presidential_candidate_fullname; previous_bvp_presidential_candidate = bvp_presidential_candidate; previous_bvp_presidential_candidate_fullname = bvp_presidential_candidate_fullname; previous_dvp_presidential_candidate = dvp_presidential_candidate; previous_dvp_presidential_candidate_fullname = dvp_presidential_candidate_fullname; previous_other_presidential_candidate = other_presidential_candidate; previous_other_presidential_candidate_fullname = other_presidential_candidate_fullname; previous_dnvp_presidential_candidate = dnvp_presidential_candidate; previous_dnvp_presidential_candidate_fullname = dnvp_presidential_candidate_fullname; previous_nsdap_presidential_candidate = nsdap_presidential_candidate; previous_nsdap_presidential_candidate_fullname = nsdap_presidential_candidate_fullname;
