@@ -27,9 +27,8 @@ var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'refor
 Q.conference_majority = "None";
 Q.plurality_winner = "None";
 Q.plurality_winner_conference_votes = 0;
-Q.total_strength = 0;
+Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
 for (var faction of factions) {
-Q.total_strength += Q[faction + '_strength'];
 Q[faction + '_conference_votes'] = 0 ;
 Q[faction + '_conference_votes'] = Math.round((Q[faction + '_strength'] / Q.total_strength) * 1000) / 10;
     if (Q[faction + '_conference_votes'] >= 50) {
