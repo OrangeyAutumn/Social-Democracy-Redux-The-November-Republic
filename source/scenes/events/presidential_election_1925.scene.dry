@@ -18,6 +18,7 @@ Q['dvp_support_' + president] = 0;
 Q['dnvp_support_' + president] = 0;
 Q['nsdap_support_' + president] = 0;
 Q['other_support_' + president] = 0;
+Q[president + '_multiplier'] = 1;
 }
 !}
 
