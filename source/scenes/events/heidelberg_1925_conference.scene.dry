@@ -307,7 +307,7 @@ go-to: post_challenge
 **[+ reformist_leader_fullname +]** wins in a victory for the **[+ spd_reformist_colour +]** faction!
 
 @neorevisionist_wins
-view-if: coleader_faction != "Neorevisionist" and neorevisionist_leader != "Vacant" and coleader != neorevisionist_leader and Q.neorevisionism == 1
+view-if: coleader_faction != "Neorevisionist" and neorevisionist_leader != "Vacant" and coleader != neorevisionist_leader and neorevisionism == 1
 choose-if: (neorevisionist_conference_votes >= 50) or (neorevisionist_conference_votes >= reformist_conference_votes and (reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (neorevisionist_conference_votes >= reformist_conference_votes and neorevisionist_conference_votes >= labor_conference_votes and (labor_conference_votes+reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer") or (neorevisionist_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.neorevisionist_leader;
