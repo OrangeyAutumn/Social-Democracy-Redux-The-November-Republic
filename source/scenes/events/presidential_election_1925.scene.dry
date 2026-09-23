@@ -165,7 +165,7 @@ if (president == "hindenburg") {
 Q.hindenburg_presidential_votes = 0;
 }
 else {
-Q[president + 'presidential_votes'] = Q[president + '_votes']
+Q[president + '_presidential_votes'] = Q[president + '_votes']
 }
 }
 if (Q.uspd_campaign == 1) {
@@ -395,16 +395,15 @@ Q[president + '_presidential_votes'] = 0;
 }
 }
 Q.total_presidential_votes = Q.uspd_presidential_votes + Q.spd_presidential_votes + Q.ddp_presidential_votes + Q.z_presidential_votes + Q.bvp_presidential_votes + Q.dvp_presidential_votes + Q.other_presidential_votes + Q.dnvp_presidential_votes + Q.nsdap_presidential_votes + Q.hindenburg_presidential_votes;
-Q.no_majority_1 = 0;
+Q.no_majority_1 = 1;
 for (var president of presidents) {
 Q[president + '_majority'] = 0;
 Q[president + '_plurality'] = 0;
 Q[president + '_presidential_results'] = ((Q[president + '_presidential_votes'] / Q.total_presidential_votes) * 1000).toFixed(1) / 10;
 if (Q[president + '_presidential_results'] >= 50) {
         Q[president + '_majority'] = 1;
+Q.no_majority_1 = 0;
            }
-else {
-Q.no_majority_1 = 1;
 }
 if (Q.round25 >= 2) {
 Q.plurality_winner = "";
