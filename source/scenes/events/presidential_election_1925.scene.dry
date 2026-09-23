@@ -194,6 +194,7 @@ Q.hindenburg_presidential_votes = 0;
 Q.presidents_25 = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg'];
 var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
 for (var president of presidents) {
+Q[president + '_presidential_votes'] = 0;
 if (Q[president + '_campaign'] == 1) {
 if (president == 'z') {
 Q.z_presidential_votes += Q.z_minus_bvp_votes;
@@ -242,7 +243,7 @@ Q[president + '_presidential_votes'] *= 1.025
 Q[president + '_presidential_votes'] *= Q[president + '_multiplier'];
     }
 }
-Q.total_presidential_votes = Q.uspd_presidential_votes + Q.spd_presidential_votes + Q.ddp_presidential_votes + Q.z_presidential_votes + Q.bvp_presidential_votes + Q.dvp_presidential_votes + Q.other_presidential_votes + Q.dnvp_presidential_votes + Q.nsdap_presidential_votes + Q.hindenburg_presidential_votes;
+Q.total_presidential_votes = Q.uspd_presidential_votes + Q.spd_presidential_votes + Q.ddp_presidential_votes + Q.z_presidential_votes + Q.bvp_presidential_votes + Q.dvp_presidential_votes + Q.dnvp_presidential_votes + Q.nsdap_presidential_votes + Q.hindenburg_presidential_votes;
 Q.no_majority_1 = 1;
 for (var president of presidents) {
 Q[president + '_majority'] = 0;
