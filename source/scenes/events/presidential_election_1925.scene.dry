@@ -412,6 +412,7 @@ for (var president of presidents) {
 if (Q[president + '_presidential_results'] > Q.plurality_winner_votes) {
     Q.plurality_winner = Q[president + '_presidential_candidate'];
     Q.plurality_winner_votes = Q[president + '_presidential_results'];
+	Q[president + '_plurality'] = 1;
 }
 }
 !}
