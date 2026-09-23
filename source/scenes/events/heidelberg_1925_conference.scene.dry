@@ -22,12 +22,13 @@ var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
 else {
 var factions = ["left", "center", "labor", "reformist"]
 }
-Q[faction + '_conference_votes'] = 0 ;
-Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
-Q[faction + '_conference_votes'] = Math.round((Q[faction + '_strength'] / Q.total_strength) * 1000) / 10;
 Q.conference_majority = "None";
 Q.plurality_winner = "None";
 Q.plurality_winner_conference_votes = 0;
+Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
+for (var faction of factions) {
+Q[faction + '_conference_votes'] = 0 ;
+Q[faction + '_conference_votes'] = Math.round((Q[faction + '_strength'] / Q.total_strength) * 1000) / 10;
 if (Q[faction + '_conference_votes'] >= 50) {
         Q.conference_majority = faction;
            }
@@ -36,18 +37,20 @@ if (Q[faction + '_conference_votes'] > Q.plurality_winner_conference_votes) {
     Q.plurality_winner = faction;
     Q.plurality_winner_conference_votes = Q[faction + '_conference_votes'];
 }
+}
+}
 !}
 go-to: post_congress
 
 @post_congress
 on-display: {!
 if (Q.neorevisionism == 1) {
-var factions ["left", "center", "labor", "reformist", "neorevisionist"],
-            {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9', 'neorevisionist': '#e42bca'},
+var factions = ["left", "center", "labor", "reformist", "neorevisionist"],
+factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9', 'neorevisionist': '#e42bca'}
 }
 else {
-var factions ["left", "center", "labor", "reformist"],
-factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'},
+var factions = ["left", "center", "labor", "reformist"],
+factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
 }
 var data = [];
         data.push({
@@ -223,7 +226,7 @@ Q["spd_coleader_" + Q.coleader_slot] = Q.left_leader;
 Q["spd_coleader_" + Q.coleader_slot + "_fullname"] = Q.left_leader_fullname;
 Q["spd_coleader_" + Q.coleader_slot + "_faction_colour"] = Q.spd_left_colour;
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Left";
-var nonfactionals ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
+var nonfactionals = ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
 for (var nonfactional of nonfactionals) {
 if (Q.left_leader == nonfactional) {
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Nonfactional";
@@ -242,7 +245,7 @@ Q["spd_coleader_" + Q.coleader_slot] = Q.center_leader;
 Q["spd_coleader_" + Q.coleader_slot + "_fullname"] = Q.center_leader_fullname;
 Q["spd_coleader_" + Q.coleader_slot + "_faction_colour"] = Q.spd_center_colour;
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Center";
-var nonfactionals ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
+var nonfactionals = ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
 for (var nonfactional of nonfactionals) {
 if (Q.center_leader == nonfactional) {
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Nonfactional";
@@ -261,13 +264,13 @@ Q["spd_coleader_" + Q.coleader_slot] = Q.labor_leader;
 Q["spd_coleader_" + Q.coleader_slot + "_fullname"] = Q.labor_leader_fullname;
 Q["spd_coleader_" + Q.coleader_slot + "_faction_colour"] = Q.spd_labor_colour;
 Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Labor";
-var nonfactionals ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
+var nonfactionals = ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
 for (var nonfactional of nonfactionals) {
 if (Q.labor_leader == nonfactional) {
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Nonfactional";
 } 
 }
-var neorevisionists ["Mierendorff", "Leber", "Schumacher"]
+var neorevisionists = ["Mierendorff", "Leber", "Schumacher"]
 for (var neorevisionist of neorevisionists) {
     if (Q.labor_leader == neorevisionist) {
         Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Neorevisionist";
@@ -286,13 +289,13 @@ Q["spd_coleader_" + Q.coleader_slot] = Q.reformist_leader;
 Q["spd_coleader_" + Q.coleader_slot + "_fullname"] = Q.reformist_leader_fullname;
 Q["spd_coleader_" + Q.coleader_slot + "_faction_colour"] = Q.spd_reformist_colour;
 Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Reformist";
-var nonfactionals ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
+var nonfactionals = ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
 for (var nonfactional of nonfactionals) {
 if (Q.reformist_leader == nonfactional) {
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Nonfactional";
 } 
 }
-var neorevisionists ["Mierendorff", "Leber", "Schumacher"]
+var neorevisionists = ["Mierendorff", "Leber", "Schumacher"]
 for (var neorevisionist of neorevisionists) {
     if (Q.reformist_leader == neorevisionist) {
         Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Neorevisionist";
@@ -311,7 +314,7 @@ Q["spd_coleader_" + Q.coleader_slot] = Q.neorevisionist_leader;
 Q["spd_coleader_" + Q.coleader_slot + "_fullname"] = Q.neorevisionist_leader_fullname;
 Q["spd_coleader_" + Q.coleader_slot + "_faction_colour"] = Q.spd_neorevisionist_colour;
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Neorevisionist";
-var nonfactionals ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
+var nonfactionals = ["Baade", "Hirschfeld", "Radbruch", "Stampfer", "Löbe"]
 for (var nonfactional of nonfactionals) {
 if (Q.neorevisionist_leader == nonfactional) {
     Q["spd_coleader_" + Q.coleader_slot + "_faction"] = "Nonfactional";
@@ -330,16 +333,19 @@ go-to: leadership_challenge if coleader_slot <= 3; end if coleader_slot >= 4
 
 @end
 on-arrival: {!
-var advisors ["crispien", "sender", "levi", "rosenfeld", "seydewitz", "siemsen", "wels", "muller", "pfulf", "breitscheid", "vogel", "hilferding", "severing", "braun", "ebert", "juchacz", "scheidemann", "leipart", "aufhauser", "woytinsky", "wissell", "mierendorff", "leber", "schumacher", "noske", "baade", "hirschfeld", "radbruch", "stampfer", "lobe"]
+var advisors = ["crispien", "sender", "levi", "rosenfeld", "seydewitz", "siemsen", "wels", "muller", "pfulf", "breitscheid", "vogel", "hilferding", "severing", "braun", "ebert", "juchacz", "scheidemann", "leipart", "aufhauser", "woytinsky", "wissell", "mierendorff", "leber", "schumacher", "noske", "baade", "hirschfeld", "radbruch", "stampfer", "lobe"]
 tags = ["crispien": "Crispien", "sender": "Sender", "levi": "Levi", "rosenfeld": "Rosenfeld", "seydewitz": "Seydewitz", "siemsen": "Siemsen", "wels": "Wels", "muller": "Müller", "pfulf": "Pfülf", "breitscheid": "Breitscheid", "vogel": "Vogel", "hilferding": "Hilferding", "severing": "Severing", "braun": "Braun", "ebert": "Ebert", "juchacz": "Juchacz", "scheidemann": "Scheidemann", "leipart": "Leipart", "aufhauser": "Aufhäuser", "woytinsky": "Woytinsky", "wissell": "Wissell", "mierendorff": "Mierendorff", "leber": "Leber", "schumacher": "Schumacher", "noske": "Noske", "baade": "Baade", "hirschfeld": "Hirschfeld", "radbruch": "Radbruch", "stampfer": "Stampfer", "lobe": "Löbe"]
 for (var advisor of advisors) {
 Q[advisor + '_advisor'] = 0;
     if (Q.spd_coleader_1 == tags[advisor] || Q.spd_coleader_2 == tags[advisor] || Q.spd_coleader_3 == tags[advisor]) {
         Q[advisor + '_advisor'] = 1;
     }
-var factions ["left", "center", "labor", "reformist", "neorevisionist"]
+}
+var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
 for (var faction of factions) {
-if Q.spd_coleader_1_faction == faction || Q.spd_coleader_2_faction == faction || Q.spd_coleader_3_faction == faction) {
+if (Q.spd_coleader_1_faction == faction || Q.spd_coleader_2_faction == faction || Q.spd_coleader_3_faction == faction) {
 Q[faction + '_leader'] = "Vacant";
 Q[faction + '_leader_fullname'] = "Vacant";
+}
+}
 !}
