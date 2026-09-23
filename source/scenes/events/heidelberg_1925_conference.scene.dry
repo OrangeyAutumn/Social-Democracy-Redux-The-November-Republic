@@ -186,7 +186,6 @@ Q.coleader_faction_colour = Q["spd_coleader_" + Q.coleader_slot + "_faction_colo
 How does [+ coleader_fullname +], of the [+ coleader_faction +] faction, fare?
 
 - @coleader_challenge: [+ coleader_fullname +] faces a challenge!
-
 - @coleader_no_challenge: [+ coleader_fullname +] faces no challenge.
 
 @coleader_challenge
