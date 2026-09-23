@@ -53,7 +53,6 @@ var factions = ["left", "center", "labor", "reformist"],
 factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
 }
 for (var faction of factions) {
-var data = [];
         data.push({
             "id": faction,
             "legend": faction,
@@ -172,6 +171,9 @@ The Conference declines to pass any resolution whatsoever.
 - @the_matter_of_the_leadership: Now for the matter of the leadership.
 
 @the_matter_of_the_leadership
+on-arrival: Q.coleader_slot = 1;
+
+= The Matter of the Leadership
 
 How does our leadership fare at the Conference?
 
@@ -179,9 +181,6 @@ How does our leadership fare at the Conference?
 
 @leadership_challenge
 on-arrival: {! 
-if (Q.coleader_slot < 1 || Q.coleader_slot > 3) { 
-Q.coleader_slot = 1;
-}
 Q.coleader = Q["spd_coleader_" + Q.coleader_slot];
 Q.coleader_fullname = Q["spd_coleader_" + Q.coleader_slot + "_fullname"];
 Q.coleader_faction = Q["spd_coleader_" + Q.coleader_slot + "_faction"];
