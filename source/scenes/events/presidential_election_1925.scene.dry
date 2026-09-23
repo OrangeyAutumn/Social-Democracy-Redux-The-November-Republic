@@ -609,7 +609,7 @@ He has received the backing of the **[+ dvp_name_colour +]**, the **[+ dnvp_name
 - @post_election: Let the voting begin...
 
 @convince_dvp_abstain_success
-view-if: ddp_presidential_candidate == "Gessler" and ddp_campaign and dvp_support_hindenburg == 1;
+view-if: ddp_presidential_candidate == "Gessler" and ddp_campaign and dvp_support_hindenburg == 1
 choose-if: resources >= 3
 subtitle: **-3** resources
 on-arrival: resources -= 3; dvp_support_hindenburg = 0; old_middle_dvp -= 4; new_middle_dvp -= 3; rural_dvp -= 4; dvp_relation -= 10; left_dissent += 10; workers_spd -= 3; unemployed_spd -= 3; left_strength += 5
