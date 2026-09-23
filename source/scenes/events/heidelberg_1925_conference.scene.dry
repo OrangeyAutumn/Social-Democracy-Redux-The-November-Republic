@@ -47,13 +47,13 @@ go-to: post_congress
 on-display: {!
 if (Q.neorevisionism == 1) {
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"],
-var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
-var factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9', 'neorevisionist': '#e42bca'}
+factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
+factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9', 'neorevisionist': '#e42bca'}
 }
 else {
 var factions = ["left", "center", "labor", "reformist"],
-var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
-var factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
+factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
+factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
 }
 var data = [];
 for (var faction of factions) {
