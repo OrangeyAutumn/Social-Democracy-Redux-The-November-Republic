@@ -18,11 +18,11 @@ Another issue is that of **Saxony,** where the regional party organization has s
 on-arrival: {!
 if (Q.neorevisionism == 1) {
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
 }
 else {
 var factions = ["left", "center", "labor", "reformist"]
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
 }
 Q.conference_majority = "None";
 Q.plurality_winner = "None";
@@ -50,13 +50,13 @@ go-to: post_congress
 on-display: {!
 if (Q.neorevisionism == 1) {
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"],
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
-factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9', 'neorevisionist': '#e42bca'}
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
+var factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9', 'neorevisionist': '#e42bca'}
 }
 else {
 var factions = ["left", "center", "labor", "reformist"],
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
-factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
+var factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
 }
 var data = [];
 for (var faction of factions) {
@@ -350,7 +350,7 @@ Q[advisor + '_advisor'] = 0;
     }
 }
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"];
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'};
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'};
 for (var faction of factions) {
 if (Q.spd_coleader_1_faction == factionNames[faction] || Q.spd_coleader_2_faction == factionNames[faction] || Q.spd_coleader_3_faction == factionNames[faction]) {
 Q[faction + '_leader'] = "Vacant";
