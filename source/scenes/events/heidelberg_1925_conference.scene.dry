@@ -171,7 +171,7 @@ The Conference declines to pass any resolution whatsoever.
 - @the_matter_of_the_leadership: Now for the matter of the leadership.
 
 @the_matter_of_the_leadership
-on-arrival: Q.coleader_slot = 1;
+on-arrival: coleader_slot = 1;
 
 = The Matter of the Leadership
 
