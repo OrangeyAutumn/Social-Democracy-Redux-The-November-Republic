@@ -159,16 +159,15 @@ unavailable-subtitle: Our Left will not tolerate this course of action. The DVP 
 on-arrival: {!
 Q.round25 += 1;
 Q.presidents_25 = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg'];
-Q.uspd_presidential_votes = Q.uspd_votes;
-Q.spd_presidential_votes = Q.spd_votes;
-Q.ddp_presidential_votes = Q.ddp_votes;
-Q.z_presidential_votes = Q.z_minus_bvp_votes;
-Q.bvp_presidential_votes = Q.bvp_votes;
-Q.dvp_presidential_votes = Q.dvp_votes;
-Q.dnvp_presidential_votes = Q.dnvp_votes;
-Q.nsdap_presidential_votes = Q.nsdap_votes;
-Q.other_presidential_votes = Q.other_votes;
+var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
+for var (president of presidents) {
+if (president == "hindenburg") {
 Q.hindenburg_presidential_votes = 0;
+}
+else {
+Q[president + 'presidential_votes'] = Q[president + '_votes']
+}
+}
 if (Q.uspd_campaign == 1) {
         if (Q.spd_support_uspd) {
         Q.uspd_presidential_votes += Q.spd_presidential_votes;
@@ -390,16 +389,17 @@ Q.hindenburg_presidential_votes *= 1.025
 }
 Q.hindenburg_presidential_votes *= Q.hindenburg_multiplier;
 }
-var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
-for (president of presidents) {
-if (Q[president_ + '_campaign'] == 0) {
+for (var president of presidents) {
+if (Q[president + '_campaign'] == 0) {
 Q[president + '_presidential_votes'] = 0;
 }
-Q.total_presidential_votes = Q.uspd_presidential_votes + Q.spd_presidential_votes + Q.ddp_presidential_votes + Q.z_presidential_votes + Q.bvp_presidential_votes + Q.dvp_presidential_votes + Q.other_presidential_votes + Q.dnvp_presidential_votes + Q.nsdap_presidential_votes + Q.hindenburg_presidential_votes;
-var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
-for (president of presidents) {
-Q[president + '_presidential_results'] = ((Q[president + '_presidential_votes'] / Q.total_presidential_votes) * 1000).toFixed(1) / 10;
 }
+Q.total_presidential_votes = Q.uspd_presidential_votes + Q.spd_presidential_votes + Q.ddp_presidential_votes + Q.z_presidential_votes + Q.bvp_presidential_votes + Q.dvp_presidential_votes + Q.other_presidential_votes + Q.dnvp_presidential_votes + Q.nsdap_presidential_votes + Q.hindenburg_presidential_votes;
+Q.no_majority_1 = 0;
+for (var president of presidents) {
+Q[president + '_majority'] = 0;
+Q[president + '_plurality'] = 0;
+Q[president + '_presidential_results'] = ((Q[president + '_presidential_votes'] / Q.total_presidential_votes) * 1000).toFixed(1) / 10;
 if (Q[president + '_presidential_results'] >= 50) {
         Q[president + '_majority'] = 1;
            }
@@ -410,7 +410,7 @@ if (Q.round25 >= 2) {
 Q.plurality_winner = "";
 Q.plurality_winner_votes = 0;
 var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
-for (president of presidents) {
+for (var president of presidents) {
 if (Q[president + '_presidential_results'] > Q.plurality_winner_votes) {
     Q.plurality_winner = Q[president + '_presidential_candidate'];
     Q.plurality_winner_votes = Q[president + '_presidential_results'];
