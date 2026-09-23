@@ -177,7 +177,7 @@ How does our leadership fare at the Conference?
 
 @leadership_challenge
 on-arrival: {! 
-if (Q.coleader_slot < 1 or Q.coleader_slot > 3) { 
+if (Q.coleader_slot < 1 || Q.coleader_slot > 3) { 
 Q.coleader_slot = 1;
 }
 Q.coleader = Q["spd_coleader_" + Q.coleader_slot];
