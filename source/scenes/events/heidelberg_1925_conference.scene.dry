@@ -34,7 +34,7 @@ if (Q[faction + '_conference_votes'] >= 50) {
 else {
 if (Q[faction + '_conference_votes'] > Q.plurality_winner_conference_votes) {
     Q.plurality_winner = faction;
-    Q.plurality_winner_conference_votes = Q[faction + ‘_conference_votes’];
+    Q.plurality_winner_conference_votes = Q[faction + '_conference_votes'];
 }
 !}
 go-to: post_congress
@@ -99,13 +99,13 @@ Alternatively, the <span style="color: #ff6ba9;">** Görlitz**</span> program co
 
 <span style="color: #9c0000;">**Max Seydewitz**</span> of the **[+ spd_left_colour +]**  meanwhile has proposed before the conference what would amount to a rejection of coalitions with the bourgeois parties in order to represent the interests of the proletariat in all future struggles without regard to their opinions.
 
-The three programmes are effectively mutually exclusive, and whatever motion triumphs will inevitably be taken as a sign of the direction of our party [? If president == "Hindenburg" : in the aftermath of Hindenburg’s victory ?].
+The three programmes are effectively mutually exclusive, and whatever motion triumphs will inevitably be taken as a sign of the direction of our party [? If president == "Hindenburg" : in the aftermath of Hindenburg's victory ?].
 
 How does the Conference vote?
 
 - @heidelberg: Adopt the new <span style="color: #e30000;">**Heidelberg**</span> program as written by the Centrists.
 - @gorlitz: Retain the <span style="color: #ff6ba9;">** Görlitz**</span> program, but moderately revised.
-- @seydewitz: <span style="color: #9c0000;">**Seydewitz’s motion**</span> is passed by the conference!
+- @seydewitz: <span style="color: #9c0000;">**Seydewitz's motion**</span> is passed by the conference!
 
 @heidelberg
 subtitle: The [+ spd_center_colour +]: ([+ center_conference_votes +]%) [? if center_conference_votes < 50 : - though the Centrists lack a majority, it can still pass as a compromise resolution. ?]
@@ -136,7 +136,7 @@ Surprisingly, the motion to reject cooperation with the bourgeoisie is passed th
 The next issue for the conference is what should be done about Saxony, where the SPD has essentially split in half following the decision of Max Heldt to govern with the DVP despite the local party chapter's express refusal.
 
 - @get_him_lads: We must expel Heldt for this!
-- @a_strongly_worded_note: We must formally condemn Heldt’s actions, but stop short of formal action.
+- @a_strongly_worded_note: We must formally condemn Heldt's actions, but stop short of formal action.
 - @leave_heldt_be: Heldt did what he thought was right, even if we disagree. 
 
 @get_him_lads
@@ -144,7 +144,7 @@ choose-if: left_conference_votes >= 50 or ((left_conference_votes+labor_conferen
 subtitle: The [+ spd_left_colour +]: ([+ left_conference_votes +]%) [? if left_conference_votes < 50 : - though the Leftists lack a majority, the trade unions and dissident centrists may be convinced. ?]
 on-arrival: left_strength += 10; left_dissent -= 5; reformist_strength -= 10; reformist_dissent += 10; center_dissent += 5; labor_dissent += 5; in_saxony_spd = 0
 
-A motion to expel Heldt from the party passes. Unfortunately, expelling Heldt from the party does not expel him from the Saxon government and he, alongside a small group styling themselves as the ‘ASPD’, continue in their coalition with the DVP, while our loyalists return to opposition.
+A motion to expel Heldt from the party passes. Unfortunately, expelling Heldt from the party does not expel him from the Saxon government and he, alongside a small group styling themselves as the 'ASPD', continue in their coalition with the DVP, while our loyalists return to opposition.
 
 - @the_matter_of_the_leadership: Now for the matter of the leadership.
 
