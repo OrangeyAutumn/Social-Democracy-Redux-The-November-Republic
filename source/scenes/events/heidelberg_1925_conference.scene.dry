@@ -58,7 +58,7 @@ for (var faction of factions) {
             "legend": faction,
             "name": faction,
 	"colour": factionColors[faction],
-            "seats": Q[faction + 'conference_votes'] * 5,
+            "seats": Q[faction + '_conference_votes'] * 5,
         });
 }
 if (window && d3) {
@@ -220,7 +220,7 @@ go-to: post_challenge
 [+ coleader_fullname +] wins in a victory for the [+ coleader_faction +] faction!
 
 @left_wins
-view-if: coleader_faction != "Left" and left_leader != "Vacant" and coleader != left_leader
+view-if: coleader_faction != "Left" and left_leader != "Vacant" and spd_coleader_1 != left_leader and spd_coleader_2 != left_leader and spd_coleader_3 != left_leader
 choose-if: (left_conference_votes >= 50) or (left_conference_votes >= labor_conference_votes and (left_conference_votes+labor_conference_votes) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer") or (left_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.left_leader;
@@ -239,7 +239,7 @@ go-to: post_challenge
 **[+ left_leader_fullname +]** wins in a victory for the **[+ spd_left_colour +]** faction!
 
 @center_wins
-view-if: coleader_faction != "Center" and center_leader != "Vacant" and coleader != center_leader
+view-if: coleader_faction != "Center" and center_leader != "Vacant"  and spd_coleader_1 != center_leader and spd_coleader_2 != center_leader and spd_coleader_3 != center_leader
 choose-if: (center_conference_votes >= 50) or (center_conference_votes >= labor_conference_votes and (center_conference_votes+labor_conference_votes) >= 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer") or (center_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.center_leader;
@@ -258,7 +258,7 @@ go-to: post_challenge
 **[+ center_leader_fullname +]** wins in a victory for the **[+ spd_center_colour +]** faction!
 
 @labor_wins
-view-if: coleader_faction != "Labor" and labor_leader != "Vacant" and coleader != labor_leader
+view-if: coleader_faction != "Labor" and labor_leader != "Vacant"  and spd_coleader_1 != labor_leader and spd_coleader_2 != labor_leader and spd_coleader_3 != labor_leader
 choose-if: (labor_conference_votes >= 50) or (labor_conference_votes >= left_conference_votes and (labor_conference_votes+left_conference_votes) >= 50) or (labor_conference_votes >= reformist_conference_votes and labor_conference_votes >= neorevisionist_conference_votes and (labor_conference_votes+reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (labor_conference_votes >= center_conference_votes and (labor_conference_votes+center_conference_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer") or (labor_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.labor_leader;
@@ -283,7 +283,7 @@ go-to: post_challenge
 **[+ labor_leader_fullname +]** wins in a victory for the **[+ spd_labor_colour +]** faction!
 
 @reformist_wins
-view-if: coleader_faction != "Reformist" and reformist_leader != "Vacant" and coleader != reformist_leader
+view-if: coleader_faction != "Reformist" and reformist_leader != "Vacant"  and spd_coleader_1 != reformist_leader and spd_coleader_2 != reformist_leader and spd_coleader_3 != reformist_leader
 choose-if: (reformist_conference_votes >= 50) or (reformist_conference_votes >= neorevisionist_conference_votes and (reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (reformist_conference_votes >= neorevisionist_conference_votes and reformist_conference_votes >= labor_conference_votes and (labor_conference_votes+reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer") or (reformist_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.reformist_leader;
@@ -308,7 +308,7 @@ go-to: post_challenge
 **[+ reformist_leader_fullname +]** wins in a victory for the **[+ spd_reformist_colour +]** faction!
 
 @neorevisionist_wins
-view-if: coleader_faction != "Neorevisionist" and neorevisionist_leader != "Vacant" and coleader != neorevisionist_leader and neorevisionism == 1
+view-if: coleader_faction != "Neorevisionist" and neorevisionist_leader != "Vacant" and neorevisionism == 1  and spd_coleader_1 != neorevisionist_leader and spd_coleader_2 != neorevisionist_leader and spd_coleader_3 != neorevisionist_leader
 choose-if: (neorevisionist_conference_votes >= 50) or (neorevisionist_conference_votes >= reformist_conference_votes and (reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (neorevisionist_conference_votes >= reformist_conference_votes and neorevisionist_conference_votes >= labor_conference_votes and (labor_conference_votes+reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer") or (neorevisionist_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.neorevisionist_leader;
