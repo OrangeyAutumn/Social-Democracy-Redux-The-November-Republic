@@ -18,24 +18,28 @@ Another issue is that of **Saxony,** where the regional party organization has s
 on-arrival: {!
 if (Q.neorevisionism == 1) {
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
+factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
 }
 else {
 var factions = ["left", "center", "labor", "reformist"]
+factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
 }
 Q.conference_majority = "None";
 Q.plurality_winner = "None";
 Q.plurality_winner_conference_votes = 0;
-Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
+Q.total_strength = 0;
 for (var faction of factions) {
+Q.total_strength += Q[faction + '_strength'];
 Q[faction + '_conference_votes'] = 0 ;
 Q[faction + '_conference_votes'] = Math.round((Q[faction + '_strength'] / Q.total_strength) * 1000) / 10;
-if (Q[faction + '_conference_votes'] >= 50) {
-        Q.conference_majority = faction;
-           }
-else {
-if (Q[faction + '_conference_votes'] > Q.plurality_winner_conference_votes) {
-    Q.plurality_winner = faction;
-    Q.plurality_winner_conference_votes = Q[faction + '_conference_votes'];
+    if (Q[faction + '_conference_votes'] >= 50) {
+        Q.conference_majority = factionNames[faction];
+    }
+    if (Q[faction + '_conference_votes'] > Q.plurality_winner_conference_votes) {
+        Q.plurality_winner = factionNames[faction];
+        Q.plurality_winner_conference_votes = Q[faction + '_conference_votes'];
+    }
+}
 }
 }
 }
@@ -46,19 +50,22 @@ go-to: post_congress
 on-display: {!
 if (Q.neorevisionism == 1) {
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"],
+factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
 factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9', 'neorevisionist': '#e42bca'}
 }
 else {
 var factions = ["left", "center", "labor", "reformist"],
+factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
 factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
 }
+var data = [];
 for (var faction of factions) {
         data.push({
             "id": faction,
-            "legend": faction,
-            "name": faction,
-	"colour": factionColors[faction],
-            "seats": Q[faction + '_conference_votes'] * 5,
+            "legend": factionNames[faction],
+            "name": factionNames[faction],
+	        "color": factionColors[faction],
+           "seats": Math.round(Q[faction + '_conference_votes'] * 5),
         });
 }
 if (window && d3) {
@@ -83,7 +90,7 @@ go-to: coalition_menu
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td></tr>!}
+{!<tr><td>Faction</td><td>Vote share</td></tr>!}
 
 {!</tr><td>!} **[+ spd_left_colour +]:** {!</td><td>!} [+ left_conference_votes +]% {!</td></tr>!}
 
@@ -342,9 +349,10 @@ Q[advisor + '_advisor'] = 0;
         Q[advisor + '_advisor'] = 1;
     }
 }
-var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
+var factions = ["left", "center", "labor", "reformist", "neorevisionist"];
+factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'};
 for (var faction of factions) {
-if (Q.spd_coleader_1_faction == faction || Q.spd_coleader_2_faction == faction || Q.spd_coleader_3_faction == faction) {
+if (Q.spd_coleader_1_faction == factionNames[faction] || Q.spd_coleader_2_faction == factionNames[faction] || Q.spd_coleader_3_faction == factionNames[faction]) {
 Q[faction + '_leader'] = "Vacant";
 Q[faction + '_leader_fullname'] = "Vacant";
 }
