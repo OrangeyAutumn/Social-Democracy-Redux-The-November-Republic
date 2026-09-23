@@ -160,7 +160,7 @@ on-arrival: {!
 Q.round25 += 1;
 Q.presidents_25 = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg'];
 var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
-for var (president of presidents) {
+for (var president of presidents) {
 if (president == "hindenburg") {
 Q.hindenburg_presidential_votes = 0;
 }
@@ -409,7 +409,6 @@ Q.no_majority_1 = 1;
 if (Q.round25 >= 2) {
 Q.plurality_winner = "";
 Q.plurality_winner_votes = 0;
-var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
 for (var president of presidents) {
 if (Q[president + '_presidential_results'] > Q.plurality_winner_votes) {
     Q.plurality_winner = Q[president + '_presidential_candidate'];
