@@ -41,6 +41,14 @@
       }
   };
 
+   window.showDebug = function() {
+      if (window.dendryUI.dendryEngine.state.sceneId.startsWith('debug')) {
+          window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+      } else {
+          window.dendryUI.dendryEngine.goToScene('debug');
+      }
+  };
+
   window.showMods = function() {
     window.hideOptions();
     if (window.dendryUI.dendryEngine.state.sceneId.startsWith('mod_loader')) {
