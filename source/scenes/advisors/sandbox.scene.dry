@@ -31,7 +31,7 @@ go-to: sandbox_menu
 - @editironfront: Edit Iron Front
 - @editparamilitary: Edit Paramilitary Groups
 - @editreichswehr: Edit Reichswehr and Police
-- @root: Exit Sandbox Menu
+- @backSpecialScene: Exit Sandbox Menu
 
 @re_alive
 
