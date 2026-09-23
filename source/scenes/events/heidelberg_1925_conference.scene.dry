@@ -52,6 +52,7 @@ else {
 var factions = ["left", "center", "labor", "reformist"],
 factionColors = {'left': '#9c0000', 'center': '#e30000', 'labor': '#ff681d', 'reformist': '#ff6ba9'}
 }
+for (var faction of factions) {
 var data = [];
         data.push({
             "id": faction,
@@ -60,6 +61,7 @@ var data = [];
 	"colour": factionColors[faction],
             "seats": Q[faction + 'conference_votes'] * 5,
         });
+}
 if (window && d3) {
     var width = 500; 
     var height = 500;
