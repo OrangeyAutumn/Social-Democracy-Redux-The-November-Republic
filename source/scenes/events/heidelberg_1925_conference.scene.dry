@@ -19,18 +19,19 @@ on-arrival: {!
 if (Q.neorevisionism == 1) {
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
 var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
+Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
 }
 else {
 var factions = ["left", "center", "labor", "reformist"]
 var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
+Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
 }
 Q.conference_majority = "None";
 Q.plurality_winner = "None";
 Q.plurality_winner_conference_votes = 0;
 Q.total_strength = 0;
 for (var faction of factions) {
-Q.total_strength += Q[faction + '_strength'];
-Q[faction + '_conference_votes'] = 0 ;
+Q[faction + '_conference_votes'] = 0;
 Q[faction + '_conference_votes'] = Math.round((Q[faction + '_strength'] / Q.total_strength) * 1000) / 10;
     if (Q[faction + '_conference_votes'] >= 50) {
         Q.conference_majority = factionNames[faction];
@@ -262,7 +263,7 @@ go-to: post_challenge
 **[+ center_leader_fullname +]** wins in a victory for the **[+ spd_center_colour +]** faction!
 
 @labor_wins
-view-if: coleader_faction != "Labor" and labor_leader != "Vacant"  and spd_coleader_1 != labor_leader and spd_coleader_2 != labor_leader and spd_coleader_3 != labor_leader
+view-if: coleader_faction != "Labor" and labor_leader != "Vacant" and spd_coleader_1 != labor_leader and spd_coleader_2 != labor_leader and spd_coleader_3 != labor_leader
 choose-if: (labor_conference_votes >= 50) or (labor_conference_votes >= left_conference_votes and (labor_conference_votes+left_conference_votes) >= 50) or (labor_conference_votes >= reformist_conference_votes and labor_conference_votes >= neorevisionist_conference_votes and (labor_conference_votes+reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (labor_conference_votes >= center_conference_votes and (labor_conference_votes+center_conference_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer") or (labor_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.labor_leader;
