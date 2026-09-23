@@ -1,0 +1,1593 @@
+title: Debug Menu
+new-page: true
+is-special: true
+go-to: menu
+
+@menu
+  
+= Debug Menu
+
+started: [+ started +]
+
+time: [+ time +]
+
+year: [+ year +]
+
+month: [+ month +]
+
+month_actions: [+ month_actions +]
+
+difficulty: [+ difficulty +]
+
+historical_mode: [+ historical_mode +]
+
+old_demographics: [+ old_demographics +]
+
+resources: [+ resources +]
+
+
+dues: [+ dues +]
+
+dissent: [+ dissent +]
+
+dissent_percent: [+ dissent_percent +]
+
+factions: [+ factions +]
+
+left_strength: [+ left_strength +]
+
+left_dissent: [+ left_dissent +]
+
+center_strength: [+ center_strength +]
+
+center_dissent: [+ center_dissent +]
+
+labor_strength: [+ labor_strength +]
+
+labor_dissent: [+ labor_dissent +]
+
+reformist_strength: [+ reformist_strength +]
+
+reformist_dissent: [+ reformist_dissent +]
+
+neorevisionist_strength: [+ neorevisionist_strength +]
+
+neorevisionist_dissent: [+ neorevisionist_dissent +]
+
+spartacist_strength: [+ spartacist_strength +]
+
+spartacist_dissent: [+ spartacist_dissent +]
+
+unions_independent: [+ unions_independent +]
+
+iron_front_independent: [+ iron_front_independent +]
+
+centrists_resign: [+ centrists_resign +]
+
+left_split: [+ left_split +]
+
+sapd_formed: [+ sapd_formed +]
+
+reformists_resigned: [+ reformists_resigned +]
+
+neorevisionism: [+ neorevisionism +]
+
+spartacist: [+ spartacist +]
+
+crisis_urgency: [+ crisis_urgency +]
+
+nazi_urgency: [+ nazi_urgency +]
+
+radicalization: [+ radicalization +]
+
+wtb_support: [+ wtb_support +]
+
+pacifism: [+ pacifism +]
+
+democratization: [+ democratization +]
+
+communist_coalition: [+ communist_coalition +]
+
+economic_plan: [+ economic_plan +]
+
+wtb_adopted: [+ wtb_adopted +]
+
+hyperinflation: [+ hyperinflation +]
+
+iron_front_formed: [+ iron_front_formed +]
+
+peoples_party_support: [+ peoples_party_support +]
+
+nationalization_support: [+ nationalization_support +]
+
+nationalization_adopted: [+ nationalization_adopted +]
+
+moderate_plan_support: [+ moderate_plan_support +]
+
+moderate_plan_adopted: [+ moderate_plan_adopted +]
+
+weimar_rejected: [+ weimar_rejected +]
+
+weimar_plan_adopted: [+ weimar_plan_adopted +]
+
+weimar_support: [+ weimar_support +]
+
+weimar_willingness: [+ weimar_willingness +]
+
+prussia_minister_president: [+ prussia_minister_president +]
+
+in_prussia_spd: [+ in_prussia_spd +]
+
+in_prussia_uspd: [+ in_prussia_uspd +]
+
+in_prussia_dnvp: [+ in_prussia_dnvp +]
+
+in_prussia_nsdap: [+ in_prussia_nsdap +]
+
+prussia_election_year: [+ prussia_election_year +]
+
+prussia_election_month: [+ prussia_election_month +]
+
+bavaria_minister_president: [+ bavaria_minister_president +]
+
+in_bavaria_spd: [+ in_bavaria_spd +]
+
+in_bavaria_uspd: [+ in_bavaria_uspd +]
+
+in_bavaria_dnvp: [+ in_bavaria_dnvp +]
+
+in_bavaria_nsdap: [+ in_bavaria_nsdap +]
+
+bavaria_election_year: [+ bavaria_election_year +]
+
+bavaria_election_month: [+ bavaria_election_month +]
+
+wurttemburg_minister_president: [+ wurttemburg_minister_president +]
+
+in_wurttemburg_spd: [+ in_wurttemburg_spd +]
+
+in_wurttemburg_uspd: [+ in_wurttemburg_uspd +]
+
+in_wurttemburg_dnvp: [+ in_wurttemburg_dnvp +]
+
+in_wurttemburg_nsdap: [+ in_wurttemburg_nsdap +]
+
+wurttemberg_election_year: [+ wurttemberg_election_year +]
+
+wurttemberg_election_month: [+ wurttemberg_election_month +]
+
+saxony_minister_president: [+ saxony_minister_president +]
+
+in_saxony_spd: [+ in_saxony_spd +]
+
+in_saxony_uspd: [+ in_saxony_uspd +]
+
+in_saxony_dnvp: [+ in_saxony_dnvp +]
+
+in_saxony_nsdap: [+ in_saxony_nsdap +]
+
+saxony_election_year: [+ saxony_election_year +]
+
+saxony_election_month: [+ saxony_election_month +]
+
+thuringia_minister_president: [+ thuringia_minister_president +]
+
+in_thuringia_spd: [+ in_thuringia_spd +]
+
+in_thuringia_uspd: [+ in_thuringia_uspd +]
+
+in_thuringia_dnvp: [+ in_thuringia_dnvp +]
+
+in_thuringia_nsdap: [+ in_thuringia_nsdap +]
+
+thuringia_election_year: [+ thuringia_election_year +]
+
+thuringia_election_month: [+ thuringia_election_month +]
+
+t_elections: [+ t_elections +]
+
+baden_minister_president: [+ baden_minister_president +]
+
+in_baden_spd: [+ in_baden_spd +]
+
+in_baden_uspd: [+ in_baden_uspd +]
+
+in_baden_dnvp: [+ in_baden_dnvp +]
+
+in_baden_nsdap: [+ in_baden_nsdap +]
+
+baden_election_year: [+ baden_election_year +]
+
+baden_election_month: [+ baden_election_month +]
+
+hesse_minister_president: [+ hesse_minister_president +]
+
+in_hesse_spd: [+ in_hesse_spd +]
+
+in_hesse_uspd: [+ in_hesse_uspd +]
+
+in_hesse_dnvp: [+ in_hesse_dnvp +]
+
+in_hesse_nsdap: [+ in_hesse_nsdap +]
+
+hesse_election_year: [+ hesse_election_year +]
+
+hesse_election_month: [+ hesse_election_month +]
+
+brunswick_minister_president: [+ brunswick_minister_president +]
+
+in_brunswick_spd: [+ in_brunswick_spd +]
+
+in_brunswick_uspd: [+ in_brunswick_uspd +]
+
+in_brunswick_dnvp: [+ in_brunswick_dnvp +]
+
+in_brunswick_nsdap: [+ in_brunswick_nsdap +]
+
+brunswick_election_year: [+ brunswick_election_year +]
+
+brunswick_election_month: [+ brunswick_election_month +]
+
+anhalt_minister_president: [+ anhalt_minister_president +]
+
+in_anhalt_spd: [+ in_anhalt_spd +]
+
+in_anhalt_uspd: [+ in_anhalt_uspd +]
+
+in_anhalt_dnvp: [+ in_anhalt_dnvp +]
+
+in_anhalt_nsdap: [+ in_anhalt_nsdap +]
+
+anhalt_election_year: [+ anhalt_election_year +]
+
+anhalt_election_month: [+ anhalt_election_month +]
+
+oldenburg_minister_president: [+ oldenburg_minister_president +]
+
+in_oldenburg_spd: [+ in_oldenburg_spd +]
+
+in_oldenburg_uspd: [+ in_oldenburg_uspd +]
+
+in_oldenburg_dnvp: [+ in_oldenburg_dnvp +]
+
+in_oldenburg_nsdap: [+ in_oldenburg_nsdap +]
+
+oldenburg_election_year: [+ oldenburg_election_year +]
+
+oldenburg_election_month: [+ oldenburg_election_month +]
+
+mecklenburg_schwerin_minister_president: [+ mecklenburg_schwerin_minister_president +]
+
+in_mecklenburg_schwerin_spd: [+ in_mecklenburg_schwerin_spd +]
+
+in_mecklenburg_schwerin_uspd: [+ in_mecklenburg_schwerin_uspd +]
+
+in_mecklenburg_schwerin_dnvp: [+ in_mecklenburg_schwerin_dnvp +]
+
+in_mecklenburg_schwerin_nsdap: [+ in_mecklenburg_schwerin_nsdap +]
+
+mecklenburg_schwerin_election_year: [+ mecklenburg_schwerin_election_year +]
+
+mecklenburg_schwerin_election_month: [+ mecklenburg_schwerin_election_month +]
+
+mecklenburg_strelitz_minister_president: [+ mecklenburg_strelitz_minister_president +]
+
+in_mecklenburg_strelitz_spd: [+ in_mecklenburg_strelitz_spd +]
+
+in_mecklenburg_strelitz_uspd: [+ in_mecklenburg_strelitz_uspd +]
+
+in_mecklenburg_strelitz_dnvp: [+ in_mecklenburg_strelitz_dnvp +]
+
+in_mecklenburg_strelitz_nsdap: [+ in_mecklenburg_strelitz_nsdap +]
+
+mecklenburg_strelitz_election_year: [+ mecklenburg_strelitz_election_year +]
+
+mecklenburg_strelitz_election_month: [+ mecklenburg_strelitz_election_month +]
+
+hamburg_minister_president: [+ hamburg_minister_president +]
+
+in_hamburg_spd: [+ in_hamburg_spd +]
+
+in_hamburg_uspd: [+ in_hamburg_uspd +]
+
+in_hamburg_dnvp: [+ in_hamburg_dnvp +]
+
+in_hamburg_nsdap: [+ in_hamburg_nsdap +]
+
+hamburg_election_year: [+ hamburg_election_year +]
+
+hamburg_election_month: [+ hamburg_election_month +]
+
+bremen_minister_president: [+ bremen_minister_president +]
+
+in_bremen_spd: [+ in_bremen_spd +]
+
+in_bremen_uspd: [+ in_bremen_uspd +]
+
+in_bremen_dnvp: [+ in_bremen_dnvp +]
+
+in_bremen_nsdap: [+ in_bremen_nsdap +]
+
+bremen_election_year: [+ bremen_election_year +]
+
+bremen_election_month: [+ bremen_election_month +]
+
+lubeck_minister_president: [+ lubeck_minister_president +]
+
+in_lubeck_spd: [+ in_lubeck_spd +]
+
+in_lubeck_uspd: [+ in_lubeck_uspd +]
+
+in_lubeck_dnvp: [+ in_lubeck_dnvp +]
+
+in_lubeck_nsdap: [+ in_lubeck_nsdap +]
+
+lubeck_election_year: [+ lubeck_election_year +]
+
+lubeck_election_month: [+ lubeck_election_month +]
+
+lippe_minister_president: [+ lippe_minister_president +]
+
+in_lippe_spd: [+ in_lippe_spd +]
+
+in_lippe_uspd: [+ in_lippe_uspd +]
+
+in_lippe_dnvp: [+ in_lippe_dnvp +]
+
+in_lippe_nsdap: [+ in_lippe_nsdap +]
+
+lippe_election_year: [+ lippe_election_year +]
+
+lippe_election_month: [+ lippe_election_month +]
+
+schaumburg_lippe_minister_president: [+ schaumburg_lippe_minister_president +]
+
+in_schaumburg_lippe_spd: [+ in_schaumburg_lippe_spd +]
+
+in_schaumburg_lippe_uspd: [+ in_schaumburg_lippe_uspd +]
+
+in_schaumburg_lippe_dnvp: [+ in_schaumburg_lippe_dnvp +]
+
+in_schaumburg_lippe_nsdap: [+ in_schaumburg_lippe_nsdap +]
+
+schaumburg_lippe_election_year: [+ schaumburg_lippe_election_year +]
+
+schaumburg_lippe_election_month: [+ schaumburg_lippe_election_month +]
+
+waldeck_exists: [+ waldeck_exists +]
+
+waldeck_minister_president: [+ waldeck_minister_president +]
+
+in_waldeck_spd: [+ in_waldeck_spd +]
+
+in_waldeck_uspd: [+ in_waldeck_uspd +]
+
+in_waldeck_dnvp: [+ in_waldeck_dnvp +]
+
+in_waldeck_nsdap: [+ in_waldeck_nsdap +]
+
+waldeck_election_year: [+ waldeck_election_year +]
+
+waldeck_election_month: [+ waldeck_election_month +]
+
+z_relation: [+ z_relation +]
+
+uspd_relation: [+ uspd_relation +]
+
+ddp_relation: [+ ddp_relation +]
+
+dvp_relation: [+ dvp_relation +]
+
+DNVP_relation: [+ dnvp_relation +]
+
+NSDAP_relation: [+ nsdap_relation +]
+
+uspd_leader: [+ uspd_leader +]
+
+uspd_party_leader: [+ uspd_party_leader +]
+
+uspd_leader_fullname: [+ uspd_leader_fullname +]
+
+spd_coleader_1: [+ spd_coleader_1 +]
+
+spd_coleader_1_fullname: [+ spd_coleader_1_fullname +]
+
+spd_coleader_1_faction: [+ spd_coleader_1_faction +]
+
+spd_coleader_2: [+ spd_coleader_2 +]
+
+spd_coleader_2_fullname: [+ spd_coleader_2_fullname +]
+
+spd_coleader_2_faction: [+ spd_coleader_2_faction +]
+
+spd_coleader_3: [+ spd_coleader_3 +]
+
+spd_coleader_3_fullname: [+ spd_coleader_3_fullname +]
+
+spd_coleader_3_faction: [+ spd_coleader_3_faction +]
+
+ddp_leader: [+ ddp_leader +]
+
+ddp_leader_fullname: [+ ddp_leader_fullname +]
+
+z_leader: [+ z_leader +]
+
+z_party_leader: [+ z_party_leader +]
+
+z_party_leader_fullname: [+ z_party_leader_fullname +]
+
+bvp_leader: [+ bvp_leader +]
+
+bvp_leader_fullname: [+ bvp_leader_fullname +]
+
+dvp_leader: [+ dvp_leader +]
+
+dvp_leader_fullname: [+ dvp_leader_fullname +]
+
+dnvp_leader: [+ dnvp_leader +]
+
+dnvp_leader_fullname: [+ dnvp_leader_fullname +]
+
+nsdap_leader: [+ nsdap_leader +]
+
+nsdap_leader_fullname: [+ nsdap_leader_fullname +]
+
+uspd_ideology: [+ uspd_ideology +]
+
+spd_ideology: [+ spd_ideology +]
+
+ddp_ideology: [+ ddp_ideology +]
+
+z_ideology: [+ z_ideology +]
+
+bvp_ideology: [+ bvp_ideology +]
+
+dvp_ideology: [+ dvp_ideology +]
+
+dnvp_ideology: [+ dnvp_ideology +]
+
+nsdap_ideology: [+ nsdap_ideology +]
+
+left_leader: [+ left_leader +]
+
+left_leader_fullname: [+ left_leader_fullname +]
+
+center_leader: [+ center_leader +]
+
+center_leader_fullname: [+ center_leader_fullname +]
+
+labor_leader: [+ labor_leader +]
+
+labor_leader_fullname: [+ labor_leader_fullname +]
+
+reformist_leader: [+ reformist_leader +]
+
+reformist_leader_fullname: [+ reformist_leader_fullname +]
+
+ebert_dead: [+ ebert_dead +]
+
+spd_prussia: [+ spd_prussia +]
+
+prussian_government: [+ prussian_government +]
+
+rb_strength: [+ rb_strength +]
+
+rb_militancy: [+ rb_militancy +]
+
+women_in_rb: [+ women_in_rb +]
+
+rb_banned: [+ rb_banned +]
+
+sh_strength: [+ sh_strength +]
+
+sh_militancy: [+ sh_militancy +]
+
+sh_banned: [+ sh_banned +]
+
+sh_banned_prussia: [+ sh_banned_prussia +]
+
+sa_strength: [+ sa_strength +]
+
+sa_militancy: [+ sa_militancy +]
+
+sa_banned: [+ sa_banned +]
+
+sa_banned_prussia: [+ sa_banned_prussia +]
+
+rfb_strength: [+ rfb_strength +]
+
+rfb_militancy: [+ rfb_militancy +]
+
+rfb_banned: [+ rfb_banned +]
+
+rfb_banned_prussia: [+ rfb_banned_prussia +]
+
+interior_police_strength: [+ interior_police_strength +]
+
+interior_police_militancy: [+ interior_police_militancy +]
+
+interior_police_loyalty: [+ interior_police_loyalty +]
+
+prussian_police_strength: [+ prussian_police_strength +]
+
+prussian_police_militancy: [+ prussian_police_militancy +]
+
+prussian_police_loyalty: [+ prussian_police_loyalty +]
+
+reichswehr_strength: [+ reichswehr_strength +]
+
+reichswehr_militancy: [+ reichswehr_militancy +]
+
+reichswehr_loyalty: [+ reichswehr_loyalty +]
+
+nationalism: [+ nationalism +]
+
+socialism: [+ socialism +]
+
+pro_republic: [+ pro_republic +]
+
+emergency_rule: [+ emergency_rule +]
+
+electoral_threshold: [+ electoral_threshold +]
+
+constitutional_reform: [+ constitutional_reform +]
+
+constructive_vonc: [+ constructive_vonc +]
+
+presidential_powers: [+ presidential_powers +]
+
+constitutional_protection: [+ constitutional_protection +]
+
+uspd_banned: [+ uspd_banned +]
+
+nsdap_banned: [+ nsdap_banned +]
+
+coup_progress: [+ coup_progress +]
+
+coup_info: [+ coup_info +]
+
+capital_strike_progress: [+ capital_strike_progress +]
+
+nazi_rage_progress: [+ nazi_rage_progress +]
+
+budget: [+ budget +]
+
+income: [+ income +]
+
+inflation: [+ inflation +]
+
+economic_growth: [+ economic_growth +]
+
+economic_expansion: [+ economic_expansion +]
+
+strife: [+ strife +]
+
+workers_qol: [+ workers_qol +]
+
+rural_qol: [+ rural_qol +]
+
+unemployed_qol: [+ unemployed_qol +]
+
+old_middle_qol: [+ old_middle_qol +]
+
+new_middle_qol: [+ new_middle_qol +]
+
+classes: [+ classes +]
+
+parties: [+ parties +]
+
+states: [+ states +]
+
+workers: [+ workers +]
+
+old_middle: [+ old_middle +]
+
+new_middle: [+ new_middle +]
+
+rural: [+ rural +]
+
+unemployed: [+ unemployed +]
+
+catholics: [+ catholics +]
+
+workers_spd: [+ workers_spd +]
+
+workers_sapd: [+ workers_sapd +]
+
+workers_uspd: [+ workers_uspd +]
+
+workers_z: [+ workers_z +]
+
+workers_ddp: [+ workers_ddp +]
+
+workers_dvp: [+ workers_dvp +]
+
+workers_dnvp: [+ workers_dnvp +]
+
+workers_nsdap: [+ workers_nsdap +]
+
+workers_other: [+ workers_other +]
+
+old_middle_spd: [+ old_middle_spd +]
+
+old_middle_sapd: [+ old_middle_sapd +]
+
+old_middle_uspd: [+ old_middle_uspd +]
+
+old_middle_z: [+ old_middle_z +]
+
+old_middle_ddp: [+ old_middle_ddp +]
+
+old_middle_dvp: [+ old_middle_dvp +]
+
+old_middle_dnvp: [+ old_middle_dnvp +]
+
+old_middle_nsdap: [+ old_middle_nsdap +]
+
+old_middle_other: [+ old_middle_other +]
+
+new_middle_spd: [+ new_middle_spd +]
+
+new_middle_sapd: [+ new_middle_sapd +]
+
+new_middle_uspd: [+ new_middle_uspd +]
+
+new_middle_z: [+ new_middle_z +]
+
+new_middle_ddp: [+ new_middle_ddp +]
+
+new_middle_dvp: [+ new_middle_dvp +]
+
+new_middle_dnvp: [+ new_middle_dnvp +]
+
+new_middle_nsdap: [+ new_middle_nsdap +]
+
+new_middle_other: [+ new_middle_other +]
+
+rural_spd: [+ rural_spd +]
+
+rural_sapd: [+ rural_sapd +]
+
+rural_uspd: [+ rural_uspd +]
+
+rural_z: [+ rural_z +]
+
+rural_ddp: [+ rural_ddp +]
+
+rural_dvp: [+ rural_dvp +]
+
+rural_dnvp: [+ rural_dnvp +]
+
+rural_nsdap: [+ rural_nsdap +]
+
+rural_other: [+ rural_other +]
+
+unemployed_spd: [+ unemployed_spd +]
+
+unemployed_sapd: [+ unemployed_sapd +]
+
+unemployed_uspd: [+ unemployed_uspd +]
+
+unemployed_z: [+ unemployed_z +]
+
+unemployed_ddp: [+ unemployed_ddp +]
+
+unemployed_dvp: [+ unemployed_dvp +]
+
+unemployed_dnvp: [+ unemployed_dnvp +]
+
+unemployed_nsdap: [+ unemployed_nsdap +]
+
+unemployed_other: [+ unemployed_other +]
+
+catholics_spd: [+ catholics_spd +]
+
+catholics_sapd: [+ catholics_sapd +]
+
+catholics_uspd: [+ catholics_uspd +]
+
+catholics_z: [+ catholics_z +]
+
+catholics_ddp: [+ catholics_ddp +]
+
+catholics_dvp: [+ catholics_dvp +]
+
+catholics_dnvp: [+ catholics_dnvp +]
+
+catholics_nsdap: [+ catholics_nsdap +]
+
+catholics_other: [+ catholics_other +]
+
+rural_prole: [+ rural_prole +]
+
+middle_prole: [+ middle_prole +]
+
+lumpenprole: [+ lumpenprole +]
+
+uspd_r: [+ uspd_r +]
+
+sapd_r: [+ sapd_r +]
+
+spd_r: [+ spd_r +]
+
+z_r: [+ z_r +]
+
+z_minus_bvp_r: [+ z_minus_bvp_r +]
+
+bvp_r: [+ bvp_r +]
+
+ddp_r: [+ ddp_r +]
+
+dvp_r: [+ dvp_r +]
+
+dnvp_r: [+ dnvp_r +]
+
+nsdap_r: [+ nsdap_r +]
+
+other_r: [+ other_r +]
+
+bourgeois_coalition: [+ bourgeois_coalition +]
+
+far_right_coalition: [+ far_right_coalition +]
+
+old_spd_r: [+ old_spd_r +]
+
+old_sapd_r: [+ old_sapd_r +]
+
+old_uspd_r: [+ old_uspd_r +]
+
+old_z_r: [+ old_z_r +]
+
+old_z_minus_bvp_r: [+ old_z_minus_bvp_r +]
+
+old_bvp_r: [+ old_bvp_r +]
+
+old_ddp_r: [+ old_ddp_r +]
+
+old_dvp_r: [+ old_dvp_r +]
+
+old_dnvp_r: [+ old_dnvp_r +]
+
+old_nsdap_r: [+ old_nsdap_r +]
+
+old_other_r: [+ old_other_r +]
+
+uspd_name: [+ uspd_name +]
+
+uspd_name_full: [+ uspd_name_full +]
+
+uspd_name_english: [+ uspd_name_english +]
+
+uspd_name_colour: [+ uspd_name_colour +]
+
+uspd_name_full_colour: [+ uspd_name_full_colour +]
+
+uspd_name_english_colour: [+ uspd_name_english_colour +]
+
+spd_name: [+ spd_name +]
+
+spd_name_full: [+ spd_name_full +]
+
+spd_name_english: [+ spd_name_english +]
+
+spd_name_colour: [+ spd_name_colour +]
+
+spd_name_full_colour: [+ spd_name_full_colour +]
+
+spd_name_english_colour: [+ spd_name_english_colour +]
+
+ddp_name: [+ ddp_name +]
+
+ddp_name_full: [+ ddp_name_full +]
+
+ddp_name_english: [+ ddp_name_english +]
+
+ddp_name_colour: [+ ddp_name_colour +]
+
+ddp_name_full_colour: [+ ddp_name_full_colour +]
+
+ddp_name_english_colour: [+ ddp_name_english_colour +]
+
+z_name: [+ z_name +]
+
+z_name_full: [+ z_name_full +]
+
+z_name_english: [+ z_name_english +]
+
+z_name_colour: [+ z_name_colour +]
+
+z_name_full_colour: [+ z_name_full_colour +]
+
+z_name_english_colour: [+ z_name_english_colour +]
+
+bvp_name: [+ bvp_name +]
+
+bvp_name_full: [+ bvp_name_full +]
+
+bvp_name_english: [+ bvp_name_english +]
+
+bvp_name_colour: [+ bvp_name_colour +]
+
+bvp_name_full_colour: [+ bvp_name_full_colour +]
+
+bvp_name_english_colour: [+ bvp_name_english_colour +]
+
+dvp_name: [+ dvp_name +]
+
+dvp_name_full: [+ dvp_name_full +]
+
+dvp_name_english: [+ dvp_name_english +]
+
+dvp_name_colour: [+ dvp_name_colour +]
+
+dvp_name_full_colour: [+ dvp_name_full_colour +]
+
+dvp_name_english_colour: [+ dvp_name_english_colour +]
+
+dnvp_name: [+ dnvp_name +]
+
+dnvp_name_full: [+ dnvp_name_full +]
+
+dnvp_name_english: [+ dnvp_name_english +]
+
+dnvp_name_colour: [+ dnvp_name_colour +]
+
+dnvp_name_full_colour: [+ dnvp_name_full_colour +]
+
+dnvp_name_english_colour: [+ dnvp_name_english_colour +]
+
+nsdap_name: [+ nsdap_name +]
+
+nsdap_name_full: [+ nsdap_name_full +]
+
+nsdap_name_english: [+ nsdap_name_english +]
+
+nsdap_name_colour: [+ nsdap_name_colour +]
+
+nsdap_name_full_colour: [+ nsdap_name_full_colour +]
+
+nsdap_name_english_colour: [+ nsdap_name_english_colour +]
+
+other_name_colour: [+ other_name_colour +]
+
+independent_name_colour: [+ independent_name_colour +]
+
+independent_name_full_colour: [+ independent_name_full_colour +]
+
+spd_left_colour: [+ spd_left_colour +]
+
+spd_center_colour: [+ spd_center_colour +]
+
+spd_labor_colour: [+ spd_labor_colour +]
+
+spd_reformist_colour: [+ spd_reformist_colour +]
+
+spd_neorevisionist_colour: [+ spd_neorevisionist_colour +]
+
+socialism_colour: [+ socialism_colour +]
+
+socialism_full_colour: [+ socialism_full_colour +]
+
+nationalism_colour: [+ nationalism_colour +]
+
+nationalism_full_colour: [+ nationalism_full_colour +]
+
+pro_republic_colour: [+ pro_republic_colour +]
+
+pro_republic_full_colour: [+ pro_republic_full_colour +]
+
+rb_name: [+ rb_name +]
+
+rb_name_full: [+ rb_name_full +]
+
+rb_name_english: [+ rb_name_english +]
+
+rb_name_colour: [+ rb_name_colour +]
+
+rb_name_full_colour: [+ rb_name_full_colour +]
+
+rb_name_english_colour: [+ rb_name_english_colour +]
+
+rfb_name: [+ rfb_name +]
+
+rfb_name_full: [+ rfb_name_full +]
+
+rfb_name_english: [+ rfb_name_english +]
+
+rfb_name_colour: [+ rfb_name_colour +]
+
+rfb_name_full_colour: [+ rfb_name_full_colour +]
+
+rfb_name_english_colour: [+ rfb_name_english_colour +]
+
+bw_name_colour: [+ bw_name_colour +]
+
+bw_name_full_colour: [+ bw_name_full_colour +]
+
+sh_name: [+ sh_name +]
+
+sh_name_full: [+ sh_name_full +]
+
+sh_name_english: [+ sh_name_english +]
+
+sh_name_colour: [+ sh_name_colour +]
+
+sh_name_full_colour: [+ sh_name_full_colour +]
+
+sh_name_english_colour: [+ sh_name_english_colour +]
+
+sa_name: [+ sa_name +]
+
+sa_name_full: [+ sa_name_full +]
+
+sa_name_english: [+ sa_name_english +]
+
+sa_name_colour: [+ sa_name_colour +]
+
+sa_name_full_colour: [+ sa_name_full_colour +]
+
+sa_name_english_colour: [+ sa_name_english_colour +]
+
+nazi_peaked: [+ nazi_peaked +]
+
+election_records: [+ election_records +]
+
+party_support_records: [+ party_support_records +]
+
+economic_records: [+ economic_records +]
+
+president: [+ president +]
+
+president_fullname: [+ president_fullname +]
+
+president_party: [+ president_party +]
+
+president_party_colour: [+ president_party_colour +]
+
+presidential_relation: [+ presidential_relation +]
+
+chancellor: [+ chancellor +]
+
+chancellor_fullname: [+ chancellor_fullname +]
+
+chancellor_party: [+ chancellor_party +]
+
+chancellor_party_colour: [+ chancellor_party_colour +]
+
+spd_in_government: [+ spd_in_government +]
+
+z_in_government: [+ z_in_government +]
+
+ddp_in_government: [+ ddp_in_government +]
+
+dvp_in_government: [+ dvp_in_government +]
+
+dnvp_in_government: [+ dnvp_in_government +]
+
+uspd_in_government: [+ uspd_in_government +]
+
+nsdap_in_government: [+ nsdap_in_government +]
+
+grand_coalition: [+ grand_coalition +]
+
+right_coalition: [+ right_coalition +]
+
+in_right_coalition: [+ in_right_coalition +]
+
+in_weimar_coalition: [+ in_weimar_coalition +]
+
+in_grand_coalition: [+ in_grand_coalition +]
+
+in_popular_front: [+ in_popular_front +]
+
+in_left_front: [+ in_left_front +]
+
+in_emergency_government: [+ in_emergency_government +]
+
+in_spd_majority: [+ in_spd_majority +]
+
+grand_coalition_failed: [+ grand_coalition_failed +]
+
+right_coalition_failed: [+ right_coalition_failed +]
+
+in_minority_government: [+ in_minority_government +]
+
+coalition_dissent: [+ coalition_dissent +]
+
+uspd_coalition_dissent: [+ uspd_coalition_dissent +]
+
+spd_toleration: [+ spd_toleration +]
+
+minority_government: [+ minority_government +]
+
+vice_chancellor: [+ vice_chancellor +]
+
+vice_chancellor_party: [+ vice_chancellor_party +]
+
+foreign_minister: [+ foreign_minister +]
+
+foreign_minister_party: [+ foreign_minister_party +]
+
+interior_minister: [+ interior_minister +]
+
+interior_minister_party: [+ interior_minister_party +]
+
+justice_minister: [+ justice_minister +]
+
+justice_minister_party: [+ justice_minister_party +]
+
+labor_minister: [+ labor_minister +]
+
+labor_minister_party: [+ labor_minister_party +]
+
+reichswehr_minister: [+ reichswehr_minister +]
+
+reichswehr_minister_party: [+ reichswehr_minister_party +]
+
+economic_minister: [+ economic_minister +]
+
+economic_minister_party: [+ economic_minister_party +]
+
+finance_minister: [+ finance_minister +]
+
+finance_minister_party: [+ finance_minister_party +]
+
+agriculture_minister: [+ agriculture_minister +]
+
+agriculture_minister_party: [+ agriculture_minister_party +]
+
+vice_chancellor_party_colour: [+ vice_chancellor_party_colour +]
+
+economic_minister_party_colour: [+ economic_minister_party_colour +]
+
+finance_minister_party_colour: [+ finance_minister_party_colour +]
+
+justice_minister_party_colour: [+ justice_minister_party_colour +]
+
+interior_minister_party_colour: [+ interior_minister_party_colour +]
+
+reichswehr_minister_party_colour: [+ reichswehr_minister_party_colour +]
+
+agriculture_minister_party_colour: [+ agriculture_minister_party_colour +]
+
+labor_minister_party_colour: [+ labor_minister_party_colour +]
+
+foreign_minister_party_colour: [+ foreign_minister_party_colour +]
+
+unemployment_insurance_threshold: [+ unemployment_insurance_threshold +]
+
+return_to_normalcy: [+ return_to_normalcy +]
+
+normalcy_month: [+ normalcy_month +]
+
+judicial_reform: [+ judicial_reform +]
+
+bureaucratic_reform: [+ bureaucratic_reform +]
+
+military_reform: [+ military_reform +]
+
+womens_rights: [+ womens_rights +]
+
+welfare: [+ welfare +]
+
+agricultural_policy: [+ agricultural_policy +]
+
+land_reform: [+ land_reform +]
+
+works_program: [+ works_program +]
+
+wtb_implemented: [+ wtb_implemented +]
+
+west_relation: [+ west_relation +]
+
+east_relation: [+ east_relation +]
+
+soviet_relation: [+ soviet_relation +]
+
+rearmament_exposed: [+ rearmament_exposed +]
+
+reparations: [+ reparations +]
+
+reparations_negotiation: [+ reparations_negotiation +]
+
+nationalization_progress: [+ nationalization_progress +]
+
+socializations: [+ socializations +]
+
+nationalize_budget: [+ nationalize_budget +]
+
+factory_takeovers: [+ factory_takeovers +]
+
+moderate_plan_progress: [+ moderate_plan_progress +]
+
+eu: [+ eu +]
+
+eu_progress: [+ eu_progress +]
+
+science: [+ science +]
+
+education_science: [+ education_science +]
+
+lower_tax_rates: [+ lower_tax_rates +]
+
+upper_tax_rates: [+ upper_tax_rates +]
+
+tariffs: [+ tariffs +]
+
+spd_no_confidence: [+ spd_no_confidence +]
+
+no_confidence_against_spd: [+ no_confidence_against_spd +]
+
+n_advisors: [+ n_advisors +]
+
+timers: [+ timers +]
+
+advisor_action_timer: [+ advisor_action_timer +]
+
+confronting_nazis_timer: [+ confronting_nazis_timer +]
+
+crisis_program_timer: [+ crisis_program_timer +]
+
+fundraising_timer: [+ fundraising_timer +]
+
+ideology_timer: [+ ideology_timer +]
+
+inter_party_relationships_timer: [+ inter_party_relationships_timer +]
+
+international_relations_timer: [+ international_relations_timer +]
+
+iron_front_timer: [+ iron_front_timer +]
+
+media_timer: [+ media_timer +]
+
+enemies_timer: [+ enemies_timer +]
+
+party_organizations_timer: [+ party_organizations_timer +]
+
+rally_timer: [+ rally_timer +]
+
+reichsbanner_timer: [+ reichsbanner_timer +]
+
+shuffle_leadership_timer: [+ shuffle_leadership_timer +]
+
+streetfighting_timer: [+ streetfighting_timer +]
+
+peoples_party_timer: [+ peoples_party_timer +]
+
+weimar_plan_timer: [+ weimar_plan_timer +]
+
+n_elections: [+ n_elections +]
+
+no_majority_elections: [+ no_majority_elections +]
+
+in_election: [+ in_election +]
+
+next_election_year: [+ next_election_year +]
+
+next_election_month: [+ next_election_month +]
+
+next_election_time: [+ next_election_time +]
+
+next_presidential_election_year: [+ next_presidential_election_year +]
+
+next_presidential_election_month: [+ next_presidential_election_month +]
+
+agricultural_policy_timer: [+ agricultural_policy_timer +]
+
+domestic_enemies_timer: [+ domestic_enemies_timer +]
+
+economic_policy_timer: [+ economic_policy_timer +]
+
+fiscal_policy_timer: [+ fiscal_policy_timer +]
+
+foreign_policy_timer: [+ foreign_policy_timer +]
+
+judiciary_timer: [+ judiciary_timer +]
+
+labor_affairs_timer: [+ labor_affairs_timer +]
+
+military_policy_timer: [+ military_policy_timer +]
+
+police_timer: [+ police_timer +]
+
+prussian_affairs_timer: [+ prussian_affairs_timer +]
+
+shuffle_cabinet_timer: [+ shuffle_cabinet_timer +]
+
+social_welfare_timer: [+ social_welfare_timer +]
+
+war_guilt_timer: [+ war_guilt_timer +]
+
+womens_rights_timer: [+ womens_rights_timer +]
+
+homosexual_rights_timer: [+ homosexual_rights_timer +]
+
+economic_democracy_timer: [+ economic_democracy_timer +]
+
+coalition_affairs_timer: [+ coalition_affairs_timer +]
+
+weimar_enacting_timer: [+ weimar_enacting_timer +]
+
+referendum_timer: [+ referendum_timer +]
+
+land_referendum_timer: [+ land_referendum_timer +]
+
+nationalization_referendum_timer: [+ nationalization_referendum_timer +]
+
+wtb_referendum_timer: [+ wtb_referendum_timer +]
+
+council_referendum_timer: [+ council_referendum_timer +]
+
+abortion_referendum_timer: [+ abortion_referendum_timer +]
+
+buyer_referendum_timer: [+ buyer_referendum_timer +]
+
+council_development_timer: [+ council_development_timer +]
+
+spanish_war_timer: [+ spanish_war_timer +]
+
+emergency_cuts_timer: [+ emergency_cuts_timer +]
+
+unemployment_insurance_timer: [+ unemployment_insurance_timer +]
+
+sa_ban_timer: [+ sa_ban_timer +]
+
+sh_ban_timer: [+ sh_ban_timer +]
+
+uspd_ultimatum_timer: [+ uspd_ultimatum_timer +]
+
+march_on_berlin_timer: [+ march_on_berlin_timer +]
+
+abysinnia_timer: [+ abysinnia_timer +]
+
+nazi_peak_timer: [+ nazi_peak_timer +]
+
+nazi_reform_timer: [+ nazi_reform_timer +]
+
+laissez_faire_timer: [+ laissez_faire_timer +]
+
+presidential_timer: [+ presidential_timer +]
+
+crispien_advisor: [+ crispien_advisor +]
+
+sender_advisor: [+ sender_advisor +]
+
+levi_advisor: [+ levi_advisor +]
+
+levi_dead: [+ levi_dead +]
+
+rosenfeld_advisor: [+ rosenfeld_advisor +]
+
+seydewitz_advisor: [+ seydewitz_advisor +]
+
+wels_advisor: [+ wels_advisor +]
+
+muller_advisor: [+ muller_advisor +]
+
+muller_dead: [+ muller_dead +]
+
+pfulf_advisor: [+ pfulf_advisor +]
+
+breitscheid_advisor: [+ breitscheid_advisor +]
+
+vogel_advisor: [+ vogel_advisor +]
+
+hilferding_advisor: [+ hilferding_advisor +]
+
+severing_advisor: [+ severing_advisor +]
+
+braun_advisor: [+ braun_advisor +]
+
+juchacz_advisor: [+ juchacz_advisor +]
+
+ebert_advisor: [+ ebert_advisor +]
+
+scheidemann_advisor: [+ scheidemann_advisor +]
+
+leipart_advisor: [+ leipart_advisor +]
+
+aufhauser_advisor: [+ aufhauser_advisor +]
+
+woytinsky_advisor: [+ woytinsky_advisor +]
+
+wissell_advisor: [+ wissell_advisor +]
+
+tarnow_advisor: [+ tarnow_advisor +]
+
+mierendorff_advisor: [+ mierendorff_advisor +]
+
+leber_advisor: [+ leber_advisor +]
+
+schumacher_advisor: [+ schumacher_advisor +]
+
+noske_advisor: [+ noske_advisor +]
+
+baade_advisor: [+ baade_advisor +]
+
+hirschfeld_advisor: [+ hirschfeld_advisor +]
+
+radbruch_advisor: [+ radbruch_advisor +]
+
+stampfer_advisor: [+ stampfer_advisor +]
+
+lobe_advisor: [+ lobe_advisor +]
+
+prussia_spd: [+ prussia_spd +]
+
+prussia_sapd: [+ prussia_sapd +]
+
+prussia_uspd: [+ prussia_uspd +]
+
+prussia_ddp: [+ prussia_ddp +]
+
+prussia_dvp: [+ prussia_dvp +]
+
+prussia_dnvp: [+ prussia_dnvp +]
+
+prussia_z: [+ prussia_z +]
+
+prussia_other: [+ prussia_other +]
+
+prussia_nsdap: [+ prussia_nsdap +]
+
+bavaria_spd: [+ bavaria_spd +]
+
+bavaria_sapd: [+ bavaria_sapd +]
+
+bavaria_uspd: [+ bavaria_uspd +]
+
+bavaria_ddp: [+ bavaria_ddp +]
+
+bavaria_dvp: [+ bavaria_dvp +]
+
+bavaria_dnvp: [+ bavaria_dnvp +]
+
+bavaria_z: [+ bavaria_z +]
+
+bavaria_other: [+ bavaria_other +]
+
+bavaria_nsdap: [+ bavaria_nsdap +]
+
+thuringia_spd: [+ thuringia_spd +]
+
+thuringia_sapd: [+ thuringia_sapd +]
+
+thuringia_uspd: [+ thuringia_uspd +]
+
+thuringia_ddp: [+ thuringia_ddp +]
+
+thuringia_dvp: [+ thuringia_dvp +]
+
+thuringia_dnvp: [+ thuringia_dnvp +]
+
+thuringia_z: [+ thuringia_z +]
+
+thuringia_other: [+ thuringia_other +]
+
+thuringia_nsdap: [+ thuringia_nsdap +]
+
+saxony_spd: [+ saxony_spd +]
+
+saxony_sapd: [+ saxony_sapd +]
+
+saxony_uspd: [+ saxony_uspd +]
+
+saxony_ddp: [+ saxony_ddp +]
+
+saxony_dvp: [+ saxony_dvp +]
+
+saxony_dnvp: [+ saxony_dnvp +]
+
+saxony_z: [+ saxony_z +]
+
+saxony_other: [+ saxony_other +]
+
+saxony_nsdap: [+ saxony_nsdap +]
+
+schaumburg_lippe_spd: [+ schaumburg_lippe_spd +]
+
+schaumburg_lippe_sapd: [+ schaumburg_lippe_sapd +]
+
+schaumburg_lippe_uspd: [+ schaumburg_lippe_uspd +]
+
+schaumburg_lippe_ddp: [+ schaumburg_lippe_ddp +]
+
+schaumburg_lippe_dvp: [+ schaumburg_lippe_dvp +]
+
+schaumburg_lippe_dnvp: [+ schaumburg_lippe_dnvp +]
+
+schaumburg_lippe_z: [+ schaumburg_lippe_z +]
+
+schaumburg_lippe_other: [+ schaumburg_lippe_other +]
+
+schaumburg_lippe_nsdap: [+ schaumburg_lippe_nsdap +]
+
+hamburg_spd: [+ hamburg_spd +]
+
+hamburg_sapd: [+ hamburg_sapd +]
+
+hamburg_uspd: [+ hamburg_uspd +]
+
+hamburg_ddp: [+ hamburg_ddp +]
+
+hamburg_dvp: [+ hamburg_dvp +]
+
+hamburg_dnvp: [+ hamburg_dnvp +]
+
+hamburg_z: [+ hamburg_z +]
+
+hamburg_other: [+ hamburg_other +]
+
+hamburg_nsdap: [+ hamburg_nsdap +]
+
+wurttemberg_spd: [+ wurttemberg_spd +]
+
+wurttemberg_sapd: [+ wurttemberg_sapd +]
+
+wurttemberg_uspd: [+ wurttemberg_uspd +]
+
+wurttemberg_ddp: [+ wurttemberg_ddp +]
+
+wurttemberg_dvp: [+ wurttemberg_dvp +]
+
+wurttemberg_dnvp: [+ wurttemberg_dnvp +]
+
+wurttemberg_z: [+ wurttemberg_z +]
+
+wurttemberg_other: [+ wurttemberg_other +]
+
+wurttemberg_nsdap: [+ wurttemberg_nsdap +]
+
+spd_pl: [+ spd_pl +]
+
+dnvp_pl: [+ dnvp_pl +]
+
+z_pl: [+ z_pl +]
+
+dvp_pl: [+ dvp_pl +]
+
+uspd_pl: [+ uspd_pl +]
+
+ddp_pl: [+ ddp_pl +]
+
+nsdap_pl: [+ nsdap_pl +]
+
+other_pl: [+ other_pl +]
+
+spd_bl: [+ spd_bl +]
+
+z_bl: [+ z_bl +]
+
+nsdap_bl: [+ nsdap_bl +]
+
+dnvp_bl: [+ dnvp_bl +]
+
+dvp_bl: [+ dvp_bl +]
+
+uspd_bl: [+ uspd_bl +]
+
+bb_bl: [+ bb_bl +]
+
+ddp_bl: [+ ddp_bl +]
+
+other_bl: [+ other_bl +]
+
+spd_tl: [+ spd_tl +]
+
+z_tl: [+ z_tl +]
+
+nsdap_tl: [+ nsdap_tl +]
+
+dnvp_tl: [+ dnvp_tl +]
+
+dvp_tl: [+ dvp_tl +]
+
+uspd_tl: [+ uspd_tl +]
+
+ddp_tl: [+ ddp_tl +]
+
+other_tl: [+ other_tl +]
+
+dr_exists: [+ dr_exists +]
+
+spd_sl: [+ spd_sl +]
+
+z_sl: [+ z_sl +]
+
+nsdap_sl: [+ nsdap_sl +]
+
+dnvp_sl: [+ dnvp_sl +]
+
+dvp_sl: [+ dvp_sl +]
+
+uspd_sl: [+ uspd_sl +]
+
+ddp_sl: [+ ddp_sl +]
+
+other_sl: [+ other_sl +]
+
+aspd_sl: [+ aspd_sl +]
+
+spd_schl: [+ spd_schl +]
+
+z_schl: [+ z_schl +]
+
+nsdap_schl: [+ nsdap_schl +]
+
+dnvp_schl: [+ dnvp_schl +]
+
+dvp_schl: [+ dvp_schl +]
+
+uspd_schl: [+ uspd_schl +]
+
+ddp_schl: [+ ddp_schl +]
+
+other_schl: [+ other_schl +]
+
+spd_hl: [+ spd_hl +]
+
+z_hl: [+ z_hl +]
+
+nsdap_hl: [+ nsdap_hl +]
+
+dnvp_hl: [+ dnvp_hl +]
+
+dvp_hl: [+ dvp_hl +]
+
+uspd_hl: [+ uspd_hl +]
+
+ddp_hl: [+ ddp_hl +]
+
+other_hl: [+ other_hl +]
+
+spd_wl: [+ spd_wl +]
+
+z_wl: [+ z_wl +]
+
+nsdap_wl: [+ nsdap_wl +]
+
+dnvp_wl: [+ dnvp_wl +]
+
+dvp_wl: [+ dvp_wl +]
+
+uspd_wl: [+ uspd_wl +]
+
+ddp_wl: [+ ddp_wl +]
+
+other_wl: [+ other_wl +]
+
+landtags_enabled: [+ landtags_enabled +]
+
+legislature_enabled: [+ legislature_enabled +]
+
+spd_previous_presidential_candidate: [+ spd_previous_presidential_candidate +]
+
+spd_previous_presidential_candidate_fullname: [+ spd_previous_presidential_candidate_fullname +]
+
+spd_previous_presidential_candidate_faction: [+ spd_previous_presidential_candidate_faction +]
+
+uspd_previous_presidential_candidate: [+ uspd_previous_presidential_candidate +]
+
+uspd_previous_presidential_candidate_fullname: [+ uspd_previous_presidential_candidate_fullname +]
+
+ddp_previous_presidential_candidate: [+ ddp_previous_presidential_candidate +]
+
+ddp_previous_presidential_candidate_fullname: [+ ddp_previous_presidential_candidate_fullname +]
+
+z_previous_presidential_candidate: [+ z_previous_presidential_candidate +]
+
+z_previous_presidential_candidate_fullname: [+ z_previous_presidential_candidate_fullname +]
+
+bvp_previous_presidential_candidate: [+ bvp_previous_presidential_candidate +]
+
+bvp_previous_presidential_candidate_fullname: [+ bvp_previous_presidential_candidate_fullname +]
+
+dnvp_previous_presidential_candidate: [+ dnvp_previous_presidential_candidate +]
+
+dnvp_previous_presidential_candidate_fullname: [+ dnvp_previous_presidential_candidate_fullname +]
+
+nsdap_previous_presidential_candidate: [+ nsdap_previous_presidential_candidate +]
+
+nsdap_previous_presidential_candidate_fullname: [+ nsdap_previous_presidential_candidate_fullname +]
+
+- @backSpecialScene: Exit debug menu.
