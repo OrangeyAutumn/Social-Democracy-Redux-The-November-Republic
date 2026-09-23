@@ -987,10 +987,10 @@ for (var president of presidents) {
         Q.presidential_relation = Q[president + '_relation'];
     }
 }
-if (Q.spd_majority == 1 || Q.spd_plurality == 1)) { 
+if (Q.spd_majority == 1 || Q.spd_plurality == 1) { 
 Q.spd_president_faction = Q.spd_presidential_candidate_faction; 
 } 
-if (Q.hindenburg_majority == 1 || Q.hindenburg_plurality == 1)) {
+if (Q.hindenburg_majority == 1 || Q.hindenburg_plurality == 1) {
  Q.president = "Hindenburg"; 
 Q.president_fullname = "Paul von Hindenburg"; 
 Q.president_party = "I"; 
