@@ -165,7 +165,7 @@ if (president == "hindenburg") {
 Q.hindenburg_presidential_votes = 0;
 }
 else {
-Q[president + '_presidential_votes'] = Q[president + '_votes']
+Q[president + '_presidential_votes'] = Q[president + '_votes'];
 }
 }
 if (Q.uspd_campaign == 1) {
@@ -413,6 +413,7 @@ if (Q[president + '_presidential_results'] > Q.plurality_winner_votes) {
     Q.plurality_winner = Q[president + '_presidential_candidate'];
     Q.plurality_winner_votes = Q[president + '_presidential_results'];
 	Q[president + '_plurality'] = 1;
+}
 }
 }
 !}
