@@ -40,9 +40,6 @@ Q[faction + '_conference_votes'] = Math.round((Q[faction + '_strength'] / Q.tota
         Q.plurality_winner_conference_votes = Q[faction + '_conference_votes'];
     }
 }
-}
-}
-}
 !}
 go-to: post_congress
 
