@@ -173,7 +173,7 @@ How does our leadership fare at the Conference?
 - @leadership_challenge: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_1_faction +] faction, fare?
 
 @leadership_challenge
-on-arrival: { 
+on-arrival: {! 
 if (Q.coleader_slot < 1 or Q.coleader_slot > 3) { 
 Q.coleader_slot = 1;
 }
