@@ -40,6 +40,192 @@ Which path should we take?
 - @back_uspd_no: Back Karl Liebknecht of the **[+ uspd_name_colour +]**
 - @spd_presidential_menu: Perhaps we should consider a different candidate?
 
+@spd_presidential_menu
+
+- @presidential_candidate_incumbent
+- @presidential_candidate_chancellor
+- @presidential_candidate_vice_chancellor
+- @presidential_candidate_coleader_1
+- @presidential_candidate_coleader_2
+- @presidential_candidate_coleader_3
+- @presidential_candidate_left_leader
+- @presidential_candidate_center_leader
+- @presidential_candidate_labor_leader
+- @presidential_candidate_reformist_leader
+- @presidential_candidate_neorevisionist_leader
+
+@presidential_candidate_incumbent
+title: Run President [+ president +], the incumbent.
+subtitle: The incumbency may give us an advantage over fielding a new candidate.
+view-if: president_party == spd_name
+on-arrival: spd_presidential_candidate = president; spd_presidential_candidate_fullname = president_fullname; spd_presidential_candidate_faction = spd_president_faction
+
+We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_previous
+title: Run [+ spd_presidential_candidate +], our candidate at the last election.
+subtitle: Their high profile from the previous campaign may give us an advantage.
+view-if: (previous_spd_presidential_candidate != president) and (previous_spd_presidential_candidate != chancellor) and (previous_spd_presidential_candidate != "Vacant")
+on-arrival: spd_presidential_candidate = previous_spd_presidential_candidate; spd_presidential_candidate_fullname = previous_spd_presidential_candidate_fullname; spd_presidential_candidate_faction = previous_spd_presidential_candidate_faction
+
+- @spd_presidential_campaign: Now onto the campaign
+    
+@presidential_candidate_chancellor
+Title: Run our Chancellor, [+ chancellor_fullname +] 
+subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
+view-if: chancellor_party == spd_name
+on-arrival: spd_presidential_candidate = chancellor; spd_presidential_candidate_faction = spd_chancellor_faction; spd_presidential_candidate_fullname = chancellor_fullname
+
+We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_vice_chancellor
+Title: Run our Vice-Chancellor, [+ vice_chancellor_fullname +] 
+subtitle: Their high profile from Vice-Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
+view-if: vice_chancellor_party == spd_name
+on-arrival: spd_presidential_candidate = vice_chancellor; spd_presidential_candidate_faction = spd_vice_chancellor_faction; spd_presidential_candidate_fullname = vice_chancellor_fullname
+
+We have made Vice-Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_coleader_1
+title: Run [+ spd_coleader_1_fullname +], our Co-leader.
+view-if: (chancellor != spd_coleader_1 and president != spd_coleader_1 and spd_presidential_candidate != spd_coleader_1)
+on-arrival: spd_presidential_candidate = spd_coleader_1; spd_presidential_candidate_fullname = spd_coleader_1_fullname; spd_presidential_candidate_faction = spd_coleader_1_faction
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_coleader_2
+title: Run [+ spd_coleader_2_fullname +], our Co-leader.
+view-if: (chancellor != spd_coleader_2 and president != spd_coleader_2 and spd_presidential_candidate != spd_coleader_2)
+on-arrival: spd_presidential_candidate = spd_coleader_2; spd_presidential_candidate_fullname = spd_coleader_2_fullname;  spd_presidential_candidate_faction = spd_coleader_2_faction
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_coleader_3
+title: Run [+ spd_coleader_3_fullname +], our Co-leader.
+view-if: (chancellor != spd_coleader_3 and president != spd_coleader_3 and spd_presidential_candidate != spd_coleader_3)
+on-arrival: spd_presidential_candidate = spd_coleader_3; spd_presidential_candidate_fullname = spd_coleader_3_fullname;  spd_presidential_candidate_faction = spd_coleader_3_faction
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_left_leader
+title: Run [+ left_leader_fullname +], the leader of our Left wing.
+on-arrival: {!
+Q.spd_presidential_candidate = Q.left_leader; 
+Q.spd_presidential_candidate_fullname = Q.left_leader_fullname; 
+if (Q.left_leader == "Baade" || Q.left_leader == "Hirschfeld" || Q.left_leader == "Radbruch" || Q.left_leader == "Stampfer" || Q.left_leader == "Löbe") {
+Q.spd_presidential_candidate_faction = "Nonfactional"
+}
+else {
+Q.spd_presidential_candidate_faction = "Left"
+}
+!}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_center_leader
+title: Run [+ center_leader_fullname +], the leader of our Center wing.
+on-arrival: {!
+Q.spd_presidential_candidate = Q.center_leader; 
+Q.spd_presidential_candidate_fullname = Q.center_leader_fullname; 
+if (Q.center_leader == "Baade" || Q.center_leader == "Hirschfeld" || Q.center_leader == "Radbruch" || Q.center_leader == "Stampfer" || Q.center_leader == "Löbe") {
+Q.spd_presidential_candidate_faction = "Nonfactional"
+}
+else {
+Q.spd_presidential_candidate_faction = "Center"
+}
+!}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_labor_leader
+title: Run [+ labor_leader_fullname +], the leader of our Labor wing.
+on-arrival: {!
+Q.spd_presidential_candidate = Q.labor_leader; 
+Q.spd_presidential_candidate_fullname = Q.labor_leader_fullname; 
+if (Q.labor_leader == "Baade" || Q.labor_leader == "Hirschfeld" || Q.labor_leader == "Radbruch" || Q.labor_leader == "Stampfer" || Q.labor_leader == "Löbe") {
+Q.spd_presidential_candidate_faction = "Nonfactional"
+}
+else if (Q.labor_leader == "Mierendorff" || Q.labor_leader == "Schumacher" || Q.labor_leader == "Leber" || Q.labor_leader == "Noske") {
+Q.spd_presidential_candidate_faction = "Neorevisionist"
+}
+else {
+Q.spd_presidential_candidate_faction = "Labor"
+}
+!}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_reformist_leader
+title: Run [+ reformist_leader_fullname +], the leader of our Reformist wing.
+on-arrival: {!
+Q.spd_presidential_candidate = Q.reformist_leader; 
+Q.spd_presidential_candidate_fullname = Q.reformist_leader_fullname; 
+if (Q.reformist_leader == "Baade" || Q.reformist_leader == "Hirschfeld" || Q.reformist_leader == "Radbruch" || Q.reformist_leader == "Stampfer" || Q.reformist_leader == "Löbe") {
+Q.spd_presidential_candidate_faction = "Nonfactional"
+}
+else if (Q.reformist_leader == "Mierendorff" || Q.reformist_leader == "Schumacher" || Q.reformist_leader == "Leber" || Q.reformist_leader == "Noske") {
+Q.spd_presidential_candidate_faction = "Neorevisionist"
+}
+else {
+Q.spd_presidential_candidate_faction = "Reformist"
+}
+!}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_neorevisionist_leader
+title: Run [+ neorevisionist_leader_fullname +], the leader of our Neorevisionist wing.
+view-if: neorevisionism > 0
+on-arrival: {!
+Q.spd_presidential_candidate = Q.neorevisionist_leader; 
+Q.spd_presidential_candidate_fullname = Q.neorevisionist_leader_fullname; 
+if (Q.neorevisionist_leader == "Baade" || Q.neorevisionist_leader == "Hirschfeld" || Q.neorevisionist_leader == "Radbruch" || Q.neorevisionist_leader == "Stampfer" || Q.neorevisionist_leader == "Löbe") {
+Q.spd_presidential_candidate_faction = "Nonfactional"
+}
+else {
+Q.spd_presidential_candidate_faction = "Neorevisionist"
+}
+!}
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_braun
+title: Run Otto Braun [? if spd_coleader_1 == "Braun" or spd_coleader_2 == "Braun" or spd_coleader_3 == "Braun" :, our Co-leader ?][? if reformist_leader == "Braun" :, our Co-leader Reformist faction leader ?]: This is the Historical option.
+view-if: (chancellor != "Braun" and president != "Braun" and previous_spd_presidential_candidate != "Braun" and vice_chancellor != "Braun")
+on-arrival: spd_presidential_candidate = "Braun"; spd_presidential_candidate_faction = "Reformist"; spd_presidential_candidate_fullname = "Otto Braun"
+
+We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+
+- @spd_presidential_campaign: Now onto the campaign
+
+@presidential_candidate_lobe_25
+title: Run Paul Löbe, the President of the Reichstag [? if spd_coleader_1 == "Löbe" or spd_coleader_2 == "Löbe" or spd_coleader_3 == "Löbe" : and our Co-leader ?][? if left_leader == "Löbe" : and our Left faction leader ?][? if center_leader == "Löbe" : and our Center faction leader ?][? if labor_leader == "Löbe" : and our Labor faction leader ?][? if reformist_leader == "Löbe" : and our Reformist faction leader ?][? if neorevisionist_leader == "Löbe" : and our Neorevisionist faction leader ?].
+view-if: year == 1925
+choose-if: never
+unavailable-subtitle: Löbe insists his place is in the Reichstag.
+
 @spd_presidential_campaign
 title: We choose [+ spd_presidential_candidate +] 
 subtitle: The Campaign begins.
@@ -270,7 +456,7 @@ if (Q[president + '_presidential_results'] >= Q.plurality_winner_votes) {
 }
 }
 !}
-go-to: round1_results if round25 == 1 and not no_majority_1; no_majority_round1 if round25 == 1 and no_majority_1; round2_results if round25 >= 2 
+go-to: no_majority_round1 if round25 == 1 and no_majority_1; final_results if not no_majority_1 or round25 >= 2
 
 Results:
 
@@ -291,126 +477,6 @@ Results:
 [? if hindenburg_campaign : Hindenburg - [+ hindenburg_presidential_results +]% ?]
 
 [? if nsdap_campaign : [+ nsdap_presidential_candidate +] - [+ nsdap_presidential_results +]% ?]
-
-@round1_results
-on-arrival: {!
-previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; 
-var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
-for (var president of presidents) {
-Q[president + '_campaign'] = 0;
-Q['uspd_support_' + president] = 0;
-Q['spd_support_' + president] = 0;
-Q['ddp_support_' + president] = 0;
-Q['z_support_' + president] = 0;
-Q['bvp_support_' + president] = 0;
-Q['dvp_support_' + president] = 0;
-Q['dnvp_support_' + president] = 0;
-Q['nsdap_support_' + president] = 0;
-Q['other_support_' + president] = 0;
-Q.presidential_relation = Q[president + '_relation'];
-Q['previous_' + president + '_presidential_candidate'] = Q[president + '_presidential_candidate']; 
-Q['previous_' + president + '_presidential_candidate_fullname'] = Q[president + '_presidential_candidate_fullname']; 
-if (Q[president + '_majority'] == 1) {
-Q.president = Q[president + '_presidential_candidate'];
-Q.president_fullname = Q[president + '_presidential_candidate_fullname'];
-Q.president_party = Q[president + '_name'];
-Q.president_party_colour = Q[president + '_name_colour'];
-}
-}
-if (Q.spd_majority == 1) {
-Q.spd_president_faction = Q.spd_presidential_candidate_faction;
-}
-if (Q.hindenburg_majority == 1) {
-Q.president = "Hindenburg";
-Q.president_fullname = "Paul von Hindenburg";
-Q.president_party = "I";
-Q.president_party_colour = Q.independent_name_colour;
-Q.presidential_relation = 10;
-}
-!}
-go-to: hindenburg_wins if hindenburg_majority == 1; z_wins if z_majority == 1; spd_wins if spd_majority == 1; ddp_wins if ddp_majority == 1; uspd_wins if uspd_majority == 1; bvp_wins if bvp_majority == 1; dvp_wins if dvp_majority == 1; dnvp_wins if dnvp_majority; nsdap_wins if nsdap_majority
-
-@hindenburg_wins
-on-arrival: pro_republic -= 5; nationalism += 5; workers_spd -= 6; unemployed_spd -= 6; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 5;
-
-Disaster strikes! Despite our best effort, Paul von Hindenburg has won the election with the backing of all the reactionary right organized under the **Reichsblock** behind him. Many in our party anticipate an immediate restructuring of Germany along authoritarian and aristocratic lines and though he seems, for now, to be following the constitution, we must be wary. Regardless, this signals a dark turn for German democracy. Who knows what Hindenburg may do in power?
-
-@z_wins
-on-arrival: z_relation += 10; pro_republic += 5; nationalism -= 5; ddp_relation += 5; reformist_strength += 5;
-
-[+ z_presidential_candidate_fullname +] has won the election with the backing of all the republican left organized under the **Volksblock** behind him. This is a victory for German democracy and the continued normalization of the republic.
-
-@spd_wins
-on-arrival: president_party = spd_name; presidential_relation = 75; pro_republic += 8; socialism += 4; nationalism -= 2; dvp_relation -= 5; left_dissent -= 5; center_dissent -= 5; reformist_dissent -= 5; labor_dissent -= 5; workers_spd += 5 * (1 - dissent); new_middle_spd += 4 * (1 - dissent); unemployed_spd += 4 * (1 - dissent); rural_spd += 2 * (1 - dissent);
-
-[+ spd_presidential_candidate +] has won the election! This has only been possible thanks to the backing of the [? if volksblock == 1 : **Volksblock**, the Center and Democratic parties ?][? if einheitsblock == 1 : **Einheitsblock**, the Socialist United Front ?]. Regardless, the continuation of Social Democratic rule over Germany is a significant victory, and the party is jubilant.
-
-@ddp_wins
-on-arrival: pro_republic += 2; socialism -= 5; left_dissent += 5; dvp_relation += 10; 
-
-[? if ddp_presidential_candidate == "Gessler" : Otto Gessler has won the election as the candidate of the democratic parties, including the **[+ dvp_name_colour +]**. We have in this campaign pulled the **[+ dvp_name_colour +]** away from the **[+ dnvp_name_colour +]** and the right as a whole towards the center, but also created a hole on the left that the **[+ uspd_name_colour +]** is eager to fill. ?][? if ddp_presidential_candidate != "Gessler" : [+ ddp_presidential_candidate_fullname +] has, despite a disappointing first round performance, managed to emerge from the second round victorious, at the head of the **Volksblock**. ?]
-
-@uspd_wins
-on-arrival: pro_republic -= 10; socialism += 10; workers_spd -= 5; unemployed_spd -= 5; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 15; 
-go-to: civil_war
-
-[+ uspd_presidential_candidate_fullname +] has won the Presidential Election, to the shock of the nation! Our party is split between delight, horror, and concern. The reactionary right, with the support of the appalled Bourgeois parties, have launched a coup, plunging the nation into Civil War.
-
-@bvp_wins
-
-Literally not even possible.
-
-@dvp_wins
-on-arrival: pro_republic -= 3; nationalism += 3; workers_spd -= 2; unemployed_spd -= 2; workers_uspd += 2; unemployed_uspd += 2; west_relation += 1; east_relation -= 1; dvp_relation -= 3; uspd_relation += 3; left_strength += 3;
-
-[+ dvp_presidential_candidate_fullname +] of the **[+ dvp_name_colour +]** has won the election at the head of the Reichsblock! This is a defeat for Social Democracy, and even the Republic for itself, but it will, and must, carry on.
-
-@dnvp_wins
-on-arrival: pro_republic -= 7; nationalism += 7; workers_spd -= 5; unemployed_spd -= 5; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 5;
-
-To our horror, [+ dnvp_presidential_candidate_fullname +] of the **[+ dnvp_name_colour +]** has won the Presidential Election! With the Presidency in the hands of an anti-monarchist and anti-republican, our young Republic may already be drawing to a close…
-
-@nsdap_wins
-on-arrival: {!
-if (Q.presidential_powers != 1) {
-Q.chancellor = Q.nsdap_presidential_candidate; 
-Q.chancellor_fullname = Q.nsdap_presidential_candidate_fullname 
-Q.chancellor_party = Q.nsdap_name
-Q.chancellor_party_colour = Q.nsdap_name_colour
-}
-Q.pro_republic -= 10; 
-Q.nationalism += 10; 
-Q.workers_spd -= 10; 
-Q.unemployed_spd -= 10; 
-Q.workers_uspd += 10; 
-Q.unemployed_uspd += 10; 
-Q.west_relation -= 4; 
-Q.east_relation -= 4; 
-Q.dvp_relation -= 5; 
-Q.uspd_relation += 15; 
-Q.left_strength += 15;
-!} 
-
-To our horror, [+ nsdap_presidential_candidate_fullname +] of the **[+ nsdap_name_colour +]** has won the Presidential Election! With him wasting no time in consolidating power, the twilight of the Republic is upon us…
-
-- @nsdap_victory: What do we do now?
-- @nsdap_referendum: What do we do now?
-- @nsdap_stall: What do we do now?
-
-@nsdap_victory
-view-if: presidential_powers != 1
-go-to: hitler_takes_power
-
-@nsdap_referendum
-view-if: presidential_powers == 1 and sa_banned != 1
-on-arrival: pro_republic -= 5; workers_nsdap += 3; unemployed_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 3; rural_nsdap += 3
-go-to: hitler_constitution
-
-@nsdap_stall
-view-if: presidential_powers == 1 and sa_banned == 1
-on-arrival: judicial_reform -= 1 if judicial_reform >= 1; interior_police_loyalty -= 0.05; pro_republic -= 10; workers_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 5; old_middle_nsdap += 5; rural_nsdap += 5
-
-Thanks to our reforms weakening the presidency's powers and the banning of the SA, [+ nsdap_presidential_candidate +] is unable to immediately consolidate power as he would like to. He has however taken full advantage of his new position for campaigning, attempting to spread the Nazi message to all German citizens in preparation for the next election.
 
 @no_majority_round1
 go-to: spd_consolidation if spd_campaign
@@ -901,228 +967,118 @@ go-to: campaign_round_two
 
 We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted == 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
 
-@round2_results
+@final_results
 on-arrival: {!
-previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; 
-previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; 
-var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
+previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction;
+var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg'];
+var support_parties = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'dnvp', 'nsdap', 'other'];
 for (var president of presidents) {
-Q[president + '_campaign'] = 0;
-Q['uspd_support_' + president] = 0;
-Q['spd_support_' + president] = 0;
-Q['ddp_support_' + president] = 0;
-Q['z_support_' + president] = 0;
-Q['bvp_support_' + president] = 0;
-Q['dvp_support_' + president] = 0;
-Q['dnvp_support_' + president] = 0;
-Q['nsdap_support_' + president] = 0;
-Q['other_support_' + president] = 0;
-Q.presidential_relation = Q[president + '_relation'];
-Q['previous_' + president + '_presidential_candidate'] = Q[president + '_presidential_candidate']; 
-Q['previous_' + president + '_presidential_candidate_fullname'] = Q[president + '_presidential_candidate_fullname']; 
-if (Q[president + '_majority'] == 1 || Q[president + '_plurality'] == 1) {
-Q.president = Q[president + '_presidential_candidate'];
-Q.president_fullname = Q[president + '_presidential_candidate_fullname'];
-Q.president_party = Q[president + '_name'];
-Q.president_party_colour = Q[president + '_name_colour'];
+    Q[president + '_campaign'] = 0;
+    for (var party of support_parties) {
+        Q[party + '_support_' + president] = 0;
+    }
+    Q['previous_' + president + '_presidential_candidate'] = Q[president + '_presidential_candidate'];
+    Q['previous_' + president + '_presidential_candidate_fullname'] = Q[president + '_presidential_candidate_fullname'];
+    if (Q[president + '_majority'] == 1 || Q[president + '_plurality'] == 1) {
+        Q.president = Q[president + '_presidential_candidate'];
+        Q.president_fullname = Q[president + '_presidential_candidate_fullname'];
+        Q.president_party = Q[president + '_name'];
+        Q.president_party_colour = Q[president + '_name_colour'];
+        Q.presidential_relation = Q[president + '_relation'];
+    }
 }
-}
-if (Q.spd_majority == 1 || Q.spd_plurality == 1) {
-Q.spd_president_faction = Q.spd_presidential_candidate_faction;
-}
-if (Q.hindenburg_majority == 1 || Q.hindenburg_plurality == 1) {
-Q.president = "Hindenburg";
-Q.president_fullname = "Paul von Hindenburg";
-Q.president_party = "I";
-Q.president_party_colour = Q.independent_name_colour;
-Q.presidential_relation = 10;
-}
+if (Q.spd_majority == 1 || Q.spd_plurality == 1)) { 
+Q.spd_president_faction = Q.spd_presidential_candidate_faction; 
+} 
+if (Q.hindenburg_majority == 1 || Q.hindenburg_plurality == 1)) {
+ Q.president = "Hindenburg"; 
+Q.president_fullname = "Paul von Hindenburg"; 
+Q.president_party = "I"; 
+Q.president_party_colour = Q.independent_name_colour; 
+Q.presidential_relation = 10; 
+} 
 !}
 go-to: hindenburg_wins if hindenburg_majority or hindenburg_plurality; spd_wins if spd_majority or spd_plurality; z_wins if z_majority or z_plurality; ddp_wins if ddp_majority or ddp_plurality; uspd_wins if uspd_majority or uspd_plurality; dvp_wins if dvp_majority or dvp_plurality; bvp_wins if bvp_majority or bvp_plurality; dnvp_wins if dnvp_majority or dnvp_plurality; nsdap_wins if nsdap_majority or nsdap_plurality
 
-@spd_presidential_menu
+@hindenburg_wins
+on-arrival: pro_republic -= 5; nationalism += 5; workers_spd -= 6; unemployed_spd -= 6; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 5;
 
-- @presidential_candidate_incumbent
-- @presidential_candidate_chancellor
-- @presidential_candidate_vice_chancellor
-- @presidential_candidate_coleader_1
-- @presidential_candidate_coleader_2
-- @presidential_candidate_coleader_3
-- @presidential_candidate_left_leader
-- @presidential_candidate_center_leader
-- @presidential_candidate_labor_leader
-- @presidential_candidate_reformist_leader
-- @presidential_candidate_neorevisionist_leader
+Disaster strikes! Despite our best effort, Paul von Hindenburg has won the election with the backing of all the reactionary right organized under the **Reichsblock** behind him. Many in our party anticipate an immediate restructuring of Germany along authoritarian and aristocratic lines and though he seems, for now, to be following the constitution, we must be wary. Regardless, this signals a dark turn for German democracy. Who knows what Hindenburg may do in power?
 
-@presidential_candidate_incumbent
-title: Run President [+ president +], the incumbent.
-subtitle: The incumbency may give us an advantage over fielding a new candidate.
-view-if: president_party == spd_name
-on-arrival: spd_presidential_candidate = president; spd_presidential_candidate_fullname = president_fullname; spd_presidential_candidate_faction = spd_president_faction
+@z_wins
+on-arrival: z_relation += 10; pro_republic += 5; nationalism -= 5; ddp_relation += 5; reformist_strength += 5;
 
-We have made the incumbent President [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections.
+[+ z_presidential_candidate_fullname +] has won the election with the backing of all the republican left organized under the **Volksblock** behind him. This is a victory for German democracy and the continued normalization of the republic.
 
-- @spd_presidential_campaign: Now onto the campaign
+@spd_wins
+on-arrival: president_party = spd_name; presidential_relation = 75; pro_republic += 8; socialism += 4; nationalism -= 2; dvp_relation -= 5; left_dissent -= 5; center_dissent -= 5; reformist_dissent -= 5; labor_dissent -= 5; workers_spd += 5 * (1 - dissent); new_middle_spd += 4 * (1 - dissent); unemployed_spd += 4 * (1 - dissent); rural_spd += 2 * (1 - dissent);
 
-@presidential_candidate_previous
-title: Run [+ spd_presidential_candidate +], our candidate at the last election.
-subtitle: Their high profile from the previous campaign may give us an advantage.
-view-if: (previous_spd_presidential_candidate != president) and (previous_spd_presidential_candidate != chancellor) and (previous_spd_presidential_candidate != "Vacant")
-on-arrival: spd_presidential_candidate = previous_spd_presidential_candidate; spd_presidential_candidate_fullname = previous_spd_presidential_candidate_fullname; spd_presidential_candidate_faction = previous_spd_presidential_candidate_faction
+[+ spd_presidential_candidate +] has won the election! This has only been possible thanks to the backing of the [? if volksblock == 1 : **Volksblock**, the Center and Democratic parties ?][? if einheitsblock == 1 : **Einheitsblock**, the Socialist United Front ?]. Regardless, the continuation of Social Democratic rule over Germany is a significant victory, and the party is jubilant.
 
-- @spd_presidential_campaign: Now onto the campaign
-    
-@presidential_candidate_chancellor
-Title: Run our Chancellor, [+ chancellor_fullname +] 
-subtitle: Their high profile from Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
-view-if: chancellor_party == spd_name
-on-arrival: spd_presidential_candidate = chancellor; spd_presidential_candidate_faction = spd_chancellor_faction; spd_presidential_candidate_fullname = chancellor_fullname
+@ddp_wins
+on-arrival: pro_republic += 2; socialism -= 5; left_dissent += 5; dvp_relation += 10; 
 
-We have made Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
+[? if ddp_presidential_candidate == "Gessler" : Otto Gessler has won the election as the candidate of the democratic parties, including the **[+ dvp_name_colour +]**. We have in this campaign pulled the **[+ dvp_name_colour +]** away from the **[+ dnvp_name_colour +]** and the right as a whole towards the center, but also created a hole on the left that the **[+ uspd_name_colour +]** is eager to fill. ?][? if ddp_presidential_candidate != "Gessler" : [+ ddp_presidential_candidate_fullname +] has, despite a disappointing first round performance, managed to emerge from the second round victorious, at the head of the **Volksblock**. ?]
 
-- @spd_presidential_campaign: Now onto the campaign
+@uspd_wins
+on-arrival: pro_republic -= 10; socialism += 10; workers_spd -= 5; unemployed_spd -= 5; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 15; 
+go-to: civil_war
 
-@presidential_candidate_vice_chancellor
-Title: Run our Vice-Chancellor, [+ vice_chancellor_fullname +] 
-subtitle: Their high profile from Vice-Chancellorship may give us an advantage. They will have to resign the Chancellorship if they win, however.
-view-if: vice_chancellor_party == spd_name
-on-arrival: spd_presidential_candidate = vice_chancellor; spd_presidential_candidate_faction = spd_vice_chancellor_faction; spd_presidential_candidate_fullname = vice_chancellor_fullname
+[+ uspd_presidential_candidate_fullname +] has won the Presidential Election, to the shock of the nation! Our party is split between delight, horror, and concern. The reactionary right, with the support of the appalled Bourgeois parties, have launched a coup, plunging the nation into Civil War.
 
-We have made Vice-Chancellor [+ spd_presidential_candidate +] our candidate for the upcoming Presidential elections. 
+@bvp_wins
 
-- @spd_presidential_campaign: Now onto the campaign
+Literally not even possible.
 
-@presidential_candidate_coleader_1
-title: Run [+ spd_coleader_1_fullname +], our Co-leader.
-view-if: (chancellor != spd_coleader_1 and president != spd_coleader_1 and spd_presidential_candidate != spd_coleader_1)
-on-arrival: spd_presidential_candidate = spd_coleader_1; spd_presidential_candidate_fullname = spd_coleader_1_fullname; spd_presidential_candidate_faction = spd_coleader_1_faction
+@dvp_wins
+on-arrival: pro_republic -= 3; nationalism += 3; workers_spd -= 2; unemployed_spd -= 2; workers_uspd += 2; unemployed_uspd += 2; west_relation += 1; east_relation -= 1; dvp_relation -= 3; uspd_relation += 3; left_strength += 3;
 
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+[+ dvp_presidential_candidate_fullname +] of the **[+ dvp_name_colour +]** has won the election at the head of the Reichsblock! This is a defeat for Social Democracy, and even the Republic for itself, but it will, and must, carry on.
 
-- @spd_presidential_campaign: Now onto the campaign
+@dnvp_wins
+on-arrival: pro_republic -= 7; nationalism += 7; workers_spd -= 5; unemployed_spd -= 5; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 5;
 
-@presidential_candidate_coleader_2
-title: Run [+ spd_coleader_2_fullname +], our Co-leader.
-view-if: (chancellor != spd_coleader_2 and president != spd_coleader_2 and spd_presidential_candidate != spd_coleader_2)
-on-arrival: spd_presidential_candidate = spd_coleader_2; spd_presidential_candidate_fullname = spd_coleader_2_fullname;  spd_presidential_candidate_faction = spd_coleader_2_faction
+To our horror, [+ dnvp_presidential_candidate_fullname +] of the **[+ dnvp_name_colour +]** has won the Presidential Election! With the Presidency in the hands of an anti-monarchist and anti-republican, our young Republic may already be drawing to a close…
 
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
-
-- @spd_presidential_campaign: Now onto the campaign
-
-@presidential_candidate_coleader_3
-title: Run [+ spd_coleader_3_fullname +], our Co-leader.
-view-if: (chancellor != spd_coleader_3 and president != spd_coleader_3 and spd_presidential_candidate != spd_coleader_3)
-on-arrival: spd_presidential_candidate = spd_coleader_3; spd_presidential_candidate_fullname = spd_coleader_3_fullname;  spd_presidential_candidate_faction = spd_coleader_3_faction
-
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
-
-- @spd_presidential_campaign: Now onto the campaign
-
-@presidential_candidate_left_leader
-title: Run [+ left_leader_fullname +], the leader of our Left wing.
+@nsdap_wins
 on-arrival: {!
-Q.spd_presidential_candidate = Q.left_leader; 
-Q.spd_presidential_candidate_fullname = Q.left_leader_fullname; 
-if (Q.left_leader == "Baade" || Q.left_leader == "Hirschfeld" || Q.left_leader == "Radbruch" || Q.left_leader == "Stampfer" || Q.left_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = "Nonfactional"
+if (Q.presidential_powers != 1) {
+Q.chancellor = Q.nsdap_presidential_candidate; 
+Q.chancellor_fullname = Q.nsdap_presidential_candidate_fullname 
+Q.chancellor_party = Q.nsdap_name
+Q.chancellor_party_colour = Q.nsdap_name_colour
 }
-else {
-Q.spd_presidential_candidate_faction = "Left"
-}
-!}
+Q.pro_republic -= 10; 
+Q.nationalism += 10; 
+Q.workers_spd -= 10; 
+Q.unemployed_spd -= 10; 
+Q.workers_uspd += 10; 
+Q.unemployed_uspd += 10; 
+Q.west_relation -= 4; 
+Q.east_relation -= 4; 
+Q.dvp_relation -= 5; 
+Q.uspd_relation += 15; 
+Q.left_strength += 15;
+!} 
 
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+To our horror, [+ nsdap_presidential_candidate_fullname +] of the **[+ nsdap_name_colour +]** has won the Presidential Election! With him wasting no time in consolidating power, the twilight of the Republic is upon us…
 
-- @spd_presidential_campaign: Now onto the campaign
+- @nsdap_victory: What do we do now?
+- @nsdap_referendum: What do we do now?
+- @nsdap_stall: What do we do now?
 
-@presidential_candidate_center_leader
-title: Run [+ center_leader_fullname +], the leader of our Center wing.
-on-arrival: {!
-Q.spd_presidential_candidate = Q.center_leader; 
-Q.spd_presidential_candidate_fullname = Q.center_leader_fullname; 
-if (Q.center_leader == "Baade" || Q.center_leader == "Hirschfeld" || Q.center_leader == "Radbruch" || Q.center_leader == "Stampfer" || Q.center_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = "Nonfactional"
-}
-else {
-Q.spd_presidential_candidate_faction = "Center"
-}
-!}
+@nsdap_victory
+view-if: presidential_powers != 1
+go-to: hitler_takes_power
 
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
+@nsdap_referendum
+view-if: presidential_powers == 1 and sa_banned != 1
+on-arrival: pro_republic -= 5; workers_nsdap += 3; unemployed_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 3; rural_nsdap += 3
+go-to: hitler_constitution
 
-- @spd_presidential_campaign: Now onto the campaign
+@nsdap_stall
+view-if: presidential_powers == 1 and sa_banned == 1
+on-arrival: judicial_reform -= 1 if judicial_reform >= 1; interior_police_loyalty -= 0.05; pro_republic -= 10; workers_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 5; old_middle_nsdap += 5; rural_nsdap += 5
 
-@presidential_candidate_labor_leader
-title: Run [+ labor_leader_fullname +], the leader of our Labor wing.
-on-arrival: {!
-Q.spd_presidential_candidate = Q.labor_leader; 
-Q.spd_presidential_candidate_fullname = Q.labor_leader_fullname; 
-if (Q.labor_leader == "Baade" || Q.labor_leader == "Hirschfeld" || Q.labor_leader == "Radbruch" || Q.labor_leader == "Stampfer" || Q.labor_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = "Nonfactional"
-}
-else if (Q.labor_leader == "Mierendorff" || Q.labor_leader == "Schumacher" || Q.labor_leader == "Leber" || Q.labor_leader == "Noske") {
-Q.spd_presidential_candidate_faction = "Neorevisionist"
-}
-else {
-Q.spd_presidential_candidate_faction = "Labor"
-}
-!}
-
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
-
-- @spd_presidential_campaign: Now onto the campaign
-
-@presidential_candidate_reformist_leader
-title: Run [+ reformist_leader_fullname +], the leader of our Reformist wing.
-on-arrival: {!
-Q.spd_presidential_candidate = Q.reformist_leader; 
-Q.spd_presidential_candidate_fullname = Q.reformist_leader_fullname; 
-if (Q.reformist_leader == "Baade" || Q.reformist_leader == "Hirschfeld" || Q.reformist_leader == "Radbruch" || Q.reformist_leader == "Stampfer" || Q.reformist_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = "Nonfactional"
-}
-else if (Q.reformist_leader == "Mierendorff" || Q.reformist_leader == "Schumacher" || Q.reformist_leader == "Leber" || Q.reformist_leader == "Noske") {
-Q.spd_presidential_candidate_faction = "Neorevisionist"
-}
-else {
-Q.spd_presidential_candidate_faction = "Reformist"
-}
-!}
-
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
-
-- @spd_presidential_campaign: Now onto the campaign
-
-@presidential_candidate_neorevisionist_leader
-title: Run [+ neorevisionist_leader_fullname +], the leader of our Neorevisionist wing.
-view-if: neorevisionism > 0
-on-arrival: {!
-Q.spd_presidential_candidate = Q.neorevisionist_leader; 
-Q.spd_presidential_candidate_fullname = Q.neorevisionist_leader_fullname; 
-if (Q.neorevisionist_leader == "Baade" || Q.neorevisionist_leader == "Hirschfeld" || Q.neorevisionist_leader == "Radbruch" || Q.neorevisionist_leader == "Stampfer" || Q.neorevisionist_leader == "Löbe") {
-Q.spd_presidential_candidate_faction = "Nonfactional"
-}
-else {
-Q.spd_presidential_candidate_faction = "Neorevisionist"
-}
-!}
-
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
-
-- @spd_presidential_campaign: Now onto the campaign
-
-@presidential_candidate_braun
-title: Run Otto Braun [? if spd_coleader_1 == "Braun" or spd_coleader_2 == "Braun" or spd_coleader_3 == "Braun" :, our Co-leader ?][? if reformist_leader == "Braun" :, our Co-leader Reformist faction leader ?]: This is the Historical option.
-view-if: (chancellor != "Braun" and president != "Braun" and previous_spd_presidential_candidate != "Braun" and vice_chancellor != "Braun")
-on-arrival: spd_presidential_candidate = "Braun"; spd_presidential_candidate_faction = "Reformist"; spd_presidential_candidate_fullname = "Otto Braun"
-
-We have made [+ spd_presidential_candidate_fullname +] our candidate for the upcoming Presidential elections.
-
-- @spd_presidential_campaign: Now onto the campaign
-
-@presidential_candidate_lobe_25
-title: Run Paul Löbe, the President of the Reichstag [? if spd_coleader_1 == "Löbe" or spd_coleader_2 == "Löbe" or spd_coleader_3 == "Löbe" : and our Co-leader ?][? if left_leader == "Löbe" : and our Left faction leader ?][? if center_leader == "Löbe" : and our Center faction leader ?][? if labor_leader == "Löbe" : and our Labor faction leader ?][? if reformist_leader == "Löbe" : and our Reformist faction leader ?][? if neorevisionist_leader == "Löbe" : and our Neorevisionist faction leader ?].
-view-if: year == 1925
-choose-if: never
-unavailable-subtitle: Löbe insists his place is in the Reichstag.
+Thanks to our reforms weakening the presidency's powers and the banning of the SA, [+ nsdap_presidential_candidate +] is unable to immediately consolidate power as he would like to. He has however taken full advantage of his new position for campaigning, attempting to spread the Nazi message to all German citizens in preparation for the next election.
 
