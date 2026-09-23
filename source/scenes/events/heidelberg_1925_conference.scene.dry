@@ -2,7 +2,7 @@ title: Heidelberg Conference
 subtitle: The SPD holds a party conference in Heidelberg
 new-page: true
 tags: event
-view-if: year == 1925 and month >= 2
+view-if: year == 1925 and month >= 6
 set-jump: post_congress
 max-visits: 1
 
