@@ -18,24 +18,19 @@ Another issue is that of **Saxony,** where the regional party organization has s
 on-arrival: {!
 if (Q.neorevisionism == 1) {
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"]
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'}
 }
 else {
 var factions = ["left", "center", "labor", "reformist"]
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
-}
-if (Q.neorevisionism == 1) {
-Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
-}
-else {
-Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist'}
 }
 Q.conference_majority = "None";
 Q.plurality_winner = "None";
 Q.plurality_winner_conference_votes = 0;
 Q.total_strength = 0;
 for (var faction of factions) {
-Q[faction + '_conference_votes'] = 0;
+Q.total_strength += Q[faction + '_strength'];
+Q[faction + '_conference_votes'] = 0 ;
 Q[faction + '_conference_votes'] = Math.round((Q[faction + '_strength'] / Q.total_strength) * 1000) / 10;
     if (Q[faction + '_conference_votes'] >= 50) {
         Q.conference_majority = factionNames[faction];
@@ -267,7 +262,7 @@ go-to: post_challenge
 **[+ center_leader_fullname +]** wins in a victory for the **[+ spd_center_colour +]** faction!
 
 @labor_wins
-view-if: coleader_faction != "Labor" and labor_leader != "Vacant" and spd_coleader_1 != labor_leader and spd_coleader_2 != labor_leader and spd_coleader_3 != labor_leader
+view-if: coleader_faction != "Labor" and labor_leader != "Vacant"  and spd_coleader_1 != labor_leader and spd_coleader_2 != labor_leader and spd_coleader_3 != labor_leader
 choose-if: (labor_conference_votes >= 50) or (labor_conference_votes >= left_conference_votes and (labor_conference_votes+left_conference_votes) >= 50) or (labor_conference_votes >= reformist_conference_votes and labor_conference_votes >= neorevisionist_conference_votes and (labor_conference_votes+reformist_conference_votes+neorevisionist_conference_votes) >= 50) or (labor_conference_votes >= center_conference_votes and (labor_conference_votes+center_conference_votes) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer") or (labor_leader == "Löbe")
 on-arrival: {!
 Q["spd_coleader_" + Q.coleader_slot] = Q.labor_leader;
@@ -344,7 +339,7 @@ go-to: leadership_challenge if coleader_slot <= 3; end if coleader_slot >= 4
 @end
 on-arrival: {!
 var advisors = ["crispien", "sender", "levi", "rosenfeld", "seydewitz", "siemsen", "wels", "muller", "pfulf", "breitscheid", "vogel", "hilferding", "severing", "braun", "ebert", "juchacz", "scheidemann", "leipart", "aufhauser", "woytinsky", "wissell", "mierendorff", "leber", "schumacher", "noske", "baade", "hirschfeld", "radbruch", "stampfer", "lobe"]
-tags = {"crispien": "Crispien", "sender": "Sender", "levi": "Levi", "rosenfeld": "Rosenfeld", "seydewitz": "Seydewitz", "siemsen": "Siemsen", "wels": "Wels", "muller": "Müller", "pfulf": "Pfülf", "breitscheid": "Breitscheid", "vogel": "Vogel", "hilferding": "Hilferding", "severing": "Severing", "braun": "Braun", "ebert": "Ebert", "juchacz": "Juchacz", "scheidemann": "Scheidemann", "leipart": "Leipart", "aufhauser": "Aufhäuser", "woytinsky": "Woytinsky", "wissell": "Wissell", "mierendorff": "Mierendorff", "leber": "Leber", "schumacher": "Schumacher", "noske": "Noske", "baade": "Baade", "hirschfeld": "Hirschfeld", "radbruch": "Radbruch", "stampfer": "Stampfer", "lobe": "Löbe"}
+var tags = {"crispien": "Crispien", "sender": "Sender", "levi": "Levi", "rosenfeld": "Rosenfeld", "seydewitz": "Seydewitz", "siemsen": "Siemsen", "wels": "Wels", "muller": "Müller", "pfulf": "Pfülf", "breitscheid": "Breitscheid", "vogel": "Vogel", "hilferding": "Hilferding", "severing": "Severing", "braun": "Braun", "ebert": "Ebert", "juchacz": "Juchacz", "scheidemann": "Scheidemann", "leipart": "Leipart", "aufhauser": "Aufhäuser", "woytinsky": "Woytinsky", "wissell": "Wissell", "mierendorff": "Mierendorff", "leber": "Leber", "schumacher": "Schumacher", "noske": "Noske", "baade": "Baade", "hirschfeld": "Hirschfeld", "radbruch": "Radbruch", "stampfer": "Stampfer", "lobe": "Löbe"}
 for (var advisor of advisors) {
 Q[advisor + '_advisor'] = 0;
     if (Q.spd_coleader_1 == tags[advisor] || Q.spd_coleader_2 == tags[advisor] || Q.spd_coleader_3 == tags[advisor]) {
@@ -352,7 +347,7 @@ Q[advisor + '_advisor'] = 0;
     }
 }
 var factions = ["left", "center", "labor", "reformist", "neorevisionist"];
-factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'};
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'};
 for (var faction of factions) {
 if (Q.spd_coleader_1_faction == factionNames[faction] || Q.spd_coleader_2_faction == factionNames[faction] || Q.spd_coleader_3_faction == factionNames[faction]) {
 Q[faction + '_leader'] = "Vacant";
