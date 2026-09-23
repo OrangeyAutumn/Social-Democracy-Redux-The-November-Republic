@@ -1,6 +1,5 @@
 title: Root Scene
 new-page: true
-on-arrival: use_decimals = 1; sandbox_enabled = 0; ebert_lives = 0; president_marx = 0; new_shuffle = 0;
 go-to: post_event if started = 1; start_menu if started = 0
 
 # TODO: do that thing that we did before...
@@ -8,6 +7,9 @@ go-to: post_event if started = 1; start_menu if started = 0
 @start_menu
 new-page: true
 on-arrival: {!
+Q.use_decimals = 1; 
+Q.ebert_lives = 0; 
+Q.president_marx = 0;
 // Party Names and Colours
 // USPD
 Q.uspd_name = "DSKI";
