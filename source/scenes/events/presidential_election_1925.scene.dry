@@ -896,6 +896,7 @@ go-to: campaign_round_two
 We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted == 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
 
 @round2_results
+on-arrival: {!
 previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; 
 previous_spd_presidential_candidate_faction = spd_presidential_candidate_faction; 
 var presidents = ['uspd', 'spd', 'ddp', 'z', 'bvp', 'dvp', 'nsdap', 'dnvp', 'hindenburg']
