@@ -614,48 +614,22 @@ Q.nazi_reform_timer = 0;
 Q.laissez_faire_timer = 0;
 Q.presidential_timer = 0;
 
-
-// left advisors
-Q.crispien_advisor = 1; // Arthur Crispien
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
-
-// centrist advisors
-Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 0; // Hermann Müller
-Q.muller_dead = 1;
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
-Q.vogel_advisor = 1; // Hans Vogel
-Q.hilferding_advisor = 0; // Rudolf Hilferding
-
-// Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.ebert_advisor = 0; // Friedrich Ebert
-Q.scheidemann_advisor = 0; // Phillip Scheidemann
-
-// Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
-
-// Neorevisionist advisors
-Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
-Q.leber_advisor = 0; // Julius Leber (post-1930)
-Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
-Q.noske_advisor = 0; // Gustav Noske (post-1930 - suprise!)
-
-// Nonfactional advisors
-Q.baade_advisor = 0; // Fritz Baade
-Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
-Q.radbruch_advisor = 0; // Gustav Radbruch
-Q.stampfer_advisor = 0; // Friedrich Stampfer
+var advisors = ["crispien", "sender", "levi", "rosenfeld", "seydewitz", "siemsen", "wels", "muller", "pfulf", "breitscheid", "vogel", "hilferding", "severing", "braun", "ebert", "juchacz", "scheidemann", "leipart", "aufhauser", "woytinsky", "wissell", "mierendorff", "leber", "schumacher", "noske", "baade", "hirschfeld", "radbruch", "stampfer", "lobe"]
+var tags = {"crispien": "Crispien", "sender": "Sender", "levi": "Levi", "rosenfeld": "Rosenfeld", "seydewitz": "Seydewitz", "siemsen": "Siemsen", "wels": "Wels", "muller": "Müller", "pfulf": "Pfülf", "breitscheid": "Breitscheid", "vogel": "Vogel", "hilferding": "Hilferding", "severing": "Severing", "braun": "Braun", "ebert": "Ebert", "juchacz": "Juchacz", "scheidemann": "Scheidemann", "leipart": "Leipart", "aufhauser": "Aufhäuser", "woytinsky": "Woytinsky", "wissell": "Wissell", "mierendorff": "Mierendorff", "leber": "Leber", "schumacher": "Schumacher", "noske": "Noske", "baade": "Baade", "hirschfeld": "Hirschfeld", "radbruch": "Radbruch", "stampfer": "Stampfer", "lobe": "Löbe"}
+for (var advisor of advisors) {
+Q[advisor + '_advisor'] = 0;
+    if (Q.spd_coleader_1 == tags[advisor] || Q.spd_coleader_2 == tags[advisor] || Q.spd_coleader_3 == tags[advisor]) {
+        Q[advisor + '_advisor'] = 1;
+    }
+}
+var factions = ["left", "center", "labor", "reformist", "neorevisionist"];
+var factionNames = {'left': 'Left', 'center': 'Center', 'labor': 'Labor', 'reformist': 'Reformist', 'neorevisionist': 'Neorevisionist'};
+for (var faction of factions) {
+if (Q.spd_coleader_1_faction == factionNames[faction] || Q.spd_coleader_2_faction == factionNames[faction] || Q.spd_coleader_3_faction == factionNames[faction]) {
+Q[faction + '_leader'] = "Vacant";
+Q[faction + '_leader_fullname'] = "Vacant";
+}
+}
 
 // landtags
 // prussia
