@@ -1,9 +1,6 @@
 title: sandbox
-view-if: sandbox_enabled == 1
 new-page: true
-tags: advisor
-is-card: true
-is-pinned-card: true
+is-special: true
 card-image: img/EbertSandcastle.jpg
 go-to: sandbox_menu
 
