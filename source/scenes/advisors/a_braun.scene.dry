@@ -1,0 +1,94 @@
+title: Adolf Braun
+is-pinned-card: true
+tags: advisor, left
+card-image: img/portraits/BraunAdolf.jpg
+view-if: a_braun_advisor = 1 and a_braun_dead = 0
+new-page: true
+
+= Adolf Braun
+
+A. Braun is [? if chancellor = "A. Braun": the current Chancellor and ?][? if president = "A. Braun": the current President and ?] the SPD’s ‘Newspaper Pope’, and an Austrian-German with close ties to our fraternal party the SDAPÖ.
+
+- @media: Put our veritable media empire to work…
+- @austria: Learn organization and street fighting from the Austrian SDAPÖ.
+- @chancellor
+- @president
+- @debug_never
+- @root: Return to main
+
+@media
+choose-if: advisor_action_timer == 0
+go-to: media
+
+@austria
+choose-if: advisor_action_timer == 0
+subtitle: [? if austrian_parliament_seen and not austrian_civil_war_seen: - We will also help the Austrians oppose their dictatorship. ?]
+audio: shuffle music/communist/workers_of_vienna_normalized.mp3
+on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; austria_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
+
+Our Reichsbanner can learn much in paramilitary organization and training from the Austrian Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the Austrian social democrats.
+
+[? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian Social Democratic Worker's Party build up their resources in preparation for a future struggle, legally and illegally. ?]
+
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+unavailable-subtitle: [? if chancellor != "A. Braun" : A. Braun must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and (chancellor == "A. Braun")
+on-arrival: advisor_action_timer = 6; time_to_election = 3
+call: set_next_election_time
+
+We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+
+@debug_never
+title: DEBUG: Never
+subtitle: Never = 1
+view-if: legislature_enabled
+on-arrival: never = 1
+
+Never enabled
+
+@chancellor
+title: Use the Chancellorship
+subtitle: As the current Chancellor, A. Braun can make use of their position to further our goals.
+view-if: chancellor == "A. Braun"
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+go-to: chancellor
+
+@president
+title: Use the Presidency
+subtitle: As the current President, A. Braun can make use of their position to further our goals.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+view if: president == "A. Braun"
+
+- @article_48: We can use Article 48!
+- @military_relations: We can improve our relations with the Reichswehr.
+- @on_the_world_stage: We can improve our relations on the world stage.
+- @presidential_snap_election: We can call snap elections!
+- @reichsexecution: We can order a Reichsexekution!
+
+@article_48
+choose-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and judicial_reform >= 3 and ((neorevisionist_strength+left_strength+unemployed >= 50) or in_emergency_government)
+unavailable-subtitle: [? if judicial_reform < 3 : The reactionary judiciary would strike them down as unconstitutional. ?][? if neorevisionist_strength+left_strength+unemployed < 50 : The party views these decrees as unecessary. ?][? if article_48_timer > 8 : [+ article_48_timer +] months before we can next take this action. ?]
+go-to: article_48
+
+@military_relations
+view-if: not victory_republic
+choose-if: military_relations_timer <= 0
+unavailable-subtitle: [+ military_relations_timer +] months before we can next take this action.
+go-to: military_relations
+
+@on_the_world_stage
+choose-if: on_the_world_stage_timer <= 0
+unavailable-subtitle: [+ on_the_world_stage_timer +] months before we can next take this action.
+go-to: on_the_world_stage
+
+@presidential_snap_election
+go-to: presidential_snap_election
+
+@reichsexekution
+choose-if: reichsexekution_timer <= 0
+unavailable-subtitle: [+ reichsexekution_timer +] months before we can next take this action.
+go-to: reichsexekution
