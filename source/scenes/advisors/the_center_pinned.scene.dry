@@ -1,7 +1,0 @@
-title: The Center
-new-page: true
-is-card: true
-is-pinned-card: true
-on-arrival: month_activities += 1;
-card-image: img/portraits/HilferdingRudolf.jpg
-go-to: the_center
