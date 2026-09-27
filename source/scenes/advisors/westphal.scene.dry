@@ -7,7 +7,7 @@ new-page: true
 
 = Max Westphal
 
-Westphal is [? if chancellor = "Westphal": the current Chancellor and ?][? if president = "Westphal": the current President and ?] …
+Westphal is [? if chancellor = "Westphal": the current Chancellor and ?][? if president = "Westphal": the current President and ?] the Chairman of the Socialist Youth of Hamburg.
 
 - @youth: We have the reputation of being a party for old men. Support the youth organizations.
 - @party_discipline
