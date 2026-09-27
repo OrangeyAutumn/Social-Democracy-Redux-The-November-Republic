@@ -12,7 +12,6 @@ Nemitz is [? if chancellor = "Nemitz": the current Chancellor and ?][? if presid
 - @welfare: Fund more mutual aid and welfare programs.
 - @chancellor
 - @president
-- @debug_never
 - @root: Return to main
 
 @welfare
