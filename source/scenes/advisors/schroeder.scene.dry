@@ -13,7 +13,6 @@ Schroeder is [? if chancellor = "Schroeder": the current Chancellor and ?][? if 
 - @education_
 - @chancellor
 - @president
-- @debug_never
 - @root: Return to main
 
 @welfare
