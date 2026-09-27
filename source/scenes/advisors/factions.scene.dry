@@ -5,10 +5,10 @@ subtitle: Managing the Factions of our party.
 
 We must manage our various factions
 
-- @left
-- @center
-- @labor
-- @reformist
+- @left: Reach out to the Left Faction
+- @center: Reach out to the Center Faction
+- @labor: Reach out to the Labor Faction
+- @reformist: Reach out to the Reformist Faction
 
 @left
 go-to: the_left
