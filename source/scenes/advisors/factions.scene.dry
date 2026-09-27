@@ -1,0 +1,23 @@
+title: Factions
+subtitle: Managing the Factions of our party.
+
+= Factions
+
+We must manage our various factions
+
+- @left
+- @center
+- @labor
+- @reformist
+
+@left
+go-to: the_left
+
+@center
+go-to: the_center
+
+@labor
+go-to: the_labor_wing
+
+@reformist
+go-to: the_reformists
