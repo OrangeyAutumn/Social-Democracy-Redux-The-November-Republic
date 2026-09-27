@@ -22,12 +22,8 @@ max-cards: 6
 - @landtag_affairs
 - @pres
 - #advisor
-- @the_left_pinned
-- @the_center_pinned
-- @the_labor_wing_pinned
-- @the_reformists_pinned
+- @factions_pinned
 - @shuffle_leadership_pinned
-- @sandbox
 
 @main_easy
 is-hand: true
@@ -53,12 +49,8 @@ max-cards: 6
 - @landtag_affairs
 - @pres
 - #advisor
-- @the_left_pinned
-- @the_center_pinned
-- @the_labor_wing_pinned
-- @the_reformists_pinned
+- @factions_pinned
 - @shuffle_leadership_pinned
-- @sandbox
 
 @party
 title: Party Affairs
