@@ -22,7 +22,7 @@ max-cards: 6
 - @landtag_affairs
 - @pres
 - #advisor
-- @factions_pinned
+- @factions
 - @shuffle_leadership_pinned
 
 @main_easy
@@ -49,7 +49,7 @@ max-cards: 6
 - @landtag_affairs
 - @pres
 - #advisor
-- @factions_pinned
+- @factions
 - @shuffle_leadership_pinned
 
 @party
