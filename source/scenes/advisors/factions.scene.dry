@@ -4,7 +4,7 @@ new-page: true
 is-card: true
 is-pinned-card: true
 on-arrival: month_activities += 1;
-card-image: img/Reichstagfrakton_der_SPD.jpg
+card-image: img/Reichstagsfraktion_der_SPD.jpg
 
 = Factions
 
