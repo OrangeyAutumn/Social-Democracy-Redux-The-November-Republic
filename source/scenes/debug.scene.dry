@@ -116,13 +116,13 @@ weimar_willingness: [+ weimar_willingness +]
 
 prussia_minister_president: [+ prussia_minister_president +]
 
-in_prussia_spd: [+ in_prussia_spd +]
+spd_in_prussia: [+ spd_in_prussia +]
 
-in_prussia_uspd: [+ in_prussia_uspd +]
+uspd_in_prussia: [+ uspd_in_prussia +]
 
-in_prussia_dnvp: [+ in_prussia_dnvp +]
+dnvp_in_prussia: [+ dnvp_in_prussia +]
 
-in_prussia_nsdap: [+ in_prussia_nsdap +]
+nsdap_in_prussia: [+ nsdap_in_prussia +]
 
 prussia_election_year: [+ prussia_election_year +]
 
@@ -984,7 +984,7 @@ in_left_front: [+ in_left_front +]
 
 in_emergency_government: [+ in_emergency_government +]
 
-in_spd_majority: [+ in_spd_majority +]
+spd_in_majority: [+ spd_in_majority +]
 
 grand_coalition_failed: [+ grand_coalition_failed +]
 
