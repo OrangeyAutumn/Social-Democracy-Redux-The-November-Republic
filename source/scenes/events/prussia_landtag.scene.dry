@@ -328,7 +328,7 @@ There are some potential coalition arrangements.
 @spd_prussia
 title: Social Democracy has won a majority in Prussia.
 subtitle: SPD ([ + spd_pl +]%)
-view-if: spd_pl >= 50 or (spd_prussia and in_spd_prussia)
+view-if: spd_pl >= 50 or (spd_prussia and spd_in_prussia)
 on-arrival: in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 
 We have won a majority in Prussia!
