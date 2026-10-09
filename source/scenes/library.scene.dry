@@ -134,10 +134,10 @@ Reichstag composition:
 [? if in_popular_front: [+ popular_front_coalition_colour +] ?]
 [? if in_progressive_front: [+ progressive_front_coalition_colour +] ?]
 [? if in_left_front and spd_in_government: [+ left_front_coalition_colour +] ?]
-[? if in_spd_majority and spd_in_government: [+ spd_name_colour +] Administration ?]
+[? if spd_in_majority and spd_in_government: [+ spd_name_colour +] Administration ?]
 [? if in_emergency_government and spd_in_government: emergency government ?]
 
-[? if spd_in_government and not in_spd_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and not spd_in_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 
