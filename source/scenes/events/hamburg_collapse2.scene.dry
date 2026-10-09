@@ -3,7 +3,7 @@ subtitle: The NSDAP has motioned in Hamburg to dissolve the Landtag for new elec
 new-page: true
 tags: event
 max-visits: 1
-view-if: ((in_hamburg_groko and h_grand_coalition < 50) or (in_hamburg_soclib and h_social_liberal_coalition < 50) or (in_hamburg_left and h_left_coalition < 50) or (in_spd_hamburg and spd_hl < 50)) and nsdap_votes >= nsdap_hl and unemployed >= 25 and year >= 1932 and landtags_enabled
+view-if: ((in_hamburg_groko and h_grand_coalition < 50) or (in_hamburg_soclib and h_social_liberal_coalition < 50) or (in_hamburg_left and h_left_coalition < 50) or (spd_in_hamburg and spd_hl < 50)) and nsdap_votes >= nsdap_hl and unemployed >= 25 and year >= 1932 and landtags_enabled
 on-arrival: dissolve_hl = 0; dissolve_hl += dvp_hl if dvp_relation < 40; dissolve_hl += nsdap_hl; dissolve_hl += dnvp_hl; dissolve_hl += other_hl if dvp_relation < 60; dissolve_hl += z_hl if z_relation < 40; dissolve_hl += uspd_hl if ((uspd_relation < 60 and uspd_party_leader != "Liebknecht") or (uspd_relation < 30 and uspd_party_leader == "Liebknecht"))
 go-to: landtag_dissolved if dissolve_hl >= 50; landtag_not_dissolved if dissolve_hl < 50
 
