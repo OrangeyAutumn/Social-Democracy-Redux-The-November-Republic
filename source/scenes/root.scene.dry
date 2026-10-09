@@ -803,7 +803,7 @@ Please select your desired start date.
 - @settings: Settings.
 
 @1924_start
-set-bg: img/hindenburg_election.jpg
+set-bg: img/hindenburg_background.jpg
 view-if: president_marx == 0
 new-page: true
 go-to: 1924_root
@@ -813,7 +813,7 @@ go-to: 1924_root
 *"You will understand and know the German Republic better when it elects **Hindenburg** president."*
 - Jacques Bainville, November 1918
 
-<img src="img/hindenburg_election.jpg" alt="A Hindenburg Election Poster">
+<img src="img/hindenburg_background.jpg" alt="A Hindenburg Election Poster">
 
 It is an uncertain time for German democracy. Though the crises of 1923 have subsided and given way to a stabilization and normalization, the bourgeois parties continue to shift to the right to exclude us from government, even attempting to include the anticonstitutional DNVP in a failed Right Coalition. Fresh elections have been called, though they are unlikely to shift the situation dramatically.
 
