@@ -78,7 +78,7 @@ view-if: in_hamburg_left
 tags: reichsexekutions_left
 title: Reichsexekute Hamburg.
 subtitle: This will anger the SPD!
-on-arrival: in_hamburg_left = 0; in_spd_hamburg = 1
+on-arrival: in_hamburg_left = 0; spd_in_hamburg = 1
 
 We have performed a *Reichsexekution* against the government of Hamburg, removing it of USPD ministers.
 
