@@ -417,7 +417,7 @@ Surprisingly, both the Communists and the Center Party are willing to form a pro
 - @ministries: Let's see.
 
 @no_allies
-on-arrival: in_spd_majority = 1; pro_republic -= 10; rfb_strength += 100; sa_strength += 25; workers_spd -= 3; new_middle_spd -= 3; sh_strength += 50; rb_strength -= 100; z_relation -= 10; ddp_relation -= 10; dvp_relation -= 10; uspd_relation -= 10; coup_progress += 3; reichswehr_loyalty -= 0.05; labor_minister_party = "SPD"; interior_minister_party = "SPD"; finance_minister_party = "SPD"; justice_minister_party = "SPD"; economic_minister_party = "SPD"; foreign_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_minister_party = "SPD"
+on-arrival: spd_in_majority = 1; pro_republic -= 10; rfb_strength += 100; sa_strength += 25; workers_spd -= 3; new_middle_spd -= 3; sh_strength += 50; rb_strength -= 100; z_relation -= 10; ddp_relation -= 10; dvp_relation -= 10; uspd_relation -= 10; coup_progress += 3; reichswehr_loyalty -= 0.05; labor_minister_party = "SPD"; interior_minister_party = "SPD"; finance_minister_party = "SPD"; justice_minister_party = "SPD"; economic_minister_party = "SPD"; foreign_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_minister_party = "SPD"
 
 We have been forced to rule solely in our provisional govenrment. This has hurt confidence in the post-war government, and all the parties have scrambled to oppose us. At least we will be going ahead with snap elections, right?
 
@@ -1088,7 +1088,7 @@ We refuse to instate a classist and fundamentally undemocratic form of governanc
 
 @agenda_uspd
 view-if: president == "Thälmann"
-on-arrival: workers_uspd += 10; workers_spd -= 5; unemployed_uspd += 15; unemployed_spd -= 5; unemployed_nsdap -= 5; rfb_strength += 100; rb_strength -= 75; rfb_militancy += 0.05; in_left_front = 1; in_weimar_coalition = 0; in_grand_coalition = 0; in_popular_front = 0; in_spd_majority = 0;
+on-arrival: workers_uspd += 10; workers_spd -= 5; unemployed_uspd += 15; unemployed_spd -= 5; unemployed_nsdap -= 5; rfb_strength += 100; rb_strength -= 75; rfb_militancy += 0.05; in_left_front = 1; in_weimar_coalition = 0; in_grand_coalition = 0; in_popular_front = 0; spd_in_majority = 0;
 
 The defeat of the reactionaries leaves us and our socialist partners in near uncontested control over the country. [? if president == "Thälmann" : However, the USPD has a significant upper hand in this relationship, so we must be careful. ?]
 
