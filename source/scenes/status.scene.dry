@@ -24,16 +24,16 @@ Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction_colour +]
 
 Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ resources +]
 
-**[+ spd_left_colour +]:** ([+ left_leader_fullname +]) | [+ left_strength : strength +]; Dissent: [+ left_dissent : dissent +]
+**[+ spd_left_colour +]:** [+ left_strength : strength +] (Dissent: [+ left_dissent : dissent +])
 
-**[+ spd_center_colour +]:** ([+ center_leader_fullname +]) | [+ center_strength : strength +]; Dissent: [+ center_dissent : dissent +]
+**[+ spd_center_colour +]:** [+ center_strength : strength +] (Dissent: [+ center_dissent : dissent +])
 
-**[+ spd_labor_colour +]:** ([+ labor_leader_fullname +]) | [+ labor_strength : strength +]; Dissent: [+ labor_dissent : dissent +]
+**[+ spd_labor_colour +]:** [+ labor_strength : strength +] (Dissent: [+ labor_dissent : dissent +])
 
-**[+ spd_reformist_colour +]:** ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength +]; Dissent: [+ reformist_dissent : dissent +]
+**[+ spd_reformist_colour +]:** [+ reformist_strength : strength +] (Dissent: [+ reformist_dissent : dissent +])
 
 [? if neorevisionism > 0 : 
-**[+ spd_neorevisionist_colour +]:** ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]  
+**[+ spd_neorevisionist_colour +]:** [+ neorevisionist_strength : strength +] (Dissent: [+ neorevisionist_dissent : dissent +]) ?]  
 
 Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])** |
 Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
