@@ -1,7 +1,7 @@
 body {
   --bg-color: #f3f3e3;
   --border-color: #000;
-  --content-bg-color: #f3f3f3;
+  --content-bg-color: #fffff;
   --text-color: #431;
   --link-color: #900;
   --link-hover-color: rgba(0, 0, 0, 0.05);
@@ -43,7 +43,7 @@ body.dark-mode .tools {
 }
 header, #content, footer {
   color: var(--text-color);
-  max-width: 540px;
+ max-width: 570px;
   margin: 0 auto;
   overflow: auto;
 }
@@ -170,7 +170,8 @@ blockquote + blockquote.attribution {
 }
 /* This is mostly copied from undum. */
 #mid_panel {
-margin: 0 16rem;
+ margin: 0 auto;
+  max-width: 570px;  
 }
 #page {
 margin: 0 auto;
@@ -246,17 +247,18 @@ font-weight: normal;
 }
 
 .dashboard {
-  max-width: 960px;
+  max-width: 540px;
   margin: 0 auto 1.5em auto;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid var(--border-color);
-  padding: 1em;
+  background-color: #ffffff;
+  padding: 1.5em;
+  text-align: center;
 }
 
 .dashboard-title {
   font-size: 1.6em;
-  margin: 0 0 0.5em;
+  margin: 0 0 1em 0;
   text-align: center;
+  color: #E3000F;
 }
 
 .dashboard-section {
