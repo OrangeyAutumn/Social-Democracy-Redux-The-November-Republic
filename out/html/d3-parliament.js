@@ -20,10 +20,10 @@ d3.parliament = function() {
         return "#f96d00";
     }
     if (state == 3) {
-        return "#b8b8b8";
+        return "#000000";
     }
          if (party == "spd" && state == 0) {
-        return "#000000";
+        return "#b8b8b8";
     }
     return "none";
 };
