@@ -72,7 +72,11 @@ window.getPortraitPath = function(personId) {
 };
 
 window.resolveRedirect = function(role, personId) {
-  if (!personId) return null;
+    if (role === "party_executive") return "executive.scene";
+    if (role === "party_factions") return "factions.scene";
+    if (role === "landtags") return "landtags.scene";
+
+    if (!personId) return null;
 
   if (role === "president") {
     if (Q.president_party == Q.spd_name) return personId + ".scene";
@@ -101,12 +105,18 @@ window.resolveRedirect = function(role, personId) {
   return null;
 }
 window.renderDashboard = function() {
+  if (!panels.government || !panels.spd || !panels.politics) {
+    console.error("Dashboard panel elements are missing.");
+    return;
+}
   var panels = {
     government: document.getElementById("government-portraits"),
     spd: document.getElementById("spd-portraits"),
     politics: document.getElementById("politics-portraits")
   };
-
+Object.keys(panels).forEach(function(key) {
+    if (panels[key]) panels[key].replaceChildren();
+});
   var createCard = function(label, personId, role, subtitle, disabled) {
     var person = window.getPerson(personId);
     if (!person) return null;
@@ -114,6 +124,7 @@ window.renderDashboard = function() {
     var card = document.createElement("button");
     card.type = "button";
     card.className = "dashboard-person" + (disabled ? " disabled" : "");
+    card.disabled = !!disabled;
     card.setAttribute("data-role", role);
     card.setAttribute("data-person", personId);
 
@@ -127,8 +138,8 @@ window.renderDashboard = function() {
 
     var party = document.createElement("div");
     party.className = "dashboard-party";
-    party.textContent = person.party ? Q.partyData[person.party].name : "";
-
+var partyData = person.party && Q.partyData ? Q.partyData[person.party] : null; 
+    party.textContent = partyData ? partyData.name : "";
     card.appendChild(img);
     card.appendChild(name);
     if (subtitle) {
@@ -405,8 +416,13 @@ window.changeMiniTab = function(newTab, tabId) {
 
 window.onDisplayContent = function() {
     window.updateSidebar();
-    if (window.dendryUI.dendryEngine.state.sceneId === 'main') {
-      window.renderDashboard();
+    var dashboard = document.getElementById("dashboard");
+    var isMain = window.dendryUI.dendryEngine.state.sceneId === "main";
+    if (dashboard) {
+        dashboard.style.display = isMain ? "" : "none";
+    }
+    if (isMain) {
+        window.renderDashboard();
     }
 };
 
