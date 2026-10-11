@@ -336,7 +336,51 @@
                    <a onclick="window.showDebug();" href="#">Debug</a>
                 </div>
             </header>
+
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="dashboard">
+                <h2 class="dashboard-title">Dashboard</h2>
+                
+                <!-- Government Section -->
+                <div class="dashboard-section">
+                    <h3 class="dashboard-subtitle">Government</h3>
+                    <div id="government-portraits" class="portraits-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- SPD Section -->
+                <div class="dashboard-section">
+                    <h3 class="dashboard-subtitle">Sozialdemokratische Partei Deutschlands (SPD)</h3>
+                    <div id="spd-portraits" class="portraits-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- Party and State Politics Section -->
+                <div class="dashboard-section">
+                    <h3 class="dashboard-subtitle">Party and State Politics</h3>
+                    <div id="politics-portraits" class="portraits-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
             <div id="tools_wrapper">
+                <!-- Mini Sidebar -->
+                <div id='mini_sidebar' class='tools mini-left'>
+                    <div class="tab_container">
+                        <button class="tab_button active" id="mini_main_tab" onclick="window.changeMiniTab('mini_status', 'mini_main_tab');">Main</button>
+                        <button class="tab_button" id="mini_government_tab" onclick="window.changeMiniTab('mini_status', 'mini_government_tab');">Government</button>
+                        <button class="tab_button" id="mini_politics_tab" onclick="window.changeMiniTab('mini_status', 'mini_politics_tab');">Parties</button>                      
+                        <button class="tab_button" id="mini_paramilitary_tab" onclick="window.changeMiniTab('mini_status', 'mini_paramilitary_tab');">Paramilitaries</button>
+                        <button class="tab_button" id="mini_poll_tab" onclick="window.changeMiniTab('mini_status', 'mini_poll_tab');">Polling</button>
+                    </div>
+                    <div id="mini-qualities">
+                    </div>
+                </div>
+
+                <!-- Main Sidebar -->
                 <div id='stats_sidebar' class='tools left'>
                     <div class="tab_container">
                         <button class="tab_button active" id="main_tab" onclick="window.changeTab('status', 'main_tab');">Main</button>
