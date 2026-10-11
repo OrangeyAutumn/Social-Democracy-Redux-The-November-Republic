@@ -403,9 +403,12 @@ window.changeMiniTab = function(newTab, tabId) {
       window.updateSidebar();
   };
 
-  window.onDisplayContent = function() {
-      window.updateSidebar();
-  };
+window.onDisplayContent = function() {
+    window.updateSidebar();
+    if (window.dendryUI.dendryEngine.state.sceneId === 'root') {
+      window.renderDashboard();
+    }
+};
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator
@@ -464,7 +467,7 @@ window.changeMiniTab = function(newTab, tabId) {
         window.dendryUI.saveSettings();
   }
 
-  window.onload = function() {
+window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
@@ -477,6 +480,11 @@ window.changeMiniTab = function(newTab, tabId) {
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-  };
+    
+    // Render dashboard once game is loaded
+    if (window.renderDashboard) {
+      setTimeout(window.renderDashboard, 100);
+    }
+};
 
 }());
