@@ -413,7 +413,7 @@ window.changeTab = function(newTab, tabId) {
 
 window.onDisplayContent = function() {
     window.updateSidebar();
-    if (window.dendryUI.dendryEngine.state.sceneId === 'root') {
+    if (window.dendryUI.dendryEngine.state.sceneId === 'main') {
       window.renderDashboard();
     }
 };
