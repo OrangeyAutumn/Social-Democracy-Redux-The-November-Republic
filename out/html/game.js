@@ -205,16 +205,20 @@ window.renderDashboard = function() {
 };
 window.changeMiniTab = function(newTab, tabId) {
   var tabButton = document.getElementById(tabId);
-  var tabButtons = document.getElementsByClassName('tab_button');
-  for (var i = 0; i < tabButtons.length; i++) {
-    tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+  var miniTabButtons = document.querySelectorAll('#mini_sidebar .tab_button');
+  for (var i = 0; i < miniTabButtons.length; i++) {
+    miniTabButtons[i].className = miniTabButtons[i].className.replace(' active', '');
   }
   if (tabButton) tabButton.className += ' active';
-
-  // This can either show a mini_status scene or reuse the existing sidebar logic
-  // as a placeholder until you build mini_status.scene
-  window.statusTab = newTab;
-  window.updateSidebar();
+  
+  // Update only the mini sidebar content
+  $('#mini-qualities').empty();
+  var scene = dendryUI.game.scenes[newTab];
+  if (scene) {
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    $('#mini-qualities').append(dendryUI.contentToHTML.convert(displayContent));
+  }
 };
 
   // TODO: update audio displays
@@ -388,16 +392,20 @@ window.changeMiniTab = function(newTab, tabId) {
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
 
-  window.changeTab = function(newTab, tabId) {
-      if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-          window.alert('Polls are not available in historical mode.');
-          return;
-      }
-      var tabButton = document.getElementById(tabId);
-      var tabButtons = document.getElementsByClassName('tab_button');
-      for (i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
-      }
+window.changeTab = function(newTab, tabId) {
+    if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
+        window.alert('Polls are not available in historical mode.');
+        return;
+    }
+    var tabButton = document.getElementById(tabId);
+    var tabButtons = document.querySelectorAll('#stats_sidebar .tab_button');
+    for (var i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+    }
+    tabButton.className += ' active';
+    window.statusTab = newTab;
+    window.updateSidebar();
+};
       tabButton.className += ' active';
       window.statusTab = newTab;
       window.updateSidebar();
