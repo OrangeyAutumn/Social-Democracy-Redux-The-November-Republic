@@ -2,7 +2,7 @@ body {
   --bg-color: #f3f3e3;
   --border-color: #000;
   --content-bg-color: #f3f3f3;
-  --text-color: #431;
+  --text-color: #900;
   --link-color: #900;
   --link-hover-color: rgba(0, 0, 0, 0.05);
   --unavailable-bg-color: rgba(0, 0, 0, 0.1);
@@ -49,7 +49,7 @@ header, #content, footer {
 }
 #content {
 position: relative;
-background-color: var(--tab-bg-color);
+background-color: var(--content-bg-color);
 font-size: 1.1em;
 padding: 1em 1.5em 1.5em 1.5em;
 box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
@@ -72,7 +72,7 @@ display: inline-block;
 margin-bottom: 0.5em;
 padding-left: 1em;
 box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-background-color: var(--content-bg-color);
+background-color: var(--tab-bg-color);
 }
 #header-links a {
 padding-right: 1em;
