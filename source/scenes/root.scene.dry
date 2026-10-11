@@ -1050,7 +1050,7 @@ The Sandbox card has been disabled.
 view-if: year == 1924
 audio: stop-audio; shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg
 new-page: true
-set-bg: img/hindenburg_election.jpg
+set-bg: img/hindenburg_background.jpg
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = November 1924: The Death of Ebert
@@ -1058,7 +1058,7 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 *"You will understand and know the German Republic better when it elects Hindenburg president."*
 - Jacques Bainville, November 1918
 
-<img src="img/hindenburg_election.jpg" alt="A Hindenburg Election Poster">
+<img src="img/hindenburg_background.jpg" alt="A Hindenburg Election Poster">
 
 It is an uncertain time for German democracy. Though the crises of 1923 have subsided and given way to a stabilization and normalization, the bourgeois parties continue to shift to the right to exclude us from government, even attempting to include the anticonstitutional DNVP in a failed Right Coalition. Fresh elections have been called, though they are unlikely to shift the situation dramatically.
 
