@@ -58,6 +58,165 @@
     }
   };
 
+  window.getPerson = function(id) {
+  return Q.personData && Q.personData[id] ? Q.personData[id] : null;
+};
+
+window.getPortraitPath = function(personId) {
+  if (!personId) return null;
+  var person = window.getPerson(personId);
+  if (!person) return null;
+  // Prefer explicit portrait field if available; otherwise infer from ID
+  if (person.portrait) return "img/portraits/" + person.portrait;
+  return "img/portraits/" + personId + ".jpg";
+};
+
+window.resolveRedirect = function(role, personId) {
+  if (!personId) return null;
+
+  if (role === "president") {
+    if (Q.president_party == Q.spd_name) return personId + ".scene";
+    if (Q.president == "hindenburg" || Q.president == "simons") return "presidential_relations.scene";
+    return null;
+  }
+
+  if (role === "chancellor") {
+    if (Q.chancellor_party == Q.spd_name) return personId + ".scene";
+    if (Q.spd_in_government) return "chancellor_relations.scene";
+    if (Q.spd_in_toleration || Q.spd_in_abstention) return "dealing_with_toleration.scene";
+    return null;
+  }
+
+  if (role === "vice_chancellor") {
+    if (Q.vice_chancellor_party == Q.spd_name) return personId + ".scene";
+    return null;
+  }
+
+  if (role === "spd_chairman") return personId + ".scene";
+
+  if (role === "party_executive") return "executive.scene";
+  if (role === "party_factions") return "factions.scene";
+  if (role === "landtags") return "landtags.scene";
+
+  return null;
+}
+window.renderDashboard = function() {
+  var panels = {
+    government: document.getElementById("government-portraits"),
+    spd: document.getElementById("spd-portraits"),
+    politics: document.getElementById("politics-portraits")
+  };
+
+  var createCard = function(label, personId, role, subtitle, disabled) {
+    var person = window.getPerson(personId);
+    if (!person) return null;
+
+    var card = document.createElement("button");
+    card.type = "button";
+    card.className = "dashboard-person" + (disabled ? " disabled" : "");
+    card.setAttribute("data-role", role);
+    card.setAttribute("data-person", personId);
+
+    var img = document.createElement("img");
+    img.src = window.getPortraitPath(personId);
+    img.alt = person.fullname || person.name || personId;
+
+    var name = document.createElement("div");
+    name.className = "dashboard-name";
+    name.textContent = person.fullname || person.name || personId;
+
+    var party = document.createElement("div");
+    party.className = "dashboard-party";
+    party.textContent = person.party ? Q.partyData[person.party].name : "";
+
+    card.appendChild(img);
+    card.appendChild(name);
+    if (subtitle) {
+      var sub = document.createElement("div");
+      sub.className = "dashboard-subname";
+      sub.textContent = subtitle;
+      card.appendChild(sub);
+    }
+    if (party.textContent) card.appendChild(party);
+
+    if (!disabled) {
+      card.onclick = function() {
+        var target = window.resolveRedirect(role, personId);
+        if (target) {
+          window.dendryUI.dendryEngine.goToScene(target);
+        }
+      };
+    }
+
+    return card;
+  };
+
+  // Government
+  var presidentId = Q.president;
+  var chancellorId = Q.chancellor;
+  var viceId = Q.vice_chancellor;
+
+  if (presidentId) {
+    var president = createCard("President", presidentId, "president", null,
+      !window.resolveRedirect("president", presidentId));
+    if (president) panels.government.appendChild(president);
+  }
+
+  if (chancellorId) {
+    var chancellor = createCard("Chancellor", chancellorId, "chancellor", null,
+      !window.resolveRedirect("chancellor", chancellorId));
+    if (chancellor) panels.government.appendChild(chancellor);
+  }
+
+  if (viceId) {
+    var vice = createCard("Vice-Chancellor", viceId, "vice_chancellor", null,
+      !window.resolveRedirect("vice_chancellor", viceId));
+    if (vice) panels.government.appendChild(vice);
+  }
+
+  // SPD chairmen
+  var spdChairmen = [Q.spd_coleader_1, Q.spd_coleader_2, Q.spd_coleader_3];
+  spdChairmen.forEach(function(id) {
+    if (!id) return;
+    var card = createCard("SPD Chairman", id, "spd_chairman", null, false);
+    if (card) panels.spd.appendChild(card);
+  });
+
+  // Party & State Politics
+  var policyCards = [
+    { id: "executive", label: "Party Executive", role: "party_executive" },
+    { id: "factions", label: "Party Factions", role: "party_factions" },
+    { id: "landtags", label: "Landtags", role: "landtags" }
+  ];
+
+  policyCards.forEach(function(item) {
+    var card = document.createElement("button");
+    card.type = "button";
+    card.className = "dashboard-person";
+    card.textContent = item.label;
+    card.onclick = function() {
+      var target = window.resolveRedirect(item.role, null);
+      if (target) {
+        window.dendryUI.dendryEngine.goToScene(target);
+      }
+    };
+    panels.politics.appendChild(card);
+  });
+};
+window.changeMiniTab = function(newTab, tabId) {
+  var tabButton = document.getElementById(tabId);
+  var tabButtons = document.getElementsByClassName('tab_button');
+  for (var i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+  }
+  if (tabButton) tabButton.className += ' active';
+
+  // This can either show a mini_status scene or reuse the existing sidebar logic
+  // as a placeholder until you build mini_status.scene
+  window.statusTab = newTab;
+  window.updateSidebar();
+};
+
   // TODO: update audio displays
   window.updateAudio = function(song) {
       var now_playing = document.getElementById('currently_playing');
