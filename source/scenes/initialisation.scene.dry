@@ -1,3 +1,5 @@
+title: initialisation
+on-arrival: {!
 Q.factionData = {
     "spd": {
         "left": {
@@ -4434,3 +4436,5 @@ Q.calculateIdeologyColour = function(party, economicCoordinate, societalCoordina
     }
     return Q.modifyHexColour(factionColour, saturation, lightness);
 };
+!}
+go-to: root.start_menu
