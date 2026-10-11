@@ -252,7 +252,7 @@ font-weight: normal;
   background-color: var(--content-bg-color);
   padding: 1.5em;
   text-align: center;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--card-border-color);
 }
 
 .dashboard-title {
