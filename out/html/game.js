@@ -430,7 +430,7 @@ window.onDisplayContent = function() {
     var dashboard = document.getElementById("dashboard");
     // Show the dashboard only on the two intended scenes.
     var showDashboard =
-        sceneId === "main" || sceneId === "main.easy";
+        sceneId === "main" || sceneId === "main.main_easy";
     if (dashboard) {
         dashboard.style.display = showDashboard ? "" : "none";
     }
