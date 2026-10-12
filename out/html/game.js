@@ -131,10 +131,15 @@ window.renderDashboard = function() {
     card.setAttribute("data-role", role);
     card.setAttribute("data-person", personId);
 
-    var img = document.createElement("img");
-    img.src = window.getPortraitPath(personId);
-    img.alt = person.fullname || person.name || personId;
+var img = document.createElement("img");
+img.src = window.getPortraitPath(personId);
+img.alt = person.fullname || person.name || personId;
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "img/EbertSandcastle.jpg";
+};
+    
     var name = document.createElement("div");
     name.className = "dashboard-name";
     name.textContent = person.fullname || person.name || personId;
