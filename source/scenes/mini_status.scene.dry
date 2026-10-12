@@ -40,16 +40,16 @@ Leadership: = [+ spd_coleader_1_fullname +] ([+ spd_coleader_1_faction_colour +]
 
 Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ resources +]
 
-**[+ spd_left_colour +]:** ([+ left_leader_fullname +]) | [+ left_strength : strength +]; Dissent: [+ left_dissent : dissent +]
+**[+ spd_left_colour +]:** [+ left_strength : strength +] (Dissent: [+ left_dissent : dissent +])
 
-**[+ spd_center_colour +]:** ([+ center_leader_fullname +]) | [+ center_strength : strength +]; Dissent: [+ center_dissent : dissent +]
+**[+ spd_center_colour +]:** [+ center_strength : strength +] (Dissent: [+ center_dissent : dissent +])
 
-**[+ spd_labor_colour +]:** ([+ labor_leader_fullname +]) | [+ labor_strength : strength +]; Dissent: [+ labor_dissent : dissent +]
+**[+ spd_labor_colour +]:** [+ labor_strength : strength +] (Dissent: [+ labor_dissent : dissent +])
 
-**[+ spd_reformist_colour +]:** ([+ reformist_leader_fullname +]) | [+ reformist_strength : strength +]; Dissent: [+ reformist_dissent : dissent +]
+**[+ spd_reformist_colour +]:** [+ reformist_strength : strength +] (Dissent: [+ reformist_dissent : dissent +])
 
 [? if neorevisionism > 0 : 
-**[+ spd_neorevisionist_colour +]:** ([+ neorevisionist_leader_fullname +]) | [+ neorevisionist_strength : strength +]; Dissent: [+ neorevisionist_dissent : dissent +] ?]  
+**[+ spd_neorevisionist_colour +]:** [+ neorevisionist_strength : strength +] (Dissent: [+ neorevisionist_dissent : dissent +]) ?]  
 
 Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])** |
 Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
@@ -224,17 +224,17 @@ if (Q.sa_strength) {
 
 = Polling by Demographic
 
-<span class="tooltip-text" title="[+ uspd_name_colour +]: [+ workers_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ workers_sapd_display +]% | ?] [+ spd_name_colour +] [+ workers_spd_display +]% | [+ ddp_name_colour +]: [+ workers_ddp_display +]% | [+ z_name_colour +]: [+ workers_z_display +]% | [+ dvp_name_colour +]: [+ workers_dvp_display +]% | [+ dnvp_name_colour +]: [+ workers_dnvp_display +]% | [+ nsdap_name_colour +]: [+ workers_nsdap_display +]% | Others: [+ workers_other_display +]%">**Workers:** [+ workers +]%</span>
+<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ workers_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ workers_sapd_display +]% | ?] [+ spd_name_colour +] [+ workers_spd_display +]% | [+ ddp_name_colour +]: [+ workers_ddp_display +]% | [+ z_name_colour +]: [+ workers_z_display +]% | [+ dvp_name_colour +]: [+ workers_dvp_display +]% | [+ dnvp_name_colour +]: [+ workers_dnvp_display +]% | [+ nsdap_name_colour +]: [+ workers_nsdap_display +]% | Others: [+ workers_other_display +]%'>**Workers:** [+ workers +]%</span>
 
-<span class="tooltip-text" title="[+ uspd_name_colour +]: [+ new_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ new_middle_sapd_display +]% | ?] [+ spd_name_colour +] [+ new_middle_spd_display +]% | [+ ddp_name_colour +]: [+ new_middle_ddp_display +]% | [+ z_name_colour +]: [+ new_middle_z_display +]% | [+ dvp_name_colour +]: [+ new_middle_dvp_display +]% | [+ dnvp_name_colour +]: [+ new_middle_dnvp_display +]% | [+ nsdap_name_colour +]: [+ new_middle_nsdap_display +]% | Others: [+ new_middle_other_display +]%"> **New Middle Class:** [+ new_middle +]%</span>
+<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ new_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ new_middle_sapd_display +]% | ?] [+ spd_name_colour +] [+ new_middle_spd_display +]% | [+ ddp_name_colour +]: [+ new_middle_ddp_display +]% | [+ z_name_colour +]: [+ new_middle_z_display +]% | [+ dvp_name_colour +]: [+ new_middle_dvp_display +]% | [+ dnvp_name_colour +]: [+ new_middle_dnvp_display +]% | [+ nsdap_name_colour +]: [+ new_middle_nsdap_display +]% | Others: [+ new_middle_other_display +]%'> **New Middle Class:** [+ new_middle +]%</span>
 
-<span class="tooltip-text" title="[+ uspd_name_colour +]: [+ old_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ old_middle_sapd_display +]% | ?] [+ spd_name_colour +] [+ old_middle_spd_display +]% | [+ ddp_name_colour +]: [+ old_middle_ddp_display +]% | [+ z_name_colour +]: [+ old_middle_z_display +]% | [+ dvp_name_colour +]: [+ old_middle_dvp_display +]% | [+ dnvp_name_colour +]: [+ old_middle_dnvp_display +]% | [+ nsdap_name_colour +]: [+ old_middle_nsdap_display +]% | Others: [+ old_middle_other_display +]%">**Old_middle:** [+ old_middle +]%</span>
+<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ old_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ old_middle_sapd_display +]% | ?] [+ spd_name_colour +] [+ old_middle_spd_display +]% | [+ ddp_name_colour +]: [+ old_middle_ddp_display +]% | [+ z_name_colour +]: [+ old_middle_z_display +]% | [+ dvp_name_colour +]: [+ old_middle_dvp_display +]% | [+ dnvp_name_colour +]: [+ old_middle_dnvp_display +]% | [+ nsdap_name_colour +]: [+ old_middle_nsdap_display +]% | Others: [+ old_middle_other_display +]%'>**Old_middle:** [+ old_middle +]%</span>
 
-<span class="tooltip-text" title="[+ uspd_name_colour +]: [+ rural_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ rural_sapd_display +]% | ?] [+ spd_name_colour +] [+ rural_spd_display +]% | [+ ddp_name_colour +]: [+ rural_ddp_display +]% | [+ z_name_colour +]: [+ rural_z_display +]% | [+ dvp_name_colour +]: [+ rural_dvp_display +]% | [+ dnvp_name_colour +]: [+ rural_dnvp_display +]% | [+ nsdap_name_colour +]: [+ rural_nsdap_display +]% | Others: [+ rural_other_display +]%">**Rural:** [+ rural +]%</span>
+<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ rural_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ rural_sapd_display +]% | ?] [+ spd_name_colour +] [+ rural_spd_display +]% | [+ ddp_name_colour +]: [+ rural_ddp_display +]% | [+ z_name_colour +]: [+ rural_z_display +]% | [+ dvp_name_colour +]: [+ rural_dvp_display +]% | [+ dnvp_name_colour +]: [+ rural_dnvp_display +]% | [+ nsdap_name_colour +]: [+ rural_nsdap_display +]% | Others: [+ rural_other_display +]%'>**Rural:** [+ rural +]%</span>
 
-<span class="tooltip-text" title="[+ uspd_name_colour +]: [+ catholics_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ catholics_sapd_display +]% | ?] [+ spd_name_colour +] [+ catholics_spd_display +]% | [+ ddp_name_colour +]: [+ catholics_ddp_display +]% | [+ z_name_colour +]: [+ catholics_z_display +]% | [+ dvp_name_colour +]: [+ catholics_dvp_display +]% | [+ dnvp_name_colour +]: [+ catholics_dnvp_display +]% | [+ nsdap_name_colour +]: [+ catholics_nsdap_display +]% | Others: [+ catholics_other_display +]%">**Catholics:** [+ catholics +]%</span>
+<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ catholics_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ catholics_sapd_display +]% | ?] [+ spd_name_colour +] [+ catholics_spd_display +]% | [+ ddp_name_colour +]: [+ catholics_ddp_display +]% | [+ z_name_colour +]: [+ catholics_z_display +]% | [+ dvp_name_colour +]: [+ catholics_dvp_display +]% | [+ dnvp_name_colour +]: [+ catholics_dnvp_display +]% | [+ nsdap_name_colour +]: [+ catholics_nsdap_display +]% | Others: [+ catholics_other_display +]%'>**Catholics:** [+ catholics +]%</span>
 
-<span class="tooltip-text" title="[+ uspd_name_colour +]: [+ unemployed_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ unemployed_sapd_display +]% | ?] [+ spd_name_colour +] [+ unemployed_spd_display +]% | [+ ddp_name_colour +]: [+ unemployed_ddp_display +]% | [+ z_name_colour +]: [+ unemployed_z_display +]% | [+ dvp_name_colour +]: [+ unemployed_dvp_display +]% | [+ dnvp_name_colour +]: [+ unemployed_dnvp_display +]% | [+ nsdap_name_colour +]: [+ unemployed_nsdap_display +]% | Others: [+ unemployed_other_display +]%">**Unemployed:** [+ unemployed +]%</span>
+<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ unemployed_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ unemployed_sapd_display +]% | ?] [+ spd_name_colour +] [+ unemployed_spd_display +]% | [+ ddp_name_colour +]: [+ unemployed_ddp_display +]% | [+ z_name_colour +]: [+ unemployed_z_display +]% | [+ dvp_name_colour +]: [+ unemployed_dvp_display +]% | [+ dnvp_name_colour +]: [+ unemployed_dnvp_display +]% | [+ nsdap_name_colour +]: [+ unemployed_nsdap_display +]% | Others: [+ unemployed_other_display +]%'>**Unemployed:** [+ unemployed +]%</span>
 
 @paramilitary
 
