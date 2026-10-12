@@ -310,12 +310,10 @@ font-weight: normal;
 }
 
 .mini-left {
-  float: left;
-  left: 0.4em;
-  width: 18rem;
-  margin-left: -4rem;
   margin-top: 0;
   margin-bottom: 1em;
+  margin-left: -4rem;
+  width: 18rem;
 }
 
 .overlay {
