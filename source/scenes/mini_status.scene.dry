@@ -18,19 +18,43 @@ if (Q.economic_growth) {
 
 = Status
 
-**President**: [+ president +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
+= **Government**
 
-**Chancellor**: [+ chancellor +] ([+ chancellor_party_colour +])
+**President**: [+ president_fullname +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
+
+= Cabinet ([+ chancellor +] [+ cabinet_number +])
+
+**Chancellor**: [+ chancellor_fullname +] ([+ chancellor_party_colour +])
+
+**Vice-Chancellor**: [+ vice_chancellor +] ([+ vice_chancellor_party_colour +])
+
+= Reichstag composition:
+
+**[+ uspd_name_colour +]:** [+ uspd_r +]% | [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ sapd_r +]% ?] | **[+ spd_name_colour +]:** [+ spd_r +]% | **[+ ddp_name_colour +]** [+ ddp_r +]% | **[+ z_name_colour +]:** [+ z_minus_bvp_r +]% | **[+ bvp_name_colour +]:** [+ bvp_r +]% | **[+ dvp_name_colour +]:** [+ dvp_r +]% | **[+ dnvp_name_colour +]:** [+ dnvp_r +]% | **[+ nsdap_name_colour +]:** [+ nsdap_r +]% | **Others:** [+ other_r +]%
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 **[+ spd_name_colour +]:** [? if spd_toleration : in toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?] | [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if spd_in_majority and spd_in_government: **[+ spd_name_colour +]** majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?] [? if spd_in_government and not spd_in_majority and not in_left_front : | Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?][? if spd_in_government and (in_left_front or in_popular_front): | **[+ uspd_name_colour +]:** [+ kpd_votes +]% coalition dissent: [+ uspd_coalition_dissent : coalition_dissent +] ?] 
 
-Seats: [+ spd_r +]% | Polling: [+ spd_votes +]% 
-
-Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ resources +]
-
 Inflation: [+ inflation_2 +]% | Economic growth: [+ economic_growth_2 +]% | Unemployment: [+ unemployed_2 +]% | [? if spd_in_government == 1 : | Budget: [+ budget +] ?]
+
+@spd
+on-arrival: {!
+Q.z_minus_bvp_votes = Q.z_votes*0.8;
+Q.bvp_votes = Math.round(Q.z_r * 0.2 * 10) / 10;
+if (Q.rb_strength) {
+  Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+}
+if (Q.rfb_strength) {
+  Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+}
+if (Q.sh_strength) {
+  Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+}
+if (Q.sa_strength) {
+  Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+}
+!}
 
 = The **[+ spd_name_colour +] ([+ spd_ideology +])**
 
@@ -53,38 +77,6 @@ Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ reso
 
 Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])** |
 Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | Militarization: [+ rb_militancy : militancy +]
-
-@government
-on-arrival: {!
-Q.z_minus_bvp_votes = Q.z_votes*0.8;
-Q.bvp_votes = Math.round(Q.z_r * 0.2 * 10) / 10;
-if (Q.rb_strength) {
-  Q.rb_strength_2 = Q.rb_strength.toFixed(1);
-}
-if (Q.rfb_strength) {
-  Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
-}
-if (Q.sh_strength) {
-  Q.sh_strength_2 = Q.sh_strength.toFixed(1);
-}
-if (Q.sa_strength) {
-  Q.sa_strength_2 = Q.sa_strength.toFixed(1);
-}
-!}
-
-= **Government**
-
-= Cabinet ([+ chancellor +] [+ cabinet_number +])
-
-**President**: [+ president_fullname +] ([+ president_party_colour +]) | [+ presidential_relation : relationships +]
-
-**Chancellor**: [+ chancellor_fullname +] ([+ chancellor_party_colour +])
-
-**Vice-Chancellor**: [+ vice_chancellor +] ([+ vice_chancellor_party_colour +])
-
-= Reichstag composition:
-
-**[+ uspd_name_colour +]:** [+ uspd_r +]% | [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ sapd_r +]% ?] | **[+ spd_name_colour +]:** [+ spd_r +]% | **[+ ddp_name_colour +]** [+ ddp_r +]% | **[+ z_name_colour +]:** [+ z_minus_bvp_r +]% | **[+ bvp_name_colour +]:** [+ bvp_r +]% | **[+ dvp_name_colour +]:** [+ dvp_r +]% | **[+ dnvp_name_colour +]:** [+ dnvp_r +]% | **[+ nsdap_name_colour +]:** [+ nsdap_r +]% | **Others:** [+ other_r +]%
 
 @politics
 on-arrival: {!
@@ -200,17 +192,7 @@ if (Q.sa_strength) {
 
 = Polling by Demographic
 
-<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ workers_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ workers_sapd_display +]% | ?] [+ spd_name_colour +] [+ workers_spd_display +]% | [+ ddp_name_colour +]: [+ workers_ddp_display +]% | [+ z_name_colour +]: [+ workers_z_display +]% | [+ dvp_name_colour +]: [+ workers_dvp_display +]% | [+ dnvp_name_colour +]: [+ workers_dnvp_display +]% | [+ nsdap_name_colour +]: [+ workers_nsdap_display +]% | Others: [+ workers_other_display +]%'>**Workers:** [+ workers +]%</span>
-
-<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ new_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ new_middle_sapd_display +]% | ?] [+ spd_name_colour +] [+ new_middle_spd_display +]% | [+ ddp_name_colour +]: [+ new_middle_ddp_display +]% | [+ z_name_colour +]: [+ new_middle_z_display +]% | [+ dvp_name_colour +]: [+ new_middle_dvp_display +]% | [+ dnvp_name_colour +]: [+ new_middle_dnvp_display +]% | [+ nsdap_name_colour +]: [+ new_middle_nsdap_display +]% | Others: [+ new_middle_other_display +]%'> **New Middle Class:** [+ new_middle +]%</span>
-
-<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ old_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ old_middle_sapd_display +]% | ?] [+ spd_name_colour +] [+ old_middle_spd_display +]% | [+ ddp_name_colour +]: [+ old_middle_ddp_display +]% | [+ z_name_colour +]: [+ old_middle_z_display +]% | [+ dvp_name_colour +]: [+ old_middle_dvp_display +]% | [+ dnvp_name_colour +]: [+ old_middle_dnvp_display +]% | [+ nsdap_name_colour +]: [+ old_middle_nsdap_display +]% | Others: [+ old_middle_other_display +]%'>**Old_middle:** [+ old_middle +]%</span>
-
-<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ rural_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ rural_sapd_display +]% | ?] [+ spd_name_colour +] [+ rural_spd_display +]% | [+ ddp_name_colour +]: [+ rural_ddp_display +]% | [+ z_name_colour +]: [+ rural_z_display +]% | [+ dvp_name_colour +]: [+ rural_dvp_display +]% | [+ dnvp_name_colour +]: [+ rural_dnvp_display +]% | [+ nsdap_name_colour +]: [+ rural_nsdap_display +]% | Others: [+ rural_other_display +]%'>**Rural:** [+ rural +]%</span>
-
-<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ catholics_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ catholics_sapd_display +]% | ?] [+ spd_name_colour +] [+ catholics_spd_display +]% | [+ ddp_name_colour +]: [+ catholics_ddp_display +]% | [+ z_name_colour +]: [+ catholics_z_display +]% | [+ dvp_name_colour +]: [+ catholics_dvp_display +]% | [+ dnvp_name_colour +]: [+ catholics_dnvp_display +]% | [+ nsdap_name_colour +]: [+ catholics_nsdap_display +]% | Others: [+ catholics_other_display +]%'>**Catholics:** [+ catholics +]%</span>
-
-<span class='tooltip-text' title='[+ uspd_name_colour +]: [+ unemployed_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ unemployed_sapd_display +]% | ?] [+ spd_name_colour +] [+ unemployed_spd_display +]% | [+ ddp_name_colour +]: [+ unemployed_ddp_display +]% | [+ z_name_colour +]: [+ unemployed_z_display +]% | [+ dvp_name_colour +]: [+ unemployed_dvp_display +]% | [+ dnvp_name_colour +]: [+ unemployed_dnvp_display +]% | [+ nsdap_name_colour +]: [+ unemployed_nsdap_display +]% | Others: [+ unemployed_other_display +]%'>**Unemployed:** [+ unemployed +]%</span>
+<span class='tooltip-text' title='[+ uspd_name +]: [+ workers_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name +]: [+ workers_sapd_display +]% | ?] [+ spd_name +] [+ workers_spd_display +]% | [+ ddp_name +]: [+ workers_ddp_display +]% | [+ z_name +]: [+ workers_z_display +]% | [+ dvp_name +]: [+ workers_dvp_display +]% | [+ dnvp_name +]: [+ workers_dnvp_display +]% | [+ nsdap_name +]: [+ workers_nsdap_display +]% | Others: [+ workers_other_display +]%'>**Workers:** [+ workers +]%</span> | <span class='tooltip-text' title='[+ uspd_name +]: [+ new_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name +]: [+ new_middle_sapd_display +]% | ?] [+ spd_name +] [+ new_middle_spd_display +]% | [+ ddp_name +]: [+ new_middle_ddp_display +]% | [+ z_name +]: [+ new_middle_z_display +]% | [+ dvp_name +]: [+ new_middle_dvp_display +]% | [+ dnvp_name +]: [+ new_middle_dnvp_display +]% | [+ nsdap_name +]: [+ new_middle_nsdap_display +]% | Others: [+ new_middle_other_display +]%'> **New Middle Class:** [+ new_middle +]%</span> | <span class='tooltip-text' title='[+ uspd_name +]: [+ old_middle_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name +]: [+ old_middle_sapd_display +]% | ?] [+ spd_name +] [+ old_middle_spd_display +]% | [+ ddp_name +]: [+ old_middle_ddp_display +]% | [+ z_name +]: [+ old_middle_z_display +]% | [+ dvp_name +]: [+ old_middle_dvp_display +]% | [+ dnvp_name +]: [+ old_middle_dnvp_display +]% | [+ nsdap_name +]: [+ old_middle_nsdap_display +]% | Others: [+ old_middle_other_display +]%'>**Old Middle Class:** [+ old_middle +]%</span> | <span class='tooltip-text' title='[+ uspd_name +]: [+ rural_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name +]: [+ rural_sapd_display +]% | ?] [+ spd_name +] [+ rural_spd_display +]% | [+ ddp_name +]: [+ rural_ddp_display +]% | [+ z_name +]: [+ rural_z_display +]% | [+ dvp_name +]: [+ rural_dvp_display +]% | [+ dnvp_name +]: [+ rural_dnvp_display +]% | [+ nsdap_name +]: [+ rural_nsdap_display +]% | Others: [+ rural_other_display +]%'>**Rural:** [+ rural +]%</span> | <span class='tooltip-text' title='[+ uspd_name +]: [+ catholics_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name +]: [+ catholics_sapd_display +]% | ?] [+ spd_name +] [+ catholics_spd_display +]% | [+ ddp_name +]: [+ catholics_ddp_display +]% | [+ z_name +]: [+ catholics_z_display +]% | [+ dvp_name +]: [+ catholics_dvp_display +]% | [+ dnvp_name +]: [+ catholics_dnvp_display +]% | [+ nsdap_name +]: [+ catholics_nsdap_display +]% | Others: [+ catholics_other_display +]%'>**Catholics:** [+ catholics +]%</span> | <span class='tooltip-text' title='[+ uspd_name +]: [+ unemployed_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name +]: [+ unemployed_sapd_display +]% | ?] [+ spd_name +] [+ unemployed_spd_display +]% | [+ ddp_name +]: [+ unemployed_ddp_display +]% | [+ z_name +]: [+ unemployed_z_display +]% | [+ dvp_name +]: [+ unemployed_dvp_display +]% | [+ dnvp_name +]: [+ unemployed_dnvp_display +]% | [+ nsdap_name +]: [+ unemployed_nsdap_display +]% | Others: [+ unemployed_other_display +]%'>**Unemployed:** [+ unemployed +]%</span>
 
 @paramilitary
 on-arrival: {!
