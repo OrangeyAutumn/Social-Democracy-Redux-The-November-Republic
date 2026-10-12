@@ -398,7 +398,7 @@ window.changeMiniTab = function(newTab, tabId) {
   };
 
   // TODO: have some code for tabbed sidebar browsing.
- window.renderSceneIntoContainer = function(sceneId, containerId, runArrivalActions) {
+window.renderSceneIntoContainer = function(sceneId, containerId, runArrivalActions) {
     var container = document.getElementById(containerId);
     var scene = dendryUI.game.scenes[sceneId];
     if (!container) {
@@ -413,7 +413,9 @@ window.changeMiniTab = function(newTab, tabId) {
         dendryUI.dendryEngine._runActions(scene.onArrival);
     }
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    container.replaceChildren(dendryUI.contentToHTML.convert(displayContent));
+    var html = dendryUI.contentToHTML.convert(displayContent);
+    // Preserve HTML formatting rather than inserting the HTML as literal text.
+    $(container).empty().append(html);
     return true;
 };
 window.updateSidebar = function() {
