@@ -221,6 +221,7 @@ window.miniStatusTab = "mini_status";
 window.updateMiniSidebar = function() {
     window.renderSceneIntoContainer(window.miniStatusTab, "mini-qualities", true);
 };
+  
 window.changeMiniTab = function(newTab, tabId) {
     var tabButton = document.getElementById(tabId);
     var tabButtons = document.querySelectorAll("#mini_sidebar .tab_button");
