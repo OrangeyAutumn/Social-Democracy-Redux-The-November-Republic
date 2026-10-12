@@ -253,3 +253,7 @@ Rural: **[+ uspd_name_colour +]:** [+ rural_uspd_display +]%, [? if sapd_formed 
 Unemployed: **[+ uspd_name_colour +]:** [+ unemployed_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ unemployed_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ unemployed_spd_display +]%, **[+ ddp_name_colour +]:** [+ unemployed_ddp_display +]%, **[+ z_name_colour +]:** [+ unemployed_z_display +]%, **[+ dvp_name_colour +]:** [+ unemployed_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ unemployed_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ unemployed_nsdap_display +]%, **Others:** [+ unemployed_other_display +]%
 
 Catholics: **[+ uspd_name_colour +]:** [+ catholics_uspd_display +]%, [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ catholics_sapd_display +]%, ?] **[+ spd_name_colour +]** [+ catholics_spd_display +]%, **[+ ddp_name_colour +]:** [+ catholics_ddp_display +]%, **[+ z_name_colour +]:** [+ catholics_z_display +]%, **[+ dvp_name_colour +]:** [+ catholics_dvp_display +]%, **[+ dnvp_name_colour +]:** [+ catholics_dnvp_display +]%, **[+ nsdap_name_colour +]:** [+ catholics_nsdap_display +]%, **Others:** [+ catholics_other_display +]%
+
+@paramilitary
+
+Paramilitary stuff, I guess
