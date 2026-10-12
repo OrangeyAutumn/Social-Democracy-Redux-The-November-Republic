@@ -107,57 +107,43 @@ if (Q.sa_strength) {
 
 = **Parties**
 
-= <span class="tooltip-text" title="Leader: [+ uspd_leader_fullname +] ([+ uspd_ideology +])>**[+ uspd_name_colour +]**</span>
+<span class="tooltip-text" title="Leader: [+ uspd_leader_fullname +] ([+ uspd_ideology +])">**[+ uspd_name_colour +]**</span> (Relations: [+ uspd_relation : relationships +])
 
 Seats: [+ uspd_r +]% | <span class="tooltip-text" title="Workers: [+ workers_uspd_display +]% | New Middle Class: [+ new_middle_uspd_display +]% | Old Middle Class: [+ old_middle_uspd_display +]% | Rural: [+ rural_uspd_display +]% | Unemployed: [+ unemployed_uspd_display +]% | Catholics: [+ catholics_uspd_display +]%">Polling: [+ uspd_votes +]%</span>
 
-Relations: [+ uspd_relation : relationships +]
-
 <span class="tooltip-text" title="Strength: [+ rfb_strength_2 +] thousand ([+ rfb_force +]%) | (Militarization: [+ rfb_militancy : militancy +])"> Associated Paramilitary: [+ rfb_name_full_colour +] **([+ rfb_name_colour +])**</span>
 
-= <span class="tooltip-text" title="Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +])>**[+ ddp_name_colour +]**</span>
+= <span class="tooltip-text" title="Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +])">**[+ ddp_name_colour +]**</span> (Relations: [+ ddp_relation : relationships +])
 
 Seats: [+ ddp_r +]% | <span class="tooltip-text" title="Workers: [+ workers_ddp_display +]% | New Middle Class: [+ new_middle_ddp_display +]% | Old Middle Class: [+ old_middle_ddp_display +]% | Rural: [+ rural_ddp_display +]% | Unemployed: [+ unemployed_ddp_display +]% | Catholics: [+ catholics_ddp_display +]%">Polling: [+ ddp_votes +]%</span>
 
-Relations: [+ ddp_relation : relationships +]
-
 Associated Paramilitary: [? if reichsbanner_ddp == 0 : <span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy +])"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span> ?][? if reichsbanner_ddp == 1 : None ?]
 
-= <span class="tooltip-text" title="Leader: [+ z_leader_fullname +] ([+ z_ideology +])>**[+ z_name_colour +]**</span>
+<span class="tooltip-text" title="Leader: [+ z_leader_fullname +] ([+ z_ideology +])">**[+ z_name_colour +]**</span>(Relations: [+ z_relation : relationships +])
 
 Seats: [+ z_minus_bvp_r +]% | <span class="tooltip-text" title="Workers: [+ workers_z_display +]% | New Middle Class: [+ new_middle_z_display +]% | Old Middle Class: [+ old_middle_z_display +]% | Rural: [+ rural_z_display +]% | Unemployed: [+ unemployed_z_display +]% | Catholics: [+ catholics_z_display +]%">Polling: [+ z_minus_bvp_votes +]%</span>
 
-Relations: [+ z_relation : relationships +]
-
 Associated Paramilitary: [? if reichsbanner_z == 0 : <span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy +])"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span> ?][? if reichsbanner_z == 1 : None ?]
 
-= <span class="tooltip-text" title="Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +])>**[+ bvp_name_colour +]**</span>
+= <span class="tooltip-text" title="Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +])">**[+ bvp_name_colour +]**</span> (Relations: [+ dvp_relation : relationships +])
 
 Seats: [+ bvp_r +]% | Polling: [+ bvp_votes +]%
 
-Relations: [+ dvp_relation : relationships +]
-
 Associated Paramilitary: [+ bw_name_full_colour +] (**[+ bw_name_colour +]**) |  
 
-= <span class="tooltip-text" title="Leader: [+ dvp_leader_fullname +] ([+ dvp_ideology +])>**[+ dvp_name_colour +]**</span>
+<span class="tooltip-text" title="Leader: [+ dvp_leader_fullname +] ([+ dvp_ideology +])">**[+ dvp_name_colour +]**</span> (Relations: [+ dvp_relation : relationships +])
 
 Seats: [+ dvp_r +]% | <span class="tooltip-text" title="Workers: [+ workers_dvp_display +]% | New Middle Class: [+ new_middle_dvp_display +]% | Old Middle Class: [+ old_middle_dvp_display +]% | Rural: [+ rural_dvp_display +]% | Unemployed: [+ unemployed_dvp_display +]% | Catholics: [+ catholics_dvp_display +]%">Polling: [+ dvp_votes +]%</span>
 
-Relations: [+ dvp_relation : relationships +]
-
-= <span class="tooltip-text" title="Leader: [+ dnvp_leader_fullname +] ([+ dnvp_ideology +])>**[+ dnvp_name_colour +]**</span>
+<span class="tooltip-text" title="Leader: [+ dnvp_leader_fullname +] ([+ dnvp_ideology +])">**[+ dnvp_name_colour +]**</span> (Relations: [+ dnvp_relation : relationships +])
 
 Seats: [+ dnvp_r +]% | <span class="tooltip-text" title="Workers: [+ workers_dnvp_display +]% | New Middle Class: [+ new_middle_dnvp_display +]% | Old Middle Class: [+ old_middle_dnvp_display +]% | Rural: [+ rural_dnvp_display +]% | Unemployed: [+ unemployed_dnvp_display +]% | Catholics: [+ catholics_dnvp_display +]%">Polling: [+ dnvp_votes +]%</span>
 
-Relations: [+ dnvp_relation : relationships +]
-
 <span class="tooltip-text" title="Strength: [+ sh_strength_2 +] thousand ([+ sh_force +]%) | (Militarization: [+ sh_militancy : militancy +])"> Associated Paramilitary: [+ sh_name_full_colour +] **([+ sh_name_colour +])**</span>
 
-= <span class="tooltip-text" title="Leader: [+ nsdap_leader_fullname +] ([+ nsdap_ideology +])>**[+ nsdap_name_colour +]**</span>
+<span class="tooltip-text" title="Leader: [+ nsdap_leader_fullname +] ([+ nsdap_ideology +])">**[+ nsdap_name_colour +]**</span> (Relations: [+ nsdap_relation : relationships +])
 
 Seats: [+ nsdap_r +]% | <span class="tooltip-text" title="Workers: [+ workers_nsdap_display +]% | New Middle Class: [+ new_middle_nsdap_display +]% | Old Middle Class: [+ old_middle_nsdap_display +]% | Rural: [+ rural_nsdap_display +]% | Unemployed: [+ unemployed_nsdap_display +]% | Catholics: [+ catholics_nsdap_display +]%">Polling: [+ nsdap_votes +]%</span>
-
-Relations: [+ nsdap_relation : relationships +]
 
 <span class="tooltip-text" title="Strength: [+ sa_strength_2 +] thousand ([+ sa_force +]%) | (Militarization: [+ sa_militancy : militancy +])"> Associated Paramilitary: [+ sa_name_full_colour +] **([+ sa_name_colour +])**</span>
 
