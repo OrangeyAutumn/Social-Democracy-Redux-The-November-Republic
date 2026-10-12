@@ -156,7 +156,7 @@ Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
 Q.classes_total = Q.workers + Q.new_middle + Q.old_middle + Q.rural + Q.catholics + Q.unemployed;
 for (var c of Q.classes) {
-Q[c + "_to_display"] = (Q[c] / Q.classes_normalised) * 100;
+Q[c + "_to_display"] = (Q[c] / Q.classes_total) * 100;
 }
 if (Q.rb_strength) {
   Q.rb_strength_2 = Q.rb_strength.toFixed(1);
