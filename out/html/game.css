@@ -170,34 +170,89 @@ blockquote + blockquote.attribution {
 }
 /* This is mostly copied from undum. */
 #mid_panel {
-    margin: 0 auto;
-    max-width: none;
-    width: 100%;
+ margin: 0 auto;
+  max-width: 570px;  
 }
 #page {
 margin: 0 auto;
 position: relative;
 }
 #tools_wrapper {
-    position: static;
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr) minmax(14rem, 1fr);
-    align-items: start;
-    gap: 1rem;
-    width: 100%;
-    max-width: 69em;
-    margin: 1.5em auto;
+position: absolute;
+width: 100%;
+max-width: 69em;
+left: 0;
+right: 0;
+margin: 0 auto;
 }
+.tools {
+  padding: 0.6em;
+  width: 14rem;
+  color: var(--text-color);
+  background-color: var(--content-bg-color);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+.tools.left {
+  float: left;
+  left: 0.4em;
+  width: 18rem;
+  margin-left: -4rem;
+}
+.tools.right {
+  float: right;
+  right: 0.4em;
+}
+#qualities {
+text-indent: 0;
+line-height: 1.3em;
+}
+#qualities p {
+text-indent: 0;
+}
+#qualities h1 {
+font-size: 1.1em;
+font-weight: normal;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
+rgba(0, 0, 0, 0.1) -1px -1px 2px;
+}
+#qualities h1 + p:first-line {
+font-weight: normal;
+}
+
+
+/* tabs */
+.tab_container {
+  background-color: var(--tab-bg-color);
+  margin-top: -0.6em;
+  margin-left: -0.6em;
+  margin-right: -0.6em;
+}
+.tab_button {
+  font-family: "Minion Pro", Georgia, serif;
+  background-color: var(--tab-color);
+  color: var(--text-color);
+  /*float: left;*/
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+.tab_button.active {
+  background-color: var(--content-bg-color);
+}
+.tab_button:hover {
+  background-color: var(--tab-hover-color);
+}
+
 .dashboard {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    margin: 0;
-    padding: 1.25em;
-    background-color: var(--content-bg-color);
-    text-align: center;
-    border: 2px solid var(--card-border-color);
+  max-width: 540px;
+  margin: 0 auto 1.5em auto;
+  background-color: var(--content-bg-color);
+  padding: 1.5em;
+  text-align: center;
+  border: 2px solid var(--card-border-color);
 }
 
 .dashboard-title {
@@ -254,74 +309,10 @@ position: relative;
   line-height: 1.3;
 }
 
-.tools {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 0;
-    margin: 0;
-    float: none;
-    position: static;
-    padding: 0.6em;
-    color: var(--text-color);
-    background-color: var(--content-bg-color);
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-}
-.tools.left {
-    width: 100%;
-    margin-left: 0;
-    float: none;
-    left: auto;
-}
 .mini-left {
-    width: 100%;
-    margin: 0;
-}
-.tools.right {
-  float: right;
-  right: 0.4em;
-}
-#qualities {
-text-indent: 0;
-line-height: 1.3em;
-}
-#qualities p {
-text-indent: 0;
-}
-#qualities h1 {
-font-size: 1.1em;
-font-weight: normal;
-text-align: center;
-text-transform: uppercase;
-letter-spacing: 0.1em;
-text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
-rgba(0, 0, 0, 0.1) -1px -1px 2px;
-}
-#qualities h1 + p:first-line {
-font-weight: normal;
-}
-
-
-/* tabs */
-.tab_container {
-  background-color: var(--tab-bg-color);
-  margin-top: -0.6em;
-  margin-left: -0.6em;
-  margin-right: -0.6em;
-}
-.tab_button {
-  font-family: "Minion Pro", Georgia, serif;
-  background-color: var(--tab-color);
-  color: var(--text-color);
-  /*float: left;*/
-  border: none;
-  outline: none;
-  padding: 10px;
-}
-.tab_button.active {
-  background-color: var(--content-bg-color);
-}
-.tab_button:hover {
-  background-color: var(--tab-hover-color);
+  margin-top: 0;
+  margin-bottom: 1em;
+  width: 15rem;
 }
 
 .overlay {
