@@ -105,11 +105,21 @@ window.resolveRedirect = function(role, personId) {
   return null;
 }
 window.renderDashboard = function() {
-  if (!panels.government || !panels.spd || !panels.politics) {
-    console.error("Dashboard panel elements are missing.");
-    return;
-}
-  var panels = {
+    if (typeof Q === "undefined" || !Q) return;
+    var panels = {
+        government: document.getElementById("government-portraits"),
+        spd: document.getElementById("spd-portraits"),
+        politics: document.getElementById("politics-portraits")
+    };
+    // Do not try to populate a dashboard whose HTML is incomplete.
+    if (!panels.government || !panels.spd || !panels.politics) {
+        console.error("Dashboard: one or more portrait panels are missing.");
+        return;
+    }
+    // Clear old cards before rendering the current state.
+    panels.government.replaceChildren();
+    panels.spd.replaceChildren();
+    panels.politics.replaceChildren();  var panels = {
     government: document.getElementById("government-portraits"),
     spd: document.getElementById("spd-portraits"),
     politics: document.getElementById("politics-portraits")
@@ -416,16 +426,18 @@ window.changeMiniTab = function(newTab, tabId) {
 
 window.onDisplayContent = function() {
     window.updateSidebar();
+    var sceneId = window.dendryUI.dendryEngine.state.sceneId;
     var dashboard = document.getElementById("dashboard");
-    var isMain = window.dendryUI.dendryEngine.state.sceneId === "main";
+    // Show the dashboard only on the two intended scenes.
+    var showDashboard =
+        sceneId === "main" || sceneId === "main.easy";
     if (dashboard) {
-        dashboard.style.display = isMain ? "" : "none";
+        dashboard.style.display = showDashboard ? "" : "none";
     }
-    if (isMain) {
+    if (showDashboard && typeof window.renderDashboard === "function") {
         window.renderDashboard();
     }
 };
-
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *
