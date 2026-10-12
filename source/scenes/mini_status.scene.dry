@@ -82,33 +82,9 @@ if (Q.sa_strength) {
 
 **Vice-Chancellor**: [+ vice_chancellor +] ([+ vice_chancellor_party_colour +])
 
-**Foreign Minister:** [+ foreign_minister +] ([+ foreign_minister_party_colour +]) 
-
-**Interior Minister:** [+ interior_minister +] ([+ interior_minister_party_colour +])
-
-**Justice Minister:** [+ justice_minister +] ([+ justice_minister_party_colour +])
-
-**Labor Minister:** [+ labor_minister +] ([+ labor_minister_party_colour +])
-
-**Reichswehr Minister:** [+ reichswehr_minister +] ([+ reichswehr_minister_party_colour +])
-
-**Economic Minister:** [+ economic_minister +] ([+ economic_minister_party_colour +])
-
-**Finance Minister:** [+ finance_minister +] ([+ finance_minister_party_colour +])
-
-**Agriculture Minister:** [+ agriculture_minister +] ([+ agriculture_minister_party_colour +])
-
 = Reichstag composition:
 
 **[+ uspd_name_colour +]:** [+ uspd_r +]% | [? if sapd_formed == 1 : **[+ sapd_name_colour +]:** [+ sapd_r +]% ?] | **[+ spd_name_colour +]:** [+ spd_r +]% | **[+ ddp_name_colour +]** [+ ddp_r +]% | **[+ z_name_colour +]:** [+ z_minus_bvp_r +]% | **[+ bvp_name_colour +]:** [+ bvp_r +]% | **[+ dvp_name_colour +]:** [+ dvp_r +]% | **[+ dnvp_name_colour +]:** [+ dnvp_r +]% | **[+ nsdap_name_colour +]:** [+ nsdap_r +]% | **Others:** [+ other_r +]%
-
-= Military Forces
-
-Reichswehr: [+ reichswehr_strength +] thousand troops ([+ army_force +]%) | Loyalty: [+ reichswehr_loyalty : loyalty +]
-
-Prussian police: [+ prussian_police_strength +] thousand members ([+ prussia_force +]%) | Loyalty: [+ prussian_police_loyalty : loyalty +]
-
-[? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 
 @politics
 on-arrival: {!
@@ -237,5 +213,25 @@ if (Q.sa_strength) {
 <span class='tooltip-text' title='[+ uspd_name_colour +]: [+ unemployed_uspd_display +]% | [? if sapd_formed == 1 : [+ sapd_name_colour +]: [+ unemployed_sapd_display +]% | ?] [+ spd_name_colour +] [+ unemployed_spd_display +]% | [+ ddp_name_colour +]: [+ unemployed_ddp_display +]% | [+ z_name_colour +]: [+ unemployed_z_display +]% | [+ dvp_name_colour +]: [+ unemployed_dvp_display +]% | [+ dnvp_name_colour +]: [+ unemployed_dnvp_display +]% | [+ nsdap_name_colour +]: [+ unemployed_nsdap_display +]% | Others: [+ unemployed_other_display +]%'>**Unemployed:** [+ unemployed +]%</span>
 
 @paramilitary
+on-arrival: {!
+if (Q.rb_strength) {
+  Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+}
+if (Q.rfb_strength) {
+  Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+}
+if (Q.sh_strength) {
+  Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+}
+if (Q.sa_strength) {
+  Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+}
+!}
 
-Paramilitary stuff, I guess
+= Military Forces
+
+Reichswehr: [+ reichswehr_strength +] thousand troops ([+ army_force +]%) | Loyalty: [+ reichswehr_loyalty : loyalty +]
+
+Prussian police: [+ prussian_police_strength +] thousand members ([+ prussia_force +]%) | Loyalty: [+ prussian_police_loyalty : loyalty +]
+
+[? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
