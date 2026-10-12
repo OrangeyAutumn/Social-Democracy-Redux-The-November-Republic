@@ -116,17 +116,10 @@ window.renderDashboard = function() {
         console.error("Dashboard: one or more portrait panels are missing.");
         return;
     }
-    // Clear old cards before rendering the current state.
-    panels.government.replaceChildren();
-    panels.spd.replaceChildren();
-    panels.politics.replaceChildren();  var panels = {
-    government: document.getElementById("government-portraits"),
-    spd: document.getElementById("spd-portraits"),
-    politics: document.getElementById("politics-portraits")
-  };
-Object.keys(panels).forEach(function(key) {
-    if (panels[key]) panels[key].replaceChildren();
+    Object.keys(panels).forEach(function(key) {
+    panels[key].replaceChildren();
 });
+
   var createCard = function(label, personId, role, subtitle, disabled) {
     var person = window.getPerson(personId);
     if (!person) return null;
@@ -224,18 +217,21 @@ var partyData = person.party && Q.partyData ? Q.partyData[person.party] : null;
     panels.politics.appendChild(card);
   });
 };
+window.miniStatusTab = "mini_status";
+window.updateMiniSidebar = function() {
+    window.renderSceneIntoContainer(window.miniStatusTab, "mini-qualities", true);
+};
 window.changeMiniTab = function(newTab, tabId) {
-  var tabButton = document.getElementById(tabId);
-  var tabButtons = document.getElementsByClassName('tab_button');
-  for (var i = 0; i < tabButtons.length; i++) {
-    tabButtons[i].className = tabButtons[i].className.replace(' active', '');
-  }
-  if (tabButton) tabButton.className += ' active';
-
-  // This can either show a mini_status scene or reuse the existing sidebar logic
-  // as a placeholder until you build mini_status.scene
-  window.statusTab = newTab;
-  window.updateSidebar();
+    var tabButton = document.getElementById(tabId);
+    var tabButtons = document.querySelectorAll("#mini_sidebar .tab_button");
+    for (var i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+    }
+    if (tabButton) {
+        tabButton.classList.add("active");
+    }
+    window.miniStatusTab = newTab;
+    window.updateMiniSidebar();
 };
 
   // TODO: update audio displays
@@ -401,13 +397,28 @@ window.changeMiniTab = function(newTab, tabId) {
   };
 
   // TODO: have some code for tabbed sidebar browsing.
-  window.updateSidebar = function() {
-      $('#qualities').empty();
-      var scene = dendryUI.game.scenes[window.statusTab];
-      dendryUI.dendryEngine._runActions(scene.onArrival);
-      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-  };
+ window.renderSceneIntoContainer = function(sceneId, containerId, runArrivalActions) {
+    var container = document.getElementById(containerId);
+    var scene = dendryUI.game.scenes[sceneId];
+    if (!container) {
+        console.error("Scene renderer: container not found:", containerId);
+        return false;
+    }
+    if (!scene) {
+        console.error("Scene renderer: scene not found:", sceneId);
+        return false;
+    }
+    if (runArrivalActions) {
+        dendryUI.dendryEngine._runActions(scene.onArrival);
+    }
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    container.replaceChildren(dendryUI.contentToHTML.convert(displayContent));
+    return true;
+};
+window.updateSidebar = function() {
+    window.renderSceneIntoContainer(window.statusTab, "qualities", true);
+};
+
 
   window.changeTab = function(newTab, tabId) {
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
@@ -415,7 +426,7 @@ window.changeMiniTab = function(newTab, tabId) {
           return;
       }
       var tabButton = document.getElementById(tabId);
-      var tabButtons = document.getElementsByClassName('tab_button');
+      var tabButtons = document.querySelectorAll("#stats_sidebar .tab_button");
       for (i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }
@@ -424,17 +435,23 @@ window.changeMiniTab = function(newTab, tabId) {
       window.updateSidebar();
   };
 
+window.dashboardRendered = false;
 window.onDisplayContent = function() {
-    window.updateSidebar();
     var sceneId = window.dendryUI.dendryEngine.state.sceneId;
+    var showDashboard = sceneId === "main" || sceneId === "main.main_easy";
     var dashboard = document.getElementById("dashboard");
-    // Show the dashboard only on the two intended scenes.
-    var showDashboard =
-        sceneId === "main" || sceneId === "main.main_easy";
     if (dashboard) {
-        dashboard.style.display = showDashboard ? "" : "none";
+        if (showDashboard && !window.dashboardRendered) {
+            var rendered = window.renderSceneIntoContainer("dashboard", "dashboard", false);
+            if (rendered) {
+                window.dashboardRendered = true;
+            }
+        }
+        dashboard.style.display = showDashboard && window.dashboardRendered ? "": "none";
     }
-    if (showDashboard && typeof window.renderDashboard === "function") {
+    window.updateSidebar();
+    window.updateMiniSidebar();
+    if (showDashboard && window.dashboardRendered) {
         window.renderDashboard();
     }
 };
@@ -509,10 +526,4 @@ window.onload = function() {
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
     
-    // Render dashboard once game is loaded
-    if (window.renderDashboard) {
-      setTimeout(window.renderDashboard, 100);
-    }
-};
-
 }());
