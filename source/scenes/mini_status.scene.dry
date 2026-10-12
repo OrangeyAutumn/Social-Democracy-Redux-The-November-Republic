@@ -85,7 +85,7 @@ Internal dissent: [+ dissent_percent : dissent +] | Resources available: [+ reso
 [? if neorevisionism > 0 : 
 **[+ spd_neorevisionist_colour +]:** [+ neorevisionist_strength : strength +] (Dissent: [+ neorevisionist_dissent : dissent +]) ?]  
 
-<span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span>
+<span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy+])"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span>
 
 @politics
 on-arrival: {!
@@ -113,7 +113,7 @@ Seats: [+ uspd_r +]% | <span class="tooltip-text" title="Workers: [+ workers_usp
 
 Relations: [+ uspd_relation : relationships +]
 
-<span class="tooltip-text" title="Strength: [+ rfb_strength_2 +] thousand ([+ rfb_force +]%) | (Militarization: [+ rfb_militancy : militancy"> Associated Paramilitary: [+ rfb_name_full_colour +] **([+ rfb_name_colour +])**</span>
+<span class="tooltip-text" title="Strength: [+ rfb_strength_2 +] thousand ([+ rfb_force +]%) | (Militarization: [+ rfb_militancy : militancy +])"> Associated Paramilitary: [+ rfb_name_full_colour +] **([+ rfb_name_colour +])**</span>
 
 = <span class="tooltip-text" title="Leader: [+ ddp_leader_fullname +] ([+ ddp_ideology +])>**[+ ddp_name_colour +]**</span>
 
@@ -121,7 +121,7 @@ Seats: [+ ddp_r +]% | <span class="tooltip-text" title="Workers: [+ workers_ddp_
 
 Relations: [+ ddp_relation : relationships +]
 
-Associated Paramilitary: [? if reichsbanner_ddp == 0 : <span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span> ?][? if reichsbanner_ddp == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_ddp == 0 : <span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy +])"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span> ?][? if reichsbanner_ddp == 1 : None ?]
 
 = <span class="tooltip-text" title="Leader: [+ z_leader_fullname +] ([+ z_ideology +])>**[+ z_name_colour +]**</span>
 
@@ -129,7 +129,7 @@ Seats: [+ z_minus_bvp_r +]% | <span class="tooltip-text" title="Workers: [+ work
 
 Relations: [+ z_relation : relationships +]
 
-Associated Paramilitary: [? if reichsbanner_z == 0 : <span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span> ?][? if reichsbanner_z == 1 : None ?]
+Associated Paramilitary: [? if reichsbanner_z == 0 : <span class="tooltip-text" title="Strength: [+ rb_strength_2 +] thousand ([+ rb_force +]%) | (Militarization: [+ rb_militancy : militancy +])"> Associated Paramilitary: [+ rb_name_full_colour +] **([+ rb_name_colour +])**</span> ?][? if reichsbanner_z == 1 : None ?]
 
 = <span class="tooltip-text" title="Leader: [+ bvp_leader_fullname +] ([+ bvp_ideology +])>**[+ bvp_name_colour +]**</span>
 
@@ -151,7 +151,7 @@ Seats: [+ dnvp_r +]% | <span class="tooltip-text" title="Workers: [+ workers_dnv
 
 Relations: [+ dnvp_relation : relationships +]
 
-<span class="tooltip-text" title="Strength: [+ sh_strength_2 +] thousand ([+ sh_force +]%) | (Militarization: [+ sh_militancy : militancy"> Associated Paramilitary: [+ sh_name_full_colour +] **([+ sh_name_colour +])**</span>
+<span class="tooltip-text" title="Strength: [+ sh_strength_2 +] thousand ([+ sh_force +]%) | (Militarization: [+ sh_militancy : militancy +])"> Associated Paramilitary: [+ sh_name_full_colour +] **([+ sh_name_colour +])**</span>
 
 = <span class="tooltip-text" title="Leader: [+ nsdap_leader_fullname +] ([+ nsdap_ideology +])>**[+ nsdap_name_colour +]**</span>
 
@@ -159,7 +159,7 @@ Seats: [+ nsdap_r +]% | <span class="tooltip-text" title="Workers: [+ workers_ns
 
 Relations: [+ nsdap_relation : relationships +]
 
-<span class="tooltip-text" title="Strength: [+ sa_strength_2 +] thousand ([+ sa_force +]%) | (Militarization: [+ sa_militancy : militancy"> Associated Paramilitary: [+ sa_name_full_colour +] **([+ sa_name_colour +])**</span>
+<span class="tooltip-text" title="Strength: [+ sa_strength_2 +] thousand ([+ sa_force +]%) | (Militarization: [+ sa_militancy : militancy +])"> Associated Paramilitary: [+ sa_name_full_colour +] **([+ sa_name_colour +])**</span>
 
 @polls
 on-arrival: {!
