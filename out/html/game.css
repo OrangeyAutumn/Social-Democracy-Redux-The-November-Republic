@@ -256,7 +256,7 @@ font-weight: normal;
 }
 
 .dashboard-title {
-  font-size: 1.6em;
+  font-size: 1.1em;
   margin: 0 0 1em 0;
   text-align: center;
 }
@@ -266,7 +266,7 @@ font-weight: normal;
 }
 
 .dashboard-subtitle {
-  font-size: 1.1em;
+  font-size: 1em;
   margin: 0 0 0.75em;
   text-transform: uppercase;
   letter-spacing: 0.08em;
