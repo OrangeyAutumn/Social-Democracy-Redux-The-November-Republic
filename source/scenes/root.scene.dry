@@ -781,7 +781,7 @@ go-to: start_menu_2
 
 @start
 new-page: true
-audio: music/opening_score.mp3
+audio: music/NovemberRepublicIntro.mp3
 
 <img src="img/favico.jpg" alt="Social Democracy: The November Republic">
 
