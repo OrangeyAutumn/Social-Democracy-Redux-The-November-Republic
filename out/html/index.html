@@ -31,10 +31,28 @@
             <p><label for="volume">Volume:</label><input type="range" min="0" max="100" value="100" id="volume" name="volume" oninput="window.setVolume(this.value);"></p>
             <p style="text-align: center;"><button onclick="window.shuffle();">Next song</button></p>
         </div>
-            <h3>Settings</h3>
+            <h3 id="settings_text">Settings</h3>
             <table>
                 <tr>
+                    <td id="language_text">Language (will restart game):</td>
                     <td>
+                        <label id="english_label" for="english">English</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="english" name="language" value="1" onclick="window.loadEnglish();">
+                    </td>
+                    <td>
+                        <label id="german_label" for="german">Deutsch</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="german" name="language" value="0" onclick="window.loadGerman();">
+                    </td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                <tr>
+                    <td id="backgrounds_text">
                         Backgrounds:
                     </td>
                     <td>
