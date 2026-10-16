@@ -138,6 +138,27 @@
       }
   };
 
+    // save/load buttons
+  window.updateSaveButtons = function() {
+      if (window.dendryUI.language && window.dendryUI.language == "de") {
+          for (var element of document.getElementsByClassName("save_button")) {
+              if (element.textContent == "Save") {
+                  element.textContent = "Speichern";
+              } else if (element.textContent == "Load") {
+                  element.textContent = "Laden";
+              }
+          } 
+      }
+      else {
+          for (var element of document.getElementsByClassName("save_button")) {
+              if (element.textContent == "Speichern") {
+                  element.textContent = "Save";
+              } else if (element.textContent == "Laden") {
+                  element.textContent = "Load";
+              }
+          }
+      }
+  };
 
   window.showStats = function() {
     if (window.dendryUI.dendryEngine.state.sceneId.startsWith('library')) {
