@@ -19,142 +19,10 @@
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
 
   // the url is a link to game.json
-  // https://github.com/OrangeyAutumn/Social-Democracy-Redux-The-November-Republic/edit/main/out/html/game.json
+  // test url: https://aucchen.github.io/social_democracy_mods/v0.1.json
   // TODO; 
   window.loadMod = function(url) {
       ui.loadGame(url);
-  };
-
-  window.loadGerman = function() {
-      ui.loadGame('game-de.json');
-      window.dendryUI.language = "de";
-      localStorage[game.title + '_language'] = "de";
-      var text_label_map_ids = {
-          // top-level
-'mini_main_tab': "Haupt",
-'mini_spd_tab': "SPD",
-'mini_politics_tab': "Parties",
-'mini_poll_tab': "Wahl",
-'main_tab': "Haupt",
-'government_tab': "Regierung",
-'politics_tab': "Parteien",
-'poll_tab': "Wahl",
-'states_tab': "Länder",
-          'stats-link': "Bibliothek",
-          'save-link': "Speichern/Laden",
-          'options-link': "Einstellungen",
-          // options
-          "currently_playing_text": "Momentan spielt:",
-          "music_header_text": "Musik",
-          "next_song_text": "Nächstes Lied",
-          "settings_text": "Einstellung",
-          "backgrounds_text": "Hintergründe:",
-          "event_images_text": "Ereignisbilder:",
-          "animations_text": "Animationen:",
-          "music_text": "Musik:",
-          "color_scheme_text": "Farbschema:",
-          "light_mode_label": "Hell",
-          "dark_mode_label": "Dunkel",
-          "font_size_text": "Schriftgröße:",
-          "decrease_font_button": "- verkleinern",
-          "increase_font_button": "+ vergrößern",
-          // save/load menu
-          "import_save_label": "Importiere Speicherstand:"
-      };
-      var text_label_map_classes = {
-          //"save_button":"Speichern",
-          "delete_button": "Löschen",
-          "export_button": "Exportieren",
-          "load_button": "Laden",
-          "label_on": "An",
-          "label_off": "Aus",
-          "close_button": "Schließen"
-      }
-      for (var elementId in text_label_map_ids) {
-          document.getElementById(elementId).textContent = text_label_map_ids[elementId];
-      }
-      for (var className in text_label_map_classes) {
-          for (var element of document.getElementsByClassName(className)) {
-              element.textContent = text_label_map_classes[className];
-          }
-      }
-  };
-
-  window.loadEnglish = function() {
-      ui.loadGame('game.json');
-      window.dendryUI.language = "en";
-      localStorage[game.title + '_language'] = "en";
-      var text_label_map_ids = {
-          // top-level
-'mini_main_tab': "Main",
-'mini_spd_tab': "SPD",
-'mini_politics_tab': "Parties",
-'mini_poll_tab': "Polls",
-'main_tab': "Main",
-'government_tab': "Government",
-'politics_tab': "Parties",
-'poll_tab': "Polls",
-'states_tab': "States",
-'stats-link': "Library",
-          'save-link': "Save/Load",
-          'options-link': "Options",
-          // options
-          "currently_playing_text": "Currently playing:",
-          "music_header_text": "Music",
-          "next_song_text": "Next song",
-          "settings_text": "Settings",
-          "backgrounds_text": "Backgrounds:",
-          "event_images_text": "Event images:",
-          "animations_text": "Animations:",
-          "music_text": "Music:",
-          "color_scheme_text": "Color scheme:",
-          "light_mode_label": "Light mode",
-          "dark_mode_label": "Dark mode",
-          "font_size_text": "Font size:",
-          "decrease_font_button": "- decrease",
-          "increase_font_button": "+ increase",
-          // save/load menu
-          "import_save_label": "Import save file:"
-      };
-      var text_label_map_classes = {
-          //"save_button":"Save",
-          "delete_button": "Delete",
-          "export_button": "Export",
-          "load_button": "Load",
-          "label_on": "On",
-          "label_off": "Off",
-          "close_button": "Close"
-      }
-      for (var elementId in text_label_map_ids) {
-          document.getElementById(elementId).textContent = text_label_map_ids[elementId];
-      }
-      for (var className in text_label_map_classes) {
-          for (var element of document.getElementsByClassName(className)) {
-              element.textContent = text_label_map_classes[className];
-          }
-      }
-  };
-
-    // save/load buttons
-  window.updateSaveButtons = function() {
-      if (window.dendryUI.language && window.dendryUI.language == "de") {
-          for (var element of document.getElementsByClassName("save_button")) {
-              if (element.textContent == "Save") {
-                  element.textContent = "Speichern";
-              } else if (element.textContent == "Load") {
-                  element.textContent = "Laden";
-              }
-          } 
-      }
-      else {
-          for (var element of document.getElementsByClassName("save_button")) {
-              if (element.textContent == "Speichern") {
-                  element.textContent = "Save";
-              } else if (element.textContent == "Laden") {
-                  element.textContent = "Load";
-              }
-          }
-      }
   };
 
   window.showStats = function() {
@@ -567,7 +435,7 @@ window.updateSidebar = function() {
       }
       var tabButton = document.getElementById(tabId);
       var tabButtons = document.querySelectorAll("#stats_sidebar .tab_button");
-      for (var i = 0; i < tabButtons.length; i++) {
+      for (i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }
       tabButton.className += ' active';
