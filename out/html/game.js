@@ -19,7 +19,7 @@
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
 
   // the url is a link to game.json
-  // test url: https://aucchen.github.io/social_democracy_mods/v0.1.json
+  // https://github.com/OrangeyAutumn/Social-Democracy-Redux-The-November-Republic/edit/main/out/html/game.json
   // TODO; 
   window.loadMod = function(url) {
       ui.loadGame(url);
