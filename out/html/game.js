@@ -27,13 +27,10 @@
 
   window.loadGerman = function() {
       ui.loadGame('game-de.json');
-      dendryUI.language = "de";
+      window.dendryUI.language = "de";
       localStorage[game.title + '_language'] = "de";
       var text_label_map_ids = {
           // top-level
-          'politics_tab': "Politik",
-          'paramilitary_tab': "Militär",
-          'poll_tab': "Wahl",
 'mini_main_tab': "Haupt",
 'mini_spd_tab': "SPD",
 'mini_politics_tab': "Parties",
@@ -85,7 +82,7 @@
 
   window.loadEnglish = function() {
       ui.loadGame('game.json');
-      dendryUI.language = "en";
+      window.dendryUI.language = "en";
       localStorage[game.title + '_language'] = "en";
       var text_label_map_ids = {
           // top-level
@@ -570,7 +567,7 @@ window.updateSidebar = function() {
       }
       var tabButton = document.getElementById(tabId);
       var tabButtons = document.querySelectorAll("#stats_sidebar .tab_button");
-      for (i = 0; i < tabButtons.length; i++) {
+      for (var i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }
       tabButton.className += ' active';
