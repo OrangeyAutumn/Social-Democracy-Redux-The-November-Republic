@@ -13,6 +13,7 @@ The SPD runs a veritable media empire, with many newspapers throughout every Ger
 
 - @commercial
 - @campaign
+- @editorial
 - @ideological
 - @radio
 - @radio_2
@@ -35,6 +36,43 @@ subtitle: Our newspapers will focus on the electoral campaign.
 on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
 
 Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
+
+@editorial
+title: We can change the editorial line of Vorwärts to support a particular faction or position.
+
+Which faction should we support?
+
+- @support_left: Left
+- @support_center: Center
+- @support_labor: Labor
+- @support_reform: Reformists
+- @support_neorev: Neorevisionists
+
+@support_left
+on-arrival: left_dissent -= 8; left_strength += 8
+
+Vorwärts prints editorials in support of Left positions.
+
+@support_center
+on-arrival: center_dissent -= 8; center_strength += 8
+
+Vorwärts prints editorials in support of centrist positions.
+
+@support_labor
+on-arrival: labor_dissent -= 8; labor_strength += 8
+
+Vorwärts prints editorials in support of the policies of the trade unions.
+
+@support_reform
+on-arrival: reformist_dissent -= 8; reformist_strength += 8;
+
+Vorwärts prints editorials in support of the reformist policies.
+
+@support_neorev
+view-if: neorevisionism
+on-arrival: neorevisionist_dissent -= 8; neorevisionist_strength += 8
+
+Vorwärts prints editorials in support of neorevisionist ideas.
 
 @ideological
 title: We will have vibrant ideological debate within our newspapers.
