@@ -5,7 +5,7 @@ tags: event
 view-if: year = 1929 and month = 5
 max-visits: 1
 face-image: img/redfront.jpg
-go-to: blutmai_right if year = 1929 and month = 5 and in_right_coalition == 1; else blutmai_normal
+go-to: in_right_coalition == 1; blutmai_normal if in_right_coalition == 0 
 
 @blutmai_normal
 
