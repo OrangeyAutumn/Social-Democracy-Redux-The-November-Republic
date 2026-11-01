@@ -86,10 +86,10 @@ Tensions run high in Berlin. The Communists are planning a demonstration to comm
 
 Many on our party's left-wing have called on us to join in the demonstration, but this would only increase the risk of violence and could make reconciliation with the right-wing parties impossible. What should we do?
 
-- @join: We will join in the demonstration.
+- @join_them: We will join in the demonstration.
 - @not: We will stay out of this.
 
-@join
+@join_them
 choose-if: kpd_relation >= 30
 unavailable-subtitle: The KPD does not trust us enough.
 on-arrival: kpd_relation += 20; volksmai = 1; z_relation -= 10; z_relation -= 5 if z_party_leader != "Joos"; dvp_relation -= 25; workers_spd += 3*(1-dissent); new_middle_spd -= 5; new_middle_spd += 3 if new_middle_conscious; old_middle_spd -= 5; unemployed_spd += 3*(1-dissent); workers_kpd += 3; unemployed_kpd += 3; workers_z -= 3; workers_dnvp -= 3; communist_coalition += 2; reformist_strength -= 10; reformist_dissent += 10; neorevisionist_dissent += 10; left_strength += 10; rfb_banned = 1; rfb_strength -= 100; strife += 2; socialism += 4
