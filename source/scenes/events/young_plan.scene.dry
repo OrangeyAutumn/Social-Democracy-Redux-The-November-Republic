@@ -4,7 +4,10 @@ subtitle: A new agreement on reparations
 tags: event
 view-if: year = 1929 and month >= 7 and in_right_coalition = 0 and young_plan_seen = 0 and not dnvp_toleration
 on-arrival: young_plan_seen = 1; prussia_dnvp -= 0.1; prussia_nsdap += 0.1
+go-to: young_plan_right_coalition if (in_right_coalition or dnvp_toleration); else young_plan_normal
 max-visits: 1
+
+@young_plan_normal
 
 = Young Plan
 
@@ -46,3 +49,71 @@ The referendum easily fails with or without our presence in the campaign, with o
 on-arrival: workers_nsdap += 5; new_middle_nsdap += 10; old_middle_nsdap += 10; rural_nsdap += 10; unemployed_nsdap += 5; new_middle_dnvp += 5; old_middle_dnvp += 5; rural_dnvp += 5; new_middle_dvp -= 5; new_middle_other -= 5; old_middle_dvp -= 5; old_middle_other -= 5; rural_dvp -= 5; rural_other -= 5
 
 However, the referendum has succeeded in acting as a wedge issue against the moderate bourgeois parties, and the pendelum has swung significantly to the right.
+
+@young_plan_right_coalition
+
+= The Young Plan and the fall of the coalition
+
+The Foreign Ministry under Gustav Streseman has agreed to the Young Plan, an agreement with the Western powers to reduce Germany's reparation payments and give us more fiscal autonomy. Simultaneously, France will agree to withdraw its military occupation from the Rhineland.
+
+While this seems to be a positive development for the country, the DNVP (and especially its leader, Alfred Hugenberg) opposes the plan, claiming that any reparations are a form of national slavery. They have called for a vote of no confidence against the government, supported by the NSDAP and the USPD, and for a referendum on the Young Plan.
+
+We can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties.
+
+- @vonc_yes
+- @vonc_no
+- @no_matter
+
+@vonc_yes
+title: Support the vote of no confidence, voting against the government.
+subtitle: The government will collapse, and there may be new elections.
+view-if: neo_weimar_coalition >= 50
+on-arrival: do_the_thing_after_this = 1 if president == "Marx"; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; dvp_relation -= 5; z_relation -= 5;
+go-to: marx if president == "Marx"; thing_did if president != "Marx"
+
+The right-wing coalition has fallen. If a new one cannot be formed, [+ president +] is likely to dissolve the Reichstag for new elections.
+
+@thing_did
+
+- @enter_government: We will enter government.
+- @new_elections: There will be new elections.
+
+@enter_government
+choose-if: grand_coalition >= 50 and (z_relation >= 45 or z_party_leader == "Joos") and (dvp_relation >= 30 or stresemann_dead == 0)
+subtitle: SPD + Z + BVP + DDP + DVP ([ + grand_coalition +]%)
+unavailable-subtitle: SPD + Z + BVP + DDP + DVP ([+ grand_coalition +]%) - [? if grand_coalition < 50 : We do not have the votes. ?][? if (z_relation < 45 and z_party_leader != Joos) or (dvp_relation < 30 and stresemann_dead == 1) : The right would rather see their government fall than let us into government. ?]
+go-to: election_1928.grand_coalition_z_lead
+
+We have entered government and taken the DNVP's place.
+
+@new_elections
+subtitle: With the Reichstag hung, [+ president +] will dissolve it
+on-arrival: time_to_election = 3; pro_republic -= 3; z_relation -= 2; dvp_relation -= 3; marx_relation -= 5
+call: set_next_election_time
+
+The Reichstag has been dissolved, as there is no clear governing majority.
+
+@vonc_no
+title: Support the rump Center-led government, voting in favor of the government.
+subtitle: We would essentially provide "toleration" to a bourgeois government.
+view-if: neo_weimar_coalition >= 50
+on-arrival: spd_toleration = 1; in_right_coalition = 0; left_dissent += 8; 
+go-to: marx if president == "Marx"
+
+By supporting the government, we have essentially entered into a "toleration" arrangement with the [+ chancellor +] government. We do not have a voice in the government, but we are responsible for its continued stability. The left of our party opposes this plan, and would rather that we force new elections.
+
+@no_matter
+title: It does not matter what we do.
+subtitle: The anti-government parties have over 50% of the vote, no matter our choices.
+view-if: neo_weimar_coalition < 50
+call: set_next_election_time
+on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 5
+go-to: marx if president == "Marx"
+
+The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+
+@marx
+on-arrival: workers_nsdap += 5; new_middle_nsdap += 10; old_middle_nsdap += 10; rural_nsdap += 10; unemployed_nsdap += 5; new_middle_dnvp += 5; old_middle_dnvp += 5; rural_dnvp += 5; new_middle_dvp -= 5; new_middle_other -= 5; old_middle_dvp -= 5; old_middle_other -= 5; rural_dvp -= 5; rural_other -= 5
+go-to: thing_did if do_the_thing_after_this
+
+Regardless, the Young Plan has successfully acted as a wedge issue against the moderate bourgeois parties, and the pendelum has swung significantly to the right in this crisis.
