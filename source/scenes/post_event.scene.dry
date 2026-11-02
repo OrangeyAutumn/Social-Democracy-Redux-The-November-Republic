@@ -539,15 +539,6 @@ if (Q.month_actions >= 1) {
         }
     }
     // factions.
-    // silly
-    if (Q.vonc_formed && ((Q.vonc_votes+Q.spd_votes) < 50)) {
-        Q.workers_vonc += 1;
-        Q.new_middle_vonc += 2;
-        Q.old_middle_vonc += 2;
-        Q.rural_vonc += 2;
-        Q.unemployed_vonc += 1;
-        Q.catholics_vonc += 1;
-    }
     //////////////////////////////// Education & Science support/economic changes
     if (Q.major_curriculum && Q.major_curriculum == "democratic") {
         if (Q.pro_republic < 60) {
@@ -2162,12 +2153,6 @@ if (Q.normalize_support) {
     }
 }
 
-if (Q.advisor_loss_timer <= 0 && Q.in_vonc_coalition) {
-    Q.go_to_advisor_loss = 1;
-} else {
-    Q.go_to_advisor_loss = 0;
-}
-
 if (Q.reenable_legislature) {
     Q.legislature_enabled = 1;
 }
@@ -2185,7 +2170,7 @@ if (choices && choices[0].title != "Continue...") {
 if (typeof window !== "undefined" && window.generateBar) {
 }
 !}
-go-to: events_choice if has_event = 1 and not go_to_advisor_loss; main if has_event = 0 and difficulty >= 0 and not go_to_advisor_loss; main.main_easy if has_event = 0 and difficulty < 0 and not go_to_advisor_loss; vonc_advisor_kidnapping if go_to_advisor_loss
+go-to: events_choice if has_event = 1 and not go_to_advisor_loss; main if has_event = 0 and difficulty >= 0 and not go_to_advisor_loss; main.main_easy if has_event = 0 and difficulty < 0 and not go_to_advisor_loss
 
 = [+ month : month +] [+ year +]
 
